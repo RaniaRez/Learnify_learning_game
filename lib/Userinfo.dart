@@ -5,6 +5,8 @@ import 'package:somthn/ButtonNomUser.dart';
 import 'package:somthn/ButtonSupprimer.dart';
 import 'package:somthn/ChoixDomaines.dart';
 import 'package:somthn/ChooseAvatar.dart';
+import 'package:somthn/Ecriremdp.dart';
+import 'package:somthn/Entrernom.dart';
 import 'package:somthn/HomeButton.dart';
 import 'package:somthn/buttonNom.dart';
 import 'package:somthn/buttonmdp.dart';
@@ -84,6 +86,7 @@ class _UserinfoState extends State<Userinfo> {
             right: 50.00,
             child: ButtonSupprimer(
               onPressed: (){
+
                 print("HELL YEAH");
                 },
             ),
@@ -95,7 +98,7 @@ class _UserinfoState extends State<Userinfo> {
               onPressed: (){
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => Home()),);
+                  MaterialPageRoute(builder: (context) => ChooseAvatar()),);
                 print("HELL YEAH");
               },
             ),
@@ -108,6 +111,9 @@ class _UserinfoState extends State<Userinfo> {
               height: 100,
               child: ButtonNomUser(
                 onPressed: (){
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => Entrernom()),);
 
                   print("HELL YEAH");
                 },
@@ -120,6 +126,9 @@ class _UserinfoState extends State<Userinfo> {
             right: 50.00,
             child: Buttonmdp(
               onPressed: (){
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => Ecriremdp()),);
                 print("HELL YEAH");
               },
             ),

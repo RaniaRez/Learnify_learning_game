@@ -100,11 +100,21 @@ class _EntrernomState extends State<Entrernom> {
     print("HELL YEAH");
     },)
     ),
+          Visibility(
+            visible:_Visible ,
+            child: Positioned(
+              top: 320.0,
+              right: 250.0 ,
+              height: 300.0,
+              width: 200.0,
+              child:BranchIconSimple(),
+            ),
+          ),
           if (New.avatar=="Pink")
             Visibility(
             visible:_Visible ,
             child: Positioned(
-              top: 270.0,
+              top: 70.0,
              right: 250.0 ,
               height: 300.0,
               width: 200.0,
@@ -311,6 +321,7 @@ class _EntrernomState extends State<Entrernom> {
 
               ),
             ),
+
 
         ]
     ),
