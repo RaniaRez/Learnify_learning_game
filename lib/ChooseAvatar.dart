@@ -105,8 +105,8 @@ class _ChooseAvatarState extends State<ChooseAvatar> {
                     fit: BoxFit.cover)),
           ),
           Positioned(
-              top: 35.00,
-              left: 280.00,
+              top: 50.00,
+              left: 300.00,
               child: SettingsButton(onPressed: (){
                 print("HELL YEAH");
               },)

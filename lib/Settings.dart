@@ -77,7 +77,9 @@ Positioned(
             Positioned(
                 top:180,
                 left:250,
-                child:InfoButton(onPressed:null,)
+                child:InfoButton(onPressed:() {
+                  print("clicking");
+                })
             ),
 
           ]

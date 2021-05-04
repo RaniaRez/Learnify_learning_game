@@ -38,8 +38,8 @@ class _ChoixDomaineState extends State<ChoixDomaine> {
             ),
 
             Positioned(
-                top: 35.00,
-                left: 280.00,
+                top: 50.00,
+                left: 300.00,
                 child:
                 SettingsButton(onPressed: (){
                   print("HELL YEAH");

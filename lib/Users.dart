@@ -47,8 +47,8 @@ class _UsersState extends State<Users> {
                       fit: BoxFit.cover)),
             ),
             Positioned(
-                top: 60.00,
-                left: 310.00,
+                top: 50.00,
+                left: 300.00,
                 child: SettingsButton(onPressed: (){
                   print("HELL YEAH");
                 },)
