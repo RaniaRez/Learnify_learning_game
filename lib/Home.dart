@@ -43,8 +43,8 @@ class _HomeState extends State<Home> {
                   print("allons-y");
                 } )),
             Positioned(
-                top: 40.00,
-                left: 280.00,
+                top: 70.00,
+                left: 300.00,
                 child:
                 SettingsButton(onPressed: (){
                   Navigator.push(

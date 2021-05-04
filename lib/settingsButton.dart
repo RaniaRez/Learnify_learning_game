@@ -9,8 +9,9 @@ class SettingsButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return IconButton(
-          icon : SvgPicture.asset(settingsIcon),
-        iconSize: 140.0,
+          icon : Container(
+              child: SvgPicture.asset(settingsIcon)),
+        iconSize: 90.0,
         onPressed: onPressed
     );
   }
