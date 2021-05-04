@@ -90,8 +90,8 @@ class _EcriremdpState extends State<Ecriremdp> {
               ),
             ),
             Positioned(
-                top: 10.00,
-                left: 250.00,
+                top: 35.00,
+                left: 280.00,
                 child:
                 SettingsButton(onPressed: (){
                   Navigator.push(

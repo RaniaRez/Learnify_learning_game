@@ -21,6 +21,7 @@ const buttonUserSettings = 'assets/icons/UserSettings.svg';
 const buttonStatistique = 'assets/icons/Statistique.svg';
 const buttonGoTo = 'assets/icons/GoIcon.svg';
 const buttonLightDark = 'assets/icons/Light-Dark.svg';
+const buttoninfo = 'assets/icons/InfoIcon.svg';
 const buttonNoSound = 'assets/icons/noSound.svg';
 const buttonNoMusic = 'assets/icons/noMusic.svg';
 const buttonMusic = 'assets/icons/Music.svg';

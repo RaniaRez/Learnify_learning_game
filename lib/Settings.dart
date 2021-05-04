@@ -2,6 +2,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:somthn/HomeButton.dart';
+import 'package:somthn/buttonInfo.dart';
+import 'package:somthn/buttonLightDark.dart';
+import 'package:somthn/buttonMusic.dart';
+import 'package:somthn/buttonSound.dart';
 import 'myicons.dart';
 import 'settingsButton.dart';
 import 'BacksButton.dart';
@@ -35,36 +39,48 @@ class _SettingsState extends State<Settings> {
                       image: AssetImage("images/forestbackground.jpg"),
                       fit: BoxFit.cover)),
             ),
+Positioned(
+  top:380,
+  left: 250,
+  child:MusicButton(onPressed:null,)
+),
             Positioned(
-                top: 10.00,
-                left: 250.00,
-                child:
-                SettingsButton(onPressed: (){
+                top:380,
+                left: 55,
+                child:SoundButton(onPressed:null,)
+            ),
+            Positioned(
+                bottom:80,
+                left:197,
+                child:LightDarkButton(onPressed:null,)
+            ),
+            Positioned(
+                bottom:80,
+                left:0,
+                child:HomeButton(onPressed:() {
                   Navigator.push(
-                      context,
-                      MaterialPageRoute(builder: (context) => Settings()));
-                  print("HELL YEAH");
-                },)
+                    context,
+                    MaterialPageRoute(builder: (context) => Home()),);
+                })
+            ),
+
+            Positioned(
+                top:140,
+                left:0,
+                child:BacksButton(onPressed:() {
+    print("HELL YEAH");
+    Navigator.pop(context);
+    },
+                )
+
             ),
             Positioned(
-                top: 240,
-                right: 225.0,
-                child:BranchIcon()
+                top:180,
+                left:250,
+                child:InfoButton(onPressed:null,)
             ),
-            Positioned(
-              top: 130.00,
-              right: 195.00,
-              child: PurpleOwl(onPressed: (){
-                print("YAS");
-              }),
-            ),
-            Positioned(
-              top: 275.0,
-              left: 115.0 ,
-              height: 300.0,
-              width: 300.0,
-              child:BulleIcon(onPressed: (){}),
-            ),]
+
+          ]
       ),
     );
   }
