@@ -15,8 +15,8 @@ class GaucheButton extends StatelessWidget {
               children: <Widget>[
                 SvgPicture.asset(buttonVersGauche),
                 Positioned(
-                  left: 48.0,
-                  bottom: 18.0,
+                  left: 58.0,
+                  bottom: 25.0,
                   child: Text(
                     "FRANCAIS",
                     style: TextStyle(
@@ -31,7 +31,6 @@ class GaucheButton extends StatelessWidget {
               ],
             ),
           ),),
-       iconSize: 150.0,
 
         onPressed: onPressed
     );

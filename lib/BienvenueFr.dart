@@ -121,7 +121,7 @@ class _BienvenueFrState extends State<BienvenueFr> {
                   'Bienvenue en Français  ',
                   style: TextStyle(
                     fontFamily: 'Skranji-bold',
-                    fontSize: 20,
+                    fontSize: 30,
                     color: Colors.brown,
                     fontWeight: FontWeight.bold,
 

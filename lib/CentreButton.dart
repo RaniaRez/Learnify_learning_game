@@ -13,11 +13,14 @@ class CentreButton extends StatelessWidget {
             child: Stack(
               alignment: Alignment.center,
               children: <Widget>[
-                SvgPicture.asset(buttonCentre),
+                SvgPicture.asset(
+                    buttonCentre,
+
+                ),
                 Positioned(
-                  bottom : 18.0,
+                  bottom : 25.0,
                   child: Text(
-                    "MATHEMATIQUE",
+                    "MATHÉMATIQUE",
                     style: TextStyle(
                       fontFamily: 'Skranji-Bold',
                       fontSize: 25,
@@ -30,7 +33,6 @@ class CentreButton extends StatelessWidget {
               ],
             ),
           ),),
-        iconSize: 150.0,
 
         onPressed: onPressed
     );

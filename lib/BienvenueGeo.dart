@@ -110,7 +110,7 @@ class _BienvenueGeoState extends State<BienvenueGeo> {
               child:BullenomIcon(),
             ),
             Positioned(
-              top : 270,
+              top : 250,
               left: 145.5,
               right: 70.5,
               bottom: 10.0,
@@ -118,7 +118,7 @@ class _BienvenueGeoState extends State<BienvenueGeo> {
                 height: 50,
                 width: 50,
                 child: Text(
-                  'Bienvenue en "Géographie" ',
+                  'Bienvenue en Géographie ',
                   style: TextStyle(
                     fontFamily: 'Skranji-bold',
                     fontSize: 30,

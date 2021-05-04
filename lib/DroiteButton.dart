@@ -15,10 +15,7 @@ class DroiteButton extends StatelessWidget {
               children: <Widget>[
                 SvgPicture.asset(buttonVersDroite),
                 Positioned(
-                 // top : 62.0,
-                 // left: 78.0,
-                  //right: 10.0,
-                  bottom: 18.0,
+                  bottom: 23.0,
                   child: Text(
                     "GEOGRAPHIE",
                     style: TextStyle(
@@ -33,7 +30,6 @@ class DroiteButton extends StatelessWidget {
               ],
             ),
           ),),
-        iconSize: 150.0,
 
         onPressed: onPressed
     );

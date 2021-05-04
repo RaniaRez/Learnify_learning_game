@@ -69,8 +69,34 @@ class _ChoixDomaineState extends State<ChoixDomaine> {
               width: 300.0,
               child:Bulle2Icon(),
             ),
+
             Positioned(
-              bottom: 210.0,
+              bottom: 140.0,
+              left: 62.0,
+              child: Container(
+                width: 300,
+                height: 100,
+                child: CentreButton(onPressed:(){
+                  print('math');
+                  if(New.New) {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (BuildContext context) => TestNiveau()));}
+                  else{
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (BuildContext context) => BienvenueMath()));
+                  }
+                }),
+              ),
+            ),
+            Positioned(
+              top: 470.0,
+              child: Container(
+                width: 250,
+                height: 100,
                 child: GaucheButton(onPressed:(){
                   print('fr');
                   if(New.New) {
@@ -86,42 +112,29 @@ class _ChoixDomaineState extends State<ChoixDomaine> {
                             builder: (BuildContext context) => BienvenueFr()));
                   }
                 }),
-            ),
-            Positioned(
-              bottom: 90.0,
-              left: 62.0,
-              child: CentreButton(onPressed:(){
-                print('math');
-                if(New.New) {
-                  Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (BuildContext context) => TestNiveau()));}
-                else{
-                  Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (BuildContext context) => BienvenueMath()));
-                }
-              }),
+              ),
             ),
             Positioned(
               bottom: 30.0,
-              left: 170.0,
-              child: DroiteButton(onPressed:(){
-                print('geo');
-                if(New.New) {
-                  Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (BuildContext context) => TestNiveau()));}
-                else{
-                  Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (BuildContext context) => BienvenueGeo()));
-                }
-              }),
+              left: 160.0,
+              child: Container(
+                width: 250,
+                height: 100,
+                child: DroiteButton(onPressed:(){
+                  print('geo');
+                  if(New.New) {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (BuildContext context) => TestNiveau()));}
+                  else{
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (BuildContext context) => BienvenueGeo()));
+                  }
+                }),
+              ),
             ),
           ]
       ),

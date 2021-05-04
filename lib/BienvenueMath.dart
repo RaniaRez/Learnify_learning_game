@@ -110,15 +110,14 @@ class _BienvenueMathState extends State<BienvenueMath> {
               child:BullenomIcon(),
             ),
             Positioned(
-              top : 270,
-              left: 145.5,
-              right: 70.5,
-              bottom: 10.0,
+              top : 250,
+              left: 140.5,
+              right: 80.5,
               child: SizedBox(
-                height: 50,
-                width: 50,
+                height: 150,
+                width:150,
                 child: Text(
-                  'Bienvenue en "Mathématique" ',
+                  'Bienvenue en ',
                   style: TextStyle(
                     fontFamily: 'Skranji-bold',
                     fontSize: 30,
@@ -130,6 +129,22 @@ class _BienvenueMathState extends State<BienvenueMath> {
                 ),
               ),
             ),
+            Positioned(
+              top : 330,
+              right: 60.5,
+                child: Text(
+                  'Mathématique',
+                  style: TextStyle(
+                    fontFamily: 'Skranji-bold',
+                    fontSize: 30,
+                    color: Colors.brown,
+                    fontWeight: FontWeight.bold,
+
+                  ),
+                  textAlign: TextAlign.center,
+                ),
+              ),
+
 
 
 
