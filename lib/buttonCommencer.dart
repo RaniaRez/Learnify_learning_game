@@ -15,15 +15,11 @@ class ButtonCommencer extends StatelessWidget {
               children: <Widget>[
                 SvgPicture.asset(buttonNom),
                 Positioned(
-                  top : 62.0,
-                  left: 78.0,
-                  right: 10.0,
-                  bottom: 10.0,
                   child: Text(
                     "Commencer",
                     style: TextStyle(
                       fontFamily: 'Skranji-Bold',
-                      fontSize: 35,
+                      fontSize: 30,
                       color: Colors.brown[700],
                       fontWeight: FontWeight.bold,
 

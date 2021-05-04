@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:somthn/HomeButton.dart';
+import 'package:somthn/TestDeNiveau.dart';
 import 'package:somthn/Userinfo.dart';
 import 'package:somthn/Users.dart';
 import 'package:somthn/buttonNom.dart';
@@ -295,10 +296,20 @@ class _EcriremdpState extends State<Ecriremdp> {
                     top: 700.0,
                     left: 300.00,
                     child: GoToButton(onPressed: (){
-                      Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                              builder: (BuildContext context) => Userinfo()));
+                      setState(() {
+                        Utilisateurs.add(New);
+                      });
+                      if(New.New) {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (BuildContext context) => TestNiveau()));}
+                      else{
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (BuildContext context) => Userinfo()));
+                      }
                       print("HELL YEAH");
                     },
                     ),

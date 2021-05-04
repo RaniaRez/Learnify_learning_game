@@ -2,6 +2,7 @@ class User {
  String username;
  String avatar;
  String Password;
+ bool New = true;
  SetAvatar(String a){
   this.avatar = a;
  }
@@ -10,5 +11,8 @@ class User {
  }
  SetPassword(String p){
   this.Password = p;
+ }
+ SetOld(){
+  this.New=false;
  }
 }

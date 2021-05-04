@@ -7,6 +7,7 @@ import 'package:somthn/HomeButton.dart';
 import 'package:somthn/OrangeAvatarIcon.dart';
 import 'package:somthn/PinkAvatarIcon.dart';
 import 'package:somthn/PurpleAvatarIcon.dart';
+import 'package:somthn/TestDeNiveau.dart';
 import 'package:somthn/Userinfo.dart';
 
 import 'package:somthn/buttonnon.dart';
@@ -155,12 +156,20 @@ class _CreermdpState extends State<Creermdp> {
                 left : 50.00,
                 right: 50.00,
                 child: Buttonnon(onPressed: (){
-
-                  Utilisateurs.add(New);
+                  setState(() {
+                    Utilisateurs.add(New);
+                  });
+                  if(New.New) {
                   Navigator.push(
                       context,
                       MaterialPageRoute(
-                          builder: (BuildContext context) => Userinfo()));
+                          builder: (BuildContext context) => TestNiveau()));}
+                  else{
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (BuildContext context) => Userinfo()));
+                  }
 
                   print("non");
                 } )
