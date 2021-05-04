@@ -30,7 +30,7 @@ class CentreButton extends StatelessWidget {
               ],
             ),
           ),),
-        iconSize: 271.0,
+        iconSize: 150.0,
 
         onPressed: onPressed
     );

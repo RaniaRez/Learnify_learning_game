@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:somthn/BienvenueTestNiveau.dart';
+import 'package:somthn/ChoixDomaines.dart';
 import 'package:somthn/HomeButton.dart';
 import 'package:somthn/TestDeNiveau.dart';
 import 'package:somthn/Userinfo.dart';
@@ -299,17 +301,10 @@ class _EcriremdpState extends State<Ecriremdp> {
                       setState(() {
                         Utilisateurs.add(New);
                       });
-                      if(New.New) {
-                        Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (BuildContext context) => TestNiveau()));}
-                      else{
-                        Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (BuildContext context) => Userinfo()));
-                      }
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (BuildContext context) => ChoixDomaine()));
                       print("HELL YEAH");
                     },
                     ),

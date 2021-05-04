@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:somthn/BienvenueTestNiveau.dart';
 import 'package:somthn/BlueAvatarIcon.dart';
 import 'package:somthn/Buttonoui.dart';
+import 'package:somthn/ChoixDomaines.dart';
 import 'package:somthn/ChooseAvatar.dart';
 import 'package:somthn/Ecriremdp.dart';
 import 'package:somthn/HomeButton.dart';
@@ -159,17 +161,10 @@ class _CreermdpState extends State<Creermdp> {
                   setState(() {
                     Utilisateurs.add(New);
                   });
-                  if(New.New) {
                   Navigator.push(
                       context,
                       MaterialPageRoute(
-                          builder: (BuildContext context) => TestNiveau()));}
-                  else{
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (BuildContext context) => Userinfo()));
-                  }
+                          builder: (BuildContext context) => ChoixDomaine()));
 
                   print("non");
                 } )

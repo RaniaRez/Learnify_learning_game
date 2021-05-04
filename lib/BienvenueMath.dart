@@ -13,12 +13,12 @@ import 'ChooseAvatar.dart';
 
 
 
-class BienvenueTest extends StatefulWidget {
+class BienvenueMath extends StatefulWidget {
   @override
-  _BienvenueTestState createState() => _BienvenueTestState();
+  _BienvenueMathState createState() => _BienvenueMathState();
 }
 
-class _BienvenueTestState extends State<BienvenueTest> {
+class _BienvenueMathState extends State<BienvenueMath> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -102,34 +102,34 @@ class _BienvenueTestState extends State<BienvenueTest> {
                 ),
               ),
 
-              Positioned(
-                top: 170.0,
-                left: 100.0 ,
-                height: 300.0,
-                width: 300.0,
-                child:BullenomIcon(),
-              ),
-    Positioned(
-                top : 270,
-                left: 145.5,
-                right: 70.5,
-                bottom: 10.0,
-                child: SizedBox(
-                  height: 50,
-                  width: 50,
-                  child: Text(
-                    'Bienvenue en ',
-                    style: TextStyle(
-                      fontFamily: 'Skranji-bold',
-                      fontSize: 30,
-                      color: Colors.brown,
-                      fontWeight: FontWeight.bold,
+            Positioned(
+              top: 170.0,
+              left: 100.0 ,
+              height: 300.0,
+              width: 300.0,
+              child:BullenomIcon(),
+            ),
+            Positioned(
+              top : 270,
+              left: 145.5,
+              right: 70.5,
+              bottom: 10.0,
+              child: SizedBox(
+                height: 50,
+                width: 50,
+                child: Text(
+                  'Bienvenue en "Mathématique" ',
+                  style: TextStyle(
+                    fontFamily: 'Skranji-bold',
+                    fontSize: 30,
+                    color: Colors.brown,
+                    fontWeight: FontWeight.bold,
 
-                    ),
-                    textAlign: TextAlign.center,
                   ),
+                  textAlign: TextAlign.center,
                 ),
               ),
+            ),
 
 
 

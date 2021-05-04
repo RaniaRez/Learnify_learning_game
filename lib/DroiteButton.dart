@@ -33,7 +33,7 @@ class DroiteButton extends StatelessWidget {
               ],
             ),
           ),),
-        iconSize: 225.0,
+        iconSize: 150.0,
 
         onPressed: onPressed
     );

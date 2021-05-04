@@ -31,7 +31,7 @@ class GaucheButton extends StatelessWidget {
               ],
             ),
           ),),
-        iconSize: 206.0,
+       iconSize: 150.0,
 
         onPressed: onPressed
     );

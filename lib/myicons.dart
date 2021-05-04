@@ -48,6 +48,7 @@ const OrangeAvatar = 'assets/icons/OrangeAvatar.svg';
 const BlueAvatar = 'assets/icons/BlueAvatar.svg';
 const BulleTest = 'assets/icons/bulleTest.svg';
 const SimpleBranch2 = 'assets/icons/SimpleBranch2.svg';
+const CommencerDroite=  'assets/icons/CommencerVersD.svg';
 
 
 

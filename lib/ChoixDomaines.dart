@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:somthn/BienvenueFr.dart';
+import 'package:somthn/BienvenueGeo.dart';
+import 'package:somthn/BienvenueMath.dart';
 import 'package:somthn/PurpleOwlWelcome.dart';
+import 'package:somthn/TestDeNiveau.dart';
 import 'settingsButton.dart';
 import 'BacksButton.dart';
 import 'BranchIconSimple.dart';
@@ -7,6 +11,7 @@ import 'Bulle2icon.dart';
 import 'GaucheButton.dart';
 import 'DroiteButton.dart';
 import 'CentreButton.dart';
+import 'ChooseAvatar.dart';
 
 
 
@@ -66,17 +71,57 @@ class _ChoixDomaineState extends State<ChoixDomaine> {
             ),
             Positioned(
               bottom: 210.0,
-                child: GaucheButton(onPressed: null,),
+                child: GaucheButton(onPressed:(){
+                  print('fr');
+                  if(New.New) {
+                    Navigator.push(
+
+                        context,
+                        MaterialPageRoute(
+                            builder: (BuildContext context) => TestNiveau()));}
+                  else{
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (BuildContext context) => BienvenueFr()));
+                  }
+                }),
             ),
             Positioned(
               bottom: 90.0,
               left: 62.0,
-              child: CentreButton(onPressed: null,),
+              child: CentreButton(onPressed:(){
+                print('math');
+                if(New.New) {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (BuildContext context) => TestNiveau()));}
+                else{
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (BuildContext context) => BienvenueMath()));
+                }
+              }),
             ),
             Positioned(
               bottom: 30.0,
               left: 170.0,
-              child: DroiteButton(onPressed: null,),
+              child: DroiteButton(onPressed:(){
+                print('geo');
+                if(New.New) {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (BuildContext context) => TestNiveau()));}
+                else{
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (BuildContext context) => BienvenueGeo()));
+                }
+              }),
             ),
           ]
       ),

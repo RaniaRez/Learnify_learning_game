@@ -2,7 +2,7 @@ class User {
  String username;
  String avatar;
  String Password;
- bool New = true;
+ bool New =false;
  SetAvatar(String a){
   this.avatar = a;
  }
