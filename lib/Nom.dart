@@ -1,23 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
-import 'package:somthn/Brin.dart';
-import 'package:somthn/Brin2.dart';
-import 'package:somthn/BullenomIcon.dart';
-import 'package:somthn/Cercle2Icon.dart';
-import 'package:somthn/CercleIcon.dart';
 import 'package:somthn/HomeButton.dart';
-import 'package:somthn/OwlBranch.dart';
 import 'package:somthn/buttonNom.dart';
-import 'myicons.dart';
 import 'settingsButton.dart';
 import 'BacksButton.dart';
-import 'PlusButton.dart';
-import 'buttonGoTo.dart';
-import 'buttonStatistique.dart';
-import 'buttonUserSettings.dart';
 import 'Home.dart';
 import 'Settings.dart';
-import 'ChooseAvatar.dart';
+
 
 
 

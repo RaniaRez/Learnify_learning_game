@@ -1,14 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
-import 'package:somthn/HomeButton.dart';
 import 'package:somthn/PurpleOwlWelcome.dart';
-import 'myicons.dart';
 import 'settingsButton.dart';
 import 'BacksButton.dart';
-import 'ButtonAllons-y.dart';
-import 'PurpleOwlIcon.dart';
-import 'BranchIcon.dart';
-import 'BulleIcon.dart';
 import 'BranchIconSimple.dart';
 import 'Bulle2icon.dart';
 import 'GaucheButton.dart';

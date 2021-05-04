@@ -1,41 +1,25 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
-import 'package:somthn/Brin.dart';
-import 'package:somthn/Brin2.dart';
-import 'package:somthn/BullenomIcon.dart';
+import 'package:somthn/BlueAvatarIcon.dart';
 import 'package:somthn/Buttonoui.dart';
-import 'package:somthn/Cercle2Icon.dart';
-import 'package:somthn/CercleIcon.dart';
-import 'package:somthn/ChoixDomaines.dart';
 import 'package:somthn/ChooseAvatar.dart';
 import 'package:somthn/Ecriremdp.dart';
 import 'package:somthn/HomeButton.dart';
-import 'package:somthn/Nom.dart';
-import 'package:somthn/OwlBranch.dart';
+import 'package:somthn/OrangeAvatarIcon.dart';
+import 'package:somthn/PinkAvatarIcon.dart';
+import 'package:somthn/PurpleAvatarIcon.dart';
 import 'package:somthn/Userinfo.dart';
-import 'package:somthn/buttonNom.dart';
+
 import 'package:somthn/buttonnon.dart';
-import 'myicons.dart';
+
 import 'settingsButton.dart';
 import 'BacksButton.dart';
-import 'ButtonAllons-y.dart';
-import 'PurpleOwlIcon.dart';
-import 'BranchIcon.dart';
-import 'Bulle2icon.dart';
-import 'ClassUser.dart';
-import 'PlusButton.dart';
-import 'buttonGoTo.dart';
-import 'buttonStatistique.dart';
-import 'buttonUserSettings.dart';
 import 'Home.dart';
-import 'PinkOwlIcon.dart';
-import 'BlueOwlIcon.dart';
-import 'OrangeOwlIcon.dart';
 import 'Settings.dart';
 import 'BranchIconSimple.dart';
 import 'BullemdpIcon.dart';
 import 'ChooseAvatar.dart';
 import 'Users.dart';
+
 
 
 class Creermdp extends StatefulWidget {
@@ -89,14 +73,60 @@ class _CreermdpState extends State<Creermdp> {
                   print("settings");
                 },)
             ),
-            Positioned(
-              top: 270.0,
-              right: 250.0 ,
-              height: 300.0,
-              width: 200.0,
-              child:OwlBranch(),
-            ),
+            Visibility(
 
+              child: Positioned(
+                top: 320.0,
+                right: 250.0 ,
+                height: 300.0,
+                width: 200.0,
+                child:BranchIconSimple(),
+              ),
+            ),
+            if (New.avatar=="Pink")
+              Visibility(
+
+                child: Positioned(
+                  top: 257.0,
+                  right: 250.0 ,
+                  height: 300.0,
+                  width: 200.0,
+                  child:PinkAvatarIcon(onPressed: null,),
+                ),
+              ),
+            if (New.avatar=="Purple")
+              Visibility(
+
+                child: Positioned(
+                  top: 257.0,
+                  right: 250.0 ,
+                  height: 300.0,
+                  width: 200.0,
+                  child:PurpleAvatarIcon(onPressed: null,),
+                ),
+              ),
+            if (New.avatar=="Orange")
+              Visibility(
+
+                child: Positioned(
+                  top: 257.0,
+                  right: 250.0 ,
+                  height: 300.0,
+                  width: 200.0,
+                  child: OrangeAvatarIcon(onPressed: null,),
+                ),
+              ),
+            if (New.avatar=="Blue")
+              Visibility(
+
+                child: Positioned(
+                  top: 257.0,
+                  right: 250.0 ,
+                  height: 300.0,
+                  width: 200.0,
+                  child:BlueAvatarIcon(onPressed: null,),
+                ),
+              ),
 
             Positioned(
               top: 170.0,

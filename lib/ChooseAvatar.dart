@@ -1,28 +1,20 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:somthn/Brin.dart';
 import 'package:somthn/Brin2.dart';
 import 'package:somthn/Cercle2Icon.dart';
 import 'package:somthn/CercleIcon.dart';
 import 'package:somthn/HomeButton.dart';
-import 'myicons.dart';
 import 'settingsButton.dart';
 import 'BacksButton.dart';
-import 'ButtonAllons-y.dart';
 import 'PurpleOwlIcon.dart';
-import 'BranchIcon.dart';
-import 'BulleIcon.dart';
 import 'ClassUser.dart';
-import 'PlusButton.dart';
 import 'buttonGoTo.dart';
-import 'buttonStatistique.dart';
-import 'buttonUserSettings.dart';
 import 'Home.dart';
 import 'PinkOwlIcon.dart';
 import 'BlueOwlIcon.dart';
 import 'OrangeOwlIcon.dart';
 import 'Entrernom.dart';
-import 'Users.dart';
+
 User New = new User();
 class ChooseAvatar extends StatefulWidget {
   @override

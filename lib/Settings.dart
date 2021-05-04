@@ -1,25 +1,13 @@
 
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:somthn/HomeButton.dart';
 import 'package:somthn/buttonInfo.dart';
 import 'package:somthn/buttonLightDark.dart';
 import 'package:somthn/buttonMusic.dart';
 import 'package:somthn/buttonSound.dart';
-import 'myicons.dart';
-import 'settingsButton.dart';
 import 'BacksButton.dart';
-import 'ButtonAllons-y.dart';
-import 'PurpleOwlIcon.dart';
-import 'BranchIcon.dart';
-import 'BulleIcon.dart';
-import 'ClassUser.dart';
-import 'PlusButton.dart';
-import 'buttonGoTo.dart';
-import 'buttonStatistique.dart';
-import 'buttonUserSettings.dart';
 import 'Home.dart';
-import 'Users.dart';
+
 class Settings extends StatefulWidget {
   @override
   _SettingsState createState() => _SettingsState();

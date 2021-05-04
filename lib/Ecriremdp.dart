@@ -1,39 +1,20 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
-import 'package:somthn/Brin.dart';
-import 'package:somthn/Brin2.dart';
-import 'package:somthn/BullenomIcon.dart';
-import 'package:somthn/Cercle2Icon.dart';
-import 'package:somthn/CercleIcon.dart';
 import 'package:somthn/HomeButton.dart';
-import 'package:somthn/Nom.dart';
-import 'package:somthn/OwlBranch.dart';
 import 'package:somthn/Userinfo.dart';
 import 'package:somthn/Users.dart';
 import 'package:somthn/buttonNom.dart';
-import 'package:somthn/buttonmdp.dart';
-import 'myicons.dart';
 import 'settingsButton.dart';
 import 'BacksButton.dart';
-import 'ButtonAllons-y.dart';
-import 'PurpleOwlIcon.dart';
-import 'BranchIcon.dart';
-import 'Bulle2icon.dart';
-import 'ClassUser.dart';
-import 'PlusButton.dart';
 import 'buttonGoTo.dart';
-import 'buttonStatistique.dart';
-import 'buttonUserSettings.dart';
 import 'Home.dart';
-import 'PinkOwlIcon.dart';
-import 'BlueOwlIcon.dart';
-import 'OrangeOwlIcon.dart';
 import 'Settings.dart';
 import 'BranchIconSimple.dart';
-import 'Creermdp.dart';
 import 'Bullesaisiemdp.dart';
 import 'ChooseAvatar.dart';
-
+import 'package:somthn/OrangeAvatarIcon.dart';
+import 'package:somthn/PinkAvatarIcon.dart';
+import 'package:somthn/PurpleAvatarIcon.dart';
+import 'package:somthn/BlueAvatarIcon.dart';
 
 class Ecriremdp extends StatefulWidget {
   @override
@@ -101,15 +82,59 @@ class _EcriremdpState extends State<Ecriremdp> {
                 },)
             ),
             Visibility(
-              visible: _Visible,
+              visible:_Visible ,
               child: Positioned(
-                top: 270.0,
+                top: 320.0,
                 right: 250.0 ,
                 height: 300.0,
                 width: 200.0,
-                child:OwlBranch(),
+                child:BranchIconSimple(),
               ),
             ),
+            if (New.avatar=="Pink")
+              Visibility(
+                visible:_Visible ,
+                child: Positioned(
+                  top: 257.0,
+                  right: 250.0 ,
+                  height: 300.0,
+                  width: 200.0,
+                  child:PinkAvatarIcon(onPressed: null,),
+                ),
+              ),
+            if (New.avatar=="Purple")
+              Visibility(
+                visible:_Visible ,
+                child: Positioned(
+                  top: 257.0,
+                  right: 250.0 ,
+                  height: 300.0,
+                  width: 200.0,
+                  child:PurpleAvatarIcon(onPressed: null,),
+                ),
+              ),
+            if (New.avatar=="Orange")
+              Visibility(
+                visible:_Visible ,
+                child: Positioned(
+                  top: 257.0,
+                  right: 250.0 ,
+                  height: 300.0,
+                  width: 200.0,
+                  child: OrangeAvatarIcon(onPressed: null,),
+                ),
+              ),
+            if (New.avatar=="Blue")
+              Visibility(
+                visible:_Visible ,
+                child: Positioned(
+                  top: 257.0,
+                  right: 250.0 ,
+                  height: 300.0,
+                  width: 200.0,
+                  child:BlueAvatarIcon(onPressed: null,),
+                ),
+              ),
             Visibility(
               visible: _Visible,
               child: Positioned(

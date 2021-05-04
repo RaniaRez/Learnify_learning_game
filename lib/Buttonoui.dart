@@ -8,7 +8,7 @@ class Buttonoui extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return IconButton(
-      splashColor: Colors.pink,
+
         icon:SvgPicture.asset(buttonOui),
         iconSize: 90.0,
 

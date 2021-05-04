@@ -3,21 +3,16 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:somthn/ChoixDomaines.dart';
 import 'package:somthn/ChooseAvatar.dart';
 import 'package:somthn/ClassementButton.dart';
-import 'package:somthn/HomeButton.dart';
 import 'package:somthn/Userinfo.dart';
 import 'myicons.dart';
 import 'settingsButton.dart';
 import 'BacksButton.dart';
-import 'ButtonAllons-y.dart';
-import 'PurpleOwlIcon.dart';
-import 'BranchIcon.dart';
-import 'BulleIcon.dart';
 import 'ClassUser.dart';
 import 'PlusButton.dart';
 import 'buttonGoTo.dart';
 import 'buttonStatistique.dart';
 import 'buttonUserSettings.dart';
-import 'Home.dart';
+
 List<User> Utilisateurs = [
 ];
 class Users extends StatefulWidget {
