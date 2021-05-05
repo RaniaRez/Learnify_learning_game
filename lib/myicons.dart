@@ -49,6 +49,8 @@ const BlueAvatar = 'assets/icons/BlueAvatar.svg';
 const BulleTest = 'assets/icons/bulleTest.svg';
 const SimpleBranch2 = 'assets/icons/SimpleBranch2.svg';
 const CommencerDroite=  'assets/icons/CommencerVersD.svg';
+const buttonContinuer=  'assets/icons/buttonContinuer.svg';
+const buttonReessayer=  'assets/icons/buttonReessayer.svg';
 
 
 
