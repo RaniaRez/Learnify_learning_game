@@ -51,6 +51,13 @@ const SimpleBranch2 = 'assets/icons/SimpleBranch2.svg';
 const CommencerDroite=  'assets/icons/CommencerVersD.svg';
 const buttonContinuer=  'assets/icons/buttonContinuer.svg';
 const buttonReessayer=  'assets/icons/buttonReessayer.svg';
+const buttonfacile=  'assets/icons/buttonfacile.svg';
+const buttonDifficile=  'assets/icons/buttondifficile.svg';
+const buttonMoyen=  'assets/icons/buttonMoyen.svg';
+const madBrownOwl=  'assets/icons/madBrownOwl.svg';
+const madGreenOwl=  'assets/icons/madGreenOwl.svg';
+const Lock='assets/icons/Lock.svg';
+const Star='assets/icons/Star.svg';
 
 
 
