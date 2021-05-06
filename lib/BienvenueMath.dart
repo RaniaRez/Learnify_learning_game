@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:somthn/BullenomIcon.dart';
-import 'package:somthn/TestDeniveau.dart';
+import 'package:somthn/NiveauMath.dart';
+import 'package:somthn/Settings.dart';
 import 'package:somthn/buttonCommencerDroit.dart';
 import 'settingsButton.dart';
 import 'BacksButton.dart';
@@ -38,6 +39,9 @@ class _BienvenueMathState extends State<BienvenueMath> {
                 left: 300.00,
                 child:
                 SettingsButton(onPressed: (){
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => Settings()));
                   print("HELL YEAH");
                 },)
             ),
@@ -53,7 +57,7 @@ class _BienvenueMathState extends State<BienvenueMath> {
               child: ButtonCommencerD(onPressed: () {
                 Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => TestNiveau()));
+                    MaterialPageRoute(builder: (context) => NiveauMath()));
               }
               ),
             ),
@@ -61,10 +65,10 @@ class _BienvenueMathState extends State<BienvenueMath> {
               Visibility(
 
                 child: Positioned(
-                  top: 400.0,
-                  right: 250.0 ,
-                  height: 300.0,
-                  width: 200.0,
+                  top: 490.0,
+                  right: 270.0 ,
+                  height: 130.0,
+                  width: 130.0,
                   child:PinkAvatarIcon(onPressed: null,),
                 ),
               ),
@@ -72,10 +76,10 @@ class _BienvenueMathState extends State<BienvenueMath> {
               Visibility(
 
                 child: Positioned(
-                  top: 405.0,
-                  right: 250.0 ,
-                  height: 300.0,
-                  width: 200.0,
+                  top: 480.0,
+                  right: 270.0 ,
+                  height: 150.0,
+                  width: 150.0,
                   child:PurpleAvatarIcon(onPressed: null,),
                 ),
               ),
@@ -83,10 +87,10 @@ class _BienvenueMathState extends State<BienvenueMath> {
               Visibility(
 
                 child: Positioned(
-                  top: 410.0,
-                  right: 250.0 ,
-                  height: 300.0,
-                  width: 200.0,
+                  top: 490.0,
+                  right: 270.0 ,
+                  height: 130.0,
+                  width: 130.0,
                   child: OrangeAvatarIcon(onPressed: null,),
                 ),
               ),
@@ -94,10 +98,10 @@ class _BienvenueMathState extends State<BienvenueMath> {
               Visibility(
 
                 child: Positioned(
-                  top: 400.0,
-                  right: 250.0 ,
-                  height: 300.0,
-                  width: 200.0,
+                  top: 490.0,
+                  right: 270.0 ,
+                  height: 130.0,
+                  width: 130.0,
                   child:BlueAvatarIcon(onPressed: null,),
                 ),
               ),

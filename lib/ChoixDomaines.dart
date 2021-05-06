@@ -2,8 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:somthn/BienvenueFr.dart';
 import 'package:somthn/BienvenueGeo.dart';
 import 'package:somthn/BienvenueMath.dart';
-import 'package:somthn/PurpleOwlWelcome.dart';
-import 'package:somthn/TestDeNiveau.dart';
+import 'package:somthn/BlueAvatarIcon.dart';
+import 'package:somthn/OrangeAvatarIcon.dart';
+import 'package:somthn/PinkAvatarIcon.dart';
+import 'package:somthn/PurpleAvatarIcon.dart';
+import 'package:somthn/Settings.dart';
 import 'settingsButton.dart';
 import 'BacksButton.dart';
 import 'BranchIconSimple.dart';
@@ -40,6 +43,9 @@ class _ChoixDomaineState extends State<ChoixDomaine> {
                 left: 300.00,
                 child:
                 SettingsButton(onPressed: (){
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => Settings()));
                   print("HELL YEAH");
                 },)
             ),
@@ -55,13 +61,44 @@ class _ChoixDomaineState extends State<ChoixDomaine> {
                 right: 260.0,
                 child:BranchIconSimple()
             ),
-            Positioned(
-              top: 234.50,
-              right: 190.00,
-              child: PurpleOwlWelcome(onPressed: (){
-                print("YAS");
-              }),
-            ),
+            if (New.avatar=="Pink")
+              Visibility(
+
+                child: Positioned(
+                  top: 335.50,
+                  right: 270.00,
+                  child:PinkAvatarIcon(onPressed: null,),
+                ),
+              ),
+            if (New.avatar=="Purple")
+              Visibility(
+
+                child: Positioned(
+                  top: 330.50,
+                  right: 270.00,
+                  height: 130,
+                  width: 130,
+                  child:PurpleAvatarIcon(onPressed: null,),
+                ),
+              ),
+            if (New.avatar=="Orange")
+              Visibility(
+
+                child: Positioned(
+                  top: 335.50,
+                  right: 270.00,
+                  child: OrangeAvatarIcon(onPressed: null,),
+                ),
+              ),
+            if (New.avatar=="Blue")
+              Visibility(
+
+                child: Positioned(
+                  top: 335.50,
+                  right: 270.00,
+                  child:BlueAvatarIcon(onPressed: null,),
+                ),
+              ),
             Positioned(
               top: 130.0,
               left: 65.0 ,
@@ -78,17 +115,11 @@ class _ChoixDomaineState extends State<ChoixDomaine> {
                 height: 100,
                 child: CentreButton(onPressed:(){
                   print('math');
-                  if(New.New) {
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (BuildContext context) => TestNiveau()));}
-                  else{
                     Navigator.push(
                         context,
                         MaterialPageRoute(
                             builder: (BuildContext context) => BienvenueMath()));
-                  }
+
                 }),
               ),
             ),
@@ -99,18 +130,11 @@ class _ChoixDomaineState extends State<ChoixDomaine> {
                 height: 100,
                 child: GaucheButton(onPressed:(){
                   print('fr');
-                  if(New.New) {
-                    Navigator.push(
-
-                        context,
-                        MaterialPageRoute(
-                            builder: (BuildContext context) => TestNiveau()));}
-                  else{
                     Navigator.push(
                         context,
                         MaterialPageRoute(
                             builder: (BuildContext context) => BienvenueFr()));
-                  }
+
                 }),
               ),
             ),
@@ -122,17 +146,11 @@ class _ChoixDomaineState extends State<ChoixDomaine> {
                 height: 100,
                 child: DroiteButton(onPressed:(){
                   print('geo');
-                  if(New.New) {
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (BuildContext context) => TestNiveau()));}
-                  else{
                     Navigator.push(
                         context,
                         MaterialPageRoute(
                             builder: (BuildContext context) => BienvenueGeo()));
-                  }
+
                 }),
               ),
             ),

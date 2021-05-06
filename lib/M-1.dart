@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:somthn/BullenomIcon.dart';
+import 'package:somthn/M-1-1.dart';
 import 'package:somthn/Settings.dart';
-import 'package:somthn/TestDeniveau.dart';
-import 'package:somthn/buttonCommencerDroit.dart';
+import 'package:somthn/buttonGoTo.dart';
+import 'package:somthn/myicons.dart';
 import 'settingsButton.dart';
 import 'BacksButton.dart';
 import 'package:somthn/OrangeAvatarIcon.dart';
@@ -10,16 +12,12 @@ import 'package:somthn/PinkAvatarIcon.dart';
 import 'package:somthn/PurpleAvatarIcon.dart';
 import 'package:somthn/BlueAvatarIcon.dart';
 import 'ChooseAvatar.dart';
-
-
-
-
-class BienvenueFr extends StatefulWidget {
+class Math1 extends StatefulWidget {
   @override
-  _BienvenueFrState createState() => _BienvenueFrState();
+  _Math1State createState() => _Math1State();
 }
 
-class _BienvenueFrState extends State<BienvenueFr> {
+class _Math1State extends State<Math1> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -30,7 +28,7 @@ class _BienvenueFrState extends State<BienvenueFr> {
               constraints: BoxConstraints.expand(),
               decoration: BoxDecoration(
                   image: DecorationImage(
-                      image: AssetImage("images/forestbackground.jpg"),
+                      image: AssetImage("images/mathsBG.jpg"),
                       fit: BoxFit.cover)),
             ),
 
@@ -53,19 +51,14 @@ class _BienvenueFrState extends State<BienvenueFr> {
                 },)
             ),
             Positioned(
-              bottom: 50.0,
-              child: ButtonCommencerD(onPressed: () {
-                Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => TestNiveau()));
-              }
-              ),
+              bottom: 200.0,
+              child: SvgPicture.asset(buttonfacile),
             ),
             if (New.avatar=="Pink")
               Visibility(
 
                 child: Positioned(
-                  top: 400.0,
+                  top: 355.0,
                   right: 250.0 ,
                   height: 300.0,
                   width: 200.0,
@@ -76,7 +69,7 @@ class _BienvenueFrState extends State<BienvenueFr> {
               Visibility(
 
                 child: Positioned(
-                  top: 405.0,
+                  top: 360.0,
                   right: 250.0 ,
                   height: 300.0,
                   width: 200.0,
@@ -87,7 +80,7 @@ class _BienvenueFrState extends State<BienvenueFr> {
               Visibility(
 
                 child: Positioned(
-                  top: 410.0,
+                  top: 365.0,
                   right: 250.0 ,
                   height: 300.0,
                   width: 200.0,
@@ -98,7 +91,7 @@ class _BienvenueFrState extends State<BienvenueFr> {
               Visibility(
 
                 child: Positioned(
-                  top: 400.0,
+                  top: 355.0,
                   right: 250.0 ,
                   height: 300.0,
                   width: 200.0,
@@ -114,19 +107,18 @@ class _BienvenueFrState extends State<BienvenueFr> {
               child:BullenomIcon(),
             ),
             Positioned(
-              top : 270,
-              left: 145.5,
-              right: 70.5,
-              bottom: 10.0,
+              top : 250,
+              left: 140.5,
+              right: 80.5,
               child: SizedBox(
-                height: 10,
-                width: 10,
+                height: 150,
+                width:150,
                 child: Text(
-                  'Bienvenue en Français  ',
+                  'Calcul réfléchi niveau 1',
                   style: TextStyle(
                     fontFamily: 'Skranji-bold',
                     fontSize: 30,
-                    color: Colors.brown,
+                    color: Colors.brown[700],
                     fontWeight: FontWeight.bold,
 
                   ),
@@ -135,8 +127,16 @@ class _BienvenueFrState extends State<BienvenueFr> {
               ),
             ),
 
-
-
+            Positioned(
+              bottom: 20.0,
+              left: 300.00,
+                child: GoToButton(onPressed: (){
+                  print("HELL YEAH");
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => M_1_1()),);
+                },),
+            ),
           ]
       ),
     );

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:somthn/BullenomIcon.dart';
 import 'package:somthn/HomeButton.dart';
+import 'package:somthn/Settings.dart';
 import 'package:somthn/Stars.dart';
 import 'settingsButton.dart';
 import 'BacksButton.dart';
@@ -39,6 +40,9 @@ class _Niveau1PassState extends State<Niveau1Pass> {
               top: 50.00,
               left: 300.00,
               child: SettingsButton(onPressed: (){
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => Settings()));
                 print("HELL YEAH");
               },)
           ),

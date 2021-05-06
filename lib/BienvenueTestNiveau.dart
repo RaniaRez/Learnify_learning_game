@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:somthn/BullenomIcon.dart';
+import 'package:somthn/Settings.dart';
 import 'package:somthn/TestDeniveau.dart';
 import 'package:somthn/buttonCommencerDroit.dart';
 import 'settingsButton.dart';
@@ -38,6 +39,9 @@ class _BienvenueTestState extends State<BienvenueTest> {
                 left: 300.00,
                 child:
                 SettingsButton(onPressed: (){
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => Settings()));
                   print("HELL YEAH");
                 },)
             ),

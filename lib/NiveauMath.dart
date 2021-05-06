@@ -1,11 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:somthn/BacksButton.dart';
 import 'package:somthn/BrownOwl.dart';
 import 'package:somthn/LockIcon.dart';
+import 'package:somthn/M-1.dart';
 import 'package:somthn/PinkAvatarIcon.dart';
+import 'package:somthn/Settings.dart';
 import 'package:somthn/buttonDifficile.dart';
 import 'package:somthn/buttonMoyen.dart';
 import 'package:somthn/buttonfacile.dart';
 import 'package:somthn/madGreenOwl.dart';
+import 'package:somthn/settingsButton.dart';
 
 
 
@@ -25,35 +29,38 @@ class _NiveauMathState extends State<NiveauMath> {
               constraints: BoxConstraints.expand(),
               decoration: BoxDecoration(
                   image: DecorationImage(
-                      image: AssetImage("images/forestbackground.jpg"),
+                      image: AssetImage("images/mathsBG.jpg"),
                       fit: BoxFit.cover)),
             ),
 
 
             Positioned(
-              bottom: 156.0,
+              bottom: 86.0,
               right: 152.0,
               child: Container(
                 width: 300,
                 height: 100,
                 child:Buttonfacile (onPressed:(){
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => Math1()));
                   print('facile');}),
               ),
             ),
             Positioned(
-              bottom: 225.0,
+              bottom: 155.0,
               right: 290.0,
               child: PinkAvatarIcon(onPressed:null),
             ),
             Positioned(
-              top:586.0,
+              top:656.0,
               left:230.0,
               child: Container(
 
                   child: LockIcon()),
             ),
             Positioned(
-              top: 370.0,
+              top: 440.0,
               left:165.0,
               child: Container(
                 width: 300,
@@ -64,20 +71,20 @@ class _NiveauMathState extends State<NiveauMath> {
               ),
             ),
             Positioned(
-              top: 395.0,
+              top: 465.0,
               left:180.0,
               child: Container(
 
                   child: LockIcon()),
             ),
             Positioned(
-              top: 290.0,
+              top: 360.0,
               left: 290.0,
               child: GreenOwl(onPressed:null),
             ),
 
             Positioned(
-              top: 167.0,
+              top: 237.0,
               right: 158.0,
               child: Container(
                 width: 300,
@@ -88,16 +95,35 @@ class _NiveauMathState extends State<NiveauMath> {
               ),
             ),
             Positioned(
-              top: 90.0,
+              top: 160.0,
               right: 290.0,
               child:BrownOwl(onPressed:null),
             ),
             Positioned(
-              top:187.0,
+              top:257.0,
               left:220.0,
               child: Container(
 
                   child: LockIcon()),
+            ),
+            Positioned(
+                top: 50.00,
+                left: 300.00,
+                child: SettingsButton(onPressed: (){
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => Settings()));
+                  print("HELL YEAH");
+                },)
+            ),
+
+            Positioned(
+                top: 6.00,
+                right: 250.00,
+                child: BacksButton(onPressed: (){
+                  print("HELL YEAH");
+                  Navigator.pop(context);
+                },)
             ),
           ]
       ),

@@ -73,11 +73,11 @@ class _EntrernomState extends State<Entrernom> {
               top: 50.00,
               left: 300.00,
               child:
-    SettingsButton(onPressed: (){
-    Navigator.push(
-    context,
-    MaterialPageRoute(builder: (context) => Settings()));
-    print("HELL YEAH");
+                     SettingsButton(onPressed: (){
+                      Navigator.push(
+                       context,
+                     MaterialPageRoute(builder: (context) => Settings()));
+                     print("HELL YEAH");
     },)
     ),
           Visibility(

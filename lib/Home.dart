@@ -26,16 +26,6 @@ class _HomeState extends State<Home> {
                       fit: BoxFit.cover)),
             ),
             Positioned(
-                bottom: 50.00,
-                left : 50.00,
-                right: 50.00,
-                child: ButtonAllonsy(onPressed: (){
-                  Navigator.push(
-                      context,
-                      MaterialPageRoute(builder: (context) => Users()));
-                  print("allons-y");
-                } )),
-            Positioned(
                 top: 60.00,
                 left: 300.00,
                 child:
@@ -47,6 +37,17 @@ class _HomeState extends State<Home> {
                 },)
             ),
 
+
+            Positioned(
+                bottom: 50.00,
+                left : 50.00,
+                right: 50.00,
+                child: ButtonAllonsy(onPressed: (){
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => Users()));
+                  print("allons-y");
+                } )),
 
             Positioned(
               top: 80,

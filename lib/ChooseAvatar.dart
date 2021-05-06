@@ -4,6 +4,7 @@ import 'package:somthn/Brin2.dart';
 import 'package:somthn/Cercle2Icon.dart';
 import 'package:somthn/CercleIcon.dart';
 import 'package:somthn/HomeButton.dart';
+import 'package:somthn/Settings.dart';
 import 'settingsButton.dart';
 import 'BacksButton.dart';
 import 'PurpleOwlIcon.dart';
@@ -100,6 +101,9 @@ class _ChooseAvatarState extends State<ChooseAvatar> {
               top: 50.00,
               left: 300.00,
               child: SettingsButton(onPressed: (){
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => Settings()));
                 print("HELL YEAH");
               },)
           ),

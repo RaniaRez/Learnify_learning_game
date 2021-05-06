@@ -299,6 +299,7 @@ class _EcriremdpState extends State<Ecriremdp> {
                     left: 300.00,
                     child: GoToButton(onPressed: (){
                       setState(() {
+                        New.SetOld();
                         Utilisateurs.add(New);
                       });
                       Navigator.push(

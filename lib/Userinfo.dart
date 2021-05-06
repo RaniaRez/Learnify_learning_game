@@ -6,6 +6,7 @@ import 'package:somthn/ChooseAvatar.dart';
 import 'package:somthn/Ecriremdp.dart';
 import 'package:somthn/Entrernom.dart';
 import 'package:somthn/HomeButton.dart';
+import 'package:somthn/Settings.dart';
 import 'package:somthn/buttonmdp.dart';
 import 'settingsButton.dart';
 import 'BacksButton.dart';
@@ -19,8 +20,6 @@ class Userinfo extends StatefulWidget {
 }
 
 class _UserinfoState extends State<Userinfo> {
-  List<String> utilisateur = <String>['AVATAR', 'NOM', 'MOT DE PASSE','SUPPRIMER'];
-
   @override
 
   Widget build(BuildContext context) {
@@ -40,6 +39,9 @@ class _UserinfoState extends State<Userinfo> {
               top: 50.00,
               left: 300.00,
               child: SettingsButton(onPressed: (){
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => Settings()));
                 print("HELL YEAH");
               },)
           ),
@@ -49,9 +51,9 @@ class _UserinfoState extends State<Userinfo> {
               right: 250.00,
               child: BacksButton(onPressed: (){
                 print("HELL YEAH");
-                Navigator.push(
+                Navigator.pop(
                   context,
-                  MaterialPageRoute(builder: (context) => Home()),);
+                  );
               },)
           ),
           Positioned(

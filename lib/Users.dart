@@ -3,6 +3,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:somthn/ChoixDomaines.dart';
 import 'package:somthn/ChooseAvatar.dart';
 import 'package:somthn/ClassementButton.dart';
+import 'package:somthn/Settings.dart';
 import 'package:somthn/Userinfo.dart';
 import 'myicons.dart';
 import 'settingsButton.dart';
@@ -45,6 +46,9 @@ class _UsersState extends State<Users> {
                 top: 50.00,
                 left: 300.00,
                 child: SettingsButton(onPressed: (){
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => Settings()));
                   print("HELL YEAH");
                 },)
             ),

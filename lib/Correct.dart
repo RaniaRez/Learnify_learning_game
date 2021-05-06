@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:somthn/BullenomIcon.dart';
+import 'package:somthn/Settings.dart';
 import 'package:somthn/TestDeniveau.dart';
 import 'package:somthn/Users.dart';
 import 'package:somthn/buttonContinuer.dart';
@@ -41,6 +42,9 @@ class _CorrectState extends State<Correct> {
                 left: 300.00,
                 child:
                 SettingsButton(onPressed: (){
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => Settings()));
                   print("HELL YEAH");
                 },)
             ),

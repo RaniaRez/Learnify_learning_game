@@ -159,6 +159,7 @@ class _CreermdpState extends State<Creermdp> {
                 right: 50.00,
                 child: Buttonnon(onPressed: (){
                   setState(() {
+                    New.SetOld();
                     Utilisateurs.add(New);
                   });
                   Navigator.push(

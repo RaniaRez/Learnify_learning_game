@@ -58,6 +58,20 @@ const madBrownOwl=  'assets/icons/madBrownOwl.svg';
 const madGreenOwl=  'assets/icons/madGreenOwl.svg';
 const Lock='assets/icons/Lock.svg';
 const Star='assets/icons/Star.svg';
+const button_1=  'assets/icons/button1_1.svg';
+const button0=  'assets/icons/button0.svg';
+const button2=  'assets/icons/button2.svg';
+const button3=  'assets/icons/button3.svg';
+const button4=  'assets/icons/button4.svg';
+const button5=  'assets/icons/button5.svg';
+const button6=  'assets/icons/button6.svg';
+const button7=  'assets/icons/button7.svg';
+const button8=  'assets/icons/button8.svg';
+const button9=  'assets/icons/button9.svg';
+const buttonReset=  'assets/icons/buttonreset.svg';
+const buttonQ=  'assets/icons/ButtonQ.svg';
+const bulleQuest=  'assets/icons/bulleQuest.svg';
+const bulleBravo=  'assets/icons/bulleBravo.svg';
 
 
 
