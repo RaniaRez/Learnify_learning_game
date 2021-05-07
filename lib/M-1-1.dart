@@ -613,11 +613,11 @@ class _M_1_1State extends State<M_1_1> {
               Visibility(
                 visible: !Visible,
                 child: Positioned(
-                  bottom: 80,
-                  right: 280.0 ,
+                  bottom: 100,
+                  right: 260.0 ,
                   height: 150.0,
                   width: 150.0,
-                  child:PurpleAvatarIcon(onPressed: null,),
+                  child:Image.asset('images/HappyPurpleOwl.gif'),
                 ),
               ),
             if (New.avatar=="Orange")
