@@ -72,6 +72,18 @@ const buttonReset=  'assets/icons/buttonreset.svg';
 const buttonQ=  'assets/icons/ButtonQ.svg';
 const bulleQuest=  'assets/icons/bulleQuest.svg';
 const bulleBravo=  'assets/icons/bulleBravo.svg';
+const barreProgress=  'assets/icons/BarreProgress.svg';
+const buttonAllonsy=  'assets/icons/buttonAllonsy.svg';
+const buttonConfirmer=  'assets/icons/buttonConfirmer.svg';
+const ModifierAvatar=  'assets/icons/ModifierAvatar.svg';
+const ModifierPass=  'assets/icons/ModifierPass.svg';
+const ModifierNom=  'assets/icons/ModifierNom.svg';
+const SuppProfile=  'assets/icons/SuppProfile.svg';
+const bulleModify=  'assets/icons/bulleModify.svg';
+const EmptyBar=  'assets/icons/EmptyBar.svg';
+const ButtonAppliquer=  'assets/icons/buttonAppliquer.svg';
+const Stick=  'assets/icons/Stick.svg';
+const I_M_1_1=  'assets/icons/M-1-1-Indice.svg';
 
 
 
