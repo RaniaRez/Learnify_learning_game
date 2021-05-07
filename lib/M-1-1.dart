@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:somthn/BarreProgres.dart';
 import 'package:somthn/Settings.dart';
 import 'package:somthn/bulleQuest.dart';
 import 'package:somthn/button0.dart';
@@ -87,6 +88,11 @@ class _M_1_1State extends State<M_1_1> {
     Navigator.pop(context);
     },)
     ),
+            Positioned(
+                top: 70.00,
+                right: 115.00,
+                child: BarreProgres(),
+            ),
     Visibility(
       visible: Visible,
       child: Positioned(
