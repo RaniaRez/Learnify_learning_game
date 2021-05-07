@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "726541548721",
+    "project_id": "friendly-drake-311318",
+    "storage_bucket": "friendly-drake-311318.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:726541548721:android:5012970d512491379d3690",
+        "android_client_info": {
+          "package_name": "com.Myapp.projet2cp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "726541548721-8mschfeh3miam9j6t250803abd5ao49a.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAEv8aABUsGlmd3UPNPCeLs7Al7J9J6voQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "726541548721-8mschfeh3miam9j6t250803abd5ao49a.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
