@@ -80,6 +80,7 @@ const ModifierPass=  'assets/icons/ModifierPass.svg';
 const ModifierNom=  'assets/icons/ModifierNom.svg';
 const SuppProfile=  'assets/icons/SuppProfile.svg';
 const bulleModify=  'assets/icons/bulleModify.svg';
+const EmptyBar=  'assets/icons/EmptyBar.svg';
 
 
 
