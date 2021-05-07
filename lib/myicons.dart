@@ -81,6 +81,9 @@ const ModifierNom=  'assets/icons/ModifierNom.svg';
 const SuppProfile=  'assets/icons/SuppProfile.svg';
 const bulleModify=  'assets/icons/bulleModify.svg';
 const EmptyBar=  'assets/icons/EmptyBar.svg';
+const ButtonAppliquer=  'assets/icons/buttonAppliquer.svg';
+const Stick=  'assets/icons/Stick.svg';
+const I_M_1_1=  'assets/icons/M-1-1-Indice.svg';
 
 
 

@@ -50,45 +50,45 @@ bool zeroU = false;
 bool First = false;
 bool all = false;
 bool Visible = true;
-class M_1_1 extends StatefulWidget {
-  const M_1_1({Key key}) : super(key: key);
+class M_1_1_3rd extends StatefulWidget {
+  const M_1_1_3rd({Key key}) : super(key: key);
 
   @override
-  _M_1_1State createState() => _M_1_1State();
+  _M_1_1_3rdState createState() => _M_1_1_3rdState();
 }
 
-class _M_1_1State extends State<M_1_1> {
+class _M_1_1_3rdState extends State<M_1_1_3rd> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body:
-      Stack(
+        body:
+        Stack(
           children: <Widget>[
-      Container(
-      constraints: BoxConstraints.expand(),
-      decoration: BoxDecoration(
-          image: DecorationImage(
-              image: AssetImage("images/mathsBG.jpg"),
-              fit: BoxFit.cover)),
-    ),
-    Positioned(
-    top: 50.00,
-    left: 300.00,
-    child:
-    SettingsButton(onPressed: (){
-    Navigator.push(
-    context,
-    MaterialPageRoute(builder: (context) => Settings()));
-    print("HELL YEAH");
-    },)
-    ),
-    Positioned(
-    top: 10.00,
-    right: 250.00,
-    child: BacksButton(onPressed: (){
-    Navigator.pop(context);
-    },)
-    ),
+            Container(
+              constraints: BoxConstraints.expand(),
+              decoration: BoxDecoration(
+                  image: DecorationImage(
+                      image: AssetImage("images/mathsBG.jpg"),
+                      fit: BoxFit.cover)),
+            ),
+            Positioned(
+                top: 50.00,
+                left: 300.00,
+                child:
+                SettingsButton(onPressed: (){
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => Settings()));
+                  print("HELL YEAH");
+                },)
+            ),
+            Positioned(
+                top: 10.00,
+                right: 250.00,
+                child: BacksButton(onPressed: (){
+                  Navigator.pop(context);
+                },)
+            ),
 
             Positioned(
               top: 70.00,
@@ -103,245 +103,243 @@ class _M_1_1State extends State<M_1_1> {
                 child: BarreProgres(),
               ),
             ),
-    Visibility(
-      visible: Visible,
-      child: Positioned(
-      bottom: 220.0,
-      left: 300.00,
-      child: GoToButton(onPressed: (){
-        setState(() {
-          if ((zeroU) && (nineD)){
-            Visible = false;
-           print('Correct');
-          }else{
-            Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => M_1_1_2nd()));
-           print('Wrong');
-          }
-        });
-      print("HELL YEAH");
+            Visibility(
+              visible: Visible,
+              child: Positioned(
+                bottom: 220.0,
+                left: 300.00,
+                child: GoToButton(onPressed: (){
+                  setState(() {
+                    if ((zeroU) && (nineD)){
+                      Visible = false;
+                      print('Correct');
+                    }else{
 
-      },),
-      ),
-    ),
-    if (New.avatar=="Pink")
-    Visibility(
+                      print('Wrong');
+                    }
+                  });
+                  print("HELL YEAH");
 
-    child: Positioned(
-    top: 400.0,
-    left: 280.0 ,
-    height: 130.0,
-    width: 130.0,
-    child:PinkAvatarIcon(onPressed: null,),
-    ),
-    ),
-    if (New.avatar=="Purple")
-    Visibility(
-
-    child: Positioned(
-    top: 395.0,
-    left: 270.0 ,
-    height: 150.0,
-    width: 150.0,
-    child:PurpleAvatarIcon(onPressed: null,),
-    ),
-    ),
-    if (New.avatar=="Orange")
-    Visibility(
-
-    child: Positioned(
-    top: 405.0,
-    left: 285.0 ,
-    height: 130.0,
-    width: 130.0,
-    child: OrangeAvatarIcon(onPressed: null,),
-    ),
-    ),
-    if (New.avatar=="Blue")
-    Visibility(
-
-    child: Positioned(
-    top: 400.0,
-    left: 280.0 ,
-    height: 130.0,
-    width: 130.0,
-    child:BlueAvatarIcon(onPressed: null,),
-    ),
-    ),
-
-    Positioned(
-    top: 160.0,
-    left: 40.0 ,
-    height: 250,
-    width: 250,
-    child:BulleQuest(),
-    ),
-    Positioned(
-    top : 260,
-    left: 10.5,
-    right: 80.5,
-    child: SizedBox(
-    height: 150,
-    width:150,
-    child: Text(
-    '65+25 = ?',
-    style: TextStyle(
-    fontFamily: 'Skranji-bold',
-    fontSize: 30,
-    color: Colors.brown[700],
-    fontWeight: FontWeight.bold,
-
-    ),
-    textAlign: TextAlign.center,
-    ),
-    ),
-    ),
-    Visibility(
-      visible: Visible,
-      child: Positioned(
-      bottom: 235.0,
-      left: 10,
-      child: ButtonReset(
-      onPressed: () {
-        setState(() {
-           oneD = false;
-           oneU = false;
-           twoD = false;
-           twoU = false;
-           threeD = false;
-           threeU = false;
-           fourD = false;
-           fourU = false;
-           fiveD = false;
-           fiveU = false;
-           sixD = false;
-           sixU = false;
-           sevenD = false;
-           sevenU = false;
-           eightD = false;
-           eightU = false;
-           nineD = false;
-           nineU = false;
-           zeroD = false;
-           zeroU = false;
-           First = false;
-           all = false;
-        });
-      print('reset');
-      }
-
-      ),
-      ),
-    ),
-    Positioned(
-    bottom: 240.0,
-    left: 125.0,
-    width: 148,
-    height: 77,
-    child: QButton(onPressed: null,)
-    ),
-    Visibility(
-      visible: Visible,
-      child: Positioned(
-      bottom: 140,
-      left: 10,
-      child: Button_0(onPressed: (){
-      setState(() {
-        if(all){
-
-        }else if(First){
-          zeroU = true;
-          all = true;
-        }else {
-          zeroD = true;
-          First = true;
-        }
-      });
-      },)
-      ),
-    ),
-
-    Visibility(
-      visible: Visible,
-      child: Positioned(
-      bottom: 140,
-      left: 90,
-      child: Button_1(onPressed: (){
-        setState(() {
-          if(all){
-
-          }else if(First){
-          oneU = true;
-          all = true;
-          }else {
-          oneD = true;
-          First = true;
-          }
-        });
-      },)
-      ),
-    ),
-    Visibility(
-      visible: Visible,
-      child: Positioned(
-      bottom: 140,
-      left: 170,
-      child: Button_2(onPressed: (){
-        setState(() {
-          if(all){
-
-          }else if(First){
-          twoU = true;
-          all = true;
-          }else {
-          twoD = true;
-          First = true;
-          }
-        });
-      },)
-      ),
-    ),
-    Visibility(
-      visible: Visible,
-      child: Positioned(
-      bottom: 140,
-      left: 250,
-      child: Button_3(onPressed: (){
-        setState(() {
-          if(all){
-
-          }else if(First){
-          threeU = true;
-          all = true;
-          }else {
-          threeD = true;
-          First = true;
-          }
-        });
-      },)
-      ),
-    ),
-   Visibility(
-     visible: Visible,
-     child: Positioned(
-      bottom: 140,
-       left: 330,
-       child: Button_4(onPressed: (){
-         setState(() {
-           if(all){
-
-           }else if(First){
-            fourU = true;
-            all = true;
-           }else {
-            fourD = true;
-            First = true;
-           }
-         });
-       },)
+                },),
               ),
-   ),
+            ),
+            if (New.avatar=="Pink")
+              Visibility(
+
+                child: Positioned(
+                  top: 400.0,
+                  left: 280.0 ,
+                  height: 130.0,
+                  width: 130.0,
+                  child:PinkAvatarIcon(onPressed: null,),
+                ),
+              ),
+            if (New.avatar=="Purple")
+              Visibility(
+
+                child: Positioned(
+                  top: 395.0,
+                  left: 270.0 ,
+                  height: 150.0,
+                  width: 150.0,
+                  child:PurpleAvatarIcon(onPressed: null,),
+                ),
+              ),
+            if (New.avatar=="Orange")
+              Visibility(
+
+                child: Positioned(
+                  top: 405.0,
+                  left: 285.0 ,
+                  height: 130.0,
+                  width: 130.0,
+                  child: OrangeAvatarIcon(onPressed: null,),
+                ),
+              ),
+            if (New.avatar=="Blue")
+              Visibility(
+
+                child: Positioned(
+                  top: 400.0,
+                  left: 280.0 ,
+                  height: 130.0,
+                  width: 130.0,
+                  child:BlueAvatarIcon(onPressed: null,),
+                ),
+              ),
+
+            Positioned(
+              top: 160.0,
+              left: 40.0 ,
+              height: 250,
+              width: 250,
+              child:BulleQuest(),
+            ),
+            Positioned(
+              top : 260,
+              left: 10.5,
+              right: 80.5,
+              child: SizedBox(
+                height: 150,
+                width:150,
+                child: Text(
+                  '65+25 = ?',
+                  style: TextStyle(
+                    fontFamily: 'Skranji-bold',
+                    fontSize: 30,
+                    color: Colors.brown[700],
+                    fontWeight: FontWeight.bold,
+
+                  ),
+                  textAlign: TextAlign.center,
+                ),
+              ),
+            ),
+            Visibility(
+              visible: Visible,
+              child: Positioned(
+                bottom: 235.0,
+                left: 10,
+                child: ButtonReset(
+                    onPressed: () {
+                      setState(() {
+                        oneD = false;
+                        oneU = false;
+                        twoD = false;
+                        twoU = false;
+                        threeD = false;
+                        threeU = false;
+                        fourD = false;
+                        fourU = false;
+                        fiveD = false;
+                        fiveU = false;
+                        sixD = false;
+                        sixU = false;
+                        sevenD = false;
+                        sevenU = false;
+                        eightD = false;
+                        eightU = false;
+                        nineD = false;
+                        nineU = false;
+                        zeroD = false;
+                        zeroU = false;
+                        First = false;
+                        all = false;
+                      });
+                      print('reset');
+                    }
+
+                ),
+              ),
+            ),
+            Positioned(
+                bottom: 240.0,
+                left: 125.0,
+                width: 148,
+                height: 77,
+                child: QButton(onPressed: null,)
+            ),
+            Visibility(
+              visible: Visible,
+              child: Positioned(
+                  bottom: 140,
+                  left: 10,
+                  child: Button_0(onPressed: (){
+                    setState(() {
+                      if(all){
+
+                      }else if(First){
+                        zeroU = true;
+                        all = true;
+                      }else {
+                        zeroD = true;
+                        First = true;
+                      }
+                    });
+                  },)
+              ),
+            ),
+
+            Visibility(
+              visible: Visible,
+              child: Positioned(
+                  bottom: 140,
+                  left: 90,
+                  child: Button_1(onPressed: (){
+                    setState(() {
+                      if(all){
+
+                      }else if(First){
+                        oneU = true;
+                        all = true;
+                      }else {
+                        oneD = true;
+                        First = true;
+                      }
+                    });
+                  },)
+              ),
+            ),
+            Visibility(
+              visible: Visible,
+              child: Positioned(
+                  bottom: 140,
+                  left: 170,
+                  child: Button_2(onPressed: (){
+                    setState(() {
+                      if(all){
+
+                      }else if(First){
+                        twoU = true;
+                        all = true;
+                      }else {
+                        twoD = true;
+                        First = true;
+                      }
+                    });
+                  },)
+              ),
+            ),
+            Visibility(
+              visible: Visible,
+              child: Positioned(
+                  bottom: 140,
+                  left: 250,
+                  child: Button_3(onPressed: (){
+                    setState(() {
+                      if(all){
+
+                      }else if(First){
+                        threeU = true;
+                        all = true;
+                      }else {
+                        threeD = true;
+                        First = true;
+                      }
+                    });
+                  },)
+              ),
+            ),
+            Visibility(
+              visible: Visible,
+              child: Positioned(
+                  bottom: 140,
+                  left: 330,
+                  child: Button_4(onPressed: (){
+                    setState(() {
+                      if(all){
+
+                      }else if(First){
+                        fourU = true;
+                        all = true;
+                      }else {
+                        fourD = true;
+                        First = true;
+                      }
+                    });
+                  },)
+              ),
+            ),
             Visibility(
               visible: Visible,
               child: Positioned(
@@ -352,11 +350,11 @@ class _M_1_1State extends State<M_1_1> {
                       if(all){
 
                       }else if(First){
-                      fiveU = true;
-                      all = true;
+                        fiveU = true;
+                        all = true;
                       }else {
-                      fiveD = true;
-                      First = true;
+                        fiveD = true;
+                        First = true;
                       }
                     });
                   },)
@@ -373,11 +371,11 @@ class _M_1_1State extends State<M_1_1> {
                       if(all){
 
                       }else if(First){
-                      sixU = true;
-                      all = true;
+                        sixU = true;
+                        all = true;
                       }else {
-                      sixD = true;
-                      First = true;
+                        sixD = true;
+                        First = true;
                       }
                     });
                   },)
@@ -393,11 +391,11 @@ class _M_1_1State extends State<M_1_1> {
                       if(all){
 
                       }else if(First){
-                      sevenU = true;
-                      all = true;
+                        sevenU = true;
+                        all = true;
                       }else {
-                      sevenD = true;
-                      First = true;
+                        sevenD = true;
+                        First = true;
                       }
                     });
                   },)
@@ -413,11 +411,11 @@ class _M_1_1State extends State<M_1_1> {
                       if(all){
 
                       }else if(First){
-                      eightU = true;
-                      all = true;
+                        eightU = true;
+                        all = true;
                       }else {
-                      eightD = true;
-                      First = true;
+                        eightD = true;
+                        First = true;
                       }
                     });
                   },)
@@ -433,11 +431,11 @@ class _M_1_1State extends State<M_1_1> {
                       if(all){
 
                       }else if(First){
-                      nineU= true;
-                      all = true;
+                        nineU= true;
+                        all = true;
                       }else {
-                      nineD = true;
-                      First = true;
+                        nineD = true;
+                        First = true;
                       }
                     });
                   },)
@@ -655,18 +653,18 @@ class _M_1_1State extends State<M_1_1> {
                   child:BlueAvatarIcon(onPressed: null,),
                 ),
               ),
-          Visibility(
-            visible: !Visible,
-            child: Positioned(
-              height: 200,
-              width: 200,
-              bottom: 60,
-                right: 60,
-                child: SvgPicture.asset(bulleBravo)
-            ),
-          )
+            Visibility(
+              visible: !Visible,
+              child: Positioned(
+                  height: 200,
+                  width: 200,
+                  bottom: 60,
+                  right: 60,
+                  child: SvgPicture.asset(bulleBravo)
+              ),
+            )
           ],
-    ));
+        ));
   }
 
 }
