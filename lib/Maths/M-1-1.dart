@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:somthn/Buttons/BarreProgres.dart';
 import 'package:somthn/Maths/M-1-1-2ndAttempt.dart';
+import 'package:somthn/Maths/M-1-2.dart';
 import 'package:somthn/WelcomePages/Settings.dart';
 import 'package:somthn/Bulles/bulleQuest.dart';
 import 'package:somthn/Buttons/button0.dart';
@@ -608,7 +609,12 @@ class _M_1_1State extends State<M_1_1> {
               visible: !Visible,
               child: Positioned(
                   bottom: -30,
-                  child: ButtonContinuer(onPressed: (){print('Continuer');},)
+                  child: ButtonContinuer(onPressed: (){
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => M_1_2()));
+                    print('Continuer');
+                    },)
               ),
             ),
             if (New.avatar=="Pink")

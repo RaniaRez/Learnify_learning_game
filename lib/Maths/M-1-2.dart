@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:somthn/Buttons/BarreProgres.dart';
-import 'package:somthn/Maths/I-M-1-1.dart';
-import 'package:somthn/Maths/M-1-2.dart';
+import 'package:somthn/Maths/M-1-1-2ndAttempt.dart';
+import 'package:somthn/Maths/M-1-2-2ndAttempt.dart';
 import 'package:somthn/WelcomePages/Settings.dart';
 import 'package:somthn/Bulles/bulleQuest.dart';
 import 'package:somthn/Buttons/button0.dart';
@@ -27,7 +27,6 @@ import 'package:somthn/Avatars/PinkAvatarIcon.dart';
 import 'package:somthn/Avatars/PurpleAvatarIcon.dart';
 import 'package:somthn/Avatars/BlueAvatarIcon.dart';
 import '../WelcomePages/ChooseAvatar.dart';
-import 'I-M-1-1.dart';
 
 bool oneD = false;
 bool oneU = false;
@@ -52,14 +51,14 @@ bool zeroU = false;
 bool First = false;
 bool all = false;
 bool Visible = true;
-class M_1_1_2nd extends StatefulWidget {
-  const M_1_1_2nd({Key key}) : super(key: key);
+class M_1_2 extends StatefulWidget {
+  const M_1_2({Key key}) : super(key: key);
 
   @override
-  _M_1_1_2ndState createState() => _M_1_1_2ndState();
+  _M_1_2State createState() => _M_1_2State();
 }
 
-class _M_1_1_2ndState extends State<M_1_1_2nd> {
+class _M_1_2State extends State<M_1_2> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -95,14 +94,14 @@ class _M_1_1_2ndState extends State<M_1_1_2nd> {
             Positioned(
               top: 70.00,
               right: 115.00,
-              child: SvgPicture.asset(EmptyBar),
-            ),
+              child: BarreProgres()),
+
             Visibility(
               visible: !Visible,
               child: Positioned(
                 top: 70.00,
                 right: 115.00,
-                child: BarreProgres(),
+                child: SvgPicture.asset(TwoBars),
               ),
             ),
             Visibility(
@@ -112,14 +111,13 @@ class _M_1_1_2ndState extends State<M_1_1_2nd> {
                 left: 300.00,
                 child: GoToButton(onPressed: (){
                   setState(() {
-                    if ((zeroU) && (nineD)){
+                    if ((oneU) && (fourD)){
                       Visible = false;
                       print('Correct');
                     }else{
                       Navigator.push(
                           context,
-                          MaterialPageRoute(builder: (context) => I_M_1_1_())
-                      );
+                         MaterialPageRoute(builder: (context) => M_1_2_2nd()));
                       print('Wrong');
                     }
                   });
@@ -181,17 +179,17 @@ class _M_1_1_2ndState extends State<M_1_1_2nd> {
               child:BulleQuest(),
             ),
             Positioned(
-              top : 250,
-              left:0,
+              top : 260,
+              left: 10.5,
               right: 80.5,
               child: SizedBox(
                 height: 150,
                 width:150,
                 child: Text(
-                  '2ème tentative\n 65+25 = ?',
+                  '28+13 = ?',
                   style: TextStyle(
                     fontFamily: 'Skranji-bold',
-                    fontSize: 25,
+                    fontSize: 30,
                     color: Colors.brown[700],
                     fontWeight: FontWeight.bold,
 
@@ -611,11 +609,7 @@ class _M_1_1_2ndState extends State<M_1_1_2nd> {
               visible: !Visible,
               child: Positioned(
                   bottom: -30,
-                  child: ButtonContinuer(onPressed: (){
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(builder: (context) => M_1_2()));
-                    print('Continuer');},)
+                  child: ButtonContinuer(onPressed: (){print('Continuer');},)
               ),
             ),
             if (New.avatar=="Pink")
