@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:somthn/Buttons/BarreProgres.dart';
+import 'package:somthn/Maths/I-M-1-2.dart';
+import 'package:somthn/Maths/M-1-2-3rdAttempt.dart';
+import 'package:somthn/Maths/M-1-3.dart';
 import 'package:somthn/WelcomePages/Settings.dart';
 import 'package:somthn/Bulles/bulleQuest.dart';
 import 'package:somthn/Buttons/button0.dart';
@@ -113,9 +116,9 @@ class _M_1_2_2ndState extends State<M_1_2_2nd> {
                       Visible = false;
                       print('Correct');
                     }else{
-                      //Navigator.push(
-                      //   context,
-                      //   MaterialPageRoute(builder: (context) => M_1_1_2nd()));
+                      Navigator.push(
+                         context,
+                         MaterialPageRoute(builder: (context) => I_M_1_2_()));
                       print('Wrong');
                     }
                   });
@@ -607,7 +610,11 @@ class _M_1_2_2ndState extends State<M_1_2_2nd> {
               visible: !Visible,
               child: Positioned(
                   bottom: -30,
-                  child: ButtonContinuer(onPressed: (){print('Continuer');},)
+                  child: ButtonContinuer(onPressed: (){
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => M_1_3()));
+                    print('Continuer');},)
               ),
             ),
             if (New.avatar=="Pink")

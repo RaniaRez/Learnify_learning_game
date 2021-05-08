@@ -85,6 +85,10 @@ const ButtonAppliquer=  'assets/icons/buttonAppliquer.svg';
 const Stick=  'assets/icons/Stick.svg';
 const I_M_1_1=  'assets/icons/M-1-1-Indice.svg';
 const TwoBars=  'assets/icons/TwoBars.svg';
+const FiveBars=  'assets/icons/FiveBars.svg';
+const ThreeBars=  'assets/icons/ThreeBars.svg';
+const FourBars=  'assets/icons/FourBars.svg';
+const EmptyTable=  'assets/icons/EmptyTable.svg';
 
 
 

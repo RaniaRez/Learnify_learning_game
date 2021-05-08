@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:somthn/Buttons/BarreProgres.dart';
 import 'package:somthn/Maths/M-1-2-2ndAttempt.dart';
-import 'package:somthn/Maths/M-1-3.dart';
 import 'package:somthn/WelcomePages/Settings.dart';
 import 'package:somthn/Bulles/bulleQuest.dart';
 import 'package:somthn/Buttons/button0.dart';
@@ -51,14 +49,14 @@ bool zeroU = false;
 bool First = false;
 bool all = false;
 bool Visible = true;
-class M_1_2 extends StatefulWidget {
-  const M_1_2({Key key}) : super(key: key);
+class M_1_3_3rd_3 extends StatefulWidget {
+  const M_1_3_3rd_3({Key key}) : super(key: key);
 
   @override
-  _M_1_2State createState() => _M_1_2State();
+  _M_1_3_3rd_3State createState() => _M_1_3_3rd_3State();
 }
 
-class _M_1_2State extends State<M_1_2> {
+class _M_1_3_3rd_3State extends State<M_1_3_3rd_3> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -92,16 +90,16 @@ class _M_1_2State extends State<M_1_2> {
             ),
 
             Positioned(
-              top: 70.00,
-              right: 115.00,
-              child: BarreProgres()),
+                top: 70.00,
+                right: 115.00,
+                child: SvgPicture.asset(TwoBars)),
 
             Visibility(
               visible: !Visible,
               child: Positioned(
                 top: 70.00,
                 right: 115.00,
-                child: SvgPicture.asset(TwoBars),
+                child: SvgPicture.asset(ThreeBars),
               ),
             ),
             Visibility(
@@ -111,13 +109,13 @@ class _M_1_2State extends State<M_1_2> {
                 left: 300.00,
                 child: GoToButton(onPressed: (){
                   setState(() {
-                    if ((oneU) && (fourD)){
+                    if ((eightU) && (eightD)){
                       Visible = false;
                       print('Correct');
                     }else{
                       Navigator.push(
                           context,
-                         MaterialPageRoute(builder: (context) => M_1_2_2nd()));
+                          MaterialPageRoute(builder: (context) => M_1_2_2nd()));
                       print('Wrong');
                     }
                   });
@@ -186,10 +184,10 @@ class _M_1_2State extends State<M_1_2> {
                 height: 150,
                 width:150,
                 child: Text(
-                  '28+13 = ?',
+                  'Double de 44 = ?',
                   style: TextStyle(
                     fontFamily: 'Skranji-bold',
-                    fontSize: 30,
+                    fontSize: 22,
                     color: Colors.brown[700],
                     fontWeight: FontWeight.bold,
 
@@ -609,11 +607,7 @@ class _M_1_2State extends State<M_1_2> {
               visible: !Visible,
               child: Positioned(
                   bottom: -30,
-                  child: ButtonContinuer(onPressed: (){
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(builder: (context) => M_1_3()));
-                    print('Continuer');},)
+                  child: ButtonContinuer(onPressed: (){print('Continuer');},)
               ),
             ),
             if (New.avatar=="Pink")
