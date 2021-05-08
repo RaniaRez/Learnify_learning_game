@@ -1,6 +1,5 @@
-import 'package:flutter/gestures.dart';
+
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
 import 'package:somthn/Avatars/BlueAvatarIcon.dart';
 import 'package:somthn/Branches/BranchIconSimple.dart';
 import 'package:somthn/WelcomePages/ChooseAvatar.dart';
@@ -15,7 +14,6 @@ import 'package:somthn/Buttons/buttonModifyAvatar.dart';
 import 'package:somthn/Buttons/buttonModifyNom.dart';
 import 'package:somthn/Buttons/buttonModifyPass.dart';
 import 'package:somthn/Buttons/buttonSuppProfile.dart';
-import 'package:somthn/myicons.dart';
 import '../Buttons/settingsButton.dart';
 import '../Buttons/BacksButton.dart';
 import 'Home.dart';

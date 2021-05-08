@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:somthn/WelcomePages/ChoixDomaines.dart';
 import 'package:somthn/WelcomePages/ChooseAvatar.dart';
-import 'package:somthn/WelcomePages/ClassementButton.dart';
+import 'package:somthn/Buttons/ClassementButton.dart';
 import 'package:somthn/WelcomePages/Settings.dart';
 import 'package:somthn/WelcomePages/Userinfo.dart';
 import '../myicons.dart';

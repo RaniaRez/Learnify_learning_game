@@ -1,25 +1,20 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:somthn/Avatars/BlueAvatarIcon.dart';
-import 'package:somthn/Buttons/Buttonoui.dart';
 import 'package:somthn/Buttons/buttonGoTo.dart';
 import 'package:somthn/WelcomePages/ChoixDomaines.dart';
 import 'package:somthn/WelcomePages/ChooseAvatar.dart';
-import 'package:somthn/WelcomePages/Ecriremdp.dart';
 import 'package:somthn/Buttons/HomeButton.dart';
 import 'package:somthn/Avatars/OrangeAvatarIcon.dart';
 import 'package:somthn/Avatars/PinkAvatarIcon.dart';
 import 'package:somthn/Avatars/PurpleAvatarIcon.dart';
-import 'package:somthn/Buttons/buttonnon.dart';
 import 'package:somthn/myicons.dart';
 import '../Buttons/settingsButton.dart';
 import '../Buttons/BacksButton.dart';
 import 'Home.dart';
 import 'Settings.dart';
 import '../Branches/BranchIconSimple.dart';
-import '../Bulles/BullemdpIcon.dart';
 import 'ChooseAvatar.dart';
-import 'Users.dart';
 
 
 
