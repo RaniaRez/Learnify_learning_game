@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:somthn/Buttons/BarreProgres.dart';
 import 'package:somthn/Maths/I-M-1-1.dart';
+import 'package:somthn/Maths/M-1-1.dart';
 import 'package:somthn/WelcomePages/Settings.dart';
 import 'package:somthn/Bulles/bulleQuest.dart';
 import 'package:somthn/Buttons/button0.dart';
@@ -117,7 +118,8 @@ class _M_1_1_2ndState extends State<M_1_1_2nd> {
                     }else{
                       Navigator.push(
                           context,
-                          MaterialPageRoute(builder: (context) => I_M_1_1_()));
+                          MaterialPageRoute(builder: (context) => I_M_1_1_())
+                      );
                       print('Wrong');
                     }
                   });

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:somthn/WelcomePages/AllSet.dart';
 import 'package:somthn/WelcomePages/ChoixDomaines.dart';
 import 'package:somthn/Buttons/HomeButton.dart';
 import 'package:somthn/WelcomePages/Users.dart';
@@ -302,7 +303,7 @@ class _EcriremdpState extends State<Ecriremdp> {
                       Navigator.push(
                           context,
                           MaterialPageRoute(
-                              builder: (BuildContext context) => ChoixDomaine()));
+                              builder: (BuildContext context) => AllSet()));
                       print("HELL YEAH");
                     },
                     ),

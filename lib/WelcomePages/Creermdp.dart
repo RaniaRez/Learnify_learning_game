@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:somthn/Avatars/BlueAvatarIcon.dart';
 import 'package:somthn/Buttons/Buttonoui.dart';
+import 'package:somthn/WelcomePages/AllSet.dart';
 import 'package:somthn/WelcomePages/ChoixDomaines.dart';
 import 'package:somthn/WelcomePages/ChooseAvatar.dart';
 import 'package:somthn/WelcomePages/Ecriremdp.dart';
@@ -160,7 +161,7 @@ class _CreermdpState extends State<Creermdp> {
                   Navigator.push(
                       context,
                       MaterialPageRoute(
-                          builder: (BuildContext context) => ChoixDomaine()));
+                          builder: (BuildContext context) => AllSet()));
 
                   print("non");
                 } )
