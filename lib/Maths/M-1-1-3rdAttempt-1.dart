@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:somthn/Buttons/BarreProgres.dart';
-import 'package:somthn/Maths/M-1-1-2ndAttempt.dart';
 import 'package:somthn/WelcomePages/Settings.dart';
 import 'package:somthn/Bulles/bulleQuest.dart';
 import 'package:somthn/Buttons/button0.dart';
@@ -50,14 +49,14 @@ bool zeroU = false;
 bool First = false;
 bool all = false;
 bool Visible = true;
-class M_1_1_3rd extends StatefulWidget {
-  const M_1_1_3rd({Key key}) : super(key: key);
+class M_1_1_3rd_1 extends StatefulWidget {
+  const M_1_1_3rd_1({Key key}) : super(key: key);
 
   @override
-  _M_1_1_3rdState createState() => _M_1_1_3rdState();
+  _M_1_1_3rd_1State createState() => _M_1_1_3rd_1State();
 }
 
-class _M_1_1_3rdState extends State<M_1_1_3rd> {
+class _M_1_1_3rd_1State extends State<M_1_1_3rd_1> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -110,7 +109,7 @@ class _M_1_1_3rdState extends State<M_1_1_3rd> {
                 left: 300.00,
                 child: GoToButton(onPressed: (){
                   setState(() {
-                    if ((zeroU) && (eightD)){
+                    if ((zeroU) && (sevenD)){
                       Visible = false;
                       print('Correct');
                     }else{
@@ -183,7 +182,7 @@ class _M_1_1_3rdState extends State<M_1_1_3rd> {
                 height: 150,
                 width:150,
                 child: Text(
-                  '35+45 = ?',
+                  '15+55 = ?',
                   style: TextStyle(
                     fontFamily: 'Skranji-bold',
                     fontSize: 30,

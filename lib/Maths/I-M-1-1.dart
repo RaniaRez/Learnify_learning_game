@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:somthn/Buttons/BarreProgres.dart';
-import 'package:somthn/Maths/M-1-1-2ndAttempt.dart';
+import 'package:somthn/Maths/M-1-1-3rdAttempt-1.dart';
+import 'package:somthn/Maths/M-1-1-3rdAttempt-2.dart';
+import 'package:somthn/Maths/M-1-1-3rdAttempt-3.dart';
+import 'package:somthn/Maths/M-1-1-3rdAttempt-4.dart';
+import 'dart:math';
 import 'package:somthn/Maths/M-1-1-3rdAttempt.dart';
 import 'package:somthn/WelcomePages/Settings.dart';
 import 'package:somthn/myicons.dart';
@@ -116,9 +119,30 @@ class _I_M_1_1_State extends State<I_M_1_1_> {
             Positioned(
               bottom: 0,
                 child: AppliquerButton(onPressed : (){
-                  Navigator.push(
-                      context,
-                      MaterialPageRoute(builder: (context) => M_1_1_3rd()));
+                  final _random = new Random();
+                  int rnd = 0 + _random.nextInt(5);
+                  if(rnd==0){
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => M_1_1_3rd()));
+                  }else if(rnd==1){
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => M_1_1_3rd_1()));
+                  }else if (rnd==2){
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => M_1_1_3rd_2()));
+                  }else if(rnd == 3){
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => M_1_1_3rd_3()));
+                  }else{
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => M_1_1_3rd_4()));
+                  }
+
                   print('appliquer');
                 }),
             )
