@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:somthn/Maths/M-1-3-2ndAttempt.dart';
 import 'package:somthn/WelcomePages/Settings.dart';
 import 'package:somthn/Bulles/bulleQuest.dart';
 import 'package:somthn/Buttons/button0.dart';
@@ -25,7 +24,8 @@ import 'package:somthn/Avatars/PinkAvatarIcon.dart';
 import 'package:somthn/Avatars/PurpleAvatarIcon.dart';
 import 'package:somthn/Avatars/BlueAvatarIcon.dart';
 import '../WelcomePages/ChooseAvatar.dart';
-import 'M-1-4.dart';
+import 'I-M-1-4.dart';
+
 bool oneD = false;
 bool oneU = false;
 bool twoD = false;
@@ -49,14 +49,14 @@ bool zeroU = false;
 bool First = false;
 bool all = false;
 bool Visible = true;
-class M_1_3 extends StatefulWidget {
-  const M_1_3({Key key}) : super(key: key);
+class M_1_4_2nd extends StatefulWidget {
+  const M_1_4_2nd({Key key}) : super(key: key);
 
   @override
-  _M_1_3State createState() => _M_1_3State();
+  _M_1_4_2ndState createState() => _M_1_4_2ndState();
 }
 
-class _M_1_3State extends State<M_1_3> {
+class _M_1_4_2ndState extends State<M_1_4_2nd> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -109,13 +109,13 @@ class _M_1_3State extends State<M_1_3> {
                 left: 300.00,
                 child: GoToButton(onPressed: (){
                   setState(() {
-                    if ((fourU) && (sevenD)){
+                    if ((threeU) && (twoD)){
                       Visible = false;
                       print('Correct');
                     }else{
                       Navigator.push(
                           context,
-                          MaterialPageRoute(builder: (context) => M_1_3_2nd()));
+                          MaterialPageRoute(builder: (context) => I_M_1_4_()));
                       print('Wrong');
                     }
                   });
@@ -177,17 +177,17 @@ class _M_1_3State extends State<M_1_3> {
               child:BulleQuest(),
             ),
             Positioned(
-              top : 260,
+              top : 250,
               left: 0.5,
-              right: 80.5,
+              right: 90.5,
               child: SizedBox(
                 height: 150,
                 width:150,
                 child: Text(
-                  'Double de 37 = ?',
+                  '2eme tentative : \nmoitié de 46 = ?',
                   style: TextStyle(
                     fontFamily: 'Skranji-bold',
-                    fontSize: 25,
+                    fontSize: 22,
                     color: Colors.brown[700],
                     fontWeight: FontWeight.bold,
 
@@ -607,11 +607,7 @@ class _M_1_3State extends State<M_1_3> {
               visible: !Visible,
               child: Positioned(
                   bottom: -30,
-                  child: ButtonContinuer(onPressed: (){
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(builder: (context) => M_1_4()));
-                    print('Continuer');},)
+                  child: ButtonContinuer(onPressed: (){print('Continuer');},)
               ),
             ),
             if (New.avatar=="Pink")

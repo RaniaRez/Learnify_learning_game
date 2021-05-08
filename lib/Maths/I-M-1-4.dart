@@ -1,11 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'dart:math';
-import 'package:somthn/Maths/M-1-3-3ndAttempt-1.dart';
-import 'package:somthn/Maths/M-1-3-3ndAttempt-2.dart';
-import 'package:somthn/Maths/M-1-3-3ndAttempt-3.dart';
-import 'package:somthn/Maths/M-1-3-3ndAttempt-4.dart';
-import 'package:somthn/Maths/M-1-3-3ndAttempt.dart';
 import 'package:somthn/WelcomePages/Settings.dart';
 import 'package:somthn/myicons.dart';
 import '../Buttons/settingsButton.dart';
@@ -16,15 +11,20 @@ import 'package:somthn/Avatars/PurpleAvatarIcon.dart';
 import 'package:somthn/Avatars/BlueAvatarIcon.dart';
 import '../WelcomePages/ChooseAvatar.dart';
 import 'package:somthn/Buttons/buttonAppliquer.dart';
+import 'package:somthn/Maths/M-1-4-3rdAttempt-1.dart';
+import 'package:somthn/Maths/M-1-4-3rdAttempt-2.dart';
+import 'package:somthn/Maths/M-1-4-3rdAttempt-3.dart';
+import 'package:somthn/Maths/M-1-4-3rdAttempt-4.dart';
+import 'package:somthn/Maths/M-1-4-3rdAttempt.dart';
 
-class I_M_1_3_ extends StatefulWidget {
-  const I_M_1_3_({Key key}) : super(key: key);
+class I_M_1_4_ extends StatefulWidget {
+  const I_M_1_4_({Key key}) : super(key: key);
 
   @override
-  _I_M_1_3_State createState() => _I_M_1_3_State();
+  _I_M_1_4_State createState() => _I_M_1_4_State();
 }
 
-class _I_M_1_3_State extends State<I_M_1_3_> {
+class _I_M_1_4_State extends State<I_M_1_4_> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -60,7 +60,7 @@ class _I_M_1_3_State extends State<I_M_1_3_> {
             Positioned(
               top: 70.00,
               right: 115.00,
-              child: SvgPicture.asset(TwoBars),
+              child: SvgPicture.asset(ThreeBars),
             ),
 
             Positioned(
@@ -120,7 +120,7 @@ class _I_M_1_3_State extends State<I_M_1_3_> {
                 top: 250,
                 right: 100,
                 child: Text(
-                  'Observe :\ndouble de 37 \n =double de 30\n+double de 7\n=60+14\n=74',
+                  'Observe :\nMoitié de 46 \n =moitié de 40\n+moitié de -\n=20+3\n=23',
                   style: TextStyle(
                       fontSize: 25,
                       fontFamily: 'Skranji-Bold',
@@ -137,23 +137,23 @@ class _I_M_1_3_State extends State<I_M_1_3_> {
                 if(rnd==0){
                   Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => M_1_3_3rd()));
+                      MaterialPageRoute(builder: (context) => M_1_4_3rd()));
                 }else if(rnd==1){
                   Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => M_1_3_3rd_1()));
+                      MaterialPageRoute(builder: (context) => M_1_4_3rd_1()));
                 }else if (rnd==2){
                   Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => M_1_3_3rd_2()));
+                      MaterialPageRoute(builder: (context) => M_1_4_3rd_2()));
                 }else if(rnd == 3){
                   Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => M_1_3_3rd_3()));
+                      MaterialPageRoute(builder: (context) => M_1_4_3rd_3()));
                 }else{
                   Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => M_1_3_3rd_4()));
+                      MaterialPageRoute(builder: (context) => M_1_4_3rd_4()));
                 }
 
                 print('appliquer');
