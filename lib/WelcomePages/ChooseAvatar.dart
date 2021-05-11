@@ -178,7 +178,7 @@ class _ChooseAvatarState extends State<ChooseAvatar> {
             ),//Orange
           ),
           Positioned(
-            top: 380.0,
+            top: 450.0,
             right: 195.0,
             child: Visibility(
               child: CercleIcon(),
@@ -233,7 +233,7 @@ class _ChooseAvatarState extends State<ChooseAvatar> {
               child: Brin2Icon()
           ),
           Positioned(
-            top: 338.9,
+            top: 411.0,
           right: 160.0,
           child: PurpleOwl(onPressed: (){
             showPurple();

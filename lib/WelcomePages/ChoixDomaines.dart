@@ -108,7 +108,7 @@ class _ChoixDomaineState extends State<ChoixDomaine> {
             ),
 
             Positioned(
-              bottom: 140.0,
+              bottom: 170.0,
               left: 62.0,
               child: Container(
                 width: 300,
@@ -124,7 +124,7 @@ class _ChoixDomaineState extends State<ChoixDomaine> {
               ),
             ),
             Positioned(
-              top: 470.0,
+              top: 520.0,
               child: Container(
                 width: 250,
                 height: 100,
@@ -139,7 +139,7 @@ class _ChoixDomaineState extends State<ChoixDomaine> {
               ),
             ),
             Positioned(
-              bottom: 30.0,
+              bottom: 60.0,
               left: 160.0,
               child: Container(
                 width: 250,

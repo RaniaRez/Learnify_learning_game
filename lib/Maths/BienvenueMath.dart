@@ -65,7 +65,7 @@ class _BienvenueMathState extends State<BienvenueMath> {
               Visibility(
 
                 child: Positioned(
-                  top: 490.0,
+                  top: 565.0,
                   right: 270.0 ,
                   height: 130.0,
                   width: 130.0,
@@ -76,7 +76,7 @@ class _BienvenueMathState extends State<BienvenueMath> {
               Visibility(
 
                 child: Positioned(
-                  top: 480.0,
+                  top: 555.0,
                   right: 270.0 ,
                   height: 150.0,
                   width: 150.0,
@@ -87,7 +87,7 @@ class _BienvenueMathState extends State<BienvenueMath> {
               Visibility(
 
                 child: Positioned(
-                  top: 490.0,
+                  top: 565.0,
                   right: 270.0 ,
                   height: 130.0,
                   width: 130.0,
@@ -98,7 +98,7 @@ class _BienvenueMathState extends State<BienvenueMath> {
               Visibility(
 
                 child: Positioned(
-                  top: 490.0,
+                  top: 560.0,
                   right: 270.0 ,
                   height: 130.0,
                   width: 130.0,

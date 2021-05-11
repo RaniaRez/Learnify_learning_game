@@ -27,29 +27,6 @@ import 'package:somthn/Avatars/PurpleAvatarIcon.dart';
 import 'package:somthn/Avatars/BlueAvatarIcon.dart';
 import '../WelcomePages/ChooseAvatar.dart';
 
-bool oneD = false;
-bool oneU = false;
-bool twoD = false;
-bool twoU = false;
-bool threeD = false;
-bool threeU = false;
-bool fourD = false;
-bool fourU = false;
-bool fiveD = false;
-bool fiveU = false;
-bool sixD = false;
-bool sixU = false;
-bool sevenD = false;
-bool sevenU = false;
-bool eightD = false;
-bool eightU = false;
-bool nineD = false;
-bool nineU = false;
-bool zeroD = false;
-bool zeroU = false;
-bool First = false;
-bool all = false;
-bool Visible = true;
 class M_1_4_3rd extends StatefulWidget {
   const M_1_4_3rd({Key key}) : super(key: key);
 
@@ -58,6 +35,29 @@ class M_1_4_3rd extends StatefulWidget {
 }
 
 class _M_1_4_3rdState extends State<M_1_4_3rd> {
+  bool oneD = false;
+  bool oneU = false;
+  bool twoD = false;
+  bool twoU = false;
+  bool threeD = false;
+  bool threeU = false;
+  bool fourD = false;
+  bool fourU = false;
+  bool fiveD = false;
+  bool fiveU = false;
+  bool sixD = false;
+  bool sixU = false;
+  bool sevenD = false;
+  bool sevenU = false;
+  bool eightD = false;
+  bool eightU = false;
+  bool nineD = false;
+  bool nineU = false;
+  bool zeroD = false;
+  bool zeroU = false;
+  bool First = false;
+  bool all = false;
+  bool Visible = true;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -126,7 +126,7 @@ class _M_1_4_3rdState extends State<M_1_4_3rd> {
               Visibility(
 
                 child: Positioned(
-                  top: 400.0,
+                  top: 480.0,
                   left: 280.0 ,
                   height: 130.0,
                   width: 130.0,
@@ -137,7 +137,7 @@ class _M_1_4_3rdState extends State<M_1_4_3rd> {
               Visibility(
 
                 child: Positioned(
-                  top: 395.0,
+                  top: 470.0,
                   left: 270.0 ,
                   height: 150.0,
                   width: 150.0,
@@ -148,7 +148,7 @@ class _M_1_4_3rdState extends State<M_1_4_3rd> {
               Visibility(
 
                 child: Positioned(
-                  top: 405.0,
+                  top: 480.0,
                   left: 285.0 ,
                   height: 130.0,
                   width: 130.0,
@@ -159,7 +159,7 @@ class _M_1_4_3rdState extends State<M_1_4_3rd> {
               Visibility(
 
                 child: Positioned(
-                  top: 400.0,
+                  top: 480.0,
                   left: 280.0 ,
                   height: 130.0,
                   width: 130.0,

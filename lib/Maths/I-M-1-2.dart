@@ -126,7 +126,7 @@ class _I_M_1_2_State extends State<I_M_1_2_> {
               top: 250,
                 right: 90,
                 child: Text(
-                  'Observe :\nsomme de \ndeux nombres :\n 28+13 = 20+8+10+3\n=30+11\n=74',
+                  'Observe :\nsomme de \ndeux nombres :\n 28+13 = 20+8+10+3\n=30+11\n=41',
                   style: TextStyle(
                     fontSize: 25,
                     fontFamily: 'Skranji-Bold',
