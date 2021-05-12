@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:somthn/Maths/M-1-2-2ndAttempt.dart';
 import 'package:somthn/Maths/M-1-5.dart';
+import 'package:somthn/Mutual/Niveau1Pass%C3%A9.dart';
 import 'package:somthn/WelcomePages/Settings.dart';
 import 'package:somthn/Bulles/bulleQuest.dart';
 import 'package:somthn/Buttons/button0.dart';
@@ -610,7 +611,7 @@ class _M_1_5_3rd_3State extends State<M_1_5_3rd_3> {
                   child: ButtonContinuer(onPressed: (){
                     Navigator.push(
                         context,
-                        MaterialPageRoute(builder: (context) => M_1_5()));
+                        MaterialPageRoute(builder: (context) => Niveau1Pass()));
                     print('Continuer');},)
               ),
             ),

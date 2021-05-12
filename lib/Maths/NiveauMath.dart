@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:somthn/Buttons/BacksButton.dart';
+import 'package:somthn/Maths/M-2.dart';
 import 'package:somthn/Owls/BrownOwl.dart';
 import 'package:somthn/Owls/LockIcon.dart';
 import 'package:somthn/Maths/M-1.dart';
@@ -66,6 +67,9 @@ class _NiveauMathState extends State<NiveauMath> {
                 width: 300,
                 height: 100,
                 child: ButtonMoyen(onPressed:(){
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => Math2()));
                   print('Moyen');
                 }),
               ),

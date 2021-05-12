@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:somthn/Maths/M-1-4-2ndAttempt.dart';
 import 'package:somthn/Maths/M-1-5-2ndAttempt.dart';
+import 'package:somthn/Mutual/Niveau1Pass%C3%A9.dart';
 import 'package:somthn/WelcomePages/Settings.dart';
 import 'package:somthn/Bulles/bulleQuest.dart';
 import 'package:somthn/Buttons/button0.dart';
@@ -204,30 +204,6 @@ class _M_1_5State extends State<M_1_5> {
                 left: 10,
                 child: ButtonReset(
                     onPressed: () {
-                      setState(() {
-                        oneD = false;
-                        oneU = false;
-                        twoD = false;
-                        twoU = false;
-                        threeD = false;
-                        threeU = false;
-                        fourD = false;
-                        fourU = false;
-                        fiveD = false;
-                        fiveU = false;
-                        sixD = false;
-                        sixU = false;
-                        sevenD = false;
-                        sevenU = false;
-                        eightD = false;
-                        eightU = false;
-                        nineD = false;
-                        nineU = false;
-                        zeroD = false;
-                        zeroU = false;
-                        First = false;
-                        all = false;
-                      });
                       print('reset');
                     }
 
@@ -611,7 +587,7 @@ class _M_1_5State extends State<M_1_5> {
                   child: ButtonContinuer(onPressed: (){
                     Navigator.push(
                         context,
-                        MaterialPageRoute(builder: (context) => M_1_5()));
+                        MaterialPageRoute(builder: (context) => Niveau1Pass()));
                     print('Continuer');},)
               ),
             ),

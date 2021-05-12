@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:somthn/Bulles/BullenomIcon.dart';
 import 'package:somthn/Buttons/HomeButton.dart';
 import 'package:somthn/Buttons/buttonGoTo.dart';
-import 'package:somthn/Maths/M-2.dart';
 import 'package:somthn/WelcomePages/Settings.dart';
 import 'package:somthn/Mutual/Stars.dart';
 import '../Buttons/settingsButton.dart';
@@ -15,12 +14,12 @@ import 'package:somthn/Avatars/PurpleAvatarIcon.dart';
 import 'package:somthn/Avatars/BlueAvatarIcon.dart';
 
 
-class Niveau1Pass extends StatefulWidget {
+class Niveau3Pass extends StatefulWidget {
   @override
-  _Niveau1PassState createState() => _Niveau1PassState();
+  _Niveau3PassState createState() => _Niveau3PassState();
 }
 
-class _Niveau1PassState extends State<Niveau1Pass> {
+class _Niveau3PassState extends State<Niveau3Pass> {
   @override
 
 
@@ -84,9 +83,7 @@ class _Niveau1PassState extends State<Niveau1Pass> {
                 right: 211.0 ,
                 height: 300.0,
                 width: 200.0,
-                child:Transform.rotate(
-                    angle: 6,
-                    child: PinkAvatarIcon(onPressed: null,)),
+                child:PinkAvatarIcon(onPressed: null,),
               ),
             ),
           if (New.avatar=="Purple")
@@ -97,9 +94,7 @@ class _Niveau1PassState extends State<Niveau1Pass> {
                 right: 211.0 ,
                 height: 300.0,
                 width: 200.0,
-                child:Transform.rotate(
-                    angle: 6,
-                    child: PurpleAvatarIcon(onPressed: null,)),
+                child:PurpleAvatarIcon(onPressed: null,),
               ),
             ),
           if (New.avatar=="Orange")
@@ -111,23 +106,21 @@ class _Niveau1PassState extends State<Niveau1Pass> {
                 height: 300.0,
                 width: 200.0,
 
-                child: Transform.rotate(
-                  angle: 6,
-                    child: OrangeAvatarIcon(onPressed: null,)),
+                child: OrangeAvatarIcon(onPressed: null,),
               ),
             ),
-          if (New.avatar=="Blue")
+          // if (New.avatar=="Blue")
 
           Positioned(
-                top: 442.0,
-                right: 211.0 ,
-                height: 300.0,
-                width: 200.0,
-                child: Transform.rotate
-                  (
-                   angle:6,
-                    child: BlueAvatarIcon(onPressed: null,)),
-              ),
+            top: 442.0,
+            right: 211.0 ,
+            height: 300.0,
+            width: 200.0,
+            child: Transform.rotate
+              (
+                angle:6,
+                child: BlueAvatarIcon(onPressed: null,)),
+          ),
 
 
           Positioned(
@@ -146,7 +139,7 @@ class _Niveau1PassState extends State<Niveau1Pass> {
               height: 10,
               width: 10,
               child: Text(
-                'Niveau 1 passé',
+                'Niveau 3 passé',
                 style: TextStyle(
                   fontFamily: 'Skranji-bold',
                   fontSize: 30,
@@ -162,10 +155,8 @@ class _Niveau1PassState extends State<Niveau1Pass> {
             top: 750.0,
             left: 300.00,
             child: GoToButton(onPressed: (){
-              Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => Math2()));
-              }),
+
+            }),
           ),
 
         ],
