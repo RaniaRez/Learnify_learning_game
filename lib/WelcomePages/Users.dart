@@ -1,17 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:somthn/Buttons/SinscrireButton.dart';
 import 'package:somthn/Buttons/seConnecterButton.dart';
 import 'package:somthn/WelcomePages/ChoixDomaines.dart';
-import 'package:somthn/WelcomePages/ChooseAvatar.dart';
 import 'package:somthn/Buttons/ClassementButton.dart';
+import 'package:somthn/WelcomePages/ChooseAvatar.dart';
 import 'package:somthn/WelcomePages/Settings.dart';
 import 'package:somthn/WelcomePages/Userinfo.dart';
-import '../myicons.dart';
 import '../Buttons/settingsButton.dart';
 import '../Buttons/BacksButton.dart';
 import 'ClassUser.dart';
-import '../Buttons/PlusButton.dart';
 import '../Buttons/buttonGoTo.dart';
 import '../Buttons/buttonStatistique.dart';
 import '../Buttons/buttonUserSettings.dart';
@@ -79,6 +76,8 @@ class _UsersState extends State<Users> {
               top: 400,
                 left: 75,
                 child: SinscrireButton(onPressed: (){
+                  Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => ChooseAvatar()),);
                   print('register');
                 })
             ),

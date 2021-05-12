@@ -165,11 +165,11 @@ class _M_1_1_2ndState extends State<M_1_1_2nd> {
               Visibility(
 
                 child: Positioned(
-                  top: 480.0,
+                  top: 470.0,
                   left: 280.0 ,
                   height: 130.0,
                   width: 130.0,
-                  child:BlueAvatarIcon(onPressed: null,),
+                  child:Image.asset('images/MadBlue.gif'),
                 ),
               ),
 
@@ -626,7 +626,7 @@ class _M_1_1_2ndState extends State<M_1_1_2nd> {
                   right: 280.0 ,
                   height: 130.0,
                   width: 130.0,
-                  child:PinkAvatarIcon(onPressed: null,),
+                  child:Image.asset('images/HappyPink.gif'),
                 ),
               ),
             if (New.avatar=="Purple")
@@ -648,18 +648,18 @@ class _M_1_1_2ndState extends State<M_1_1_2nd> {
                   right: 280.0 ,
                   height: 130.0,
                   width: 130.0,
-                  child: OrangeAvatarIcon(onPressed: null,),
+                  child: Image.asset('images/HappyOrange.gif'),
                 ),
               ),
             if (New.avatar=="Blue")
               Visibility(
                 visible: !Visible,
                 child: Positioned(
-                  bottom: 90,
+                  bottom: 95,
                   right: 280.0 ,
                   height: 130.0,
                   width: 130.0,
-                  child:BlueAvatarIcon(onPressed: null,),
+                  child:Image.asset('images/HappyBlue.gif'),
                 ),
               ),
             Visibility(

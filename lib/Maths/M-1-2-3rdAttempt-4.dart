@@ -653,11 +653,11 @@ class _M_1_2_3rd_4State extends State<M_1_2_3rd_4> {
               Visibility(
                 visible: !Visible,
                 child: Positioned(
-                  bottom: 90,
+                  bottom: 95,
                   right: 280.0 ,
                   height: 130.0,
                   width: 130.0,
-                  child:BlueAvatarIcon(onPressed: null,),
+                  child:Image.asset('images/HappyBlue.gif'),
                 ),
               ),
             Visibility(
