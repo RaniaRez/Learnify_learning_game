@@ -620,11 +620,11 @@ class _M_1_3_3rdState extends State<M_1_3_3rd> {
               Visibility(
                 visible: !Visible,
                 child: Positioned(
-                  bottom: 90,
+                  bottom: 95,
                   right: 280.0 ,
                   height: 130.0,
                   width: 130.0,
-                  child:PinkAvatarIcon(onPressed: null,),
+                  child:Image.asset('images/HappyPink.gif'),
                 ),
               ),
             if (New.avatar=="Purple")
@@ -635,18 +635,18 @@ class _M_1_3_3rdState extends State<M_1_3_3rd> {
                   right: 260.0 ,
                   height: 150.0,
                   width: 150.0,
-                  child:Image.asset('images/HappyPurpleOwl.gif'),
+                  child:Image.asset('images/HappyPurple.gif'),
                 ),
               ),
             if (New.avatar=="Orange")
               Visibility(
                 visible: !Visible,
                 child: Positioned(
-                  bottom: 90,
+                  bottom: 95,
                   right: 280.0 ,
                   height: 130.0,
                   width: 130.0,
-                  child: OrangeAvatarIcon(onPressed: null,),
+                  child: Image.asset('images/HappyOrange.gif'),
                 ),
               ),
             if (New.avatar=="Blue")
