@@ -130,7 +130,7 @@ class _M_1_1_2ndState extends State<M_1_1_2nd> {
             ),
             if (New.avatar=="Pink")
               Visibility(
-
+                visible: Visible,
                 child: Positioned(
                   top: 470.0,
                   left: 280.0 ,
@@ -141,7 +141,7 @@ class _M_1_1_2ndState extends State<M_1_1_2nd> {
               ),
             if (New.avatar=="Purple")
               Visibility(
-
+                visible: Visible,
                 child: Positioned(
                   top: 445.0,
                   left: 270.0 ,
@@ -152,7 +152,7 @@ class _M_1_1_2ndState extends State<M_1_1_2nd> {
               ),
             if (New.avatar=="Orange")
               Visibility(
-
+                visible: Visible,
                 child: Positioned(
                   top: 470.0,
                   left: 285.0 ,
@@ -163,7 +163,7 @@ class _M_1_1_2ndState extends State<M_1_1_2nd> {
               ),
             if (New.avatar=="Blue")
               Visibility(
-
+                visible: Visible,
                 child: Positioned(
                   top: 470.0,
                   left: 280.0 ,
