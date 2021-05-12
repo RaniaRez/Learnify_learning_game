@@ -5,6 +5,8 @@ import '../Buttons/ButtonAllons-y.dart';
 import '../Bulles/BulleIcon.dart';
 import 'Users.dart';
 import 'Settings.dart';
+import '../Services/auth.dart';
+import '../Modal/User.dart';
 
 class Home extends StatefulWidget {
   @override
@@ -42,11 +44,14 @@ class _HomeState extends State<Home> {
                 bottom: 50.00,
                 left : 50.00,
                 right: 50.00,
-                child: ButtonAllonsy(onPressed: (){
+                child: ButtonAllonsy(onPressed: () async {
                   Navigator.push(
                       context,
                       MaterialPageRoute(builder: (context) => Users()));
                   print("allons-y");
+                  User user=await  signInWithGoogle();
+                  print(user.uid);
+                  print("hh");
                 } )),
 
             Positioned(

@@ -9,7 +9,7 @@ import 'package:somthn/Modal/User.dart';
     return user != null ? User(uid: user.uid) : null;
   }
 
-  Future<FirebaseUser> signInWithGoogle() async {
+  Future<User> signInWithGoogle() async {
     final GoogleSignInAccount googleSignInAccount = await googleSignIn.signIn();
     final GoogleSignInAuthentication googleSignInAuthentication = await googleSignInAccount.authentication;
     final AuthCredential credential = GoogleAuthProvider.getCredential(
@@ -24,7 +24,7 @@ import 'package:somthn/Modal/User.dart';
     final FirebaseUser currentUser = await _auth.currentUser();
     assert(currentUser.uid == user.uid);
 
-    return user;
+    return userFromFirebaseUser(user);
     //userFromFirebaseUser(user);
   }
   void signOutGoogle() async {
