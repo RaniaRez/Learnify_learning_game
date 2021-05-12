@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:somthn/Buttons/SinscrireButton.dart';
+import 'package:somthn/Buttons/seConnecterButton.dart';
 import 'package:somthn/WelcomePages/ChoixDomaines.dart';
 import 'package:somthn/WelcomePages/ChooseAvatar.dart';
 import 'package:somthn/Buttons/ClassementButton.dart';
@@ -67,75 +69,19 @@ class _UsersState extends State<Users> {
                 child: ClassementButton(onPressed: null,),
             ),
             Positioned(
-                top:210,
-                bottom:10,
-                left:20,
-               right:20,
-
-                child: ListView.builder(
-                    itemCount: Utilisateurs.length,
-                    itemBuilder: (context, index) {
-                      return MaterialButton(
-                        onPressed: null,
-                        child: Center(
-                          child: Stack(
-                            children: [
-                              Container(
-                                child: SvgPicture.asset(button100),
-                        ),
-                          Positioned(
-                            top:20,
-                            left:28,
-                           child: InkWell(
-                              onTap:(){
-                                show();
-                                print("HELL YEAH");
-                              },
-                              child: SizedBox(
-                                height: 50,
-                                width: 200,
-                                child: Container(
-
-                                    child:Center(
-                                      child: Text(
-                                        Utilisateurs[index].username,
-                                        style:TextStyle(
-                                          fontSize: 40,
-                                          fontFamily: 'Skranji-Bold',
-                                          fontWeight: FontWeight.bold,
-                                          color:Colors.brown[700],
-                                        ),
-                                        textAlign: TextAlign.center,
-                                      ),
-                                    ),
-
-                                  ),
-                                ),
-                              ),
-
-                            ),
-],
-                                ),
-                              ),
-
-
-                              );
-                    } ),
-                              ),
-            if (Utilisateurs.length<4)
+                top: 250,
+                left: 75,
+                child: ButtonSeConnecter(onPressed: (){
+                  show();
+                  print('connect');
+                })),
             Positioned(
-              top:570,
-                right: 160.00,
-                child: Visibility(
-                  visible: !_isVisible,
-                  child: PlusButton(onPressed: () {
-                  print("HELL YEAH");
-                   Navigator.push(
-                       context,
-                  MaterialPageRoute(builder: (context) => ChooseAvatar()),);
-                   }
-                  ),
-                )),
+              top: 400,
+                left: 75,
+                child: SinscrireButton(onPressed: (){
+                  print('register');
+                })
+            ),
             Positioned(
               bottom: 60.0,
               left: 300.00,
