@@ -7,6 +7,6 @@ import 'package:somthn/Maths/I-M-2-5.dart';
 import 'WelcomePages/Home.dart';
 void main() {
   runApp(MaterialApp(
-    home :I_M_2_5_()
+    home :Home()
   ));
 }
