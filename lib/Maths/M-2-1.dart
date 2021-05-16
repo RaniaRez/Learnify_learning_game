@@ -75,7 +75,7 @@ class _M_2_1State extends State<M_2_1> {
                 child: BarreProgres(),
               ),
             ),
-            Visibility(
+           /* Visibility(
               visible: Visible,
               child: Positioned(
                 bottom: 220.0,
@@ -96,7 +96,7 @@ class _M_2_1State extends State<M_2_1> {
 
                 },),
               ),
-            ),
+            ),*/
             if (New.avatar=="Pink")
               Visibility(
 

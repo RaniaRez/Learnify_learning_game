@@ -91,6 +91,8 @@ const FourBars=  'assets/icons/FourBars.svg';
 const EmptyTable=  'assets/icons/EmptyTable.svg';
 const seConnecter=  'assets/icons/seConnecter.svg';
 const sinscrire=  'assets/icons/sinscrire.svg';
+const Right=  'assets/icons/Right.svg';
+const Wrong=  'assets/icons/Wrong.svg';
 
 
 
