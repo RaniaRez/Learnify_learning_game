@@ -65,13 +65,15 @@ class _UsersState extends State<Users> {
                 },)
             ),
             Positioned(
-                top: 51,
-                left: 150,
+                top: size.height*0.05,
+                left: size.width*0.4,
                 child: ClassementButton(onPressed: null,),
             ),
             Positioned(
-                top: 250,
-                left: 75,
+                top: size.height*0.25,
+                left: size.width*0.2,
+                height: size.height*0.3,
+                width: size.width*0.6,
                 child: ButtonSeConnecter(onPressed: (){
                   show();
                   print('connect');
@@ -79,8 +81,10 @@ class _UsersState extends State<Users> {
                   print('signout');
                 })),
             Positioned(
-              top: 400,
-                left: 75,
+                top: size.height*0.45,
+                left: size.width*0.2,
+                height: size.height*0.3,
+                width: size.width*0.6,
                 child: SinscrireButton(onPressed: () async{
                   Navigator.push(context,
                     MaterialPageRoute(builder: (context) => ChooseAvatar()),);
@@ -91,8 +95,8 @@ class _UsersState extends State<Users> {
                 })
             ),
             Positioned(
-              bottom: 60.0,
-              left: 300.00,
+              top: size.height*0.8,
+              left:size.width*0.75,
               child: Visibility(
                 child: GoToButton(onPressed: (){
                   print("HELL YEAH");
@@ -106,8 +110,8 @@ class _UsersState extends State<Users> {
 
             ),
              Positioned(
-              bottom: 60.0,
-               right: 155.0,
+               top: size.height*0.805,
+               left: size.width*0.390,
                child: Visibility(
                 child: UserSettingsButton(onPressed: (){
                   Navigator.push(
@@ -119,8 +123,8 @@ class _UsersState extends State<Users> {
                ),
              ),
             Positioned(
-              bottom: 60.0,
-              right: 300.0,
+              top: size.height*0.8,
+              right:size.width*0.75,
               child: Visibility(
                 child: StatistiqueButton(onPressed: null,),
                 visible: _isVisible,

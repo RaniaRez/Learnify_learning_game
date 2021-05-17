@@ -29,7 +29,7 @@ class _UserinfoState extends State<Userinfo> {
   @override
 
   Widget build(BuildContext context) {
-
+    Size size = MediaQuery.of(context).size;
     return Scaffold(
       body:
       Stack(
@@ -42,8 +42,8 @@ class _UserinfoState extends State<Userinfo> {
                     fit: BoxFit.cover)),
           ),
           Positioned(
-              top: 50.00,
-              left: 300.00,
+              top: size.height*0.05,
+              left:size.width*0.75,
               child: SettingsButton(onPressed: (){
                 Navigator.push(
                     context,
@@ -53,8 +53,8 @@ class _UserinfoState extends State<Userinfo> {
           ),
 
           Positioned(
-              top: 5.00,
-              right: 250.00,
+              top: size.height*0.05,
+              right:size.width*0.75,
               child: BacksButton(onPressed: (){
                 print("HELL YEAH");
                 Navigator.pop(
@@ -63,8 +63,8 @@ class _UserinfoState extends State<Userinfo> {
               },)
           ),
           Positioned(
-            top: -3.5,
-            left: 100.0,
+            bottom: size.height*0.765,
+            left: size.width*0.24 ,
             child: HomeButton(
               onPressed: (){
                 print("HELL YEAH");
@@ -76,13 +76,11 @@ class _UserinfoState extends State<Userinfo> {
             ),
           ),
           Positioned(
-              top: 120.0,
-              right: 250.0 ,
-              height: 300.0,
-              width: 200.0,
+            top: size.height*0.3,
+            right:size.width*0.62,
               child:BranchIconSimple(),
             ),
-          if (New.avatar=="Pink")
+         // if (New.avatar=="Pink")
             Visibility(
 
               child: Positioned(

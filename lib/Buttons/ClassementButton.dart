@@ -9,7 +9,7 @@ class ClassementButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return IconButton(
         icon : SvgPicture.asset(ClassementIcon),
-        iconSize: 90.0,
+        iconSize: 75.0,
         onPressed: onPressed
     );
   }
