@@ -10,7 +10,6 @@ class ButtonOne extends StatelessWidget
   Widget build(BuildContext context) {
     return IconButton(
         icon : SvgPicture.asset(button1),
-        iconSize: 200.0,
         onPressed: onPressed
     );
   }
