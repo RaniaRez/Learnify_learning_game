@@ -84,8 +84,10 @@ class _UserinfoState extends State<Userinfo> {
             Visibility(
 
               child: Positioned(
-                top: 154.0,
-                right: 290.0 ,
+                top: size.height*0.145,
+                right:size.width*0.62,
+                height: size.height*0.3,
+                width: size.width*0.3,
                 child:PinkAvatarIcon(onPressed: null,),
               ),
             ),
