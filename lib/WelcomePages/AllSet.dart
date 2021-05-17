@@ -85,10 +85,8 @@ class _AllSetState extends State<AllSet> {
               Visibility(
 
                 child: Positioned(
-                  top: size.height*0.4,
-                  right: size.width*0.32 ,
-                  height: size.height*0.6,
-                  width: size.width*0.7,
+                  top: size.height*0.62,
+                  right: size.width*0.62 ,
                   child:BranchIconSimple(),
                 ),
               ),
@@ -97,7 +95,7 @@ class _AllSetState extends State<AllSet> {
 
                   child: Positioned(
                     top: size.height*0.45,
-                    right: size.width*0.53 ,
+                    right: size.width*0.63 ,
                     height: size.height*0.3,
                     width: size.width*0.3,
                     child:PinkAvatarIcon(onPressed: null,),
@@ -107,8 +105,8 @@ class _AllSetState extends State<AllSet> {
                 Visibility(
 
                   child: Positioned(
-                    top: size.height*0.44,
-                    right: size.width*0.58 ,
+                    top: size.height*0.43,
+                    right: size.width*0.63 ,
                     height: size.height*0.35,
                     width: size.width*0.35,
 
@@ -119,8 +117,8 @@ class _AllSetState extends State<AllSet> {
                 Visibility(
 
                   child: Positioned(
-                    top: size.height*0.47,
-                    right: size.width*0.59 ,
+                    top: size.height*0.46,
+                    right: size.width*0.63 ,
                     height: size.height*0.3,
                     width: size.width*0.3,
                     child: OrangeAvatarIcon(onPressed: null,),
@@ -131,7 +129,7 @@ class _AllSetState extends State<AllSet> {
 
                   child: Positioned(
                     top: size.height*0.45,
-                    right: size.width*0.57 ,
+                    right: size.width*0.63 ,
                     height: size.height*0.3,
                     width: size.width*0.3,
                     child:BlueAvatarIcon(onPressed: null,),
