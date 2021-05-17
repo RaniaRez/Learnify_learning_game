@@ -15,12 +15,13 @@ class Home extends StatefulWidget {
 class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
-    return Container(
-      height : 1520 ,
-      width : 720,
-      child: Scaffold(
-        body:
-        Stack(
+    Size size = MediaQuery.of(context).size;
+    return Scaffold(
+      body:
+      Container(
+        height: size.height,
+        width: size.width,
+        child: Stack(
             children: <Widget>[
               Container(
                 constraints: BoxConstraints.expand(),
@@ -30,8 +31,8 @@ class _HomeState extends State<Home> {
                         fit: BoxFit.cover)),
               ),
               Positioned(
-                  top: 60.00,
-                  left: 300.00,
+                  top: size.height*0.05,
+                  left:size.width*0.75,
                   child:
                   SettingsButton(onPressed: (){
                     Navigator.push(
@@ -43,9 +44,10 @@ class _HomeState extends State<Home> {
 
 
               Positioned(
-                  bottom: 50.00,
-                  left : 50.00,
-                  right: 50.00,
+                  top: size.height*0.55,
+                  right : size.height*0.1,
+                  height: size.height*0.6,
+                  width: size.width*0.6,
                   child: ButtonAllonsy(onPressed: () {
                     Navigator.push(
                         context,
@@ -54,19 +56,19 @@ class _HomeState extends State<Home> {
                   } )),
 
               Positioned(
-                top: 80,
-                right: 50.0,
+                top: size.height*0.001,
+                right: size.width*0.2,
                 child: Container(
-                  height: 380.0,
-                  width: 380.0,
+                  height: size.height*0.6,
+                  width: size.width*0.8,
                   child: Image.asset('images/OWL.gif'),
                 ),
               ),
               Positioned(
-                top: 285.0,
-                left: 115.0 ,
-                height: 300.0,
-                width: 300.0,
+                top: size.height*0.2,
+                left: size.width*0.3 ,
+                height: size.height*0.6,
+                width: size.width*0.7,
                 child:BulleIcon(onPressed: (){}),
               ),
             ]

@@ -8,10 +8,11 @@ class SettingsButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    Size size = MediaQuery.of(context).size;
     return IconButton(
           icon : Container(
               child: SvgPicture.asset(settingsIcon)),
-        iconSize: 90.0,
+        iconSize: 70.0,
         onPressed: onPressed
     );
   }

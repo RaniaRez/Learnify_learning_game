@@ -8,7 +8,6 @@ class SinscrireButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return IconButton(
-        iconSize: 250,
         icon :
         SvgPicture.asset(sinscrire),
         onPressed: onPressed

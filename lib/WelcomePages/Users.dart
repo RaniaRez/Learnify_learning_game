@@ -33,6 +33,7 @@ class _UsersState extends State<Users> {
     });
   }
   Widget build(BuildContext context) {
+    Size size = MediaQuery.of(context).size;
     return Scaffold(
       body:
       Stack(
@@ -45,8 +46,8 @@ class _UsersState extends State<Users> {
                       fit: BoxFit.cover)),
             ),
             Positioned(
-                top: 50.00,
-                left: 300.00,
+                top: size.height*0.05,
+                left:size.width*0.75,
                 child: SettingsButton(onPressed: (){
                   Navigator.push(
                       context,
@@ -56,8 +57,8 @@ class _UsersState extends State<Users> {
             ),
 
             Positioned(
-                top: 6.00,
-                right: 250.00,
+                top: size.height*0.05,
+                right:size.width*0.75,
                 child: BacksButton(onPressed: (){
                   print("HELL YEAH");
                   Navigator.pop(context);

@@ -9,7 +9,7 @@ class BacksButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return IconButton(
         icon : SvgPicture.asset(backButton),
-        iconSize: 200.0,
+        iconSize: 70.0,
         onPressed: onPressed
     );
   }

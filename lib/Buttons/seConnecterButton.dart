@@ -8,7 +8,6 @@ class ButtonSeConnecter extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return IconButton(
-        iconSize: 250,
         icon :
         SvgPicture.asset(seConnecter),
         onPressed: onPressed
