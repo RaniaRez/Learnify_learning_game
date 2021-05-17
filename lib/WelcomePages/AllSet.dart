@@ -126,7 +126,7 @@ class _AllSetState extends State<AllSet> {
                     child: OrangeAvatarIcon(onPressed: null,),
                   ),
                 ),
-            //  if (New.avatar=="Blue")
+             if (New.avatar=="Blue")
                 Visibility(
 
                   child: Positioned(
