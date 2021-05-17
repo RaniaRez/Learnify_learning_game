@@ -1,8 +1,10 @@
 class User {
+ final String uid;
  String username;
  String avatar;
  String Password;
  bool New =true;
+ User({this.uid});
  SetAvatar(String a){
   this.avatar = a;
  }

@@ -14,7 +14,7 @@ import '../Buttons/buttonStatistique.dart';
 import '../Buttons/buttonUserSettings.dart';
 //for backend
 import '../Services/auth.dart';
-import '../Modal/User.dart';
+
 
 List<User> Utilisateurs = [
 ];
