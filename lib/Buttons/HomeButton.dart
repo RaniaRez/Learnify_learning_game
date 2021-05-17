@@ -9,7 +9,7 @@ class HomeButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return IconButton(
         icon : SvgPicture.asset(homeIcon),
-        iconSize: 200.0,
+        iconSize: 80.0,
         onPressed: onPressed
     );
   }
