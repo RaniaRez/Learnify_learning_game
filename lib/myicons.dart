@@ -3,6 +3,7 @@ const purpleOwl = 'assets/icons/PurpleOwl.svg';
 const welcomeOwl = 'assets/icons/welcome.svg';
 const backButton = 'assets/icons/backButton.svg';
 const bulleWelcome = 'assets/icons/bulle1.svg';
+const bulleAllSet = 'assets/icons/bulleAllSet.svg';
 const button1 = 'assets/icons/button1.svg';
 const homeIcon = 'assets/icons/homeIcon.svg';
 const settingsIcon = 'assets/icons/SettingsIcon.svg';
