@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:somthn/Avatars/BlueAvatarIcon.dart';
 import 'package:somthn/Branches/BranchIconSimple.dart';
 import 'package:somthn/WelcomePages/ChooseAvatar.dart';
-import 'package:somthn/WelcomePages/Ecriremdp.dart';
 import 'package:somthn/WelcomePages/Entrernom.dart';
 import 'package:somthn/Buttons/HomeButton.dart';
 import 'package:somthn/Avatars/OrangeAvatarIcon.dart';
@@ -12,7 +11,6 @@ import 'package:somthn/Avatars/PurpleAvatarIcon.dart';
 import 'package:somthn/WelcomePages/Settings.dart';
 import 'package:somthn/Buttons/buttonModifyAvatar.dart';
 import 'package:somthn/Buttons/buttonModifyNom.dart';
-import 'package:somthn/Buttons/buttonModifyPass.dart';
 import 'package:somthn/Buttons/buttonSuppProfile.dart';
 import '../Buttons/settingsButton.dart';
 import '../Buttons/BacksButton.dart';
@@ -63,8 +61,8 @@ class _UserinfoState extends State<Userinfo> {
               },)
           ),
           Positioned(
-            bottom: size.height*0.765,
-            left: size.width*0.24 ,
+            top: size.height*0.047,
+            left: size.width*0.39,
             child: HomeButton(
               onPressed: (){
                 print("HELL YEAH");
@@ -80,12 +78,12 @@ class _UserinfoState extends State<Userinfo> {
             right:size.width*0.62,
               child:BranchIconSimple(),
             ),
-         // if (New.avatar=="Pink")
+          if (New.avatar=="Pink")
             Visibility(
 
               child: Positioned(
-                top: size.height*0.145,
-                right:size.width*0.62,
+                top: size.height*0.135,
+                right:size.width*0.65,
                 height: size.height*0.3,
                 width: size.width*0.3,
                 child:PinkAvatarIcon(onPressed: null,),
@@ -95,18 +93,20 @@ class _UserinfoState extends State<Userinfo> {
             Visibility(
 
               child: Positioned(
-                top: 167.0,
-                right: 310.0 ,
-
+                top: size.height*0.12,
+                right:size.width*0.65,
+                height: size.height*0.35,
+                width: size.width*0.35,
                 child:PurpleAvatarIcon(onPressed: null,),
               ),
             ),
           if (New.avatar=="Orange")
             Visibility(
-
               child: Positioned(
-                top: 160.0,
-                right: 310.0 ,
+                top: size.height*0.14,
+                right:size.width*0.65,
+                height: size.height*0.3,
+                width: size.width*0.3,
                 child: OrangeAvatarIcon(onPressed: null,),
               ),
             ),
@@ -114,16 +114,17 @@ class _UserinfoState extends State<Userinfo> {
             Visibility(
 
               child: Positioned(
-                top: 152.0,
-                right: 290.0 ,
-
+                top: size.height*0.135,
+                right:size.width*0.65,
+                height: size.height*0.3,
+                width: size.width*0.3,
                 child:BlueAvatarIcon(onPressed: null,),
               ),
             ),
 
           Positioned(
-            bottom: 180.00,
-            left : 10.00,
+            top: size.height*0.65,
+            left:size.width*0.05,
        child: Text(
     'Supprimer le compte',
            style: TextStyle(
@@ -136,8 +137,8 @@ class _UserinfoState extends State<Userinfo> {
 
           ),
 Positioned(
-            bottom: 140.00,
-            right: 10.00,
+  top:size.height*0.61,
+  right:size.width*0.05,
             child:ButtonSupp(
               onPressed: (){
 
@@ -146,9 +147,8 @@ Positioned(
             ),
           ),
           Positioned(
-            top: 340.00,
-
-            left : 10.00,
+            top: size.height*0.45,
+            left:size.width*0.05,
             child: Text(
                'Changer avatar',
                       style: TextStyle(
@@ -162,8 +162,8 @@ Positioned(
 
             ),
           Positioned(
-            top: 320,
-            right: 10.00,
+            top:size.height*0.41,
+            right:size.width*0.05,
             child: ButtonAvatar(
               onPressed: (){
                 Navigator.push(
@@ -174,8 +174,8 @@ Positioned(
             ),
           ),
           Positioned(
-            top: 420.00,
-         left: 10,
+            top: size.height*0.55,
+            left:size.width*0.05,
          child: Text(
                       'Changer nom',
                       style: TextStyle(
@@ -189,11 +189,10 @@ Positioned(
               ),
 
           Positioned(
-            top: 400.00,
-            left:200,
+            top:size.height*0.51,
+            right:size.width*0.05,
             child: Container(
-              width: 300,
-              height: 100,
+
               child: ButtonModifyNom(
                 onPressed: (){
                   Navigator.push(
@@ -205,37 +204,6 @@ Positioned(
               ),
             ),
           ),
-          Positioned(
-            bottom: 270.00,
-            left: 10,
-            child:Text(
-
-                     'Changer mot de passe',
-                      style: TextStyle(
-                        fontFamily: 'Skranji-Bold',
-                        fontSize: 24,
-
-                        color:Colors.brown[700],
-                      ),
-                        ),
-
-
-              ),
-
-          Positioned(
-            bottom:230,
-            left : 300.00,
-
-            child: ButtonModifyPass(
-              onPressed: (){
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => Ecriremdp()),);
-                print("HELL YEAH");
-              },
-            ),
-          ),
-
 ],
           ),
 
