@@ -65,10 +65,10 @@ class _BienvenueFrState extends State<BienvenueFr> {
               Visibility(
 
                 child: Positioned(
-                  top: 400.0,
-                  right: 250.0 ,
-                  height: 300.0,
-                  width: 200.0,
+                  top: 565.0,
+                  right: 270.0 ,
+                  height: 130.0,
+                  width: 130.0,
                   child:PinkAvatarIcon(onPressed: null,),
                 ),
               ),
@@ -76,10 +76,10 @@ class _BienvenueFrState extends State<BienvenueFr> {
               Visibility(
 
                 child: Positioned(
-                  top: 405.0,
-                  right: 250.0 ,
-                  height: 300.0,
-                  width: 200.0,
+                  top: 555.0,
+                  right: 270.0 ,
+                  height: 150.0,
+                  width: 150.0,
                   child:PurpleAvatarIcon(onPressed: null,),
                 ),
               ),
@@ -87,10 +87,10 @@ class _BienvenueFrState extends State<BienvenueFr> {
               Visibility(
 
                 child: Positioned(
-                  top: 410.0,
-                  right: 250.0 ,
-                  height: 300.0,
-                  width: 200.0,
+                  top: 565.0,
+                  right: 270.0 ,
+                  height: 130.0,
+                  width: 130.0,
                   child: OrangeAvatarIcon(onPressed: null,),
                 ),
               ),
@@ -98,13 +98,14 @@ class _BienvenueFrState extends State<BienvenueFr> {
               Visibility(
 
                 child: Positioned(
-                  top: 400.0,
-                  right: 250.0 ,
-                  height: 300.0,
-                  width: 200.0,
+                  top: 560.0,
+                  right: 270.0 ,
+                  height: 130.0,
+                  width: 130.0,
                   child:BlueAvatarIcon(onPressed: null,),
                 ),
               ),
+
 
             Positioned(
               top: 170.0,
