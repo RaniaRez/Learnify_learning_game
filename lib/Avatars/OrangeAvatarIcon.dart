@@ -9,7 +9,6 @@ class OrangeAvatarIcon extends StatelessWidget {
   Widget build(BuildContext context) {
     return IconButton(
         icon : SvgPicture.asset(OrangeAvatar),
-        iconSize: 100.0,
         onPressed: onPressed
     );
   }
