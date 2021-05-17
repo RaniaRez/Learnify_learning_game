@@ -74,6 +74,8 @@ class _UsersState extends State<Users> {
                 child: ButtonSeConnecter(onPressed: (){
                   show();
                   print('connect');
+                  signOutGoogle();
+                  print('signout');
                 })),
             Positioned(
               top: 400,
