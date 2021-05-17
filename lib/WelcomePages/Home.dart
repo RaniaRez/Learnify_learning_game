@@ -15,12 +15,12 @@ class Home extends StatefulWidget {
 class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
-    Size size=MediaQuery.of(context).size;
+    Size size = MediaQuery.of(context).size;
     return Scaffold(
       body:
       Container(
-        height:size.height,
-        width:size.width,
+        height: size.height,
+        width: size.width,
         child: Stack(
             children: <Widget>[
               Container(
@@ -31,7 +31,7 @@ class _HomeState extends State<Home> {
                         fit: BoxFit.cover)),
               ),
               Positioned(
-                  top:size.height*0.05,
+                  top: size.height*0.05,
                   left:size.width*0.75,
                   child:
                   SettingsButton(onPressed: (){
@@ -48,7 +48,6 @@ class _HomeState extends State<Home> {
                   right : size.height*0.1,
                   height: size.height*0.6,
                   width: size.width*0.6,
-
                   child: ButtonAllonsy(onPressed: () {
                     Navigator.push(
                         context,
@@ -59,21 +58,18 @@ class _HomeState extends State<Home> {
               Positioned(
                 top: size.height*0.001,
                 right: size.width*0.2,
-
                 child: Container(
                   height: size.height*0.6,
                   width: size.width*0.8,
-
                   child: Image.asset('images/OWL.gif'),
                 ),
               ),
               Positioned(
-                  top: size.height*0.2,
-                  left: size.width*0.3 ,
-                  height: size.height*0.6,
-                  width: size.width*0.7,
-
-              child:BulleIcon(onPressed: (){}),
+                top: size.height*0.2,
+                left: size.width*0.3 ,
+                height: size.height*0.6,
+                width: size.width*0.7,
+                child:BulleIcon(onPressed: (){}),
               ),
             ]
         ),

@@ -9,7 +9,7 @@ class BulleIcon extends StatelessWidget {
   Widget build(BuildContext context) {
     return IconButton(
         icon :
-        SvgPicture.asset(bulleWelcome),
+                SvgPicture.asset(bulleWelcome),
         onPressed: onPressed
     );
   }
