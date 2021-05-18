@@ -42,6 +42,7 @@ const buttonMotdepasse = 'assets/icons/MotDePasse.svg';
 const buttonSupp = 'assets/icons/Supprimer.svg';
 const buttonNomUser = 'assets/icons/NomUser.svg';
 const bullevide = 'assets/icons/bullevide.svg';
+const bulleNom = 'assets/icons/Bullenom.svg';
 const ClassementIcon = 'assets/icons/ClassementIcon.svg';
 const PinkAvatar = 'assets/icons/PinkAvatar.svg';
 const PurpleAvatar = 'assets/icons/PurpleAvatar.svg';

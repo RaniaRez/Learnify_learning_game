@@ -9,9 +9,10 @@ import 'package:somthn/Maths/I-M-2-5.dart';
 import 'package:somthn/WelcomePages/AllSet.dart';
 import 'package:somthn/WelcomePages/ChoixDomaines.dart';
 import 'package:somthn/WelcomePages/ChooseAvatar.dart';
+import 'package:somthn/WelcomePages/Entrernom.dart';
 import 'WelcomePages/Home.dart';
 void main() {
   runApp(MaterialApp(
-    home:ChooseAvatar()
+    home:Entrernom()
   ));
 }
