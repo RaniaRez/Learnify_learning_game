@@ -14,7 +14,9 @@ import 'Home.dart';
 import 'Settings.dart';
 import '../Branches/BranchIconSimple.dart';
 import 'Creermdp.dart';
-import 'ChooseAvatar.dart';
+//import 'ChooseAvatar.dart';
+import '../Services/Login.dart';
+import '../Services/SignUp.dart';
 
 
 
@@ -90,7 +92,7 @@ class _EntrernomState extends State<Entrernom> {
               child:BranchIconSimple(),
             ),
           ),
-          if (New.avatar=="Pink")
+          if (user.avatar=="Pink")
             Visibility(
             visible:_Visible ,
             child: Positioned(
@@ -101,7 +103,7 @@ class _EntrernomState extends State<Entrernom> {
               child:PinkAvatarIcon(onPressed: null,),
             ),
           ),
-          if (New.avatar=="Purple")
+          if (user.avatar=="Purple")
             Visibility(
               visible:_Visible ,
               child: Positioned(
@@ -112,7 +114,7 @@ class _EntrernomState extends State<Entrernom> {
                 child:PurpleAvatarIcon(onPressed: null,),
               ),
             ),
-          if (New.avatar=="Orange")
+          if (user.avatar=="Orange")
             Visibility(
               visible:_Visible ,
               child: Positioned(
@@ -123,7 +125,7 @@ class _EntrernomState extends State<Entrernom> {
                 child: OrangeAvatarIcon(onPressed: null,),
               ),
             ),
-          if (New.avatar=="Blue")
+          if (user.avatar=="Blue")
             Visibility(
               visible:_Visible ,
               child: Positioned(
@@ -250,7 +252,7 @@ class _EntrernomState extends State<Entrernom> {
                     });
                   } else {
                     setState(() {
-                      New.SetUsername(Username.text);
+                      user.SetUsername(Username.text);
                       _GoTo = true;
                     });
                   }

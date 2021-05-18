@@ -13,7 +13,9 @@ import '../Buttons/buttonGoTo.dart';
 import '../Buttons/buttonStatistique.dart';
 import '../Buttons/buttonUserSettings.dart';
 //for backend
-import '../Services/auth.dart';
+//import '../Services/auth.dart';
+import '../Services/Login.dart';
+import '../Services/SignUp.dart';
 
 
 List<User> Utilisateurs = [
@@ -77,9 +79,12 @@ class _UsersState extends State<Users> {
                   left: size.width*0.2,
                   height: size.height*0.3,
                   width: size.width*0.6,
-                  child: ButtonSeConnecter(onPressed: (){
+                  child: ButtonSeConnecter(onPressed: () async{
                     show();
                     print('connect');
+                    await googleLogin();
+
+
                   })),
               Positioned(
                   top: size.height*0.45,
@@ -89,10 +94,7 @@ class _UsersState extends State<Users> {
                   child: SinscrireButton(onPressed: () async{
                     Navigator.push(context,
                       MaterialPageRoute(builder: (context) => ChooseAvatar()),);
-                    print('register');
-                    User user=await  signInWithGoogle();
-                    print(user.uid);
-                    print("hh");
+                    await googleSignUp();
                   })
               ),
               Positioned(
@@ -107,7 +109,6 @@ class _UsersState extends State<Users> {
                   },),
                   visible: _isVisible,
                 ),
-
 
               ),
                Positioned(
