@@ -6,6 +6,7 @@ import '../Bulles/BulleIcon.dart';
 import 'Users.dart';
 import 'Settings.dart';
 
+
 class Home extends StatefulWidget {
   @override
   _HomeState createState() => _HomeState();
@@ -14,58 +15,64 @@ class Home extends StatefulWidget {
 class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
+    Size size = MediaQuery.of(context).size;
     return Scaffold(
       body:
-      Stack(
-          children: <Widget>[
-            Container(
-              constraints: BoxConstraints.expand(),
-              decoration: BoxDecoration(
-                  image: DecorationImage(
-                      image: AssetImage("images/forestbackground.jpg"),
-                      fit: BoxFit.cover)),
-            ),
-            Positioned(
-                top: 60.00,
-                left: 300.00,
-                child:
-                SettingsButton(onPressed: (){
-                  Navigator.push(
-                      context,
-                      MaterialPageRoute(builder: (context) => Settings()));
-                  print("settings");
-                },)
-            ),
-
-
-            Positioned(
-                bottom: 50.00,
-                left : 50.00,
-                right: 50.00,
-                child: ButtonAllonsy(onPressed: (){
-                  Navigator.push(
-                      context,
-                      MaterialPageRoute(builder: (context) => Users()));
-                  print("allons-y");
-                } )),
-
-            Positioned(
-              top: 80,
-              right: 50.0,
-              child: Container(
-                height: 380.0,
-                width: 380.0,
-                child: Image.asset('images/OWL.gif'),
+      Container(
+        height: size.height,
+        width: size.width,
+        child: Stack(
+            children: <Widget>[
+              Container(
+                constraints: BoxConstraints.expand(),
+                decoration: BoxDecoration(
+                    image: DecorationImage(
+                        image: AssetImage("images/forestbackground.jpg"),
+                        fit: BoxFit.cover)),
               ),
-            ),
-            Positioned(
-              top: 285.0,
-              left: 115.0 ,
-              height: 300.0,
-              width: 300.0,
-              child:BulleIcon(onPressed: (){}),
-            ),
-          ]
+              Positioned(
+                  top: size.height*0.05,
+                  left:size.width*0.75,
+                  child:
+                  SettingsButton(onPressed: (){
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => Settings()));
+                    print("settings");
+                  },)
+              ),
+
+
+              Positioned(
+                  top: size.height*0.55,
+                  right : size.height*0.1,
+                  height: size.height*0.6,
+                  width: size.width*0.6,
+                  child: ButtonAllonsy(onPressed: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => Users()));
+                    print("allons-y");
+                  } )),
+
+              Positioned(
+                top: size.height*0.001,
+                right: size.width*0.2,
+                child: Container(
+                  height: size.height*0.6,
+                  width: size.width*0.8,
+                  child: Image.asset('images/OWL.gif'),
+                ),
+              ),
+              Positioned(
+                top: size.height*0.2,
+                left: size.width*0.3 ,
+                height: size.height*0.6,
+                width: size.width*0.7,
+                child:BulleIcon(onPressed: (){}),
+              ),
+            ]
+        ),
       ),
     );
 

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:somthn/Maths/M-1-2-2ndAttempt.dart';
 import 'package:somthn/Maths/M-1-5.dart';
+import 'package:somthn/Mutual/Niveau1Pass%C3%A9.dart';
 import 'package:somthn/WelcomePages/Settings.dart';
 import 'package:somthn/Bulles/bulleQuest.dart';
 import 'package:somthn/Buttons/button0.dart';
@@ -27,29 +28,7 @@ import 'package:somthn/Avatars/PurpleAvatarIcon.dart';
 import 'package:somthn/Avatars/BlueAvatarIcon.dart';
 import '../WelcomePages/ChooseAvatar.dart';
 
-bool oneD = false;
-bool oneU = false;
-bool twoD = false;
-bool twoU = false;
-bool threeD = false;
-bool threeU = false;
-bool fourD = false;
-bool fourU = false;
-bool fiveD = false;
-bool fiveU = false;
-bool sixD = false;
-bool sixU = false;
-bool sevenD = false;
-bool sevenU = false;
-bool eightD = false;
-bool eightU = false;
-bool nineD = false;
-bool nineU = false;
-bool zeroD = false;
-bool zeroU = false;
-bool First = false;
-bool all = false;
-bool Visible = true;
+
 class M_1_5_3rd extends StatefulWidget {
   const M_1_5_3rd({Key key}) : super(key: key);
 
@@ -58,6 +37,30 @@ class M_1_5_3rd extends StatefulWidget {
 }
 
 class _M_1_5_3rdState extends State<M_1_5_3rd> {
+  bool oneD = false;
+  bool oneU = false;
+  bool twoD = false;
+  bool twoU = false;
+  bool threeD = false;
+  bool threeU = false;
+  bool fourD = false;
+  bool fourU = false;
+  bool fiveD = false;
+  bool fiveU = false;
+  bool sixD = false;
+  bool sixU = false;
+  bool sevenD = false;
+  bool sevenU = false;
+  bool eightD = false;
+  bool eightU = false;
+  bool nineD = false;
+  bool nineU = false;
+  bool zeroD = false;
+  bool zeroU = false;
+  bool First = false;
+  bool all = false;
+  bool Visible = true;
+  bool correct = false;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -111,9 +114,11 @@ class _M_1_5_3rdState extends State<M_1_5_3rd> {
                 child: GoToButton(onPressed: (){
                   setState(() {
                     if ((nineU) && (twoD)){
+                      correct=true;
                       Visible = false;
                       print('Correct');
                     }else{
+                      Visible=false;
                       print('Wrong');
                     }
                   });
@@ -124,9 +129,9 @@ class _M_1_5_3rdState extends State<M_1_5_3rd> {
             ),
             if (New.avatar=="Pink")
               Visibility(
-
+                visible: Visible,
                 child: Positioned(
-                  top: 400.0,
+                  top: 480.0,
                   left: 280.0 ,
                   height: 130.0,
                   width: 130.0,
@@ -135,9 +140,9 @@ class _M_1_5_3rdState extends State<M_1_5_3rd> {
               ),
             if (New.avatar=="Purple")
               Visibility(
-
+                visible: Visible,
                 child: Positioned(
-                  top: 395.0,
+                  top: 470.0,
                   left: 270.0 ,
                   height: 150.0,
                   width: 150.0,
@@ -146,9 +151,9 @@ class _M_1_5_3rdState extends State<M_1_5_3rd> {
               ),
             if (New.avatar=="Orange")
               Visibility(
-
+                visible: Visible,
                 child: Positioned(
-                  top: 405.0,
+                  top: 480.0,
                   left: 285.0 ,
                   height: 130.0,
                   width: 130.0,
@@ -157,9 +162,9 @@ class _M_1_5_3rdState extends State<M_1_5_3rd> {
               ),
             if (New.avatar=="Blue")
               Visibility(
-
+                visible: Visible,
                 child: Positioned(
-                  top: 400.0,
+                  top: 480.0,
                   left: 280.0 ,
                   height: 130.0,
                   width: 130.0,
@@ -608,64 +613,124 @@ class _M_1_5_3rdState extends State<M_1_5_3rd> {
                   child: ButtonContinuer(onPressed: (){
                     Navigator.push(
                         context,
-                        MaterialPageRoute(builder: (context) => M_1_5()));
+                        MaterialPageRoute(builder: (context) => Niveau1Pass()));
                     print('Continuer');},)
               ),
             ),
-            if (New.avatar=="Pink")
-              Visibility(
-                visible: !Visible,
-                child: Positioned(
-                  bottom: 90,
-                  right: 280.0 ,
-                  height: 130.0,
-                  width: 130.0,
-                  child:PinkAvatarIcon(onPressed: null,),
-                ),
+            if (correct)
+              Stack(
+                children: <Widget>[
+                  Visibility(
+                    visible: !Visible,
+                    child: Positioned(
+                        bottom: 255,
+                        left:50,
+                        child: SvgPicture.asset(Right)
+                    ),
+                  ),
+                  if (New.avatar=="Pink")
+                    Visibility(
+                      visible: !Visible,
+                      child: Positioned(
+                        bottom: 95,
+                        right: 280.0 ,
+                        height: 130.0,
+                        width: 130.0,
+                        child: Image.asset('images/HappyPink.gif'),
+                      ),
+                    ),
+                  if (New.avatar=="Purple")
+                    Visibility(
+                      visible: !Visible,
+                      child: Positioned(
+                        bottom: 100,
+                        right: 260.0 ,
+                        height: 150.0,
+                        width: 150.0,
+                        child:Image.asset('images/HappyPurple.gif'),
+                      ),
+                    ),
+                  if (New.avatar=="Orange")
+                    Visibility(
+                      visible: !Visible,
+                      child: Positioned(
+                        bottom: 95,
+                        right: 280.0 ,
+                        height: 130.0,
+                        width: 130.0,
+                        child: Image.asset('images/HappyOrange.gif'),
+                      ),
+                    ),
+                  if (New.avatar=="Blue")
+                    Visibility(
+                      visible: !Visible,
+                      child: Positioned(
+                        bottom: 95,
+                        right: 280.0 ,
+                        height: 130.0,
+                        width: 130.0,
+                        child:Image.asset('images/HappyBlue.gif'),
+                      ),
+                    ),
+                ],
               ),
-            if (New.avatar=="Purple")
-              Visibility(
-                visible: !Visible,
-                child: Positioned(
-                  bottom: 100,
-                  right: 260.0 ,
-                  height: 150.0,
-                  width: 150.0,
-                  child:Image.asset('images/HappyPurpleOwl.gif'),
-                ),
+            if (!correct)
+              Stack(
+                children:[
+                  Visibility(
+                    visible: !Visible,
+                    child: Positioned(
+                        bottom: 255,
+                        left:50,
+                        child: SvgPicture.asset(Wrong)
+                    ),
+                  ),
+                  if (New.avatar=="Pink")
+                    Visibility(
+                      visible: !Visible,
+                      child: Positioned(
+                        bottom: 95,
+                        right: 280.0 ,
+                        height: 130.0,
+                        width: 130.0,
+                        child: Image.asset('images/MadPink.gif'),
+                      ),
+                    ),
+                  if (New.avatar=="Purple")
+                    Visibility(
+                      visible: !Visible,
+                      child: Positioned(
+                        bottom: 100,
+                        right: 260.0 ,
+                        height: 150.0,
+                        width: 150.0,
+                        child:Image.asset('images/MadPurple.gif'),
+                      ),
+                    ),
+                  if (New.avatar=="Orange")
+                    Visibility(
+                      visible: !Visible,
+                      child: Positioned(
+                        bottom: 95,
+                        right: 280.0 ,
+                        height: 130.0,
+                        width: 130.0,
+                        child: Image.asset('images/MadOrange.gif'),
+                      ),
+                    ),
+                  if (New.avatar=="Blue")
+                    Visibility(
+                      visible: !Visible,
+                      child: Positioned(
+                        bottom: 95,
+                        right: 280.0 ,
+                        height: 130.0,
+                        width: 130.0,
+                        child:Image.asset('images/MadBlue.gif'),
+                      ),
+                    ),
+                ],
               ),
-            if (New.avatar=="Orange")
-              Visibility(
-                visible: !Visible,
-                child: Positioned(
-                  bottom: 90,
-                  right: 280.0 ,
-                  height: 130.0,
-                  width: 130.0,
-                  child: OrangeAvatarIcon(onPressed: null,),
-                ),
-              ),
-            if (New.avatar=="Blue")
-              Visibility(
-                visible: !Visible,
-                child: Positioned(
-                  bottom: 90,
-                  right: 280.0 ,
-                  height: 130.0,
-                  width: 130.0,
-                  child:BlueAvatarIcon(onPressed: null,),
-                ),
-              ),
-            Visibility(
-              visible: !Visible,
-              child: Positioned(
-                  height: 200,
-                  width: 200,
-                  bottom: 60,
-                  right: 60,
-                  child: SvgPicture.asset(bulleBravo)
-              ),
-            )
           ],
         ));
   }

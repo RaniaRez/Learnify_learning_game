@@ -9,7 +9,6 @@ class BlueOwl extends StatelessWidget {
   Widget build(BuildContext context) {
     return IconButton(
         icon : SvgPicture.asset(blueOwl),
-        iconSize: 200.0,
         onPressed: onPressed
     );
   }

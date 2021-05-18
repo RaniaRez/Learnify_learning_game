@@ -58,10 +58,10 @@ class _Math1State extends State<Math1> {
               Visibility(
 
                 child: Positioned(
-                  top: 355.0,
-                  right: 250.0 ,
-                  height: 300.0,
-                  width: 200.0,
+                  top: 515.0,
+                  right: 270.0 ,
+                  height: 130.0,
+                  width: 130.0,
                   child:PinkAvatarIcon(onPressed: null,),
                 ),
               ),
@@ -69,10 +69,10 @@ class _Math1State extends State<Math1> {
               Visibility(
 
                 child: Positioned(
-                  top: 360.0,
-                  right: 250.0 ,
-                  height: 300.0,
-                  width: 200.0,
+                  top: 505.0,
+                  right: 270.0 ,
+                  height: 150.0,
+                  width: 150.0,
                   child:PurpleAvatarIcon(onPressed: null,),
                 ),
               ),
@@ -80,10 +80,10 @@ class _Math1State extends State<Math1> {
               Visibility(
 
                 child: Positioned(
-                  top: 365.0,
-                  right: 250.0 ,
-                  height: 300.0,
-                  width: 200.0,
+                  top: 520.0,
+                  right: 270.0 ,
+                  height: 130.0,
+                  width: 130.0,
                   child: OrangeAvatarIcon(onPressed: null,),
                 ),
               ),
@@ -91,10 +91,10 @@ class _Math1State extends State<Math1> {
               Visibility(
 
                 child: Positioned(
-                  top: 355.0,
-                  right: 250.0 ,
-                  height: 300.0,
-                  width: 200.0,
+                  top: 520.0,
+                  right: 270.0 ,
+                  height: 130.0,
+                  width: 130.0,
                   child:BlueAvatarIcon(onPressed: null,),
                 ),
               ),

@@ -8,32 +8,7 @@ class CentreButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return IconButton(
-        icon : Container(
-          child: Center(
-            child: Stack(
-              alignment: Alignment.center,
-              children: <Widget>[
-                SvgPicture.asset(
-                    buttonCentre,
-
-                ),
-                Positioned(
-                  bottom : 25.0,
-                  child: Text(
-                    "MATHÉMATIQUE",
-                    style: TextStyle(
-                      fontFamily: 'Skranji-Bold',
-                      fontSize: 25,
-                      color: Colors.brown[700],
-                      fontWeight: FontWeight.bold,
-
-                    ),
-                  ),
-                ),
-              ],
-            ),
-          ),),
-
+        icon : SvgPicture.asset(Mathsbutton),
         onPressed: onPressed
     );
   }

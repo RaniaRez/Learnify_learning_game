@@ -9,7 +9,6 @@ class PinkOwl extends StatelessWidget {
   Widget build(BuildContext context) {
     return IconButton(
         icon : SvgPicture.asset(pinkOwl),
-        iconSize: 200.0,
         onPressed: onPressed
     );
   }

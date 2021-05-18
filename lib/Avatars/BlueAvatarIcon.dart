@@ -9,7 +9,6 @@ class BlueAvatarIcon extends StatelessWidget {
   Widget build(BuildContext context) {
     return IconButton(
         icon : SvgPicture.asset(BlueAvatar),
-        iconSize: 100.0,
         onPressed: onPressed
     );
   }

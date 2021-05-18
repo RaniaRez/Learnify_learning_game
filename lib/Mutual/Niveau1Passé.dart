@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:somthn/Bulles/BullenomIcon.dart';
 import 'package:somthn/Buttons/HomeButton.dart';
+import 'package:somthn/Buttons/buttonGoTo.dart';
+import 'package:somthn/Maths/M-2.dart';
 import 'package:somthn/WelcomePages/Settings.dart';
 import 'package:somthn/Mutual/Stars.dart';
 import '../Buttons/settingsButton.dart';
@@ -82,7 +84,9 @@ class _Niveau1PassState extends State<Niveau1Pass> {
                 right: 211.0 ,
                 height: 300.0,
                 width: 200.0,
-                child:PinkAvatarIcon(onPressed: null,),
+                child:Transform.rotate(
+                    angle: 6,
+                    child: PinkAvatarIcon(onPressed: null,)),
               ),
             ),
           if (New.avatar=="Purple")
@@ -93,7 +97,9 @@ class _Niveau1PassState extends State<Niveau1Pass> {
                 right: 211.0 ,
                 height: 300.0,
                 width: 200.0,
-                child:PurpleAvatarIcon(onPressed: null,),
+                child:Transform.rotate(
+                    angle: 6,
+                    child: PurpleAvatarIcon(onPressed: null,)),
               ),
             ),
           if (New.avatar=="Orange")
@@ -105,10 +111,12 @@ class _Niveau1PassState extends State<Niveau1Pass> {
                 height: 300.0,
                 width: 200.0,
 
-                child: OrangeAvatarIcon(onPressed: null,),
+                child: Transform.rotate(
+                  angle: 6,
+                    child: OrangeAvatarIcon(onPressed: null,)),
               ),
             ),
-         // if (New.avatar=="Blue")
+          if (New.avatar=="Blue")
 
           Positioned(
                 top: 442.0,
@@ -130,7 +138,7 @@ class _Niveau1PassState extends State<Niveau1Pass> {
             child:BullenomIcon(),
           ),
           Positioned(
-            top : 290,
+            top : 270,
             left: 145.5,
             right: 70.5,
             bottom: 10.0,
@@ -138,7 +146,7 @@ class _Niveau1PassState extends State<Niveau1Pass> {
               height: 10,
               width: 10,
               child: Text(
-                'Niveau passé',
+                'Niveau 1 passé',
                 style: TextStyle(
                   fontFamily: 'Skranji-bold',
                   fontSize: 30,
@@ -150,7 +158,15 @@ class _Niveau1PassState extends State<Niveau1Pass> {
               ),
             ),
           ),
-
+          Positioned(
+            top: 750.0,
+            left: 300.00,
+            child: GoToButton(onPressed: (){
+              Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => Math2()));
+              }),
+          ),
 
         ],
       ),

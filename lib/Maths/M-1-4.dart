@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:somthn/Maths/M-1-4-2ndAttempt.dart';
+import 'package:somthn/Maths/M-1-5.dart';
 import 'package:somthn/WelcomePages/Settings.dart';
 import 'package:somthn/Bulles/bulleQuest.dart';
 import 'package:somthn/Buttons/button0.dart';
@@ -26,29 +27,7 @@ import 'package:somthn/Avatars/PurpleAvatarIcon.dart';
 import 'package:somthn/Avatars/BlueAvatarIcon.dart';
 import '../WelcomePages/ChooseAvatar.dart';
 
-bool oneD = false;
-bool oneU = false;
-bool twoD = false;
-bool twoU = false;
-bool threeD = false;
-bool threeU = false;
-bool fourD = false;
-bool fourU = false;
-bool fiveD = false;
-bool fiveU = false;
-bool sixD = false;
-bool sixU = false;
-bool sevenD = false;
-bool sevenU = false;
-bool eightD = false;
-bool eightU = false;
-bool nineD = false;
-bool nineU = false;
-bool zeroD = false;
-bool zeroU = false;
-bool First = false;
-bool all = false;
-bool Visible = true;
+
 class M_1_4 extends StatefulWidget {
   const M_1_4({Key key}) : super(key: key);
 
@@ -57,6 +36,29 @@ class M_1_4 extends StatefulWidget {
 }
 
 class _M_1_4State extends State<M_1_4> {
+  bool oneD = false;
+  bool oneU = false;
+  bool twoD = false;
+  bool twoU = false;
+  bool threeD = false;
+  bool threeU = false;
+  bool fourD = false;
+  bool fourU = false;
+  bool fiveD = false;
+  bool fiveU = false;
+  bool sixD = false;
+  bool sixU = false;
+  bool sevenD = false;
+  bool sevenU = false;
+  bool eightD = false;
+  bool eightU = false;
+  bool nineD = false;
+  bool nineU = false;
+  bool zeroD = false;
+  bool zeroU = false;
+  bool First = false;
+  bool all = false;
+  bool Visible = true;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -128,7 +130,7 @@ class _M_1_4State extends State<M_1_4> {
               Visibility(
 
                 child: Positioned(
-                  top: 400.0,
+                  top: 480.0,
                   left: 280.0 ,
                   height: 130.0,
                   width: 130.0,
@@ -139,7 +141,7 @@ class _M_1_4State extends State<M_1_4> {
               Visibility(
 
                 child: Positioned(
-                  top: 395.0,
+                  top: 470.0,
                   left: 270.0 ,
                   height: 150.0,
                   width: 150.0,
@@ -150,7 +152,7 @@ class _M_1_4State extends State<M_1_4> {
               Visibility(
 
                 child: Positioned(
-                  top: 405.0,
+                  top: 480.0,
                   left: 285.0 ,
                   height: 130.0,
                   width: 130.0,
@@ -161,14 +163,13 @@ class _M_1_4State extends State<M_1_4> {
               Visibility(
 
                 child: Positioned(
-                  top: 400.0,
+                  top: 480.0,
                   left: 280.0 ,
                   height: 130.0,
                   width: 130.0,
                   child:BlueAvatarIcon(onPressed: null,),
                 ),
               ),
-
             Positioned(
               top: 160.0,
               left: 40.0 ,
@@ -607,18 +608,22 @@ class _M_1_4State extends State<M_1_4> {
               visible: !Visible,
               child: Positioned(
                   bottom: -30,
-                  child: ButtonContinuer(onPressed: (){print('Continuer');},)
+                  child: ButtonContinuer(onPressed: (){
+                    Navigator.pushReplacement(
+                        context,
+                        MaterialPageRoute(builder: (context) => M_1_5()));
+                    print('Continuer');},)
               ),
             ),
             if (New.avatar=="Pink")
               Visibility(
                 visible: !Visible,
                 child: Positioned(
-                  bottom: 90,
+                  bottom: 95,
                   right: 280.0 ,
                   height: 130.0,
                   width: 130.0,
-                  child:PinkAvatarIcon(onPressed: null,),
+                  child:Image.asset('images/HappyPink.gif'),
                 ),
               ),
             if (New.avatar=="Purple")
@@ -629,29 +634,29 @@ class _M_1_4State extends State<M_1_4> {
                   right: 260.0 ,
                   height: 150.0,
                   width: 150.0,
-                  child:Image.asset('images/HappyPurpleOwl.gif'),
+                  child:Image.asset('images/HappyPurple.gif'),
                 ),
               ),
             if (New.avatar=="Orange")
               Visibility(
                 visible: !Visible,
                 child: Positioned(
-                  bottom: 90,
+                  bottom: 95,
                   right: 280.0 ,
                   height: 130.0,
                   width: 130.0,
-                  child: OrangeAvatarIcon(onPressed: null,),
+                  child: Image.asset('images/HappyOrange.gif'),
                 ),
               ),
             if (New.avatar=="Blue")
               Visibility(
                 visible: !Visible,
                 child: Positioned(
-                  bottom: 90,
+                  bottom: 95,
                   right: 280.0 ,
                   height: 130.0,
                   width: 130.0,
-                  child:BlueAvatarIcon(onPressed: null,),
+                  child:Image.asset('images/HappyBlue.gif'),
                 ),
               ),
             Visibility(
