@@ -26,135 +26,144 @@ class ChoixDomaine extends StatefulWidget {
 class _ChoixDomaineState extends State<ChoixDomaine> {
   @override
   Widget build(BuildContext context) {
+    Size size = MediaQuery.of(context).size;
     return Scaffold(
       body:
-      Stack(
-          children: <Widget>[
-            Container(
-              constraints: BoxConstraints.expand(),
-              decoration: BoxDecoration(
-                  image: DecorationImage(
-                      image: AssetImage("images/forestbackground.jpg"),
-                      fit: BoxFit.cover)),
-            ),
+      Container(
+        height: size.height,
+        width: size.width,
+        child: Stack(
+            children: <Widget>[
+              Container(
+                constraints: BoxConstraints.expand(),
+                decoration: BoxDecoration(
+                    image: DecorationImage(
+                        image: AssetImage("images/forestbackground.jpg"),
+                        fit: BoxFit.cover)),
+              ),
 
-            Positioned(
-                top: 50.00,
-                left: 300.00,
-                child:
-                SettingsButton(onPressed: (){
-                  Navigator.push(
+              Positioned(
+                  top: size.height*0.05,
+                  left:size.width*0.75,
+                  child: SettingsButton(onPressed: (){
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => Settings()));
+                    print("HELL YEAH");
+                  },)
+              ),
+
+              Positioned(
+                  top: size.height*0.05,
+                  right:size.width*0.75,
+                  child: BacksButton(onPressed: (){
+                    print("HELL YEAH");
+                    Navigator.pop(
                       context,
-                      MaterialPageRoute(builder: (context) => Settings()));
-                  print("HELL YEAH");
-                },)
-            ),
-            Positioned(
-                top: 10.00,
-                right: 250.00,
-                child: BacksButton(onPressed: (){
-                  Navigator.pop(context);
-                },)
-            ),
-            Positioned(
-                top: 400,
-                right: 260.0,
-                child:BranchIconSimple()
-            ),
-            if (New.avatar=="Pink")
-              Visibility(
-
-                child: Positioned(
-                  top: 335.50,
-                  right: 270.00,
-                  child:PinkAvatarIcon(onPressed: null,),
-                ),
+                    );
+                  },)
               ),
-            if (New.avatar=="Purple")
-              Visibility(
+              Positioned(
+                  top: size.height*0.47,
+                  right: size.width*0.61 ,
 
-                child: Positioned(
-                  top: 330.50,
-                  right: 270.00,
-                  height: 130,
-                  width: 130,
-                  child:PurpleAvatarIcon(onPressed: null,),
-                ),
+                  child:BranchIconSimple()
               ),
-            if (New.avatar=="Orange")
-              Visibility(
+              if (New.avatar=="Pink")
+                Visibility(
 
-                child: Positioned(
-                  top: 335.50,
-                  right: 270.00,
-                  child: OrangeAvatarIcon(onPressed: null,),
+                  child: Positioned(
+                    top: size.height*0.3,
+                    right: size.width*0.58 ,
+                    height: size.height*0.3,
+                    width: size.width*0.3,
+                    child:PinkAvatarIcon(onPressed: null,),
+                  ),
                 ),
-              ),
-            if (New.avatar=="Blue")
+              if (New.avatar=="Purple")
+                Visibility(
+
+                  child: Positioned(
+                    top: size.height*0.29,
+                    right: size.width*0.58 ,
+                    height: size.height*0.35,
+                    width: size.width*0.35,
+                    child:PurpleAvatarIcon(onPressed: null,),
+                  ),
+                ),
+              if (New.avatar=="Orange")
+                Visibility(
+
+                  child: Positioned(
+                    top: size.height*0.32,
+                    right: size.width*0.61 ,
+                    height: size.height*0.3,
+                    width: size.width*0.3,
+                    child: OrangeAvatarIcon(onPressed: null,),
+                  ),
+                ),
+              //    if (New.avatar=="Blue")
               Visibility(
 
                 child: Positioned(
-                  top: 335.50,
-                  right: 270.00,
+                  top: size.height*0.306,
+                  right: size.width*0.61 ,
+                  height: size.height*0.3,
+                  width: size.width*0.3,
                   child:BlueAvatarIcon(onPressed: null,),
                 ),
               ),
-            Positioned(
-              top: 130.0,
-              left: 65.0 ,
-              height: 300.0,
-              width: 300.0,
-              child:Bulle2Icon(),
-            ),
-
-            Positioned(
-              bottom: 170.0,
-              left: 62.0,
-              child: Container(
-                width: 300,
-                height: 100,
-                child: CentreButton(onPressed:(){
-                  print('math');
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (BuildContext context) => BienvenueMath()));
-
-                }),
+              Positioned(
+                bottom: size.height*0.4,
+                left: size.width*0.25 ,
+                height: size.height*0.6,
+                width: size.width*0.7,
+                child:Bulle2Icon(),
               ),
-            ),
-            Positioned(
-              top: 520.0,
-              child: Container(
-                width: 250,
-                height: 100,
-                child: GaucheButton(onPressed:(){
-                  print('fr');
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (BuildContext context) => BienvenueFr()));
 
-                }),
+              Positioned(
+                bottom: size.height*0.18,
+                left: size.width*0.15 ,
+                height: size.height*0.1,
+                width: size.width*0.7,
+                  child: CentreButton(onPressed:(){
+                    print('math');
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (BuildContext context) => BienvenueMath()));
+
+                  }),
               ),
-            ),
-            Positioned(
-              bottom: 60.0,
-              left: 160.0,
-              child: Container(
-                width: 250,
-                height: 100,
+              Positioned(
+                top: size.height*0.6,
+                height: size.height*0.1,
+                width: size.width*0.55,
+                child:  GaucheButton(onPressed:(){
+                    print('fr');
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (BuildContext context) => BienvenueFr()));
+
+                  }),
+                ),
+              Positioned(
+                top: size.height*0.84,
+                left: size.width*0.45,
+                height: size.height*0.1,
+                width: size.width*0.55,
                 child: DroiteButton(onPressed:(){
-                  print('geo');
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (BuildContext context) => BienvenueGeo()));
+                    print('geo');
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (BuildContext context) => BienvenueGeo()));
 
-                }),
-              ),
-            ),
-          ]
+                  }),
+                ),
+            ]
+        ),
       ),
     );
 
