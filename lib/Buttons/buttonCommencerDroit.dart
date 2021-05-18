@@ -17,7 +17,6 @@ class ButtonCommencerD extends StatelessWidget {
               ],
             ),
           ),),
-        iconSize: 250.0,
 
         onPressed: onPressed
     );
