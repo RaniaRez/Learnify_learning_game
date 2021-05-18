@@ -2,7 +2,6 @@
 import 'package:flutter/material.dart';
 import 'package:somthn/Buttons/HomeButton.dart';
 import 'package:somthn/Buttons/buttonInfo.dart';
-import 'package:somthn/Buttons/buttonLightDark.dart';
 import 'package:somthn/Buttons/buttonMusic.dart';
 import 'package:somthn/Buttons/buttonSound.dart';
 import 'package:somthn/Buttons/buttonUserSettings.dart';
@@ -33,12 +32,12 @@ class _SettingsState extends State<Settings> {
                         fit: BoxFit.cover)),
               ),
         Positioned(
-            top: size.height*0.5,
+            top: size.height*0.4,
             left:size.width*0.6,
             child:MusicButton(onPressed:null,)
             ),
               Positioned(
-                  top: size.height*0.5,
+                  top: size.height*0.4,
                   right:size.width*0.6,
                   child:SoundButton(onPressed:null,)
               ),
@@ -50,6 +49,11 @@ class _SettingsState extends State<Settings> {
               Positioned(
                   top: size.height*0.7,
                   right:size.width*0.61,
+                  child:UserSettingsButton(onPressed:null,)
+              ),
+              Positioned(
+                  top: size.height*0.047,
+                  left: size.width*0.39,
                   child:HomeButton(onPressed:() {
                     Navigator.push(
                       context,
@@ -58,8 +62,8 @@ class _SettingsState extends State<Settings> {
               ),
 
               Positioned(
-                  top: size.height*0.3,
-                  right:size.width*0.625,
+                  top: size.height*0.05,
+                  right:size.width*0.75,
                   child:BacksButton(onPressed:() {
     print("HELL YEAH");
     Navigator.pop(context);
@@ -68,8 +72,8 @@ class _SettingsState extends State<Settings> {
 
               ),
               Positioned(
-                  top: size.height*0.3,
-                  left:size.width*0.6,
+                  top: size.height*0.04,
+                  left:size.width*0.75,
                   child:InfoButton(onPressed:() {
                     print("clicking");
                   })

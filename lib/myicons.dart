@@ -98,6 +98,9 @@ const Wrong=  'assets/icons/Wrong.svg';
 const Mathsbutton=  'assets/icons/MathsButton.svg';
 const Frbutton=  'assets/icons/FrButton.svg';
 const Geobutton=  'assets/icons/GeoButton.svg';
+const changerAvatar=  'assets/icons/changerAvatar.svg';
+const suppCompte=  'assets/icons/suppCompte.svg';
+const changerNom=  'assets/icons/changerNom.svg';
 
 
 
