@@ -6,6 +6,7 @@ import 'package:somthn/Maths/I-M-2-2.dart';
 import 'package:somthn/Maths/I-M-2-3.dart';
 import 'package:somthn/Maths/I-M-2-4.dart';
 import 'package:somthn/Maths/I-M-2-5.dart';
+import 'package:somthn/Mutual/Niveau1Pass%C3%A9.dart';
 import 'package:somthn/WelcomePages/AllSet.dart';
 import 'package:somthn/WelcomePages/ChoixDomaines.dart';
 import 'package:somthn/WelcomePages/ChooseAvatar.dart';

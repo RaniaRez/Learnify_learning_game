@@ -103,6 +103,7 @@ const Geobutton=  'assets/icons/GeoButton.svg';
 const changerAvatar=  'assets/icons/changerAvatar.svg';
 const suppCompte=  'assets/icons/suppCompte.svg';
 const changerNom=  'assets/icons/changerNom.svg';
+const bulleNiveauPasse=  'assets/icons/NiveauPasse.svg';
 
 
 
