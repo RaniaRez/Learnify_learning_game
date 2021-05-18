@@ -9,6 +9,7 @@ class CercleIcon extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       child: SvgPicture.asset(Cercle),
+
     );
   }
 }
