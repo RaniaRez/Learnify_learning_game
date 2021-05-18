@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:somthn/Bulles/BullenomIcon.dart';
 import 'package:somthn/WelcomePages/Settings.dart';
 import 'package:somthn/myicons.dart';
 import 'TestDeniveau.dart';
@@ -60,7 +59,7 @@ class _BienvenueTestState extends State<BienvenueTest> {
               ),
               Positioned(
                 top: size.height*0.48,
-                left: size.width*0.2 ,
+                right: size.width*0.48,
                 height: size.height*0.55,
                 width: size.width*0.55,
 
@@ -75,10 +74,11 @@ class _BienvenueTestState extends State<BienvenueTest> {
                 Visibility(
 
                   child: Positioned(
-                    top: 400.0,
-                    right: 250.0 ,
-                    height: 300.0,
-                    width: 200.0,
+                    top: size.height*0.51,
+                    right: size.width*0.7 ,
+                    height: size.height*0.3,
+                    width: size.width*0.3,
+
                     child:PinkAvatarIcon(onPressed: null,),
                   ),
                 ),
@@ -86,10 +86,10 @@ class _BienvenueTestState extends State<BienvenueTest> {
                 Visibility(
 
                   child: Positioned(
-                    top: 405.0,
-                    right: 250.0 ,
-                    height: 300.0,
-                    width: 200.0,
+                    top: size.height*0.52,
+                    right: size.width*0.7 ,
+                    height: size.height*0.3,
+                    width: size.width*0.3,
                     child:PurpleAvatarIcon(onPressed: null,),
                   ),
                 ),
@@ -97,10 +97,10 @@ class _BienvenueTestState extends State<BienvenueTest> {
                 Visibility(
 
                   child: Positioned(
-                    top: 410.0,
-                    right: 250.0 ,
-                    height: 300.0,
-                    width: 200.0,
+                    top: size.height*0.516,
+                    right: size.width*0.7 ,
+                    height: size.height*0.3,
+                    width: size.width*0.3,
                     child: OrangeAvatarIcon(onPressed: null,),
                   ),
                 ),
@@ -108,19 +108,19 @@ class _BienvenueTestState extends State<BienvenueTest> {
                 Visibility(
 
                   child: Positioned(
-                    top: 400.0,
-                    right: 250.0 ,
-                    height: 300.0,
-                    width: 200.0,
+                    top: size.height*0.51,
+                    right: size.width*0.7 ,
+                    height: size.height*0.3,
+                    width: size.width*0.3,
                     child:BlueAvatarIcon(onPressed: null,),
                   ),
                 ),
 
                 Positioned(
-                  height: size.height*0.6,
-                  width: size.width*0.6,
-                  right: size.width*0.15,
-                  top:size.height*0.2,
+                  height: size.height*0.7,
+                  width: size.width*0.7,
+                  right: size.width*0.1,
+                  top:size.height*0.1,
                   child:SvgPicture.asset(bulleTestNiv),
                 ),
 
