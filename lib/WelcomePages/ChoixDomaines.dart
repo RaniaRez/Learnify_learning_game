@@ -102,7 +102,7 @@ class _ChoixDomaineState extends State<ChoixDomaine> {
                     child: OrangeAvatarIcon(onPressed: null,),
                   ),
                 ),
-              //    if (New.avatar=="Blue")
+                  if (New.avatar=="Blue")
               Visibility(
 
                 child: Positioned(
