@@ -136,16 +136,13 @@ class _ChooseAvatarState extends State<ChooseAvatar> {
               ),
             ),
             Positioned(
-              top: 200.0,
-              right: 80.0,
-              child: SizedBox(
-                height: 150.0,
-                width: 250.0,
-                child: Text(
+              top: size.height*0.3,
+              left: size.width*0.2,
+              child: Text(
                   'Choisis ton avatar :',
                   style: TextStyle(
                     fontFamily: 'Skranji-Bold',
-                    fontSize: 30.0,
+                    fontSize: 27.0,
                     color: Colors.brown[700],
 
                   ),
@@ -153,10 +150,9 @@ class _ChooseAvatarState extends State<ChooseAvatar> {
                 ),
 
               ),
-            ),
             Positioned(
-              top: 700.0,
-              left: 300.00,
+              top: size.height*0.8,
+              left:size.width*0.75,
               child: Visibility(
                 child: GoToButton(onPressed: (){
                   setState(() {
@@ -176,45 +172,57 @@ class _ChooseAvatarState extends State<ChooseAvatar> {
 
             ),
             Positioned(
-              bottom: 110.0,
-              right: 195.0,
+              top: size.height*0.62,
+              right: size.width*0.582 ,
+              height: size.height*0.32,
+              width: size.width*0.32,
               child: Visibility(
                 child: CercleIcon(),
                 visible: _OrangeVisible,
               ),//Orange
             ),
             Positioned(
-              top: 450.0,
-              right: 195.0,
+              top: size.height*0.37,
+              left: size.width*0.125 ,
+              height: size.height*0.33,
+              width: size.width*0.33,
               child: Visibility(
                 child: CercleIcon(),
                 visible: _PurpleVisible,
               ),//Purple
             ),
             Positioned(
-              top: 300.0,
-              right: 55.0,
+              top: size.height*0.29,
+              left: size.width*0.54 ,
+              height: size.height*0.35,
+              width: size.width*0.35,
               child: Visibility(
                 child: Cercle2Icon(),
                 visible: _PinkVisible,
               ),//Pink
             ),
             Positioned(
-              bottom: 180.0,
-              right: 45.0,
+              height: size.height*0.35,
+              width: size.width*0.35,
+              bottom: size.height*0.16,
+              right: size.width*0.08 ,
               child: Visibility(
                 child: Cercle2Icon(),
                 visible: _BlueVisible,
               ),//Blue
             ),
             Positioned(
-              top: 365.0,
-              right: -5.0,
+              height: size.height*0.1,
+              width: size.width*0.35,
+              top:size.height*0.452,
+            left:size.width*0.67,
               child: BrinIcon(),
             ),
             Positioned(
-              top: 270.0,
-              right: 25.0,
+              top: size.height*0.31,
+              left: size.width*0.58 ,
+              height: size.height*0.3,
+              width: size.width*0.3,
               child: PinkOwl(onPressed: (){
                 print("fuck");
                 showPink();
@@ -222,38 +230,51 @@ class _ChooseAvatarState extends State<ChooseAvatar> {
               } ,),
             ),
             Positioned(
-              bottom: 195.0,
-              left: 250.0,
+              height: size.height*0.1,
+              width: size.width*0.35,
+              top:size.height*0.658,
+              left:size.width*0.67,
               child: BrinIcon(),
             ),
             Positioned(
-              bottom: 163.0,
-              left: 174.0,
+             bottom: size.height*0.185,
+              right: size.width*0.1 ,
+              height: size.height*0.3,
+              width: size.width*0.3,
               child: BlueOwl(onPressed: (){
                 showBlue();
               },
               ),
             ),
             Positioned(
-                bottom: 300.0,
+                top:size.height*0.532,
+                height: size.height*0.1,
+                width: size.width*0.35,
                 child: Brin2Icon()
             ),
             Positioned(
-              top: 411.0,
-              right: 160.0,
+              bottom: size.height*0.265,
+              right: size.width*0.52 ,
+              height: size.height*0.39,
+              width: size.width*0.39,
               child: PurpleOwl(onPressed: (){
                 showPurple();
               } ,),
             ),
 
             Positioned(
-                bottom: 113.0,
+                height: size.height*0.1,
+                width: size.width*0.35,
+                top:size.height*0.763,
+                
                 child: Brin2Icon()
             ),
 
             Positioned(
-              bottom: 70.0,
-              right:160.0,
+              top: size.height*0.63,
+              right: size.width*0.59 ,
+              height: size.height*0.3,
+              width: size.width*0.3,
               child: OrangeOwl(onPressed: (){
                 showOrange();
               } ,),

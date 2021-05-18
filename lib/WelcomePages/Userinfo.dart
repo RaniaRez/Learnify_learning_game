@@ -85,8 +85,7 @@ class _UserinfoState extends State<Userinfo> {
               Visibility(
 
                 child: Positioned(
-                  top: size.height*0.135,
-                  right:size.width*0.65,
+
                   height: size.height*0.3,
                   width: size.width*0.3,
                   child:PinkAvatarIcon(onPressed: null,),
@@ -113,12 +112,12 @@ class _UserinfoState extends State<Userinfo> {
                   child: OrangeAvatarIcon(onPressed: null,),
                 ),
               ),
-            if (New.avatar=="Blue")
+           if (New.avatar=="Blue")
               Visibility(
 
                 child: Positioned(
-                  top: size.height*0.135,
-                  right:size.width*0.65,
+                  top: size.height*0.4,
+                  right:size.width*0.6,
                   height: size.height*0.3,
                   width: size.width*0.3,
                   child:BlueAvatarIcon(onPressed: null,),
