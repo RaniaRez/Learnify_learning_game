@@ -94,6 +94,9 @@ const seConnecter=  'assets/icons/seConnecter.svg';
 const sinscrire=  'assets/icons/sinscrire.svg';
 const Right=  'assets/icons/Right.svg';
 const Wrong=  'assets/icons/Wrong.svg';
+const Mathsbutton=  'assets/icons/MathsButton.svg';
+const Frbutton=  'assets/icons/FrButton.svg';
+const Geobutton=  'assets/icons/GeoButton.svg';
 
 
 

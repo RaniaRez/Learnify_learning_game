@@ -9,7 +9,6 @@ class OrangeOwl extends StatelessWidget {
   Widget build(BuildContext context) {
     return IconButton(
         icon : SvgPicture.asset(orangeOwl),
-        iconSize: 200.0,
         onPressed: onPressed
     );
   }
