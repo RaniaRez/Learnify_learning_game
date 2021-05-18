@@ -27,125 +27,119 @@ class _AllSetState extends State<AllSet> {
   @override
 
   Widget build(BuildContext context) {
+    Size size=MediaQuery.of(context).size;
     return Scaffold(
       body:
-      Stack(
-          children: <Widget>[
-            Container(
-              constraints: BoxConstraints.expand(),
-              decoration: BoxDecoration(
-                  image: DecorationImage(
-                      image: AssetImage("images/forestbackground.jpg"),
-                      fit: BoxFit.cover)),
-            ),
-            Positioned(
-                top: 8.00,
-                right: 250.00,
-                child: BacksButton(onPressed: (){
-                  print("u clicked me");
-                  Navigator.pop(context);
-                },)
-            ),
-            Positioned(
-              top: -3.5,
-              left: 100.0,
-              child: HomeButton(
-                onPressed: (){
-                  print("HELL");
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => Home()),);
-
-                },
+      Container(
+        height:size.height,
+        width:size.width,
+        child: Stack(
+            children: <Widget>[
+              Container(
+                constraints: BoxConstraints.expand(),
+                decoration: BoxDecoration(
+                    image: DecorationImage(
+                        image: AssetImage("images/forestbackground.jpg"),
+                        fit: BoxFit.cover)),
               ),
-            ),
-            Positioned(
-                top: 50.00,
-                left: 300.00,
-                child: SettingsButton(onPressed: (){
-                  Navigator.push(
+              Positioned(
+                  top: size.height*0.05,
+                  right:size.width*0.75,
+
+                  child: BacksButton(onPressed: (){
+                    print("u clicked me");
+                    Navigator.pop(context);
+                  },)
+              ),
+              Positioned(
+                top: size.height*0.047,
+                left: size.width*0.39,
+
+                child: HomeButton(
+                  onPressed: (){
+                    print("HELL");
+                    Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => Settings()));
-                  print("settings");
-                },)
-            ),
-            Positioned(
-                top: 140,
-                right: 80,
-                height: 260,
-                width: 260,
-                child: SvgPicture.asset(bullevide)),
-            Positioned(
-                top: 240,
-                right: 125,
-                child: Text(
-                  'Vous êtes prêt',
-                  style: TextStyle(
-                    fontFamily: 'Skranji-Bold',
-                    fontSize: 25,
-                    color: Colors.brown[700]
+                      MaterialPageRoute(builder: (context) => Home()),);
+
+                  },
+                ),
+              ),
+              Positioned(
+                  top:size.height*0.05,
+                  left:size.width*0.75,
+                  child: SettingsButton(onPressed: (){
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => Settings()));
+                    print("settings");
+                  },)
+              ),
+              Positioned(
+                  top: size.height*0.1,
+                  left: size.width*0.3 ,
+                  height: size.height*0.6,
+                  width: size.width*0.7,
+                  child: SvgPicture.asset(bulleAllSet)),
+
+              Visibility(
+
+                child: Positioned(
+                  top: size.height*0.62,
+                  right: size.width*0.62 ,
+                  child:BranchIconSimple(),
+                ),
+              ),
+             if (New.avatar=="Pink")
+                Visibility(
+
+                  child: Positioned(
+                    top: size.height*0.45,
+                    right: size.width*0.63 ,
+                    height: size.height*0.3,
+                    width: size.width*0.3,
+                    child:PinkAvatarIcon(onPressed: null,),
                   ),
-                )
-            ),
-            Visibility(
-
-              child: Positioned(
-                top: 320.0,
-                right: 250.0 ,
-                height: 300.0,
-                width: 200.0,
-                child:BranchIconSimple(),
-              ),
-            ),
-            if (New.avatar=="Pink")
-              Visibility(
-
-                child: Positioned(
-                  top: 257.0,
-                  right: 250.0 ,
-                  height: 300.0,
-                  width: 200.0,
-                  child:PinkAvatarIcon(onPressed: null,),
                 ),
-              ),
-            if (New.avatar=="Purple")
-              Visibility(
+              if (New.avatar=="Purple")
+                Visibility(
 
-                child: Positioned(
-                  top: 257.0,
-                  right: 250.0 ,
-                  height: 300.0,
-                  width: 200.0,
-                  child:PurpleAvatarIcon(onPressed: null,),
+                  child: Positioned(
+                    top: size.height*0.43,
+                    right: size.width*0.63 ,
+                    height: size.height*0.35,
+                    width: size.width*0.35,
+
+                    child:PurpleAvatarIcon(onPressed: null,),
+                  ),
                 ),
-              ),
-            if (New.avatar=="Orange")
-              Visibility(
+              if (New.avatar=="Orange")
+                Visibility(
 
-                child: Positioned(
-                  top: 257.0,
-                  right: 250.0 ,
-                  height: 300.0,
-                  width: 200.0,
-                  child: OrangeAvatarIcon(onPressed: null,),
+                  child: Positioned(
+                    top: size.height*0.46,
+                    right: size.width*0.63 ,
+                    height: size.height*0.3,
+                    width: size.width*0.3,
+                    child: OrangeAvatarIcon(onPressed: null,),
+                  ),
                 ),
-              ),
-            if (New.avatar=="Blue")
-              Visibility(
+             if (New.avatar=="Blue")
+                Visibility(
 
-                child: Positioned(
-                  top: 257.0,
-                  right: 250.0 ,
-                  height: 300.0,
-                  width: 200.0,
-                  child:BlueAvatarIcon(onPressed: null,),
+                  child: Positioned(
+                    top: size.height*0.45,
+                    right: size.width*0.63 ,
+                    height: size.height*0.3,
+                    width: size.width*0.3,
+                    child:BlueAvatarIcon(onPressed: null,),
+                  ),
                 ),
-              ),
 
-            Positioned(
-              top: 700.0,
-              left: 300.00,
-              child: GoToButton(onPressed: (){
+              Positioned(
+                top: size.height*0.83,
+                left: size.width*0.7 ,
+                child: GoToButton(onPressed: (){
 
     Navigator.push(
     context,
@@ -154,8 +148,9 @@ class _AllSetState extends State<AllSet> {
 
     print("non");
     }),
-            ),
-          ]
+              ),
+            ]
+        ),
       ),
     );
 

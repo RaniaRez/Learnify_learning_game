@@ -9,7 +9,6 @@ class PinkAvatarIcon extends StatelessWidget {
   Widget build(BuildContext context) {
     return IconButton(
         icon : SvgPicture.asset(PinkAvatar),
-        iconSize: 100.0,
         onPressed: onPressed
     );
   }

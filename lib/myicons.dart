@@ -3,6 +3,7 @@ const purpleOwl = 'assets/icons/PurpleOwl.svg';
 const welcomeOwl = 'assets/icons/welcome.svg';
 const backButton = 'assets/icons/backButton.svg';
 const bulleWelcome = 'assets/icons/bulle1.svg';
+const bulleAllSet = 'assets/icons/bulleAllSet.svg';
 const button1 = 'assets/icons/button1.svg';
 const homeIcon = 'assets/icons/homeIcon.svg';
 const settingsIcon = 'assets/icons/SettingsIcon.svg';
@@ -93,6 +94,9 @@ const seConnecter=  'assets/icons/seConnecter.svg';
 const sinscrire=  'assets/icons/sinscrire.svg';
 const Right=  'assets/icons/Right.svg';
 const Wrong=  'assets/icons/Wrong.svg';
+const Mathsbutton=  'assets/icons/MathsButton.svg';
+const Frbutton=  'assets/icons/FrButton.svg';
+const Geobutton=  'assets/icons/GeoButton.svg';
 
 
 

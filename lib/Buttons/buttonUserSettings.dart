@@ -9,7 +9,7 @@ class UserSettingsButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return IconButton(
         icon : SvgPicture.asset(buttonUserSettings),
-        iconSize: 90.0,
+        iconSize: 80.0,
         onPressed: onPressed
     );
   }

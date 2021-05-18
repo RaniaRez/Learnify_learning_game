@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:somthn/Avatars/BlueAvatarIcon.dart';
 import 'package:somthn/Branches/BranchIconSimple.dart';
 import 'package:somthn/WelcomePages/ChooseAvatar.dart';
-import 'package:somthn/WelcomePages/Ecriremdp.dart';
 import 'package:somthn/WelcomePages/Entrernom.dart';
 import 'package:somthn/Buttons/HomeButton.dart';
 import 'package:somthn/Avatars/OrangeAvatarIcon.dart';
@@ -12,7 +11,6 @@ import 'package:somthn/Avatars/PurpleAvatarIcon.dart';
 import 'package:somthn/WelcomePages/Settings.dart';
 import 'package:somthn/Buttons/buttonModifyAvatar.dart';
 import 'package:somthn/Buttons/buttonModifyNom.dart';
-import 'package:somthn/Buttons/buttonModifyPass.dart';
 import 'package:somthn/Buttons/buttonSuppProfile.dart';
 import '../Buttons/settingsButton.dart';
 import '../Buttons/BacksButton.dart';
@@ -29,215 +27,188 @@ class _UserinfoState extends State<Userinfo> {
   @override
 
   Widget build(BuildContext context) {
-
+    Size size = MediaQuery.of(context).size;
     return Scaffold(
       body:
-      Stack(
-        children: <Widget>[
-          Container(
-            constraints: BoxConstraints.expand(),
-            decoration: BoxDecoration(
-                image: DecorationImage(
-                    image: AssetImage("images/forestbackground.jpg"),
-                    fit: BoxFit.cover)),
-          ),
-          Positioned(
-              top: 50.00,
-              left: 300.00,
-              child: SettingsButton(onPressed: (){
-                Navigator.push(
+      Container(
+        height: size.height,
+        width: size.width,
+        child: Stack(
+          children: <Widget>[
+            Container(
+              constraints: BoxConstraints.expand(),
+              decoration: BoxDecoration(
+                  image: DecorationImage(
+                      image: AssetImage("images/forestbackground.jpg"),
+                      fit: BoxFit.cover)),
+            ),
+            Positioned(
+                top: size.height*0.05,
+                left:size.width*0.75,
+                child: SettingsButton(onPressed: (){
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => Settings()));
+                  print("HELL YEAH");
+                },)
+            ),
+
+            Positioned(
+                top: size.height*0.05,
+                right:size.width*0.75,
+                child: BacksButton(onPressed: (){
+                  print("HELL YEAH");
+                  Navigator.pop(
                     context,
-                    MaterialPageRoute(builder: (context) => Settings()));
-                print("HELL YEAH");
-              },)
-          ),
-
-          Positioned(
-              top: 5.00,
-              right: 250.00,
-              child: BacksButton(onPressed: (){
-                print("HELL YEAH");
-                Navigator.pop(
-                  context,
-                  );
-              },)
-          ),
-          Positioned(
-            top: -3.5,
-            left: 100.0,
-            child: HomeButton(
-              onPressed: (){
-                print("HELL YEAH");
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => Home()),);
-
-              },
+                    );
+                },)
             ),
-          ),
-          Positioned(
-              top: 120.0,
-              right: 250.0 ,
-              height: 300.0,
-              width: 200.0,
-              child:BranchIconSimple(),
-            ),
-          if (New.avatar=="Pink")
-            Visibility(
+            Positioned(
+              top: size.height*0.047,
+              left: size.width*0.39,
+              child: HomeButton(
+                onPressed: (){
+                  print("HELL YEAH");
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => Home()),);
 
-              child: Positioned(
-                top: 154.0,
-                right: 290.0 ,
-                child:PinkAvatarIcon(onPressed: null,),
-              ),
-            ),
-          if (New.avatar=="Purple")
-            Visibility(
-
-              child: Positioned(
-                top: 167.0,
-                right: 310.0 ,
-
-                child:PurpleAvatarIcon(onPressed: null,),
-              ),
-            ),
-          if (New.avatar=="Orange")
-            Visibility(
-
-              child: Positioned(
-                top: 160.0,
-                right: 310.0 ,
-                child: OrangeAvatarIcon(onPressed: null,),
-              ),
-            ),
-          if (New.avatar=="Blue")
-            Visibility(
-
-              child: Positioned(
-                top: 152.0,
-                right: 290.0 ,
-
-                child:BlueAvatarIcon(onPressed: null,),
-              ),
-            ),
-
-          Positioned(
-            bottom: 180.00,
-            left : 10.00,
-       child: Text(
-    'Supprimer le compte',
-           style: TextStyle(
-             fontFamily: 'Skranji-Bold',
-             fontSize: 24,
-
-             color:Colors.brown[700],
-           ),
-          ),
-
-          ),
-Positioned(
-            bottom: 140.00,
-            right: 10.00,
-            child:ButtonSupp(
-              onPressed: (){
-
-                print("SUPP");
                 },
+              ),
             ),
-          ),
-          Positioned(
-            top: 340.00,
+            Positioned(
+              top: size.height*0.3,
+              right:size.width*0.62,
+                child:BranchIconSimple(),
+              ),
+            if (New.avatar=="Pink")
+              Visibility(
 
-            left : 10.00,
-            child: Text(
-               'Changer avatar',
-                      style: TextStyle(
-                        fontFamily: 'Skranji-Bold',
-                        fontSize: 24,
+                child: Positioned(
 
-                        color:Colors.brown[700],
-                      ),
-                     ),
+                  height: size.height*0.3,
+                  width: size.width*0.3,
+                  child:PinkAvatarIcon(onPressed: null,),
+                ),
+              ),
+            if (New.avatar=="Purple")
+              Visibility(
 
+                child: Positioned(
+                  top: size.height*0.12,
+                  right:size.width*0.65,
+                  height: size.height*0.35,
+                  width: size.width*0.35,
+                  child:PurpleAvatarIcon(onPressed: null,),
+                ),
+              ),
+            if (New.avatar=="Orange")
+              Visibility(
+                child: Positioned(
+                  top: size.height*0.14,
+                  right:size.width*0.65,
+                  height: size.height*0.3,
+                  width: size.width*0.3,
+                  child: OrangeAvatarIcon(onPressed: null,),
+                ),
+              ),
+           if (New.avatar=="Blue")
+              Visibility(
 
-            ),
-          Positioned(
-            top: 320,
-            right: 10.00,
-            child: ButtonAvatar(
-              onPressed: (){
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => ChooseAvatar()),);
-                print("HELL YEAH");
-              },
-            ),
-          ),
-          Positioned(
-            top: 420.00,
-         left: 10,
-         child: Text(
-                      'Changer nom',
-                      style: TextStyle(
-                        fontFamily: 'Skranji-Bold',
-                        fontSize: 24,
-
-                        color:Colors.brown[700],
-                      ),
-                        ),
-
+                child: Positioned(
+                  top: size.height*0.4,
+                  right:size.width*0.6,
+                  height: size.height*0.3,
+                  width: size.width*0.3,
+                  child:BlueAvatarIcon(onPressed: null,),
+                ),
               ),
 
-          Positioned(
-            top: 400.00,
-            left:200,
-            child: Container(
-              width: 300,
-              height: 100,
-              child: ButtonModifyNom(
+            Positioned(
+              top: size.height*0.65,
+              left:size.width*0.05,
+         child: Text(
+    'Supprimer le compte',
+             style: TextStyle(
+               fontFamily: 'Skranji-Bold',
+               fontSize: 24,
+
+               color:Colors.brown[700],
+             ),
+            ),
+
+            ),
+Positioned(
+  top:size.height*0.61,
+  right:size.width*0.05,
+              child:ButtonSupp(
+                onPressed: (){
+
+                  print("SUPP");
+                  },
+              ),
+            ),
+            Positioned(
+              top: size.height*0.45,
+              left:size.width*0.05,
+              child: Text(
+                 'Changer avatar',
+                        style: TextStyle(
+                          fontFamily: 'Skranji-Bold',
+                          fontSize: 24,
+
+                          color:Colors.brown[700],
+                        ),
+                       ),
+
+
+              ),
+            Positioned(
+              top:size.height*0.41,
+              right:size.width*0.05,
+              child: ButtonAvatar(
                 onPressed: (){
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => Entrernom()),);
-
+                    MaterialPageRoute(builder: (context) => ChooseAvatar()),);
                   print("HELL YEAH");
                 },
               ),
             ),
-          ),
-          Positioned(
-            bottom: 270.00,
-            left: 10,
-            child:Text(
+            Positioned(
+              top: size.height*0.55,
+              left:size.width*0.05,
+           child: Text(
+                        'Changer nom',
+                        style: TextStyle(
+                          fontFamily: 'Skranji-Bold',
+                          fontSize: 24,
 
-                     'Changer mot de passe',
-                      style: TextStyle(
-                        fontFamily: 'Skranji-Bold',
-                        fontSize: 24,
-
-                        color:Colors.brown[700],
-                      ),
+                          color:Colors.brown[700],
                         ),
+                          ),
 
+                ),
 
+            Positioned(
+              top:size.height*0.51,
+              right:size.width*0.05,
+              child: Container(
+
+                child: ButtonModifyNom(
+                  onPressed: (){
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => Entrernom()),);
+
+                    print("HELL YEAH");
+                  },
+                ),
               ),
-
-          Positioned(
-            bottom:230,
-            left : 300.00,
-
-            child: ButtonModifyPass(
-              onPressed: (){
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => Ecriremdp()),);
-                print("HELL YEAH");
-              },
             ),
-          ),
-
 ],
-          ),
+            ),
+      ),
 
           );
 
