@@ -266,7 +266,7 @@ class _ChooseAvatarState extends State<ChooseAvatar> {
                 height: size.height*0.1,
                 width: size.width*0.35,
                 top:size.height*0.763,
-                
+
                 child: Brin2Icon()
             ),
 
