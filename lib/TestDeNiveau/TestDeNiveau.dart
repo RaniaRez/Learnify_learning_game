@@ -114,7 +114,7 @@ class _TestNiveauState extends State<TestNiveau> {
                     child: OrangeAvatarIcon(onPressed: null,),
                   ),
                 ),
-             // if (New.avatar=="Blue")
+              if (New.avatar=="Blue")
                 Visibility(
 
                   child: Positioned(
