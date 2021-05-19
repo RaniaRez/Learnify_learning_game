@@ -18,6 +18,8 @@ import '../Branches/BranchIconSimple.dart';
 import '../Bulles/BullemdpIcon.dart';
 import 'ChooseAvatar.dart';
 import 'Users.dart';
+import '../Services/Login.dart';
+import '../Services/SignUp.dart';
 
 
 
@@ -82,7 +84,7 @@ class _CreermdpState extends State<Creermdp> {
                 child:BranchIconSimple(),
               ),
             ),
-            if (New.avatar=="Pink")
+            if (user.avatar=="Pink")
               Visibility(
 
                 child: Positioned(
@@ -93,7 +95,7 @@ class _CreermdpState extends State<Creermdp> {
                   child:PinkAvatarIcon(onPressed: null,),
                 ),
               ),
-            if (New.avatar=="Purple")
+            if (user.avatar=="Purple")
               Visibility(
 
                 child: Positioned(
@@ -104,7 +106,7 @@ class _CreermdpState extends State<Creermdp> {
                   child:PurpleAvatarIcon(onPressed: null,),
                 ),
               ),
-            if (New.avatar=="Orange")
+            if (user.avatar=="Orange")
               Visibility(
 
                 child: Positioned(
@@ -115,7 +117,7 @@ class _CreermdpState extends State<Creermdp> {
                   child: OrangeAvatarIcon(onPressed: null,),
                 ),
               ),
-            if (New.avatar=="Blue")
+            if (user.avatar=="Blue")
               Visibility(
 
                 child: Positioned(
@@ -155,8 +157,8 @@ class _CreermdpState extends State<Creermdp> {
                 right: 50.00,
                 child: Buttonnon(onPressed: (){
                   setState(() {
-                    New.SetOld();
-                    Utilisateurs.add(New);
+                    user.SetOld();
+                    Utilisateurs.add(user);
                   });
                   Navigator.push(
                       context,

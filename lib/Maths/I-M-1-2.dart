@@ -22,7 +22,8 @@ import 'package:somthn/Avatars/PurpleAvatarIcon.dart';
 import 'package:somthn/Avatars/BlueAvatarIcon.dart';
 import '../WelcomePages/ChooseAvatar.dart';
 import 'package:somthn/Buttons/buttonAppliquer.dart';
-
+import '../Services/Login.dart';
+import '../Services/SignUp.dart';
 class I_M_1_2_ extends StatefulWidget {
   const I_M_1_2_({Key key}) : super(key: key);
 
@@ -78,7 +79,7 @@ class _I_M_1_2_State extends State<I_M_1_2_> {
                   height: size.height*0.6,
                   width: size.width*0.6,
                   child: SvgPicture.asset(EmptyTable)),
-              if (New.avatar=="Pink")
+              if (user.avatar=="Pink")
                 Visibility(
 
                   child: Positioned(
@@ -89,7 +90,7 @@ class _I_M_1_2_State extends State<I_M_1_2_> {
                     child:PinkAvatarIcon(onPressed: null,),
                   ),
                 ),
-              if (New.avatar=="Purple")
+              if (user.avatar=="Purple")
                 Visibility(
 
                   child: Positioned(
@@ -100,7 +101,7 @@ class _I_M_1_2_State extends State<I_M_1_2_> {
                     child:PurpleAvatarIcon(onPressed: null,),
                   ),
                 ),
-              if (New.avatar=="Orange")
+              if (user.avatar=="Orange")
                 Visibility(
 
                   child: Positioned(
@@ -111,7 +112,7 @@ class _I_M_1_2_State extends State<I_M_1_2_> {
                     child: OrangeAvatarIcon(onPressed: null,),
                   ),
                 ),
-              if (New.avatar=="Blue")
+              if (user.avatar=="Blue")
                 Visibility(
 
                   child: Positioned(

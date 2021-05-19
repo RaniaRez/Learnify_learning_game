@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:somthn/Bulles/BullenomIcon.dart';
 import 'package:somthn/WelcomePages/Settings.dart';
-import 'package:somthn/Buttons/buttonCommencerDroit.dart';
+import 'package:somthn/Buttons/buttonContinuer.dart';
 import '../Buttons/settingsButton.dart';
 import '../Buttons/BacksButton.dart';
 import 'package:somthn/Avatars/OrangeAvatarIcon.dart';
@@ -9,19 +9,18 @@ import 'package:somthn/Avatars/PinkAvatarIcon.dart';
 import 'package:somthn/Avatars/PurpleAvatarIcon.dart';
 import 'package:somthn/Avatars/BlueAvatarIcon.dart';
 //import '../WelcomePages/ChooseAvatar.dart';
-import 'package:somthn/TestDeNiveau/TestDeNiveau.dart';
 import '../Services/Login.dart';
 import '../Services/SignUp.dart';
 
 
 
 
-class BienvenueFr extends StatefulWidget {
+class Correct extends StatefulWidget {
   @override
-  _BienvenueFrState createState() => _BienvenueFrState();
+  _CorrectState createState() => _CorrectState();
 }
 
-class _BienvenueFrState extends State<BienvenueFr> {
+class _CorrectState extends State<Correct> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -32,7 +31,7 @@ class _BienvenueFrState extends State<BienvenueFr> {
               constraints: BoxConstraints.expand(),
               decoration: BoxDecoration(
                   image: DecorationImage(
-                      image: AssetImage("images/forestbackground.jpg"),
+                      image: AssetImage("images/lightBackGround.png"),
                       fit: BoxFit.cover)),
             ),
 
@@ -55,22 +54,25 @@ class _BienvenueFrState extends State<BienvenueFr> {
                 },)
             ),
             Positioned(
-              bottom: 50.0,
-              child: ButtonCommencerD(onPressed: () {
-                Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => TestNiveau()));
-              }
+              top: 515,
+              right: 200,
+                  child: ButtonContinuer(onPressed:(){
+                  }),
+                ),
+            Visibility(
+
+              child: Positioned(
+                top: 490.0,
+                right: 280.0 ,
+                child:PinkAvatarIcon(onPressed: null,),
               ),
             ),
             if (user.avatar=="Pink")
               Visibility(
 
                 child: Positioned(
-                  top: 565.0,
-                  right: 270.0 ,
-                  height: 130.0,
-                  width: 130.0,
+                  top: 490.0,
+                  right: 280.0 ,
                   child:PinkAvatarIcon(onPressed: null,),
                 ),
               ),
@@ -78,10 +80,8 @@ class _BienvenueFrState extends State<BienvenueFr> {
               Visibility(
 
                 child: Positioned(
-                  top: 555.0,
-                  right: 270.0 ,
-                  height: 150.0,
-                  width: 150.0,
+                  top: 490.0,
+                  right: 280.0 ,
                   child:PurpleAvatarIcon(onPressed: null,),
                 ),
               ),
@@ -89,10 +89,8 @@ class _BienvenueFrState extends State<BienvenueFr> {
               Visibility(
 
                 child: Positioned(
-                  top: 565.0,
-                  right: 270.0 ,
-                  height: 130.0,
-                  width: 130.0,
+                  top: 490.0,
+                  right: 280.0 ,
                   child: OrangeAvatarIcon(onPressed: null,),
                 ),
               ),
@@ -100,14 +98,11 @@ class _BienvenueFrState extends State<BienvenueFr> {
               Visibility(
 
                 child: Positioned(
-                  top: 560.0,
-                  right: 270.0 ,
-                  height: 130.0,
-                  width: 130.0,
+                  top: 490.0,
+                  right: 280.0 ,
                   child:BlueAvatarIcon(onPressed: null,),
                 ),
               ),
-
 
             Positioned(
               top: 170.0,
@@ -117,7 +112,7 @@ class _BienvenueFrState extends State<BienvenueFr> {
               child:BullenomIcon(),
             ),
             Positioned(
-              top : 270,
+              top : 290,
               left: 145.5,
               right: 70.5,
               bottom: 10.0,
@@ -125,7 +120,7 @@ class _BienvenueFrState extends State<BienvenueFr> {
                 height: 10,
                 width: 10,
                 child: Text(
-                  'Bienvenue en Français  ',
+                  'Correct',
                   style: TextStyle(
                     fontFamily: 'Skranji-bold',
                     fontSize: 30,
@@ -146,4 +141,3 @@ class _BienvenueFrState extends State<BienvenueFr> {
 
   }
 }
-

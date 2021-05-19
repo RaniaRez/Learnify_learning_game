@@ -17,6 +17,8 @@ import 'package:somthn/myicons.dart';
 import '../Buttons/settingsButton.dart';
 import '../Buttons/BacksButton.dart';
 import 'Home.dart';
+import '../Services/Login.dart';
+import '../Services/SignUp.dart';
 
 class Userinfo extends StatefulWidget {
 
@@ -85,7 +87,7 @@ class _UserinfoState extends State<Userinfo> {
               width: size.width*0.35,
                 child:BranchIconSimple(),
               ),
-            if (New.avatar=="Pink")
+            if (user.avatar=="Pink")
               Visibility(
 
                 child: Positioned(
@@ -96,7 +98,7 @@ class _UserinfoState extends State<Userinfo> {
                   child:PinkAvatarIcon(onPressed: null,),
                 ),
               ),
-            if (New.avatar=="Purple")
+            if (user.avatar=="Purple")
               Visibility(
 
                 child: Positioned(
@@ -107,7 +109,7 @@ class _UserinfoState extends State<Userinfo> {
                   child:PurpleAvatarIcon(onPressed: null,),
                 ),
               ),
-            if (New.avatar=="Orange")
+            if (user.avatar=="Orange")
               Visibility(
                 child: Positioned(
                   top: size.height*0.135,
@@ -117,7 +119,7 @@ class _UserinfoState extends State<Userinfo> {
                   child: OrangeAvatarIcon(onPressed: null,),
                 ),
               ),
-           if (New.avatar=="Blue")
+           if (user.avatar=="Blue")
               Visibility(
 
                 child: Positioned(

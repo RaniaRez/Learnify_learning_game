@@ -8,15 +8,19 @@ import 'package:somthn/WelcomePages/Settings.dart';
 import '../Buttons/settingsButton.dart';
 import '../Buttons/BacksButton.dart';
 import '../Owls/PurpleOwlIcon.dart';
-import 'ClassUser.dart';
+//import 'ClassUser.dart';
 import '../Buttons/buttonGoTo.dart';
 import 'Home.dart';
 import '../Owls/PinkOwlIcon.dart';
 import '../Owls/BlueOwlIcon.dart';
 import '../Owls/OrangeOwlIcon.dart';
 import 'Entrernom.dart';
+import '../Services/Login.dart';
+//import '../Services/SignUp.dart';
 
-User New = new User();
+
+
+//User New = new User();
 class ChooseAvatar extends StatefulWidget {
   @override
   _ChooseAvatarState createState() => _ChooseAvatarState();
@@ -155,11 +159,13 @@ class _ChooseAvatarState extends State<ChooseAvatar> {
               left:size.width*0.75,
               child: Visibility(
                 child: GoToButton(onPressed: (){
+                  print(user.uid);
                   setState(() {
-                    if(_PurpleVisible) New.SetAvatar("Purple");
-                    if(_PinkVisible) New.SetAvatar("Pink");
-                    if (_OrangeVisible) New.SetAvatar("Orange");
-                    if (_BlueVisible) New.SetAvatar("Blue");
+                    if(_PurpleVisible) user.SetAvatar("Purple");
+                    print(user.avatar);
+                    if(_PinkVisible) user.SetAvatar("Pink");
+                    if (_OrangeVisible) user.SetAvatar("Orange");
+                    if (_BlueVisible) user.SetAvatar("Blue");
                   });
                   Navigator.push(
                       context,

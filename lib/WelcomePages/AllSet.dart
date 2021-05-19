@@ -14,7 +14,9 @@ import '../Buttons/BacksButton.dart';
 import 'Home.dart';
 import 'Settings.dart';
 import '../Branches/BranchIconSimple.dart';
-import 'ChooseAvatar.dart';
+//import 'ChooseAvatar.dart';
+import '../Services/Login.dart';
+import '../Services/SignUp.dart';
 
 
 
@@ -90,7 +92,7 @@ class _AllSetState extends State<AllSet> {
                   child:BranchIconSimple(),
                 ),
               ),
-             if (New.avatar=="Pink")
+             if (user.avatar=="Pink")
                 Visibility(
 
                   child: Positioned(
@@ -101,7 +103,7 @@ class _AllSetState extends State<AllSet> {
                     child:PinkAvatarIcon(onPressed: null,),
                   ),
                 ),
-              if (New.avatar=="Purple")
+              if (user.avatar=="Purple")
                 Visibility(
 
                   child: Positioned(
@@ -113,7 +115,7 @@ class _AllSetState extends State<AllSet> {
                     child:PurpleAvatarIcon(onPressed: null,),
                   ),
                 ),
-              if (New.avatar=="Orange")
+              if (user.avatar=="Orange")
                 Visibility(
 
                   child: Positioned(
@@ -124,7 +126,7 @@ class _AllSetState extends State<AllSet> {
                     child: OrangeAvatarIcon(onPressed: null,),
                   ),
                 ),
-             if (New.avatar=="Blue")
+             if (user.avatar=="Blue")
                 Visibility(
 
                   child: Positioned(
