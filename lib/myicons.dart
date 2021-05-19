@@ -33,7 +33,7 @@ const blueOwl = 'assets/icons/BlueOwl.svg';
 const Cercle = 'assets/icons/Cercle.svg';
 const Cercle2 = 'assets/icons/Cercle2.svg';
 const bulleTestNiv = 'assets/icons/bulleTestNiv.svg';
-
+const BulleBienvenueMath = 'assets/icons/BulleBienvenueMath.svg';
 const Owlbranch = 'assets/icons/OwlWithBranch.svg';
 const buttonNom = 'assets/icons/buttonNom.svg';
 const buttonNon = 'assets/icons/buttonnon.svg';

@@ -9,7 +9,6 @@ class PurpleOwlWelcome extends StatelessWidget {
   Widget build(BuildContext context) {
     return IconButton(
         icon : SvgPicture.asset(welcomeOwl),
-        iconSize: 300.0,
         onPressed: onPressed
     );
   }
