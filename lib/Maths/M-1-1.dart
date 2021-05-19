@@ -130,9 +130,9 @@ class _M_1_1State extends State<M_1_1> {
         },),
         ),
     ),
-   //if (New.avatar=="Pink")
+   if (New.avatar=="Pink")
     Visibility(
-
+      visible: Visible,
     child: Positioned(
       top: size.height*0.5,
       left: size.width*0.72,
@@ -143,7 +143,7 @@ class _M_1_1State extends State<M_1_1> {
     ),
     if (New.avatar=="Purple")
     Visibility(
-
+      visible: Visible,
     child: Positioned(
       top: size.height*0.49,
       left: size.width*0.69,
@@ -154,7 +154,7 @@ class _M_1_1State extends State<M_1_1> {
     ),
     if (New.avatar=="Orange")
     Visibility(
-
+      visible: Visible,
     child: Positioned(
       top: size.height*0.5,
       left: size.width*0.72,
@@ -165,7 +165,7 @@ class _M_1_1State extends State<M_1_1> {
     ),
     if (New.avatar=="Blue")
     Visibility(
-
+      visible: Visible,
     child: Positioned(
       top: size.height*0.5,
       left: size.width*0.72,
