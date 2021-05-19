@@ -8,16 +8,8 @@ class ButtonCommencerD extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return IconButton(
-        icon : Container(
-          child: Center(
-            child: Stack(
-              alignment: Alignment.center,
-              children: <Widget>[
+        icon :
                 SvgPicture.asset(CommencerDroite),
-              ],
-            ),
-          ),),
-
         onPressed: onPressed
     );
   }

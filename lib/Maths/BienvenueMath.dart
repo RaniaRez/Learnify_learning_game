@@ -39,6 +39,7 @@ class _BienvenueMathState extends State<BienvenueMath> {
                         fit: BoxFit.cover)),
               ),
 
+
               Positioned(
                   top: size.height*0.05,
                   left:size.width*0.75,
