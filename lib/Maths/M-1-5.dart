@@ -185,16 +185,19 @@ class _M_1_5State extends State<M_1_5> {
               Positioned(
                 top: size.height*0.32,
                 left: size.width*0.32,
-                  child: Text(
-                    '84 - 26 = ?',
-                    style: TextStyle(
-                      fontFamily: 'Skranji-bold',
-                      fontSize: 25,
-                      color: Colors.brown[700],
-                      fontWeight: FontWeight.bold,
+                  child: FittedBox(
+                    fit: BoxFit.fitWidth,
+                    child: Text(
+                      '84 - 26 = ?',
+                      style: TextStyle(
+                        fontFamily: 'Skranji-bold',
+                        fontSize: 25,
+                        color: Colors.brown[700],
+                        fontWeight: FontWeight.bold,
 
+                      ),
+                      textAlign: TextAlign.center,
                     ),
-                    textAlign: TextAlign.center,
                   ),
                 ),
 

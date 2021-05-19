@@ -186,16 +186,19 @@ class _M_1_5_2ndState extends State<M_1_5_2nd> {
               Positioned(
                 top: size.height*0.31,
                 left: size.width*0.27,
-                  child: Text(
-                    '2ème tentative\n 84 - 26 = ?',
-                    style: TextStyle(
-                      fontFamily: 'Skranji-bold',
-                      fontSize: 22,
-                      color: Colors.brown[700],
-                      fontWeight: FontWeight.bold,
+                  child: FittedBox(
+                    fit: BoxFit.fitWidth,
+                    child: Text(
+                      '2ème tentative\n 84 - 26 = ?',
+                      style: TextStyle(
+                        fontFamily: 'Skranji-bold',
+                        fontSize: 22,
+                        color: Colors.brown[700],
+                        fontWeight: FontWeight.bold,
 
+                      ),
+                      textAlign: TextAlign.center,
                     ),
-                    textAlign: TextAlign.center,
                   ),
                 ),
               Visibility(
