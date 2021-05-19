@@ -601,8 +601,8 @@ class _M_1_1_3rdState extends State<M_1_1_3rd> {
                 Visibility(
                   visible: !Visible,
                   child: Positioned(
-                      bottom: 255,
-                      left:50,
+                      left: size.width*0.17,
+                      top:size.height*0.63,
                       child: SvgPicture.asset(Right)
                   ),
                 ),
@@ -668,8 +668,8 @@ class _M_1_1_3rdState extends State<M_1_1_3rd> {
                   Visibility(
                     visible: !Visible,
                     child: Positioned(
-                      bottom: 255,
-                        left:50,
+                        left: size.width*0.17,
+                        top:size.height*0.63,
                         child: SvgPicture.asset(Wrong)
                     ),
                   ),
