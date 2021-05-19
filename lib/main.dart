@@ -7,6 +7,6 @@ import 'package:somthn/WelcomePages/Home.dart';
 
 void main() {
   runApp(MaterialApp(
-    home: M_1_1_3rd_1()
+    home: Home()
   ));
 }

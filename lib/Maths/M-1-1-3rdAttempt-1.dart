@@ -601,6 +601,7 @@ class _M_1_1_3rd_1State extends State<M_1_1_3rd_1> {
                       print('Continuer');},)
                 ),
               ),
+              if (correct)
                 Stack(
                   children: <Widget>[
                     Visibility(
@@ -655,6 +656,16 @@ class _M_1_1_3rd_1State extends State<M_1_1_3rd_1> {
                           child:Image.asset('images/HappyBlue.gif'),
                         ),
                       ),
+                    Visibility(
+                      visible: !Visible,
+                      child: Positioned(
+                          height: size.width*0.45,
+                          width: size.width*0.45,
+                          left: size.width*0.4,
+                          top:size.height*0.7,
+                          child: SvgPicture.asset(bulleBravo)
+                      ),
+                    ),
                   ],
                 ),
               if (!correct)
@@ -714,9 +725,10 @@ class _M_1_1_3rd_1State extends State<M_1_1_3rd_1> {
                       ),
                   ],
                 ),
+
             ],
-          )),
-    );
+          ),
+      ));
   }
 
 }
