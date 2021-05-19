@@ -71,7 +71,7 @@ class _BienvenueMathState extends State<BienvenueMath> {
                 }
                 ),
               ),
-           //  if (New.avatar=="Pink")
+             if (New.avatar=="Pink")
                 Visibility(
 
                   child: Positioned(
