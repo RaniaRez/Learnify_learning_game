@@ -144,7 +144,7 @@ class _M_1_1_2ndState extends State<M_1_1_2nd> {
                 Visibility(
                   visible: Visible,
                   child: Positioned(
-                    top: size.height*0.49,
+                    top: size.height*0.46,
                     left: size.width*0.69,
                     height: size.width*0.35,
                     width: size.width*0.35,
@@ -155,7 +155,7 @@ class _M_1_1_2ndState extends State<M_1_1_2nd> {
                 Visibility(
                   visible: Visible,
                   child: Positioned(
-                    top: size.height*0.5,
+                    top: size.height*0.48,
                     left: size.width*0.72,
                     height: size.width*0.3,
                     width: size.width*0.3,
@@ -166,7 +166,7 @@ class _M_1_1_2ndState extends State<M_1_1_2nd> {
                 Visibility(
                   visible: Visible,
                   child: Positioned(
-                    top: size.height*0.5,
+                    top: size.height*0.485,
                     left: size.width*0.72,
                     height: size.width*0.3,
                     width: size.width*0.3,
@@ -175,19 +175,15 @@ class _M_1_1_2ndState extends State<M_1_1_2nd> {
                 ),
 
               Positioned(
-                top: 160.0,
-                left: 40.0 ,
-                height: 250,
-                width: 250,
+                top: size.height*0.2,
+                left: size.width*0.2,
+                height: size.width*0.6,
+                width: size.width*0.6,
                 child:BulleQuest(),
               ),
               Positioned(
-                top : 250,
-                left:0,
-                right: 80.5,
-                child: SizedBox(
-                  height: 150,
-                  width:150,
+                top: size.height*0.31,
+                left: size.width*0.27,
                   child: Text(
                     '2ème tentative\n 65+25 = ?',
                     style: TextStyle(
@@ -200,12 +196,11 @@ class _M_1_1_2ndState extends State<M_1_1_2nd> {
                     textAlign: TextAlign.center,
                   ),
                 ),
-              ),
               Visibility(
                 visible: Visible,
                 child: Positioned(
-                  bottom: 235.0,
-                  left: 10,
+                  top: size.height*0.61,
+                  right: size.width*0.77,
                   child: ButtonReset(
                       onPressed: () {
                         setState(() {
@@ -239,379 +234,359 @@ class _M_1_1_2ndState extends State<M_1_1_2nd> {
                 ),
               ),
               Positioned(
-                  bottom: 240.0,
-                  left: 125.0,
-                  width: 148,
-                  height: 77,
+                  top: size.height*0.61,
+                  left: size.width*0.33,
+                  height: size.width*0.2,
+                  width: size.width*0.33,
                   child: QButton(onPressed: null,)
               ),
-              Visibility(
-                visible: Visible,
-                child: Positioned(
-                    bottom: 140,
-                    left: 10,
-                    child: Button_0(onPressed: (){
-                      setState(() {
-                        if(all){
+              Positioned(
+                top: size.height*0.75,
+                left: size.width*0.1,
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Visibility(
+                        visible: Visible,
+                        child:Button_0(onPressed: (){
+                          setState(() {
+                            if(all){
 
-                        }else if(First){
-                          zeroU = true;
-                          all = true;
-                        }else {
-                          zeroD = true;
-                          First = true;
-                        }
-                      });
-                    },)
+                            }else if(First){
+                              zeroU = true;
+                              all = true;
+                            }else {
+                              zeroD = true;
+                              First = true;
+                            }
+                          });
+                        },)
+                    ),
+                    Visibility(
+                        visible: Visible,
+                        child:  Button_1(onPressed: (){
+                          setState(() {
+                            if(all){
+
+                            }else if(First){
+                              oneU = true;
+                              all = true;
+                            }else {
+                              oneD = true;
+                              First = true;
+                            }
+                          });
+                        },)
+                    ),
+                    Visibility(
+                        visible: Visible,
+                        child: Button_2(onPressed: (){
+                          setState(() {
+                            if(all){
+
+                            }else if(First){
+                              twoU = true;
+                              all = true;
+                            }else {
+                              twoD = true;
+                              First = true;
+                            }
+                          });
+                        },)
+                    ),
+                    Visibility(
+                        visible: Visible,
+                        child:Button_3(onPressed: (){
+                          setState(() {
+                            if(all){
+
+                            }else if(First){
+                              threeU = true;
+                              all = true;
+                            }else {
+                              threeD = true;
+                              First = true;
+                            }
+                          });
+                        },)
+                    ),
+                    Visibility(
+                        visible: Visible,
+                        child: Button_4(onPressed: (){
+                          setState(() {
+                            if(all){
+
+                            }else if(First){
+                              fourU = true;
+                              all = true;
+                            }else {
+                              fourD = true;
+                              First = true;
+                            }
+                          });
+                        },)
+                    ),
+
+                  ],
                 ),
               ),
+              Positioned(
+                top: size.height*0.85,
+                left: size.width*0.1,
+                child: Row(
+                  children: [
+                    Visibility(
+                        visible: Visible,
+                        child:
+                        Button_5(onPressed: (){
+                          setState(() {
+                            if(all){
 
-              Visibility(
-                visible: Visible,
-                child: Positioned(
-                    bottom: 140,
-                    left: 90,
-                    child: Button_1(onPressed: (){
-                      setState(() {
-                        if(all){
+                            }else if(First){
+                              fiveU = true;
+                              all = true;
+                            }else {
+                              fiveD = true;
+                              First = true;
+                            }
+                          });
+                        },)
+                    ),
+                    Visibility(
+                        visible: Visible,
+                        child: Button_6(onPressed: (){
+                          setState(() {
+                            if(all){
 
-                        }else if(First){
-                          oneU = true;
-                          all = true;
-                        }else {
-                          oneD = true;
-                          First = true;
-                        }
-                      });
-                    },)
-                ),
-              ),
-              Visibility(
-                visible: Visible,
-                child: Positioned(
-                    bottom: 140,
-                    left: 170,
-                    child: Button_2(onPressed: (){
-                      setState(() {
-                        if(all){
+                            }else if(First){
+                              sixU = true;
+                              all = true;
+                            }else {
+                              sixD = true;
+                              First = true;
+                            }
+                          });
+                        },)
+                    ),
+                    Visibility(
+                        visible: Visible,
+                        child: Button_7(onPressed: (){
+                          setState(() {
+                            if(all){
 
-                        }else if(First){
-                          twoU = true;
-                          all = true;
-                        }else {
-                          twoD = true;
-                          First = true;
-                        }
-                      });
-                    },)
-                ),
-              ),
-              Visibility(
-                visible: Visible,
-                child: Positioned(
-                    bottom: 140,
-                    left: 250,
-                    child: Button_3(onPressed: (){
-                      setState(() {
-                        if(all){
+                            }else if(First){
+                              sevenU = true;
+                              all = true;
+                            }else {
+                              sevenD = true;
+                              First = true;
+                            }
+                          });
+                        },)
+                    ),
+                    Visibility(
+                        visible: Visible,
+                        child: Button_8(onPressed: (){
+                          setState(() {
+                            if(all){
 
-                        }else if(First){
-                          threeU = true;
-                          all = true;
-                        }else {
-                          threeD = true;
-                          First = true;
-                        }
-                      });
-                    },)
-                ),
-              ),
-              Visibility(
-                visible: Visible,
-                child: Positioned(
-                    bottom: 140,
-                    left: 330,
-                    child: Button_4(onPressed: (){
-                      setState(() {
-                        if(all){
+                            }else if(First){
+                              eightU = true;
+                              all = true;
+                            }else {
+                              eightD = true;
+                              First = true;
+                            }
+                          });
+                        },)
+                    ),
+                    Visibility(
+                        visible: Visible,
+                        child:Button_9(onPressed: (){
+                          setState(() {
+                            if(all){
 
-                        }else if(First){
-                          fourU = true;
-                          all = true;
-                        }else {
-                          fourD = true;
-                          First = true;
-                        }
-                      });
-                    },)
-                ),
-              ),
-              Visibility(
-                visible: Visible,
-                child: Positioned(
-                    bottom: 60,
-                    left: 10,
-                    child: Button_5(onPressed: (){
-                      setState(() {
-                        if(all){
-
-                        }else if(First){
-                          fiveU = true;
-                          all = true;
-                        }else {
-                          fiveD = true;
-                          First = true;
-                        }
-                      });
-                    },)
-                ),
-              ),
-
-              Visibility(
-                visible: Visible,
-                child: Positioned(
-                    bottom: 60,
-                    left: 90,
-                    child: Button_6(onPressed: (){
-                      setState(() {
-                        if(all){
-
-                        }else if(First){
-                          sixU = true;
-                          all = true;
-                        }else {
-                          sixD = true;
-                          First = true;
-                        }
-                      });
-                    },)
-                ),
-              ),
-              Visibility(
-                visible: Visible,
-                child: Positioned(
-                    bottom: 60,
-                    left: 170,
-                    child: Button_7(onPressed: (){
-                      setState(() {
-                        if(all){
-
-                        }else if(First){
-                          sevenU = true;
-                          all = true;
-                        }else {
-                          sevenD = true;
-                          First = true;
-                        }
-                      });
-                    },)
-                ),
-              ),
-              Visibility(
-                visible: Visible,
-                child: Positioned(
-                    bottom: 60,
-                    left: 250,
-                    child: Button_8(onPressed: (){
-                      setState(() {
-                        if(all){
-
-                        }else if(First){
-                          eightU = true;
-                          all = true;
-                        }else {
-                          eightD = true;
-                          First = true;
-                        }
-                      });
-                    },)
-                ),
-              ),
-              Visibility(
-                visible: Visible,
-                child: Positioned(
-                    bottom: 60,
-                    left: 330,
-                    child: Button_9(onPressed: (){
-                      setState(() {
-                        if(all){
-
-                        }else if(First){
-                          nineU= true;
-                          all = true;
-                        }else {
-                          nineD = true;
-                          First = true;
-                        }
-                      });
-                    },)
+                            }else if(First){
+                              nineU= true;
+                              all = true;
+                            }else {
+                              nineD = true;
+                              First = true;
+                            }
+                          });
+                        },)
+                    ),
+                  ],
                 ),
               ),
               //DebutAnswers
               Visibility(
                 visible: zeroD,
                 child: Positioned(
-                    bottom: 245,
-                    left: 140,
+                    top: size.height*0.618,
+                    left: size.width*0.35,
                     child: Button_0(onPressed: null,)
                 ),
               ),
               Visibility(
                 visible: zeroU,
                 child: Positioned(
-                    bottom: 245,
-                    left: 192,
+                    top: size.height*0.618,
+                    left: size.width*0.48,
                     child: Button_0(onPressed: null,)
                 ),
               ),
               Visibility(
                 visible: oneD,
                 child: Positioned(
-                    bottom: 245,
-                    left: 140,
+                    top: size.height*0.618,
+                    left: size.width*0.35,
                     child: Button_1(onPressed: null,)
                 ),
               ),
               Visibility(
                 visible: oneU,
                 child: Positioned(
-                    bottom: 245,
-                    left: 192,
+                    top: size.height*0.618,
+                    left: size.width*0.48,
                     child: Button_1(onPressed: null,)
                 ),
               ),
               Visibility(
                 visible: twoD,
                 child: Positioned(
-                    bottom: 245,
-                    left: 140,
+                    top: size.height*0.618,
+                    left: size.width*0.35,
                     child: Button_2(onPressed: null,)
                 ),
               ),
               Visibility(
                 visible: twoU,
                 child: Positioned(
-                    bottom: 245,
-                    left: 192,
+                    top: size.height*0.618,
+                    left: size.width*0.48,
                     child: Button_2(onPressed: null,)
                 ),
               ),
               Visibility(
                 visible: threeD,
                 child: Positioned(
-                    bottom: 245,
-                    left: 140,
+                    top: size.height*0.618,
+                    left: size.width*0.35,
                     child: Button_3(onPressed: null,)
                 ),
               ),
               Visibility(
                 visible: threeU,
                 child: Positioned(
-                    bottom: 245,
-                    left: 192,
+                    top: size.height*0.618,
+                    left: size.width*0.48,
                     child: Button_3(onPressed: null,)
                 ),
               ),
               Visibility(
                 visible: fourD,
                 child: Positioned(
-                    bottom: 245,
-                    left: 140,
+                    top: size.height*0.618,
+                    left: size.width*0.35,
                     child: Button_4(onPressed: null,)
                 ),
               ),
               Visibility(
                 visible: fourU,
                 child: Positioned(
-                    bottom: 245,
-                    left: 192,
+                    top: size.height*0.618,
+                    left: size.width*0.48,
                     child: Button_4(onPressed: null,)
                 ),
               ),
               Visibility(
                 visible: fiveD,
                 child: Positioned(
-                    bottom: 245,
-                    left: 140,
+                    top: size.height*0.618,
+                    left: size.width*0.35,
                     child: Button_5(onPressed: null,)
                 ),
               ),
               Visibility(
                 visible: fiveU,
                 child: Positioned(
-                    bottom: 245,
-                    left: 192,
+                    top: size.height*0.618,
+                    left: size.width*0.48,
                     child: Button_5(onPressed: null,)
                 ),
               ),
               Visibility(
                 visible: sixD,
                 child: Positioned(
-                    bottom: 245,
-                    left: 140,
+                    top: size.height*0.618,
+                    left: size.width*0.35,
                     child: Button_6(onPressed: null,)
                 ),
               ),
               Visibility(
                 visible: sixU,
                 child: Positioned(
-                    bottom: 245,
-                    left: 192,
+                    top: size.height*0.618,
+                    left: size.width*0.48,
                     child: Button_6(onPressed: null,)
                 ),
               ),
               Visibility(
                 visible: sevenD,
                 child: Positioned(
-                    bottom: 245,
-                    left: 140,
+                    top: size.height*0.618,
+                    left: size.width*0.35,
                     child: Button_7(onPressed: null,)
                 ),
               ),
               Visibility(
                 visible: sevenU,
                 child: Positioned(
-                    bottom: 245,
-                    left: 192,
+                    top: size.height*0.618,
+                    left: size.width*0.48,
                     child: Button_7(onPressed: null,)
                 ),
               ),
               Visibility(
                 visible: eightD,
                 child: Positioned(
-                    bottom: 245,
-                    left: 140,
+                    top: size.height*0.618,
+                    left: size.width*0.35,
                     child: Button_8(onPressed: null,)
                 ),
               ),
               Visibility(
                 visible: eightU,
                 child: Positioned(
-                    bottom: 245,
-                    left: 192,
+                    top: size.height*0.618,
+                    left: size.width*0.48,
                     child: Button_8(onPressed: null,)
                 ),
               ),
               Visibility(
                 visible: nineD,
                 child: Positioned(
-                    bottom: 245,
-                    left: 140,
+                    top: size.height*0.618,
+                    left: size.width*0.35,
                     child: Button_9(onPressed: null,)
                 ),
               ),
               Visibility(
                 visible: nineU,
                 child: Positioned(
-                    bottom: 245,
-                    left: 192,
+                    top: size.height*0.618,
+                    left: size.width*0.48,
                     child: Button_9(onPressed: null,)
                 ),
               ),
               Visibility(
                 visible: !Visible,
                 child: Positioned(
-                    bottom: -30,
+                    top: size.height*0.8,
+                    left: 0.0,
+                    height: size.height*0.2,
+                    width: size.width*0.5,
                     child: ButtonContinuer(onPressed: (){
                       Navigator.push(
                           context,
@@ -623,10 +598,10 @@ class _M_1_1_2ndState extends State<M_1_1_2nd> {
                 Visibility(
                   visible: !Visible,
                   child: Positioned(
-                    bottom: 90,
-                    right: 280.0 ,
-                    height: 130.0,
-                    width: 130.0,
+                    height: size.width*0.3,
+                    width: size.width*0.3,
+                    left: size.width*0.1,
+                    top:size.height*0.729,
                     child:Image.asset('images/HappyPink.gif'),
                   ),
                 ),
@@ -634,10 +609,10 @@ class _M_1_1_2ndState extends State<M_1_1_2nd> {
                 Visibility(
                   visible: !Visible,
                   child: Positioned(
-                    bottom: 100,
-                    right: 260.0 ,
-                    height: 150.0,
-                    width: 150.0,
+                    height: size.width*0.35,
+                    width: size.width*0.35,
+                    left: size.width*0.1,
+                    top:size.height*0.7,
                     child:Image.asset('images/HappyPurple.gif'),
                   ),
                 ),
@@ -645,10 +620,10 @@ class _M_1_1_2ndState extends State<M_1_1_2nd> {
                 Visibility(
                   visible: !Visible,
                   child: Positioned(
-                    bottom: 90,
-                    right: 280.0 ,
-                    height: 130.0,
-                    width: 130.0,
+                    height: size.width*0.3,
+                    width: size.width*0.3,
+                    left: size.width*0.1,
+                    top:size.height*0.729,
                     child: Image.asset('images/HappyOrange.gif'),
                   ),
                 ),
@@ -656,20 +631,20 @@ class _M_1_1_2ndState extends State<M_1_1_2nd> {
                 Visibility(
                   visible: !Visible,
                   child: Positioned(
-                    bottom: 95,
-                    right: 280.0 ,
-                    height: 130.0,
-                    width: 130.0,
+                    height: size.width*0.3,
+                    width: size.width*0.3,
+                    left: size.width*0.1,
+                    top:size.height*0.729,
                     child:Image.asset('images/HappyBlue.gif'),
                   ),
                 ),
               Visibility(
                 visible: !Visible,
                 child: Positioned(
-                    height: 200,
-                    width: 200,
-                    bottom: 60,
-                    right: 60,
+                    height: size.width*0.45,
+                    width: size.width*0.45,
+                    left: size.width*0.4,
+                    top:size.height*0.7,
                     child: SvgPicture.asset(bulleBravo)
                 ),
               )
