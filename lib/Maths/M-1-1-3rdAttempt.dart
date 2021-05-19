@@ -185,18 +185,21 @@ class _M_1_1_3rdState extends State<M_1_1_3rd> {
               Positioned(
                 top: size.height*0.32,
                 left: size.width*0.32,
+                child: FittedBox(
+                  fit: BoxFit.fitWidth,
                   child: Text(
                     '35+45 = ?',
-                    style: TextStyle(
-                      fontFamily: 'Skranji-bold',
-                      fontSize: 30,
-                      color: Colors.brown[700],
+                    style:TextStyle(
+                      fontSize: 25,
+                      fontFamily: 'Skranji-Bold',
                       fontWeight: FontWeight.bold,
-
+                      color:Colors.brown[700],
                     ),
                     textAlign: TextAlign.center,
                   ),
                 ),
+
+              ),
               Visibility(
                 visible: Visible,
                 child: Positioned(
