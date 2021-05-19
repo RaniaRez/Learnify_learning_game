@@ -9,12 +9,14 @@ import 'package:somthn/Maths/I-M-1-3.dart';
 import 'package:somthn/Maths/I-M-1-4.dart';
 import 'package:somthn/Maths/I-M-1-5.dart';
 import 'package:somthn/Maths/I-M-2-1.dart';
+import 'package:somthn/Maths/I-M-2-2.dart';
+import 'package:somthn/Maths/I-M-2-3.dart';
 import 'package:somthn/TestDeNiveau/TestDeNiveau.dart';
 import 'package:somthn/WelcomePages/Home.dart';
 
 
 void main() {
   runApp(MaterialApp(
-    home:I_M_2_1_()
+    home:I_M_2_3_()
   ));
 }
