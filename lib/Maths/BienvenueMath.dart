@@ -71,14 +71,14 @@ class _BienvenueMathState extends State<BienvenueMath> {
                 }
                 ),
               ),
-             if (New.avatar=="Pink")
+           //  if (New.avatar=="Pink")
                 Visibility(
 
                   child: Positioned(
-                    height: size.height*0.27,
-                    width: size.width*0.27,
+                    height: size.width*0.3,
+                    width: size.width*0.3,
                     left: size.width*0.15,
-                    top:size.height*0.55,
+                    top:size.height*0.61,
                     child:PinkAvatarIcon(onPressed: null,),
                   ),
                 ),
@@ -86,14 +86,14 @@ class _BienvenueMathState extends State<BienvenueMath> {
                 Visibility(
 
                   child: Positioned(
-                    top: size.height*0.51,
+                    top: size.height*0.6,
                     right: size.width*0.6 ,
-                    height: size.height*0.35,
+                    height: size.width*0.35,
                     width: size.width*0.35,
                     child:PurpleAvatarIcon(onPressed: null,),
                   ),
                 ),
-           //   if (New.avatar=="Orange")
+             if (New.avatar=="Orange")
                 Visibility(
 
                   child: Positioned(
@@ -108,7 +108,7 @@ class _BienvenueMathState extends State<BienvenueMath> {
                 Visibility(
 
                   child: Positioned(
-                    top: size.height*0.53,
+                    top: size.height*0.61,
                     right: size.width*0.6 ,
                     height: size.width*0.3,
                     width: size.width*0.25,
