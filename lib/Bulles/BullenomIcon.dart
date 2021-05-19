@@ -13,7 +13,7 @@ class BullenomIcon extends StatelessWidget {
           child: Stack(
             alignment: Alignment.center,
             children: <Widget>[
-              SvgPicture.asset(bullevide),
+              SvgPicture.asset(bulleNom),
 
             ],
           ),

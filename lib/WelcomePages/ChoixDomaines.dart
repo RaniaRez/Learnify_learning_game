@@ -14,7 +14,8 @@ import '../Bulles/Bulle2icon.dart';
 import '../Buttons/GaucheButton.dart';
 import '../Buttons/DroiteButton.dart';
 import '../Buttons/CentreButton.dart';
-import 'ChooseAvatar.dart';
+import '../Services/Login.dart';
+import '../Services/SignUp.dart';
 
 
 
@@ -69,7 +70,7 @@ class _ChoixDomaineState extends State<ChoixDomaine> {
 
                   child:BranchIconSimple()
               ),
-              if (New.avatar=="Pink")
+              if (user.avatar=="Pink")
                 Visibility(
 
                   child: Positioned(
@@ -80,7 +81,7 @@ class _ChoixDomaineState extends State<ChoixDomaine> {
                     child:PinkAvatarIcon(onPressed: null,),
                   ),
                 ),
-              if (New.avatar=="Purple")
+              if (user.avatar=="Purple")
                 Visibility(
 
                   child: Positioned(
@@ -91,7 +92,7 @@ class _ChoixDomaineState extends State<ChoixDomaine> {
                     child:PurpleAvatarIcon(onPressed: null,),
                   ),
                 ),
-              if (New.avatar=="Orange")
+              if (user.avatar=="Orange")
                 Visibility(
 
                   child: Positioned(
@@ -102,7 +103,7 @@ class _ChoixDomaineState extends State<ChoixDomaine> {
                     child: OrangeAvatarIcon(onPressed: null,),
                   ),
                 ),
-              //    if (New.avatar=="Blue")
+                  if (user.avatar=="Blue")
               Visibility(
 
                 child: Positioned(

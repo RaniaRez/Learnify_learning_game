@@ -16,6 +16,8 @@ import 'package:somthn/Avatars/OrangeAvatarIcon.dart';
 import 'package:somthn/Avatars/PinkAvatarIcon.dart';
 import 'package:somthn/Avatars/PurpleAvatarIcon.dart';
 import 'package:somthn/Avatars/BlueAvatarIcon.dart';
+import '../Services/Login.dart';
+import '../Services/SignUp.dart';
 
 class Ecriremdp extends StatefulWidget {
   @override
@@ -92,7 +94,7 @@ class _EcriremdpState extends State<Ecriremdp> {
                 child:BranchIconSimple(),
               ),
             ),
-            if (New.avatar=="Pink")
+            if (user.avatar=="Pink")
               Visibility(
                 visible:_Visible ,
                 child: Positioned(
@@ -103,7 +105,7 @@ class _EcriremdpState extends State<Ecriremdp> {
                   child:PinkAvatarIcon(onPressed: null,),
                 ),
               ),
-            if (New.avatar=="Purple")
+            if (user.avatar=="Purple")
               Visibility(
                 visible:_Visible ,
                 child: Positioned(
@@ -114,7 +116,7 @@ class _EcriremdpState extends State<Ecriremdp> {
                   child:PurpleAvatarIcon(onPressed: null,),
                 ),
               ),
-            if (New.avatar=="Orange")
+            if (user.avatar=="Orange")
               Visibility(
                 visible:_Visible ,
                 child: Positioned(
@@ -125,7 +127,7 @@ class _EcriremdpState extends State<Ecriremdp> {
                   child: OrangeAvatarIcon(onPressed: null,),
                 ),
               ),
-            if (New.avatar=="Blue")
+            if (user.avatar=="Blue")
               Visibility(
                 visible:_Visible ,
                 child: Positioned(
@@ -251,8 +253,8 @@ class _EcriremdpState extends State<Ecriremdp> {
                         onEditingComplete: (){
                           if(Password.text.isNotEmpty) {
                             setState(() {
-                              New.SetPassword(Password.text);
-                              Utilisateurs.add(New);
+                              user.SetPassword(Password.text);
+                              Utilisateurs.add(user);
                               _Goto = true;
                             });
 
@@ -297,8 +299,8 @@ class _EcriremdpState extends State<Ecriremdp> {
                     left: 300.00,
                     child: GoToButton(onPressed: (){
                       setState(() {
-                        New.SetOld();
-                        Utilisateurs.add(New);
+                        user.SetOld();
+                        Utilisateurs.add(user);
                       });
                       Navigator.push(
                           context,

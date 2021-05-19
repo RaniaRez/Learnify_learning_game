@@ -21,7 +21,7 @@ allprojects {
         options.compilerArgs << "-Xlint:unchecked" << "-Xlint:deprecation"
     }
 }
-
+allprojects { tasks.withType(JavaCompile) { options.deprecation = true } }
 rootProject.buildDir = '../build'
 subprojects {
     project.buildDir = "${rootProject.buildDir}/${project.name}"

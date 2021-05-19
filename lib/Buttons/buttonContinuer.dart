@@ -8,7 +8,6 @@ class ButtonContinuer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return IconButton(
-      iconSize: 200,
         icon :
         SvgPicture.asset(buttonContinuer),
         onPressed: onPressed

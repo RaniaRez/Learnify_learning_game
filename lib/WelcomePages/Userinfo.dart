@@ -1,5 +1,6 @@
 
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:somthn/Avatars/BlueAvatarIcon.dart';
 import 'package:somthn/Branches/BranchIconSimple.dart';
 import 'package:somthn/WelcomePages/ChooseAvatar.dart';
@@ -12,9 +13,12 @@ import 'package:somthn/WelcomePages/Settings.dart';
 import 'package:somthn/Buttons/buttonModifyAvatar.dart';
 import 'package:somthn/Buttons/buttonModifyNom.dart';
 import 'package:somthn/Buttons/buttonSuppProfile.dart';
+import 'package:somthn/myicons.dart';
 import '../Buttons/settingsButton.dart';
 import '../Buttons/BacksButton.dart';
 import 'Home.dart';
+import '../Services/Login.dart';
+import '../Services/SignUp.dart';
 
 class Userinfo extends StatefulWidget {
 
@@ -77,47 +81,50 @@ class _UserinfoState extends State<Userinfo> {
               ),
             ),
             Positioned(
-              top: size.height*0.3,
-              right:size.width*0.62,
+              top: size.height*0.25,
+              right:size.width*0.65,
+              height: size.height*0.2,
+              width: size.width*0.35,
                 child:BranchIconSimple(),
               ),
-            if (New.avatar=="Pink")
+            if (user.avatar=="Pink")
               Visibility(
 
                 child: Positioned(
-
+                  top: size.height*0.12,
+                  right:size.width*0.65,
                   height: size.height*0.3,
                   width: size.width*0.3,
                   child:PinkAvatarIcon(onPressed: null,),
                 ),
               ),
-            if (New.avatar=="Purple")
+            if (user.avatar=="Purple")
               Visibility(
 
                 child: Positioned(
-                  top: size.height*0.12,
+                  top: size.height*0.11,
                   right:size.width*0.65,
                   height: size.height*0.35,
                   width: size.width*0.35,
                   child:PurpleAvatarIcon(onPressed: null,),
                 ),
               ),
-            if (New.avatar=="Orange")
+            if (user.avatar=="Orange")
               Visibility(
                 child: Positioned(
-                  top: size.height*0.14,
+                  top: size.height*0.135,
                   right:size.width*0.65,
                   height: size.height*0.3,
                   width: size.width*0.3,
                   child: OrangeAvatarIcon(onPressed: null,),
                 ),
               ),
-           if (New.avatar=="Blue")
+           if (user.avatar=="Blue")
               Visibility(
 
                 child: Positioned(
-                  top: size.height*0.4,
-                  right:size.width*0.6,
+                  top: size.height*0.13,
+                  right:size.width*0.65,
                   height: size.height*0.3,
                   width: size.width*0.3,
                   child:BlueAvatarIcon(onPressed: null,),
@@ -125,17 +132,9 @@ class _UserinfoState extends State<Userinfo> {
               ),
 
             Positioned(
-              top: size.height*0.65,
+              top: size.height*0.66,
               left:size.width*0.05,
-         child: Text(
-    'Supprimer le compte',
-             style: TextStyle(
-               fontFamily: 'Skranji-Bold',
-               fontSize: 24,
-
-               color:Colors.brown[700],
-             ),
-            ),
+         child: SvgPicture.asset(suppCompte)
 
             ),
 Positioned(
@@ -149,18 +148,9 @@ Positioned(
               ),
             ),
             Positioned(
-              top: size.height*0.45,
+              top: size.height*0.46,
               left:size.width*0.05,
-              child: Text(
-                 'Changer avatar',
-                        style: TextStyle(
-                          fontFamily: 'Skranji-Bold',
-                          fontSize: 24,
-
-                          color:Colors.brown[700],
-                        ),
-                       ),
-
+              child: SvgPicture.asset(changerAvatar)
 
               ),
             Positioned(
@@ -176,18 +166,9 @@ Positioned(
               ),
             ),
             Positioned(
-              top: size.height*0.55,
+              top: size.height*0.56,
               left:size.width*0.05,
-           child: Text(
-                        'Changer nom',
-                        style: TextStyle(
-                          fontFamily: 'Skranji-Bold',
-                          fontSize: 24,
-
-                          color:Colors.brown[700],
-                        ),
-                          ),
-
+           child: SvgPicture.asset(changerNom)
                 ),
 
             Positioned(

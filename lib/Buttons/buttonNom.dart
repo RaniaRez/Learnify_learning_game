@@ -10,7 +10,6 @@ class ButtonNom extends StatelessWidget {
     return IconButton(
 
        icon:SvgPicture.asset(buttonNom),
-        iconSize: 90.0,
 
         onPressed: onPressed
     );
