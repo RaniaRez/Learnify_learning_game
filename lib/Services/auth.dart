@@ -1,6 +1,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import 'package:somthn/WelcomePages/ClassUser.dart';
+import '../Data/database.dart';
 
 
   final FirebaseAuth _auth = FirebaseAuth.instance;
@@ -23,8 +24,9 @@ import 'package:somthn/WelcomePages/ClassUser.dart';
 
     final FirebaseUser currentUser = await _auth.currentUser();
     assert(currentUser.uid == user.uid);
-
+    await DatabaseService(uid: user.uid).updateUserData('username','avatar', 10);
     return userFromFirebaseUser(user);
+
     //userFromFirebaseUser(user);
   }
   void signOutGoogle() async {

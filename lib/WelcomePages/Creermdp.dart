@@ -147,6 +147,9 @@ class _CreermdpState extends State<Creermdp> {
                 MaterialPageRoute(
                 builder: (BuildContext context) => Ecriremdp()));
               print('chooseavatar');
+              print(user.uid);
+              print(user.username);
+              print(user.avatar);
     },
             )
             ),
