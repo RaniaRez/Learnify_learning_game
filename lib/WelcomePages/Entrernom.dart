@@ -16,7 +16,7 @@ import '../Branches/BranchIconSimple.dart';
 import 'Creermdp.dart';
 import 'ChooseAvatar.dart';
 import '../Services/Login.dart';
-import '../Services/SignUp.dart';
+import '../Data/database.dart';
 
 
 
@@ -234,9 +234,14 @@ class _EntrernomState extends State<Entrernom> {
                         _GoTo = false;
                       });
                     } else {
-                      setState(() {
+                      setState(()  {
                         user.SetUsername(Username.text);
                         _GoTo = true;
+                        print("username");
+                        print(user.username);
+                        print("printed");
+                        DatabaseService(uid: user.uid).updateUserData(user.username,user.avatar, 10);
+
                       });
                     }
                     FocusScope.of(context).requestFocus(FocusNode());
