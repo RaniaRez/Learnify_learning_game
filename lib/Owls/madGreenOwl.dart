@@ -9,7 +9,7 @@ class GreenOwl extends StatelessWidget {
   Widget build(BuildContext context) {
     return IconButton(
         icon : SvgPicture.asset(madGreenOwl),
-        iconSize: 100.0,
+
         onPressed: onPressed
     );
   }

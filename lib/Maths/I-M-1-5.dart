@@ -14,15 +14,9 @@ import 'package:somthn/Avatars/OrangeAvatarIcon.dart';
 import 'package:somthn/Avatars/PinkAvatarIcon.dart';
 import 'package:somthn/Avatars/PurpleAvatarIcon.dart';
 import 'package:somthn/Avatars/BlueAvatarIcon.dart';
-//import '../WelcomePages/ChooseAvatar.dart';
+import '../WelcomePages/ChooseAvatar.dart';
 import 'package:somthn/Buttons/buttonAppliquer.dart';
-import 'package:somthn/Maths/M-1-4-3rdAttempt-1.dart';
-import 'package:somthn/Maths/M-1-4-3rdAttempt-2.dart';
-import 'package:somthn/Maths/M-1-4-3rdAttempt-3.dart';
-import 'package:somthn/Maths/M-1-4-3rdAttempt-4.dart';
-import 'package:somthn/Maths/M-1-4-3rdAttempt.dart';
-import '../Services/Login.dart';
-import '../Services/SignUp.dart';
+
 
 import '../myicons.dart';
 
@@ -36,139 +30,152 @@ class I_M_1_5_ extends StatefulWidget {
 class _I_M_1_5_State extends State<I_M_1_5_> {
   @override
   Widget build(BuildContext context) {
+    Size size = MediaQuery.of(context).size;
     return Scaffold(
         body:
-        Stack(
-          children: <Widget>[
-            Container(
-              constraints: BoxConstraints.expand(),
-              decoration: BoxDecoration(
-                  image: DecorationImage(
-                      image: AssetImage("images/mathsBG.jpg"),
-                      fit: BoxFit.cover)),
-            ),
-            Positioned(
-                top: 50.00,
-                left: 300.00,
-                child:
-                SettingsButton(onPressed: (){
-                  Navigator.push(
-                      context,
-                      MaterialPageRoute(builder: (context) => Settings()));
-                  print("HELL YEAH");
-                },)
-            ),
-            Positioned(
-                top: 10.00,
-                right: 250.00,
-                child: BacksButton(onPressed: (){
-                  Navigator.pop(context);
-                },)
-            ),
-
-            Positioned(
-              top: 70.00,
-              right: 115.00,
-              child: SvgPicture.asset(FourBars),
-            ),
-
-            Positioned(
-                top: 200,
-                right: 55,
-                child: SvgPicture.asset(EmptyTable)),
-            if (user.avatar=="Pink")
-              Visibility(
-
-                child: Positioned(
-                  top: 465.0,
-                  left: 290.0 ,
-                  height: 130.0,
-                  width: 130.0,
-                  child:PinkAvatarIcon(onPressed: null,),
-                ),
+        Container(
+          height: size.height,
+          width: size.width,
+          child: Stack(
+            children: <Widget>[
+              Container(
+                constraints: BoxConstraints.expand(),
+                decoration: BoxDecoration(
+                    image: DecorationImage(
+                        image: AssetImage("images/mathsBG.jpg"),
+                        fit: BoxFit.cover)),
               ),
-            if (user.avatar=="Purple")
-              Visibility(
-
-                child: Positioned(
-                  top: 455.0,
-                  left: 270.0 ,
-                  height: 150.0,
-                  width: 150.0,
-                  child:PurpleAvatarIcon(onPressed: null,),
-                ),
+              Positioned(
+                  top: size.height*0.05,
+                  left:size.width*0.75,
+                  child:
+                  SettingsButton(onPressed: (){
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => Settings()));
+                    print("HELL YEAH");
+                  },)
               ),
-            if (user.avatar=="Orange")
-              Visibility(
-
-                child: Positioned(
-                  top: 470.0,
-                  left: 285.0 ,
-                  height: 130.0,
-                  width: 130.0,
-                  child: OrangeAvatarIcon(onPressed: null,),
-                ),
+              Positioned(
+                  top: size.height*0.05,
+                  right:size.width*0.75,
+                  child: BacksButton(onPressed: (){
+                    Navigator.pop(context);
+                  },)
               ),
-            if (user.avatar=="Blue")
-              Visibility(
 
-                child: Positioned(
-                  top: 465.0,
-                  left: 280.0 ,
-                  height: 130.0,
-                  width: 130.0,
-                  child:BlueAvatarIcon(onPressed: null,),
-                ),
+              Positioned(
+                bottom: size.height*0.9,
+                left: size.width*0.275 ,
+                child: SvgPicture.asset(FourBars),
               ),
-            Positioned(
-              top: 440,
-              right: 90,
-              child: SvgPicture.asset(Stick),
-            ),
-            Positioned(
-                top: 250,
-                right: 100,
-                child: Text(
-                  'Observe :\nDifférence entre\ndeux nombres :\n(84 - 20) - 6\n = 64 - 6\n=58',
-                  style: TextStyle(
+              Positioned(
+                  bottom: size.height*0.25,
+                  left: size.width*0.2 ,
+                  height: size.height*0.6,
+                  width: size.width*0.6,
+                  child: SvgPicture.asset(EmptyTable)),
+              if (New.avatar=="Pink")
+                Visibility(
+
+                  child: Positioned(
+                    height: size.width*0.3,
+                    width: size.width*0.3,
+                    left: size.width*0.7,
+                    top:size.height*0.57,
+                    child:PinkAvatarIcon(onPressed: null,),
+                  ),
+                ),
+              if (New.avatar=="Purple")
+                Visibility(
+
+                  child: Positioned(
+                    height: size.width*0.35,
+                    width: size.width*0.35,
+                    left: size.width*0.68,
+                    top:size.height*0.57,
+                    child:PurpleAvatarIcon(onPressed: null,),
+                  ),
+                ),
+              if (New.avatar=="Orange")
+                Visibility(
+
+                  child: Positioned(
+                    height: size.width*0.3,
+                    width: size.width*0.3,
+                    left: size.width*0.7,
+                    top:size.height*0.57,
+                    child: OrangeAvatarIcon(onPressed: null,),
+                  ),
+                ),
+              if (New.avatar=="Blue")
+                Visibility(
+
+                  child: Positioned(
+                    height: size.width*0.3,
+                    width: size.width*0.3,
+                    left: size.width*0.7,
+                    top:size.height*0.57,
+                    child:BlueAvatarIcon(onPressed: null,),
+                  ),
+                ),
+              Positioned(
+                bottom: size.height*0.3,
+                left: size.width*0.58 ,
+                child: SvgPicture.asset(Stick),
+              ),
+
+              Positioned(
+                top: size.height*0.3,
+                left: size.width*0.26 ,
+                child: FittedBox(
+                  fit: BoxFit.fitWidth,
+                  child: Text(
+                    'Observe :\nDifférence entre\ndeux nombres :\n(84 - 20) - 6\n = 64 - 6\n=58',
+                    style:TextStyle(
                       fontSize: 25,
                       fontFamily: 'Skranji-Bold',
-                      color : Colors.brown[700]
+                      fontWeight: FontWeight.bold,
+                      color:Colors.brown[700],
+                    ),
+                    textAlign: TextAlign.center,
                   ),
-                  textAlign: TextAlign.center,
-                )
-            ),
-            Positioned(
-              bottom: 0,
-              child: AppliquerButton(onPressed : (){
-                final _random = new Random();
-                int rnd = 0 + _random.nextInt(5);
-                if(rnd==0){
-                  Navigator.push(
-                      context,
-                      MaterialPageRoute(builder: (context) => M_1_5_3rd()));
-                }else if(rnd==1){
-                  Navigator.push(
-                      context,
-                      MaterialPageRoute(builder: (context) => M_1_5_3rd_1()));
-                }else if (rnd==2){
-                  Navigator.push(
-                      context,
-                      MaterialPageRoute(builder: (context) => M_1_5_3rd_2()));
-                }else if(rnd == 3){
-                  Navigator.push(
-                      context,
-                      MaterialPageRoute(builder: (context) => M_1_5_3rd_3()));
-                }else{
-                  Navigator.push(
-                      context,
-                      MaterialPageRoute(builder: (context) => M_1_5_3rd_4()));
-                }
+                ),
 
-                print('appliquer');
-              }),
-            )
-          ],
+              ),
+              Positioned(
+                bottom: size.height*0.05,
+                right: size.width*0.5 ,
+                child: AppliquerButton(onPressed : (){
+                  final _random = new Random();
+                  int rnd = 0 + _random.nextInt(5);
+                  if(rnd==0){
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => M_1_5_3rd()));
+                  }else if(rnd==1){
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => M_1_5_3rd_1()));
+                  }else if (rnd==2){
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => M_1_5_3rd_2()));
+                  }else if(rnd == 3){
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => M_1_5_3rd_3()));
+                  }else{
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => M_1_5_3rd_4()));
+                  }
+
+                  print('appliquer');
+                }),
+              )
+            ],
+          ),
         ));
   }
 

@@ -32,6 +32,8 @@ const orangeOwl = 'assets/icons/OrangeOwl.svg';
 const blueOwl = 'assets/icons/BlueOwl.svg';
 const Cercle = 'assets/icons/Cercle.svg';
 const Cercle2 = 'assets/icons/Cercle2.svg';
+const bulleTestNiv = 'assets/icons/bulleTestNiv.svg';
+const BulleBienvenueMath = 'assets/icons/BulleBienvenueMath.svg';
 const Owlbranch = 'assets/icons/OwlWithBranch.svg';
 const buttonNom = 'assets/icons/buttonNom.svg';
 const buttonNon = 'assets/icons/buttonnon.svg';
@@ -42,6 +44,7 @@ const buttonMotdepasse = 'assets/icons/MotDePasse.svg';
 const buttonSupp = 'assets/icons/Supprimer.svg';
 const buttonNomUser = 'assets/icons/NomUser.svg';
 const bullevide = 'assets/icons/bullevide.svg';
+const bulleNom = 'assets/icons/Bullenom.svg';
 const ClassementIcon = 'assets/icons/ClassementIcon.svg';
 const PinkAvatar = 'assets/icons/PinkAvatar.svg';
 const PurpleAvatar = 'assets/icons/PurpleAvatar.svg';
@@ -97,6 +100,11 @@ const Wrong=  'assets/icons/Wrong.svg';
 const Mathsbutton=  'assets/icons/MathsButton.svg';
 const Frbutton=  'assets/icons/FrButton.svg';
 const Geobutton=  'assets/icons/GeoButton.svg';
+const changerAvatar=  'assets/icons/changerAvatar.svg';
+const suppCompte=  'assets/icons/suppCompte.svg';
+const changerNom=  'assets/icons/changerNom.svg';
+const bulleNiveauPasse=  'assets/icons/NiveauPasse.svg';
+const bulleCalculReflechi=  'assets/icons/CalculeReflechi1.svg';
 
 
 

@@ -125,7 +125,7 @@ class _M_1_4_3rdState extends State<M_1_4_3rd> {
                 },),
               ),
             ),
-            if (New.avatar=="Pink")
+            if (user.avatar=="Pink")
               Visibility(
                 visible: Visible,
                 child: Positioned(
@@ -136,7 +136,7 @@ class _M_1_4_3rdState extends State<M_1_4_3rd> {
                   child:PinkAvatarIcon(onPressed: null,),
                 ),
               ),
-            if (New.avatar=="Purple")
+            if (user.avatar=="Purple")
               Visibility(
                 visible: Visible,
                 child: Positioned(
@@ -147,7 +147,7 @@ class _M_1_4_3rdState extends State<M_1_4_3rd> {
                   child:PurpleAvatarIcon(onPressed: null,),
                 ),
               ),
-            if (New.avatar=="Orange")
+            if (user.avatar=="Orange")
               Visibility(
                 visible: Visible,
                 child: Positioned(
@@ -158,7 +158,7 @@ class _M_1_4_3rdState extends State<M_1_4_3rd> {
                   child: OrangeAvatarIcon(onPressed: null,),
                 ),
               ),
-            if (New.avatar=="Blue")
+            if (user.avatar=="Blue")
               Visibility(
                 visible: Visible,
                 child: Positioned(
@@ -626,7 +626,7 @@ class _M_1_4_3rdState extends State<M_1_4_3rd> {
                         child: SvgPicture.asset(Right)
                     ),
                   ),
-                  if (New.avatar=="Pink")
+                  if (user.avatar=="Pink")
                     Visibility(
                       visible: !Visible,
                       child: Positioned(
@@ -637,7 +637,7 @@ class _M_1_4_3rdState extends State<M_1_4_3rd> {
                         child: Image.asset('images/HappyPink.gif'),
                       ),
                     ),
-                  if (New.avatar=="Purple")
+                  if (user.avatar=="Purple")
                     Visibility(
                       visible: !Visible,
                       child: Positioned(
@@ -648,7 +648,7 @@ class _M_1_4_3rdState extends State<M_1_4_3rd> {
                         child:Image.asset('images/HappyPurple.gif'),
                       ),
                     ),
-                  if (New.avatar=="Orange")
+                  if (user.avatar=="Orange")
                     Visibility(
                       visible: !Visible,
                       child: Positioned(
@@ -659,7 +659,7 @@ class _M_1_4_3rdState extends State<M_1_4_3rd> {
                         child: Image.asset('images/HappyOrange.gif'),
                       ),
                     ),
-                  if (New.avatar=="Blue")
+                  if (user.avatar=="Blue")
                     Visibility(
                       visible: !Visible,
                       child: Positioned(
@@ -683,7 +683,7 @@ class _M_1_4_3rdState extends State<M_1_4_3rd> {
                         child: SvgPicture.asset(Wrong)
                     ),
                   ),
-                  if (New.avatar=="Pink")
+                  if (user.avatar=="Pink")
                     Visibility(
                       visible: !Visible,
                       child: Positioned(
@@ -694,7 +694,7 @@ class _M_1_4_3rdState extends State<M_1_4_3rd> {
                         child: Image.asset('images/MadPink.gif'),
                       ),
                     ),
-                  if (New.avatar=="Purple")
+                  if (user.avatar=="Purple")
                     Visibility(
                       visible: !Visible,
                       child: Positioned(
@@ -705,7 +705,7 @@ class _M_1_4_3rdState extends State<M_1_4_3rd> {
                         child:Image.asset('images/MadPurple.gif'),
                       ),
                     ),
-                  if (New.avatar=="Orange")
+                  if (user.avatar=="Orange")
                     Visibility(
                       visible: !Visible,
                       child: Positioned(
@@ -716,7 +716,7 @@ class _M_1_4_3rdState extends State<M_1_4_3rd> {
                         child: Image.asset('images/MadOrange.gif'),
                       ),
                     ),
-                  if (New.avatar=="Blue")
+                  if (user.avatar=="Blue")
                     Visibility(
                       visible: !Visible,
                       child: Positioned(

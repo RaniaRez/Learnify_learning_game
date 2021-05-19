@@ -8,19 +8,8 @@ class BulleQuest extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-
-      child: Center(
-        child: Stack(
-          alignment: Alignment.center,
-          children: <Widget>[
+      child:
             SvgPicture.asset(bulleQuest),
-
-          ],
-        ),
-      ),
-
-
-
     );
   }
 }
