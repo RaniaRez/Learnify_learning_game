@@ -27,140 +27,154 @@ class I_M_1_4_ extends StatefulWidget {
 class _I_M_1_4_State extends State<I_M_1_4_> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-        body:
-        Stack(
-          children: <Widget>[
-            Container(
-              constraints: BoxConstraints.expand(),
-              decoration: BoxDecoration(
-                  image: DecorationImage(
-                      image: AssetImage("images/mathsBG.jpg"),
-                      fit: BoxFit.cover)),
-            ),
-            Positioned(
-                top: 50.00,
-                left: 300.00,
-                child:
-                SettingsButton(onPressed: (){
-                  Navigator.push(
-                      context,
-                      MaterialPageRoute(builder: (context) => Settings()));
-                  print("HELL YEAH");
-                },)
-            ),
-            Positioned(
-                top: 10.00,
-                right: 250.00,
-                child: BacksButton(onPressed: (){
-                  Navigator.pop(context);
-                },)
-            ),
-
-            Positioned(
-              top: 70.00,
-              right: 115.00,
-              child: SvgPicture.asset(ThreeBars),
-            ),
-
-            Positioned(
-                top: 200,
-                right: 55,
-                child: SvgPicture.asset(EmptyTable)),
-            if (New.avatar=="Pink")
-              Visibility(
-
-                child: Positioned(
-                  top: 465.0,
-                  left: 290.0 ,
-                  height: 130.0,
-                  width: 130.0,
-                  child:PinkAvatarIcon(onPressed: null,),
-                ),
+    Size size = MediaQuery.of(context).size;
+    return Container(
+      height: size.height,
+      width: size.width,
+      child: Scaffold(
+          body:
+          Stack(
+            children: <Widget>[
+              Container(
+                constraints: BoxConstraints.expand(),
+                decoration: BoxDecoration(
+                    image: DecorationImage(
+                        image: AssetImage("images/mathsBG.jpg"),
+                        fit: BoxFit.cover)),
               ),
-            if (New.avatar=="Purple")
-              Visibility(
-
-                child: Positioned(
-                  top: 455.0,
-                  left: 270.0 ,
-                  height: 150.0,
-                  width: 150.0,
-                  child:PurpleAvatarIcon(onPressed: null,),
-                ),
+              Positioned(
+                  top: size.height*0.05,
+                  left:size.width*0.75,
+                  child:
+                  SettingsButton(onPressed: (){
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => Settings()));
+                    print("HELL YEAH");
+                  },)
               ),
-            if (New.avatar=="Orange")
-              Visibility(
-
-                child: Positioned(
-                  top: 470.0,
-                  left: 285.0 ,
-                  height: 130.0,
-                  width: 130.0,
-                  child: OrangeAvatarIcon(onPressed: null,),
-                ),
+              Positioned(
+                  top: size.height*0.05,
+                  right:size.width*0.75,
+                  child: BacksButton(onPressed: (){
+                    Navigator.pop(context);
+                  },)
               ),
-            if (New.avatar=="Blue")
-              Visibility(
 
-                child: Positioned(
-                  top: 465.0,
-                  left: 280.0 ,
-                  height: 130.0,
-                  width: 130.0,
-                  child:BlueAvatarIcon(onPressed: null,),
-                ),
+              Positioned(
+                bottom: size.height*0.9,
+                left: size.width*0.275 ,
+                child: SvgPicture.asset(ThreeBars),
               ),
-            Positioned(
-              top: 440,
-              right: 90,
-              child: SvgPicture.asset(Stick),
-            ),
-            Positioned(
-                top: 250,
-                right: 100,
-                child: Text(
-                  'Observe :\nMoitié de 46 \n =moitié de 40\n+moitié de -\n=20+3\n=23',
-                  style: TextStyle(
+
+              Positioned(
+                  bottom: size.height*0.25,
+                  left: size.width*0.2 ,
+                  height: size.height*0.6,
+                  width: size.width*0.6,
+                  child: SvgPicture.asset(EmptyTable)),
+              if (New.avatar=="Pink")
+                Visibility(
+
+                  child: Positioned(
+                    height: size.width*0.3,
+                    width: size.width*0.3,
+                    left: size.width*0.7,
+                    top:size.height*0.57,
+                    child:PinkAvatarIcon(onPressed: null,),
+                  ),
+                ),
+              if (New.avatar=="Purple")
+                Visibility(
+
+                  child: Positioned(
+                    height: size.width*0.35,
+                    width: size.width*0.35,
+                    left: size.width*0.68,
+                    top:size.height*0.57,
+                    child:PurpleAvatarIcon(onPressed: null,),
+                  ),
+                ),
+              if (New.avatar=="Orange")
+                Visibility(
+
+                  child: Positioned(
+                    height: size.width*0.3,
+                    width: size.width*0.3,
+                    left: size.width*0.7,
+                    top:size.height*0.57,
+                    child: OrangeAvatarIcon(onPressed: null,),
+                  ),
+                ),
+              if (New.avatar=="Blue")
+                Visibility(
+
+                  child: Positioned(
+                    height: size.width*0.3,
+                    width: size.width*0.3,
+                    left: size.width*0.7,
+                    top:size.height*0.57,
+                    child:BlueAvatarIcon(onPressed: null,),
+                  ),
+                ),
+              Positioned(
+                bottom: size.height*0.3,
+                left: size.width*0.58 ,
+                child: SvgPicture.asset(Stick),
+              ),
+
+              Positioned(
+                top: size.height*0.3,
+                left: size.width*0.27 ,
+                child: FittedBox(
+                  fit: BoxFit.fitWidth,
+                  child: Text(
+                    'Observe :\nMoitié de 46 \n =moitié de 40\n+moitié de -\n=20+3\n=23',
+                    style:TextStyle(
                       fontSize: 25,
                       fontFamily: 'Skranji-Bold',
-                      color : Colors.brown[700]
+                      fontWeight: FontWeight.bold,
+                      color:Colors.brown[700],
+                    ),
+                    textAlign: TextAlign.center,
                   ),
-                  textAlign: TextAlign.center,
-                )
-            ),
-            Positioned(
-              bottom: 0,
-              child: AppliquerButton(onPressed : (){
-                final _random = new Random();
-                int rnd = 0 + _random.nextInt(5);
-                if(rnd==0){
-                  Navigator.push(
-                      context,
-                      MaterialPageRoute(builder: (context) => M_1_4_3rd()));
-                }else if(rnd==1){
-                  Navigator.push(
-                      context,
-                      MaterialPageRoute(builder: (context) => M_1_4_3rd_1()));
-                }else if (rnd==2){
-                  Navigator.push(
-                      context,
-                      MaterialPageRoute(builder: (context) => M_1_4_3rd_2()));
-                }else if(rnd == 3){
-                  Navigator.push(
-                      context,
-                      MaterialPageRoute(builder: (context) => M_1_4_3rd_3()));
-                }else{
-                  Navigator.push(
-                      context,
-                      MaterialPageRoute(builder: (context) => M_1_4_3rd_4()));
-                }
+                ),
 
-                print('appliquer');
-              }),
-            )
-          ],
-        ));
+              ),
+              Positioned(
+                bottom: size.height*0.05,
+                right: size.width*0.5 ,
+                child: AppliquerButton(onPressed : (){
+                  final _random = new Random();
+                  int rnd = 0 + _random.nextInt(5);
+                  if(rnd==0){
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => M_1_4_3rd()));
+                  }else if(rnd==1){
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => M_1_4_3rd_1()));
+                  }else if (rnd==2){
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => M_1_4_3rd_2()));
+                  }else if(rnd == 3){
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => M_1_4_3rd_3()));
+                  }else{
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => M_1_4_3rd_4()));
+                  }
+
+                  print('appliquer');
+                }),
+              )
+            ],
+          )),
+    );
   }
 
 }
