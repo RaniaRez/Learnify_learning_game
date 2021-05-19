@@ -18,8 +18,7 @@ import '../Services/Login.dart';
 import '../Services/SignUp.dart';
 
 
-List<User> Utilisateurs = [
-];
+List<User> Utilisateurs = [];
 class Users extends StatefulWidget {
   @override
   _UsersState createState() => _UsersState();
