@@ -25,7 +25,9 @@ import 'package:somthn/Avatars/OrangeAvatarIcon.dart';
 import 'package:somthn/Avatars/PinkAvatarIcon.dart';
 import 'package:somthn/Avatars/PurpleAvatarIcon.dart';
 import 'package:somthn/Avatars/BlueAvatarIcon.dart';
-import '../WelcomePages/ChooseAvatar.dart';
+//import '../WelcomePages/ChooseAvatar.dart';
+import '../Services/Login.dart';
+import '../Services/SignUp.dart';
 
 
 class M_1_4 extends StatefulWidget {
@@ -126,7 +128,7 @@ class _M_1_4State extends State<M_1_4> {
                 },),
               ),
             ),
-            if (New.avatar=="Pink")
+            if (user.avatar=="Pink")
               Visibility(
 
                 child: Positioned(
@@ -137,7 +139,7 @@ class _M_1_4State extends State<M_1_4> {
                   child:PinkAvatarIcon(onPressed: null,),
                 ),
               ),
-            if (New.avatar=="Purple")
+            if (user.avatar=="Purple")
               Visibility(
 
                 child: Positioned(
@@ -148,7 +150,7 @@ class _M_1_4State extends State<M_1_4> {
                   child:PurpleAvatarIcon(onPressed: null,),
                 ),
               ),
-            if (New.avatar=="Orange")
+            if (user.avatar=="Orange")
               Visibility(
 
                 child: Positioned(
@@ -159,7 +161,7 @@ class _M_1_4State extends State<M_1_4> {
                   child: OrangeAvatarIcon(onPressed: null,),
                 ),
               ),
-            if (New.avatar=="Blue")
+            if (user.avatar=="Blue")
               Visibility(
 
                 child: Positioned(
@@ -615,7 +617,7 @@ class _M_1_4State extends State<M_1_4> {
                     print('Continuer');},)
               ),
             ),
-            if (New.avatar=="Pink")
+            if (user.avatar=="Pink")
               Visibility(
                 visible: !Visible,
                 child: Positioned(
@@ -626,7 +628,7 @@ class _M_1_4State extends State<M_1_4> {
                   child:Image.asset('images/HappyPink.gif'),
                 ),
               ),
-            if (New.avatar=="Purple")
+            if (user.avatar=="Purple")
               Visibility(
                 visible: !Visible,
                 child: Positioned(
@@ -637,7 +639,7 @@ class _M_1_4State extends State<M_1_4> {
                   child:Image.asset('images/HappyPurple.gif'),
                 ),
               ),
-            if (New.avatar=="Orange")
+            if (user.avatar=="Orange")
               Visibility(
                 visible: !Visible,
                 child: Positioned(
@@ -648,7 +650,7 @@ class _M_1_4State extends State<M_1_4> {
                   child: Image.asset('images/HappyOrange.gif'),
                 ),
               ),
-            if (New.avatar=="Blue")
+            if (user.avatar=="Blue")
               Visibility(
                 visible: !Visible,
                 child: Positioned(

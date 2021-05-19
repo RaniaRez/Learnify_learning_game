@@ -7,8 +7,10 @@ import 'package:somthn/Mutual/Stars.dart';
 import '../Buttons/settingsButton.dart';
 import '../Buttons/BacksButton.dart';
 import '../WelcomePages/Home.dart';
-import '../WelcomePages/ChooseAvatar.dart';
+//import '../WelcomePages/ChooseAvatar.dart';
 import 'package:somthn/Avatars/OrangeAvatarIcon.dart';
+import '../Services/Login.dart';
+import '../Services/SignUp.dart';
 import 'package:somthn/Avatars/PinkAvatarIcon.dart';
 import 'package:somthn/Avatars/PurpleAvatarIcon.dart';
 import 'package:somthn/Avatars/BlueAvatarIcon.dart';
@@ -75,7 +77,7 @@ class _Niveau2PassState extends State<Niveau2Pass> {
 
             child:StarIcon(),
           ),
-          if (New.avatar=="Pink")
+          if (user.avatar=="Pink")
             Visibility(
 
               child: Positioned(
@@ -86,7 +88,7 @@ class _Niveau2PassState extends State<Niveau2Pass> {
                 child:PinkAvatarIcon(onPressed: null,),
               ),
             ),
-          if (New.avatar=="Purple")
+          if (user.avatar=="Purple")
             Visibility(
 
               child: Positioned(
@@ -97,7 +99,7 @@ class _Niveau2PassState extends State<Niveau2Pass> {
                 child:PurpleAvatarIcon(onPressed: null,),
               ),
             ),
-          if (New.avatar=="Orange")
+          if (user.avatar=="Orange")
             Visibility(
 
               child: Positioned(

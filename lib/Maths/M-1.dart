@@ -11,7 +11,10 @@ import '../Buttons/BacksButton.dart';
 import 'package:somthn/Avatars/PinkAvatarIcon.dart';
 import 'package:somthn/Avatars/PurpleAvatarIcon.dart';
 import 'package:somthn/Avatars/BlueAvatarIcon.dart';
-import '../WelcomePages/ChooseAvatar.dart';
+//import '../WelcomePages/ChooseAvatar.dart';
+import '../Services/Login.dart';
+import '../Services/SignUp.dart';
+
 class Math1 extends StatefulWidget {
   @override
   _Math1State createState() => _Math1State();
@@ -54,7 +57,7 @@ class _Math1State extends State<Math1> {
               bottom: 200.0,
               child: SvgPicture.asset(buttonfacile),
             ),
-            if (New.avatar=="Pink")
+            if (user.avatar=="Pink")
               Visibility(
 
                 child: Positioned(
@@ -65,7 +68,7 @@ class _Math1State extends State<Math1> {
                   child:PinkAvatarIcon(onPressed: null,),
                 ),
               ),
-            if (New.avatar=="Purple")
+            if (user.avatar=="Purple")
               Visibility(
 
                 child: Positioned(
@@ -76,7 +79,7 @@ class _Math1State extends State<Math1> {
                   child:PurpleAvatarIcon(onPressed: null,),
                 ),
               ),
-            if (New.avatar=="Orange")
+            if (user.avatar=="Orange")
               Visibility(
 
                 child: Positioned(
@@ -87,7 +90,7 @@ class _Math1State extends State<Math1> {
                   child: OrangeAvatarIcon(onPressed: null,),
                 ),
               ),
-            if (New.avatar=="Blue")
+            if (user.avatar=="Blue")
               Visibility(
 
                 child: Positioned(

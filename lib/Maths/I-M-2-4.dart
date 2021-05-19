@@ -9,13 +9,15 @@ import 'package:somthn/Avatars/OrangeAvatarIcon.dart';
 import 'package:somthn/Avatars/PinkAvatarIcon.dart';
 import 'package:somthn/Avatars/PurpleAvatarIcon.dart';
 import 'package:somthn/Avatars/BlueAvatarIcon.dart';
-import '../WelcomePages/ChooseAvatar.dart';
+//import '../WelcomePages/ChooseAvatar.dart';
 import 'package:somthn/Buttons/buttonAppliquer.dart';
 import 'package:somthn/Maths/M-1-4-3rdAttempt-1.dart';
 import 'package:somthn/Maths/M-1-4-3rdAttempt-2.dart';
 import 'package:somthn/Maths/M-1-4-3rdAttempt-3.dart';
 import 'package:somthn/Maths/M-1-4-3rdAttempt-4.dart';
 import 'package:somthn/Maths/M-1-4-3rdAttempt.dart';
+import '../Services/Login.dart';
+import '../Services/SignUp.dart';
 
 class I_M_2_4_ extends StatefulWidget {
   const I_M_2_4_({Key key}) : super(key: key);
@@ -67,7 +69,7 @@ class _I_M_2_4_State extends State<I_M_2_4_> {
                 top: 200,
                 right: 55,
                 child: SvgPicture.asset(EmptyTable)),
-            if (New.avatar=="Pink")
+            if (user.avatar=="Pink")
               Visibility(
 
                 child: Positioned(
@@ -78,7 +80,7 @@ class _I_M_2_4_State extends State<I_M_2_4_> {
                   child:PinkAvatarIcon(onPressed: null,),
                 ),
               ),
-            if (New.avatar=="Purple")
+            if (user.avatar=="Purple")
               Visibility(
 
                 child: Positioned(
@@ -89,7 +91,7 @@ class _I_M_2_4_State extends State<I_M_2_4_> {
                   child:PurpleAvatarIcon(onPressed: null,),
                 ),
               ),
-            if (New.avatar=="Orange")
+            if (user.avatar=="Orange")
               Visibility(
 
                 child: Positioned(
@@ -100,7 +102,7 @@ class _I_M_2_4_State extends State<I_M_2_4_> {
                   child: OrangeAvatarIcon(onPressed: null,),
                 ),
               ),
-            if (New.avatar=="Blue")
+            if (user.avatar=="Blue")
               Visibility(
 
                 child: Positioned(
