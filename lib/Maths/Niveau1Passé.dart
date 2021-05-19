@@ -14,6 +14,8 @@ import 'package:somthn/Avatars/OrangeAvatarIcon.dart';
 import 'package:somthn/Avatars/PinkAvatarIcon.dart';
 import 'package:somthn/Avatars/PurpleAvatarIcon.dart';
 import 'package:somthn/Avatars/BlueAvatarIcon.dart';
+import '../Services/Login.dart';
+import '../Services/SignUp.dart';
 
 
 class Niveau1Pass extends StatefulWidget {
@@ -82,7 +84,7 @@ class _Niveau1PassState extends State<Niveau1Pass> {
               right: size.width*0.45,
               child:StarIcon(),
             ),
-            if (New.avatar=="Pink")
+            if (user.avatar=="Pink")
               Visibility(
 
                 child: Positioned(
@@ -95,7 +97,7 @@ class _Niveau1PassState extends State<Niveau1Pass> {
                       child: PinkAvatarIcon(onPressed: null,)),
                 ),
               ),
-            if (New.avatar=="Purple")
+            if (user.avatar=="Purple")
               Visibility(
 
                 child: Positioned(
@@ -108,7 +110,7 @@ class _Niveau1PassState extends State<Niveau1Pass> {
                       child: PurpleAvatarIcon(onPressed: null,)),
                 ),
               ),
-            if (New.avatar=="Orange")
+            if (user.avatar=="Orange")
               Visibility(
 
                 child: Positioned(
@@ -121,7 +123,7 @@ class _Niveau1PassState extends State<Niveau1Pass> {
                       child: OrangeAvatarIcon(onPressed: null,)),
                 ),
               ),
-            if (New.avatar=="Blue")
+            if (user.avatar=="Blue")
             Positioned(
               top: size.height*0.48,
               right: size.width*0.58,

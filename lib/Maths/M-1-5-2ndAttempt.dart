@@ -24,6 +24,8 @@ import 'package:somthn/Avatars/OrangeAvatarIcon.dart';
 import 'package:somthn/Avatars/PinkAvatarIcon.dart';
 import 'package:somthn/Avatars/BlueAvatarIcon.dart';
 import '../WelcomePages/ChooseAvatar.dart';
+import '../Services/Login.dart';
+import '../Services/SignUp.dart';
 
 
 class M_1_5_2nd extends StatefulWidget {

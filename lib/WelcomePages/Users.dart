@@ -83,6 +83,8 @@ class _UsersState extends State<Users> {
                     show();
                     print('connect');
                     await googleLogin();
+                    print("khra");
+                    print(user.uid);
 
 
                   })),
@@ -95,6 +97,8 @@ class _UsersState extends State<Users> {
                     Navigator.push(context,
                       MaterialPageRoute(builder: (context) => ChooseAvatar()),);
                     await googleSignUp();
+                    print("khra");
+                    print(user.uid);
                   })
               ),
               Positioned(

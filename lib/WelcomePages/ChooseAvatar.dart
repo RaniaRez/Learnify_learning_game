@@ -159,6 +159,7 @@ class _ChooseAvatarState extends State<ChooseAvatar> {
               left:size.width*0.75,
               child: Visibility(
                 child: GoToButton(onPressed: (){
+                  print(user.uid);
                   setState(() {
                     if(_PurpleVisible) user.SetAvatar("Purple");
                     print(user.avatar);

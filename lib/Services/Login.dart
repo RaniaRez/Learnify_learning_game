@@ -3,7 +3,7 @@
 import '../Services/auth.dart';
 import 'package:somthn/WelcomePages/ClassUser.dart';
 
-User user;
+User user= new User();
 Future<void> googleLogin() async {
   print("se connecter");
   user=await signInWithGoogle();

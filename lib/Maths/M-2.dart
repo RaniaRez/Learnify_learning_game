@@ -12,6 +12,8 @@ import 'package:somthn/Avatars/PinkAvatarIcon.dart';
 import 'package:somthn/Avatars/PurpleAvatarIcon.dart';
 import 'package:somthn/Avatars/BlueAvatarIcon.dart';
 import '../WelcomePages/ChooseAvatar.dart';
+import '../Services/Login.dart';
+import '../Services/SignUp.dart';
 class Math2 extends StatefulWidget {
   @override
   _Math2State createState() => _Math2State();
@@ -61,7 +63,7 @@ class _Math2State extends State<Math2> {
                 left: 215,
                 child: SvgPicture.asset(buttonMoyen),
               ),
-              if (New.avatar=="Pink")
+              if (user.avatar=="Pink")
                 Visibility(
 
                   child: Positioned(
@@ -74,7 +76,7 @@ class _Math2State extends State<Math2> {
                     child:PinkAvatarIcon(onPressed: null,),
                   ),
                 ),
-              if (New.avatar=="Purple")
+              if (user.avatar=="Purple")
                 Visibility(
 
                   child: Positioned(
@@ -85,7 +87,7 @@ class _Math2State extends State<Math2> {
                     child:PurpleAvatarIcon(onPressed: null,),
                   ),
                 ),
-              if (New.avatar=="Orange")
+              if (user.avatar=="Orange")
                 Visibility(
 
                   child: Positioned(
@@ -96,7 +98,7 @@ class _Math2State extends State<Math2> {
                     child: OrangeAvatarIcon(onPressed: null,),
                   ),
                 ),
-              if (New.avatar=="Blue")
+              if (user.avatar=="Blue")
                 Visibility(
 
                   child: Positioned(
