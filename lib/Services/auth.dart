@@ -24,7 +24,7 @@ import '../Data/database.dart';
 
     final FirebaseUser currentUser = await _auth.currentUser();
     assert(currentUser.uid == user.uid);
-    await DatabaseService(uid: user.uid).updateUserData('username','avatar', 10);
+    await DatabaseService(uid: user.uid).updateUserData( true ,'username','avatar', 10);
     return userFromFirebaseUser(user);
 
     //userFromFirebaseUser(user);

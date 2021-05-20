@@ -240,7 +240,7 @@ class _EntrernomState extends State<Entrernom> {
                         print("username");
                         print(user.username);
                         print("printed");
-                        DatabaseService(uid: user.uid).updateUserData(user.username,user.avatar, 10);
+                        DatabaseService(uid: user.uid).updateUserData(false,user.username,user.avatar, 10);
 
                       });
                     }
