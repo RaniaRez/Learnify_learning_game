@@ -128,7 +128,7 @@ class _M_1_3_3rd_1State extends State<M_1_3_3rd_1> {
                         Visible=false;
                         Navigator.push(
                             context,
-                            MaterialPageRoute(builder: (context) => M_1_2_2nd()));
+                            MaterialPageRoute(builder: (context) => M_1_4()));
                         print('Wrong');
                       }
                     });
@@ -191,12 +191,12 @@ class _M_1_3_3rd_1State extends State<M_1_3_3rd_1> {
               ),
               Positioned(
               top: size.height*0.32,
-             left: size.width*0.32,
+             left: size.width*0.295,
                   child: Text(
-                    'Double de 41 = ?',
+                    'Double de 41 ?',
                     style: TextStyle(
                       fontFamily: 'Skranji-bold',
-                      fontSize: 22,
+                      fontSize: 25,
                       color: Colors.brown[700],
                       fontWeight: FontWeight.bold,
 
@@ -341,7 +341,7 @@ class _M_1_3_3rd_1State extends State<M_1_3_3rd_1> {
                 ),
               ),
               Positioned(
-                top: size.height*0.75,
+                top: size.height*0.85,
                 left: size.width*0.01,
                 right: size.width*0.01,
                 child: Row(

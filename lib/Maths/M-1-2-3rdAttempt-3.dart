@@ -343,7 +343,7 @@ class _M_1_2_3rd_3State extends State<M_1_2_3rd_3> {
                 ),
               ),
               Positioned(
-                top: size.height*0.75,
+                top: size.height*0.85,
                 left: size.width*0.01,
                 right: size.width*0.01,
                 child: Row(

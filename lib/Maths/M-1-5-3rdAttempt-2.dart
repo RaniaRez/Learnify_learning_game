@@ -195,7 +195,7 @@ class _M_1_5_3rd_2State extends State<M_1_5_3rd_2> {
                       '70 - 17 = ?',
                       style: TextStyle(
                         fontFamily: 'Skranji-bold',
-                        fontSize: 22,
+                        fontSize: 25,
                         color: Colors.brown[700],
                         fontWeight: FontWeight.bold,
 
@@ -341,7 +341,7 @@ class _M_1_5_3rd_2State extends State<M_1_5_3rd_2> {
                 ),
               ),
               Positioned(
-                top: size.height*0.75,
+                top: size.height*0.85,
                 left: size.width*0.01,
                 right: size.width*0.01,
                 child: Row(

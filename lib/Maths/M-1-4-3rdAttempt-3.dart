@@ -187,14 +187,14 @@ class _M_1_4_3rd_3State extends State<M_1_4_3rd_3> {
               ),
               Positioned(
                 top: size.height*0.32,
-                left: size.width*0.32,
+                left: size.width*0.295,
                   child: FittedBox(
                     fit: BoxFit.fitWidth,
                     child: Text(
-                      'Moitié de 66 = ?',
+                      'Moitié de 66 ?',
                       style: TextStyle(
                         fontFamily: 'Skranji-bold',
-                        fontSize: 22,
+                        fontSize: 25,
                         color: Colors.brown[700],
                         fontWeight: FontWeight.bold,
 
@@ -340,7 +340,7 @@ class _M_1_4_3rd_3State extends State<M_1_4_3rd_3> {
                 ),
               ),
               Positioned(
-                top: size.height*0.75,
+                top: size.height*0.85,
                 left: size.width*0.01,
                 right: size.width*0.01,
                 child: Row(

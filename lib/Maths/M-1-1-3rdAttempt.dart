@@ -248,7 +248,8 @@ class _M_1_1_3rdState extends State<M_1_1_3rd> {
               ),
               Positioned(
                 top: size.height*0.75,
-                left: size.width*0.1,
+                left: size.width*0.01,
+                right: size.width*0.01,
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
@@ -338,8 +339,10 @@ class _M_1_1_3rdState extends State<M_1_1_3rd> {
               ),
               Positioned(
                 top: size.height*0.85,
-                left: size.width*0.1,
+                left: size.width*0.01,
+                right: size.width*0.01,
                 child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Visibility(
                         visible: Visible,

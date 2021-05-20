@@ -187,11 +187,11 @@ class _M_1_4State extends State<M_1_4> {
               ),
               Positioned(
                 top: size.height*0.32,
-                left: size.width*0.32,
+                left: size.width*0.295,
                   child: FittedBox(
                     fit: BoxFit.fitWidth,
                     child: Text(
-                      'Moitié de 46 = ?',
+                      'Moitié de 46 ?',
                       style: TextStyle(
                         fontFamily: 'Skranji-bold',
                         fontSize: 25,
@@ -339,7 +339,7 @@ class _M_1_4State extends State<M_1_4> {
                 ),
               ),
               Positioned(
-                top: size.height*0.75,
+                top: size.height*0.85,
                 left: size.width*0.01,
                 right: size.width*0.01,
                 child: Row(

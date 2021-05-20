@@ -189,7 +189,7 @@ class _M_1_1_2ndState extends State<M_1_1_2nd> {
                     '2ème tentative\n 65+25 = ?',
                     style: TextStyle(
                       fontFamily: 'Skranji-bold',
-                      fontSize: 25,
+                      fontSize: 22,
                       color: Colors.brown[700],
                       fontWeight: FontWeight.bold,
 

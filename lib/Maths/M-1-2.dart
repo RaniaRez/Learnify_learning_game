@@ -195,7 +195,7 @@ class _M_1_2State extends State<M_1_2> {
                   child: Text(
                     '28+13 = ?',
                     style:TextStyle(
-                      fontSize: 20.5,
+                      fontSize: 30,
                       fontFamily: 'Skranji-Bold',
                       fontWeight: FontWeight.bold,
                       color:Colors.brown[700],
