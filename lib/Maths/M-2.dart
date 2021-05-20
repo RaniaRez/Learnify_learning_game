@@ -110,10 +110,10 @@ class _Math2State extends State<Math2> {
                   ),
                 ),
 
-              Positioned(
+             /* Positioned(
 
                 child:SvgPicture.asset(bulleCalculReflechi),
-              ),
+              ),*/
               Positioned(
                 top : 250,
                 left: 140.5,

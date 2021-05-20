@@ -9,7 +9,6 @@ class ButtonMoyen extends StatelessWidget {
   Widget build(BuildContext context) {
     return IconButton(
       icon : SvgPicture.asset(buttonMoyen),
-      //iconSize: 200,
       onPressed: onPressed ,
     );
   }
