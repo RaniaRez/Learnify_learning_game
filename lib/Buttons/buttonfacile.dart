@@ -9,7 +9,6 @@ class Buttonfacile extends StatelessWidget {
   Widget build(BuildContext context) {
     return IconButton(
       icon : SvgPicture.asset(buttonfacile),
-      iconSize: 200,
       onPressed: onPressed ,
     );
   }

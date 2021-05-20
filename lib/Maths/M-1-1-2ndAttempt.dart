@@ -94,15 +94,16 @@ class _M_1_1_2ndState extends State<M_1_1_2nd> {
                   },)
               ),
               Positioned(
-                bottom: size.height*0.9,
+                bottom: size.height*0.88,
                 left: size.width*0.275,
                 child: SvgPicture.asset(EmptyBar),
               ),
               Visibility(
                 visible: !Visible,
                 child: Positioned(
-                  bottom: size.height*0.9,
+                  bottom: size.height*0.88,
                   left: size.width*0.275,
+                  right:size.width*0.275,
                   child: BarreProgres(),
                 ),
               ),
@@ -188,7 +189,7 @@ class _M_1_1_2ndState extends State<M_1_1_2nd> {
                     '2ème tentative\n 65+25 = ?',
                     style: TextStyle(
                       fontFamily: 'Skranji-bold',
-                      fontSize: 25,
+                      fontSize: 22,
                       color: Colors.brown[700],
                       fontWeight: FontWeight.bold,
 

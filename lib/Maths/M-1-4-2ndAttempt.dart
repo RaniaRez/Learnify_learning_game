@@ -96,15 +96,17 @@ class _M_1_4_2ndState extends State<M_1_4_2nd> {
               ),
 
               Positioned(
-                  bottom: size.height*0.9,
+                  bottom: size.height*0.88,
                   left: size.width*0.275,
+                  right: size.width*0.275,
                   child: SvgPicture.asset(TwoBars)),
 
               Visibility(
                 visible: !Visible,
                 child: Positioned(
-                  bottom: size.height*0.9,
+                  bottom: size.height*0.88,
                   left: size.width*0.275,
+                  right: size.width*0.275,
                   child: SvgPicture.asset(ThreeBars),
                 ),
               ),
@@ -247,7 +249,8 @@ class _M_1_4_2ndState extends State<M_1_4_2nd> {
               ),
               Positioned(
                 top: size.height*0.75,
-                left: size.width*0.1,
+                left: size.width*0.01,
+                right: size.width*0.01,
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
@@ -337,8 +340,10 @@ class _M_1_4_2ndState extends State<M_1_4_2nd> {
               ),
               Positioned(
                 top: size.height*0.85,
-                left: size.width*0.1,
+                left: size.width*0.01,
+                right: size.width*0.01,
                 child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Visibility(
                         visible: Visible,

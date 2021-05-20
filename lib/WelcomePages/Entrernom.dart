@@ -7,14 +7,13 @@ import 'package:somthn/Avatars/OrangeAvatarIcon.dart';
 import 'package:somthn/Avatars/PinkAvatarIcon.dart';
 import 'package:somthn/Avatars/PurpleAvatarIcon.dart';
 import 'package:somthn/Buttons/buttonNom.dart';
+import 'package:somthn/WelcomePages/AllSet.dart';
 import '../Buttons/settingsButton.dart';
 import '../Buttons/BacksButton.dart';
 import '../Buttons/buttonGoTo.dart';
 import 'Home.dart';
 import 'Settings.dart';
 import '../Branches/BranchIconSimple.dart';
-import 'Creermdp.dart';
-import 'ChooseAvatar.dart';
 import '../Services/Login.dart';
 import '../Data/database.dart';
 
@@ -281,7 +280,7 @@ class _EntrernomState extends State<Entrernom> {
                   child: GoToButton(onPressed: (){
                     Navigator.push(
                         context,
-                        MaterialPageRoute(builder: (context) => Creermdp()));
+                        MaterialPageRoute(builder: (context) => AllSet()));
 
                     print("HELL YEAH");
                   },
