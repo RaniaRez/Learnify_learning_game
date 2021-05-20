@@ -63,8 +63,9 @@ class _I_M_1_3_State extends State<I_M_1_3_> {
                   },)
               ),
               Positioned(
-                bottom: size.height*0.9,
+                bottom: size.height*0.88,
                 left: size.width*0.275 ,
+                right:size.width*0.275 ,
                 child: SvgPicture.asset(TwoBars),
               ),
 

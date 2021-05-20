@@ -94,15 +94,16 @@ class _M_1_1_2ndState extends State<M_1_1_2nd> {
                   },)
               ),
               Positioned(
-                bottom: size.height*0.9,
+                bottom: size.height*0.88,
                 left: size.width*0.275,
                 child: SvgPicture.asset(EmptyBar),
               ),
               Visibility(
                 visible: !Visible,
                 child: Positioned(
-                  bottom: size.height*0.9,
+                  bottom: size.height*0.88,
                   left: size.width*0.275,
+                  right:size.width*0.275,
                   child: BarreProgres(),
                 ),
               ),

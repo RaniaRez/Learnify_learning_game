@@ -69,8 +69,9 @@ class _I_M_2_2_State extends State<I_M_2_2_> {
                   },)
               ),
               Positioned(
-                bottom: size.height*0.9,
+                bottom: size.height*0.88,
                 left: size.width*0.275 ,
+                right:size.width*0.275 ,
                 child: BarreProgres(),
               ),
 
