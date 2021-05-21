@@ -6,6 +6,7 @@ import 'package:somthn/Maths/M-1-1-3rdAttempt-3.dart';
 import 'package:somthn/Maths/M-1-1-3rdAttempt-4.dart';
 import 'dart:math';
 import 'package:somthn/Maths/M-1-1-3rdAttempt.dart';
+import 'package:somthn/Maths/M_2_1_3rdAttempt.dart';
 import 'package:somthn/WelcomePages/Settings.dart';
 import 'package:somthn/myicons.dart';
 import '../Buttons/settingsButton.dart';
@@ -18,7 +19,6 @@ import '../WelcomePages/ChooseAvatar.dart';
 import 'package:somthn/Buttons/buttonAppliquer.dart';
 import '../Services/Login.dart';
 import '../Services/SignUp.dart';
-import 'M_2_1_3rdAttempt.dart';
 class I_M_2_1_ extends StatefulWidget {
   const I_M_2_1_({Key key}) : super(key: key);
 

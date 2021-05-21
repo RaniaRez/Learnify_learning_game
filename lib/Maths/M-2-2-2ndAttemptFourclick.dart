@@ -21,13 +21,13 @@ import '../Services/Login.dart';
 
 
 
-class M_2_1_2nd_Three extends StatefulWidget {
-  const M_2_1_2nd_Three({Key key}) : super(key: key);
+class M_2_2_2nd_Four extends StatefulWidget {
+  const M_2_2_2nd_Four({Key key}) : super(key: key);
 
   @override
-  _M_2_1_2nd_ThreeState createState() => _M_2_1_2nd_ThreeState();
+  _M_2_2_2nd_FourState createState() => _M_2_2_2nd_FourState();
 }
-class _M_2_1_2nd_ThreeState extends State<M_2_1_2nd_Three> {
+class _M_2_2_2nd_FourState extends State<M_2_2_2nd_Four> {
   bool oneClicked = false;
   bool twoClicked = false;
   bool threeClicked = false;
@@ -75,7 +75,7 @@ class _M_2_1_2nd_ThreeState extends State<M_2_1_2nd_Three> {
                 bottom: size.height*0.88,
                 left: size.width*0.275,
                 right: size.width*0.275,
-                child: SvgPicture.asset(EmptyBar),
+                child:BarreProgres() ,
               ),
 
               Visibility(
@@ -84,87 +84,51 @@ class _M_2_1_2nd_ThreeState extends State<M_2_1_2nd_Three> {
                   bottom: size.height*0.88,
                   left: size.width*0.275,
                   right: size.width*0.275,
-                  child: BarreProgres(),
+                  child: SvgPicture.asset(TwoBars),
                 ),
               ),
-              Visibility(
-                  visible: Visible,
-                  child: Positioned(
-                    top: size.height*0.6,
-                    left: size.width*0.75,
-                    child: GoToButton(onPressed: (){
-                      setState(() {
-                        if (twoClicked){
-                          Visible = false;
-                          print('Correct');
-                        }
-                        if (oneClicked)  {
-                          Navigator.push(
-                              context,
-                              MaterialPageRoute(builder: (context) =>I_M_2_1_ ()));
-                          print('Wrong');
-                        }
-                        if (threeClicked)  {
-                          Navigator.push(
-                              context,
-                              MaterialPageRoute(builder: (context) => I_M_2_1_()));
-                          print('Wrong');
-                        }
-                        if (fourClicked)  {
-                          Navigator.push(
-                              context,
-                              MaterialPageRoute(builder: (context) => I_M_2_1_()));
-                          print('Wrong');
-                        }
-
-
-                      });
-                      print("HELL YEAH");
-
-                    },),
-                  )),
               if (user.avatar=="Pink")
                 Visibility(
                   visible: Visible,
                   child: Positioned(
-                    top: size.height*0.5,
+                    top: size.height*0.485,
                     left: size.width*0.72,
                     height: size.width*0.3,
                     width: size.width*0.3,
-                    child:PinkAvatarIcon(onPressed: null,),
+                    child:Image.asset('images/MadPink.gif'),
                   ),
                 ),
               if (user.avatar=="Purple")
                 Visibility(
                   visible: Visible,
                   child: Positioned(
-                    top: size.height*0.49,
+                    top: size.height*0.46,
                     left: size.width*0.69,
                     height: size.width*0.35,
                     width: size.width*0.35,
-                    child:PurpleAvatarIcon(onPressed: null,),
+                    child:Image.asset('images/MadPurple.gif'),
                   ),
                 ),
               if (user.avatar=="Orange")
                 Visibility(
                   visible: Visible,
                   child: Positioned(
-                    top: size.height*0.5,
+                    top: size.height*0.48,
                     left: size.width*0.72,
                     height: size.width*0.3,
                     width: size.width*0.3,
-                    child: OrangeAvatarIcon(onPressed: null,),
+                    child: Image.asset('images/MadOrange.gif'),
                   ),
                 ),
               if (user.avatar=="Blue")
                 Visibility(
                   visible: Visible,
                   child: Positioned(
-                    top: size.height*0.5,
+                    top: size.height*0.485,
                     left: size.width*0.72,
                     height: size.width*0.3,
                     width: size.width*0.3,
-                    child:BlueAvatarIcon(onPressed: null,),
+                    child:Image.asset('images/MadBlue.gif'),
                   ),
                 ),
               Positioned(
@@ -180,7 +144,7 @@ class _M_2_1_2nd_ThreeState extends State<M_2_1_2nd_Three> {
                 child: FittedBox(
                   fit: BoxFit.fitWidth,
                   child: Text(
-                    '2eme tentative \n 28*5= ?',
+                    '2eme tentative \n 14x9= ?',
                     style:TextStyle(
                       fontSize: 25,
                       fontFamily: 'Skranji-Bold',
@@ -220,7 +184,7 @@ class _M_2_1_2nd_ThreeState extends State<M_2_1_2nd_Three> {
                     icon: FittedBox(
                       fit: BoxFit.fitWidth,
                       child: Text(
-                        '140',
+                        '126',
                         style:TextStyle(
                           fontSize: 30,
                           fontFamily: 'Skranji-Bold',
@@ -261,7 +225,7 @@ class _M_2_1_2nd_ThreeState extends State<M_2_1_2nd_Three> {
                     icon: FittedBox(
                       fit: BoxFit.fitWidth,
                       child: Text(
-                        '120',
+                        '170',
                         style:TextStyle(
                           fontSize: 30,
                           fontFamily: 'Skranji-Bold',
@@ -302,48 +266,7 @@ class _M_2_1_2nd_ThreeState extends State<M_2_1_2nd_Three> {
                     icon: FittedBox(
                       fit: BoxFit.fitWidth,
                       child: Text(
-                        '140',
-                        style:TextStyle(
-                          fontSize: 30,
-                          fontFamily: 'Skranji-Bold',
-                          fontWeight: FontWeight.bold,
-                          color:Colors.brown[700],
-                        ),
-                        textAlign: TextAlign.center,
-                      ),
-                    ),
-                  ),
-                ),
-              ),
-              Visibility(
-                visible: Visible,
-                child: Positioned(
-                    top: size.height*0.89,
-                    left: size.width*0.48,
-                    height: size.width*0.2,
-                    width: size.width*0.33,
-                    child: QButton(onPressed: null,)
-                ),
-              ),
-              Visibility(
-                visible: Visible,
-                child: Positioned(
-                  top: size.height*0.9,
-                  left: size.width*0.56,
-                  child: IconButton(
-                    iconSize: 50,
-                    onPressed: (){
-                      print('frdv');
-                      setState(() {
-                        oneClicked = false;
-                        twoClicked = false;
-                        threeClicked = false;
-                        fourClicked = true;
-                      });},
-                    icon: FittedBox(
-                      fit: BoxFit.fitWidth,
-                      child: Text(
-                        '146',
+                        '126',
                         style:TextStyle(
                           fontSize: 30,
                           fontFamily: 'Skranji-Bold',
@@ -357,6 +280,47 @@ class _M_2_1_2nd_ThreeState extends State<M_2_1_2nd_Three> {
                 ),
               ),
 
+              Visibility(
+                visible: Visible,
+                child: Positioned(
+                    top: size.height*0.82,
+                    left: size.width*0.1,
+                    height: size.width*0.2,
+                    width: size.width*0.33,
+                    child: QButton(onPressed: null,)
+                ),
+              ),
+              Visibility(
+                visible: Visible,
+                child: Positioned(
+                  top: size.height*0.83,
+                  left: size.width*0.18,
+                  child: IconButton(
+                    iconSize: 50,
+                    onPressed: (){
+                      print('frdv');
+                      setState(() {
+                        oneClicked = false;
+                        twoClicked = false;
+                        threeClicked = true;
+                        fourClicked = false;
+                      });},
+                    icon: FittedBox(
+                      fit: BoxFit.fitWidth,
+                      child: Text(
+                        '136',
+                        style:TextStyle(
+                          fontSize: 30,
+                          fontFamily: 'Skranji-Bold',
+                          fontWeight: FontWeight.bold,
+                          color:Colors.brown[700],
+                        ),
+                        textAlign: TextAlign.center,
+                      ),
+                    ),
+                  ),
+                ),
+              ),
               Visibility(
                 visible: !Visible,
                 child: Positioned(
@@ -415,6 +379,7 @@ class _M_2_1_2nd_ThreeState extends State<M_2_1_2nd_Three> {
                     child:Image.asset('images/HappyBlue.gif'),
                   ),
                 ),
+
               Visibility(
                 visible: !Visible,
                 child: Positioned(
@@ -424,7 +389,68 @@ class _M_2_1_2nd_ThreeState extends State<M_2_1_2nd_Three> {
                     top:size.height*0.7,
                     child: SvgPicture.asset(bulleBravo)
                 ),
-              )
+              ),
+              Positioned(
+                left: size.width*0.065,
+                top:size.height*0.6,
+                height: size.height*0.25,
+                width:size.width*0.4,
+                child: Visibility(
+                    visible: (oneClicked&&Visible),
+                    child: IconButton(
+                        onPressed: (){
+                          if (oneClicked)  {
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(builder: (context) => I_M_2_1_()));
+                            print('Wrong');
+                          }
+                          print('1');
+                        },
+                        icon: SvgPicture.asset(quotes))
+                ),
+              ),
+              Positioned(
+                left: size.width*0.06,
+                top:size.height*0.74,
+                height: size.height*0.25,
+                width:size.width*0.4,
+                child: Visibility(
+                    visible: (threeClicked&&Visible),
+                    child: IconButton(
+                        onPressed: (){
+                          if (threeClicked)  {
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(builder: (context) => I_M_2_1_()));
+                            print('Wrong');
+                          }
+                          print('3');
+                        },
+                        icon: SvgPicture.asset(quotes))
+                ),
+              ),
+              Positioned(
+                left: size.width*0.44,
+                top:size.height*0.67,
+                height: size.height*0.25,
+                width:size.width*0.4,
+                child: Visibility(
+                    visible: (twoClicked && Visible),
+                    child: IconButton(
+                        onPressed: (){
+                          if (twoClicked){
+                            setState(() {
+                              Visible = false;
+                            });
+
+                            print('Correct');
+                          }
+                          print('2');
+                        },
+                        icon: SvgPicture.asset(quotes))
+                ),
+              ),
             ],
           ),
         ));

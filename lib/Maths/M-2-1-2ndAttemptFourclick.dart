@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:somthn/Buttons/BarreProgres.dart';
+import 'package:somthn/Maths/I-M-2-1.dart';
 import 'package:somthn/Maths/M-1-5-2ndAttempt.dart';
 import 'package:somthn/Maths/M-2-2.dart';
 import 'package:somthn/Mutual/Niveau1Pass%C3%A9.dart';
@@ -17,20 +18,17 @@ import 'package:somthn/Avatars/PinkAvatarIcon.dart';
 import 'package:somthn/Avatars/PurpleAvatarIcon.dart';
 import 'package:somthn/Avatars/BlueAvatarIcon.dart';
 import '../Services/Login.dart';
-import 'M-2-1-2ndAttemptOneclick.dart';
-import 'M-2-1-2ndAttemptThreeclick.dart';
-import 'M-2-1-2ndAttemptFourclick.dart';
 
 
 
 
-class M_2_1 extends StatefulWidget {
-  const M_2_1({Key key}) : super(key: key);
+class M_2_1_2nd_Four extends StatefulWidget {
+  const M_2_1_2nd_Four({Key key}) : super(key: key);
 
   @override
-  _M_2_1State createState() => _M_2_1State();
+  _M_2_1_2nd_FourState createState() => _M_2_1_2nd_FourState();
 }
-class _M_2_1State extends State<M_2_1> {
+class _M_2_1_2nd_FourState extends State<M_2_1_2nd_Four> {
   bool oneClicked = false;
   bool twoClicked = false;
   bool threeClicked = false;
@@ -40,9 +38,9 @@ class _M_2_1State extends State<M_2_1> {
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
     return Container(
-      height: size.height,
-      width: size.width,
-      child: Scaffold(
+        height: size.height,
+        width: size.width,
+        child: Scaffold(
           body:
           Stack(
             children: <Widget>[
@@ -90,48 +88,48 @@ class _M_2_1State extends State<M_2_1> {
                   child: BarreProgres(),
                 ),
               ),
-                  if (user.avatar=="Pink")
-              Visibility(
-                visible: Visible,
-                child: Positioned(
-                  top: size.height*0.5,
-                  left: size.width*0.72,
-                  height: size.width*0.3,
-                  width: size.width*0.3,
-                  child:PinkAvatarIcon(onPressed: null,),
+              if (user.avatar=="Pink")
+                Visibility(
+                  visible: Visible,
+                  child: Positioned(
+                    top: size.height*0.485,
+                    left: size.width*0.72,
+                    height: size.width*0.3,
+                    width: size.width*0.3,
+                    child:Image.asset('images/MadPink.gif'),
+                  ),
                 ),
-              ),
               if (user.avatar=="Purple")
                 Visibility(
                   visible: Visible,
                   child: Positioned(
-                    top: size.height*0.49,
+                    top: size.height*0.46,
                     left: size.width*0.69,
                     height: size.width*0.35,
                     width: size.width*0.35,
-                    child:PurpleAvatarIcon(onPressed: null,),
+                    child:Image.asset('images/MadPurple.gif'),
                   ),
                 ),
               if (user.avatar=="Orange")
                 Visibility(
                   visible: Visible,
                   child: Positioned(
-                    top: size.height*0.5,
+                    top: size.height*0.48,
                     left: size.width*0.72,
                     height: size.width*0.3,
                     width: size.width*0.3,
-                    child: OrangeAvatarIcon(onPressed: null,),
+                    child: Image.asset('images/MadOrange.gif'),
                   ),
                 ),
               if (user.avatar=="Blue")
                 Visibility(
                   visible: Visible,
                   child: Positioned(
-                    top: size.height*0.5,
+                    top: size.height*0.485,
                     left: size.width*0.72,
                     height: size.width*0.3,
                     width: size.width*0.3,
-                    child:BlueAvatarIcon(onPressed: null,),
+                    child:Image.asset('images/MadBlue.gif'),
                   ),
                 ),
               Positioned(
@@ -143,13 +141,13 @@ class _M_2_1State extends State<M_2_1> {
               ),
               Positioned(
                 top: size.height*0.32,
-                left: size.width*0.32,
+                left: size.width*0.26,
                 child: FittedBox(
                   fit: BoxFit.fitWidth,
                   child: Text(
-                    '28x5 = ?',
+                    '2eme tentative \n 28x5= ?',
                     style:TextStyle(
-                      fontSize: 30,
+                      fontSize: 25,
                       fontFamily: 'Skranji-Bold',
                       fontWeight: FontWeight.bold,
                       color:Colors.brown[700],
@@ -201,9 +199,8 @@ class _M_2_1State extends State<M_2_1> {
                 ),
               ),
               Visibility(
-                visible: Visible,
+                visible:Visible,
                 child: Positioned(
-
                     top: size.height*0.67,
                     left: size.width*0.1,
                     height: size.width*0.2,
@@ -216,30 +213,30 @@ class _M_2_1State extends State<M_2_1> {
                 child: Positioned(
                   top: size.height*0.68,
                   left: size.width*0.17,
-                    child: IconButton(
-                      iconSize: 50,
-                      onPressed: (){
-                        print('frdv');
-                        setState(() {
-                          oneClicked = true;
-                          twoClicked = false;
-                          threeClicked = false;
-                          fourClicked = false;
-                        });},
-                      icon: FittedBox(
-                                  fit: BoxFit.fitWidth,
-                                  child: Text(
-                                  '120',
-                                  style:TextStyle(
-                                  fontSize: 30,
-                                  fontFamily: 'Skranji-Bold',
-                                  fontWeight: FontWeight.bold,
-                                  color:Colors.brown[700],
-                                  ),
-                                  textAlign: TextAlign.center,
-                                  ),
-                                  ),
+                  child: IconButton(
+                    iconSize: 50,
+                    onPressed: (){
+                      print('frdv');
+                      setState(() {
+                        oneClicked = true;
+                        twoClicked = false;
+                        threeClicked = false;
+                        fourClicked = false;
+                      });},
+                    icon: FittedBox(
+                      fit: BoxFit.fitWidth,
+                      child: Text(
+                        '120',
+                        style:TextStyle(
+                          fontSize: 30,
+                          fontFamily: 'Skranji-Bold',
+                          fontWeight: FontWeight.bold,
+                          color:Colors.brown[700],
+                        ),
+                        textAlign: TextAlign.center,
+                      ),
                     ),
+                  ),
                 ),
               ),
               Visibility(
@@ -283,7 +280,6 @@ class _M_2_1State extends State<M_2_1> {
                   ),
                 ),
               ),
-
               Visibility(
                 visible: Visible,
                 child: Positioned(
@@ -326,48 +322,6 @@ class _M_2_1State extends State<M_2_1> {
                 ),
               ),
 
-
-              Visibility(
-                visible: Visible,
-                child: Positioned(
-                    top: size.height*0.89,
-                    left: size.width*0.48,
-                    height: size.width*0.2,
-                    width: size.width*0.33,
-                    child: QButton(onPressed: null,)
-                ),
-              ),
-              Visibility(
-                visible: Visible,
-                child: Positioned(
-                  top: size.height*0.9,
-                  left: size.width*0.56,
-                  child: IconButton(
-                    iconSize: 50,
-                    onPressed: (){
-                      print('frdv');
-                      setState(() {
-                        oneClicked = false;
-                        twoClicked = false;
-                        threeClicked = false;
-                        fourClicked = true;
-                      });},
-                    icon: FittedBox(
-                      fit: BoxFit.fitWidth,
-                      child: Text(
-                        '146',
-                        style:TextStyle(
-                          fontSize: 30,
-                          fontFamily: 'Skranji-Bold',
-                          fontWeight: FontWeight.bold,
-                          color:Colors.brown[700],
-                        ),
-                        textAlign: TextAlign.center,
-                      ),
-                    ),
-                  ),
-                ),
-              ),
 
               Visibility(
                 visible: !Visible,
@@ -427,6 +381,7 @@ class _M_2_1State extends State<M_2_1> {
                     child:Image.asset('images/HappyBlue.gif'),
                   ),
                 ),
+
               Visibility(
                 visible: !Visible,
                 child: Positioned(
@@ -435,47 +390,6 @@ class _M_2_1State extends State<M_2_1> {
                     left: size.width*0.4,
                     top:size.height*0.7,
                     child: SvgPicture.asset(bulleBravo)
-                ),
-              ),
-              Positioned(
-                left: size.width*0.44,
-                top:size.height*0.67,
-                height: size.height*0.25,
-                width:size.width*0.4,
-                child: Visibility(
-                  visible: (twoClicked && Visible),
-                    child: IconButton(
-                      onPressed: (){
-                        if (twoClicked){
-                          setState(() {
-                            Visible = false;
-                          });
-
-                          print('Correct');
-                        }
-                        print('2');
-                      },
-                        icon: SvgPicture.asset(quotes))
-                ),
-              ),
-              Positioned(
-                left: size.width*0.44,
-                top:size.height*0.815,
-                height: size.height*0.25,
-                width:size.width*0.4,
-                child: Visibility(
-                    visible: (fourClicked&&Visible),
-                    child: IconButton(
-                        onPressed: (){
-                          if (fourClicked)  {
-                            Navigator.push(
-                                context,
-                                MaterialPageRoute(builder: (context) => M_2_1_2nd_Four()));
-                            print('Wrong');
-                          }
-                          print('4');
-                        },
-                        icon: SvgPicture.asset(quotes))
                 ),
               ),
               Positioned(
@@ -490,7 +404,7 @@ class _M_2_1State extends State<M_2_1> {
                           if (oneClicked)  {
                             Navigator.push(
                                 context,
-                                MaterialPageRoute(builder: (context) => M_2_1_2nd_One()));
+                                MaterialPageRoute(builder: (context) => I_M_2_1_()));
                             print('Wrong');
                           }
                           print('1');
@@ -504,13 +418,13 @@ class _M_2_1State extends State<M_2_1> {
                 height: size.height*0.25,
                 width:size.width*0.4,
                 child: Visibility(
-                  visible: (threeClicked&&Visible),
+                    visible: (threeClicked&&Visible),
                     child: IconButton(
                         onPressed: (){
                           if (threeClicked)  {
                             Navigator.push(
                                 context,
-                                MaterialPageRoute(builder: (context) => M_2_1_2nd_Three()));
+                                MaterialPageRoute(builder: (context) => I_M_2_1_()));
                             print('Wrong');
                           }
                           print('3');
@@ -518,11 +432,30 @@ class _M_2_1State extends State<M_2_1> {
                         icon: SvgPicture.asset(quotes))
                 ),
               ),
+              Positioned(
+                left: size.width*0.44,
+                top:size.height*0.67,
+                height: size.height*0.25,
+                width:size.width*0.4,
+                child: Visibility(
+                    visible: (twoClicked && Visible),
+                    child: IconButton(
+                        onPressed: (){
+                          if (twoClicked){
+                            setState(() {
+                              Visible = false;
+                            });
 
-
+                            print('Correct');
+                          }
+                          print('2');
+                        },
+                        icon: SvgPicture.asset(quotes))
+                ),
+              ),
             ],
           ),
-      ));
+        ));
   }
 
 }
