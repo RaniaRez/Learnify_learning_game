@@ -186,21 +186,24 @@ class _M_1_1State extends State<M_1_1> {
       width: size.width*0.6,
     child:BulleQuest(),
     ),
-    Positioned(
-      top: size.height*0.32,
-      left: size.width*0.32,
-    child: Text(
-    '65+25 = ?',
-    style: TextStyle(
-    fontFamily: 'Skranji-bold',
-    fontSize: 30,
-    color: Colors.brown[700],
-    fontWeight: FontWeight.bold,
+              Positioned(
+                top: size.height*0.32,
+                left: size.width*0.32,
+                child: FittedBox(
+                  fit: BoxFit.fitWidth,
+                  child: Text(
+                    '2ème tentative\n 65+25 = ?',
+                    style:TextStyle(
+                      fontSize: 30,
+                      fontFamily: 'Skranji-Bold',
+                      fontWeight: FontWeight.bold,
+                      color:Colors.brown[700],
+                    ),
+                    textAlign: TextAlign.center,
+                  ),
+                ),
 
-    ),
-    textAlign: TextAlign.center,
-    ),
-    ),
+              ),
     Visibility(
         visible: Visible,
         child: Positioned(
