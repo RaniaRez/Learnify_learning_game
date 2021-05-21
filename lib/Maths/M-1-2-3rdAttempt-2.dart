@@ -189,15 +189,15 @@ class _M_1_2_3rd_2State extends State<M_1_2_3rd_2> {
                 child:BulleQuest(),
               ),
               Positioned(
-                top: size.height*0.32,
-                left: size.width*0.32,
+                top: size.height*0.31,
+                left: size.width*0.27,
                 child: FittedBox(
                   fit: BoxFit.fitWidth,
                   child: Text(
                     '32+59 = ?',
                     style: TextStyle(
                       fontFamily: 'Skranji-bold',
-                      fontSize: 30,
+                      fontSize:22,
                       color: Colors.brown[700],
                       fontWeight: FontWeight.bold,
 

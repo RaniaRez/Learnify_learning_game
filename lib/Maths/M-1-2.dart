@@ -188,14 +188,14 @@ class _M_1_2State extends State<M_1_2> {
               ),
 
               Positioned(
-                top: size.height*0.32,
-                left: size.width*0.32,
+                top: size.height*0.34,
+                left: size.width*0.34,
                 child: FittedBox(
                   fit: BoxFit.fitWidth,
                   child: Text(
                     '28+13 = ?',
                     style:TextStyle(
-                      fontSize: 30,
+                      fontSize: 25,
                       fontFamily: 'Skranji-Bold',
                       fontWeight: FontWeight.bold,
                       color:Colors.brown[700],

@@ -18,7 +18,7 @@ import '../WelcomePages/ChooseAvatar.dart';
 import 'package:somthn/Buttons/buttonAppliquer.dart';
 import '../Services/Login.dart';
 import '../Services/SignUp.dart';
-
+import 'M_2_1_3rdAttempt.dart';
 class I_M_2_1_ extends StatefulWidget {
   const I_M_2_1_({Key key}) : super(key: key);
 
@@ -141,7 +141,7 @@ class _I_M_2_1_State extends State<I_M_2_1_> {
                   ),
                 ),
               Positioned(
-                bottom: size.height*0.3,
+                bottom: size.height*0.28,
                 left: size.width*0.58 ,
                 child: SvgPicture.asset(Stick),
               ),
@@ -149,33 +149,18 @@ class _I_M_2_1_State extends State<I_M_2_1_> {
                 bottom: size.height*0.05,
                 right: size.width*0.5 ,
                 child: AppliquerButton(onPressed : (){
-                  final _random = new Random();
-                  int rnd = 0 + _random.nextInt(5);
-                  if(rnd==0){
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(builder: (context) => M_1_1_3rd()));
-                  }else if(rnd==1){
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(builder: (context) => M_1_1_3rd_1()));
-                  }else if (rnd==2){
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(builder: (context) => M_1_1_3rd_2()));
-                  }else if(rnd == 3){
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(builder: (context) => M_1_1_3rd_3()));
-                  }else{
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(builder: (context) => M_1_1_3rd_4()));
-                  }
+    print('appliquer');
 
-                  print('appliquer');
-                }),
-              )
+
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => M_2_1_3rd_()));}
+
+    ),
+    ),
+
+
+
             ],
           )),
     );

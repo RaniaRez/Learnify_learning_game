@@ -139,6 +139,9 @@ class _I_M_2_5_State extends State<I_M_2_5_> {
                   fit: BoxFit.fitWidth,
                   child: Text(
                     'Observe :\nDiviser un nombre \nde dizaines par 5:\n5 est la moitié de 10\n120/10=12\n12x2=24\nen fin 120/5=24',
+
+
+
                     style:TextStyle(
                       fontSize: 20.5,
                       fontFamily: 'Skranji-Bold',

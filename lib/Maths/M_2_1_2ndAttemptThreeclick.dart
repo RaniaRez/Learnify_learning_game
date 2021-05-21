@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:somthn/Buttons/BarreProgres.dart';
+import 'package:somthn/Maths/I-M-2-1.dart';
 import 'package:somthn/Maths/M-1-5-2ndAttempt.dart';
 import 'package:somthn/Mutual/Niveau1Pass%C3%A9.dart';
 import 'package:somthn/WelcomePages/Settings.dart';
@@ -16,20 +17,17 @@ import 'package:somthn/Avatars/PinkAvatarIcon.dart';
 import 'package:somthn/Avatars/PurpleAvatarIcon.dart';
 import 'package:somthn/Avatars/BlueAvatarIcon.dart';
 import '../Services/Login.dart';
-import 'M_2_1_2ndAttemptOneclick.dart';
-import 'M_2_1_2ndAttemptThreeclick.dart';
-import 'M_2_1_2ndAttemptFourclick.dart';
 
 
 
 
-class M_2_1 extends StatefulWidget {
-  const M_2_1({Key key}) : super(key: key);
+class M_2_1_2nd_Three extends StatefulWidget {
+  const M_2_1_2nd_Three({Key key}) : super(key: key);
 
   @override
-  _M_2_1State createState() => _M_2_1State();
+  _M_2_1_2nd_ThreeState createState() => _M_2_1_2nd_ThreeState();
 }
-class _M_2_1State extends State<M_2_1> {
+class _M_2_1_2nd_ThreeState extends State<M_2_1_2nd_Three> {
   bool oneClicked = false;
   bool twoClicked = false;
   bool threeClicked = false;
@@ -39,9 +37,9 @@ class _M_2_1State extends State<M_2_1> {
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
     return Container(
-      height: size.height,
-      width: size.width,
-      child: Scaffold(
+        height: size.height,
+        width: size.width,
+        child: Scaffold(
           body:
           Stack(
             children: <Widget>[
@@ -90,53 +88,52 @@ class _M_2_1State extends State<M_2_1> {
                 ),
               ),
               Visibility(
-                visible: Visible,
-                child: Positioned(
-                  top: size.height*0.6,
-                  left: size.width*0.75,
-                  child: GoToButton(onPressed: (){
-                    setState(() {
-                      if (twoClicked){
-                        Visible = false;
-                        print('Correct');
-                      }
+                  visible: Visible,
+                  child: Positioned(
+                    top: size.height*0.6,
+                    left: size.width*0.75,
+                    child: GoToButton(onPressed: (){
+                      setState(() {
+                        if (twoClicked){
+                          Visible = false;
+                          print('Correct');
+                        }
                         if (oneClicked)  {
-                        Navigator.push(
-                            context,
-                            MaterialPageRoute(builder: (context) => M_2_1_2nd_One()));
-                        print('Wrong');
-                                           }
-                      if (threeClicked)  {
-                        Navigator.push(
-                            context,
-                            MaterialPageRoute(builder: (context) => M_2_1_2nd_Three()));
-                        print('Wrong');
-                      }
-                      if (fourClicked)  {
-                        Navigator.push(
-                            context,
-                            MaterialPageRoute(builder: (context) => M_2_1_2nd_Four()));
-                        print('Wrong');
-                      }
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(builder: (context) =>I_M_2_1_ ()));
+                          print('Wrong');
+                        }
+                        if (threeClicked)  {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(builder: (context) => I_M_2_1_()));
+                          print('Wrong');
+                        }
+                        if (fourClicked)  {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(builder: (context) => I_M_2_1_()));
+                          print('Wrong');
+                        }
 
 
-                    });
-                    print("HELL YEAH");
+                      });
+                      print("HELL YEAH");
 
-                  },),
-                )),
-
-                  if (user.avatar=="Pink")
-              Visibility(
-                visible: Visible,
-                child: Positioned(
-                  top: size.height*0.5,
-                  left: size.width*0.72,
-                  height: size.width*0.3,
-                  width: size.width*0.3,
-                  child:PinkAvatarIcon(onPressed: null,),
+                    },),
+                  )),
+              if (user.avatar=="Pink")
+                Visibility(
+                  visible: Visible,
+                  child: Positioned(
+                    top: size.height*0.5,
+                    left: size.width*0.72,
+                    height: size.width*0.3,
+                    width: size.width*0.3,
+                    child:PinkAvatarIcon(onPressed: null,),
+                  ),
                 ),
-              ),
               if (user.avatar=="Purple")
                 Visibility(
                   visible: Visible,
@@ -179,13 +176,13 @@ class _M_2_1State extends State<M_2_1> {
               ),
               Positioned(
                 top: size.height*0.32,
-                left: size.width*0.32,
+                left: size.width*0.26,
                 child: FittedBox(
                   fit: BoxFit.fitWidth,
                   child: Text(
-                    '28*5 = ?',
+                    '2eme tentative \n 28*5= ?',
                     style:TextStyle(
-                      fontSize: 30,
+                      fontSize: 25,
                       fontFamily: 'Skranji-Bold',
                       fontWeight: FontWeight.bold,
                       color:Colors.brown[700],
@@ -237,9 +234,8 @@ class _M_2_1State extends State<M_2_1> {
                 ),
               ),
               Visibility(
-                visible: Visible,
+                visible:Visible,
                 child: Positioned(
-
                     top: size.height*0.67,
                     left: size.width*0.1,
                     height: size.width*0.2,
@@ -252,30 +248,30 @@ class _M_2_1State extends State<M_2_1> {
                 child: Positioned(
                   top: size.height*0.68,
                   left: size.width*0.17,
-                    child: IconButton(
-                      iconSize: 50,
-                      onPressed: (){
-                        print('frdv');
-                        setState(() {
-                          oneClicked = true;
-                          twoClicked = false;
-                          threeClicked = false;
-                          fourClicked = false;
-                        });},
-                      icon: FittedBox(
-                                  fit: BoxFit.fitWidth,
-                                  child: Text(
-                                  '120',
-                                  style:TextStyle(
-                                  fontSize: 30,
-                                  fontFamily: 'Skranji-Bold',
-                                  fontWeight: FontWeight.bold,
-                                  color:Colors.brown[700],
-                                  ),
-                                  textAlign: TextAlign.center,
-                                  ),
-                                  ),
+                  child: IconButton(
+                    iconSize: 50,
+                    onPressed: (){
+                      print('frdv');
+                      setState(() {
+                        oneClicked = true;
+                        twoClicked = false;
+                        threeClicked = false;
+                        fourClicked = false;
+                      });},
+                    icon: FittedBox(
+                      fit: BoxFit.fitWidth,
+                      child: Text(
+                        '120',
+                        style:TextStyle(
+                          fontSize: 30,
+                          fontFamily: 'Skranji-Bold',
+                          fontWeight: FontWeight.bold,
+                          color:Colors.brown[700],
+                        ),
+                        textAlign: TextAlign.center,
+                      ),
                     ),
+                  ),
                 ),
               ),
               Visibility(
@@ -319,50 +315,6 @@ class _M_2_1State extends State<M_2_1> {
                   ),
                 ),
               ),
-
-              Visibility(
-                visible: Visible,
-                child: Positioned(
-                    top: size.height*0.82,
-                    left: size.width*0.1,
-                    height: size.width*0.2,
-                    width: size.width*0.33,
-                    child: QButton(onPressed: null,)
-                ),
-              ),
-              Visibility(
-                visible: Visible,
-                child: Positioned(
-                  top: size.height*0.83,
-                  left: size.width*0.18,
-                  child: IconButton(
-                    iconSize: 50,
-                    onPressed: (){
-                      print('frdv');
-                      setState(() {
-                        oneClicked = false;
-                        twoClicked = false;
-                        threeClicked = true;
-                        fourClicked = false;
-                      });},
-                    icon: FittedBox(
-                      fit: BoxFit.fitWidth,
-                      child: Text(
-                        '126',
-                        style:TextStyle(
-                          fontSize: 30,
-                          fontFamily: 'Skranji-Bold',
-                          fontWeight: FontWeight.bold,
-                          color:Colors.brown[700],
-                        ),
-                        textAlign: TextAlign.center,
-                      ),
-                    ),
-                  ),
-                ),
-              ),
-
-
               Visibility(
                 visible: Visible,
                 child: Positioned(
@@ -475,7 +427,7 @@ class _M_2_1State extends State<M_2_1> {
               )
             ],
           ),
-      ));
+        ));
   }
 
 }
