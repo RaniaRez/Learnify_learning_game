@@ -189,14 +189,14 @@ class _M_1_2_2ndState extends State<M_1_2_2nd> {
               ),
 
               Positioned(
-                top: size.height*0.32,
-                left: size.width*0.32,
+                top: size.height*0.31,
+                left: size.width*0.27,
                 child: FittedBox(
                   fit: BoxFit.fitWidth,
                   child: Text(
                     '2ème tentative\n 28+13 = ?',
                     style:TextStyle(
-                      fontSize: 20.5,
+                      fontSize: 22,
                       fontFamily: 'Skranji-Bold',
                       fontWeight: FontWeight.bold,
                       color:Colors.brown[700],

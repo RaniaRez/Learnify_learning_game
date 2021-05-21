@@ -190,8 +190,8 @@ class _M_1_2_3rd_1State extends State<M_1_2_3rd_1> {
                 child:BulleQuest(),
               ),
               Positioned(
-                top: size.height*0.32,
-                left: size.width*0.32,
+                top: size.height*0.31,
+                left: size.width*0.27,
                 child: FittedBox(
                   fit: BoxFit.fitWidth,
                   child: Text(

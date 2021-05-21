@@ -183,14 +183,14 @@ class _M_1_1_2ndState extends State<M_1_1_2nd> {
                 child:BulleQuest(),
               ),
               Positioned(
-                top: size.height*0.32,
-                left: size.width*0.32,
+                top: size.height*0.31,
+                left: size.width*0.27,
                 child: FittedBox(
                   fit: BoxFit.fitWidth,
                   child: Text(
                     '2ème tentative\n 65+25 = ?',
                     style:TextStyle(
-                      fontSize: 20.5,
+                      fontSize: 18,
                       fontFamily: 'Skranji-Bold',
                       fontWeight: FontWeight.bold,
                       color:Colors.brown[700],

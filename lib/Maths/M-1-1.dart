@@ -192,9 +192,9 @@ class _M_1_1State extends State<M_1_1> {
                 child: FittedBox(
                   fit: BoxFit.fitWidth,
                   child: Text(
-                    '2ème tentative\n 65+25 = ?',
+                    ' 65+25 = ?',
                     style:TextStyle(
-                      fontSize: 30,
+                      fontSize: 25,
                       fontFamily: 'Skranji-Bold',
                       fontWeight: FontWeight.bold,
                       color:Colors.brown[700],
