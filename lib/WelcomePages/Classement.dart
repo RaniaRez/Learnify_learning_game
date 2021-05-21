@@ -25,7 +25,7 @@ class _ClassementState extends State<Classement> {
   String _avatar1 = "pink";
   String _name1 = "Younes";
   // Second user
-  String _avatar2 = "purple";
+  String _avatar2 = "pink";
   String _name2 = "Meriem";
   // Third user
   String _avatar3 = "blue";
@@ -76,24 +76,30 @@ class _ClassementState extends State<Classement> {
                 ),
 
                 Positioned(
-                  top: size.height*0.55,
+                  top: size.height*0.528,
                   left:size.width*0.55,
-                  child: CercleMarronIcon(),
+                  height: size.width*0.45,
+                  width: size.width*0.45,
+                  child: CercleMarronIcon(onPressed: null,),
                 ),
                 Positioned(
-                  top: size.height*0.55,
+                  top: size.height*0.528,
                   right:size.width*0.55,
-                  child: CercleGrisIcon(),
+                  height: size.width*0.45,
+                  width: size.width*0.45,
+                  child: CercleGrisIcon(onPressed: null),
                 ),
                 Positioned(
                   top: size.height*0.3,
-                  width:size.width,
-                  child: CercleGoldIcon(),
+                  right: size.width*0.28,
+                  height: size.width*0.45,
+                  width: size.width*0.45,
+                  child: CercleGoldIcon(onPressed: null),
                 ),
                 // User 1
                 if(_avatar1 == "pink")
                   Positioned(
-                    top: size.height*0.27,
+                    top: size.height*0.28,
                     right: size.width*0.405,
                     height: size.height*0.2,
                     width: size.width*0.2,
@@ -101,7 +107,7 @@ class _ClassementState extends State<Classement> {
                   ),
                 if(_avatar1 == "blue")
                   Positioned(
-                    top: size.height*0.27,
+                    top: size.height*0.28,
                     right: size.width*0.405,
                     height: size.height*0.2,
                     width: size.width*0.2,
@@ -109,7 +115,7 @@ class _ClassementState extends State<Classement> {
                     ),
                 if(_avatar1 == "orange")
                   Positioned(
-                    top: size.height*0.27,
+                    top: size.height*0.28,
                     right: size.width*0.405,
                     height: size.height*0.2,
                     width: size.width*0.2,
@@ -117,7 +123,7 @@ class _ClassementState extends State<Classement> {
                   ),
                 if(_avatar1 == "purple")
                   Positioned(
-                    top: size.height*0.25,
+                    top: size.height*0.26,
                     right: size.width*0.39,
                     height: size.height*0.24,
                     width: size.width*0.24,
@@ -126,32 +132,32 @@ class _ClassementState extends State<Classement> {
                 // User 2
                 if(_avatar2 == "pink")
                   Positioned(
-                    top: size.height*0.52,
-                    right: size.width*0.665,
+                    top: size.height*0.51,
+                    right: size.width*0.67,
                     height: size.height*0.2,
                     width: size.width*0.2,
                     child: PinkAvatarIcon(onPressed: null,),
                   ),
                 if(_avatar2 == "blue")
                   Positioned(
-                    top: size.height*0.52,
-                    right: size.width*0.665,
+                    top: size.height*0.51,
+                    right: size.width*0.67,
                     height: size.height*0.2,
                     width: size.width*0.2,
                     child: BlueAvatarIcon(onPressed: null,),
                   ),
                 if(_avatar2 == "orange")
                   Positioned(
-                    top: size.height*0.52,
-                    right: size.width*0.665,
+                    top: size.height*0.51,
+                    right: size.width*0.67,
                     height: size.height*0.2,
                     width: size.width*0.2,
                     child: OrangeAvatarIcon(onPressed: null,),
                   ),
                 if(_avatar2 == "purple")
                   Positioned(
-                    top: size.height*0.5,
-                    right: size.width*0.645,
+                    top: size.height*0.49,
+                    right: size.width*0.66,
                     height: size.height*0.24,
                     width: size.width*0.24,
                     child: PurpleAvatarIcon(onPressed: null,),
@@ -159,32 +165,32 @@ class _ClassementState extends State<Classement> {
                 // User 3
                 if(_avatar3 == "pink")
                   Positioned(
-                    top: size.height*0.52,
-                    left: size.width*0.65,
+                    top: size.height*0.51,
+                    left: size.width*0.67,
                     height: size.height*0.2,
                     width: size.width*0.2,
                     child: PinkAvatarIcon(onPressed: null,),
                   ),
                 if(_avatar3 == "blue")
                   Positioned(
-                    top: size.height*0.52,
-                    left: size.width*0.65,
+                    top: size.height*0.51,
+                    left: size.width*0.67,
                     height: size.height*0.2,
                     width: size.width*0.2,
                     child: BlueAvatarIcon(onPressed: null,),
                   ),
                 if(_avatar3 == "orange")
                   Positioned(
-                    top: size.height*0.52,
-                    left: size.width*0.65,
+                    top: size.height*0.51,
+                    left: size.width*0.67,
                     height: size.height*0.2,
                     width: size.width*0.2,
                     child: OrangeAvatarIcon(onPressed: null,),
                   ),
                 if(_avatar3 == "purple")
                   Positioned(
-                    top: size.height*0.5,
-                    left: size.width*0.63,
+                    top: size.height*0.49,
+                    left: size.width*0.65,
                     height: size.height*0.24,
                     width: size.width*0.24,
                     child: PurpleAvatarIcon(onPressed: null,),
@@ -237,8 +243,8 @@ class _ClassementState extends State<Classement> {
                   ),
                 ),
                 Positioned(
-                  top: size.height*0.445,
-                  right: size.width*0.39 ,
+                  top: size.height*0.47,
+                  right: size.width*0.44 ,
                   child: InkWell(
                     onTap:(){
                       print("Salamalekoum, nes lbahjaaaaaaaaa salamalekoum");
