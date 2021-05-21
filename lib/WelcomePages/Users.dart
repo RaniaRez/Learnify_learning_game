@@ -4,6 +4,7 @@ import 'package:somthn/Buttons/seConnecterButton.dart';
 import 'package:somthn/WelcomePages/ChoixDomaines.dart';
 import 'package:somthn/Buttons/ClassementButton.dart';
 import 'package:somthn/WelcomePages/ChooseAvatar.dart';
+import 'package:somthn/WelcomePages/Classement.dart';
 import 'package:somthn/WelcomePages/Settings.dart';
 import 'package:somthn/WelcomePages/Userinfo.dart';
 import '../Buttons/settingsButton.dart';
@@ -72,7 +73,11 @@ class _UsersState extends State<Users> {
               Positioned(
                   top: size.height*0.05,
                   left: size.width*0.4,
-                  child: ClassementButton(onPressed: null,),
+                  child: ClassementButton(onPressed: (){
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => Classement()));
+                  }),
               ),
               Positioned(
                   top: size.height*0.25,
@@ -139,8 +144,7 @@ class _UsersState extends State<Users> {
                         ],
                           ),
       ),
-                      );
-
+    );
   }
 }
 

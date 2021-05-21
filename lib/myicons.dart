@@ -1,4 +1,6 @@
-
+const CercleGris = 'assets/icons/CercleClassementGris.svg';
+const CercleGold = 'assets/icons/CercleGoldClassement.svg';
+const CercleMarron = 'assets/icons/CercleClassementMarron.svg';
 const purpleOwl = 'assets/icons/PurpleOwl.svg';
 const welcomeOwl = 'assets/icons/welcome.svg';
 const backButton = 'assets/icons/backButton.svg';
