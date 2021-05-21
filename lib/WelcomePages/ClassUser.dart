@@ -1,9 +1,10 @@
 class User {
  final String uid;
+ bool New =true;
  String username;
  String avatar;
- String Password;
- bool New =true;
+ //String Password;
+
  User({this.uid});
  SetAvatar(String a){
   this.avatar = a;
@@ -11,9 +12,9 @@ class User {
  SetUsername(String u){
   this.username = u;
  }
- SetPassword(String p){
+ /*SetPassword(String p){
   this.Password = p;
- }
+ }*/
  SetOld(){
   this.New=false;
  }

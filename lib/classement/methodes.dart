@@ -1,32 +1,35 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:firebase_core/firebase_core.dart';
-import '../Data/database.dart';
-import '../WelcomePages/ClassUser.dart';
+//import 'package:firebase_core/firebase_core.dart';
+//import '../Data/database.dart';
+//import '../WelcomePages/ClassUser.dart';
+import '../Data/DataUser.dart';
 //import 'package:cloud_firestore/src/query.dart';
 
+//import '../classement/methodes.dart';
+//import '../Data/DataUser.dart';
 
-List<User> classement(){
+ Future<List<DataUser>> classement() async {
 
-int i=0;
-List<User> lst =new List<User>(3);
- Firestore.instance.collection('users').getDocuments().then((QuerySnapshot q) => {
-      q.documents.forEach((doc) {
-        lst[i].username=doc["name"];
-        lst[i].avatar=doc["avatar"];
-        print("remplir");
-        print(i);
-        i++;
-      })
- });
+   QuerySnapshot q = await Firestore.instance.collection('users').getDocuments();
+   return q.documents.map(
+           (doc) =>
+           DataUser(
+             doc.documentID,
+             doc.data['name'],
+             doc.data['avatar'],
+             doc.data['finalScore'],
+           )
+   ).toList();
 
-print("liste");
-print(lst);
-return lst ;
+ }
+
+/*List<DataUser> list= new List<DataUser>.empty(growable: true);
+list = await classement();
+list.sort((a, b) => b.score.compareTo(a.score));
+
+print(list[0].score);
+print(list[1].score);
+print(list[2].score);
+print("kemelna");*/
 
 
-  /*final QuerySnapshot result =Firestore.instance
-      .collection('users').get()*/
-
-
-
-}
