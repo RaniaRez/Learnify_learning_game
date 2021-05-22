@@ -6,7 +6,7 @@ import 'package:somthn/Maths/M-1-1-3rdAttempt-3.dart';
 import 'package:somthn/Maths/M-1-1-3rdAttempt-4.dart';
 import 'dart:math';
 import 'package:somthn/Maths/M-1-1-3rdAttempt.dart';
-import 'package:somthn/Maths/M_2_1_3rdAttempt.dart';
+import 'package:somthn/Maths/M-2-1-3rdAttempt.dart';
 import 'package:somthn/WelcomePages/Settings.dart';
 import 'package:somthn/myicons.dart';
 import '../Buttons/settingsButton.dart';
