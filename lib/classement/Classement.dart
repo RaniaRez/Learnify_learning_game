@@ -11,28 +11,53 @@ import '../Avatars/PurpleAvatarIcon.dart';
 import '../Avatars/OrangeAvatarIcon.dart';
 
 
-import 'Home.dart';
-import 'Settings.dart';
+import '../WelcomePages/Home.dart';
+import '../WelcomePages/Settings.dart';
+import '../classement/methodes.dart';
+import '../WelcomePages/Users.dart' ;
+//import '../classement/methodes.dart';
+import '../Data/DataUser.dart';
+
+
+
+
 
 class Classement extends StatefulWidget {
+  List<DataUser> value = new List<DataUser>.empty(growable: true);
+  Classement({this.value});
+
   @override
-  _ClassementState createState() => _ClassementState();
+  _ClassementState createState() => _ClassementState(value : value );
 }
 
 class _ClassementState extends State<Classement> {
+  List<DataUser> value = new List<DataUser>.empty(growable: true);
+  _ClassementState({this.value});
   @override
-  // First user
-  String _avatar1 = "pink";
-  String _name1 = "Younes";
-  // Second user
-  String _avatar2 = "pink";
-  String _name2 = "Meriem";
-  // Third user
-  String _avatar3 = "blue";
-  String _name3 = "Rania";
 
-  Widget build(BuildContext context) {
-    Size size = MediaQuery.of(context).size;
+
+
+  Widget build(BuildContext context)  {
+
+    Size size = MediaQuery
+        .of(context)
+        .size;
+    // First user
+    value.sort((a, b) => b.score.compareTo(a.score));
+    String _avatar1 = value[0].avatar;
+    String _name1 = value[0].username;
+    print(_name1);
+    print(value[0].score);
+    // Second user
+    String _avatar2 = value[1].avatar;
+    String _name2 = value[1].username;
+    print(_name2);
+    print(value[1].score);
+    // Third user
+    String _avatar3 = value[2].avatar;
+    String _name3 = value[2].username;
+    print(_name3);
+    print(value[2].score);
     return Scaffold(
       body:
         Container(
@@ -97,7 +122,8 @@ class _ClassementState extends State<Classement> {
                   child: CercleGoldIcon(onPressed: null),
                 ),
                 // User 1
-                if(_avatar1 == "pink")
+                if(_avatar1 == "Pink")
+
                   Positioned(
                     top: size.height*0.28,
                     right: size.width*0.405,
@@ -105,7 +131,7 @@ class _ClassementState extends State<Classement> {
                     width: size.width*0.2,
                     child: PinkAvatarIcon(onPressed: null,),
                   ),
-                if(_avatar1 == "blue")
+                if(_avatar1 == "Blue")
                   Positioned(
                     top: size.height*0.28,
                     right: size.width*0.405,
@@ -113,7 +139,7 @@ class _ClassementState extends State<Classement> {
                     width: size.width*0.2,
                     child: BlueAvatarIcon(onPressed: null,),
                     ),
-                if(_avatar1 == "orange")
+                if(_avatar1 == "Orange")
                   Positioned(
                     top: size.height*0.28,
                     right: size.width*0.405,
@@ -121,7 +147,7 @@ class _ClassementState extends State<Classement> {
                     width: size.width*0.2,
                     child: OrangeAvatarIcon(onPressed: null,),
                   ),
-                if(_avatar1 == "purple")
+                if(_avatar1 == "Purple")
                   Positioned(
                     top: size.height*0.26,
                     right: size.width*0.39,
@@ -130,7 +156,7 @@ class _ClassementState extends State<Classement> {
                     child: PurpleAvatarIcon(onPressed: null,),
                   ),
                 // User 2
-                if(_avatar2 == "pink")
+                if(_avatar2 == "Pink")
                   Positioned(
                     top: size.height*0.51,
                     right: size.width*0.67,
@@ -138,7 +164,7 @@ class _ClassementState extends State<Classement> {
                     width: size.width*0.2,
                     child: PinkAvatarIcon(onPressed: null,),
                   ),
-                if(_avatar2 == "blue")
+                if(_avatar2 == "Blue")
                   Positioned(
                     top: size.height*0.51,
                     right: size.width*0.67,
@@ -146,7 +172,7 @@ class _ClassementState extends State<Classement> {
                     width: size.width*0.2,
                     child: BlueAvatarIcon(onPressed: null,),
                   ),
-                if(_avatar2 == "orange")
+                if(_avatar2 == "Orange")
                   Positioned(
                     top: size.height*0.51,
                     right: size.width*0.67,
@@ -154,7 +180,7 @@ class _ClassementState extends State<Classement> {
                     width: size.width*0.2,
                     child: OrangeAvatarIcon(onPressed: null,),
                   ),
-                if(_avatar2 == "purple")
+                if(_avatar2 == "Purple")
                   Positioned(
                     top: size.height*0.49,
                     right: size.width*0.66,
@@ -163,7 +189,7 @@ class _ClassementState extends State<Classement> {
                     child: PurpleAvatarIcon(onPressed: null,),
                   ),
                 // User 3
-                if(_avatar3 == "pink")
+                if(_avatar3 == "Pink")
                   Positioned(
                     top: size.height*0.51,
                     left: size.width*0.67,
@@ -171,7 +197,7 @@ class _ClassementState extends State<Classement> {
                     width: size.width*0.2,
                     child: PinkAvatarIcon(onPressed: null,),
                   ),
-                if(_avatar3 == "blue")
+                if(_avatar3 == "Blue")
                   Positioned(
                     top: size.height*0.51,
                     left: size.width*0.67,
@@ -179,7 +205,7 @@ class _ClassementState extends State<Classement> {
                     width: size.width*0.2,
                     child: BlueAvatarIcon(onPressed: null,),
                   ),
-                if(_avatar3 == "orange")
+                if(_avatar3 == "Orange")
                   Positioned(
                     top: size.height*0.51,
                     left: size.width*0.67,
@@ -187,7 +213,7 @@ class _ClassementState extends State<Classement> {
                     width: size.width*0.2,
                     child: OrangeAvatarIcon(onPressed: null,),
                   ),
-                if(_avatar3 == "purple")
+                if(_avatar3 == "Purple")
                   Positioned(
                     top: size.height*0.49,
                     left: size.width*0.65,
@@ -207,7 +233,7 @@ class _ClassementState extends State<Classement> {
                     child: FittedBox(
                       fit: BoxFit.fitWidth,
                       child: Text(
-                        _name1,
+                        _name2,
                         style:TextStyle(
                           fontSize: 20,
                           fontFamily: 'Skranji-Bold',
@@ -230,7 +256,7 @@ class _ClassementState extends State<Classement> {
                     child: FittedBox(
                       fit: BoxFit.fitWidth,
                       child: Text(
-                        _name2,
+                        _name3,
                         style:TextStyle(
                           fontSize: 20,
                           fontFamily: 'Skranji-Bold',
@@ -253,7 +279,7 @@ class _ClassementState extends State<Classement> {
                     child: FittedBox(
                       fit: BoxFit.fitWidth,
                       child: Text(
-                        _name3,
+                        _name1,
                         style:TextStyle(
                           fontSize: 20,
                           fontFamily: 'Skranji-Bold',

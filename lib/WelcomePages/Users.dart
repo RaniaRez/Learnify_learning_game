@@ -4,7 +4,7 @@ import 'package:somthn/Buttons/seConnecterButton.dart';
 import 'package:somthn/WelcomePages/ChoixDomaines.dart';
 import 'package:somthn/Buttons/ClassementButton.dart';
 import 'package:somthn/WelcomePages/ChooseAvatar.dart';
-import 'package:somthn/WelcomePages/Classement.dart';
+import 'package:somthn/classement/Classement.dart';
 import 'package:somthn/WelcomePages/Settings.dart';
 import 'package:somthn/WelcomePages/Userinfo.dart';
 import '../Buttons/settingsButton.dart';
@@ -17,6 +17,11 @@ import '../Buttons/buttonUserSettings.dart';
 //import '../Services/auth.dart';
 import '../Services/Login.dart';
 import '../Services/SignUp.dart';
+import '../Data/DataUser.dart';
+import '../classement/methodes.dart';
+import '../classement/Classement.dart';
+
+
 
 
 List<User> Utilisateurs = [];
@@ -72,10 +77,18 @@ class _UsersState extends State<Users> {
               Positioned(
                   top: size.height*0.05,
                   left: size.width*0.4,
-                  child: ClassementButton(onPressed: (){
+                  child: ClassementButton(onPressed: ()  async {
+                    List<DataUser> list = new List<DataUser>.empty(growable: true);
+                    list = await classement();
+                    list.sort((a, b) => b.score.compareTo(a.score));
+
+                    print(list[0].score);
+                    print(list[1].score);
+                    print(list[2].score);
+                    print("kemelna");
                     Navigator.push(
                         context,
-                        MaterialPageRoute(builder: (context) => Classement()));
+                        MaterialPageRoute(builder: (context) => Classement(value : list )));
                   }),
               ),
               Positioned(
