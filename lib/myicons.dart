@@ -108,6 +108,7 @@ const changerNom=  'assets/icons/changerNom.svg';
 const bulleNiveauPasse=  'assets/icons/NiveauPasse.svg';
 const bulleCalculReflechi=  'assets/icons/CalculeReflechi2.svg';
 const bulleCalculReflechi1=  'assets/icons/CalculeReflechi1.svg';
+const quotes= 'assets/icons/Quotes.svg';
 
 
 

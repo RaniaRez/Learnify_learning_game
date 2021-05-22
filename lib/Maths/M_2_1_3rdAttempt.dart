@@ -3,6 +3,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:somthn/Buttons/BarreProgres.dart';
 import 'package:somthn/Maths/I-M-2-1.dart';
 import 'package:somthn/Maths/M-1-5-2ndAttempt.dart';
+import 'package:somthn/Maths/M-2-2.dart';
 import 'package:somthn/Mutual/Niveau1Pass%C3%A9.dart';
 import 'package:somthn/WelcomePages/Settings.dart';
 import 'package:somthn/Bulles/bulleQuest.dart';
@@ -88,41 +89,6 @@ class _M_2_1_3rd_State extends State<M_2_1_3rd_> {
                   child: BarreProgres(),
                 ),
               ),
-              Visibility(
-                  visible: Visible,
-                  child: Positioned(
-                    top: size.height*0.6,
-                    left: size.width*0.75,
-                    child: GoToButton(onPressed: (){
-                      setState(() {
-                        if (oneClicked){
-                          Visible = false;
-                          correct = true;
-                          print('Correct');
-                        }
-                        if (twoClicked)  {
-                          Visible = false;
-                          correct=false;
-
-                          print('Wrong');
-                        }
-                        if (threeClicked)  {
-                          Visible = false;
-                          print('Wrong');
-                          correct=false;
-                        }
-                        if (fourClicked)  {
-                          Visible = false;
-                          correct=false;
-                          print('Wrong');
-                        }
-
-
-                      });
-                      print("HELL YEAH");
-
-                    },),
-                  )),
               if (user.avatar=="Pink")
                 Visibility(
                   visible: Visible,
@@ -180,7 +146,7 @@ class _M_2_1_3rd_State extends State<M_2_1_3rd_> {
                 child: FittedBox(
                   fit: BoxFit.fitWidth,
                   child: Text(
-                    ' 11*5= ?',
+                    ' 11x5= ?',
                     style:TextStyle(
                       fontSize: 25,
                       fontFamily: 'Skranji-Bold',
@@ -520,12 +486,117 @@ class _M_2_1_3rd_State extends State<M_2_1_3rd_> {
                           child:Image.asset('images/MadBlue.gif'),
                         ),
                       ),
+
                   ],
                 ),
+              Positioned(
+                left: size.width*0.44,
+                top:size.height*0.67,
+                height: size.height*0.25,
+                width:size.width*0.4,
+                child: Visibility(
+                   visible: (twoClicked && Visible),
+                    child: IconButton(
+                        onPressed: (){
+                          if (twoClicked)  {
+                            setState(() {
+                              Visible = false;
+                              correct=false;
 
+                            });
+                            print('Wrong');
+                          }
+                          print('2');
+                        },
+                        icon: SvgPicture.asset(quotes))
+                ),
+              ),
+              Positioned(
+                left: size.width*0.44,
+                top:size.height*0.815,
+                height: size.height*0.25,
+                width:size.width*0.4,
+                child: Visibility(
+                    visible: (fourClicked&&Visible),
+                    child: IconButton(
+                        onPressed: (){
+                          if (fourClicked)  {
+                            setState(() {
+                              Visible = false;
+                              correct=false;
+                              print('Wrong');
+                            });
+                          }
+                          print('4');
+                        },
+                        icon: SvgPicture.asset(quotes))
+                ),
+              ),
+              Positioned(
+                left: size.width*0.065,
+                top:size.height*0.6,
+                height: size.height*0.25,
+                width:size.width*0.4,
+                child: Visibility(
+                    visible: (oneClicked&&Visible),
+                    child: IconButton(
+                        onPressed: (){
+                          if (oneClicked){
+                            setState(() {
+                              Visible = false;
+                              correct = true;
+                            });
+
+                            print('Correct');
+                          }
+                          print('1');
+                        },
+                        icon: SvgPicture.asset(quotes))
+                ),
+              ),
+              Positioned(
+                left: size.width*0.06,
+                top:size.height*0.74,
+                height: size.height*0.25,
+                width:size.width*0.4,
+                child: Visibility(
+                    visible: (threeClicked&&Visible),
+                    child: IconButton(
+                        onPressed: (){
+                          if (threeClicked)  {
+                            setState(() {
+                              Visible = false;
+                              print('Wrong');
+                              correct=false;
+                            });
+
+                          }
+                          print('3');
+                        },
+                        icon: SvgPicture.asset(quotes))
+                ),
+              ),
+              Visibility(
+                visible: !Visible,
+                child: Positioned(
+                    top: size.height*0.8,
+                    left: 0.0,
+                    height: size.height*0.2,
+                    width: size.width*0.5,
+                    child: ButtonContinuer(onPressed: (){
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => M_2_2()));
+                      print('Continuer');},)
+                ),
+              ),
             ],
           ),
+
         ));
   }
 
 }
+
+
+
