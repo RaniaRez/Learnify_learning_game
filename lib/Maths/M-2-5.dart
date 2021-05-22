@@ -12,6 +12,7 @@ import 'package:somthn/Maths/M-2-4-2ndAttemptFourclick.dart';
 import 'package:somthn/Maths/M-2-4-2ndAttemptThreeclick.dart';
 import 'package:somthn/Maths/M-2-4-2ndAttemptTwoclick.dart';
 import 'package:somthn/Maths/M-2-5-2ndAttemptFourclick.dart';
+import 'package:somthn/Maths/M-2-5-2ndAttemptThreeclick.dart';
 import 'package:somthn/Maths/M-2-5-2ndAttemptTwoclick.dart';
 import 'package:somthn/Maths/Niveau2Pass%C3%A9.dart';
 import 'package:somthn/Mutual/Niveau1Pass%C3%A9.dart';
@@ -521,7 +522,7 @@ class _M_2_5State extends State<M_2_5> {
                           if (threeClicked)  {
                             Navigator.push(
                                 context,
-                                MaterialPageRoute(builder: (context) => M_2_4_2nd_Three()));
+                                MaterialPageRoute(builder: (context) => M_2_5_2nd_Three()));
                             print('Wrong');
                           }
                           print('3');

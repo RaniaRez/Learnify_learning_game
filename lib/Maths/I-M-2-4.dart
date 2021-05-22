@@ -69,7 +69,7 @@ class _I_M_2_4_State extends State<I_M_2_4_> {
                 bottom: size.height*0.88,
                 left: size.width*0.275 ,
                 right:size.width*0.275 ,
-                child: SvgPicture.asset(ThreeBars),
+                child: SvgPicture.asset(FourBars),
               ),
 
               Positioned(

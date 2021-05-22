@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:somthn/Buttons/HomeButton.dart';
 import 'package:somthn/Buttons/buttonGoTo.dart';
 import 'package:somthn/Maths/M-2.dart';
+import 'package:somthn/Maths/M-3.dart';
 import 'package:somthn/WelcomePages/Settings.dart';
 import 'package:somthn/Mutual/Stars.dart';
 import 'package:somthn/myicons.dart';
@@ -151,7 +152,7 @@ class _Niveau2PassState extends State<Niveau2Pass> {
               child: GoToButton(onPressed: (){
                 Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => Math2()));
+                    MaterialPageRoute(builder: (context) => Math3()));
               }),
             ),
 
