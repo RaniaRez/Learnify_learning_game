@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:somthn/Maths/M-2-4-3rdAttempt.dart';
+import 'package:somthn/Maths/M-2-5-3rdAttempt.dart';
 import 'dart:math';
 import 'package:somthn/WelcomePages/Settings.dart';
 import 'package:somthn/myicons.dart';
@@ -148,33 +150,16 @@ class _I_M_2_4_State extends State<I_M_2_4_> {
                 bottom: size.height*0.05,
                 right: size.width*0.5 ,
                 child: AppliquerButton(onPressed : (){
-                  final _random = new Random();
-                  int rnd = 0 + _random.nextInt(5);
-                  if(rnd==0){
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(builder: (context) => M_1_4_3rd()));
-                  }else if(rnd==1){
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(builder: (context) => M_1_4_3rd_1()));
-                  }else if (rnd==2){
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(builder: (context) => M_1_4_3rd_2()));
-                  }else if(rnd == 3){
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(builder: (context) => M_1_4_3rd_3()));
-                  }else{
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(builder: (context) => M_1_4_3rd_4()));
-                  }
-
                   print('appliquer');
-                }),
-              )
+
+
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => M_2_5_3rd_()));}
+
+                ),
+              ),
+
             ],
           )),
     );

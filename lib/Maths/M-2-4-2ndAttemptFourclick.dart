@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:somthn/Maths/I-M-2-3.dart';
+import 'package:somthn/Maths/I-M-2-4.dart';
+import 'package:somthn/Maths/I-M-2-5.dart';
 import 'package:somthn/Maths/M-2-2.dart';
-import 'package:somthn/Maths/M-2-4.dart';
+import 'package:somthn/Maths/M-2-5.dart';
 import 'package:somthn/WelcomePages/Settings.dart';
 import 'package:somthn/Bulles/bulleQuest.dart';
 import 'package:somthn/Buttons/buttonContinuer.dart';
@@ -15,13 +17,13 @@ import '../Services/Login.dart';
 
 
 
-class M_2_3_2nd_Four extends StatefulWidget {
-  const M_2_3_2nd_Four({Key key}) : super(key: key);
+class M_2_4_2nd_Four extends StatefulWidget {
+  const M_2_4_2nd_Four({Key key}) : super(key: key);
 
   @override
-  _M_2_3_2nd_FourState createState() => _M_2_3_2nd_FourState();
+  _M_2_4_2nd_FourState createState() => _M_2_4_2nd_FourState();
 }
-class _M_2_3_2nd_FourState extends State<M_2_3_2nd_Four> {
+class _M_2_4_2nd_FourState extends State<M_2_4_2nd_Four> {
   bool oneClicked = false;
   bool twoClicked = false;
   bool threeClicked = false;
@@ -70,7 +72,7 @@ class _M_2_3_2nd_FourState extends State<M_2_3_2nd_Four> {
                   bottom: size.height*0.88,
                   left: size.width*0.275,
                   right: size.width*0.275,
-                  child: SvgPicture.asset(TwoBars)),
+                  child: SvgPicture.asset(ThreeBars)),
 
               Visibility(
                 visible: !Visible,
@@ -78,7 +80,7 @@ class _M_2_3_2nd_FourState extends State<M_2_3_2nd_Four> {
                   bottom: size.height*0.88,
                   left: size.width*0.275,
                   right: size.width*0.275,
-                  child: SvgPicture.asset(ThreeBars),
+                  child: SvgPicture.asset(FourBars),
                 ),
               ),
               if (user.avatar=="Pink")
@@ -138,7 +140,7 @@ class _M_2_3_2nd_FourState extends State<M_2_3_2nd_Four> {
                 child: FittedBox(
                   fit: BoxFit.fitWidth,
                   child: Text(
-                    '2eme tentative \n 23x11= ?',
+                    '2eme tentative \n 120/5= ?',
                     style:TextStyle(
                       fontSize: 25,
                       fontFamily: 'Skranji-Bold',
@@ -178,7 +180,7 @@ class _M_2_3_2nd_FourState extends State<M_2_3_2nd_Four> {
                     icon: FittedBox(
                       fit: BoxFit.fitWidth,
                       child: Text(
-                        '253',
+                        '24',
                         style:TextStyle(
                           fontSize: 30,
                           fontFamily: 'Skranji-Bold',
@@ -219,7 +221,7 @@ class _M_2_3_2nd_FourState extends State<M_2_3_2nd_Four> {
                     icon: FittedBox(
                       fit: BoxFit.fitWidth,
                       child: Text(
-                        '253',
+                        '24',
                         style:TextStyle(
                           fontSize: 30,
                           fontFamily: 'Skranji-Bold',
@@ -260,7 +262,7 @@ class _M_2_3_2nd_FourState extends State<M_2_3_2nd_Four> {
                     icon: FittedBox(
                       fit: BoxFit.fitWidth,
                       child: Text(
-                        '243',
+                        '60',
                         style:TextStyle(
                           fontSize: 30,
                           fontFamily: 'Skranji-Bold',
@@ -302,7 +304,7 @@ class _M_2_3_2nd_FourState extends State<M_2_3_2nd_Four> {
                     icon: FittedBox(
                       fit: BoxFit.fitWidth,
                       child: Text(
-                        '263',
+                        '12',
                         style:TextStyle(
                           fontSize: 30,
                           fontFamily: 'Skranji-Bold',
@@ -325,7 +327,7 @@ class _M_2_3_2nd_FourState extends State<M_2_3_2nd_Four> {
                     child: ButtonContinuer(onPressed: (){
                       Navigator.push(
                           context,
-                          MaterialPageRoute(builder: (context) => M_2_4()));
+                          MaterialPageRoute(builder: (context) => M_2_5()));
                       print('Continuer');},)
                 ),
               ),
@@ -395,7 +397,7 @@ class _M_2_3_2nd_FourState extends State<M_2_3_2nd_Four> {
                           if (twoClicked)  {
                             Navigator.push(
                                 context,
-                                MaterialPageRoute(builder: (context) => I_M_2_3_()));
+                                MaterialPageRoute(builder: (context) => I_M_2_5_()));
                             print('Wrong');
                           }
                           print('4');
@@ -415,7 +417,7 @@ class _M_2_3_2nd_FourState extends State<M_2_3_2nd_Four> {
                           if (fourClicked)  {
                             Navigator.push(
                                 context,
-                                MaterialPageRoute(builder: (context) => I_M_2_3_()));
+                                MaterialPageRoute(builder: (context) => I_M_2_5_()));
                             print('Wrong');
                           }
                           print('4');
@@ -435,7 +437,7 @@ class _M_2_3_2nd_FourState extends State<M_2_3_2nd_Four> {
                           if (threeClicked)  {
                             Navigator.push(
                                 context,
-                                MaterialPageRoute(builder: (context) =>  I_M_2_3_()));
+                                MaterialPageRoute(builder: (context) =>  I_M_2_5_()));
                             print('Wrong');
                           }
                           print('3');

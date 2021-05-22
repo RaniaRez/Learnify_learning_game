@@ -5,6 +5,7 @@ import 'package:somthn/Maths/M-1-5-3rdAttempt-2.dart';
 import 'package:somthn/Maths/M-1-5-3rdAttempt-3.dart';
 import 'package:somthn/Maths/M-1-5-3rdAttempt-4.dart';
 import 'package:somthn/Maths/M-1-5-3rdAttempt.dart';
+import 'package:somthn/Maths/M-2-4-3rdAttempt.dart';
 import 'dart:math';
 import 'package:somthn/WelcomePages/Settings.dart';
 import 'package:somthn/myicons.dart';
@@ -127,7 +128,7 @@ class _I_M_2_5_State extends State<I_M_2_5_> {
                   ),
                 ),
               Positioned(
-                bottom: size.height*0.3,
+                bottom: size.height*0.27,
                 left: size.width*0.58,
                 child: SvgPicture.asset(Stick),
               ),
@@ -157,33 +158,15 @@ class _I_M_2_5_State extends State<I_M_2_5_> {
                 bottom: size.height*0.05,
                 right: size.width*0.5 ,
                 child: AppliquerButton(onPressed : (){
-                  final _random = new Random();
-                  int rnd = 0 + _random.nextInt(5);
-                  if(rnd==0){
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(builder: (context) => M_1_5_3rd()));
-                  }else if(rnd==1){
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(builder: (context) => M_1_5_3rd_1()));
-                  }else if (rnd==2){
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(builder: (context) => M_1_5_3rd_2()));
-                  }else if(rnd == 3){
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(builder: (context) => M_1_5_3rd_3()));
-                  }else{
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(builder: (context) => M_1_5_3rd_4()));
-                  }
-
                   print('appliquer');
-                }),
-              )
+
+
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => M_2_4_3rd_()));}
+
+                ),
+              ),
             ],
           )),
     );
