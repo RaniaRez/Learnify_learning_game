@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:somthn/Buttons/BarreProgres.dart';
 import 'package:somthn/Maths/I-M-2-1.dart';
+import 'package:somthn/Maths/I-M-2-2.dart';
+import 'package:somthn/Maths/M-2-3.dart';
 import 'package:somthn/Mutual/Niveau1Pass%C3%A9.dart';
 import 'package:somthn/WelcomePages/Settings.dart';
 import 'package:somthn/Bulles/bulleQuest.dart';
@@ -330,7 +332,7 @@ class _M_2_2_2nd_OneState extends State<M_2_2_2nd_One> {
                     child: ButtonContinuer(onPressed: (){
                       Navigator.push(
                           context,
-                          MaterialPageRoute(builder: (context) => Niveau1Pass()));
+                          MaterialPageRoute(builder: (context) => M_2_3()));
                       print('Continuer');},)
                 ),
               ),
@@ -421,7 +423,7 @@ class _M_2_2_2nd_OneState extends State<M_2_2_2nd_One> {
                           if (fourClicked)  {
                             Navigator.push(
                                 context,
-                                MaterialPageRoute(builder: (context) => I_M_2_1_()));
+                                MaterialPageRoute(builder: (context) => I_M_2_2_()));
                             print('Wrong');
                           }
                           print('4');
@@ -441,7 +443,7 @@ class _M_2_2_2nd_OneState extends State<M_2_2_2nd_One> {
                           if (threeClicked)  {
                             Navigator.push(
                                 context,
-                                MaterialPageRoute(builder: (context) =>  I_M_2_1_()));
+                                MaterialPageRoute(builder: (context) =>  I_M_2_2_()));
                             print('Wrong');
                           }
                           print('3');

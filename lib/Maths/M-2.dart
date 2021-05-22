@@ -59,16 +59,16 @@ class _Math2State extends State<Math2> {
                   },)
               ),
               Positioned(
-                bottom: 200.0,
-                left: 215,
+                top: size.height*0.67,
+                left: size.width*0.5,
                 child: SvgPicture.asset(buttonMoyen),
               ),
               if (user.avatar=="Pink")
                 Visibility(
 
                   child: Positioned(
-                    top: size.height*0.48,
-                    right: size.width*0.58,
+                    top: size.height*0.465,
+                    right: size.width*0.2,
                     height: size.height*0.3,
                     width: size.width*0.3,
 
@@ -80,8 +80,8 @@ class _Math2State extends State<Math2> {
                 Visibility(
 
                   child: Positioned(
-                    top: size.height*0.48,
-                    right: size.width*0.58,
+                    top: size.height*0.44,
+                    right: size.width*0.18,
                     height: size.height*0.35,
                     width: size.width*0.35,
                     child:PurpleAvatarIcon(onPressed: null,),
@@ -91,8 +91,8 @@ class _Math2State extends State<Math2> {
                 Visibility(
 
                   child: Positioned(
-                    top: size.height*0.48,
-                    right: size.width*0.58,
+                    top: size.height*0.47,
+                    right: size.width*0.2,
                     height: size.height*0.3,
                     width: size.width*0.3,
                     child: OrangeAvatarIcon(onPressed: null,),
@@ -102,42 +102,24 @@ class _Math2State extends State<Math2> {
                 Visibility(
 
                   child: Positioned(
-                    top: size.height*0.48,
-                    right: size.width*0.58,
+                    top: size.height*0.465,
+                    right: size.width*0.2,
                     height: size.height*0.3,
                     width: size.width*0.3,
                     child:BlueAvatarIcon(onPressed: null,),
                   ),
                 ),
 
-             /* Positioned(
-
+              Positioned(
+                height: size.width*0.7,
+                width: size.width*0.7,
+                left: size.width*0.25,
+                top:size.height*0.2,
                 child:SvgPicture.asset(bulleCalculReflechi),
-              ),*/
-              Positioned(
-                top : 250,
-                left: 140.5,
-                right: 80.5,
-                child: SizedBox(
-                  height: 150,
-                  width:150,
-                  child: Text(
-                    'Calcul réfléchi niveau 2',
-                    style: TextStyle(
-                      fontFamily: 'Skranji-bold',
-                      fontSize: 30,
-                      color: Colors.brown[700],
-                      fontWeight: FontWeight.bold,
-
-                    ),
-                    textAlign: TextAlign.center,
-                  ),
-                ),
               ),
-
               Positioned(
-                bottom: 20.0,
-                left: 300.00,
+                top: size.height*0.8,
+                left:size.width*0.75,
                 child: GoToButton(onPressed: (){
                   print("HELL YEAH");
                   Navigator.push(
@@ -145,6 +127,9 @@ class _Math2State extends State<Math2> {
                     MaterialPageRoute(builder: (context) => M_2_1()),);
                 },),
               ),
+
+
+
             ]
         ),
       ),

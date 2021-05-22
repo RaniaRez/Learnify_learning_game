@@ -5,6 +5,7 @@ import 'package:somthn/Maths/M-1-5-2ndAttempt.dart';
 import 'package:somthn/Maths/M-2-2-2ndAttemptFourclick.dart';
 import 'package:somthn/Maths/M-2-2-2ndAttemptOneclick.dart';
 import 'package:somthn/Maths/M-2-2-2ndAttemptThreeclick.dart';
+import 'package:somthn/Maths/M-2-3.dart';
 import 'package:somthn/Mutual/Niveau1Pass%C3%A9.dart';
 import 'package:somthn/WelcomePages/Settings.dart';
 import 'package:somthn/Bulles/bulleQuest.dart';
@@ -381,7 +382,7 @@ class _M_2_2State extends State<M_2_2> {
                     child: ButtonContinuer(onPressed: (){
                       Navigator.push(
                           context,
-                          MaterialPageRoute(builder: (context) => Niveau1Pass()));
+                          MaterialPageRoute(builder: (context) => M_2_3()));
                       print('Continuer');},)
                 ),
               ),

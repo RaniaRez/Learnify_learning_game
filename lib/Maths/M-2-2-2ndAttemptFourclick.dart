@@ -2,7 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:somthn/Buttons/BarreProgres.dart';
 import 'package:somthn/Maths/I-M-2-1.dart';
+import 'package:somthn/Maths/I-M-2-2.dart';
 import 'package:somthn/Maths/M-1-5-2ndAttempt.dart';
+import 'package:somthn/Maths/M-2-3.dart';
 import 'package:somthn/Mutual/Niveau1Pass%C3%A9.dart';
 import 'package:somthn/WelcomePages/Settings.dart';
 import 'package:somthn/Bulles/bulleQuest.dart';
@@ -198,47 +200,6 @@ class _M_2_2_2nd_FourState extends State<M_2_2_2nd_Four> {
                 ),
               ),
               Visibility(
-                visible:Visible,
-                child: Positioned(
-                    top: size.height*0.67,
-                    left: size.width*0.1,
-                    height: size.width*0.2,
-                    width: size.width*0.33,
-                    child: QButton(onPressed: null,)
-                ),
-              ),
-              Visibility(
-                visible: Visible,
-                child: Positioned(
-                  top: size.height*0.68,
-                  left: size.width*0.17,
-                  child: IconButton(
-                    iconSize: 50,
-                    onPressed: (){
-                      print('frdv');
-                      setState(() {
-                        oneClicked = true;
-                        twoClicked = false;
-                        threeClicked = false;
-                        fourClicked = false;
-                      });},
-                    icon: FittedBox(
-                      fit: BoxFit.fitWidth,
-                      child: Text(
-                        '170',
-                        style:TextStyle(
-                          fontSize: 30,
-                          fontFamily: 'Skranji-Bold',
-                          fontWeight: FontWeight.bold,
-                          color:Colors.brown[700],
-                        ),
-                        textAlign: TextAlign.center,
-                      ),
-                    ),
-                  ),
-                ),
-              ),
-              Visibility(
                 visible: Visible,
                 child: Positioned(
                     top: size.height*0.75,
@@ -321,6 +282,50 @@ class _M_2_2_2nd_FourState extends State<M_2_2_2nd_Four> {
                   ),
                 ),
               ),
+
+
+              Visibility(
+                visible: Visible,
+                child: Positioned(
+
+                    top: size.height*0.67,
+                    left: size.width*0.1,
+                    height: size.width*0.2,
+                    width: size.width*0.33,
+                    child: QButton(onPressed: null,)
+                ),
+              ),
+              Visibility(
+                visible: Visible,
+                child: Positioned(
+                  top: size.height*0.68,
+                  left: size.width*0.17,
+                  child: IconButton(
+                    iconSize: 50,
+                    onPressed: (){
+                      print('frdv');
+                      setState(() {
+                        oneClicked = true;
+                        twoClicked = false;
+                        threeClicked = false;
+                        fourClicked = false;
+                      });},
+                    icon: FittedBox(
+                      fit: BoxFit.fitWidth,
+                      child: Text(
+                        '170',
+                        style:TextStyle(
+                          fontSize: 30,
+                          fontFamily: 'Skranji-Bold',
+                          fontWeight: FontWeight.bold,
+                          color:Colors.brown[700],
+                        ),
+                        textAlign: TextAlign.center,
+                      ),
+                    ),
+                  ),
+                ),
+              ),
               Visibility(
                 visible: !Visible,
                 child: Positioned(
@@ -331,7 +336,7 @@ class _M_2_2_2nd_FourState extends State<M_2_2_2nd_Four> {
                     child: ButtonContinuer(onPressed: (){
                       Navigator.push(
                           context,
-                          MaterialPageRoute(builder: (context) => Niveau1Pass()));
+                          MaterialPageRoute(builder: (context) => M_2_3()));
                       print('Continuer');},)
                 ),
               ),
@@ -379,7 +384,6 @@ class _M_2_2_2nd_FourState extends State<M_2_2_2nd_Four> {
                     child:Image.asset('images/HappyBlue.gif'),
                   ),
                 ),
-
               Visibility(
                 visible: !Visible,
                 child: Positioned(
@@ -388,46 +392,6 @@ class _M_2_2_2nd_FourState extends State<M_2_2_2nd_Four> {
                     left: size.width*0.4,
                     top:size.height*0.7,
                     child: SvgPicture.asset(bulleBravo)
-                ),
-              ),
-              Positioned(
-                left: size.width*0.065,
-                top:size.height*0.6,
-                height: size.height*0.25,
-                width:size.width*0.4,
-                child: Visibility(
-                    visible: (oneClicked&&Visible),
-                    child: IconButton(
-                        onPressed: (){
-                          if (oneClicked)  {
-                            Navigator.push(
-                                context,
-                                MaterialPageRoute(builder: (context) => I_M_2_1_()));
-                            print('Wrong');
-                          }
-                          print('1');
-                        },
-                        icon: SvgPicture.asset(quotes))
-                ),
-              ),
-              Positioned(
-                left: size.width*0.06,
-                top:size.height*0.74,
-                height: size.height*0.25,
-                width:size.width*0.4,
-                child: Visibility(
-                    visible: (threeClicked&&Visible),
-                    child: IconButton(
-                        onPressed: (){
-                          if (threeClicked)  {
-                            Navigator.push(
-                                context,
-                                MaterialPageRoute(builder: (context) => I_M_2_1_()));
-                            print('Wrong');
-                          }
-                          print('3');
-                        },
-                        icon: SvgPicture.asset(quotes))
                 ),
               ),
               Positioned(
@@ -451,6 +415,47 @@ class _M_2_2_2nd_FourState extends State<M_2_2_2nd_Four> {
                         icon: SvgPicture.asset(quotes))
                 ),
               ),
+              Positioned(
+                left: size.width*0.44,
+                top:size.height*0.815,
+                height: size.height*0.25,
+                width:size.width*0.4,
+                child: Visibility(
+                    visible: (fourClicked&&Visible),
+                    child: IconButton(
+                        onPressed: (){
+                          if (fourClicked)  {
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(builder: (context) => I_M_2_2_()));
+                            print('Wrong');
+                          }
+                          print('4');
+                        },
+                        icon: SvgPicture.asset(quotes))
+                ),
+              ),
+              Positioned(
+                left: size.width*0.06,
+                top:size.height*0.74,
+                height: size.height*0.25,
+                width:size.width*0.4,
+                child: Visibility(
+                    visible: (threeClicked&&Visible),
+                    child: IconButton(
+                        onPressed: (){
+                          if (threeClicked)  {
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(builder: (context) =>  I_M_2_2_()));
+                            print('Wrong');
+                          }
+                          print('3');
+                        },
+                        icon: SvgPicture.asset(quotes))
+                ),
+              ),
+
             ],
           ),
         ));

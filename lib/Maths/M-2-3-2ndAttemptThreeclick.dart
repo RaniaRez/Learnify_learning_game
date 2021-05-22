@@ -3,7 +3,9 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:somthn/Buttons/BarreProgres.dart';
 import 'package:somthn/Maths/I-M-2-1.dart';
 import 'package:somthn/Maths/I-M-2-2.dart';
+import 'package:somthn/Maths/I-M-2-3.dart';
 import 'package:somthn/Maths/M-1-5-2ndAttempt.dart';
+import 'package:somthn/Maths/M-2-2.dart';
 import 'package:somthn/Maths/M-2-3.dart';
 import 'package:somthn/Mutual/Niveau1Pass%C3%A9.dart';
 import 'package:somthn/WelcomePages/Settings.dart';
@@ -23,18 +25,19 @@ import '../Services/Login.dart';
 
 
 
-class M_2_2_2nd_Three extends StatefulWidget {
-  const M_2_2_2nd_Three({Key key}) : super(key: key);
+class M_2_3_2nd_Three extends StatefulWidget {
+  const M_2_3_2nd_Three({Key key}) : super(key: key);
 
   @override
-  _M_2_2_2nd_ThreeState createState() => _M_2_2_2nd_ThreeState();
+  _M_2_3_2nd_ThreeState createState() => _M_2_3_2nd_ThreeState();
 }
-class _M_2_2_2nd_ThreeState extends State<M_2_2_2nd_Three> {
+class _M_2_3_2nd_ThreeState extends State<M_2_3_2nd_Three> {
   bool oneClicked = false;
   bool twoClicked = false;
   bool threeClicked = false;
   bool fourClicked = false;
   bool Visible = true;
+  bool correct = false;
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
@@ -74,11 +77,10 @@ class _M_2_2_2nd_ThreeState extends State<M_2_2_2nd_Three> {
               ),
 
               Positioned(
-                bottom: size.height*0.88,
-                left: size.width*0.275,
-                right: size.width*0.275,
-                child:BarreProgres() ,
-              ),
+                  bottom: size.height*0.88,
+                  left: size.width*0.275,
+                  right: size.width*0.275,
+                  child: SvgPicture.asset(TwoBars)),
 
               Visibility(
                 visible: !Visible,
@@ -86,7 +88,7 @@ class _M_2_2_2nd_ThreeState extends State<M_2_2_2nd_Three> {
                   bottom: size.height*0.88,
                   left: size.width*0.275,
                   right: size.width*0.275,
-                  child: SvgPicture.asset(TwoBars),
+                  child: SvgPicture.asset(ThreeBars),
                 ),
               ),
               if (user.avatar=="Pink")
@@ -146,7 +148,7 @@ class _M_2_2_2nd_ThreeState extends State<M_2_2_2nd_Three> {
                 child: FittedBox(
                   fit: BoxFit.fitWidth,
                   child: Text(
-                    '2eme tentative \n 14x9= ?',
+                    '2eme tentative \n 23x11= ?',
                     style:TextStyle(
                       fontSize: 25,
                       fontFamily: 'Skranji-Bold',
@@ -186,7 +188,7 @@ class _M_2_2_2nd_ThreeState extends State<M_2_2_2nd_Three> {
                     icon: FittedBox(
                       fit: BoxFit.fitWidth,
                       child: Text(
-                        '126',
+                        '253',
                         style:TextStyle(
                           fontSize: 30,
                           fontFamily: 'Skranji-Bold',
@@ -200,9 +202,8 @@ class _M_2_2_2nd_ThreeState extends State<M_2_2_2nd_Three> {
                 ),
               ),
               Visibility(
-                visible: Visible,
+                visible:Visible,
                 child: Positioned(
-
                     top: size.height*0.67,
                     left: size.width*0.1,
                     height: size.width*0.2,
@@ -228,7 +229,7 @@ class _M_2_2_2nd_ThreeState extends State<M_2_2_2nd_Three> {
                     icon: FittedBox(
                       fit: BoxFit.fitWidth,
                       child: Text(
-                        '170',
+                        '253',
                         style:TextStyle(
                           fontSize: 30,
                           fontFamily: 'Skranji-Bold',
@@ -269,7 +270,7 @@ class _M_2_2_2nd_ThreeState extends State<M_2_2_2nd_Three> {
                     icon: FittedBox(
                       fit: BoxFit.fitWidth,
                       child: Text(
-                        '126',
+                        '243',
                         style:TextStyle(
                           fontSize: 30,
                           fontFamily: 'Skranji-Bold',
@@ -282,6 +283,8 @@ class _M_2_2_2nd_ThreeState extends State<M_2_2_2nd_Three> {
                   ),
                 ),
               ),
+
+              
               Visibility(
                 visible: Visible,
                 child: Positioned(
@@ -310,7 +313,7 @@ class _M_2_2_2nd_ThreeState extends State<M_2_2_2nd_Three> {
                     icon: FittedBox(
                       fit: BoxFit.fitWidth,
                       child: Text(
-                        '146',
+                        '222',
                         style:TextStyle(
                           fontSize: 30,
                           fontFamily: 'Skranji-Bold',
@@ -333,7 +336,7 @@ class _M_2_2_2nd_ThreeState extends State<M_2_2_2nd_Three> {
                     child: ButtonContinuer(onPressed: (){
                       Navigator.push(
                           context,
-                          MaterialPageRoute(builder: (context) => M_2_3()));
+                          MaterialPageRoute(builder: (context) => M_2_2()));
                       print('Continuer');},)
                 ),
               ),
@@ -400,14 +403,13 @@ class _M_2_2_2nd_ThreeState extends State<M_2_2_2nd_Three> {
                     visible: (twoClicked && Visible),
                     child: IconButton(
                         onPressed: (){
-                          if (twoClicked){
-                            setState(() {
-                              Visible = false;
-                            });
-
-                            print('Correct');
+                          if (twoClicked)  {
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(builder: (context) => I_M_2_3_()));
+                            print('Wrong');
                           }
-                          print('2');
+                          print('4');
                         },
                         icon: SvgPicture.asset(quotes))
                 ),
@@ -424,10 +426,30 @@ class _M_2_2_2nd_ThreeState extends State<M_2_2_2nd_Three> {
                           if (fourClicked)  {
                             Navigator.push(
                                 context,
-                                MaterialPageRoute(builder: (context) => I_M_2_2_()));
+                                MaterialPageRoute(builder: (context) => I_M_2_3_()));
                             print('Wrong');
                           }
                           print('4');
+                        },
+                        icon: SvgPicture.asset(quotes))
+                ),
+              ),
+              Positioned(
+                left: size.width*0.06,
+                top:size.height*0.74,
+                height: size.height*0.25,
+                width:size.width*0.4,
+                child: Visibility(
+                    visible: (threeClicked&&Visible),
+                    child: IconButton(
+                        onPressed: (){
+                          if (threeClicked)  {
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(builder: (context) =>  I_M_2_3_()));
+                            print('Wrong');
+                          }
+                          print('3');
                         },
                         icon: SvgPicture.asset(quotes))
                 ),
@@ -438,16 +460,17 @@ class _M_2_2_2nd_ThreeState extends State<M_2_2_2nd_Three> {
                 height: size.height*0.25,
                 width:size.width*0.4,
                 child: Visibility(
-                    visible: (oneClicked&&Visible),
+                    visible: (oneClicked && Visible),
                     child: IconButton(
                         onPressed: (){
-                          if (oneClicked)  {
-                            Navigator.push(
-                                context,
-                                MaterialPageRoute(builder: (context) => I_M_2_2_()));
-                            print('Wrong');
+                          if (oneClicked){
+                            setState(() {
+                              Visible = false;
+                            });
+
+                            print('Correct');
                           }
-                          print('1');
+                          print('2');
                         },
                         icon: SvgPicture.asset(quotes))
                 ),
