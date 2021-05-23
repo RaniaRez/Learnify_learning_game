@@ -104,12 +104,12 @@ class _M_3_3State extends State<M_3_3> {
                         child: SvgPicture.asset('assets/icons/M-3-T-3.svg'))
                 ),
               ),
-              //if (user.avatar=="Pink")
+              if (user.avatar=="Pink")
                 Visibility(
                   visible: Visible,
                   child: Positioned(
-                    top: size.height*0.5,
-                    left: size.width*0.72,
+                    top: size.height*0.32,
+                    left: size.width*0.6,
                     height: size.width*0.3,
                     width: size.width*0.3,
                     child:PinkAvatarIcon(onPressed: null,),
@@ -119,8 +119,8 @@ class _M_3_3State extends State<M_3_3> {
                 Visibility(
                   visible: Visible,
                   child: Positioned(
-                    top: size.height*0.49,
-                    left: size.width*0.69,
+                    top: size.height*0.31,
+                    left: size.width*0.57,
                     height: size.width*0.35,
                     width: size.width*0.35,
                     child:PurpleAvatarIcon(onPressed: null,),
@@ -130,8 +130,8 @@ class _M_3_3State extends State<M_3_3> {
                 Visibility(
                   visible: Visible,
                   child: Positioned(
-                    top: size.height*0.5,
-                    left: size.width*0.72,
+                    top: size.height*0.32,
+                    left: size.width*0.6,
                     height: size.width*0.3,
                     width: size.width*0.3,
                     child: OrangeAvatarIcon(onPressed: null,),
@@ -141,15 +141,15 @@ class _M_3_3State extends State<M_3_3> {
                 Visibility(
                   visible: Visible,
                   child: Positioned(
-                    top: size.height*0.5,
-                    left: size.width*0.72,
+                    top: size.height*0.32,
+                    left: size.width*0.6,
                     height: size.width*0.3,
                     width: size.width*0.3,
                     child:BlueAvatarIcon(onPressed: null,),
                   ),
                 ),
               Positioned(
-                top: size.height*0.2,
+                top: size.height*0.15,
                 left: size.width*0.1,
                 height: size.width*0.4,
                 width: size.width*0.8,

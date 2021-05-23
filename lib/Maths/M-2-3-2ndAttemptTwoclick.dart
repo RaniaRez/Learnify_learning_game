@@ -142,25 +142,7 @@ class _M_2_3_2nd_TwoState extends State<M_2_3_2nd_Two> {
                 left: size.width*0.2,
                 height: size.width*0.6,
                 width: size.width*0.6,
-                child:BulleQuest(),
-              ),
-              Positioned(
-                top: size.height*0.32,
-                left: size.width*0.26,
-                child: FittedBox(
-                  fit: BoxFit.fitWidth,
-                  child: Text(
-                    '2eme tentative \n 23x11= ?',
-                    style:TextStyle(
-                      fontSize: 25,
-                      fontFamily: 'Skranji-Bold',
-                      fontWeight: FontWeight.bold,
-                      color:Colors.brown[700],
-                    ),
-                    textAlign: TextAlign.center,
-                  ),
-                ),
-
+                child:SvgPicture.asset('assets/icons/M-2-Q-2.svg'),
               ),
               Visibility(
                 visible:!Visible,
