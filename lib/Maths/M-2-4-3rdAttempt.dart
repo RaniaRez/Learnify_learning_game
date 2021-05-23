@@ -350,6 +350,20 @@ class _M_2_4_3rd_State extends State<M_2_4_3rd_> {
                   ),
                 ),
               ),
+              Visibility(
+                visible: !Visible,
+                child: Positioned(
+                    top: size.height*0.8,
+                    left: 0.0,
+                    height: size.height*0.2,
+                    width: size.width*0.5,
+                    child: ButtonContinuer(onPressed: (){
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => M_2_5()));
+                      print('Continuer');},)
+                ),
+              ),
               if (correct)
                 Stack(
                   children: <Widget>[
@@ -562,20 +576,7 @@ class _M_2_4_3rd_State extends State<M_2_4_3rd_> {
                         icon: SvgPicture.asset(quotes))
                 ),
               ),
-              Visibility(
-                visible: !Visible,
-                child: Positioned(
-                    top: size.height*0.8,
-                    left: 0.0,
-                    height: size.height*0.2,
-                    width: size.width*0.5,
-                    child: ButtonContinuer(onPressed: (){
-                      Navigator.push(
-                          context,
-                          MaterialPageRoute(builder: (context) => M_2_5()));
-                      print('Continuer');},)
-                ),
-              ),
+
             ],
           ),
 
