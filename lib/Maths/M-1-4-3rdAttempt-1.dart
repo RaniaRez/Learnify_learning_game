@@ -248,7 +248,7 @@ class _M_1_4_3rd_1State extends State<M_1_4_3rd_1> {
                   left: size.width*0.33,
                   height: size.width*0.2,
                   width: size.width*0.33,
-                  child: QButton(onPressed: null,)
+                  child: SvgPicture.asset('assets/icons/bulleAppliquer4-1.svg'),
               ),
               Positioned(
                 top: size.height*0.75,

@@ -187,26 +187,9 @@ class _M_1_3_3rdState extends State<M_1_3_3rd> {
                 left: size.width*0.2,
                 height: size.width*0.6,
                 width: size.width*0.6,
-                child:BulleQuest(),
+                child:SvgPicture.asset('assets/icons/bulleAppliquer3.svg'),
               ),
-              Positioned(
-                top: size.height*0.32,
-                left: size.width*0.295,
-                  child: FittedBox(
-                    fit: BoxFit.fitWidth,
-                    child: Text(
-                      'Double de 28 ?',
-                      style: TextStyle(
-                        fontFamily: 'Skranji-bold',
-                        fontSize: 25,
-                        color: Colors.brown[700],
-                        fontWeight: FontWeight.bold,
 
-                      ),
-                      textAlign: TextAlign.center,
-                    ),
-                  ),
-                ),
               Visibility(
                 visible: Visible,
                 child: Positioned(

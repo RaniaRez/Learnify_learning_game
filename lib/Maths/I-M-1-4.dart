@@ -12,9 +12,6 @@ import 'package:somthn/Avatars/BlueAvatarIcon.dart';
 import '../WelcomePages/ChooseAvatar.dart';
 import 'package:somthn/Buttons/buttonAppliquer.dart';
 import 'package:somthn/Maths/M-1-4-3rdAttempt-1.dart';
-import 'package:somthn/Maths/M-1-4-3rdAttempt-2.dart';
-import 'package:somthn/Maths/M-1-4-3rdAttempt-3.dart';
-import 'package:somthn/Maths/M-1-4-3rdAttempt-4.dart';
 import 'package:somthn/Maths/M-1-4-3rdAttempt.dart';
 import '../Services/Login.dart';
 import '../Services/SignUp.dart';
@@ -74,7 +71,7 @@ class _I_M_1_4_State extends State<I_M_1_4_> {
                   left: size.width*0.2 ,
                   height: size.height*0.6,
                   width: size.width*0.6,
-                  child: SvgPicture.asset(EmptyTable)),
+                  child: SvgPicture.asset('assets/icons/I-M-1-4.svg')),
               if (user.avatar=="Pink")
                 Visibility(
 
@@ -126,24 +123,6 @@ class _I_M_1_4_State extends State<I_M_1_4_> {
               ),
 
               Positioned(
-                top: size.height*0.3,
-                left: size.width*0.27 ,
-                child: FittedBox(
-                  fit: BoxFit.fitWidth,
-                  child: Text(
-                    'Observe :\nMoitié de 46 \n =moitié de 40\n+moitié de -\n=20+3\n=23',
-                    style:TextStyle(
-                      fontSize: 25,
-                      fontFamily: 'Skranji-Bold',
-                      fontWeight: FontWeight.bold,
-                      color:Colors.brown[700],
-                    ),
-                    textAlign: TextAlign.center,
-                  ),
-                ),
-
-              ),
-              Positioned(
                 bottom: size.height*0.05,
                 right: size.width*0.5 ,
                 child: AppliquerButton(onPressed : (){
@@ -157,18 +136,6 @@ class _I_M_1_4_State extends State<I_M_1_4_> {
                     Navigator.push(
                         context,
                         MaterialPageRoute(builder: (context) => M_1_4_3rd_1()));
-                  }else if (rnd==2){
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(builder: (context) => M_1_4_3rd_2()));
-                  }else if(rnd == 3){
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(builder: (context) => M_1_4_3rd_3()));
-                  }else{
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(builder: (context) => M_1_4_3rd_4()));
                   }
 
                   print('appliquer');

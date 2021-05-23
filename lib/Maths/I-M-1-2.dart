@@ -1,15 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:somthn/Maths/M-1-1-3rdAttempt-1.dart';
-import 'package:somthn/Maths/M-1-1-3rdAttempt-2.dart';
-import 'package:somthn/Maths/M-1-1-3rdAttempt-3.dart';
-import 'package:somthn/Maths/M-1-1-3rdAttempt-4.dart';
 import 'dart:math';
 import 'package:somthn/Maths/M-1-1-3rdAttempt.dart';
 import 'package:somthn/Maths/M-1-2-3rdAttempt-1.dart';
-import 'package:somthn/Maths/M-1-2-3rdAttempt-2.dart';
-import 'package:somthn/Maths/M-1-2-3rdAttempt-3.dart';
-import 'package:somthn/Maths/M-1-2-3rdAttempt-4.dart';
 import 'package:somthn/Maths/M-1-2-3rdAttempt.dart';
 import 'package:somthn/WelcomePages/Settings.dart';
 import 'package:somthn/myicons.dart';
@@ -80,7 +74,7 @@ class _I_M_1_2_State extends State<I_M_1_2_> {
                   left: size.width*0.2 ,
                   height: size.height*0.6,
                   width: size.width*0.6,
-                  child: SvgPicture.asset(EmptyTable)),
+                  child: SvgPicture.asset('assets/icons/I-M-1-2.svg')),
               if (user.avatar=="Pink")
                 Visibility(
 
@@ -130,24 +124,7 @@ class _I_M_1_2_State extends State<I_M_1_2_> {
                 left: size.width*0.58 ,
                 child: SvgPicture.asset(Stick),
               ),
-              Positioned(
-                top: size.height*0.3,
-                left: size.width*0.23 ,
-                  child: FittedBox(
-                    fit: BoxFit.fitWidth,
-                    child: Text(
-                      'Observe :\nsomme de \n deux nombres :\n 28+13=20+8+10+3\n=30+11\n=41',
-                      style:TextStyle(
-                        fontSize: 25,
-                        fontFamily: 'Skranji-Bold',
-                        fontWeight: FontWeight.bold,
-                        color:Colors.brown[700],
-                      ),
-                      textAlign: TextAlign.center,
-                    ),
-                  ),
 
-              ),
               Positioned(
                 bottom: size.height*0.05,
                 right: size.width*0.5 ,
@@ -162,18 +139,6 @@ class _I_M_1_2_State extends State<I_M_1_2_> {
                     Navigator.push(
                         context,
                         MaterialPageRoute(builder: (context) => M_1_2_3rd_1()));
-                  }else if (rnd==2){
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(builder: (context) => M_1_2_3rd_2()));
-                  }else if(rnd == 3){
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(builder: (context) => M_1_2_3rd_3()));
-                  }else{
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(builder: (context) => M_1_2_3rd_4()));
                   }
 
                   print('appliquer');

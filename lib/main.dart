@@ -9,6 +9,6 @@ import 'package:somthn/WelcomePages/Home.dart';
 
 void main() {
   runApp(MaterialApp(
-    home: M_2_4()
+    home: Home()
   ));
 }

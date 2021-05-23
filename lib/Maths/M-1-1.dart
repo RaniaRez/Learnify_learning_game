@@ -184,26 +184,9 @@ class _M_1_1State extends State<M_1_1> {
       left: size.width*0.2,
       height: size.width*0.6,
       width: size.width*0.6,
-    child:BulleQuest(),
+    child:SvgPicture.asset('assets/icons/M-1-Q-1.svg'),
     ),
-              Positioned(
-                top: size.height*0.32,
-                left: size.width*0.32,
-                child: FittedBox(
-                  fit: BoxFit.fitWidth,
-                  child: Text(
-                    ' 65+25 = ?',
-                    style:TextStyle(
-                      fontSize: 25,
-                      fontFamily: 'Skranji-Bold',
-                      fontWeight: FontWeight.bold,
-                      color:Colors.brown[700],
-                    ),
-                    textAlign: TextAlign.center,
-                  ),
-                ),
 
-              ),
     Visibility(
         visible: Visible,
         child: Positioned(
