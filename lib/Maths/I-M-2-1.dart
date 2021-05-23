@@ -75,26 +75,7 @@ class _I_M_2_1_State extends State<I_M_2_1_> {
                   left: size.width*0.2 ,
                   height: size.height*0.6,
                   width: size.width*0.6,
-                  child: SvgPicture.asset(EmptyTable)),
-
-              Positioned(
-                top: size.height*0.3,
-                left: size.width*0.25 ,
-                child: FittedBox(
-                  fit: BoxFit.fitWidth,
-                  child: Text(
-                    'Observe :\nMultiplier par 5: \n28x10 = 280\n 5 est la moitié de 10\n28x5 est la moitié de\n280\n28x5=140',
-                    style:TextStyle(
-                      fontSize: 20.5,
-                      fontFamily: 'Skranji-Bold',
-                      fontWeight: FontWeight.bold,
-                      color:Colors.brown[700],
-                    ),
-                    textAlign: TextAlign.center,
-                  ),
-                ),
-
-              ),
+                  child: SvgPicture.asset('assets/icons/I-M-2-1.svg')),
 
               if (user.avatar=="Pink")
                 Visibility(
@@ -104,18 +85,18 @@ class _I_M_2_1_State extends State<I_M_2_1_> {
                     width: size.width*0.3,
                     left: size.width*0.7,
                     top:size.height*0.57,
-                    child:PinkAvatarIcon(onPressed: null,),
+                    child:SvgPicture.asset('assets/icons/BPink.svg'),
                   ),
                 ),
               if (user.avatar=="Purple")
                 Visibility(
 
                   child: Positioned(
-                    height: size.width*0.35,
-                    width: size.width*0.35,
+                    height: size.width*0.3,
+                    width: size.width*0.3,
                     left: size.width*0.68,
                     top:size.height*0.57,
-                    child:PurpleAvatarIcon(onPressed: null,),
+                    child:SvgPicture.asset('assets/icons/BPurple.svg'),
                   ),
                 ),
               if (user.avatar=="Orange")
@@ -126,7 +107,7 @@ class _I_M_2_1_State extends State<I_M_2_1_> {
                     width: size.width*0.3,
                     left: size.width*0.7,
                     top:size.height*0.57,
-                    child: OrangeAvatarIcon(onPressed: null,),
+                    child: SvgPicture.asset('assets/icons/BOrange.svg'),
                   ),
                 ),
               if (user.avatar=="Blue")
@@ -137,14 +118,10 @@ class _I_M_2_1_State extends State<I_M_2_1_> {
                     width: size.width*0.3,
                     left: size.width*0.7,
                     top:size.height*0.57,
-                    child:BlueAvatarIcon(onPressed: null,),
+                    child:SvgPicture.asset('assets/icons/BBlue.svg'),
                   ),
                 ),
-              Positioned(
-                bottom: size.height*0.28,
-                left: size.width*0.58 ,
-                child: SvgPicture.asset(Stick),
-              ),
+
               Positioned(
                 bottom: size.height*0.05,
                 right: size.width*0.5 ,

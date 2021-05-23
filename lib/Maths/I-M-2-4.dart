@@ -78,6 +78,13 @@ class _I_M_2_4_State extends State<I_M_2_4_> {
                   height: size.height*0.6,
                   width: size.width*0.6,
                   child: SvgPicture.asset(EmptyTable)),
+              Positioned(
+                  bottom: size.height*0.25,
+                  left: size.width*0.2 ,
+                  height: size.height*0.6,
+                  width: size.width*0.6,
+                  child: SvgPicture.asset('assets/icons/I-M-2-1.svg')),
+
               if (user.avatar=="Pink")
                 Visibility(
 
@@ -86,18 +93,18 @@ class _I_M_2_4_State extends State<I_M_2_4_> {
                     width: size.width*0.3,
                     left: size.width*0.7,
                     top:size.height*0.57,
-                    child:PinkAvatarIcon(onPressed: null,),
+                    child:SvgPicture.asset('assets/icons/BPink.svg'),
                   ),
                 ),
               if (user.avatar=="Purple")
                 Visibility(
 
                   child: Positioned(
-                    height: size.width*0.35,
-                    width: size.width*0.35,
+                    height: size.width*0.3,
+                    width: size.width*0.3,
                     left: size.width*0.68,
                     top:size.height*0.57,
-                    child:PurpleAvatarIcon(onPressed: null,),
+                    child:SvgPicture.asset('assets/icons/BPurple.svg'),
                   ),
                 ),
               if (user.avatar=="Orange")
@@ -108,7 +115,7 @@ class _I_M_2_4_State extends State<I_M_2_4_> {
                     width: size.width*0.3,
                     left: size.width*0.7,
                     top:size.height*0.57,
-                    child: OrangeAvatarIcon(onPressed: null,),
+                    child: SvgPicture.asset('assets/icons/BOrange.svg'),
                   ),
                 ),
               if (user.avatar=="Blue")
@@ -119,14 +126,10 @@ class _I_M_2_4_State extends State<I_M_2_4_> {
                     width: size.width*0.3,
                     left: size.width*0.7,
                     top:size.height*0.57,
-                    child:BlueAvatarIcon(onPressed: null,),
+                    child:SvgPicture.asset('assets/icons/BBlue.svg'),
                   ),
                 ),
-              Positioned(
-                bottom: size.height*0.3,
-                left: size.width*0.58,
-                child: SvgPicture.asset(Stick),
-              ),
+
 
               Positioned(
                 top: size.height*0.3,
