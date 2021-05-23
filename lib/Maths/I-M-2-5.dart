@@ -77,18 +77,13 @@ class _I_M_2_5_State extends State<I_M_2_5_> {
                 child: SvgPicture.asset(FourBars),
               ),
 
+
               Positioned(
                   bottom: size.height*0.25,
                   left: size.width*0.2 ,
                   height: size.height*0.6,
                   width: size.width*0.6,
-                  child: SvgPicture.asset(EmptyTable)),
-              Positioned(
-                  bottom: size.height*0.25,
-                  left: size.width*0.2 ,
-                  height: size.height*0.6,
-                  width: size.width*0.6,
-                  child: SvgPicture.asset('assets/icons/I-M-2-1.svg')),
+                  child: SvgPicture.asset('assets/icons/I-M-2-5.svg')),
 
               if (user.avatar=="Pink")
                 Visibility(
@@ -135,27 +130,6 @@ class _I_M_2_5_State extends State<I_M_2_5_> {
                   ),
                 ),
 
-              Positioned(
-                top: size.height*0.3,
-                left: size.width*0.27 ,
-                child: FittedBox(
-                  fit: BoxFit.fitWidth,
-                  child: Text(
-                    'Observe :\nDiviser un nombre \nde dizaines par 5:\n5 est la moitié de 10\n120/10=12\n12x2=24\nen fin 120/5=24',
-
-
-
-                    style:TextStyle(
-                      fontSize: 20.5,
-                      fontFamily: 'Skranji-Bold',
-                      fontWeight: FontWeight.bold,
-                      color:Colors.brown[700],
-                    ),
-                    textAlign: TextAlign.center,
-                  ),
-                ),
-
-              ),
               Positioned(
                 bottom: size.height*0.05,
                 right: size.width*0.5 ,

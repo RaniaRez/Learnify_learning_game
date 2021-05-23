@@ -75,30 +75,12 @@ class _I_M_2_2_State extends State<I_M_2_2_> {
                 right:size.width*0.275 ,
                 child: BarreProgres(),
               ),
-
               Positioned(
                   bottom: size.height*0.25,
                   left: size.width*0.2 ,
                   height: size.height*0.6,
                   width: size.width*0.6,
-                  child: SvgPicture.asset(EmptyTable)),
-              if (user.avatar=="Pink")
-                Visibility(
-
-                  child: Positioned(
-                    height: size.width*0.3,
-                    width: size.width*0.3,
-                    left: size.width*0.7,
-                    top:size.height*0.57,
-                    child:PinkAvatarIcon(onPressed: null,),
-                  ),
-                ),
-              Positioned(
-                  bottom: size.height*0.25,
-                  left: size.width*0.2 ,
-                  height: size.height*0.6,
-                  width: size.width*0.6,
-                  child: SvgPicture.asset('assets/icons/I-M-2-1.svg')),
+                  child: SvgPicture.asset('assets/icons/I-M-2-2.svg')),
 
               if (user.avatar=="Pink")
                 Visibility(
@@ -144,26 +126,6 @@ class _I_M_2_2_State extends State<I_M_2_2_> {
                     child:SvgPicture.asset('assets/icons/BBlue.svg'),
                   ),
                 ),
-
-
-              Positioned(
-                top: size.height*0.3,
-                left: size.width*0.27 ,
-                child: FittedBox(
-                  fit: BoxFit.fitWidth,
-                  child: Text(
-                    'Observe :\nMultiplier par 9:\n9 = 10 - 1\n14x9=(14x10)-(14x1)\n=140-14\n=126',
-                    style:TextStyle(
-                      fontSize: 20.5,
-                      fontFamily: 'Skranji-Bold',
-                      fontWeight: FontWeight.bold,
-                      color:Colors.brown[700],
-                    ),
-                    textAlign: TextAlign.center,
-                  ),
-                ),
-
-              ),
               Positioned(
                 bottom: size.height*0.05,
                 right: size.width*0.5 ,

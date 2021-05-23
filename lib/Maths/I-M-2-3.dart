@@ -77,13 +77,7 @@ class _I_M_2_3_State extends State<I_M_2_3_> {
                   left: size.width*0.2 ,
                   height: size.height*0.6,
                   width: size.width*0.6,
-                  child: SvgPicture.asset(EmptyTable)),
-              Positioned(
-                  bottom: size.height*0.25,
-                  left: size.width*0.2 ,
-                  height: size.height*0.6,
-                  width: size.width*0.6,
-                  child: SvgPicture.asset('assets/icons/I-M-2-1.svg')),
+                  child: SvgPicture.asset('assets/icons/I-M-2-3.svg')),
 
               if (user.avatar=="Pink")
                 Visibility(
@@ -130,24 +124,6 @@ class _I_M_2_3_State extends State<I_M_2_3_> {
                   ),
                 ),
 
-              Positioned(
-                top: size.height*0.3,
-                left: size.width*0.27 ,
-                child: FittedBox(
-                  fit: BoxFit.fitWidth,
-                  child: Text(
-                    'Observe :\nMultiplier par 11\n11 = 10 + 1\n23x11=(23x10)+(23x1)\n=230+23\n=253',
-                    style:TextStyle(
-                      fontSize: 20.5,
-                      fontFamily: 'Skranji-Bold',
-                      fontWeight: FontWeight.bold,
-                      color:Colors.brown[700],
-                    ),
-                    textAlign: TextAlign.center,
-                  ),
-                ),
-
-              ),
                 Positioned(
                 bottom: size.height*0.05,
                 right: size.width*0.5 ,
