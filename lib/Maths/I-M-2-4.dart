@@ -13,7 +13,6 @@ import 'package:somthn/Avatars/PurpleAvatarIcon.dart';
 import 'package:somthn/Avatars/BlueAvatarIcon.dart';
 import '../WelcomePages/ChooseAvatar.dart';
 import 'package:somthn/Buttons/buttonAppliquer.dart';
-import 'package:somthn/Maths/M-1-4-3rdAttempt-1.dart';
 import 'package:somthn/Maths/M-1-4-3rdAttempt.dart';
 import '../Services/Login.dart';
 import '../Services/SignUp.dart';

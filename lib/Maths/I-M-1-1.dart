@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:somthn/Maths/M-1-1-3rdAttempt-1.dart';
 import 'dart:math';
-import 'package:somthn/Maths/M-1-1-3rdAttempt.dart';
 import 'package:somthn/WelcomePages/Settings.dart';
 import 'package:somthn/myicons.dart';
 import '../Buttons/settingsButton.dart';
@@ -80,18 +79,18 @@ class _I_M_1_1_State extends State<I_M_1_1_> {
                     width: size.width*0.3,
                     left: size.width*0.7,
                     top:size.height*0.57,
-                    child:PinkAvatarIcon(onPressed: null,),
+                    child:SvgPicture.asset('assets/icons/BPink.svg'),
                   ),
                 ),
-             if (user.avatar=="Purple")
+              if (user.avatar=="Purple")
                 Visibility(
 
                   child: Positioned(
-                    height: size.width*0.35,
-                    width: size.width*0.35,
+                    height: size.width*0.3,
+                    width: size.width*0.3,
                     left: size.width*0.68,
                     top:size.height*0.57,
-                    child:PurpleAvatarIcon(onPressed: null,),
+                    child:SvgPicture.asset('assets/icons/BPurple.svg'),
                   ),
                 ),
               if (user.avatar=="Orange")
@@ -102,7 +101,7 @@ class _I_M_1_1_State extends State<I_M_1_1_> {
                     width: size.width*0.3,
                     left: size.width*0.7,
                     top:size.height*0.57,
-                    child: OrangeAvatarIcon(onPressed: null,),
+                    child: SvgPicture.asset('assets/icons/BOrange.svg'),
                   ),
                 ),
               if (user.avatar=="Blue")
@@ -113,31 +112,18 @@ class _I_M_1_1_State extends State<I_M_1_1_> {
                     width: size.width*0.3,
                     left: size.width*0.7,
                     top:size.height*0.57,
-                    child:BlueAvatarIcon(onPressed: null,),
+                    child:SvgPicture.asset('assets/icons/BBlue.svg'),
                   ),
                 ),
-          Positioned(
-            bottom: size.height*0.3,
-            left: size.width*0.58 ,
-              child: SvgPicture.asset(Stick),
-          ),
               Positioned(
                 bottom: size.height*0.05,
                 right: size.width*0.5 ,
                   child: AppliquerButton(onPressed : (){
                     final _random = new Random();
-                    int rnd = 0 + _random.nextInt(5);
-                    if(rnd==0){
-                      Navigator.push(
-                          context,
-                          MaterialPageRoute(builder: (context) => M_1_1_3rd()));
-                    }else if(rnd==1){
+
                       Navigator.push(
                           context,
                           MaterialPageRoute(builder: (context) => M_1_1_3rd_1()));
-                    }
-
-                    print('appliquer');
                   }),
               )
             ],

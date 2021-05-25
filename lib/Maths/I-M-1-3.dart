@@ -80,18 +80,18 @@ class _I_M_1_3_State extends State<I_M_1_3_> {
                     width: size.width*0.3,
                     left: size.width*0.7,
                     top:size.height*0.57,
-                    child:PinkAvatarIcon(onPressed: null,),
+                    child:SvgPicture.asset('assets/icons/BPink.svg'),
                   ),
                 ),
               if (user.avatar=="Purple")
                 Visibility(
 
                   child: Positioned(
-                    height: size.width*0.35,
-                    width: size.width*0.35,
+                    height: size.width*0.3,
+                    width: size.width*0.3,
                     left: size.width*0.68,
                     top:size.height*0.57,
-                    child:PurpleAvatarIcon(onPressed: null,),
+                    child:SvgPicture.asset('assets/icons/BPurple.svg'),
                   ),
                 ),
               if (user.avatar=="Orange")
@@ -102,7 +102,7 @@ class _I_M_1_3_State extends State<I_M_1_3_> {
                     width: size.width*0.3,
                     left: size.width*0.7,
                     top:size.height*0.57,
-                    child: OrangeAvatarIcon(onPressed: null,),
+                    child: SvgPicture.asset('assets/icons/BOrange.svg'),
                   ),
                 ),
               if (user.avatar=="Blue")
@@ -113,21 +113,16 @@ class _I_M_1_3_State extends State<I_M_1_3_> {
                     width: size.width*0.3,
                     left: size.width*0.7,
                     top:size.height*0.57,
-                    child:BlueAvatarIcon(onPressed: null,),
+                    child:SvgPicture.asset('assets/icons/BBlue.svg'),
                   ),
                 ),
-              Positioned(
-                bottom: size.height*0.3,
-                left: size.width*0.58 ,
-                child: SvgPicture.asset(Stick),
-              ),
 
               Positioned(
                 bottom: size.height*0.05,
                 right: size.width*0.5 ,
                 child: AppliquerButton(onPressed : (){
                   final _random = new Random();
-                  int rnd = 0 + _random.nextInt(5);
+                  int rnd = 0 + _random.nextInt(1);
                   if(rnd==0){
                     Navigator.push(
                         context,

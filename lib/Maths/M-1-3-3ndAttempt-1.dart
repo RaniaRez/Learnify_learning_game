@@ -187,7 +187,7 @@ class _M_1_3_3rd_1State extends State<M_1_3_3rd_1> {
                 left: size.width*0.2,
                 height: size.width*0.6,
                 width: size.width*0.6,
-                child:SvgPicture.asset('assets/icons/bulleAppliquer3-1.svg'),
+                child:SvgPicture.asset('assets/icons/bulleAppliquer3-2.svg'),
               ),
               Visibility(
                 visible: Visible,
