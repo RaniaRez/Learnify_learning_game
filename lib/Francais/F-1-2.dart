@@ -2,26 +2,13 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:somthn/Buttons/BarreProgres.dart';
-import 'package:somthn/Francais/F-1-2.dart';
+import 'package:somthn/Francais/F-1-2-2-FourC.dart';
+import 'package:somthn/Francais/F-1-2-2-OneC.dart';
+import 'package:somthn/Francais/F-1-2-2-TwoC.dart';
 import 'package:somthn/Francais/I-F-1-1.dart';
-import 'package:somthn/Maths/M-1-1-2ndAttempt.dart';
 import 'package:somthn/Maths/M-1-2.dart';
 import 'package:somthn/WelcomePages/Settings.dart';
-import 'package:somthn/Bulles/bulleQuest.dart';
-import 'package:somthn/Buttons/button0.dart';
-import 'package:somthn/Buttons/button1.dart';
-import 'package:somthn/Buttons/button2.dart';
-import 'package:somthn/Buttons/button3.dart';
-import 'package:somthn/Buttons/button4.dart';
-import 'package:somthn/Buttons/button5.dart';
-import 'package:somthn/Buttons/button6.dart';
-import 'package:somthn/Buttons/button7.dart';
-import 'package:somthn/Buttons/button8.dart';
-import 'package:somthn/Buttons/button9.dart';
 import 'package:somthn/Buttons/buttonContinuer.dart';
-import 'package:somthn/Buttons/buttonGoTo.dart';
-import 'package:somthn/Buttons/buttonQ.dart';
-import 'package:somthn/Buttons/buttonReset.dart';
 import 'package:somthn/myicons.dart';
 import '../Buttons/settingsButton.dart';
 import '../Buttons/BacksButton.dart';
@@ -29,18 +16,16 @@ import 'package:somthn/Avatars/OrangeAvatarIcon.dart';
 import 'package:somthn/Avatars/PinkAvatarIcon.dart';
 import 'package:somthn/Avatars/PurpleAvatarIcon.dart';
 import 'package:somthn/Avatars/BlueAvatarIcon.dart';
-import '../WelcomePages/ChooseAvatar.dart';
 import '../Services/Login.dart';
-import '../Services/SignUp.dart';
 
-class F_1_1 extends StatefulWidget {
-  const F_1_1({Key key}) : super(key: key);
+class F_1_2 extends StatefulWidget {
+  const F_1_2({Key key}) : super(key: key);
 
   @override
-  _F_1_1State createState() => _F_1_1State();
+  _F_1_2State createState() => _F_1_2State();
 }
 
-class _F_1_1State extends State<F_1_1> {
+class _F_1_2State extends State<F_1_2> {
   bool Visible = true;
   @override
   Widget build(BuildContext context) {
@@ -81,7 +66,7 @@ class _F_1_1State extends State<F_1_1> {
                 bottom: size.height*0.88,
                 left: size.width*0.275,
                 right: size.width*0.275,
-                child: SvgPicture.asset(EmptyBar),
+                child: BarreProgres(),
               ),
               Visibility(
                 visible: !Visible,
@@ -89,135 +74,99 @@ class _F_1_1State extends State<F_1_1> {
                   bottom: size.height*0.88,
                   left: size.width*0.275,
                   right: size.width*0.275,
-                  child: BarreProgres(),
+                  child: SvgPicture.asset(TwoBars),
                 ),
               ),
+              Positioned(
+                  top: size.height*0.5,
+                  left: size.width*0.2,
+                  height: size.width*0.3,
+                  width: size.width*0.6,
+                  child:SvgPicture.asset('assets/icons/TableauQ1.svg'),
+                ),
               Visibility(
                 visible: Visible,
                 child: Positioned(
-                  top: size.height*0.5,
+                  top: size.height*0.7,
                   left: size.width*0.05,
-                  height: size.width*0.4,
-                  width: size.width*0.4,
-                  child:SvgPicture.asset('assets/icons/table.svg'),
-                ),
-              ),
-              Visibility(
-                visible: Visible,
-                child: Positioned(
-                  top: size.height*0.5,
-                  left: size.width*0.05,
-                  height: size.width*0.4,
+                  height: size.height*0.15,
                   width: size.width*0.4,
                   child: IconButton(
                     onPressed: (){
-                    Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => I_F_1_1()));
-                    print("HELL YEAH");
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => F_1_2_2nd_oneC()));
+                      print('exc');
                     },
-                      icon: Image.asset('images/Sheep.jpg')),
+                      icon: SvgPicture.asset('assets/icons/Exclamative.svg')),
                 ),
               ),
               Visibility(
                 visible: Visible,
                 child: Positioned(
-                  top: size.height*0.5,
+                  top: size.height*0.7,
                   right: size.width*0.05,
-                  height: size.width*0.4,
-                  width: size.width*0.4,
-                  child:SvgPicture.asset('assets/icons/table.svg'),
-                ),
-              ),
-              Visibility(
-                visible: Visible,
-                child: Positioned(
-                  top: size.height*0.5,
-                  right: size.width*0.05,
-                  height: size.width*0.4,
+                  height: size.height*0.15,
                   width: size.width*0.4,
                   child: IconButton(
                       onPressed: (){
                         Navigator.push(
                             context,
-                            MaterialPageRoute(builder: (context) => I_F_1_1()));
-                        print("HELL YEAH");
+                            MaterialPageRoute(builder: (context) => F_1_2_2nd_twoC()));
+                        print('dec');
                       },
-                      icon: Image.asset('images/Cat.jpg')),
+                      icon: SvgPicture.asset('assets/icons/Declarative.svg')),
                 ),
               ),
               Visibility(
                 visible: Visible,
                 child: Positioned(
-                  top: size.height*0.75,
+                  top: size.height*0.8,
                   left: size.width*0.05,
-                  height: size.width*0.4,
+                  height: size.height*0.15,
                   width: size.width*0.4,
-                  child:SvgPicture.asset('assets/icons/table.svg'),
+                  child: IconButton(
+                      onPressed: (){
+                        setState(() {
+                          Visible=false;
+                        });
+                        print('int');
+                      },
+                      icon: SvgPicture.asset('assets/icons/Interrogative.svg')),
                 ),
               ),
               Visibility(
                 visible: Visible,
                 child: Positioned(
-                  top: size.height*0.75,
-                  left: size.width*0.05,
-                  height: size.width*0.4,
+                  top: size.height*0.8,
+                  right: size.width*0.05,
+                  height: size.height*0.15,
                   width: size.width*0.4,
                   child: IconButton(
                       onPressed: (){
                         Navigator.push(
                             context,
-                            MaterialPageRoute(builder: (context) => I_F_1_1()));
-                        print("HELL YEAH");
+                            MaterialPageRoute(builder: (context) => F_1_2_2nd_fourC()));
+                        print('imp');
                       },
-                      icon: Image.asset('images/Cow.jpg')),
+                      icon: SvgPicture.asset('assets/icons/Imperative.svg')),
                 ),
               ),
-              Visibility(
-                visible: Visible,
-                child: Positioned(
-                  top: size.height*0.75,
-                  right: size.width*0.05,
-                  height: size.width*0.4,
-                  width: size.width*0.4,
-                  child:SvgPicture.asset('assets/icons/table.svg'),
-                ),
-              ),
-              Visibility(
-                visible: Visible,
-                child: Positioned(
-                  top: size.height*0.75,
-                  right: size.width*0.05,
-                  height: size.width*0.4,
-                  width: size.width*0.4,
-                  child: IconButton(
-                      onPressed: (){
-                        Navigator.push(
-                            context,
-                            MaterialPageRoute(builder: (context) => I_F_1_1()));
-                        print("HELL YEAH");
-                      },
-                      icon: Image.asset('images/Lion.jpg')),
-                ),
-              ),
-
-
-
               //if (user.avatar=="Pink")
-                Visibility(
-                  visible: Visible,
-                  child: Positioned(
-                    top: size.height*0.36,
-                    left: size.width*0.72,
-                    height: size.width*0.3,
-                    width: size.width*0.3,
-                    child:PinkAvatarIcon(onPressed: (){
-                      setState(() {
-                        Visible=false;
-                      });
-                    },),
-                  ),
+              Visibility(
+                visible: Visible,
+                child: Positioned(
+                  top: size.height*0.36,
+                  left: size.width*0.72,
+                  height: size.width*0.3,
+                  width: size.width*0.3,
+                  child:PinkAvatarIcon(onPressed: (){
+                    setState(() {
+                      Visible=false;
+                    });
+                  },),
                 ),
+              ),
               if (user.avatar=="Purple")
                 Visibility(
                   visible: Visible,
@@ -275,10 +224,11 @@ class _F_1_1State extends State<F_1_1> {
                 left: size.width*0.2,
                 height: size.width*0.6,
                 width: size.width*0.6,
-                child:SvgPicture.asset('assets/icons/F1Q1.svg'),
+                child:SvgPicture.asset('assets/icons/bulleTypePhrase.svg'),
               ),
 
-              
+
+
               Visibility(
                 visible: !Visible,
                 child: Positioned(
@@ -289,7 +239,7 @@ class _F_1_1State extends State<F_1_1> {
                     child: ButtonContinuer(onPressed: (){
                       Navigator.push(
                           context,
-                          new MaterialPageRoute(builder: (context) => new F_1_2()));
+                          new MaterialPageRoute(builder: (context) => new M_1_2()));
                       print('Continuer');
                     },)
                 ),
