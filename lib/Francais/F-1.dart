@@ -1,30 +1,25 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:somthn/Bulles/BullenomIcon.dart';
-import 'package:somthn/Francais/NiveauFr.dart';
-import 'package:somthn/Maths/NiveauMath.dart';
+import 'package:somthn/Avatars/OrangeAvatarIcon.dart';
+import 'package:somthn/Francais/F-1-1.dart';
+import 'package:somthn/Maths/M-1-1.dart';
 import 'package:somthn/WelcomePages/Settings.dart';
-import 'package:somthn/Buttons/buttonCommencerDroit.dart';
+import 'package:somthn/Buttons/buttonGoTo.dart';
+import 'package:somthn/myicons.dart';
 import '../Buttons/settingsButton.dart';
 import '../Buttons/BacksButton.dart';
-import 'package:somthn/Avatars/OrangeAvatarIcon.dart';
 import 'package:somthn/Avatars/PinkAvatarIcon.dart';
 import 'package:somthn/Avatars/PurpleAvatarIcon.dart';
 import 'package:somthn/Avatars/BlueAvatarIcon.dart';
-//import '../WelcomePages/ChooseAvatar.dart';
-import 'package:somthn/TestDeNiveau/TestDeNiveau.dart';
 import '../Services/Login.dart';
-import '../Services/SignUp.dart';
 
 
-
-
-class BienvenueFr extends StatefulWidget {
+class Fr1 extends StatefulWidget {
   @override
-  _BienvenueFrState createState() => _BienvenueFrState();
+  _Fr1State createState() => _Fr1State();
 }
 
-class _BienvenueFrState extends State<BienvenueFr> {
+class _Fr1State extends State<Fr1> {
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
@@ -39,10 +34,9 @@ class _BienvenueFrState extends State<BienvenueFr> {
                 constraints: BoxConstraints.expand(),
                 decoration: BoxDecoration(
                     image: DecorationImage(
-                        image: AssetImage("images/forestbackground.jpg"),
+                        image: AssetImage("images/frBG.jpg"),
                         fit: BoxFit.cover)),
               ),
-
 
               Positioned(
                   top: size.height*0.05,
@@ -62,19 +56,11 @@ class _BienvenueFrState extends State<BienvenueFr> {
                     Navigator.pop(context);
                   },)
               ),
-              Positioned(
-                top: size.height*0.5,
-                right: size.width*0.48,
-                height: size.height*0.55,
-                width: size.width*0.55,
-                child: ButtonCommencerD(onPressed: () {
-                  print('commencer');
-                  Navigator.push(
 
-                      context,
-                      MaterialPageRoute(builder: (context) => NiveauFr()));
-                }
-                ),
+              Positioned(
+                bottom: size.height*0.3,
+                right: size.width*0.47,
+                child: SvgPicture.asset(buttonfacile),
               ),
               if (user.avatar=="Pink")
                 Visibility(
@@ -82,8 +68,8 @@ class _BienvenueFrState extends State<BienvenueFr> {
                   child: Positioned(
                     height: size.width*0.3,
                     width: size.width*0.3,
-                    left: size.width*0.15,
-                    top:size.height*0.61,
+                    left: size.width*0.1,
+                    bottom:size.width*0.7,
                     child:PinkAvatarIcon(onPressed: null,),
                   ),
                 ),
@@ -91,10 +77,11 @@ class _BienvenueFrState extends State<BienvenueFr> {
                 Visibility(
 
                   child: Positioned(
-                    top: size.height*0.6,
-                    right: size.width*0.6 ,
                     height: size.width*0.35,
                     width: size.width*0.35,
+
+                    left: size.width*0.07,
+                    bottom:size.width*0.69,
                     child:PurpleAvatarIcon(onPressed: null,),
                   ),
                 ),
@@ -102,10 +89,10 @@ class _BienvenueFrState extends State<BienvenueFr> {
                 Visibility(
 
                   child: Positioned(
-                    top: size.height*0.61,
-                    right: size.width*0.6 ,
                     height: size.width*0.3,
                     width: size.width*0.3,
+                    left: size.width*0.1,
+                    bottom:size.width*0.7,
                     child: OrangeAvatarIcon(onPressed: null,),
                   ),
                 ),
@@ -113,27 +100,33 @@ class _BienvenueFrState extends State<BienvenueFr> {
                 Visibility(
 
                   child: Positioned(
-                    top: size.height*0.61,
-                    right: size.width*0.6 ,
                     height: size.width*0.3,
-                    width: size.width*0.25,
+                    width: size.width*0.3,
+                    left: size.width*0.1,
+                    bottom:size.width*0.7,
                     child:BlueAvatarIcon(onPressed: null,),
                   ),
                 ),
 
               Positioned(
-                top: size.height*0.05,
-                left: size.width*0.2 ,
-                height: size.height*0.8,
-                width: size.width*0.8,
-                child:SvgPicture.asset('assets/icons/bulleBienvenueFr.svg'),
+                height: size.width*0.7,
+                width: size.width*0.7,
+                left: size.width*0.25,
+                top:size.height*0.2,
+                child:SvgPicture.asset('assets/icons/bulleN1.svg'),
               ),
 
 
-
-
-
-
+              Positioned(
+                top: size.height*0.8,
+                left:size.width*0.75,
+                child: GoToButton(onPressed: (){
+                  print("HELL YEAH");
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => F_1_1()),);
+                },),
+              ),
             ]
         ),
       ),
@@ -141,3 +134,4 @@ class _BienvenueFrState extends State<BienvenueFr> {
 
   }
 }
+
