@@ -2,7 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:somthn/Bulles/BulleN1Q2.dart';
-import 'package:somthn/Bulles/BulleTest.dart';
+//import 'package:somthn/Bulles/BulleTest.dart';
 
 import 'package:somthn/Buttons/BarreGeo.dart';
 import 'package:somthn/Buttons/BarreProgres.dart';
