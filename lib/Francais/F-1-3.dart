@@ -1,15 +1,12 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:somthn/Bulles/BulleN1Q2.dart';
-//import 'package:somthn/Bulles/BulleTest.dart';
-
-import 'package:somthn/Buttons/BarreGeo.dart';
 import 'package:somthn/Buttons/BarreProgres.dart';
+import 'package:somthn/Francais/F-1-2.dart';
+import 'package:somthn/Francais/I-F-1-1.dart';
 import 'package:somthn/Maths/M-1-1-2ndAttempt.dart';
 import 'package:somthn/Maths/M-1-2.dart';
 import 'package:somthn/WelcomePages/Settings.dart';
-import 'package:somthn/Geographie/N1Q4.dart';
 import 'package:somthn/Bulles/bulleQuest.dart';
 import 'package:somthn/Buttons/button0.dart';
 import 'package:somthn/Buttons/button1.dart';
@@ -35,16 +32,17 @@ import 'package:somthn/Avatars/BlueAvatarIcon.dart';
 import '../WelcomePages/ChooseAvatar.dart';
 import '../Services/Login.dart';
 import '../Services/SignUp.dart';
-
-
-class N1Q2 extends StatefulWidget {
-  const N1Q2({Key key}) : super(key: key);
+import 'package:somthn/Francais/F-1-3-2-OneC.dart';
+import 'package:somthn/Francais/F-1-3-2-FourC.dart';
+import 'package:somthn/Francais/F-1-3-2-ThreeC.dart';
+class F_1_3 extends StatefulWidget {
+  const F_1_3({Key key}) : super(key: key);
 
   @override
-  _N1Q2State createState() => _N1Q2State();
+  _F_1_3State createState() => _F_1_3State();
 }
 
-class _N1Q2State extends State<N1Q2> {
+class _F_1_3State extends State<F_1_3> {
   bool Visible = true;
   @override
   Widget build(BuildContext context) {
@@ -60,7 +58,7 @@ class _N1Q2State extends State<N1Q2> {
                 constraints: BoxConstraints.expand(),
                 decoration: BoxDecoration(
                     image: DecorationImage(
-                        image: AssetImage("images/geo_BG.jpg"),
+                        image: AssetImage("images/frBG.jpg"),
                         fit: BoxFit.cover)),
               ),
               Positioned(
@@ -85,7 +83,7 @@ class _N1Q2State extends State<N1Q2> {
                 bottom: size.height*0.88,
                 left: size.width*0.275,
                 right: size.width*0.275,
-                child: SvgPicture.asset(EmptyBar),
+                child: SvgPicture.asset(TwoBars),
               ),
               Visibility(
                 visible: !Visible,
@@ -93,110 +91,163 @@ class _N1Q2State extends State<N1Q2> {
                   bottom: size.height*0.88,
                   left: size.width*0.275,
                   right: size.width*0.275,
-                  child: BarreProgres(),
+                  child: SvgPicture.asset(ThreeBars),
                 ),
               ),
               Visibility(
                 visible: Visible,
                 child: Positioned(
-                  top: size.height*0.9,
-                  left: size.width*0.75,
-                  child: GoToButton(onPressed: (){
-                    setState(() {
-                      if (false){
-                        Visible = false;
-                        print('Correct');
-                      }else{
-                        Navigator.push(
-                            context,
-                            MaterialPageRoute(builder: (context) => N1Q4()));
-                        print('test');
-                      }
-                    });
-                    print("HELL YEAH");
-
-                  },),
+                  top: size.height*0.2,
+                  left: size.width*0.27,
+                  height: size.width*0.5,
+                  width: size.width*0.5,
+                  child:SvgPicture.asset('assets/icons/table.svg'),
                 ),
               ),
-              if (user.avatar=="Pink")
-                Visibility(
-                  visible: Visible,
-                  child: Positioned(
-                    top: size.height*0.5,
-                    left: size.width*0.72,
-                    height: size.width*0.3,
-                    width: size.width*0.3,
-                    child:PinkAvatarIcon(onPressed: null,),
-                  ),
+              Visibility(
+                visible: Visible,
+                child: Positioned(
+                  top: size.height*0.22,
+                  left: size.width*0.3,
+                  height: size.width*0.43,
+                  width: size.width*0.43,
+                  child: Image.asset('images/Canard.jpg')),
                 ),
-              if (user.avatar=="Purple")
+              Visibility(
+                visible: Visible,
+                child: Positioned(
+                  top: size.height*0.58,
+                  left: size.width*0.05,
+                  height: size.width*0.4,
+                  width: size.width*0.4,
+                  child: IconButton(
+                      onPressed: (){
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(builder: (context) => F_1_3_2nd_OneC()));
+                        print("HELL YEAH");
+                      },
+                      icon: SvgPicture.asset('assets/icons/Canar.svg')),
+                ),
+              ),
+              Visibility(
+                visible: Visible,
+                child: Positioned(
+                  top: size.height*0.58,
+                  right: size.width*0.05,
+                  height: size.width*0.4,
+                  width: size.width*0.4,
+                  child: IconButton(
+                      onPressed: (){
+                        setState(() {
+                        Visible=false;
+                      });
+                        },
+                       icon: SvgPicture.asset('assets/icons/Canard.svg')),
+                ),
+              ),
+              Visibility(
+                visible: Visible,
+                child: Positioned(
+                  top: size.height*0.75,
+                  left: size.width*0.05,
+                  height: size.width*0.4,
+                  width: size.width*0.4,
+                  child: IconButton(
+                      onPressed: (){
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(builder: (context) =>F_1_3_2nd_threeC()));
+                        print("HELL YEAH");
+                      },
+                      icon:SvgPicture.asset('assets/icons/Cannar.svg')),
+                ),
+              ),
+              Visibility(
+                visible: Visible,
+                child: Positioned(
+                  top: size.height*0.75,
+                  right: size.width*0.05,
+                  height: size.width*0.4,
+                  width: size.width*0.4,
+                  child: IconButton(
+                      onPressed: (){
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(builder: (context) =>F_1_3_2nd_fourC()));
+                        print("HELL YEAH");
+                      },
+                      icon: SvgPicture.asset('assets/icons/UnCanar.svg')),
+                ),
+              ),
+
+
+
+
+              Visibility(
+                visible: Visible,
+                child: Positioned(
+                  top: size.height*0.36,
+                  left: size.width*0.72,
+                  height: size.width*0.3,
+                  width: size.width*0.3,
+                  child:PinkAvatarIcon(onPressed: null,),
+                ),
+                ),
+                  if (user.avatar=="Purple")
                 Visibility(
                   visible: Visible,
                   child: Positioned(
-                    top: size.height*0.49,
+                    top: size.height*0.35,
                     left: size.width*0.69,
                     height: size.width*0.35,
                     width: size.width*0.35,
-                    child:PurpleAvatarIcon(onPressed: null,),
+                    child:PurpleAvatarIcon(onPressed: null),
                   ),
                 ),
               if (user.avatar=="Orange")
                 Visibility(
                   visible: Visible,
                   child: Positioned(
-                    top: size.height*0.5,
+                    top: size.height*0.365,
                     left: size.width*0.72,
                     height: size.width*0.3,
                     width: size.width*0.3,
-                    child: OrangeAvatarIcon(onPressed: null,),
+                    child: OrangeAvatarIcon(onPressed: null,)
+
+
+                    ),
                   ),
-                ),
               if (user.avatar=="Blue")
                 Visibility(
                   visible: Visible,
                   child: Positioned(
-                    top: size.height*0.5,
+                    top: size.height*0.36,
                     left: size.width*0.72,
                     height: size.width*0.3,
                     width: size.width*0.3,
-                    child:BlueAvatarIcon(onPressed: null,),
-                  ),
-                ),
+                    child:BlueAvatarIcon(onPressed:null,),
 
-              Positioned(
-                top: size.height*0.2,
-                left: size.width*0.1,
-                height: size.height*0.35,
-                width: size.width*0.7,
-                child:BulleN1Q2(),
-                //child: BulleTest1(),
-              ),
+                    ),
+                  ),
+
+
+
               Visibility(
-                visible: Visible,
+                visible: !Visible,
                 child: Positioned(
-                  top: size.height*0.61,
-                  right: size.width*0.77,
-                  child: ButtonReset(
-                      onPressed: () {
-                        setState(() {
-
-                        });
-                        print('reset');
-                      }
-                  ),
+                    top: size.height*0.8,
+                    left: 0.0,
+                    height: size.height*0.2,
+                    width: size.width*0.5,
+                    child: ButtonContinuer(onPressed: (){
+                      Navigator.push(
+                          context,
+                          new MaterialPageRoute(builder: (context) => new F_1_2()));
+                      print('Continuer');
+                    },)
                 ),
               ),
-              Positioned(
-                  top: size.height*0.5,
-                  left: size.width*0.05,
-                  height: size.width*0.9,
-                  width: size.width*0.9,
-                  child: BarreGeo(onPressed: null,)
-              ),
-
-
-
-
               if (user.avatar=="Pink")
                 Visibility(
                   visible: !Visible,
@@ -255,4 +306,5 @@ class _N1Q2State extends State<N1Q2> {
           ),
         ));
   }
+
 }
