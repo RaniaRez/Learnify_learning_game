@@ -119,7 +119,9 @@ class _M_1_5_2ndState extends State<M_1_5_2nd> {
                   left: size.width*0.75,
                   child: GoToButton(onPressed: (){
                     setState(() {
-                      if ((eightU) && (fiveD)){
+                      if(!all){
+
+                      }else if ((eightU) && (fiveD)){
                         Visible = false;
                         print('Correct');
                       }else{
