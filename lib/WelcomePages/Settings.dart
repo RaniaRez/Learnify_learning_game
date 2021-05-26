@@ -1,5 +1,6 @@
 
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:somthn/Buttons/HomeButton.dart';
 import 'package:somthn/Buttons/buttonInfo.dart';
 import 'package:somthn/Buttons/buttonMusic.dart';
@@ -47,9 +48,9 @@ class _SettingsState extends State<Settings> {
                   child:UserSettingsButton(onPressed:null,)
               ),
               Positioned(
-                  top: size.height*0.7,
-                  right:size.width*0.61,
-                  child:UserSettingsButton(onPressed:null,)
+                  top: size.height*0.715,
+                  right:size.width*0.65,
+                  child:SvgPicture.asset('assets/icons/buttonExit.svg'),
               ),
               Positioned(
                   top: size.height*0.047,
