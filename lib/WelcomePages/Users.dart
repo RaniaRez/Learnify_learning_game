@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:somthn/Buttons/SinscrireButton.dart';
 import 'package:somthn/Buttons/seConnecterButton.dart';
+import 'package:somthn/Services/auth.dart';
 import 'package:somthn/WelcomePages/ChoixDomaines.dart';
 import 'package:somthn/Buttons/ClassementButton.dart';
 import 'package:somthn/WelcomePages/ChooseAvatar.dart';
@@ -14,6 +15,7 @@ import '../Buttons/buttonGoTo.dart';
 import '../Buttons/buttonStatistique.dart';
 import '../Buttons/buttonUserSettings.dart';
 //for backend
+import 'package:cloud_firestore/cloud_firestore.dart';
 //import '../Services/auth.dart';
 import '../Services/Login.dart';
 import '../Services/SignUp.dart';
@@ -96,12 +98,16 @@ class _UsersState extends State<Users> {
                   left: size.width*0.2,
                   height: size.height*0.3,
                   width: size.width*0.6,
-                  child: ButtonSeConnecter(onPressed: () async{
+                  child: ButtonSeConnecter(onPressed: () async {
                     show();
                     print('connect');
                     await googleLogin();
                     print("khraconnecter");
                     print(user.uid);
+                    /*DocumentReference q = await Firestore.instance.collection('users').document(user.uid);*/
+
+                    /*Firestore.instance.collection('users').where(firestore.FieldPath.documentId(),'==',user.uid);*/
+
 
 
                   })),
@@ -149,7 +155,12 @@ class _UsersState extends State<Users> {
                 top: size.height*0.8,
                 right:size.width*0.75,
                 child: Visibility(
-                  child: StatistiqueButton(onPressed: null,),
+                  child: StatistiqueButton(onPressed:() async {
+                    try {
+                    await signOutGoogle();
+                    print("you signed out ");}
+                    catch(e) { print ("error ");}
+                  }),
                   visible: _isVisible,
                 ),
               ),
