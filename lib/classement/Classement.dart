@@ -290,11 +290,7 @@ class _ClassementState extends State<Classement> {
                       ),
                     ),
                   ),
-
                 ),
-
-
-
            ],
           ),
         ),
