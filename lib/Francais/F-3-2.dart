@@ -2,15 +2,12 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:somthn/Buttons/BarreProgres.dart';
-import 'package:somthn/Francais/F-1-2-2-FourC.dart';
-import 'package:somthn/Francais/F-1-2-2-OneC.dart';
-import 'package:somthn/Francais/F-1-2-2-TwoC.dart';
-import 'package:somthn/Francais/F-2-3-2nd-FourC.dart';
-import 'package:somthn/Francais/F-2-3-2nd-OneC.dart';
-import 'package:somthn/Francais/F-2-3-2nd-TwoC.dart';
 import 'package:somthn/Francais/F-3-1-2nd-Four.dart';
 import 'package:somthn/Francais/F-3-1-2nd-One.dart';
 import 'package:somthn/Francais/F-3-1-2nd-Two.dart';
+import 'package:somthn/Francais/F-3-2-2ndFour.dart';
+import 'package:somthn/Francais/F-3-2-2ndOne.dart';
+import 'package:somthn/Francais/F-3-2-2ndTwo.dart';
 import 'package:somthn/Maths/M-1-2.dart';
 import 'package:somthn/WelcomePages/Settings.dart';
 import 'package:somthn/Buttons/buttonContinuer.dart';
@@ -23,14 +20,14 @@ import 'package:somthn/Avatars/PurpleAvatarIcon.dart';
 import 'package:somthn/Avatars/BlueAvatarIcon.dart';
 import '../Services/Login.dart';
 
-class F_3_1 extends StatefulWidget {
-  const F_3_1({Key key}) : super(key: key);
+class F_3_2 extends StatefulWidget {
+  const F_3_2({Key key}) : super(key: key);
 
   @override
-  _F_3_1State createState() => _F_3_1State();
+  _F_3_2State createState() => _F_3_2State();
 }
 
-class _F_3_1State extends State<F_3_1> {
+class _F_3_2State extends State<F_3_2> {
   bool Visible = true;
   @override
   Widget build(BuildContext context) {
@@ -71,7 +68,7 @@ class _F_3_1State extends State<F_3_1> {
                 bottom: size.height*0.88,
                 left: size.width*0.275,
                 right: size.width*0.275,
-                child: SvgPicture.asset(EmptyBar),
+                child: BarreProgres(),
               ),
               Visibility(
                 visible: !Visible,
@@ -79,15 +76,15 @@ class _F_3_1State extends State<F_3_1> {
                   bottom: size.height*0.88,
                   left: size.width*0.275,
                   right: size.width*0.275,
-                  child: BarreProgres(),
+                  child: SvgPicture.asset(TwoBars),
                 ),
               ),
               Positioned(
                 top: size.height*0.5,
                 left: size.width*0.2,
-                height: size.width*0.3,
+                height: size.width*0.4,
                 width: size.width*0.6,
-                child:SvgPicture.asset('assets/icons/F3Q1.svg'),
+                child:SvgPicture.asset('assets/icons/F3T2.svg'),
               ),
               Visibility(
                 visible: Visible,
@@ -100,10 +97,10 @@ class _F_3_1State extends State<F_3_1> {
                       onPressed: (){
                         Navigator.push(
                             context,
-                            MaterialPageRoute(builder: (context) => F_3_1_2nd_One()));
+                            MaterialPageRoute(builder: (context) => F_3_2_2nd_One()));
                         print('exc');
                       },
-                      icon: SvgPicture.asset('assets/icons/OntButton.svg')),
+                      icon: SvgPicture.asset('assets/icons/mes.svg')),
                 ),
               ),
               Visibility(
@@ -117,10 +114,10 @@ class _F_3_1State extends State<F_3_1> {
                       onPressed: (){
                         Navigator.push(
                             context,
-                            MaterialPageRoute(builder: (context) => F_3_1_2nd_Two()));
+                            MaterialPageRoute(builder: (context) => F_3_2_2nd_Two()));
                         print('dec');
                       },
-                      icon: SvgPicture.asset('assets/icons/OnsButton.svg')),
+                      icon: SvgPicture.asset('assets/icons/mai.svg')),
                 ),
               ),
               Visibility(
@@ -137,7 +134,7 @@ class _F_3_1State extends State<F_3_1> {
                         });
                         print('int');
                       },
-                      icon: SvgPicture.asset('assets/icons/OnButton.svg')),
+                      icon: SvgPicture.asset('assets/icons/mais.svg')),
                 ),
               ),
               Visibility(
@@ -151,10 +148,10 @@ class _F_3_1State extends State<F_3_1> {
                       onPressed: (){
                         Navigator.push(
                             context,
-                            MaterialPageRoute(builder: (context) => F_3_1_2nd_Four()));
+                            MaterialPageRoute(builder: (context) => F_3_2_2nd_Four()));
                         print('imp');
                       },
-                      icon: SvgPicture.asset('assets/icons/EnButton.svg')),
+                      icon: SvgPicture.asset('assets/icons/mets.svg')),
                 ),
               ),
               //if (user.avatar=="Pink")
