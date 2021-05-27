@@ -3,6 +3,7 @@ class User {
  bool New =true;
  String username;
  String avatar;
+ int score;
  //String Password;
 
  User({this.uid});

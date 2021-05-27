@@ -15,7 +15,7 @@ import '../Owls/PinkOwlIcon.dart';
 import '../Owls/BlueOwlIcon.dart';
 import '../Owls/OrangeOwlIcon.dart';
 //import 'Entrernom.dart';
-import '../WelcomePages/Userinfo.dart';
+import 'Userinfo.dart';
 import '../Services/Login.dart';
 //import '../Services/SignUp.dart';
 

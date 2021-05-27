@@ -7,7 +7,7 @@ import 'package:somthn/Buttons/ClassementButton.dart';
 import 'package:somthn/WelcomePages/ChooseAvatar.dart';
 import 'package:somthn/classement/Classement.dart';
 import 'package:somthn/WelcomePages/Settings.dart';
-import 'package:somthn/WelcomePages/Userinfo.dart';
+import 'package:somthn/modification/Userinfo.dart';
 import '../Buttons/settingsButton.dart';
 import '../Buttons/BacksButton.dart';
 import 'ClassUser.dart';

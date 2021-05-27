@@ -8,7 +8,7 @@ import 'package:somthn/Avatars/PinkAvatarIcon.dart';
 import 'package:somthn/Avatars/PurpleAvatarIcon.dart';
 import 'package:somthn/Buttons/buttonNom.dart';
 import 'package:somthn/WelcomePages/AllSet.dart';
-import 'package:somthn/WelcomePages/Userinfo.dart';
+import 'package:somthn/modification/Userinfo.dart';
 import '../Buttons/settingsButton.dart';
 import '../Buttons/BacksButton.dart';
 import '../Buttons/buttonGoTo.dart';
@@ -240,7 +240,7 @@ class _EntrernomState extends State<Entrernom> {
                                 print("username");
                                 print(user.username);
                                 print("printed");
-                                DatabaseService(uid: user.uid).updateUserData(false,user.username,user.avatar, 10);
+                                DatabaseService(uid: user.uid).updateUserData(user.username,user.avatar, 10);
 
                               });
                             }

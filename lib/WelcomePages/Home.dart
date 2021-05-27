@@ -62,6 +62,9 @@ class _HomeState extends State<Home> {
                     print(user.uid);
                     var d=await Firestore.instance.collection('users').document(user.uid).get();
                     if (d.exists ){
+                      user.username=d.data["name"];
+                      user.avatar=d.data["avatar"];
+                      user.score=d.data["score"];
                       print("user exists");
                       Navigator.push(
                           context,
