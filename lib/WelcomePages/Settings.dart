@@ -1,13 +1,18 @@
 
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
+//import 'package:flutter_svg/svg.dart';
 import 'package:somthn/Buttons/HomeButton.dart';
 import 'package:somthn/Buttons/buttonInfo.dart';
 import 'package:somthn/Buttons/buttonMusic.dart';
 import 'package:somthn/Buttons/buttonSound.dart';
 import 'package:somthn/Buttons/buttonUserSettings.dart';
+//import 'package:somthn/myicons.dart';
 import '../Buttons/BacksButton.dart';
+import '../Buttons/butttonExit.dart';
+
 import 'Home.dart';
+
+import '../Services/auth.dart';
 
 class Settings extends StatefulWidget {
   @override
@@ -50,7 +55,13 @@ class _SettingsState extends State<Settings> {
               Positioned(
                   top: size.height*0.715,
                   right:size.width*0.65,
-                  child:SvgPicture.asset('assets/icons/buttonExit.svg'),
+                  child: ButtonExit(onPressed:() {
+                    try {
+                      signOutGoogle();
+                      print("you signed out ");}
+                    catch(e) { print ("error ");}
+                  }
+                  ),
               ),
               Positioned(
                   top: size.height*0.047,

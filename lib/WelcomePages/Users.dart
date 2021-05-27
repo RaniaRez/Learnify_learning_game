@@ -155,12 +155,7 @@ class _UsersState extends State<Users> {
                 top: size.height*0.8,
                 right:size.width*0.75,
                 child: Visibility(
-                  child: StatistiqueButton(onPressed:() async {
-                    try {
-                    await signOutGoogle();
-                    print("you signed out ");}
-                    catch(e) { print ("error ");}
-                  }),
+                  child: StatistiqueButton(onPressed:()  {}),
                   visible: _isVisible,
                 ),
               ),
