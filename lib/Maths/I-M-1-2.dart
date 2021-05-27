@@ -1,16 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:somthn/Maths/M-1-1-3rdAttempt-1.dart';
-import 'package:somthn/Maths/M-1-1-3rdAttempt-2.dart';
-import 'package:somthn/Maths/M-1-1-3rdAttempt-3.dart';
-import 'package:somthn/Maths/M-1-1-3rdAttempt-4.dart';
 import 'dart:math';
-import 'package:somthn/Maths/M-1-1-3rdAttempt.dart';
 import 'package:somthn/Maths/M-1-2-3rdAttempt-1.dart';
-import 'package:somthn/Maths/M-1-2-3rdAttempt-2.dart';
-import 'package:somthn/Maths/M-1-2-3rdAttempt-3.dart';
-import 'package:somthn/Maths/M-1-2-3rdAttempt-4.dart';
-import 'package:somthn/Maths/M-1-2-3rdAttempt.dart';
+
 import 'package:somthn/WelcomePages/Settings.dart';
 import 'package:somthn/myicons.dart';
 import '../Buttons/BarreProgres.dart';
@@ -80,7 +73,7 @@ class _I_M_1_2_State extends State<I_M_1_2_> {
                   left: size.width*0.2 ,
                   height: size.height*0.6,
                   width: size.width*0.6,
-                  child: SvgPicture.asset(EmptyTable)),
+                  child: SvgPicture.asset('assets/icons/I-M-1-2.svg')),
               if (user.avatar=="Pink")
                 Visibility(
 
@@ -89,18 +82,18 @@ class _I_M_1_2_State extends State<I_M_1_2_> {
                     width: size.width*0.3,
                     left: size.width*0.7,
                     top:size.height*0.57,
-                    child:PinkAvatarIcon(onPressed: null,),
+                    child:SvgPicture.asset('assets/icons/BPink.svg'),
                   ),
                 ),
               if (user.avatar=="Purple")
                 Visibility(
 
                   child: Positioned(
-                    height: size.width*0.35,
-                    width: size.width*0.35,
+                    height: size.width*0.3,
+                    width: size.width*0.3,
                     left: size.width*0.68,
                     top:size.height*0.57,
-                    child:PurpleAvatarIcon(onPressed: null,),
+                    child:SvgPicture.asset('assets/icons/BPurple.svg'),
                   ),
                 ),
               if (user.avatar=="Orange")
@@ -111,7 +104,7 @@ class _I_M_1_2_State extends State<I_M_1_2_> {
                     width: size.width*0.3,
                     left: size.width*0.7,
                     top:size.height*0.57,
-                    child: OrangeAvatarIcon(onPressed: null,),
+                    child: SvgPicture.asset('assets/icons/BOrange.svg'),
                   ),
                 ),
               if (user.avatar=="Blue")
@@ -122,60 +115,17 @@ class _I_M_1_2_State extends State<I_M_1_2_> {
                     width: size.width*0.3,
                     left: size.width*0.7,
                     top:size.height*0.57,
-                    child:BlueAvatarIcon(onPressed: null,),
+                    child:SvgPicture.asset('assets/icons/BBlue.svg'),
                   ),
                 ),
-              Positioned(
-                bottom: size.height*0.3,
-                left: size.width*0.58 ,
-                child: SvgPicture.asset(Stick),
-              ),
-              Positioned(
-                top: size.height*0.3,
-                left: size.width*0.23 ,
-                  child: FittedBox(
-                    fit: BoxFit.fitWidth,
-                    child: Text(
-                      'Observe :\nsomme de \n deux nombres :\n 28+13=20+8+10+3\n=30+11\n=41',
-                      style:TextStyle(
-                        fontSize: 25,
-                        fontFamily: 'Skranji-Bold',
-                        fontWeight: FontWeight.bold,
-                        color:Colors.brown[700],
-                      ),
-                      textAlign: TextAlign.center,
-                    ),
-                  ),
-
-              ),
               Positioned(
                 bottom: size.height*0.05,
                 right: size.width*0.5 ,
                 child: AppliquerButton(onPressed : (){
-                  final _random = new Random();
-                  int rnd = 0 + _random.nextInt(5);
-                  if(rnd==0){
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(builder: (context) => M_1_2_3rd()));
-                  }else if(rnd==1){
+
                     Navigator.push(
                         context,
                         MaterialPageRoute(builder: (context) => M_1_2_3rd_1()));
-                  }else if (rnd==2){
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(builder: (context) => M_1_2_3rd_2()));
-                  }else if(rnd == 3){
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(builder: (context) => M_1_2_3rd_3()));
-                  }else{
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(builder: (context) => M_1_2_3rd_4()));
-                  }
-
                   print('appliquer');
                 }),
               )

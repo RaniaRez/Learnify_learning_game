@@ -138,26 +138,9 @@ class _M_2_4_3rd_State extends State<M_2_4_3rd_> {
                 left: size.width*0.2,
                 height: size.width*0.6,
                 width: size.width*0.6,
-                child:BulleQuest(),
+                child:SvgPicture.asset('assets/icons/M-2-Q-4-3.svg'),
               ),
-              Positioned(
-                top: size.height*0.32,
-                left: size.width*0.36,
-                child: FittedBox(
-                  fit: BoxFit.fitWidth,
-                  child: Text(
-                    '195/5 ?',
-                    style:TextStyle(
-                      fontSize: 25,
-                      fontFamily: 'Skranji-Bold',
-                      fontWeight: FontWeight.bold,
-                      color:Colors.brown[700],
-                    ),
-                    textAlign: TextAlign.center,
-                  ),
-                ),
 
-              ),
               Visibility(
                 visible:!Visible,
                 child: Positioned(
@@ -365,6 +348,20 @@ class _M_2_4_3rd_State extends State<M_2_4_3rd_> {
                       ),
                     ),
                   ),
+                ),
+              ),
+              Visibility(
+                visible: !Visible,
+                child: Positioned(
+                    top: size.height*0.8,
+                    left: 0.0,
+                    height: size.height*0.2,
+                    width: size.width*0.5,
+                    child: ButtonContinuer(onPressed: (){
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => M_2_5()));
+                      print('Continuer');},)
                 ),
               ),
               if (correct)
@@ -579,20 +576,7 @@ class _M_2_4_3rd_State extends State<M_2_4_3rd_> {
                         icon: SvgPicture.asset(quotes))
                 ),
               ),
-              Visibility(
-                visible: !Visible,
-                child: Positioned(
-                    top: size.height*0.8,
-                    left: 0.0,
-                    height: size.height*0.2,
-                    width: size.width*0.5,
-                    child: ButtonContinuer(onPressed: (){
-                      Navigator.push(
-                          context,
-                          MaterialPageRoute(builder: (context) => M_2_5()));
-                      print('Continuer');},)
-                ),
-              ),
+
             ],
           ),
 

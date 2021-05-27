@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:somthn/Bulles/BullenomIcon.dart';
+import 'package:somthn/Francais/NiveauFr.dart';
+import 'package:somthn/Maths/NiveauMath.dart';
 import 'package:somthn/WelcomePages/Settings.dart';
 import 'package:somthn/Buttons/buttonCommencerDroit.dart';
 import '../Buttons/settingsButton.dart';
@@ -24,126 +27,117 @@ class BienvenueFr extends StatefulWidget {
 class _BienvenueFrState extends State<BienvenueFr> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body:
-      Stack(
-          children: <Widget>[
-            Container(
-              constraints: BoxConstraints.expand(),
-              decoration: BoxDecoration(
-                  image: DecorationImage(
-                      image: AssetImage("images/forestbackground.jpg"),
-                      fit: BoxFit.cover)),
-            ),
+    Size size = MediaQuery.of(context).size;
+    return Container(
+      height: size.height,
+      width: size.width,
+      child: Scaffold(
+        body:
+        Stack(
+            children: <Widget>[
+              Container(
+                constraints: BoxConstraints.expand(),
+                decoration: BoxDecoration(
+                    image: DecorationImage(
+                        image: AssetImage("images/forestbackground.jpg"),
+                        fit: BoxFit.cover)),
+              ),
 
-            Positioned(
-                top: 50.00,
-                left: 300.00,
-                child:
-                SettingsButton(onPressed: (){
+
+              Positioned(
+                  top: size.height*0.05,
+                  left:size.width*0.75,
+                  child:
+                  SettingsButton(onPressed: (){
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => Settings()));
+                    print("HELL YEAH");
+                  },)
+              ),
+              Positioned(
+                  top: size.height*0.05,
+                  right:size.width*0.75,
+                  child: BacksButton(onPressed: (){
+                    Navigator.pop(context);
+                  },)
+              ),
+              Positioned(
+                top: size.height*0.5,
+                right: size.width*0.48,
+                height: size.height*0.55,
+                width: size.width*0.55,
+                child: ButtonCommencerD(onPressed: () {
+                  print('commencer');
                   Navigator.push(
+
                       context,
-                      MaterialPageRoute(builder: (context) => Settings()));
-                  print("HELL YEAH");
-                },)
-            ),
-            Positioned(
-                top: 10.00,
-                right: 250.00,
-                child: BacksButton(onPressed: (){
-                  Navigator.pop(context);
-                },)
-            ),
-            Positioned(
-              bottom: 50.0,
-              child: ButtonCommencerD(onPressed: () {
-                Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => TestNiveau()));
-              }
-              ),
-            ),
-            if (user.avatar=="Pink")
-              Visibility(
-
-                child: Positioned(
-                  top: 565.0,
-                  right: 270.0 ,
-                  height: 130.0,
-                  width: 130.0,
-                  child:PinkAvatarIcon(onPressed: null,),
+                      MaterialPageRoute(builder: (context) => NiveauFr()));
+                }
                 ),
               ),
-            if (user.avatar=="Purple")
-              Visibility(
+              if (user.avatar=="Pink")
+                Visibility(
 
-                child: Positioned(
-                  top: 555.0,
-                  right: 270.0 ,
-                  height: 150.0,
-                  width: 150.0,
-                  child:PurpleAvatarIcon(onPressed: null,),
-                ),
-              ),
-            if (user.avatar=="Orange")
-              Visibility(
-
-                child: Positioned(
-                  top: 565.0,
-                  right: 270.0 ,
-                  height: 130.0,
-                  width: 130.0,
-                  child: OrangeAvatarIcon(onPressed: null,),
-                ),
-              ),
-            if (user.avatar=="Blue")
-              Visibility(
-
-                child: Positioned(
-                  top: 560.0,
-                  right: 270.0 ,
-                  height: 130.0,
-                  width: 130.0,
-                  child:BlueAvatarIcon(onPressed: null,),
-                ),
-              ),
-
-
-            Positioned(
-              top: 170.0,
-              left: 100.0 ,
-              height: 300.0,
-              width: 300.0,
-              child:BullenomIcon(),
-            ),
-            Positioned(
-              top : 270,
-              left: 145.5,
-              right: 70.5,
-              bottom: 10.0,
-              child: SizedBox(
-                height: 10,
-                width: 10,
-                child: Text(
-                  'Bienvenue en Français  ',
-                  style: TextStyle(
-                    fontFamily: 'Skranji-bold',
-                    fontSize: 30,
-                    color: Colors.brown,
-                    fontWeight: FontWeight.bold,
-
+                  child: Positioned(
+                    height: size.width*0.3,
+                    width: size.width*0.3,
+                    left: size.width*0.15,
+                    top:size.height*0.61,
+                    child:PinkAvatarIcon(onPressed: null,),
                   ),
-                  textAlign: TextAlign.center,
                 ),
+              if (user.avatar=="Purple")
+                Visibility(
+
+                  child: Positioned(
+                    top: size.height*0.6,
+                    right: size.width*0.6 ,
+                    height: size.width*0.35,
+                    width: size.width*0.35,
+                    child:PurpleAvatarIcon(onPressed: null,),
+                  ),
+                ),
+              if (user.avatar=="Orange")
+                Visibility(
+
+                  child: Positioned(
+                    top: size.height*0.61,
+                    right: size.width*0.6 ,
+                    height: size.width*0.3,
+                    width: size.width*0.3,
+                    child: OrangeAvatarIcon(onPressed: null,),
+                  ),
+                ),
+              if (user.avatar=="Blue")
+                Visibility(
+
+                  child: Positioned(
+                    top: size.height*0.61,
+                    right: size.width*0.6 ,
+                    height: size.width*0.3,
+                    width: size.width*0.25,
+                    child:BlueAvatarIcon(onPressed: null,),
+                  ),
+                ),
+
+              Positioned(
+                top: size.height*0.05,
+                left: size.width*0.2 ,
+                height: size.height*0.8,
+                width: size.width*0.8,
+                child:SvgPicture.asset('assets/icons/bulleBienvenueFr.svg'),
               ),
-            ),
 
 
 
-          ]
+
+
+
+            ]
+        ),
       ),
     );
 
   }
 }
-

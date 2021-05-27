@@ -119,7 +119,9 @@ class _M_1_1_3rd_1State extends State<M_1_1_3rd_1> {
                   left: size.width*0.75,
                   child: GoToButton(onPressed: (){
                     setState(() {
-                      if ((zeroU) && (sevenD)){
+                      if(!all){
+
+                      }else if ((zeroU) && (sevenD)){
                         Visible = false;
                         correct = true;
                         print('Correct');
@@ -183,28 +185,11 @@ class _M_1_1_3rd_1State extends State<M_1_1_3rd_1> {
                 left: size.width*0.2,
                 height: size.width*0.6,
                 width: size.width*0.6,
-                child:BulleQuest(),
+                child:SvgPicture.asset('assets/icons/bulleAppliquer1-1.svg'),
               ),
 
 
-              Positioned(
-                top: size.height*0.31,
-                left: size.width*0.27,
-                child: FittedBox(
-                  fit: BoxFit.fitWidth,
-                  child: Text(
-                    '15+55 = ?',
-                    style:TextStyle(
-                      fontSize: 25,
-                      fontFamily: 'Skranji-Bold',
-                      fontWeight: FontWeight.bold,
-                      color:Colors.brown[700],
-                    ),
-                    textAlign: TextAlign.center,
-                  ),
-                ),
 
-              ),
               Visibility(
                 visible: Visible,
                 child: Positioned(

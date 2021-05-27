@@ -1,3 +1,4 @@
+const BulleBienvenueGeo = 'assets/icons/BulleBienvenueGeo.svg';
 const CercleGris = 'assets/icons/Silver.svg';
 const CercleGold = 'assets/icons/Gold.svg';
 const CercleMarron = 'assets/icons/Bronze.svg';

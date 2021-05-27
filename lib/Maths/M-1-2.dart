@@ -120,7 +120,9 @@ class _M_1_2State extends State<M_1_2> {
                   left: size.width*0.75,
                   child: GoToButton(onPressed: (){
                     setState(() {
-                      if ((oneU) && (fourD)){
+                      if(!all){
+
+                      }else if ((oneU) && (fourD)){
                         Visible = false;
                         print('Correct');
                       }else{
@@ -184,27 +186,8 @@ class _M_1_2State extends State<M_1_2> {
                 left: size.width*0.2,
                 height: size.width*0.6,
                 width: size.width*0.6,
-                child:BulleQuest(),
-              ),
-
-              Positioned(
-                top: size.height*0.34,
-                left: size.width*0.34,
-                child: FittedBox(
-                  fit: BoxFit.fitWidth,
-                  child: Text(
-                    '28+13 = ?',
-                    style:TextStyle(
-                      fontSize: 25,
-                      fontFamily: 'Skranji-Bold',
-                      fontWeight: FontWeight.bold,
-                      color:Colors.brown[700],
-                    ),
-                    textAlign: TextAlign.center,
-                  ),
-                ),
-
-              ),
+                child:SvgPicture.asset('assets/icons/M-1-Q-2.svg'),
+       ),
               Visibility(
                 visible: Visible,
                 child: Positioned(

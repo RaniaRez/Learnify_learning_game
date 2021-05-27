@@ -1,9 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:somthn/Maths/M-1-5-3rdAttempt-1.dart';
-import 'package:somthn/Maths/M-1-5-3rdAttempt-2.dart';
-import 'package:somthn/Maths/M-1-5-3rdAttempt-3.dart';
-import 'package:somthn/Maths/M-1-5-3rdAttempt-4.dart';
 import 'package:somthn/Maths/M-1-5-3rdAttempt.dart';
 import 'package:somthn/Maths/M-2-4-3rdAttempt.dart';
 import 'dart:math';
@@ -17,10 +14,6 @@ import 'package:somthn/Avatars/PurpleAvatarIcon.dart';
 import 'package:somthn/Avatars/BlueAvatarIcon.dart';
 //import '../WelcomePages/ChooseAvatar.dart';
 import 'package:somthn/Buttons/buttonAppliquer.dart';
-import 'package:somthn/Maths/M-1-4-3rdAttempt-1.dart';
-import 'package:somthn/Maths/M-1-4-3rdAttempt-2.dart';
-import 'package:somthn/Maths/M-1-4-3rdAttempt-3.dart';
-import 'package:somthn/Maths/M-1-4-3rdAttempt-4.dart';
 import 'package:somthn/Maths/M-1-4-3rdAttempt.dart';
 import '../Services/Login.dart';
 import '../Services/SignUp.dart';
@@ -77,12 +70,14 @@ class _I_M_2_5_State extends State<I_M_2_5_> {
                 child: SvgPicture.asset(FourBars),
               ),
 
+
               Positioned(
                   bottom: size.height*0.25,
                   left: size.width*0.2 ,
                   height: size.height*0.6,
                   width: size.width*0.6,
-                  child: SvgPicture.asset(EmptyTable)),
+                  child: SvgPicture.asset('assets/icons/I-M-2-5.svg')),
+
               if (user.avatar=="Pink")
                 Visibility(
 
@@ -91,18 +86,18 @@ class _I_M_2_5_State extends State<I_M_2_5_> {
                     width: size.width*0.3,
                     left: size.width*0.7,
                     top:size.height*0.57,
-                    child:PinkAvatarIcon(onPressed: null,),
+                    child:SvgPicture.asset('assets/icons/BPink.svg'),
                   ),
                 ),
               if (user.avatar=="Purple")
                 Visibility(
 
                   child: Positioned(
-                    height: size.width*0.35,
-                    width: size.width*0.35,
+                    height: size.width*0.3,
+                    width: size.width*0.3,
                     left: size.width*0.68,
                     top:size.height*0.57,
-                    child:PurpleAvatarIcon(onPressed: null,),
+                    child:SvgPicture.asset('assets/icons/BPurple.svg'),
                   ),
                 ),
               if (user.avatar=="Orange")
@@ -113,7 +108,7 @@ class _I_M_2_5_State extends State<I_M_2_5_> {
                     width: size.width*0.3,
                     left: size.width*0.7,
                     top:size.height*0.57,
-                    child: OrangeAvatarIcon(onPressed: null,),
+                    child: SvgPicture.asset('assets/icons/BOrange.svg'),
                   ),
                 ),
               if (user.avatar=="Blue")
@@ -124,36 +119,10 @@ class _I_M_2_5_State extends State<I_M_2_5_> {
                     width: size.width*0.3,
                     left: size.width*0.7,
                     top:size.height*0.57,
-                    child:BlueAvatarIcon(onPressed: null,),
-                  ),
-                ),
-              Positioned(
-                bottom: size.height*0.27,
-                left: size.width*0.58,
-                child: SvgPicture.asset(Stick),
-              ),
-
-              Positioned(
-                top: size.height*0.3,
-                left: size.width*0.27 ,
-                child: FittedBox(
-                  fit: BoxFit.fitWidth,
-                  child: Text(
-                    'Observe :\nDiviser un nombre \nde dizaines par 5:\n5 est la moitié de 10\n120/10=12\n12x2=24\nen fin 120/5=24',
-
-
-
-                    style:TextStyle(
-                      fontSize: 20.5,
-                      fontFamily: 'Skranji-Bold',
-                      fontWeight: FontWeight.bold,
-                      color:Colors.brown[700],
-                    ),
-                    textAlign: TextAlign.center,
+                    child:SvgPicture.asset('assets/icons/BBlue.svg'),
                   ),
                 ),
 
-              ),
               Positioned(
                 bottom: size.height*0.05,
                 right: size.width*0.5 ,

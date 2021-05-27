@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:somthn/Maths/I-M-1-5.dart';
+import 'package:somthn/Maths/M-2.dart';
 import 'package:somthn/WelcomePages/Settings.dart';
 import 'package:somthn/Bulles/bulleQuest.dart';
 import 'package:somthn/Buttons/button0.dart';
@@ -118,7 +119,9 @@ class _M_1_5_2ndState extends State<M_1_5_2nd> {
                   left: size.width*0.75,
                   child: GoToButton(onPressed: (){
                     setState(() {
-                      if ((eightU) && (fiveD)){
+                      if(!all){
+
+                      }else if ((eightU) && (fiveD)){
                         Visible = false;
                         print('Correct');
                       }else{
@@ -183,26 +186,9 @@ class _M_1_5_2ndState extends State<M_1_5_2nd> {
                 left: size.width*0.2,
                 height: size.width*0.6,
                 width: size.width*0.6,
-                child:BulleQuest(),
+                child:SvgPicture.asset('assets/icons/M-1-Q-5-2.svg'),
               ),
-              Positioned(
-                top: size.height*0.31,
-                left: size.width*0.27,
-                  child: FittedBox(
-                    fit: BoxFit.fitWidth,
-                    child: Text(
-                      '2ème tentative\n 84 - 26 = ?',
-                      style: TextStyle(
-                        fontFamily: 'Skranji-bold',
-                        fontSize: 22,
-                        color: Colors.brown[700],
-                        fontWeight: FontWeight.bold,
 
-                      ),
-                      textAlign: TextAlign.center,
-                    ),
-                  ),
-                ),
               Visibility(
                 visible: Visible,
                 child: Positioned(
@@ -597,7 +583,10 @@ class _M_1_5_2ndState extends State<M_1_5_2nd> {
                     left: 0.0,
                     height: size.height*0.2,
                     width: size.width*0.5,
-                    child: ButtonContinuer(onPressed: (){print('Continuer');},)
+                    child: ButtonContinuer(onPressed: (){Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => Math2()));
+                    print('Continuer');},)
                 ),
               ),
               if (user.avatar=="Pink")

@@ -2,9 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'dart:math';
 import 'package:somthn/Maths/M-1-3-3ndAttempt-1.dart';
-import 'package:somthn/Maths/M-1-3-3ndAttempt-2.dart';
-import 'package:somthn/Maths/M-1-3-3ndAttempt-3.dart';
-import 'package:somthn/Maths/M-1-3-3ndAttempt-4.dart';
 import 'package:somthn/Maths/M-1-3-3ndAttempt.dart';
 import 'package:somthn/Maths/M-2-2-3rdAttempt.dart';
 import 'package:somthn/Maths/M-2-3-3rdAttempt.dart';
@@ -77,7 +74,8 @@ class _I_M_2_3_State extends State<I_M_2_3_> {
                   left: size.width*0.2 ,
                   height: size.height*0.6,
                   width: size.width*0.6,
-                  child: SvgPicture.asset(EmptyTable)),
+                  child: SvgPicture.asset('assets/icons/I-M-2-3.svg')),
+
               if (user.avatar=="Pink")
                 Visibility(
 
@@ -86,18 +84,18 @@ class _I_M_2_3_State extends State<I_M_2_3_> {
                     width: size.width*0.3,
                     left: size.width*0.7,
                     top:size.height*0.57,
-                    child:PinkAvatarIcon(onPressed: null,),
+                    child:SvgPicture.asset('assets/icons/BPink.svg'),
                   ),
                 ),
               if (user.avatar=="Purple")
                 Visibility(
 
                   child: Positioned(
-                    height: size.width*0.35,
-                    width: size.width*0.35,
+                    height: size.width*0.3,
+                    width: size.width*0.3,
                     left: size.width*0.68,
                     top:size.height*0.57,
-                    child:PurpleAvatarIcon(onPressed: null,),
+                    child:SvgPicture.asset('assets/icons/BPurple.svg'),
                   ),
                 ),
               if (user.avatar=="Orange")
@@ -108,7 +106,7 @@ class _I_M_2_3_State extends State<I_M_2_3_> {
                     width: size.width*0.3,
                     left: size.width*0.7,
                     top:size.height*0.57,
-                    child: OrangeAvatarIcon(onPressed: null,),
+                    child: SvgPicture.asset('assets/icons/BOrange.svg'),
                   ),
                 ),
               if (user.avatar=="Blue")
@@ -119,34 +117,10 @@ class _I_M_2_3_State extends State<I_M_2_3_> {
                     width: size.width*0.3,
                     left: size.width*0.7,
                     top:size.height*0.57,
-                    child:BlueAvatarIcon(onPressed: null,),
+                    child:SvgPicture.asset('assets/icons/BBlue.svg'),
                   ),
                 ),
 
-              Positioned(
-                bottom: size.height*0.3,
-                left: size.width*0.58,
-                child: SvgPicture.asset(Stick),
-              ),
-
-              Positioned(
-                top: size.height*0.3,
-                left: size.width*0.27 ,
-                child: FittedBox(
-                  fit: BoxFit.fitWidth,
-                  child: Text(
-                    'Observe :\nMultiplier par 11\n11 = 10 + 1\n23x11=(23x10)+(23x1)\n=230+23\n=253',
-                    style:TextStyle(
-                      fontSize: 20.5,
-                      fontFamily: 'Skranji-Bold',
-                      fontWeight: FontWeight.bold,
-                      color:Colors.brown[700],
-                    ),
-                    textAlign: TextAlign.center,
-                  ),
-                ),
-
-              ),
                 Positioned(
                 bottom: size.height*0.05,
                 right: size.width*0.5 ,

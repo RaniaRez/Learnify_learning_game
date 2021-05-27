@@ -9,7 +9,6 @@ class ButtonReessayer extends StatelessWidget {
   Widget build(BuildContext context) {
     return IconButton(
         icon : SvgPicture.asset(buttonReessayer),
-      iconSize: 200,
       onPressed: onPressed ,
     );
   }

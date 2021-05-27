@@ -118,7 +118,9 @@ class _M_1_5State extends State<M_1_5> {
                   left: size.width*0.75,
                   child: GoToButton(onPressed: (){
                     setState(() {
-                      if ((eightU) && (fiveD)){
+                      if(!all){
+
+                      }else if ((eightU) && (fiveD)){
                         Visible = false;
                         print('Correct');
                       }else{
@@ -182,26 +184,8 @@ class _M_1_5State extends State<M_1_5> {
                 left: size.width*0.2,
                 height: size.width*0.6,
                 width: size.width*0.6,
-                child:BulleQuest(),
+                child:SvgPicture.asset('assets/icons/M-1-Q-5.svg'),
               ),
-              Positioned(
-                top: size.height*0.32,
-                left: size.width*0.32,
-                  child: FittedBox(
-                    fit: BoxFit.fitWidth,
-                    child: Text(
-                      '84 - 26 = ?',
-                      style: TextStyle(
-                        fontFamily: 'Skranji-bold',
-                        fontSize: 25,
-                        color: Colors.brown[700],
-                        fontWeight: FontWeight.bold,
-
-                      ),
-                      textAlign: TextAlign.center,
-                    ),
-                  ),
-                ),
 
               Visibility(
                 visible: Visible,
