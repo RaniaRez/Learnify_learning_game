@@ -64,7 +64,11 @@ class _SettingsState extends State<Settings> {
                   child: ButtonExit(onPressed:() {
                     try {
                       signOutGoogle();
-                      print("you signed out ");}
+                      print("you signed out ");
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => Home()),);
+                    }
                     catch(e) { print ("error ");}
                   }
                   ),

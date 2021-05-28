@@ -9,9 +9,9 @@ import 'auth.dart';
 
 Future<void> delete() async  {
 FirebaseUser user = await FirebaseAuth.instance.currentUser();
+signOutGoogle();
 await user.delete();
 await Firestore.instance.collection("users").document(user.uid).delete();
-signOutGoogle();
 }
 
 /*final FirebaseAuth _auth = FirebaseAuth.instance;

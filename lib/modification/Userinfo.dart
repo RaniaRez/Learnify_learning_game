@@ -147,6 +147,9 @@ class _UserinfoState extends State<Userinfo> {
                 onPressed: () async {
                   await delete();
                   print("SUPP");
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => Home()),);
                   },
               ),
             ),
