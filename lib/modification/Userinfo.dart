@@ -3,8 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:somthn/Avatars/BlueAvatarIcon.dart';
 import 'package:somthn/Branches/BranchIconSimple.dart';
-import 'package:somthn/WelcomePages/ChooseAvatar.dart';
-import 'package:somthn/WelcomePages/Entrernom.dart';
+import 'package:somthn/modification/avatar.dart';
+import 'package:somthn/modification/name.dart';
 import 'package:somthn/Buttons/HomeButton.dart';
 import 'package:somthn/Avatars/OrangeAvatarIcon.dart';
 import 'package:somthn/Avatars/PinkAvatarIcon.dart';
@@ -163,7 +163,7 @@ class _UserinfoState extends State<Userinfo> {
                 onPressed: (){
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => ChooseAvatar()),);
+                    MaterialPageRoute(builder: (context) => Avatar()),);
                   print("HELL YEAH");
                 },
               ),
@@ -183,7 +183,7 @@ class _UserinfoState extends State<Userinfo> {
                   onPressed: (){
                     Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => Entrernom()),);
+                      MaterialPageRoute(builder: (context) => Name()),);
 
                     print("HELL YEAH");
                   },

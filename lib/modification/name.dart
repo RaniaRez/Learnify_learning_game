@@ -20,12 +20,12 @@ import '../Data/database.dart';
 
 
 
-class Entrernom extends StatefulWidget {
+class Name extends StatefulWidget {
   @override
-  _EntrernomState createState() => _EntrernomState();
+  _Name createState() => _Name();
 }
 
-class _EntrernomState extends State<Entrernom> {
+class _Name extends State<Name> {
   @override
   bool _Visible=true;
   bool _GoTo = false;

@@ -3,12 +3,15 @@ import 'package:google_sign_in/google_sign_in.dart';
 import 'package:somthn/WelcomePages/ClassUser.dart';
 import '../Data/database.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
+
+import 'auth.dart';
 //import 'package:cloud_functions/cloud_functions.dart';
 
 Future<void> delete() async  {
 FirebaseUser user = await FirebaseAuth.instance.currentUser();
 await user.delete();
 await Firestore.instance.collection("users").document(user.uid).delete();
+signOutGoogle();
 }
 
 /*final FirebaseAuth _auth = FirebaseAuth.instance;

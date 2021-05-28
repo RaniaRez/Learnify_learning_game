@@ -22,12 +22,12 @@ import '../Services/Login.dart';
 
 
 //User New = new User();
-class ChooseAvatar extends StatefulWidget {
+class Avatar extends StatefulWidget {
   @override
-  _ChooseAvatarState createState() => _ChooseAvatarState();
+  _AvatarState createState() => _AvatarState();
 }
 
-class _ChooseAvatarState extends State<ChooseAvatar> {
+class _AvatarState extends State<Avatar> {
   @override
   bool _GoToVisible = false;
   bool _PurpleVisible = false;
