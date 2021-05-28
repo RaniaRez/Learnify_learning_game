@@ -17,6 +17,7 @@ import '../WelcomePages/Settings.dart';
 import '../Branches/BranchIconSimple.dart';
 import '../Services/Login.dart';
 import '../Data/database.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 
 
 
@@ -227,7 +228,7 @@ class _Name extends State<Name> {
                         margin:EdgeInsets.symmetric(horizontal:20 ),
                         child:TextField(
                           controller: Username,
-                          onEditingComplete: (){
+                          onEditingComplete: ()  {
                             print("done");
                             if(Username.text.isEmpty){
                               setState(() {
@@ -240,7 +241,8 @@ class _Name extends State<Name> {
                                 print("username");
                                 print(user.username);
                                 print("printed");
-                                DatabaseService(uid: user.uid).updateUserData(user.username,user.avatar, 10);
+                                //DatabaseService(uid: user.uid).updateUserData(user.username,user.avatar, 10);
+                               // Firestore.instance.collection('users').document(user.uid).setData({name:user.username});
 
                               });
                             }
