@@ -3,7 +3,6 @@ import 'package:flutter_svg/svg.dart';
 import 'package:somthn/Avatars/BlueAvatarIcon.dart';
 import 'package:somthn/Buttons/buttonGoTo.dart';
 import 'package:somthn/WelcomePages/ChoixDomaines.dart';
-import 'package:somthn/WelcomePages/ChooseAvatar.dart';
 import 'package:somthn/Buttons/HomeButton.dart';
 import 'package:somthn/Avatars/OrangeAvatarIcon.dart';
 import 'package:somthn/Avatars/PinkAvatarIcon.dart';
@@ -79,10 +78,10 @@ class _AllSetState extends State<AllSet> {
               ),
               Positioned(
                   top: size.height*0.1,
-                  left: size.width*0.3 ,
+                  left: size.width*0.25 ,
                   height: size.height*0.6,
                   width: size.width*0.7,
-                  child: SvgPicture.asset(bulleAllSet)),
+                  child: SvgPicture.asset('assets/icons/Attache.svg')),
 
               Visibility(
 
