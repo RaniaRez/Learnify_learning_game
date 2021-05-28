@@ -19,6 +19,7 @@ import '../Buttons/BacksButton.dart';
 import '../WelcomePages/Home.dart';
 import '../Services/Login.dart';
 import '../Services/SignUp.dart';
+import '../Services/delete.dart';
 
 
 
@@ -136,15 +137,15 @@ class _UserinfoState extends State<Userinfo> {
             Positioned(
               top: size.height*0.66,
               left:size.width*0.05,
-         child: SvgPicture.asset(suppCompte)
+              child: SvgPicture.asset(suppCompte),
 
             ),
-Positioned(
-  top:size.height*0.61,
-  right:size.width*0.05,
+            Positioned(
+               top:size.height*0.61,
+              right:size.width*0.05,
               child:ButtonSupp(
-                onPressed: (){
-
+                onPressed: () async {
+                  await delete();
                   print("SUPP");
                   },
               ),
