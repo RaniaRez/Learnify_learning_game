@@ -13,9 +13,10 @@ import 'package:somthn/Avatars/BlueAvatarIcon.dart';
 import '../WelcomePages/ChooseAvatar.dart';
 import '../Services/Login.dart';
 import '../Services/SignUp.dart';
+import 'ScoreMaths.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 
-
-
+ScoreMaths scoreM ;
 
 class BienvenueMath extends StatefulWidget {
   @override
@@ -65,8 +66,15 @@ class _BienvenueMathState extends State<BienvenueMath> {
                 right: size.width*0.48,
                height: size.height*0.55,
                 width: size.width*0.55,
-                child: ButtonCommencerD(onPressed: () {
+                child: ButtonCommencerD(onPressed: () async  {
                   print('commencer');
+                  var d=await Firestore.instance.collection('users').document(user.uid).collection('domains').document('maths').get();
+                  /*scoreM.testFait=d.data["testFait"];
+                  scoreM.niv1=d.data["niv1"];
+                  scoreM.niv2=d.data["niv2"];
+                  scoreM.niv3=d.data["niv3"];*/
+                  scoreM=new ScoreMaths(d.data["testFait"], d.data["niv1"], d.data["niv2"], d.data["niv3"]);
+                  print(scoreM.niv1);
                   Navigator.push(
 
                       context,
