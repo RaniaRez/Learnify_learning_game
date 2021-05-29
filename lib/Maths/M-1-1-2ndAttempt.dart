@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:somthn/Buttons/BarreProgres.dart';
+import 'package:somthn/Maths/BienvenueMath.dart';
 import 'package:somthn/Maths/I-M-1-1.dart';
 import 'package:somthn/Maths/M-1-2.dart';
 import 'package:somthn/WelcomePages/Settings.dart';
@@ -26,6 +27,7 @@ import '../WelcomePages/ChooseAvatar.dart';
 import 'I-M-1-1.dart';
 import '../Services/Login.dart';
 import '../Services/SignUp.dart';
+import 'M-1.dart';
 
 class M_1_1_2nd extends StatefulWidget {
   const M_1_1_2nd({Key key}) : super(key: key);
@@ -90,7 +92,9 @@ class _M_1_1_2ndState extends State<M_1_1_2nd> {
                   top: size.height*0.05,
                   right:size.width*0.75,
                   child: BacksButton(onPressed: (){
-                    Navigator.pop(context);
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => Math1() ));
                   },)
               ),
               Positioned(
@@ -119,6 +123,7 @@ class _M_1_1_2ndState extends State<M_1_1_2nd> {
                       }else if ((zeroU) && (nineD)){
                         Visible = false;
                         print('Correct');
+                        scoreM.niv1=scoreM.niv1+1;
                       }else{
                         Navigator.push(
                             context,

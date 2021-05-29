@@ -11,7 +11,7 @@ import 'package:somthn/Buttons/buttonMoyen.dart';
 import 'package:somthn/Buttons/buttonfacile.dart';
 import 'package:somthn/Owls/madGreenOwl.dart';
 import 'package:somthn/Buttons/settingsButton.dart';
-import 'BienvenueMath.dart';
+import '../Maths/BienvenueMath.dart';
 
 
 
@@ -51,7 +51,9 @@ class _NiveauMathState extends State<NiveauMath> {
                     Navigator.push(
                         context,
                         MaterialPageRoute(builder: (context) => Math1()));
-                    print('facile');}),
+                    print('facile');
+                    scoreM.niv1=0;
+                  }),
                 ),
 
               Positioned(

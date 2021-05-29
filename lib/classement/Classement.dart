@@ -9,12 +9,10 @@ import '../Avatars/BlueAvatarIcon.dart';
 import '../Avatars/PinkAvatarIcon.dart';
 import '../Avatars/PurpleAvatarIcon.dart';
 import '../Avatars/OrangeAvatarIcon.dart';
-
-
 import '../WelcomePages/Home.dart';
 import '../WelcomePages/Settings.dart';
-import '../classement/methodes.dart';
-import '../WelcomePages/Users.dart' ;
+//import '../classement/methodes.dart';
+//import '../WelcomePages/Users.dart' ;
 //import '../classement/methodes.dart';
 import '../Data/DataUser.dart';
 

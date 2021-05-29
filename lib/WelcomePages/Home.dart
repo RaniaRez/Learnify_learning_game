@@ -11,6 +11,7 @@ import 'Settings.dart';
 import '../Services/Login.dart';
 import '../Services/auth.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
+import '../Maths/Niveau1Passé.dart';
 
 
 
@@ -46,6 +47,7 @@ class _HomeState extends State<Home> {
                     Navigator.push(
                         context,
                         MaterialPageRoute(builder: (context) => Settings()));
+                        //MaterialPageRoute(builder: (context) => Niveau1Pass()));
                     print("settings");
                   },)
               ),
@@ -60,7 +62,10 @@ class _HomeState extends State<Home> {
                     await googleLogin();
                     print("khraconnecter");
                     print(user.uid);
-                    var d=await Firestore.instance.collection('users').document(user.uid).get();
+                    print("user exists2");
+                    String documentID= user.uid;
+                    var d= await Firestore.instance.collection('users').document(documentID).get();
+                    print("user exists1");
                     if (d.exists ){
                       user.username=d.data["name"];
                       user.avatar=d.data["avatar"];
@@ -70,15 +75,17 @@ class _HomeState extends State<Home> {
                           context,
                           MaterialPageRoute(builder: (context) => Voila()));
                     }
+
                     else {
                       print("does not exist ");
                       Navigator.push(
                           context,
                           MaterialPageRoute(builder: (context) => Vite()));
                     }
-
+                    print("user exists3");
                     print("allons-y");
                   } )),
+
 
               Positioned(
                 top: size.height*0.001,

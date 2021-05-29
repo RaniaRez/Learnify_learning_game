@@ -15,7 +15,7 @@ import '../WelcomePages/ChooseAvatar.dart';
 import 'package:somthn/Buttons/buttonAppliquer.dart';
 import '../Services/Login.dart';
 import '../Services/SignUp.dart';
-
+import 'M-1.dart';
 
 import '../myicons.dart';
 
@@ -59,7 +59,9 @@ class _I_M_1_5_State extends State<I_M_1_5_> {
                   top: size.height*0.05,
                   right:size.width*0.75,
                   child: BacksButton(onPressed: (){
-                    Navigator.pop(context);
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => Math1() ));
                   },)
               ),
 

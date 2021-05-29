@@ -28,6 +28,7 @@ import 'package:somthn/Avatars/BlueAvatarIcon.dart';
 //import '../WelcomePages/ChooseAvatar.dart';
 import '../Services/Login.dart';
 import '../Services/SignUp.dart';
+import 'M-1.dart';
 
 class M_1_1_3rd_1 extends StatefulWidget {
   const M_1_1_3rd_1({Key key}) : super(key: key);
@@ -93,7 +94,9 @@ class _M_1_1_3rd_1State extends State<M_1_1_3rd_1> {
                   top: size.height*0.05,
                   right:size.width*0.75,
                   child: BacksButton(onPressed: (){
-                    Navigator.pop(context);
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => Math1() ));
                   },)
               ),
 
