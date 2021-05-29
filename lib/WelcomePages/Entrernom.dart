@@ -16,6 +16,10 @@ import 'Settings.dart';
 import '../Branches/BranchIconSimple.dart';
 import '../Services/Login.dart';
 import '../Data/database.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
+import '../Maths/ScoreMaths.dart';
+import '../Francais/ScoreFr.dart';
+import '../Geographie/ScoreGeo.dart';
 
 
 
@@ -239,8 +243,34 @@ class _EntrernomState extends State<Entrernom> {
                         print("username");
                         print(user.username);
                         print("printed");
-                        DatabaseService(uid: user.uid).updateUserData(user.username,user.avatar, 10);
-
+                        DatabaseService(uid: user.uid).updateUserData(user.username,user.avatar, 0);
+                        ScoreMaths scoreM=new ScoreMaths(false,-1,-1,-1);
+                        Firestore.instance.collection('users').document(user.uid).collection('domains').document('maths').setData(
+                          {
+                            'testFait': scoreM.testFait ,
+                            'niv1': scoreM.niv1 ,
+                            'niv2': scoreM.niv2 ,
+                            'niv3': scoreM.niv3 ,
+                          }
+                        );
+                        ScoreFr scoreF =new ScoreFr(false,-1,-1,-1);
+                        Firestore.instance.collection('users').document(user.uid).collection('domains').document('francais').setData(
+                            {
+                              'testFait': scoreF.testFait ,
+                              'niv1': scoreF.niv1 ,
+                              'niv2': scoreF.niv2 ,
+                              'niv3': scoreF.niv3 ,
+                            }
+                        );
+                        ScoreGeo scoreG =new ScoreGeo(false,-1,-1,-1);
+                        Firestore.instance.collection('users').document(user.uid).collection('domains').document('geographie').setData(
+                            {
+                              'testFait': scoreG.testFait ,
+                              'niv1': scoreG.niv1 ,
+                              'niv2': scoreG.niv2 ,
+                              'niv3': scoreG.niv3 ,
+                            }
+                        );
                       });
                     }
                     FocusScope.of(context).requestFocus(FocusNode());

@@ -242,8 +242,8 @@ class _Name extends State<Name> {
                                 print(user.username);
                                 print("printed");
                                 //DatabaseService(uid: user.uid).updateUserData(user.username,user.avatar, 10);
-                               // Firestore.instance.collection('users').document(user.uid).setData({name:user.username});
-
+                                //Firestore.instance.collection('users').document(user.uid).setData({'name':user.username});
+                                Firestore.instance.collection('users').document(user.uid).updateData({'name':user.username});
                               });
                             }
                             FocusScope.of(context).requestFocus(FocusNode());

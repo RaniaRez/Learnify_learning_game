@@ -1,3 +1,4 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:somthn/Branches/Brin.dart';
 import 'package:somthn/Branches/Brin2.dart';
@@ -169,6 +170,8 @@ class _AvatarState extends State<Avatar> {
                     if (_OrangeVisible) user.SetAvatar("Orange");
                     if (_BlueVisible) user.SetAvatar("Blue");
                   });
+                  //Firestore.instance.collection('users').document(user.uid).setData({'avatar':user.avatar},{ merge:true});
+                  Firestore.instance.collection('users').document(user.uid).updateData({'avatar':user.avatar});
                   Navigator.push(
                       context,
                       MaterialPageRoute(builder: (context) => Userinfo()));

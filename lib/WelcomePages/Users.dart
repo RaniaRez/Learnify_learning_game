@@ -83,7 +83,6 @@ class _UsersState extends State<Users> {
                     List<DataUser> list = new List<DataUser>.empty(growable: true);
                     list = await classement();
                     list.sort((a, b) => b.score.compareTo(a.score));
-
                     print(list[0].score);
                     print(list[1].score);
                     print(list[2].score);
