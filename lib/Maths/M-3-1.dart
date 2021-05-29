@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:somthn/Buttons/BarreProgres.dart';
+import 'package:somthn/Maths/BienvenueMath.dart';
 import 'package:somthn/Maths/M-1-2.dart';
 import 'package:somthn/Maths/M-3-2.dart';
 import 'package:somthn/WelcomePages/Settings.dart';
@@ -29,6 +30,8 @@ import 'package:somthn/Avatars/BlueAvatarIcon.dart';
 //import '../WelcomePages/ChooseAvatar.dart';
 import '../Services/Login.dart';
 import '../Services/SignUp.dart';
+import 'M-3.dart';
+import 'NiveauMath.dart';
 
 
 class M_3_1 extends StatefulWidget {
@@ -73,7 +76,9 @@ class _M_3_1State extends State<M_3_1> {
                   top: size.height*0.05,
                   right:size.width*0.75,
                   child: BacksButton(onPressed: (){
-                    Navigator.pop(context);
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) =>Math3()));
                   },)
               ),
 
@@ -167,6 +172,8 @@ class _M_3_1State extends State<M_3_1> {
                         correct = true;
                       });
                       print('S');
+                      scoreM.niv3+=2;
+                      print(scoreM.niv3);
                     },
                       icon: SvgPicture.asset('assets/icons/AppleS.svg')
                   ),

@@ -11,7 +11,9 @@ import 'package:somthn/myicons.dart';
 import '../Buttons/settingsButton.dart';
 import '../Buttons/BacksButton.dart';
 import '../Services/Login.dart';
-
+import 'BienvenueMath.dart';
+import 'M-2.dart';
+import 'NiveauMath.dart';
 
 
 
@@ -51,7 +53,9 @@ class _M_2_3_2nd_FourState extends State<M_2_3_2nd_Four> {
 
                   child: BacksButton(onPressed: (){
                     print("u clicked me");
-                    Navigator.pop(context);
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => Math2()));
                   },)
               ),
 
@@ -439,7 +443,7 @@ class _M_2_3_2nd_FourState extends State<M_2_3_2nd_Four> {
                             setState(() {
                               Visible = false;
                             });
-
+                            scoreM.niv2++;
                             print('Correct');
                           }
                           print('2');

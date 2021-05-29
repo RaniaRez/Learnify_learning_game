@@ -3,6 +3,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:somthn/Avatars/OrangeAvatarIcon.dart';
 import 'package:somthn/Bulles/BullenomIcon.dart';
 import 'package:somthn/Maths/M-2-1.dart';
+import 'package:somthn/Maths/NiveauMath.dart';
 import 'package:somthn/WelcomePages/Settings.dart';
 import 'package:somthn/Buttons/buttonGoTo.dart';
 import 'package:somthn/myicons.dart';
@@ -14,6 +15,8 @@ import 'package:somthn/Avatars/BlueAvatarIcon.dart';
 import '../WelcomePages/ChooseAvatar.dart';
 import '../Services/Login.dart';
 import '../Services/SignUp.dart';
+import 'BienvenueMath.dart';
+
 class Math2 extends StatefulWidget {
   @override
   _Math2State createState() => _Math2State();
@@ -44,7 +47,9 @@ class _Math2State extends State<Math2> {
 
                   child: BacksButton(onPressed: (){
                     print("u clicked me");
-                    Navigator.pop(context);
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => NiveauMath()));
                   },)
               ),
 
@@ -121,6 +126,7 @@ class _Math2State extends State<Math2> {
                 top: size.height*0.8,
                 left:size.width*0.75,
                 child: GoToButton(onPressed: (){
+                  scoreM.niv2=0;
                   print("HELL YEAH");
                   Navigator.push(
                     context,
