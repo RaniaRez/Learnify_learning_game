@@ -1,7 +1,10 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:somthn/Buttons/HomeButton.dart';
 import 'package:somthn/Buttons/buttonGoTo.dart';
+import 'package:somthn/Maths/BienvenueMath.dart';
 import 'package:somthn/Maths/M-2.dart';
+import 'package:somthn/Maths/M-3.dart';
 import 'package:somthn/WelcomePages/Settings.dart';
 import 'package:somthn/Mutual/Stars.dart';
 import 'package:somthn/myicons.dart';
@@ -16,6 +19,7 @@ import 'package:somthn/Avatars/BlueAvatarIcon.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import '../Services/Login.dart';
 import '../Services/SignUp.dart';
+import 'BienvenueMath.dart';
 
 
 
@@ -32,6 +36,10 @@ class _Niveau3PassState extends State<Niveau3Pass> {
 
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
+    print("score final");
+    print(scoreM.niv3);
+    Firestore.instance.collection('users').document(user.uid).collection('domains').document('maths').updateData(
+        {'niv3':scoreM.niv3});
     return Scaffold(
       body:
       Container(
@@ -62,9 +70,9 @@ class _Niveau3PassState extends State<Niveau3Pass> {
                 right:size.width*0.75,
                 child: BacksButton(onPressed: (){
                   print("HELL YEAH");
-                  Navigator.pop(
-                    context,
-                  );
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => Math3()));
                 },)
             ),
             Positioned(

@@ -32,6 +32,9 @@ import 'package:somthn/Avatars/BlueAvatarIcon.dart';
 import '../myicons.dart';
 import '../Services/Login.dart';
 import '../Services/SignUp.dart';
+import 'BienvenueMath.dart';
+import 'M-3.dart';
+import 'NiveauMath.dart';
 
 
 class M_3_4 extends StatefulWidget {
@@ -98,7 +101,9 @@ class _M_3_4State extends State<M_3_4> {
                   top: size.height*0.05,
                   right:size.width*0.75,
                   child: BacksButton(onPressed: (){
-                    Navigator.pop(context);
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => Math3()));
                   },)
               ),
 
@@ -128,6 +133,8 @@ class _M_3_4State extends State<M_3_4> {
                         Visible = false;
                         correct=true;
                         print('Correct');
+                        scoreM.niv3+=2;
+                        print(scoreM.niv3);
                       }else{
                         Visible=false;
                         print('Wrong');

@@ -3,6 +3,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:somthn/Buttons/BarreProgres.dart';
 import 'package:somthn/Maths/M-1-5-2ndAttempt.dart';
 import 'package:somthn/Maths/M-2-2.dart';
+import 'package:somthn/Maths/M-2.dart';
 import 'package:somthn/Mutual/Niveau1Pass%C3%A9.dart';
 import 'package:somthn/WelcomePages/Settings.dart';
 import 'package:somthn/Bulles/bulleQuest.dart';
@@ -20,7 +21,8 @@ import '../Services/Login.dart';
 import 'M-2-1-2ndAttemptOneclick.dart';
 import 'M-2-1-2ndAttemptThreeclick.dart';
 import 'M-2-1-2ndAttemptFourclick.dart';
-
+import 'BienvenueMath.dart';
+import 'NiveauMath.dart';
 
 
 
@@ -59,7 +61,9 @@ class _M_2_1State extends State<M_2_1> {
 
                   child: BacksButton(onPressed: (){
                     print("u clicked me");
-                    Navigator.pop(context);
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => Math2()));
                   },)
               ),
 
@@ -432,7 +436,8 @@ class _M_2_1State extends State<M_2_1> {
                           setState(() {
                             Visible = false;
                           });
-
+                          scoreM.niv2=scoreM.niv2+2 ;
+                          print(scoreM.niv2);
                           print('Correct');
                         }
                         print('2');

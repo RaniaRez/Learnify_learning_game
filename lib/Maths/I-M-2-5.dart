@@ -19,6 +19,7 @@ import '../Services/Login.dart';
 import '../Services/SignUp.dart';
 
 import '../myicons.dart';
+import 'M-2.dart';
 
 class I_M_2_5_ extends StatefulWidget {
   const I_M_2_5_({Key key}) : super(key: key);
@@ -60,7 +61,9 @@ class _I_M_2_5_State extends State<I_M_2_5_> {
                   top: size.height*0.05,
                   right:size.width*0.75,
                   child: BacksButton(onPressed: (){
-                    Navigator.pop(context);
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => Math2()));
                   },)
               ),
               Positioned(

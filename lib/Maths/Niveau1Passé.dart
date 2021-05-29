@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:somthn/Buttons/HomeButton.dart';
 import 'package:somthn/Buttons/buttonGoTo.dart';
+import 'package:somthn/Maths/M-1.dart';
 import 'package:somthn/Maths/M-2.dart';
 import 'package:somthn/WelcomePages/Settings.dart';
 import 'package:somthn/Mutual/Stars.dart';
@@ -16,6 +17,7 @@ import 'package:somthn/Avatars/PurpleAvatarIcon.dart';
 import 'package:somthn/Avatars/BlueAvatarIcon.dart';
 import '../Services/Login.dart';
 import '../Services/SignUp.dart';
+import 'NiveauMath.dart';
 
 
 class Niveau1Pass extends StatefulWidget {
@@ -61,9 +63,9 @@ class _Niveau1PassState extends State<Niveau1Pass> {
                 right:size.width*0.75,
                 child: BacksButton(onPressed: (){
                   print("HELL YEAH");
-                  Navigator.pop(
-                    context,
-                  );
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => Math1()));
                 },)
             ),
             Positioned(
@@ -148,6 +150,7 @@ class _Niveau1PassState extends State<Niveau1Pass> {
               top: size.height*0.83,
               left: size.width*0.7 ,
               child: GoToButton(onPressed: (){
+                print("khra");
                 Navigator.push(
                     context,
                     MaterialPageRoute(builder: (context) => Math2()));
