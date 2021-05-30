@@ -2,7 +2,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:somthn/Buttons/BarreProgres.dart';
-import 'package:somthn/Francais/F-1.dart';
+import 'package:somthn/Francais/F-2-4-2nd.dart';
+import 'package:somthn/Francais/F-2-4.dart';
 import 'package:somthn/Maths/M-1-2.dart';
 import 'package:somthn/WelcomePages/Settings.dart';
 import 'package:somthn/Buttons/buttonContinuer.dart';
@@ -57,9 +58,7 @@ class _F_1_2State extends State<F_1_2> {
                   top: size.height*0.05,
                   right:size.width*0.75,
                   child: BacksButton(onPressed: (){
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(builder: (context) => Fr1()));
+                    Navigator.pop(context);
                   },)
               ),
               Positioned(
@@ -219,7 +218,7 @@ class _F_1_2State extends State<F_1_2> {
                     child: ButtonContinuer(onPressed: (){
                       Navigator.push(
                           context,
-                          new MaterialPageRoute(builder: (context) => new M_1_2()));
+                          new MaterialPageRoute(builder: (context) => new F_2_4()));
                       print('Continuer');
                     },)
                 ),

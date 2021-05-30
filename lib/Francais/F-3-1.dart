@@ -12,6 +12,7 @@ import 'package:somthn/Francais/F-2-3-2nd-TwoC.dart';
 import 'package:somthn/Francais/F-3-1-2nd-Four.dart';
 import 'package:somthn/Francais/F-3-1-2nd-One.dart';
 import 'package:somthn/Francais/F-3-1-2nd-Two.dart';
+import 'package:somthn/Francais/F-3-2.dart';
 import 'package:somthn/Maths/M-1-2.dart';
 import 'package:somthn/WelcomePages/Settings.dart';
 import 'package:somthn/Buttons/buttonContinuer.dart';
@@ -247,7 +248,7 @@ class _F_3_1State extends State<F_3_1> {
                     child: ButtonContinuer(onPressed: (){
                       Navigator.push(
                           context,
-                          new MaterialPageRoute(builder: (context) => new M_1_2()));
+                          new MaterialPageRoute(builder: (context) => new F_3_2()));
                       print('Continuer');
                     },)
                 ),

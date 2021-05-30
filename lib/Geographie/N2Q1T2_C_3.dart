@@ -3,7 +3,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:somthn/Geographie/N1Q4T2_C_1.dart';
 import 'package:somthn/Geographie/N1Q4T2_C_2.dart';
 import 'package:somthn/Geographie/N1Q4T2_C_4.dart';
-import 'package:somthn/Maths/M-2-5.dart';
+import 'package:somthn/Geographie/N2Q2.dart';
 import 'package:somthn/WelcomePages/Settings.dart';
 import 'package:somthn/WelcomePages/Home.dart';
 import 'package:vibration/vibration.dart';
@@ -93,6 +93,7 @@ class _N2Q1T2_C_3State extends State<N2Q1T2_C_3> {
                   child: SvgPicture.asset(FourBars),
                 ),
               ),
+              /*
               Visibility(
                 visible: Visible,
                 child: Positioned(
@@ -110,6 +111,7 @@ class _N2Q1T2_C_3State extends State<N2Q1T2_C_3> {
                   ),
                 ),
               ),
+              */
               if (user.avatar=="Pink")
                 Visibility(
                   visible: Visible,
@@ -248,7 +250,7 @@ class _N2Q1T2_C_3State extends State<N2Q1T2_C_3> {
                     child: ButtonContinuer(onPressed: (){
                       Navigator.push(
                           context,
-                          MaterialPageRoute(builder: (context) => Home()));
+                          MaterialPageRoute(builder: (context) => N2Q2()));
                       print('Continuer');},)
                 ),
               ),
