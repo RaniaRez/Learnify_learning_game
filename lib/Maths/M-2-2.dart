@@ -23,6 +23,9 @@ import '../Services/Login.dart';
 import 'M-2-1-2ndAttemptOneclick.dart';
 import 'M-2-1-2ndAttemptThreeclick.dart';
 import 'M-2-1-2ndAttemptFourclick.dart';
+import 'BienvenueMath.dart';
+import 'M-2.dart';
+import 'NiveauMath.dart';
 
 
 
@@ -62,7 +65,9 @@ class _M_2_2State extends State<M_2_2> {
 
                   child: BacksButton(onPressed: (){
                     print("u clicked me");
-                    Navigator.pop(context);
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => Math2()));
                   },)
               ),
 
@@ -436,7 +441,8 @@ class _M_2_2State extends State<M_2_2> {
                             setState(() {
                               Visible = false;
                             });
-
+                            scoreM.niv2=scoreM.niv2+2 ;
+                            print(scoreM.niv2);
                             print('Correct');
                           }
                           print('2');

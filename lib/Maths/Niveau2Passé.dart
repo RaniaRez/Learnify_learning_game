@@ -17,7 +17,8 @@ import 'package:somthn/Avatars/BlueAvatarIcon.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import '../Services/Login.dart';
 import '../Services/SignUp.dart';
-
+import 'BienvenueMath.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 
 
 class Niveau2Pass extends StatefulWidget {
@@ -33,6 +34,10 @@ class _Niveau2PassState extends State<Niveau2Pass> {
 
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
+    print("score final");
+    print(scoreM.niv2);
+    Firestore.instance.collection('users').document(user.uid).collection('domains').document('maths').updateData(
+        {'niv2':scoreM.niv2});
     return Scaffold(
       body:
       Container(
@@ -63,9 +68,9 @@ class _Niveau2PassState extends State<Niveau2Pass> {
                 right:size.width*0.75,
                 child: BacksButton(onPressed: (){
                   print("HELL YEAH");
-                  Navigator.pop(
-                    context,
-                  );
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) =>Math2()));
                 },)
             ),
             Positioned(
@@ -149,7 +154,7 @@ class _Niveau2PassState extends State<Niveau2Pass> {
             Positioned(
               top: size.height*0.83,
               left: size.width*0.7 ,
-              child: GoToButton(onPressed: (){
+              child: GoToButton(onPressed: () {
                 Navigator.push(
                     context,
                     MaterialPageRoute(builder: (context) => Math3()));

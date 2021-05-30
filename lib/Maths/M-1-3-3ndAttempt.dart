@@ -28,6 +28,7 @@ import 'package:somthn/Avatars/BlueAvatarIcon.dart';
 //import '../WelcomePages/ChooseAvatar.dart';
 import '../Services/Login.dart';
 import '../Services/SignUp.dart';
+import 'M-1.dart';
 
 
 class M_1_3_3rd extends StatefulWidget {
@@ -94,7 +95,9 @@ class _M_1_3_3rdState extends State<M_1_3_3rd> {
                   top: size.height*0.05,
                   right:size.width*0.75,
                   child: BacksButton(onPressed: (){
-                    Navigator.pop(context);
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => Math1() ));
                   },)
               ),
 
@@ -130,7 +133,7 @@ class _M_1_3_3rdState extends State<M_1_3_3rd> {
                         Visible=false;
                         Navigator.push(
                             context,
-                            MaterialPageRoute(builder: (context) => M_1_2_2nd()));
+                            MaterialPageRoute(builder: (context) => M_1_4()));
                         print('Wrong');
                       }
                     });

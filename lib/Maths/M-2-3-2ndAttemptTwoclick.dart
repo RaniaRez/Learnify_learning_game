@@ -22,7 +22,9 @@ import 'package:somthn/Avatars/PinkAvatarIcon.dart';
 import 'package:somthn/Avatars/PurpleAvatarIcon.dart';
 import 'package:somthn/Avatars/BlueAvatarIcon.dart';
 import '../Services/Login.dart';
-
+import 'BienvenueMath.dart';
+import 'M-2.dart';
+import 'NiveauMath.dart';
 
 
 
@@ -63,7 +65,9 @@ class _M_2_3_2nd_TwoState extends State<M_2_3_2nd_Two> {
 
                   child: BacksButton(onPressed: (){
                     print("u clicked me");
-                    Navigator.pop(context);
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => Math2()));
                   },)
               ),
 
@@ -451,7 +455,7 @@ class _M_2_3_2nd_TwoState extends State<M_2_3_2nd_Two> {
                             setState(() {
                               Visible = false;
                             });
-
+                            scoreM.niv2++;
                             print('Correct');
                           }
                           print('2');

@@ -11,6 +11,8 @@ import 'package:somthn/Avatars/PinkAvatarIcon.dart';
 import 'package:somthn/Avatars/PurpleAvatarIcon.dart';
 import 'package:somthn/Avatars/BlueAvatarIcon.dart';
 import '../Services/Login.dart';
+import 'BienvenueMath.dart';
+
 
 
 class Math1 extends StatefulWidget {
@@ -120,6 +122,7 @@ class _Math1State extends State<Math1> {
                 top: size.height*0.8,
                 left:size.width*0.75,
                   child: GoToButton(onPressed: (){
+                    scoreM.niv1=0;
                     print("HELL YEAH");
                     Navigator.push(
                       context,

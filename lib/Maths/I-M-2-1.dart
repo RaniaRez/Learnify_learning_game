@@ -3,6 +3,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:somthn/Maths/M-1-1-3rdAttempt-1.dart';
 import 'dart:math';
 import 'package:somthn/Maths/M-2-1-3rdAttempt.dart';
+import 'package:somthn/Maths/M-2.dart';
 import 'package:somthn/WelcomePages/Settings.dart';
 import 'package:somthn/myicons.dart';
 import '../Buttons/settingsButton.dart';
@@ -55,7 +56,9 @@ class _I_M_2_1_State extends State<I_M_2_1_> {
                   top: size.height*0.05,
                   right:size.width*0.75,
                   child: BacksButton(onPressed: (){
-                    Navigator.pop(context);
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => Math2()));
                   },)
               ),
 

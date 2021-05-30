@@ -15,6 +15,8 @@ import 'package:somthn/Avatars/BlueAvatarIcon.dart';
 import '../WelcomePages/ChooseAvatar.dart';
 import '../Services/Login.dart';
 import '../Services/SignUp.dart';
+import 'BienvenueMath.dart';
+import 'NiveauMath.dart';
 class Math3 extends StatefulWidget {
   @override
   _Math3State createState() => _Math3State();
@@ -45,7 +47,9 @@ class _Math3State extends State<Math3> {
 
                   child: BacksButton(onPressed: (){
                     print("u clicked me");
-                    Navigator.pop(context);
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => NiveauMath()));
                   },)
               ),
 
@@ -122,6 +126,7 @@ class _Math3State extends State<Math3> {
                 top: size.height*0.8,
                 left:size.width*0.75,
                 child: GoToButton(onPressed: (){
+                  scoreM.niv3=0;
                   print("HELL YEAH");
                   Navigator.push(
                     context,

@@ -14,6 +14,7 @@ import 'package:somthn/Buttons/buttonAppliquer.dart';
 import 'package:somthn/Maths/M-1-4-3rdAttempt.dart';
 import '../Services/Login.dart';
 import '../Services/SignUp.dart';
+import 'M-1.dart';
 class I_M_1_4_ extends StatefulWidget {
   const I_M_1_4_({Key key}) : super(key: key);
 
@@ -54,7 +55,9 @@ class _I_M_1_4_State extends State<I_M_1_4_> {
                   top: size.height*0.05,
                   right:size.width*0.75,
                   child: BacksButton(onPressed: (){
-                    Navigator.pop(context);
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => Math1() ));
                   },)
               ),
 

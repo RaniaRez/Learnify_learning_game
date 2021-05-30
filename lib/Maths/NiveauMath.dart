@@ -4,6 +4,7 @@ import 'package:somthn/Maths/M-2.dart';
 import 'package:somthn/Owls/BrownOwl.dart';
 import 'package:somthn/Owls/LockIcon.dart';
 import 'package:somthn/Maths/M-1.dart';
+import 'M-3.dart';
 import 'package:somthn/Avatars/PinkAvatarIcon.dart';
 import 'package:somthn/WelcomePages/Settings.dart';
 import 'package:somthn/Buttons/buttonDifficile.dart';
@@ -11,7 +12,7 @@ import 'package:somthn/Buttons/buttonMoyen.dart';
 import 'package:somthn/Buttons/buttonfacile.dart';
 import 'package:somthn/Owls/madGreenOwl.dart';
 import 'package:somthn/Buttons/settingsButton.dart';
-import 'BienvenueMath.dart';
+import '../Maths/BienvenueMath.dart';
 
 
 
@@ -51,7 +52,9 @@ class _NiveauMathState extends State<NiveauMath> {
                     Navigator.push(
                         context,
                         MaterialPageRoute(builder: (context) => Math1()));
-                    print('facile');}),
+                    print('facile');
+                    scoreM.niv1=0;
+                  }),
                 ),
 
               Positioned(
@@ -97,6 +100,9 @@ class _NiveauMathState extends State<NiveauMath> {
                 width: size.width*0.5,
                   child: ButtonDifficile(onPressed:(){
                     print('hard');
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => Math3()));
                   }),
                 ),
 
@@ -126,7 +132,9 @@ class _NiveauMathState extends State<NiveauMath> {
                   top: size.height*0.05,
                   right:size.width*0.75,
                   child: BacksButton(onPressed: (){
-                    Navigator.pop(context);
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => BienvenueMath()));
                   },)
               ),
             ]

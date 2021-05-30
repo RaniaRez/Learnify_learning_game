@@ -1,25 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:somthn/Buttons/BarreProgres.dart';
-import 'package:somthn/Maths/BienvenueMath.dart';
-import 'package:somthn/Maths/M-1-2.dart';
-import 'package:somthn/Maths/M-3-4.dart';
+import 'package:somthn/Geographie/N1Q4T2_C_1.dart';
+import 'package:somthn/Geographie/N1Q4T2_C_2.dart';
+import 'package:somthn/Geographie/N1Q4T2_C_4.dart';
+import 'package:somthn/Maths/M-2-5.dart';
 import 'package:somthn/WelcomePages/Settings.dart';
-import 'package:somthn/Bulles/bulleQuest.dart';
-import 'package:somthn/Buttons/button0.dart';
-import 'package:somthn/Buttons/button1.dart';
-import 'package:somthn/Buttons/button2.dart';
-import 'package:somthn/Buttons/button3.dart';
-import 'package:somthn/Buttons/button4.dart';
-import 'package:somthn/Buttons/button5.dart';
-import 'package:somthn/Buttons/button6.dart';
-import 'package:somthn/Buttons/button7.dart';
-import 'package:somthn/Buttons/button8.dart';
-import 'package:somthn/Buttons/button9.dart';
+import 'package:somthn/WelcomePages/Home.dart';
+
 import 'package:somthn/Buttons/buttonContinuer.dart';
-import 'package:somthn/Buttons/buttonGoTo.dart';
 import 'package:somthn/Buttons/buttonQ.dart';
-import 'package:somthn/Buttons/buttonReset.dart';
 import 'package:somthn/myicons.dart';
 import '../Buttons/settingsButton.dart';
 import '../Buttons/BacksButton.dart';
@@ -27,27 +16,24 @@ import 'package:somthn/Avatars/OrangeAvatarIcon.dart';
 import 'package:somthn/Avatars/PinkAvatarIcon.dart';
 import 'package:somthn/Avatars/PurpleAvatarIcon.dart';
 import 'package:somthn/Avatars/BlueAvatarIcon.dart';
-//import '../WelcomePages/ChooseAvatar.dart';
 import '../Services/Login.dart';
-import '../Services/SignUp.dart';
-import 'BienvenueMath.dart';
-import 'M-3.dart';
-import 'NiveauMath.dart';
 
+import 'package:somthn/Bulles/BulleN1Q4T2.dart';
 
-class M_3_3 extends StatefulWidget {
-  const M_3_3({Key key}) : super(key: key);
+class N2Q1T2_C_2 extends StatefulWidget {
+  const N2Q1T2_C_2({Key key}) : super(key: key);
 
   @override
-  _M_3_3State createState() => _M_3_3State();
+  _N2Q1T2_C_2State createState() => _N2Q1T2_C_2State();
 }
 
-class _M_3_3State extends State<M_3_3> {
+class _N2Q1T2_C_2State extends State<N2Q1T2_C_2> {
   bool Visible = true;
   bool correct = false;
   bool oneClicked = false;
   bool twoClicked = false;
   bool threeClicked = false;
+  bool fourClicked = false;
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
@@ -62,60 +48,56 @@ class _M_3_3State extends State<M_3_3> {
                 constraints: BoxConstraints.expand(),
                 decoration: BoxDecoration(
                     image: DecorationImage(
-                        image: AssetImage("images/mathsBG.jpg"),
+                        image: AssetImage("images/geo_BG.jpg"),
                         fit: BoxFit.cover)),
               ),
               Positioned(
                   top: size.height*0.05,
+                  right:size.width*0.75,
+
+                  child: BacksButton(onPressed: (){
+                    print("u clicked me");
+                    Navigator.pop(context);
+                  },)
+              ),
+
+              Positioned(
+                  top:size.height*0.05,
                   left:size.width*0.75,
-                  child:
-                  SettingsButton(onPressed: (){
+                  child: SettingsButton(onPressed: (){
                     Navigator.push(
                         context,
                         MaterialPageRoute(builder: (context) => Settings()));
-                    print("HELL YEAH");
-                  },)
-              ),
-              Positioned(
-                  top: size.height*0.05,
-                  right:size.width*0.75,
-                  child: BacksButton(onPressed: (){
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(builder: (context) => Math3()));
+                    print("settings");
                   },)
               ),
               Positioned(
                   bottom: size.height*0.88,
                   left: size.width*0.275,
                   right: size.width*0.275,
-                  child: SvgPicture.asset(TwoBars)),
-
+                  child: SvgPicture.asset(FourBars)),
+              Positioned(
+                bottom: size.height*0.55,
+                left: size.width*0.05,
+                height: size.height*0.3,
+                width: size.width*0.8,
+                child:SvgPicture.asset('assets/icons/BulleN2Q1T2.svg'),
+              ),
               Visibility(
                 visible: !Visible,
                 child: Positioned(
                   bottom: size.height*0.88,
                   left: size.width*0.275,
                   right: size.width*0.275,
-                  child: SvgPicture.asset(ThreeBars),
-                ),
-              ),
-              Positioned(
-                top: size.height*0.45,
-                left: size.width*0.15,
-                right: size.width*0.15,
-                child: Visibility(
-                    child: Visibility(
-                        visible: Visible,
-                        child: SvgPicture.asset('assets/icons/M-3-T-3.svg'))
+                  child: SvgPicture.asset(FourBars),
                 ),
               ),
               if (user.avatar=="Pink")
                 Visibility(
                   visible: Visible,
                   child: Positioned(
-                    top: size.height*0.32,
-                    left: size.width*0.6,
+                    top: size.height*0.38,
+                    left: size.width*0.72,
                     height: size.width*0.3,
                     width: size.width*0.3,
                     child:PinkAvatarIcon(onPressed: null,),
@@ -125,8 +107,8 @@ class _M_3_3State extends State<M_3_3> {
                 Visibility(
                   visible: Visible,
                   child: Positioned(
-                    top: size.height*0.31,
-                    left: size.width*0.57,
+                    top: size.height*0.38,
+                    left: size.width*0.72,
                     height: size.width*0.35,
                     width: size.width*0.35,
                     child:PurpleAvatarIcon(onPressed: null,),
@@ -136,8 +118,8 @@ class _M_3_3State extends State<M_3_3> {
                 Visibility(
                   visible: Visible,
                   child: Positioned(
-                    top: size.height*0.32,
-                    left: size.width*0.6,
+                    top: size.height*0.38,
+                    left: size.width*0.72,
                     height: size.width*0.3,
                     width: size.width*0.3,
                     child: OrangeAvatarIcon(onPressed: null,),
@@ -147,203 +129,97 @@ class _M_3_3State extends State<M_3_3> {
                 Visibility(
                   visible: Visible,
                   child: Positioned(
-                    top: size.height*0.32,
-                    left: size.width*0.6,
+                    top: size.height*0.38,
+                    left: size.width*0.72,
                     height: size.width*0.3,
                     width: size.width*0.3,
                     child:BlueAvatarIcon(onPressed: null,),
                   ),
                 ),
-              Positioned(
-                top: size.height*0.15,
-                left: size.width*0.1,
-                height: size.width*0.4,
-                width: size.width*0.8,
-                child: SvgPicture.asset('assets/icons/M-3-Q-3.svg'),
-              ),
+
 
               Visibility(
-                visible: Visible,
+                visible: false,
                 child: Positioned(
-
-                    top: size.height*0.84,
-                    left: size.width*0.035,
-                    height: size.width*0.2,
-                    width: size.width*0.33,
-                    child: QButton(onPressed: null,)
-                ),
-              ),
-              Visibility(
-                visible: Visible,
-                child: Positioned(
-                  top: size.height*0.85,
-                  left: size.width*0.12,
+                  top: size.height*0.5,
+                  left: size.width*0.5,
+                  height: size.height*0.3,
+                  width: size.width*0.5,
                   child: IconButton(
-                    iconSize: 50,
+                    icon: SvgPicture.asset('assets/icons/MerRouge.svg'),
                     onPressed: (){
-                      print('frdv');
-                      setState(() {
-                        oneClicked = true;
-                        twoClicked = false;
-                        threeClicked = false;
-                      });},
-                    icon: FittedBox(
-                      fit: BoxFit.fitWidth,
-                      child: Text(
-                        '4',
-                        style:TextStyle(
-                          fontSize: 30,
-                          fontFamily: 'Skranji-Bold',
-                          fontWeight: FontWeight.bold,
-                          color:Colors.brown[700],
-                        ),
-                        textAlign: TextAlign.center,
-                      ),
-                    ),
-                  ),
-                ),
-              ),
-              Visibility(
-                visible: Visible,
-                child: Positioned(
-                    top: size.height*0.75,
-                    right: size.width*0.03,
-                    height: size.width*0.2,
-                    width: size.width*0.33,
-                    child: QButton(onPressed: null,)
-                ),
-              ),
-              Visibility(
-                visible: Visible,
-                child: Positioned(
-                  top: size.height*0.76,
-                  right: size.width*0.12,
-                  child: IconButton(
-                    iconSize: 50,
-                    onPressed: (){
-                      print('frdv');
+                      print('oran');
                       setState(() {
                         oneClicked = false;
                         twoClicked = true;
                         threeClicked = false;
+                        fourClicked = false;
                       });},
-                    icon: FittedBox(
-                      fit: BoxFit.fitWidth,
-                      child: Text(
-                        '8',
-                        style:TextStyle(
-                          fontSize: 30,
-                          fontFamily: 'Skranji-Bold',
-                          fontWeight: FontWeight.bold,
-                          color:Colors.brown[700],
-                        ),
-                        textAlign: TextAlign.center,
-                      ),
-                    ),
                   ),
                 ),
               ),
               Visibility(
                 visible: Visible,
                 child: Positioned(
-                    top: size.height*0.8,
-                    right: size.width*0.33,
-                    height: size.width*0.2,
-                    width: size.width*0.33,
-                    child: QButton(onPressed: null,)
+                  top: size.height*0.7,
+                  left: size.width*0.5,
+                  height: size.height*0.3,
+                  width: size.width*0.5,
+                  child: IconButton(
+                    icon: SvgPicture.asset('assets/icons/Mediterannee.svg'),
+                    onPressed: (){
+                      print('adrar');
+                      setState(() {
+                        oneClicked = false;
+                        twoClicked = false;
+                        threeClicked = false;
+                        fourClicked = true;
+                      });},
+                  ),
                 ),
               ),
               Visibility(
                 visible: Visible,
                 child: Positioned(
-                  top: size.height*0.81,
-                  right: size.width*0.41,
+                  top: size.height*0.6,
+                  left: size.width*0,
+                  height: size.height*0.3,
+                  width: size.width*0.5,
                   child: IconButton(
-                    iconSize: 50,
+                    icon: SvgPicture.asset('assets/icons/MerNoire.svg'),
                     onPressed: (){
-                      print('frdv');
+                      print('alger');
                       setState(() {
                         oneClicked = false;
                         twoClicked = false;
                         threeClicked = true;
+                        fourClicked = false;
                       });},
-                    icon: FittedBox(
-                      fit: BoxFit.fitWidth,
-                      child: Text(
-                        '16',
-                        style:TextStyle(
-                          fontSize: 30,
-                          fontFamily: 'Skranji-Bold',
-                          fontWeight: FontWeight.bold,
-                          color:Colors.brown[700],
-                        ),
-                        textAlign: TextAlign.center,
-                      ),
-                    ),
                   ),
+
                 ),
               ),
-              Positioned(
-                top:size.height*0.76,
-                height: size.height*0.25,
-                width:size.width*0.4,
-                child: Visibility(
-                  visible: oneClicked&&Visible,
+              Visibility(
+                visible: Visible,
+                child: Positioned(
+                  top: size.height*0.4,
+                  left: size.width*0.0,
+                  height: size.height*0.3,
+                  width: size.width*0.5,
                   child: IconButton(
+                    icon: SvgPicture.asset('assets/icons/MerMorte.svg'),
                     onPressed: (){
+                      print('annaba');
                       setState(() {
-                        Visible = false;
-                      });
-                    },
-                    icon: SvgPicture.asset(quotes),
-                  ),
-
-                ),
-              ),
-              Positioned(
-                left: size.width*0.6,
-                top:size.height*0.68,
-                height: size.height*0.25,
-                width:size.width*0.4,
-                child: Visibility(
-                 visible: twoClicked&&Visible,
-
-                  child: IconButton(
-                    onPressed: (){
-                      setState(() {
-                        Visible = false;
-                        correct = true;
-                      });
-                      scoreM.niv3+=2;
-                      print(scoreM.niv3);
-                    },
-                    icon: SvgPicture.asset(quotes),
-                  ),
-
-                ),
-              ),
-              Positioned(
-                left: size.width*0.3,
-                top:size.height*0.73,
-                height: size.height*0.25,
-                width:size.width*0.4,
-                child: Transform.rotate(
-                  angle: 7,
-                  child: Visibility(
-                    visible: threeClicked&&Visible,
-
-                    child: IconButton(
-                      onPressed: (){
-                        setState(() {
-                          Visible = false;
-                        });
-                      },
-                      icon: SvgPicture.asset(quotes),
-                    ),
-
+                        oneClicked = true;
+                        twoClicked = false;
+                        threeClicked = false;
+                        fourClicked = false;
+                      });},
                   ),
                 ),
               ),
+
               Visibility(
                 visible: !Visible,
                 child: Positioned(
@@ -354,8 +230,98 @@ class _M_3_3State extends State<M_3_3> {
                     child: ButtonContinuer(onPressed: (){
                       Navigator.push(
                           context,
-                          MaterialPageRoute(builder: (context) => M_3_4()));
+                          MaterialPageRoute(builder: (context) => Home()));
                       print('Continuer');},)
+                ),
+              ),
+              //Second click
+              Positioned(
+                  top: size.height*0.6,
+                  left: size.width*0,
+                  height: size.height*0.3,
+                  width: size.width*0.5,
+                  child: Visibility(
+                      visible: (threeClicked && Visible),
+                      child: IconButton(
+                        onPressed: (){
+                          if (threeClicked){
+                            setState(() {
+                              correct = false;
+                              Visible = false;
+
+                              print('Correct');
+                            });
+                            print('Oran');
+                          }
+                          print('Alger');
+                        },
+                        icon: SvgPicture.asset('assets/icons/MerNoire.svg'),))
+              ),
+              Positioned(
+                top: size.height*0.7,
+                left: size.width*0.5,
+                height: size.height*0.3,
+                width: size.width*0.5,
+                child: Visibility(
+                    visible: (fourClicked&&Visible),
+                    child: IconButton(
+                        onPressed: (){
+                          if (fourClicked) {
+                            setState(() {
+                              correct = true;
+                              Visible = false;
+
+                              print('Correct');
+                            });
+
+
+                          }
+                          print('Alger');
+                        },
+                        icon: SvgPicture.asset('assets/icons/Mediterannee.svg'))
+                ),
+              ),
+              Positioned(
+                top: size.height*0.5,
+                left: size.width*0.5,
+                height: size.height*0.3,
+                width: size.width*0.5,
+
+                child: Visibility(
+                    visible: false,
+                    child: IconButton(
+                        onPressed: (){
+                          if (twoClicked) {
+                            setState(() {
+                              correct = false;
+                              Visible = false;
+
+                              print('Correct');
+                            });
+                            print('Oran');
+                          }
+                        },
+                        icon: SvgPicture.asset('assets/icons/MerRouge.svg'))
+                ),
+              ),
+              Positioned(
+                top: size.height*0.4,
+                left: size.width*0.0,
+                height: size.height*0.3,
+                width: size.width*0.5,
+                child: Visibility(
+                    visible: (oneClicked&&Visible),
+                    child: IconButton(
+                        onPressed: (){
+                          if (oneClicked) {
+                            setState(() {
+                              correct = false;
+                              Visible = false;
+
+                              print('Correct');
+                            });}
+                        },
+                        icon: SvgPicture.asset('assets/icons/MerMorte.svg'))
                 ),
               ),
               if (correct)
@@ -363,9 +329,8 @@ class _M_3_3State extends State<M_3_3> {
                   children: <Widget>[
                     Visibility(
                       visible: !Visible,
-                      child: Positioned(
-                          left: size.width*0.17,
-                          top:size.height*0.63,
+                      child:Align(
+                          alignment: Alignment.center,
                           child: SvgPicture.asset(Right)
                       ),
                     ),
@@ -430,9 +395,8 @@ class _M_3_3State extends State<M_3_3> {
                   children:[
                     Visibility(
                       visible: !Visible,
-                      child: Positioned(
-                          left: size.width*0.17,
-                          top:size.height*0.63,
+                      child: Align(
+                          alignment: Alignment.center,
                           child: SvgPicture.asset(Wrong)
                       ),
                     ),
@@ -482,11 +446,8 @@ class _M_3_3State extends State<M_3_3> {
                       ),
                   ],
                 ),
-
             ],
           ),
         ));
   }
-
 }
-

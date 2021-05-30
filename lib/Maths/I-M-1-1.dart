@@ -14,6 +14,7 @@ import '../WelcomePages/ChooseAvatar.dart';
 import 'package:somthn/Buttons/buttonAppliquer.dart';
 import '../Services/Login.dart';
 import '../Services/SignUp.dart';
+import 'M-1.dart';
 
 class I_M_1_1_ extends StatefulWidget {
   const I_M_1_1_({Key key}) : super(key: key);
@@ -55,7 +56,9 @@ class _I_M_1_1_State extends State<I_M_1_1_> {
                   top: size.height*0.05,
                   right:size.width*0.75,
                   child: BacksButton(onPressed: (){
-                    Navigator.pop(context);
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => Math1() ));
                   },)
               ),
               Positioned(

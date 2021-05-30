@@ -21,6 +21,9 @@ import 'package:somthn/Avatars/PinkAvatarIcon.dart';
 import 'package:somthn/Avatars/PurpleAvatarIcon.dart';
 import 'package:somthn/Avatars/BlueAvatarIcon.dart';
 import '../Services/Login.dart';
+import 'BienvenueMath.dart';
+import 'M-3.dart';
+import 'NiveauMath.dart';
 
 
 
@@ -61,7 +64,9 @@ class _M_3_5State extends State<M_3_5> {
 
                   child: BacksButton(onPressed: (){
                     print("u clicked me");
-                    Navigator.pop(context);
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => Math3()));
                   },)
               ),
 
@@ -364,7 +369,6 @@ class _M_3_5State extends State<M_3_5> {
                             setState(() {
                               Visible = false;
                             });
-
                             print('Correct');
                           }
                           print('2');
@@ -616,7 +620,8 @@ class _M_3_5State extends State<M_3_5> {
                               Visible = false;
                               correct = true;
                             });
-
+                            scoreM.niv3=scoreM.niv3+2;
+                            print(scoreM.niv3);
                             print('Correct');
                           }
                           print('1');

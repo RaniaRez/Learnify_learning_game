@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:somthn/Buttons/HomeButton.dart';
 import 'package:somthn/Buttons/buttonGoTo.dart';
+import 'package:somthn/Maths/BienvenueMath.dart';
 import 'package:somthn/Maths/M-2.dart';
 import 'package:somthn/WelcomePages/Settings.dart';
 import 'package:somthn/Mutual/Stars.dart';
@@ -16,7 +17,9 @@ import 'package:somthn/Avatars/PurpleAvatarIcon.dart';
 import 'package:somthn/Avatars/BlueAvatarIcon.dart';
 import '../Services/Login.dart';
 import '../Services/SignUp.dart';
-
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'BienvenueMath.dart';
+import 'M-1.dart';
 
 class Niveau1Pass extends StatefulWidget {
   @override
@@ -31,6 +34,10 @@ class _Niveau1PassState extends State<Niveau1Pass> {
 
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
+    /*print("khra2");
+    print(scoreM.niv1);
+    print("khra2");
+    Firestore.instance.collection('users').document(user.uid).collection('domains').document('maths').updateData({'niv1':scoreM.niv1});*/
     return Scaffold(
       body:
       Container(
@@ -61,9 +68,9 @@ class _Niveau1PassState extends State<Niveau1Pass> {
                 right:size.width*0.75,
                 child: BacksButton(onPressed: (){
                   print("HELL YEAH");
-                  Navigator.pop(
-                    context,
-                  );
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => Math1() ));
                 },)
             ),
             Positioned(
@@ -71,6 +78,7 @@ class _Niveau1PassState extends State<Niveau1Pass> {
               left: size.width*0.39,
               child: HomeButton(
                 onPressed: (){
+                  print("zbel2");
                   print("HELL YEAH");
                   Navigator.push(
                     context,
@@ -148,6 +156,7 @@ class _Niveau1PassState extends State<Niveau1Pass> {
               top: size.height*0.83,
               left: size.width*0.7 ,
               child: GoToButton(onPressed: (){
+                print("zbel");
                 Navigator.push(
                     context,
                     MaterialPageRoute(builder: (context) => Math2()));
