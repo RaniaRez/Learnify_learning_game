@@ -78,8 +78,8 @@ class _Niveau1PassState extends State<Niveau1Pass> {
               left: size.width*0.39,
               child: HomeButton(
                 onPressed: (){
-                  print("zbel2");
-                  print("HELL YEAH");
+                  //print("zbel2");
+                  print("HELL YEAH8");
                   Navigator.push(
                     context,
                     MaterialPageRoute(builder: (context) => Home()),);
@@ -156,7 +156,9 @@ class _Niveau1PassState extends State<Niveau1Pass> {
               top: size.height*0.83,
               left: size.width*0.7 ,
               child: GoToButton(onPressed: (){
-                print("zbel");
+                print(scoreM.niv1);
+                print('khra');
+                //Firestore.instance.collection('users').document(user.uid).collection('domains').document('maths').updateData({'niv1':scoreM.niv1});
                 Navigator.push(
                     context,
                     MaterialPageRoute(builder: (context) => Math2()));

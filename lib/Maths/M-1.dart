@@ -12,6 +12,7 @@ import 'package:somthn/Avatars/PurpleAvatarIcon.dart';
 import 'package:somthn/Avatars/BlueAvatarIcon.dart';
 import '../Services/Login.dart';
 import 'BienvenueMath.dart';
+import 'NiveauMath.dart';
 
 
 
@@ -54,7 +55,9 @@ class _Math1State extends State<Math1> {
                   top: size.height*0.05,
                   right:size.width*0.75,
                   child: BacksButton(onPressed: (){
-                    Navigator.pop(context);
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => NiveauMath() ));
                   },)
               ),
 

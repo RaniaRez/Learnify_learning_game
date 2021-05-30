@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:somthn/Maths/M-1-5-2ndAttempt.dart';
-import 'package:somthn/Mutual/Niveau1Pass%C3%A9.dart';
+import 'package:somthn/Maths/Niveau1Pass%C3%A9.dart';
+
 import 'package:somthn/WelcomePages/Settings.dart';
 import 'package:somthn/Bulles/bulleQuest.dart';
 import 'package:somthn/Buttons/button0.dart';
@@ -31,6 +32,7 @@ import '../Services/SignUp.dart';
 import 'BienvenueMath.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'M-1.dart';
+//import 'Niveau1Passé.dart';
 
 
 class M_1_5 extends StatefulWidget {
@@ -592,10 +594,20 @@ class _M_1_5State extends State<M_1_5> {
                     height: size.height*0.2,
                     width: size.width*0.5,
                     child: ButtonContinuer(onPressed: (){
-                      Navigator.push(
-                          context,
-                          MaterialPageRoute(builder: (context) => Niveau1Pass()));
-                      print('Continuer');},)
+                      Firestore.instance.collection('users').document(user.uid).collection('domains').document('maths').updateData({'niv1':scoreM.niv1});
+                      if (scoreM.niv1>=7.5) {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(builder: (context) => Niveau1Pass()));
+                      }
+                      else {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => Math1()));
+                      }
+
+                      },)
                 ),
               ),
               if (user.avatar=="Pink")

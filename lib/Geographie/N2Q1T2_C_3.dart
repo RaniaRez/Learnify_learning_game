@@ -6,6 +6,7 @@ import 'package:somthn/Geographie/N1Q4T2_C_4.dart';
 import 'package:somthn/Maths/M-2-5.dart';
 import 'package:somthn/WelcomePages/Settings.dart';
 import 'package:somthn/WelcomePages/Home.dart';
+import 'package:vibration/vibration.dart';
 
 import 'package:somthn/Buttons/buttonContinuer.dart';
 import 'package:somthn/Buttons/buttonQ.dart';
@@ -90,6 +91,23 @@ class _N2Q1T2_C_3State extends State<N2Q1T2_C_3> {
                   left: size.width*0.275,
                   right: size.width*0.275,
                   child: SvgPicture.asset(FourBars),
+                ),
+              ),
+              Visibility(
+                visible: Visible,
+                child: Positioned(
+                  top: size.height*0.75,
+                  left: size.width*0.0,
+                  height: size.height*0.3,
+                  width: size.width*0.5,
+                  child: IconButton(
+                    icon: SvgPicture.asset('assets/icons/QuestionMark.svg'),
+                    onPressed: (){
+                      print('QuestionMark');
+                      setState(() {
+
+                      });},
+                  ),
                 ),
               ),
               if (user.avatar=="Pink")
@@ -245,6 +263,8 @@ class _N2Q1T2_C_3State extends State<N2Q1T2_C_3> {
                       child: IconButton(
                         onPressed: (){
                           if (threeClicked){
+                            Vibration.vibrate();
+
                             setState(() {
                               correct = false;
                               Visible = false;
@@ -292,6 +312,8 @@ class _N2Q1T2_C_3State extends State<N2Q1T2_C_3> {
                     child: IconButton(
                         onPressed: (){
                           if (twoClicked) {
+                            Vibration.vibrate();
+
                             setState(() {
                               correct = false;
                               Visible = false;
@@ -314,6 +336,8 @@ class _N2Q1T2_C_3State extends State<N2Q1T2_C_3> {
                     child: IconButton(
                         onPressed: (){
                           if (oneClicked) {
+                            Vibration.vibrate();
+
                             setState(() {
                               correct = false;
                               Visible = false;
@@ -386,6 +410,27 @@ class _N2Q1T2_C_3State extends State<N2Q1T2_C_3> {
                           left: size.width*0.4,
                           top:size.height*0.7,
                           child: SvgPicture.asset(bulleBravo)
+                      ),
+                    ),
+                    Visibility(
+                      visible: !Visible,
+                      child:Align(
+                          alignment: Alignment.center,
+                          child: SvgPicture.asset(Right)
+                      ),
+                    ),
+                    Positioned(
+                      top: size.height*0.45,
+                      left: size.width*0.2,
+                      height: size.height*0.3,
+                      width: size.width*0.6,
+                      child: Visibility(
+                          visible: !Visible,
+                          child: IconButton(
+                              onPressed: (){
+                                print('3aychin ghaya kho');
+                              },
+                              icon: SvgPicture.asset('assets/icons/Mediterannee.svg'))
                       ),
                     ),
                   ],
