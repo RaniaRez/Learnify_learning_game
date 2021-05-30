@@ -3,7 +3,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:somthn/Geographie/N1Q4T2_C_1.dart';
 import 'package:somthn/Geographie/N1Q4T2_C_2.dart';
 import 'package:somthn/Geographie/N1Q4T2_C_4.dart';
-import 'package:somthn/Maths/M-2-5.dart';
+import 'package:somthn/Geographie/N2Q2.dart';
 import 'package:somthn/WelcomePages/Settings.dart';
 import 'package:somthn/WelcomePages/Home.dart';
 import 'package:vibration/vibration.dart';
@@ -84,23 +84,7 @@ class _N2Q1T2_C_2State extends State<N2Q1T2_C_2> {
                 width: size.width*0.8,
                 child:SvgPicture.asset('assets/icons/BulleN2Q1T2.svg'),
               ),
-              Visibility(
-                visible: Visible,
-                child: Positioned(
-                  top: size.height*0.75,
-                  left: size.width*0.0,
-                  height: size.height*0.3,
-                  width: size.width*0.5,
-                  child: IconButton(
-                    icon: SvgPicture.asset('assets/icons/QuestionMark.svg'),
-                    onPressed: (){
-                      print('QuestionMark');
-                      setState(() {
 
-                      });},
-                  ),
-                ),
-              ),
               Visibility(
                 visible: !Visible,
                 child: Positioned(
@@ -248,7 +232,7 @@ class _N2Q1T2_C_2State extends State<N2Q1T2_C_2> {
                     child: ButtonContinuer(onPressed: (){
                       Navigator.push(
                           context,
-                          MaterialPageRoute(builder: (context) => Home()));
+                          MaterialPageRoute(builder: (context) => N2Q2()));
                       print('Continuer');},)
                 ),
               ),
