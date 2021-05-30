@@ -24,6 +24,8 @@ import '../Services/Login.dart';
 import 'BienvenueMath.dart';
 import 'M-3.dart';
 import 'NiveauMath.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
+
 
 
 
@@ -659,9 +661,18 @@ class _M_3_5State extends State<M_3_5> {
                     height: size.height*0.2,
                     width: size.width*0.5,
                     child: ButtonContinuer(onPressed: (){
-                      Navigator.push(
-                          context,
-                          MaterialPageRoute(builder: (context) => Niveau3Pass()));
+                      Firestore.instance.collection('users').document(user.uid).collection('domains').document('maths').updateData({'niv1':scoreM.niv1});
+                      if (scoreM.niv3>=7.5) {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(builder: (context) => Niveau3Pass()));
+                      }
+                      else {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => Math3()));
+                      }
                       print('Continuer');},)
                 ),
               ),
