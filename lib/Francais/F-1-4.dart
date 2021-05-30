@@ -10,6 +10,9 @@ import 'package:somthn/Buttons/buttonContinuer.dart';
 import 'package:somthn/Buttons/buttonGoTo.dart';
 import 'package:somthn/Buttons/buttonReset.dart';
 import 'package:somthn/Buttons/settingsButton.dart';
+import 'package:somthn/Francais/F-1-4-2ndAttempt.dart';
+import 'package:somthn/Francais/F-1-5.dart';
+import 'package:somthn/Francais/F-1.dart';
 import 'package:somthn/Maths/M-1-4.dart';
 import 'package:somthn/WelcomePages/Settings.dart';
 import 'package:somthn/myicons.dart';
@@ -68,7 +71,9 @@ class _F_1_4State extends State<F_1_4> {
                     top: size.height*0.05,
                     right:size.width*0.75,
                     child: BacksButton(onPressed: (){
-                      Navigator.pop(context);
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => Fr1()));
                     },)
                 ),
                 Positioned(
@@ -97,8 +102,11 @@ class _F_1_4State extends State<F_1_4> {
                         print('correct');
                       setState(() {
                         Visible=false;
-                      });}else{
-
+                      });}else if ((drag1==null)&&(drag2==null)&&(drag3==null)&&(drag4==null)&&(drag5==null)&&(drag6==null)){}
+                      else{
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(builder: (context) => F_1_4_2nd()));
                       }
                       print("HELL YEAH");
 
@@ -160,7 +168,7 @@ class _F_1_4State extends State<F_1_4> {
                       child: ButtonContinuer(onPressed: (){
                         Navigator.push(
                             context,
-                            MaterialPageRoute(builder: (context) => M_1_4()));
+                            MaterialPageRoute(builder: (context) => F_1_5()));
                         print('Continuer');},)
                   ),
                 ),

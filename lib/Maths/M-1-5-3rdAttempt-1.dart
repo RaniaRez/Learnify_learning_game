@@ -28,6 +28,10 @@ import '../WelcomePages/ChooseAvatar.dart';
 import '../Services/Login.dart';
 import '../Services/SignUp.dart';
 import 'M-1.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
+//import 'Niveau1Passé.dart';
+import 'BienvenueMath.dart';
+
 
 
 class M_1_5_3rd_1 extends StatefulWidget {
@@ -585,10 +589,19 @@ class _M_1_5_3rd_1State extends State<M_1_5_3rd_1> {
                     height: size.height*0.2,
                     width: size.width*0.5,
                     child: ButtonContinuer(onPressed: (){
-                      Navigator.push(
-                          context,
-                          MaterialPageRoute(builder: (context) => Niveau1Pass()));
-                      print('Continuer');},)
+                      Firestore.instance.collection('users').document(user.uid).collection('domains').document('maths').updateData({'niv1':scoreM.niv1});
+                      if (scoreM.niv1>=7.5) {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(builder: (context) => Niveau1Pass()));
+                      }
+                      else {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => Math1()));
+                      }
+                      },)
                 ),
               ),
               if (correct)
