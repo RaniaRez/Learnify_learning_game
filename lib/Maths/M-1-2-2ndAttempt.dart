@@ -597,16 +597,7 @@ class _M_1_2_2ndState extends State<M_1_2_2nd> {
                 ),
               ),
              if (user.avatar=="Pink")
-Visibility(
-visible: !Visible,
-child: Positioned(
-bottom: 95,
-right: 280.0 ,
-height: 130.0,
-width: 130.0,
-child:Image.asset('images/HappyPink.gif'),
-),
-),
+
 if (user.avatar=="Pink")
 Visibility(
 visible: !Visible,

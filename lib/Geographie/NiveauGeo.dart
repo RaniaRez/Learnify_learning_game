@@ -3,7 +3,9 @@ import 'package:somthn/Buttons/BacksButton.dart';
 import 'package:somthn/Maths/M-2.dart';
 import 'package:somthn/Owls/BrownOwl.dart';
 import 'package:somthn/Owls/LockIcon.dart';
+import './N2Q1.dart';
 import './N1Q2.dart';
+
 import 'package:somthn/Avatars/PinkAvatarIcon.dart';
 import 'package:somthn/WelcomePages/Settings.dart';
 import 'package:somthn/Buttons/buttonDifficile.dart';
@@ -71,7 +73,7 @@ class _NiveauGeoState extends State<NiveauGeo> {
                   child: ButtonMoyen(onPressed:(){
                     Navigator.push(
                         context,
-                        MaterialPageRoute(builder: (context) => N1Q2()));
+                        MaterialPageRoute(builder: (context) => N2Q1()));
                     print('Moyen');
                   }),
                 ),

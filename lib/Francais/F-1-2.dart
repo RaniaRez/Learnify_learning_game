@@ -5,6 +5,7 @@ import 'package:somthn/Buttons/BarreProgres.dart';
 import 'package:somthn/Francais/F-1-2-2-FourC.dart';
 import 'package:somthn/Francais/F-1-2-2-OneC.dart';
 import 'package:somthn/Francais/F-1-2-2-TwoC.dart';
+import 'package:somthn/Francais/F-1-3.dart';
 import 'package:somthn/Francais/I-F-1-1.dart';
 import 'package:somthn/Maths/M-1-2.dart';
 import 'package:somthn/WelcomePages/Settings.dart';
@@ -239,7 +240,7 @@ class _F_1_2State extends State<F_1_2> {
                     child: ButtonContinuer(onPressed: (){
                       Navigator.push(
                           context,
-                          new MaterialPageRoute(builder: (context) => new M_1_2()));
+                          new MaterialPageRoute(builder: (context) => new F_1_3()));
                       print('Continuer');
                     },)
                 ),

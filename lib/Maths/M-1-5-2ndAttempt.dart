@@ -29,6 +29,9 @@ import '../Services/Login.dart';
 import '../Services/SignUp.dart';
 import 'BienvenueMath.dart';
 import 'M-1.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'Niveau1Passé.dart';
+
 
 class M_1_5_2nd extends StatefulWidget {
   const M_1_5_2nd({Key key}) : super(key: key);
@@ -588,10 +591,20 @@ class _M_1_5_2ndState extends State<M_1_5_2nd> {
                     left: 0.0,
                     height: size.height*0.2,
                     width: size.width*0.5,
-                    child: ButtonContinuer(onPressed: (){Navigator.push(
-                        context,
-                        MaterialPageRoute(builder: (context) => Math2()));
-                    print('Continuer');},)
+                    child: ButtonContinuer(onPressed: (){
+                      Firestore.instance.collection('users').document(user.uid).collection('domains').document('maths').updateData({'niv1':scoreM.niv1});
+                      if (scoreM.niv1>=7.5) {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(builder: (context) => Niveau1Pass()));
+                      }
+                      else {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => Math1()));
+                      }
+                    },)
                 ),
               ),
               if (user.avatar=="Pink")
