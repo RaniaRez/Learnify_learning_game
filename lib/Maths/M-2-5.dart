@@ -1,3 +1,4 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:somthn/Buttons/BarreProgres.dart';
@@ -373,9 +374,18 @@ class _M_2_5State extends State<M_2_5> {
                     height: size.height*0.2,
                     width: size.width*0.5,
                     child: ButtonContinuer(onPressed: (){
+                      print("score final");
+                      print(scoreM.niv2);
+                      Firestore.instance.collection('users').document(user.uid).collection('domains').document('maths').updateData({'niv2':scoreM.niv2});
+                      if (scoreM.niv2>=7.5){
                       Navigator.push(
                           context,
-                          MaterialPageRoute(builder: (context) => Niveau2Pass()));
+                          MaterialPageRoute(builder: (context) => Niveau2Pass()));}
+                      else {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(builder: (context) => Math2()));
+                      }
                       print('Continuer');},)
                 ),
               ),

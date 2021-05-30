@@ -34,10 +34,6 @@ class _Niveau2PassState extends State<Niveau2Pass> {
 
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
-    print("score final");
-    print(scoreM.niv2);
-    Firestore.instance.collection('users').document(user.uid).collection('domains').document('maths').updateData(
-        {'niv2':scoreM.niv2});
     return Scaffold(
       body:
       Container(
@@ -155,9 +151,16 @@ class _Niveau2PassState extends State<Niveau2Pass> {
               top: size.height*0.83,
               left: size.width*0.7 ,
               child: GoToButton(onPressed: () {
+                if (scoreM.niv2>7.5)
+                  {
                 Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => Math3()));
+                    MaterialPageRoute(builder: (context) => Math3()));}
+                else {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => Math2()));
+                }
               }),
             ),
 
