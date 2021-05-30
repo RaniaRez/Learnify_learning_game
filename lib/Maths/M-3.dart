@@ -126,7 +126,6 @@ class _Math3State extends State<Math3> {
                 top: size.height*0.8,
                 left:size.width*0.75,
                 child: GoToButton(onPressed: (){
-                  scoreM.niv3=0;
                   print("HELL YEAH");
                   Navigator.push(
                     context,

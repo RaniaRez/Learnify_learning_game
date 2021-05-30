@@ -17,23 +17,25 @@ import 'package:somthn/Buttons/button6.dart';
 import 'package:somthn/Buttons/button7.dart';
 import 'package:somthn/Buttons/button8.dart';
 import 'package:somthn/Buttons/button9.dart';
-import 'package:somthn/TestDeNiveau/TestNivMathQ2.dart';
+import 'package:somthn/Maths/TestNiv/TestNivMathQ2.dart';
 import 'package:somthn/Buttons/buttonContinuer.dart';
 import 'package:somthn/Buttons/buttonGoTo.dart';
 import 'package:somthn/Buttons/buttonQ.dart';
 import 'package:somthn/Buttons/buttonReset.dart';
 import 'package:somthn/myicons.dart';
-import '../Buttons/settingsButton.dart';
-import '../Buttons/BacksButton.dart';
+import '../../Buttons/settingsButton.dart';
+import '../../Buttons/BacksButton.dart';
 import 'package:somthn/Avatars/OrangeAvatarIcon.dart';
 import 'package:somthn/Avatars/PinkAvatarIcon.dart';
 import 'package:somthn/Avatars/PurpleAvatarIcon.dart';
 import 'package:somthn/Avatars/BlueAvatarIcon.dart';
-import '../WelcomePages/ChooseAvatar.dart';
-import '../Services/Login.dart';
-import '../Services/SignUp.dart';
-import '../Maths/BienvenueMath.dart';
+import '../../WelcomePages/ChooseAvatar.dart';
+import '../../Services/Login.dart';
+import '../../Services/SignUp.dart';
+import '../BienvenueMath.dart';
+import 'TestMaths.dart';
 
+TestMaths test =new  TestMaths();
 
 class TestNivM1 extends StatefulWidget {
   const TestNivM1({Key key}) : super(key: key);
@@ -117,6 +119,7 @@ class _TestNivM1State extends State<TestNivM1> {
                         Visible = false;
                         correct = true;
                         print('Correct');
+                        test.q1=true ;
                       }else{
                         Visible = false;
                         print('Wrong');
