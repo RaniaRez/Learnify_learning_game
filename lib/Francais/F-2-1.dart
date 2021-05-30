@@ -10,6 +10,7 @@ import 'package:somthn/Francais/F-2-1-2nd-Francaise.dart';
 import 'package:somthn/Francais/F-2-1-2nd-dapprendre.dart';
 import 'package:somthn/Francais/F-2-1-2nd-lalangue.dart';
 import 'package:somthn/Francais/F-2-1-2nd.dart';
+import 'package:somthn/Francais/F-2-3.dart';
 import 'package:somthn/Francais/I-F-1-1.dart';
 import 'package:somthn/Maths/M-1-1-2ndAttempt.dart';
 import 'package:somthn/Maths/M-1-2.dart';
@@ -293,7 +294,7 @@ class _F_2_1State extends State<F_2_1> {
                     child: ButtonContinuer(onPressed: (){
                       Navigator.push(
                           context,
-                          new MaterialPageRoute(builder: (context) => new F_1_2()));
+                          new MaterialPageRoute(builder: (context) => new F_2_3()));
                       print('Continuer');
                     },)
                 ),

@@ -4,6 +4,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:somthn/Buttons/BarreProgres.dart';
 import 'package:somthn/Francais/F-1.dart';
 import 'package:somthn/Francais/F-3-2.dart';
+import 'package:somthn/Francais/F-3-3.dart';
 import 'package:somthn/Maths/M-1-2.dart';
 import 'package:somthn/WelcomePages/Settings.dart';
 import 'package:somthn/Buttons/buttonContinuer.dart';
@@ -220,7 +221,7 @@ class _F_3_2_2ndState extends State<F_3_2_2nd> {
                     child: ButtonContinuer(onPressed: (){
                       Navigator.push(
                           context,
-                          new MaterialPageRoute(builder: (context) => new F_3_2()));
+                          new MaterialPageRoute(builder: (context) => new F_3_3()));
                       print('Continuer');
                     },)
                 ),
