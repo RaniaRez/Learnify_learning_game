@@ -58,11 +58,6 @@ class _Math1State extends State<Math1> {
                   },)
               ),
 
-              Positioned(
-                bottom: size.height*0.3,
-                right: size.width*0.47,
-                child: SvgPicture.asset(buttonfacile),
-              ),
              if (user.avatar=="Pink")
                 Visibility(
 

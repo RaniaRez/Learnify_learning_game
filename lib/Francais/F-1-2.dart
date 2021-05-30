@@ -6,6 +6,7 @@ import 'package:somthn/Francais/F-1-2-2-FourC.dart';
 import 'package:somthn/Francais/F-1-2-2-OneC.dart';
 import 'package:somthn/Francais/F-1-2-2-TwoC.dart';
 import 'package:somthn/Francais/F-1-3.dart';
+import 'package:somthn/Francais/F-1.dart';
 import 'package:somthn/Francais/I-F-1-1.dart';
 import 'package:somthn/Maths/M-1-2.dart';
 import 'package:somthn/WelcomePages/Settings.dart';
@@ -60,7 +61,9 @@ class _F_1_2State extends State<F_1_2> {
                   top: size.height*0.05,
                   right:size.width*0.75,
                   child: BacksButton(onPressed: (){
-                    Navigator.pop(context);
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => Fr1()));
                   },)
               ),
               Positioned(

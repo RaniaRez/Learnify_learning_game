@@ -1,9 +1,15 @@
+
 import 'package:flutter/material.dart';
 import 'package:somthn/Francais/F-1-4.dart';
+import 'package:somthn/Maths/M-1-2.dart';
 import 'package:somthn/Maths/M-2-1.dart';
 import 'package:somthn/Maths/M-2-4.dart';
 import 'package:somthn/Maths/M-2-5-2ndAttemptThreeclick.dart';
-import 'package:somthn/Maths/Niveau1Pass%C3%A9.dart';
+import 'package:somthn/TestDeNiveau/TestNivFrQ3.dart';
+import 'package:somthn/TestDeNiveau/TestNivMathQ1.dart';
+import 'package:somthn/TestDeNiveau/TestNivMathQ2.dart';
+
+import 'package:somthn/TestDeNiveau/TestNivFrQ2.dart';
 import 'package:somthn/WelcomePages/Home.dart';
 import 'package:firebase_core/firebase_core.dart';
 
@@ -16,8 +22,6 @@ void main() {
       'lettresEntre': []
     }
   };
-  
-  runApp(MaterialApp(
-      home: F_1_4()
-  ));
+
+  runApp(MaterialApp(home:TestNivM1()));
 }
