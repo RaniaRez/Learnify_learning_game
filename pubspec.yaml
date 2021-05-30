@@ -24,6 +24,7 @@ dependencies:
   flutter:
     sdk: flutter
   flutter_svg: ^0.22.0
+  vibration: ^1.7.3
 
 
   # The following adds the Cupertino Icons font to your application.

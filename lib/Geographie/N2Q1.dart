@@ -16,6 +16,8 @@ import 'package:somthn/Avatars/PurpleAvatarIcon.dart';
 import 'package:somthn/Avatars/BlueAvatarIcon.dart';
 import '../Services/Login.dart';
 
+import 'package:vibration/vibration.dart';
+
 import 'package:somthn/Bulles/BulleN1Q4.dart';
 
 
@@ -136,6 +138,23 @@ class _N2Q1State extends State<N2Q1> {
                     child:BlueAvatarIcon(onPressed: null,),
                   ),
                 ),
+              Visibility(
+                visible: Visible,
+                child: Positioned(
+                  top: size.height*0.75,
+                  left: size.width*0.0,
+                  height: size.height*0.3,
+                  width: size.width*0.5,
+                  child: IconButton(
+                    icon: SvgPicture.asset('assets/icons/QuestionMark.svg'),
+                    onPressed: (){
+                      print('QuestionMark');
+                      setState(() {
+
+                      });},
+                  ),
+                ),
+              ),
 
 
               Visibility(
@@ -299,6 +318,7 @@ class _N2Q1State extends State<N2Q1> {
                       child: IconButton(
                         onPressed: (){
                           if (threeClicked){
+                            Vibration.vibrate();
                             setState(() {
                               Navigator.push(
                                   context,
@@ -344,6 +364,7 @@ class _N2Q1State extends State<N2Q1> {
                     child: IconButton(
                         onPressed: (){
                           if (twoClicked){
+                            Vibration.vibrate();
                             setState(() {
                               Navigator.push(
                                   context,
@@ -368,6 +389,7 @@ class _N2Q1State extends State<N2Q1> {
                     child: IconButton(
                         onPressed: (){
                           if (oneClicked)  {
+                            Vibration.vibrate();
                             Navigator.push(
                                 context,
                                 MaterialPageRoute(builder: (context) => N2Q1T2_C_1()));
@@ -376,6 +398,27 @@ class _N2Q1State extends State<N2Q1> {
                           print('3');
                         },
                         icon: SvgPicture.asset('assets/icons/MerMorte.svg'))
+                ),
+              ),
+              Positioned(
+                top: size.height*0.45,
+                left: size.width*0.2,
+                height: size.height*0.3,
+                width: size.width*0.6,
+                child: Visibility(
+                    visible: !Visible,
+                    child: IconButton(
+                        onPressed: (){
+                          print('3aychin ghaya kho');
+                        },
+                        icon: SvgPicture.asset('assets/icons/Mediterannee.svg'))
+                ),
+              ),
+              Visibility(
+                visible: !Visible,
+                child:Align(
+                    alignment: Alignment.center,
+                    child: SvgPicture.asset(Right)
                 ),
               ),
             ],
