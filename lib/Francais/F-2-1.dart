@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:somthn/Buttons/BarreProgres.dart';
 import 'package:somthn/Francais/F-1-2.dart';
+import 'package:somthn/Francais/F-1.dart';
 import 'package:somthn/Francais/F-2-1-2nd-Alice.dart';
 import 'package:somthn/Francais/F-2-1-2nd-Entrain.dart';
 import 'package:somthn/Francais/F-2-1-2nd-Francaise.dart';
@@ -81,7 +82,9 @@ class _F_2_1State extends State<F_2_1> {
                   top: size.height*0.05,
                   right:size.width*0.75,
                   child: BacksButton(onPressed: (){
-                    Navigator.pop(context);
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => Fr1()));
                   },)
               ),
               Positioned(

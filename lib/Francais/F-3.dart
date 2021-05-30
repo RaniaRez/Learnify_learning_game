@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:somthn/Avatars/OrangeAvatarIcon.dart';
 import 'package:somthn/Bulles/BullenomIcon.dart';
+import 'package:somthn/Francais/F-1.dart';
 import 'package:somthn/Francais/F-3-1.dart';
 import 'package:somthn/Maths/M-2-1.dart';
 import 'package:somthn/Maths/M-3-1.dart';
@@ -46,7 +47,9 @@ class _Fr3State extends State<Fr3> {
 
                   child: BacksButton(onPressed: (){
                     print("u clicked me");
-                    Navigator.pop(context);
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => Fr1()));
                   },)
               ),
 

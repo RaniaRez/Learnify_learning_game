@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:somthn/Buttons/BarreProgres.dart';
+import 'package:somthn/Francais/F-1.dart';
 import 'package:somthn/Francais/F-3-2-2ndFour.dart';
 import 'package:somthn/Francais/F-3-2-2ndOne.dart';
 import 'package:somthn/Francais/F-3-2-2ndTwo.dart';
@@ -58,7 +59,9 @@ class _F_3_2State extends State<F_3_2> {
                   top: size.height*0.05,
                   right:size.width*0.75,
                   child: BacksButton(onPressed: (){
-                    Navigator.pop(context);
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => Fr1()));
                   },)
               ),
               Positioned(
