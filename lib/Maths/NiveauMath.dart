@@ -53,7 +53,7 @@ class _NiveauMathState extends State<NiveauMath> {
                         context,
                         MaterialPageRoute(builder: (context) => Math1()));
                     print('facile');
-                    scoreM.niv1=0;
+                    //scoreM.niv1=0;
                   }),
                 ),
 

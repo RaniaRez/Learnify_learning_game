@@ -318,7 +318,7 @@ class _N2Q1State extends State<N2Q1> {
                       child: IconButton(
                         onPressed: (){
                           if (threeClicked){
-                            Vibration.vibrate();
+                            //Vibration.vibrate();
                             setState(() {
                               Navigator.push(
                                   context,

@@ -12,7 +12,8 @@ import '../Services/Login.dart';
 import '../Services/auth.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import '../Maths/Niveau1Passé.dart';
-
+import 'package:audioplayers/audio_cache.dart';
+import 'package:audioplayers/audioplayers.dart';
 
 
 
@@ -22,6 +23,71 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
+
+  /*AudioPlayer audioPlayer = AudioPlayer();
+  AudioPlayerState audioPlayerState = AudioPlayerState.PAUSED;
+  AudioCache audioCache;
+  String filePath = 'music.mp3';
+
+  /// Optional
+  int timeProgress = 0;
+  int audioDuration = 0;
+
+  /// Optional
+  Widget slider() {
+    return Container(
+      width: 300.0,
+      child: Slider.adaptive(
+          value: (timeProgress / 1000).floorToDouble(),
+          max: (audioDuration / 1000).floorToDouble(),
+          onChanged: (value) {
+            seekToSec(value.toInt());
+          }),
+    );
+  }
+
+  @override
+  void initState() {
+    super.initState();
+
+    /// Compulsory
+    audioPlayer = AudioPlayer();
+    audioCache = AudioCache(fixedPlayer: audioPlayer);
+
+    audioPlayer.onPlayerStateChanged.listen((AudioPlayerState s) {
+      setState(() {
+        audioPlayerState = s;
+      });
+    });
+
+    /// Optional
+    audioPlayer.onAudioPositionChanged.listen((Duration p) async {
+      setState(() {
+        timeProgress = p.inMilliseconds;
+      });
+    });
+  }
+
+  /// Compulsory
+  @override
+  void dispose() {
+    audioPlayer.release();
+    audioPlayer.dispose();
+    audioCache.clearCache();
+    super.dispose();
+  }
+
+  /// Compulsory
+  playMusic() async {
+    await audioCache.play(filePath);
+  }
+
+  /// Compulsory
+  pauseMusic() async {
+    await audioPlayer.pause();
+  }
+*/
+
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
