@@ -10,11 +10,8 @@ import 'package:somthn/Buttons/buttonContinuer.dart';
 import 'package:somthn/Buttons/buttonGoTo.dart';
 import 'package:somthn/Buttons/buttonReset.dart';
 import 'package:somthn/Buttons/settingsButton.dart';
-import 'package:somthn/Francais/F-1-5.dart';
 import 'package:somthn/Francais/F-1.dart';
-import 'package:somthn/Francais/Niveau1Pass%C3%A9.dart';
 import 'package:somthn/Francais/Niveau2Pass%C3%A9.dart';
-import 'package:somthn/Maths/M-1-4.dart';
 import 'package:somthn/WelcomePages/Settings.dart';
 import 'package:somthn/myicons.dart';
 import '../Services/Login.dart';
@@ -62,7 +59,6 @@ class _F_2_5_2ndState extends State<F_2_5_2nd> {
                     Navigator.push(
                         context,
                         MaterialPageRoute(builder: (context) => Settings()));
-                    print("HELL YEAH");
                   },)
               ),
               Positioned(
@@ -97,7 +93,6 @@ class _F_2_5_2ndState extends State<F_2_5_2nd> {
                   left: size.width*0.75,
                   child: GoToButton(onPressed: (){
                     if((drag1=="assets/icons/v.svg")&&(drag2=="assets/icons/o.svg")&&(drag3=="assets/icons/i.svg")&&(drag4=="assets/icons/l.svg")&&(drag5=="assets/icons/e.svg")){
-                      print('correct');
                       setState(() {
                         Visible=false;
                         correct=true;
@@ -108,8 +103,6 @@ class _F_2_5_2ndState extends State<F_2_5_2nd> {
                       });
 
                     }
-                    print("HELL YEAH");
-
                   },),
                 ),
               ),
@@ -148,7 +141,6 @@ class _F_2_5_2ndState extends State<F_2_5_2nd> {
                           drag4=null;
                           drag5=null;
                         });
-                        print('reset');
                       }
 
                   ),
@@ -165,7 +157,7 @@ class _F_2_5_2ndState extends State<F_2_5_2nd> {
                       Navigator.push(
                           context,
                           MaterialPageRoute(builder: (context) => Niveau2Pass()));
-                      print('Continuer');},)
+                    },)
                 ),
               ),
               if (user.avatar=="Pink")
@@ -224,7 +216,7 @@ class _F_2_5_2ndState extends State<F_2_5_2nd> {
                       /// Draggable
                       Draggable<String>(
                         onDragCompleted: (){
-                          print('gfds');
+                          
                           letterE = 'assets/icons/e.svg';
                         },
                         data:
@@ -266,7 +258,7 @@ class _F_2_5_2ndState extends State<F_2_5_2nd> {
                       SizedBox( width: size.width*0.1,),
                       Draggable<String>(
                         onDragCompleted: (){
-                          print('gfds');
+                          
                           letterL = 'assets/icons/l.svg';
                         },
                         data:
@@ -306,7 +298,7 @@ class _F_2_5_2ndState extends State<F_2_5_2nd> {
                       SizedBox( width: size.width*0.1,),
                       Draggable<String>(
                         onDragCompleted: (){
-                          print('gfds');
+                          
                           letterV = 'assets/icons/v.svg';
                         },
                         data:
@@ -367,7 +359,7 @@ class _F_2_5_2ndState extends State<F_2_5_2nd> {
                       /// Draggable
                       Draggable<String>(
                         onDragCompleted: (){
-                          print('gfds');
+                          
                           letterO = 'assets/icons/o.svg';
                         },
                         data:
@@ -409,7 +401,7 @@ class _F_2_5_2ndState extends State<F_2_5_2nd> {
                       SizedBox( width: size.width*0.1,),
                       Draggable<String>(
                         onDragCompleted: (){
-                          print('gfds');
+                          
                           letterI = 'assets/icons/i.svg';
                         },
                         data:

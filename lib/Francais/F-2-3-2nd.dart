@@ -1,10 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:somthn/Buttons/BarreProgres.dart';
-import 'package:somthn/Francais/F-2-4-2nd.dart';
 import 'package:somthn/Francais/F-2-4.dart';
-import 'package:somthn/Maths/M-1-2.dart';
 import 'package:somthn/WelcomePages/Settings.dart';
 import 'package:somthn/Buttons/buttonContinuer.dart';
 import 'package:somthn/myicons.dart';
@@ -51,7 +48,6 @@ class _F_1_2State extends State<F_1_2> {
                     Navigator.push(
                         context,
                         MaterialPageRoute(builder: (context) => Settings()));
-                    print("HELL YEAH");
                   },)
               ),
               Positioned(
@@ -95,7 +91,6 @@ class _F_1_2State extends State<F_1_2> {
                         setState(() {
                           Visible=false;
                         });
-                        print('ge');
                       },
                       icon: SvgPicture.asset('assets/icons/ge.svg')),
                 ),
@@ -112,7 +107,6 @@ class _F_1_2State extends State<F_1_2> {
                         setState(() {
                           Visible=false;
                         });
-                        print('g');
                       },
                       icon: SvgPicture.asset('assets/icons/g.svg')),
                 ),
@@ -130,7 +124,6 @@ class _F_1_2State extends State<F_1_2> {
                           Visible=false;
                           correct=true;
                         });
-                        print('gu');
                       },
                       icon: SvgPicture.asset('assets/icons/gu.svg')),
                 ),
@@ -147,7 +140,6 @@ class _F_1_2State extends State<F_1_2> {
                         setState(() {
                           Visible=false;
                         });
-                        print('j');
                       },
                       icon: SvgPicture.asset('assets/icons/j.svg')),
                 ),
@@ -219,7 +211,6 @@ class _F_1_2State extends State<F_1_2> {
                       Navigator.push(
                           context,
                           new MaterialPageRoute(builder: (context) => new F_2_4()));
-                      print('Continuer');
                     },)
                 ),
               ),

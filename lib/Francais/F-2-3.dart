@@ -52,7 +52,6 @@ class _F_2_3State extends State<F_2_3> {
                     Navigator.push(
                         context,
                         MaterialPageRoute(builder: (context) => Settings()));
-                    print("HELL YEAH");
                   },)
               ),
               Positioned(
@@ -98,7 +97,6 @@ class _F_2_3State extends State<F_2_3> {
                         Navigator.push(
                             context,
                             MaterialPageRoute(builder: (context) => F_2_3_2ndOne()));
-                        print('exc');
                       },
                       icon: SvgPicture.asset('assets/icons/ge.svg')),
                 ),
@@ -115,7 +113,6 @@ class _F_2_3State extends State<F_2_3> {
                         Navigator.push(
                             context,
                             MaterialPageRoute(builder: (context) => F_2_3_2ndTwo()));
-                        print('dec');
                       },
                       icon: SvgPicture.asset('assets/icons/g.svg')),
                 ),
@@ -132,7 +129,6 @@ class _F_2_3State extends State<F_2_3> {
                         setState(() {
                           Visible=false;
                         });
-                        print('int');
                       },
                       icon: SvgPicture.asset('assets/icons/gu.svg')),
                 ),
@@ -149,7 +145,6 @@ class _F_2_3State extends State<F_2_3> {
                         Navigator.push(
                             context,
                             MaterialPageRoute(builder: (context) => F_2_3_2ndFour()));
-                        print('imp');
                       },
                       icon: SvgPicture.asset('assets/icons/j.svg')),
                 ),
@@ -242,7 +237,6 @@ class _F_2_3State extends State<F_2_3> {
                       Navigator.push(
                           context,
                           new MaterialPageRoute(builder: (context) => new F_2_4()));
-                      print('Continuer');
                     },)
                 ),
               ),

@@ -10,11 +10,8 @@ import 'package:somthn/Buttons/buttonContinuer.dart';
 import 'package:somthn/Buttons/buttonGoTo.dart';
 import 'package:somthn/Buttons/buttonReset.dart';
 import 'package:somthn/Buttons/settingsButton.dart';
-import 'package:somthn/Francais/F-1-4-2ndAttempt.dart';
-import 'package:somthn/Francais/F-1-5.dart';
 import 'package:somthn/Francais/F-1.dart';
 import 'package:somthn/Francais/Niveau3Pass%C3%A9.dart';
-import 'package:somthn/Maths/M-1-4.dart';
 import 'package:somthn/WelcomePages/Settings.dart';
 import 'package:somthn/myicons.dart';
 import '../Services/Login.dart';
@@ -65,7 +62,6 @@ bool correct=false;
                     Navigator.push(
                         context,
                         MaterialPageRoute(builder: (context) => Settings()));
-                    print("HELL YEAH");
                   },)
               ),
               Positioned(
@@ -100,7 +96,6 @@ bool correct=false;
                   left: size.width*0.75,
                   child: GoToButton(onPressed: (){
                     if((drag1=="assets/icons/gb.svg")&&(drag2=="assets/icons/i.svg")&&(drag3=="assets/icons/r.svg")&&(drag4=="assets/icons/a.svg")&&(drag5=="assets/icons/f.svg")&&(drag6=="assets/icons/e.svg")){
-                      print('correct');
                       setState(() {
                         Visible=false;
                         correct=false;
@@ -110,7 +105,6 @@ bool correct=false;
                         Visible=false;
                       });
                     }
-                    print("HELL YEAH");
 
                   },),
                 ),
@@ -153,7 +147,6 @@ bool correct=false;
                           drag5=null;
                           drag6=null;
                         });
-                        print('reset');
                       }
 
                   ),
@@ -169,8 +162,7 @@ bool correct=false;
                     child: ButtonContinuer(onPressed: (){
                       Navigator.push(
                           context,
-                          MaterialPageRoute(builder: (context) => Niveau3Pass()));
-                      print('Continuer');},)
+                          MaterialPageRoute(builder: (context) => Niveau3Pass()));},)
                 ),
               ),
               if (user.avatar=="Pink")
@@ -229,7 +221,6 @@ bool correct=false;
                       /// Draggable
                       Draggable<String>(
                         onDragCompleted: (){
-                          print('gfds');
                           letterA = 'assets/icons/a.svg';
                         },
                         data:
@@ -238,7 +229,6 @@ bool correct=false;
                           width: 50,
                           height: 50,
                           alignment: Alignment.center,
-                          //color: Colors.purple,
                           child: letterA == 'assets/icons/a.svg'
                               ? Container()
                               : SvgPicture.asset(
@@ -251,7 +241,6 @@ bool correct=false;
                         // The widget to show under the pointer when a drag is under way
                         feedback:
                         Container(
-                          //color: Colors.purple,
                           width: 50,
                           height: 50,
                           alignment: Alignment.center,
@@ -271,7 +260,6 @@ bool correct=false;
                       SizedBox( width: size.width*0.1,),
                       Draggable<String>(
                         onDragCompleted: (){
-                          print('gfds');
                           letterF = 'assets/icons/f.svg';
                         },
                         data:
@@ -280,7 +268,6 @@ bool correct=false;
                           width: 50,
                           height: 50,
                           alignment: Alignment.center,
-                          //color: Colors.purple,
                           child: letterF == 'assets/icons/f.svg'
                               ? Container()
                               : SvgPicture.asset(
@@ -293,7 +280,6 @@ bool correct=false;
                         // The widget to show under the pointer when a drag is under way
                         feedback:
                         Container(
-                          //color: Colors.purple,
                           width: 50,
                           height: 50,
                           alignment: Alignment.center,
@@ -311,7 +297,6 @@ bool correct=false;
                       SizedBox( width: size.width*0.1,),
                       Draggable<String>(
                         onDragCompleted: (){
-                          print('gfds');
                           letterI = 'assets/icons/i.svg';
                         },
                         data:
@@ -320,7 +305,6 @@ bool correct=false;
                           width: 50,
                           height: 50,
                           alignment: Alignment.center,
-                          //color: Colors.purple,
                           child: letterI == 'assets/icons/i.svg'
                               ? Container()
                               : SvgPicture.asset(
@@ -333,7 +317,6 @@ bool correct=false;
                         // The widget to show under the pointer when a drag is under way
                         feedback:
                         Container(
-                          //color: Colors.purple,
                           width: 50,
                           height: 50,
                           alignment: Alignment.center,
@@ -348,17 +331,9 @@ bool correct=false;
                           width: 50,
                           height: 50,),
                       ),
-
-
-
-
-                      ////////////////////////
-
-
                     ],
                   ),
                 ),
-
               ),
               Positioned(
                 top: size.height*0.9,
@@ -372,7 +347,6 @@ bool correct=false;
                       /// Draggable
                       Draggable<String>(
                         onDragCompleted: (){
-                          print('gfds');
                           letterG = 'assets/icons/gb.svg';
                         },
                         data:
@@ -381,7 +355,6 @@ bool correct=false;
                           width: 50,
                           height: 50,
                           alignment: Alignment.center,
-                          //color: Colors.purple,
                           child: letterG == 'assets/icons/gb.svg'
                               ? Container()
                               : SvgPicture.asset(
@@ -394,7 +367,6 @@ bool correct=false;
                         // The widget to show under the pointer when a drag is under way
                         feedback:
                         Container(
-                          //color: Colors.purple,
                           width: 50,
                           height: 50,
                           alignment: Alignment.center,
@@ -414,7 +386,6 @@ bool correct=false;
                       SizedBox( width: size.width*0.1,),
                       Draggable<String>(
                         onDragCompleted: (){
-                          print('gfds');
                           letterR = 'assets/icons/r.svg';
                         },
                         data:
@@ -436,7 +407,6 @@ bool correct=false;
                         // The widget to show under the pointer when a drag is under way
                         feedback:
                         Container(
-                          //color: Colors.purple,
                           width: 50,
                           height: 50,
                           alignment: Alignment.center,
@@ -454,7 +424,6 @@ bool correct=false;
                       SizedBox( width: size.width*0.1,),
                       Draggable<String>(
                         onDragCompleted: (){
-                          print('gfds');
                           letterE = 'assets/icons/e.svg';
                         },
                         data:
@@ -473,10 +442,8 @@ bool correct=false;
                           ),
                         ),
 
-                        // The widget to show under the pointer when a drag is under way
                         feedback:
                         Container(
-                          //color: Colors.purple,
                           width: 50,
                           height: 50,
                           alignment: Alignment.center,
@@ -487,7 +454,6 @@ bool correct=false;
                           ),
                         ),
                         childWhenDragging: Container(
-                          //color: Colors.purple,
                           width: 50,
                           height: 50,),
                       ),
@@ -531,7 +497,6 @@ bool correct=false;
                           width: 50,
                           height: 50,),
                       ),
-                      ////////////////////////
                     ],
                   ),
                 ),

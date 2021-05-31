@@ -2,18 +2,11 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:somthn/Buttons/BarreProgres.dart';
-import 'package:somthn/Francais/F-1-2-2-FourC.dart';
-import 'package:somthn/Francais/F-1-2-2-OneC.dart';
-import 'package:somthn/Francais/F-1-2-2-TwoC.dart';
 import 'package:somthn/Francais/F-1.dart';
-import 'package:somthn/Francais/F-2-3-2nd-FourC.dart';
-import 'package:somthn/Francais/F-2-3-2nd-OneC.dart';
-import 'package:somthn/Francais/F-2-3-2nd-TwoC.dart';
 import 'package:somthn/Francais/F-3-1-2nd-Four.dart';
 import 'package:somthn/Francais/F-3-1-2nd-One.dart';
 import 'package:somthn/Francais/F-3-1-2nd-Two.dart';
 import 'package:somthn/Francais/F-3-2.dart';
-import 'package:somthn/Maths/M-1-2.dart';
 import 'package:somthn/WelcomePages/Settings.dart';
 import 'package:somthn/Buttons/buttonContinuer.dart';
 import 'package:somthn/myicons.dart';
@@ -59,7 +52,6 @@ class _F_3_1State extends State<F_3_1> {
                     Navigator.push(
                         context,
                         MaterialPageRoute(builder: (context) => Settings()));
-                    print("HELL YEAH");
                   },)
               ),
               Positioned(
@@ -105,7 +97,6 @@ class _F_3_1State extends State<F_3_1> {
                         Navigator.push(
                             context,
                             MaterialPageRoute(builder: (context) => F_3_1_2nd_One()));
-                        print('exc');
                       },
                       icon: SvgPicture.asset('assets/icons/OntButton.svg')),
                 ),
@@ -122,7 +113,6 @@ class _F_3_1State extends State<F_3_1> {
                         Navigator.push(
                             context,
                             MaterialPageRoute(builder: (context) => F_3_1_2nd_Two()));
-                        print('dec');
                       },
                       icon: SvgPicture.asset('assets/icons/OnsButton.svg')),
                 ),
@@ -139,7 +129,6 @@ class _F_3_1State extends State<F_3_1> {
                         setState(() {
                           Visible=false;
                         });
-                        print('int');
                       },
                       icon: SvgPicture.asset('assets/icons/OnButton.svg')),
                 ),
@@ -156,12 +145,11 @@ class _F_3_1State extends State<F_3_1> {
                         Navigator.push(
                             context,
                             MaterialPageRoute(builder: (context) => F_3_1_2nd_Four()));
-                        print('imp');
                       },
                       icon: SvgPicture.asset('assets/icons/EnButton.svg')),
                 ),
               ),
-              //if (user.avatar=="Pink")
+              if (user.avatar=="Pink")
               Visibility(
                 visible: Visible,
                 child: Positioned(
@@ -235,9 +223,6 @@ class _F_3_1State extends State<F_3_1> {
                 width: size.width*0.6,
                 child:SvgPicture.asset('assets/icons/bulleCompleter.svg'),
               ),
-
-
-
               Visibility(
                 visible: !Visible,
                 child: Positioned(

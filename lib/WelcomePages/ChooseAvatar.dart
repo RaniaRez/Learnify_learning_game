@@ -8,7 +8,6 @@ import 'package:somthn/WelcomePages/Settings.dart';
 import '../Buttons/settingsButton.dart';
 import '../Buttons/BacksButton.dart';
 import '../Owls/PurpleOwlIcon.dart';
-//import 'ClassUser.dart';
 import '../Buttons/buttonGoTo.dart';
 import 'Home.dart';
 import '../Owls/PinkOwlIcon.dart';
@@ -16,7 +15,6 @@ import '../Owls/BlueOwlIcon.dart';
 import '../Owls/OrangeOwlIcon.dart';
 import 'Entrernom.dart';
 import '../Services/Login.dart';
-//import '../Services/SignUp.dart';
 
 
 
@@ -112,7 +110,6 @@ class _ChooseAvatarState extends State<ChooseAvatar> {
                   Navigator.push(
                       context,
                       MaterialPageRoute(builder: (context) => Settings()));
-                  print("HELL YEAH");
                 },)
             ),
 
@@ -120,7 +117,6 @@ class _ChooseAvatarState extends State<ChooseAvatar> {
                 top: size.height*0.05,
                 right:size.width*0.75,
                 child: BacksButton(onPressed: (){
-                  print("HELL YEAH");
                   Navigator.pop(
                     context,
                   );
@@ -131,7 +127,6 @@ class _ChooseAvatarState extends State<ChooseAvatar> {
               left: size.width*0.39,
               child: HomeButton(
                 onPressed: (){
-                  print("HELL YEAH");
                   Navigator.push(
                     context,
                     MaterialPageRoute(builder: (context) => Home()),);
@@ -159,7 +154,6 @@ class _ChooseAvatarState extends State<ChooseAvatar> {
               left:size.width*0.75,
               child: Visibility(
                 child: GoToButton(onPressed: (){
-                  print("coucou");
                   print(user.uid);
                   setState(() {
                     if(_PurpleVisible) user.SetAvatar("Purple");
@@ -171,7 +165,6 @@ class _ChooseAvatarState extends State<ChooseAvatar> {
                   Navigator.push(
                       context,
                       MaterialPageRoute(builder: (context) => Entrernom()));
-                  print("HELL YEAH");
                 },
                 ),
                 visible: _GoToVisible,
@@ -231,9 +224,7 @@ class _ChooseAvatarState extends State<ChooseAvatar> {
               height: size.height*0.3,
               width: size.width*0.3,
               child: PinkOwl(onPressed: (){
-                print("fuck");
                 showPink();
-                print("fuck");
               } ,),
             ),
             Positioned(

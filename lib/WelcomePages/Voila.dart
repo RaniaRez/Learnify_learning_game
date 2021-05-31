@@ -1,34 +1,23 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:somthn/Avatars/BlueAvatarIcon.dart';
+import 'package:somthn/Avatars/OrangeAvatarIcon.dart';
+import 'package:somthn/Avatars/PinkAvatarIcon.dart';
 import 'package:somthn/Avatars/PurpleAvatarIcon.dart';
 import 'package:somthn/Branches/BranchIconSimple.dart';
-import 'package:somthn/Buttons/SinscrireButton.dart';
-import 'package:somthn/Buttons/seConnecterButton.dart';
-import 'package:somthn/WelcomePages/AllSet.dart';
 import 'package:somthn/WelcomePages/ChoixDomaines.dart';
 import 'package:somthn/Buttons/ClassementButton.dart';
-import 'package:somthn/WelcomePages/ChooseAvatar.dart';
 import 'package:somthn/classement/Classement.dart';
 import 'package:somthn/WelcomePages/Settings.dart';
-import 'package:somthn/modification/Userinfo.dart';
 import '../Buttons/settingsButton.dart';
 import '../Buttons/BacksButton.dart';
-import 'ClassUser.dart';
 import '../Buttons/buttonGoTo.dart';
 import '../Buttons/buttonStatistique.dart';
-import '../Buttons/buttonUserSettings.dart';
-//for backend
-//import '../Services/auth.dart';
-import '../Services/Login.dart';
-import '../Services/SignUp.dart';
 import '../Data/DataUser.dart';
 import '../classement/methodes.dart';
 import '../classement/Classement.dart';
+import '../Services/Login.dart';
 
-
-
-
-List<User> Utilisateurs = [];
 class Voila extends StatefulWidget {
   @override
   _VoilaState createState() => _VoilaState();
@@ -66,7 +55,6 @@ class _VoilaState extends State<Voila> {
                   Navigator.push(
                       context,
                       MaterialPageRoute(builder: (context) => Settings()));
-                  print("HELL YEAH");
                 },)
             ),
 
@@ -74,7 +62,6 @@ class _VoilaState extends State<Voila> {
                 top: size.height*0.05,
                 right:size.width*0.75,
                 child: BacksButton(onPressed: (){
-                  print("HELL YEAH");
                   Navigator.pop(context);
                 },)
             ),
@@ -89,7 +76,6 @@ class _VoilaState extends State<Voila> {
                 print(list[0].score);
                 print(list[1].score);
                 print(list[2].score);
-                print("kemelna");
                 Navigator.push(
                     context,
                     MaterialPageRoute(builder: (context) => Classement(value : list )));
@@ -107,28 +93,65 @@ class _VoilaState extends State<Voila> {
               top: size.height*0.8,
               left:size.width*0.75,
                 child: GoToButton(onPressed: (){
-                  print("HELL YEAH");
                   Navigator.push(
                     context,
                     MaterialPageRoute(builder: (context) => ChoixDomaine()),);
                 },),
               ),
 
-            Positioned(
-              height: size.height*0.2,
-              width: size.width*0.35,
-              top:size.height*0.5,
-              right:size.width*0.65,
-              child:BranchIconSimple(),
-            ),
-            Positioned(
-              top: size.height*0.38,
-              right: size.width*0.7 ,
-              height: size.height*0.32,
-              width: size.width*0.32,
+            Visibility(
 
-              child:PurpleAvatarIcon(onPressed: null,),
+              child: Positioned(
+                top: size.height*0.62,
+                right: size.width*0.62 ,
+                child:BranchIconSimple(),
+              ),
             ),
+           if (user.avatar=="Pink")
+              Visibility(
+
+                child: Positioned(
+                  top: size.height*0.45,
+                  right: size.width*0.63 ,
+                  height: size.height*0.3,
+                  width: size.width*0.3,
+                  child:PinkAvatarIcon(onPressed: null,),
+                ),
+              ),
+            if (user.avatar=="Purple")
+              Visibility(
+
+                child: Positioned(
+                  top: size.height*0.43,
+                  right: size.width*0.63 ,
+                  height: size.height*0.35,
+                  width: size.width*0.35,
+
+                  child:PurpleAvatarIcon(onPressed: null,),
+                ),
+              ),
+            if (user.avatar=="Orange")
+              Visibility(
+
+                child: Positioned(
+                  top: size.height*0.46,
+                  right: size.width*0.63 ,
+                  height: size.height*0.3,
+                  width: size.width*0.3,
+                  child: OrangeAvatarIcon(onPressed: null,),
+                ),
+              ),
+            if (user.avatar=="Blue")
+              Visibility(
+
+                child: Positioned(
+                  top: size.height*0.45,
+                  right: size.width*0.63 ,
+                  height: size.height*0.3,
+                  width: size.width*0.3,
+                  child:BlueAvatarIcon(onPressed: null,),
+                ),
+              ),
 
 
             Positioned(

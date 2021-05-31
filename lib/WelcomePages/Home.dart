@@ -2,18 +2,14 @@
 import 'package:flutter/material.dart';
 import 'package:somthn/WelcomePages/Vite.dart';
 import 'package:somthn/WelcomePages/Voila.dart';
+import 'package:somthn/WelcomePages/custom_dialog_box.dart';
 import '../Buttons/settingsButton.dart';
 import '../Buttons/ButtonAllons-y.dart';
 import '../Bulles/BulleIcon.dart';
-import 'Users.dart';
 import 'Settings.dart';
-//for backend
 import '../Services/Login.dart';
-import '../Services/auth.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
-import '../Maths/Niveau1Passé.dart';
-import 'package:audioplayers/audio_cache.dart';
-import 'package:audioplayers/audioplayers.dart';
+
 
 
 
@@ -23,71 +19,6 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
-
-  /*AudioPlayer audioPlayer = AudioPlayer();
-  AudioPlayerState audioPlayerState = AudioPlayerState.PAUSED;
-  AudioCache audioCache;
-  String filePath = 'music.mp3';
-
-  /// Optional
-  int timeProgress = 0;
-  int audioDuration = 0;
-
-  /// Optional
-  Widget slider() {
-    return Container(
-      width: 300.0,
-      child: Slider.adaptive(
-          value: (timeProgress / 1000).floorToDouble(),
-          max: (audioDuration / 1000).floorToDouble(),
-          onChanged: (value) {
-            seekToSec(value.toInt());
-          }),
-    );
-  }
-
-  @override
-  void initState() {
-    super.initState();
-
-    /// Compulsory
-    audioPlayer = AudioPlayer();
-    audioCache = AudioCache(fixedPlayer: audioPlayer);
-
-    audioPlayer.onPlayerStateChanged.listen((AudioPlayerState s) {
-      setState(() {
-        audioPlayerState = s;
-      });
-    });
-
-    /// Optional
-    audioPlayer.onAudioPositionChanged.listen((Duration p) async {
-      setState(() {
-        timeProgress = p.inMilliseconds;
-      });
-    });
-  }
-
-  /// Compulsory
-  @override
-  void dispose() {
-    audioPlayer.release();
-    audioPlayer.dispose();
-    audioCache.clearCache();
-    super.dispose();
-  }
-
-  /// Compulsory
-  playMusic() async {
-    await audioCache.play(filePath);
-  }
-
-  /// Compulsory
-  pauseMusic() async {
-    await audioPlayer.pause();
-  }
-*/
-
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
@@ -113,10 +44,9 @@ class _HomeState extends State<Home> {
                     Navigator.push(
                         context,
                         MaterialPageRoute(builder: (context) => Settings()));
-                        //MaterialPageRoute(builder: (context) => Niveau1Pass()));
-                    print("settings");
                   },)
               ),
+
 
 
               Positioned(
@@ -126,30 +56,23 @@ class _HomeState extends State<Home> {
                   width: size.width*0.6,
                   child: ButtonAllonsy(onPressed: () async {
                     await googleLogin();
-                    print("khraconnecter");
                     print(user.uid);
-                    print("user exists2");
                     String documentID= user.uid;
                     var d= await Firestore.instance.collection('users').document(documentID).get();
-                    print("user exists1");
                     if (d.exists ){
                       user.username=d.data["name"];
                       user.avatar=d.data["avatar"];
                       user.score=d.data["score"];
-                      print("user exists");
                       Navigator.push(
                           context,
                           MaterialPageRoute(builder: (context) => Voila()));
                     }
 
                     else {
-                      print("does not exist ");
                       Navigator.push(
                           context,
                           MaterialPageRoute(builder: (context) => Vite()));
                     }
-                    print("user exists3");
-                    print("allons-y");
                   } )),
 
 
@@ -168,7 +91,27 @@ class _HomeState extends State<Home> {
                 height: size.height*0.6,
                 width: size.width*0.7,
                 child:BulleIcon(onPressed: (){}),
+              ), Positioned(
+                  top: size.height*0.05,
+                  left:size.width*0.1,
+                  child:
+                  SettingsButton(onPressed: (){
+                    print("ff");
+                    showDialog(context: context,
+                        builder: (BuildContext context){
+                          return CustomDialogBox(
+                            title: "Custom Dialog Demo",
+                            descriptions: "Hii all this is a custom dialog in flutter and  you will be use in your flutter applications",
+                            text: "Yes",
+                          );
+                        }
+                    );
+                  },
+                  )
               ),
+
+
+
             ]
         ),
       ),

@@ -4,7 +4,6 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:somthn/Buttons/BarreProgres.dart';
 import 'package:somthn/Francais/F-1.dart';
 import 'package:somthn/Francais/F-3-2.dart';
-import 'package:somthn/Maths/M-1-2.dart';
 import 'package:somthn/WelcomePages/Settings.dart';
 import 'package:somthn/Buttons/buttonContinuer.dart';
 import 'package:somthn/myicons.dart';
@@ -51,7 +50,6 @@ class _F_3_1_2nd_OneState extends State<F_3_1_2nd_One> {
                     Navigator.push(
                         context,
                         MaterialPageRoute(builder: (context) => Settings()));
-                    print("HELL YEAH");
                   },)
               ),
               Positioned(
@@ -98,7 +96,6 @@ class _F_3_1_2nd_OneState extends State<F_3_1_2nd_One> {
                         setState(() {
                           Visible=false;
                         });
-                        print('g');
                       },
                       icon: SvgPicture.asset('assets/icons/OnsButton.svg')),
                 ),
@@ -116,7 +113,6 @@ class _F_3_1_2nd_OneState extends State<F_3_1_2nd_One> {
                           Visible=false;
                           correct=true;
                         });
-                        print('gu');
                       },
                       icon: SvgPicture.asset('assets/icons/OnButton.svg')),
                 ),
@@ -133,12 +129,11 @@ class _F_3_1_2nd_OneState extends State<F_3_1_2nd_One> {
                         setState(() {
                           Visible=false;
                         });
-                        print('j');
                       },
                       icon: SvgPicture.asset('assets/icons/EnButton.svg')),
                 ),
               ),
-              //if (user.avatar=="Pink")
+              if (user.avatar=="Pink")
               Visibility(
                 visible: Visible,
                 child: Positioned(
@@ -205,7 +200,6 @@ class _F_3_1_2nd_OneState extends State<F_3_1_2nd_One> {
                       Navigator.push(
                           context,
                           new MaterialPageRoute(builder: (context) => new F_3_2()));
-                      print('Continuer');
                     },)
                 ),
               ),

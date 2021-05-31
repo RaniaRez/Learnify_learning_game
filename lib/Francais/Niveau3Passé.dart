@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:somthn/Buttons/HomeButton.dart';
 import 'package:somthn/Buttons/buttonGoTo.dart';
-import 'package:somthn/Maths/M-2.dart';
 import 'package:somthn/WelcomePages/ChoixDomaines.dart';
 import 'package:somthn/WelcomePages/Settings.dart';
 import 'package:somthn/Mutual/Stars.dart';
@@ -9,14 +8,12 @@ import 'package:somthn/myicons.dart';
 import '../Buttons/settingsButton.dart';
 import '../Buttons/BacksButton.dart';
 import '../WelcomePages/Home.dart';
-import '../WelcomePages/ChooseAvatar.dart';
 import 'package:somthn/Avatars/OrangeAvatarIcon.dart';
 import 'package:somthn/Avatars/PinkAvatarIcon.dart';
 import 'package:somthn/Avatars/PurpleAvatarIcon.dart';
 import 'package:somthn/Avatars/BlueAvatarIcon.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import '../Services/Login.dart';
-import '../Services/SignUp.dart';
 
 
 
@@ -54,7 +51,6 @@ class _Niveau3PassState extends State<Niveau3Pass> {
                   Navigator.push(
                       context,
                       MaterialPageRoute(builder: (context) => Settings()));
-                  print("HELL YEAH");
                 },)
             ),
 
@@ -62,7 +58,6 @@ class _Niveau3PassState extends State<Niveau3Pass> {
                 top: size.height*0.05,
                 right:size.width*0.75,
                 child: BacksButton(onPressed: (){
-                  print("HELL YEAH");
                   Navigator.pop(
                     context,
                   );
@@ -73,7 +68,6 @@ class _Niveau3PassState extends State<Niveau3Pass> {
               left: size.width*0.39,
               child: HomeButton(
                 onPressed: (){
-                  print("HELL YEAH");
                   Navigator.push(
                     context,
                     MaterialPageRoute(builder: (context) => Home()),);

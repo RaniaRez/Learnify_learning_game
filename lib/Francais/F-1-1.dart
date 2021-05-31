@@ -5,24 +5,8 @@ import 'package:somthn/Buttons/BarreProgres.dart';
 import 'package:somthn/Francais/F-1-2.dart';
 import 'package:somthn/Francais/F-1.dart';
 import 'package:somthn/Francais/I-F-1-1.dart';
-import 'package:somthn/Maths/M-1-1-2ndAttempt.dart';
-import 'package:somthn/Maths/M-1-2.dart';
 import 'package:somthn/WelcomePages/Settings.dart';
-import 'package:somthn/Bulles/bulleQuest.dart';
-import 'package:somthn/Buttons/button0.dart';
-import 'package:somthn/Buttons/button1.dart';
-import 'package:somthn/Buttons/button2.dart';
-import 'package:somthn/Buttons/button3.dart';
-import 'package:somthn/Buttons/button4.dart';
-import 'package:somthn/Buttons/button5.dart';
-import 'package:somthn/Buttons/button6.dart';
-import 'package:somthn/Buttons/button7.dart';
-import 'package:somthn/Buttons/button8.dart';
-import 'package:somthn/Buttons/button9.dart';
 import 'package:somthn/Buttons/buttonContinuer.dart';
-import 'package:somthn/Buttons/buttonGoTo.dart';
-import 'package:somthn/Buttons/buttonQ.dart';
-import 'package:somthn/Buttons/buttonReset.dart';
 import 'package:somthn/myicons.dart';
 import '../Buttons/settingsButton.dart';
 import '../Buttons/BacksButton.dart';
@@ -30,9 +14,8 @@ import 'package:somthn/Avatars/OrangeAvatarIcon.dart';
 import 'package:somthn/Avatars/PinkAvatarIcon.dart';
 import 'package:somthn/Avatars/PurpleAvatarIcon.dart';
 import 'package:somthn/Avatars/BlueAvatarIcon.dart';
-import '../WelcomePages/ChooseAvatar.dart';
 import '../Services/Login.dart';
-import '../Services/SignUp.dart';
+
 
 class F_1_1 extends StatefulWidget {
   const F_1_1({Key key}) : super(key: key);
@@ -68,7 +51,7 @@ class _F_1_1State extends State<F_1_1> {
                     Navigator.push(
                         context,
                         MaterialPageRoute(builder: (context) => Settings()));
-                    print("HELL YEAH");
+
                   },)
               ),
               Positioned(
@@ -117,7 +100,6 @@ class _F_1_1State extends State<F_1_1> {
                     Navigator.push(
                     context,
                     MaterialPageRoute(builder: (context) => I_F_1_1()));
-                    print("HELL YEAH");
                     },
                       icon: Image.asset('images/Sheep.jpg')),
                 ),
@@ -144,7 +126,6 @@ class _F_1_1State extends State<F_1_1> {
                         Navigator.push(
                             context,
                             MaterialPageRoute(builder: (context) => I_F_1_1()));
-                        print("HELL YEAH");
                       },
                       icon: Image.asset('images/Cat.jpg')),
                 ),
@@ -171,7 +152,6 @@ class _F_1_1State extends State<F_1_1> {
                         Navigator.push(
                             context,
                             MaterialPageRoute(builder: (context) => I_F_1_1()));
-                        print("HELL YEAH");
                       },
                       icon: Image.asset('images/Cow.jpg')),
                 ),
@@ -198,7 +178,6 @@ class _F_1_1State extends State<F_1_1> {
                         Navigator.push(
                             context,
                             MaterialPageRoute(builder: (context) => I_F_1_1()));
-                        print("HELL YEAH");
                       },
                       icon: Image.asset('images/Lion.jpg')),
                 ),
@@ -293,7 +272,6 @@ class _F_1_1State extends State<F_1_1> {
                       Navigator.push(
                           context,
                           new MaterialPageRoute(builder: (context) => new F_1_2()));
-                      print('Continuer');
                     },)
                 ),
               ),

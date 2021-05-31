@@ -62,7 +62,6 @@ class _EntrernomState extends State<Entrernom> {
                 right:size.width*0.75,
 
                 child: BacksButton(onPressed: (){
-                  print("u clicked me");
                   Navigator.pop(context);
                 },)
             ),
@@ -71,7 +70,6 @@ class _EntrernomState extends State<Entrernom> {
               left: size.width*0.39,
               child: HomeButton(
                 onPressed: (){
-                  print("HELL YEAH");
                   Navigator.push(
                     context,
                     MaterialPageRoute(builder: (context) => Home()),);
@@ -87,7 +85,6 @@ class _EntrernomState extends State<Entrernom> {
                         Navigator.push(
                          context,
                        MaterialPageRoute(builder: (context) => Settings()));
-                       print("HELL YEAH");
     },)
     ),
             Visibility(
@@ -169,7 +166,6 @@ class _EntrernomState extends State<Entrernom> {
                 width: size.width*0.55,
                   child: ButtonNom(onPressed: (){
                     show();
-                    print("HELL YEAH");
                   }
                   ),
               ),
@@ -179,7 +175,6 @@ class _EntrernomState extends State<Entrernom> {
                 child: InkWell(
                   onTap:(){
                     show();
-                    print("HELL YEAH");
                   },
 
                         child: FittedBox(
@@ -214,7 +209,6 @@ class _EntrernomState extends State<Entrernom> {
                   width: size.width*0.55,
                   child: ButtonNom(onPressed: (){
                     show();
-                    print("HELL YEAH");
                   } )
               ),
             ),
@@ -231,7 +225,6 @@ class _EntrernomState extends State<Entrernom> {
                 child:TextField(
                   controller: Username,
                   onEditingComplete: (){
-                    print("done");
                     if(Username.text.isEmpty){
                       setState(() {
                         _GoTo = false;
@@ -240,9 +233,7 @@ class _EntrernomState extends State<Entrernom> {
                       setState(()  {
                         user.SetUsername(Username.text);
                         _GoTo = true;
-                        print("username");
                         print(user.username);
-                        print("printed");
                         DatabaseService(uid: user.uid).updateUserData(user.username,user.avatar, 0);
                         ScoreMaths scoreM=new ScoreMaths(false,-1,-1,-1);
                         Firestore.instance.collection('users').document(user.uid).collection('domains').document('maths').setData(
@@ -306,13 +297,10 @@ class _EntrernomState extends State<Entrernom> {
                 child: Positioned(
                   top: size.height*0.8,
                   left:size.width*0.75,
-
                   child: GoToButton(onPressed: (){
                     Navigator.push(
                         context,
                         MaterialPageRoute(builder: (context) => AllSet()));
-
-                    print("HELL YEAH");
                   },
                   ),
 

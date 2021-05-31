@@ -37,6 +37,9 @@ dependencies:
   camera: ^0.7.0+4
   provider: ^4.3.2+3
   audioplayers: ^0.17.0
+  simple_animations: ^3.1.1
+  flutter_easyloading: ^3.0.0
+  flutter_spinkit: ^5.0.0
 
 dev_dependencies:
   flutter_test:
@@ -58,7 +61,6 @@ flutter:
   assets:
    - 'images/'
    - 'assets/icons/'
-   - 'assets/audio/'
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
