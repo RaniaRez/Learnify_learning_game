@@ -126,6 +126,7 @@ class _F_2_3State extends State<F_2_3> {
                   width: size.width*0.4,
                   child: IconButton(
                       onPressed: (){
+                        scoreF.niv2+=2;
                         setState(() {
                           Visible=false;
                         });

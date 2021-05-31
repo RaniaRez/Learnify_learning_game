@@ -10,15 +10,15 @@ import 'package:somthn/Buttons/buttonContinuer.dart';
 import 'package:somthn/Buttons/buttonGoTo.dart';
 import 'package:somthn/Buttons/buttonReset.dart';
 import 'package:somthn/Buttons/settingsButton.dart';
-import 'package:somthn/Francais/F-1-4-2ndAttempt.dart';
 import 'package:somthn/Francais/F-1-5-2nd.dart';
 import 'package:somthn/Francais/F-1.dart';
 import 'package:somthn/Francais/Niveau1Pass%C3%A9.dart';
-import 'package:somthn/Maths/M-1-4.dart';
 import 'package:somthn/WelcomePages/Settings.dart';
 import 'package:somthn/myicons.dart';
 import '../Services/Login.dart';
 import 'BienvenueFr.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
+
 
 class F_1_5 extends StatefulWidget {
   const F_1_5({Key key}) : super(key: key);
@@ -155,10 +155,23 @@ class _F_1_5State extends State<F_1_5> {
                     height: size.height*0.2,
                     width: size.width*0.5,
                     child: ButtonContinuer(onPressed: (){
-                      Navigator.push(
-                          context,
-                          MaterialPageRoute(builder: (context) => Niveau1Pass()));
-                      print('Continuer');},)
+
+                      print("score final");
+                      print(scoreF.niv1);
+                      Firestore.instance.collection('users').document(user.uid).collection('domains').document('francais').updateData({'niv1':scoreF.niv1});
+                      if (scoreF.niv1>=7.5){
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(builder: (context) => Niveau1Pass()));}
+                      else {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(builder: (context) => Fr1()));
+                      }
+
+                      print('Continuer');
+
+                      },)
                 ),
               ),
               if (user.avatar=="Pink")

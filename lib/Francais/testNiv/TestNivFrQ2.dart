@@ -1,32 +1,10 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:somthn/Buttons/BarreProgres.dart';
-import 'package:somthn/Francais/F-1-2.dart';
 import 'package:somthn/Francais/F-1.dart';
-import 'package:somthn/Francais/F-2-3-2nd-OneC.dart';
-import 'package:somthn/Francais/F-2-3-2nd-TwoC.dart';
-import 'package:somthn/Francais/I-F-1-1.dart';
-import 'package:somthn/Maths/M-1-1-2ndAttempt.dart';
-import 'package:somthn/Maths/M-1-2.dart';
-import 'package:somthn/TestDeNiveau/TestNivFrQ3.dart';
-import 'package:somthn/Maths/TestNiv/TestNivMathQ2.dart';
+import 'package:somthn/Francais/testNiv/TestNivFrQ3.dart';
 import 'package:somthn/WelcomePages/Settings.dart';
-import 'package:somthn/Bulles/bulleQuest.dart';
-import 'package:somthn/Buttons/button0.dart';
-import 'package:somthn/Buttons/button1.dart';
-import 'package:somthn/Buttons/button2.dart';
-import 'package:somthn/Buttons/button3.dart';
-import 'package:somthn/Buttons/button4.dart';
-import 'package:somthn/Buttons/button5.dart';
-import 'package:somthn/Buttons/button6.dart';
-import 'package:somthn/Buttons/button7.dart';
-import 'package:somthn/Buttons/button8.dart';
-import 'package:somthn/Buttons/button9.dart';
 import 'package:somthn/Buttons/buttonContinuer.dart';
-import 'package:somthn/Buttons/buttonGoTo.dart';
-import 'package:somthn/Buttons/buttonQ.dart';
-import 'package:somthn/Buttons/buttonReset.dart';
 import 'package:somthn/myicons.dart';
 import '../../Buttons/settingsButton.dart';
 import '../../Buttons/BacksButton.dart';
@@ -34,10 +12,11 @@ import 'package:somthn/Avatars/OrangeAvatarIcon.dart';
 import 'package:somthn/Avatars/PinkAvatarIcon.dart';
 import 'package:somthn/Avatars/PurpleAvatarIcon.dart';
 import 'package:somthn/Avatars/BlueAvatarIcon.dart';
-import '../../WelcomePages/ChooseAvatar.dart';
 import '../../Services/Login.dart';
-import '../../Services/SignUp.dart';
 import 'TestNivFrQ1.dart';
+import '../BienvenueFr.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'SetNiveaux.dart';
 
 class TestNivFr2 extends StatefulWidget {
   const TestNivFr2({Key key}) : super(key: key);
@@ -290,6 +269,21 @@ class _TestNivFr2State extends State<TestNivFr2> {
                     height: size.height*0.2,
                     width: size.width*0.5,
                     child: ButtonContinuer(onPressed: (){
+
+                      //test.q2=true ;
+                      /*print(scoreF.niv1);
+                      print(scoreF.niv2);
+                      print(scoreF.niv3);
+                      setNiv(test,scoreF);
+                      Firestore.instance.collection('users').document(user.uid).collection('domains').document('maths').updateData(
+                          {
+                            'testFait': scoreF.testFait ,
+                            'niv1': scoreF.niv1 ,
+                            'niv2': scoreF.niv2 ,
+                            'niv3': scoreF.niv3 ,
+                          }
+                      );*/
+
                       Navigator.push(
                           context,
                           MaterialPageRoute(builder: (context) => TestNivFr3()));

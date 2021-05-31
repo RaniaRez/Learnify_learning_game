@@ -16,6 +16,7 @@ import 'package:somthn/Francais/F-2-5.dart';
 import 'package:somthn/WelcomePages/Settings.dart';
 import 'package:somthn/myicons.dart';
 import '../Services/Login.dart';
+import 'BienvenueFr.dart';
 
 class F_2_4 extends StatefulWidget {
   const F_2_4({Key key}) : super(key: key);
@@ -104,6 +105,7 @@ class _F_2_4State extends State<F_2_4> {
                   child: GoToButton(onPressed: (){
                     if((drag1=="assets/icons/p.svg")&&(drag2=="assets/icons/r.svg")&&(drag3=="assets/icons/i.svg")&&(drag4=="assets/icons/n.svg")&&(drag5=="assets/icons/c.svg")&&(drag6=="assets/icons/e.svg")&&(drag7=="assets/icons/s.svg")&&(drag8=="assets/icons/s.svg")&&(drag9=="assets/icons/e.svg")){
                       print('correct');
+                      scoreF.niv2+=2;
                       setState(() {
                         Visible=false;
                       });}else if ((drag1==null)&&(drag2==null)&&(drag3==null)&&(drag4==null)&&(drag5==null)&&(drag6==null)&&(drag7==null)&&(drag8==null)&&(drag9==null)){}

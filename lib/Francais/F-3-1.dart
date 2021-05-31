@@ -17,6 +17,7 @@ import 'package:somthn/Avatars/PinkAvatarIcon.dart';
 import 'package:somthn/Avatars/PurpleAvatarIcon.dart';
 import 'package:somthn/Avatars/BlueAvatarIcon.dart';
 import '../Services/Login.dart';
+import 'BienvenueFr.dart';
 
 class F_3_1 extends StatefulWidget {
   const F_3_1({Key key}) : super(key: key);
@@ -126,6 +127,8 @@ class _F_3_1State extends State<F_3_1> {
                   width: size.width*0.4,
                   child: IconButton(
                       onPressed: (){
+                        scoreF.niv3+=2;
+
                         setState(() {
                           Visible=false;
                         });

@@ -18,6 +18,7 @@ import 'package:somthn/WelcomePages/Settings.dart';
 import 'package:somthn/myicons.dart';
 import '../Services/Login.dart';
 import 'BienvenueFr.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 
 class F_1_5_2nd extends StatefulWidget {
   const F_1_5_2nd({Key key}) : super(key: key);
@@ -156,9 +157,20 @@ class _F_1_5_2ndState extends State<F_1_5_2nd> {
                     height: size.height*0.2,
                     width: size.width*0.5,
                     child: ButtonContinuer(onPressed: (){
-                      Navigator.push(
-                          context,
-                          MaterialPageRoute(builder: (context) => Niveau1Pass()));
+
+                      print("score final");
+                      print(scoreF.niv1);
+                      Firestore.instance.collection('users').document(user.uid).collection('domains').document('francais').updateData({'niv1':scoreF.niv1});
+                      if (scoreF.niv1>=7.5){
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(builder: (context) => Niveau1Pass()));}
+                      else {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(builder: (context) => Fr1()));
+                      }
+
                       print('Continuer');},)
                 ),
               ),

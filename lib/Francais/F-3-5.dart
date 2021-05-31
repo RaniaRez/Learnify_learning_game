@@ -12,10 +12,14 @@ import 'package:somthn/Buttons/buttonReset.dart';
 import 'package:somthn/Buttons/settingsButton.dart';
 import 'package:somthn/Francais/F-1.dart';
 import 'package:somthn/Francais/F-3-5-2nd.dart';
+import 'package:somthn/Francais/F-3.dart';
 import 'package:somthn/Francais/Niveau3Pass%C3%A9.dart';
 import 'package:somthn/WelcomePages/Settings.dart';
 import 'package:somthn/myicons.dart';
 import '../Services/Login.dart';
+import 'BienvenueFr.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
+
 
 class F_3_5 extends StatefulWidget {
   const F_3_5({Key key}) : super(key: key);
@@ -97,6 +101,8 @@ class _F_3_5State extends State<F_3_5> {
                   left: size.width*0.75,
                   child: GoToButton(onPressed: (){
                     if((drag1=="assets/icons/gb.svg")&&(drag2=="assets/icons/i.svg")&&(drag3=="assets/icons/r.svg")&&(drag4=="assets/icons/a.svg")&&(drag5=="assets/icons/f.svg")&&(drag6=="assets/icons/e.svg")){
+                      scoreF.niv3+=2;
+
                       setState(() {
                         Visible=false;
                       });}else if ((drag1==null)&&(drag2==null)&&(drag3==null)&&(drag4==null)&&(drag5==null)&&(drag6==null)){}
@@ -160,9 +166,18 @@ class _F_3_5State extends State<F_3_5> {
                     height: size.height*0.2,
                     width: size.width*0.5,
                     child: ButtonContinuer(onPressed: (){
-                      Navigator.push(
-                          context,
-                          MaterialPageRoute(builder: (context) => Niveau3Pass()));
+                      print("score final");
+                      print(scoreF.niv3);
+                      Firestore.instance.collection('users').document(user.uid).collection('domains').document('francais').updateData({'niv3':scoreF.niv3});
+                      if (scoreF.niv3>=7.5){
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(builder: (context) => Niveau3Pass()));}
+                      else {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(builder: (context) => Fr3()));
+                      }
                      },)
                 ),
               ),

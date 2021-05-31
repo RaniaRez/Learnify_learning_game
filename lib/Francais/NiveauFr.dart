@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:somthn/Buttons/BacksButton.dart';
 import 'package:somthn/Francais/F-1.dart';
+import 'package:somthn/Francais/F-3.dart';
 import 'package:somthn/Maths/M-2.dart';
 import 'package:somthn/Owls/BrownOwl.dart';
 import 'package:somthn/Owls/LockIcon.dart';
@@ -13,7 +14,7 @@ import 'package:somthn/Buttons/buttonfacile.dart';
 import 'package:somthn/Owls/madGreenOwl.dart';
 import 'package:somthn/Buttons/settingsButton.dart';
 import 'F-2.dart';
-
+import 'BienvenueFr.dart';
 
 class NiveauFr extends StatefulWidget {
   @override
@@ -70,11 +71,11 @@ class _NiveauFrState extends State<NiveauFr> {
                 height: size.height*0.2,
                 width: size.width*0.5,
                 child: ButtonMoyen(onPressed:(){
-                  /*print(scoreFr.niv2);
-                  if (scoreFr.niv2>=0){*/
+                  print(scoreF.niv2);
+                  if (scoreF.niv2>=0){
                     Navigator.push(
                         context,
-                        MaterialPageRoute(builder: (context) => Fr2()));//}
+                        MaterialPageRoute(builder: (context) => Fr2()));}
 
                   print('Moyen');
                 }),
@@ -98,6 +99,11 @@ class _NiveauFrState extends State<NiveauFr> {
                 height: size.height*0.2,
                 width: size.width*0.5,
                 child: ButtonDifficile(onPressed:(){
+                  print(scoreF.niv3);
+                  if (scoreF.niv3>=0){
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => Fr3()));}
                   print('hard');
                 }),
               ),

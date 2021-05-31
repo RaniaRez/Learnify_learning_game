@@ -12,6 +12,7 @@ import 'package:somthn/Avatars/PinkAvatarIcon.dart';
 import 'package:somthn/Avatars/PurpleAvatarIcon.dart';
 import 'package:somthn/Avatars/BlueAvatarIcon.dart';
 import '../Services/Login.dart';
+import 'BienvenueFr.dart';
 
 class F_2_3_2ndFour extends StatefulWidget {
   const F_2_3_2ndFour({Key key}) : super(key: key);
@@ -123,6 +124,7 @@ class _F_2_3_2ndFourState extends State<F_2_3_2ndFour> {
                         setState(() {
                           Visible=false;
                           correct=true;
+                          scoreF.niv2+=1;
                         });
                       },
                       icon: SvgPicture.asset('assets/icons/gu.svg')),

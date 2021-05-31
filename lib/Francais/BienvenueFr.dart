@@ -11,13 +11,12 @@ import 'package:somthn/Avatars/OrangeAvatarIcon.dart';
 import 'package:somthn/Avatars/PinkAvatarIcon.dart';
 import 'package:somthn/Avatars/PurpleAvatarIcon.dart';
 import 'package:somthn/Avatars/BlueAvatarIcon.dart';
-//import '../WelcomePages/ChooseAvatar.dart';
-import 'package:somthn/Francais/testNiv/TestDeNiveau.dart';
+//import 'package:somthn/Francais/testNiv/TestDeNiveau.dart';
 import '../Services/Login.dart';
-import '../Services/SignUp.dart';
 import 'ScoreFr.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
-
+import 'NiveauFr.dart';
+import 'testNiv/BienvenueTest.dart';
 
 
 ScoreFr scoreF;
