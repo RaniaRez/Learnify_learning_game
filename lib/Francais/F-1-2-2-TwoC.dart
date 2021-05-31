@@ -14,6 +14,7 @@ import 'package:somthn/Avatars/PinkAvatarIcon.dart';
 import 'package:somthn/Avatars/PurpleAvatarIcon.dart';
 import 'package:somthn/Avatars/BlueAvatarIcon.dart';
 import '../Services/Login.dart';
+import 'BienvenueFr.dart';
 
 class F_1_2_2nd_twoC extends StatefulWidget {
   const F_1_2_2nd_twoC({Key key}) : super(key: key);
@@ -114,6 +115,7 @@ class _F_1_2_2nd_twoCState extends State<F_1_2_2nd_twoC> {
                         setState(() {
                           Visible=false;
                           correct=true;
+                          scoreF.niv2+=1;
                         });
                         print('int');
                       },

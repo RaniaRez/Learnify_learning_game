@@ -40,7 +40,7 @@ import 'package:somthn/Avatars/BlueAvatarIcon.dart';
 import '../WelcomePages/ChooseAvatar.dart';
 import '../Services/Login.dart';
 import '../Services/SignUp.dart';
-
+import 'BienvenueFr.dart';
 class F_2_1 extends StatefulWidget {
   const F_2_1({Key key}) : super(key: key);
 
@@ -196,6 +196,7 @@ class _F_2_1State extends State<F_2_1> {
                         setState(() {
                           Visible=false;
                           correct=true;
+                          scoreF.niv2+=2;
                         });
                         print('est');
                       },

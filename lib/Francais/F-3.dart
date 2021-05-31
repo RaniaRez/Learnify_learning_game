@@ -17,6 +17,8 @@ import 'package:somthn/Avatars/BlueAvatarIcon.dart';
 import '../WelcomePages/ChooseAvatar.dart';
 import '../Services/Login.dart';
 import '../Services/SignUp.dart';
+import 'BienvenueFr.dart';
+
 class Fr3 extends StatefulWidget {
   @override
   _Fr3State createState() => _Fr3State();
@@ -127,6 +129,8 @@ class _Fr3State extends State<Fr3> {
                 left:size.width*0.75,
                 child: GoToButton(onPressed: (){
                   print("HELL YEAH");
+                  scoreF.niv3=0;
+
                   Navigator.push(
                     context,
                     MaterialPageRoute(builder: (context) => F_3_1()),);

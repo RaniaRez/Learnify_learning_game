@@ -1,16 +1,11 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:somthn/Buttons/BarreProgres.dart';
-import 'package:somthn/Francais/F-1-2-2-FourC.dart';
-import 'package:somthn/Francais/F-1-2-2-OneC.dart';
-import 'package:somthn/Francais/F-1-2-2-TwoC.dart';
 import 'package:somthn/Francais/F-1.dart';
 import 'package:somthn/Francais/F-2-3-2nd-FourC.dart';
 import 'package:somthn/Francais/F-2-3-2nd-OneC.dart';
 import 'package:somthn/Francais/F-2-3-2nd-TwoC.dart';
 import 'package:somthn/Francais/F-2-4.dart';
-import 'package:somthn/Maths/M-1-2.dart';
 import 'package:somthn/WelcomePages/Settings.dart';
 import 'package:somthn/Buttons/buttonContinuer.dart';
 import 'package:somthn/myicons.dart';
@@ -21,6 +16,7 @@ import 'package:somthn/Avatars/PinkAvatarIcon.dart';
 import 'package:somthn/Avatars/PurpleAvatarIcon.dart';
 import 'package:somthn/Avatars/BlueAvatarIcon.dart';
 import '../Services/Login.dart';
+import 'BienvenueFr.dart';
 
 class F_2_3 extends StatefulWidget {
   const F_2_3({Key key}) : super(key: key);

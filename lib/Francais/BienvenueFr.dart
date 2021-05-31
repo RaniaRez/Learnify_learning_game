@@ -12,12 +12,15 @@ import 'package:somthn/Avatars/PinkAvatarIcon.dart';
 import 'package:somthn/Avatars/PurpleAvatarIcon.dart';
 import 'package:somthn/Avatars/BlueAvatarIcon.dart';
 //import '../WelcomePages/ChooseAvatar.dart';
-import 'package:somthn/TestDeNiveau/TestDeNiveau.dart';
+import 'package:somthn/Francais/testNiv/TestDeNiveau.dart';
 import '../Services/Login.dart';
 import '../Services/SignUp.dart';
+import 'ScoreFr.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 
 
 
+ScoreFr scoreF;
 
 class BienvenueFr extends StatefulWidget {
   @override
@@ -67,12 +70,24 @@ class _BienvenueFrState extends State<BienvenueFr> {
                 right: size.width*0.48,
                 height: size.height*0.55,
                 width: size.width*0.55,
-                child: ButtonCommencerD(onPressed: () {
+                child: ButtonCommencerD(onPressed: () async {
                   print('commencer');
-                  Navigator.push(
+                  var d=await Firestore.instance.collection('users').document(user.uid).collection('domains').document('francais').get();
 
-                      context,
-                      MaterialPageRoute(builder: (context) => NiveauFr()));
+                  scoreF=new ScoreFr(d.data["testFait"], d.data["niv1"], d.data["niv2"], d.data["niv3"]);
+                  print(scoreF.niv1);
+                  if (scoreF.testFait){
+                    Navigator.push(
+
+                        context,
+                        MaterialPageRoute(builder: (context) => NiveauFr()));}
+                  else {
+                    Navigator.push(
+
+                        context,
+                        MaterialPageRoute(builder: (context) => TestNiveau()));
+                  }
+
                 }
                 ),
               ),

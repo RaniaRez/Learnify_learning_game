@@ -119,7 +119,7 @@ class _TestNivM1State extends State<TestNivM1> {
                         Visible = false;
                         correct = true;
                         print('Correct');
-                        test.q1=true ;
+                       // test.q1=true ;
                       }else{
                         Visible = false;
                         print('Wrong');

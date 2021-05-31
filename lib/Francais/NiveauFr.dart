@@ -12,7 +12,7 @@ import 'package:somthn/Buttons/buttonMoyen.dart';
 import 'package:somthn/Buttons/buttonfacile.dart';
 import 'package:somthn/Owls/madGreenOwl.dart';
 import 'package:somthn/Buttons/settingsButton.dart';
-
+import 'F-2.dart';
 
 
 class NiveauFr extends StatefulWidget {
@@ -70,9 +70,12 @@ class _NiveauFrState extends State<NiveauFr> {
                 height: size.height*0.2,
                 width: size.width*0.5,
                 child: ButtonMoyen(onPressed:(){
-                  Navigator.push(
-                      context,
-                      MaterialPageRoute(builder: (context) => Math2()));
+                  /*print(scoreFr.niv2);
+                  if (scoreFr.niv2>=0){*/
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => Fr2()));//}
+
                   print('Moyen');
                 }),
               ),

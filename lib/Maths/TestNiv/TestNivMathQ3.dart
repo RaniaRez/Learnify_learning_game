@@ -116,12 +116,12 @@ class _TestNivM3State extends State<TestNivM3> {
                   child: GoToButton(onPressed: (){
                     setState(() {
                       if(!all){
-
                       }else if ((twoU) && (oneD)){
                         Visible = false;
                         correct = true;
                         print('Correct');
-                        test.q3=true ;
+                       // test.q3=true ;
+                        test.score=test.score+1 ;
                         print(scoreM.niv1);
                         print(scoreM.niv2);
                         print(scoreM.niv3);

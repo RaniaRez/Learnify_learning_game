@@ -2,28 +2,50 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:somthn/Buttons/BarreProgres.dart';
+import 'package:somthn/Francais/F-1-2.dart';
 import 'package:somthn/Francais/F-1.dart';
+import 'package:somthn/Francais/F-2-3-2nd-OneC.dart';
+import 'package:somthn/Francais/F-2-3-2nd-TwoC.dart';
+import 'package:somthn/Francais/I-F-1-1.dart';
+import 'package:somthn/Maths/M-1-1-2ndAttempt.dart';
 import 'package:somthn/Maths/M-1-2.dart';
+import 'package:somthn/Maths/TestNiv/TestNivMathQ2.dart';
 import 'package:somthn/WelcomePages/Settings.dart';
+import 'package:somthn/Bulles/bulleQuest.dart';
+import 'package:somthn/Buttons/button0.dart';
+import 'package:somthn/Buttons/button1.dart';
+import 'package:somthn/Buttons/button2.dart';
+import 'package:somthn/Buttons/button3.dart';
+import 'package:somthn/Buttons/button4.dart';
+import 'package:somthn/Buttons/button5.dart';
+import 'package:somthn/Buttons/button6.dart';
+import 'package:somthn/Buttons/button7.dart';
+import 'package:somthn/Buttons/button8.dart';
+import 'package:somthn/Buttons/button9.dart';
 import 'package:somthn/Buttons/buttonContinuer.dart';
+import 'package:somthn/Buttons/buttonGoTo.dart';
+import 'package:somthn/Buttons/buttonQ.dart';
+import 'package:somthn/Buttons/buttonReset.dart';
 import 'package:somthn/myicons.dart';
-import '../Buttons/settingsButton.dart';
-import '../Buttons/BacksButton.dart';
+import '../../Buttons/settingsButton.dart';
+import '../../Buttons/BacksButton.dart';
 import 'package:somthn/Avatars/OrangeAvatarIcon.dart';
 import 'package:somthn/Avatars/PinkAvatarIcon.dart';
 import 'package:somthn/Avatars/PurpleAvatarIcon.dart';
 import 'package:somthn/Avatars/BlueAvatarIcon.dart';
-import '../Services/Login.dart';
-import 'BienvenueFr.dart';
+import '../../WelcomePages/ChooseAvatar.dart';
+import '../../Services/Login.dart';
+import '../../Services/SignUp.dart';
+import 'TestNivFrQ1.dart';
 
-class F_1_2_2nd_fourC extends StatefulWidget {
-  const F_1_2_2nd_fourC({Key key}) : super(key: key);
+class TestNivFr3 extends StatefulWidget {
+  const TestNivFr3({Key key}) : super(key: key);
 
   @override
-  _F_1_2_2nd_fourCState createState() => _F_1_2_2nd_fourCState();
+  _TestNivFr3State createState() => _TestNivFr3State();
 }
 
-class _F_1_2_2nd_fourCState extends State<F_1_2_2nd_fourC> {
+class _TestNivFr3State extends State<TestNivFr3> {
   bool Visible = true;
   bool correct = false;
   @override
@@ -63,28 +85,71 @@ class _F_1_2_2nd_fourCState extends State<F_1_2_2nd_fourC> {
                         MaterialPageRoute(builder: (context) => Fr1()));
                   },)
               ),
-              Positioned(
-                bottom: size.height*0.88,
-                left: size.width*0.275,
-                right: size.width*0.275,
-                child: BarreProgres(),
-              ),
+             if (user.avatar=="Pink")
+                Visibility(
+                  visible: Visible,
+                  child: Positioned(
+                    top: size.height*0.29,
+                    left: size.width*0.69,
+                    height: size.width*0.3,
+                    width: size.width*0.3,
+                    child:PinkAvatarIcon(onPressed: null,),
+                  ),
+                ),
+              if (user.avatar=="Purple")
+                Visibility(
+                  visible: Visible,
+                  child: Positioned(
+                    top: size.height*0.28,
+                    left: size.width*0.65,
+                    height: size.width*0.35,
+                    width: size.width*0.35,
+                    child:PurpleAvatarIcon(onPressed: null,),
+                  ),
+                ),
+              if (user.avatar=="Orange")
+                Visibility(
+                  visible: Visible,
+                  child: Positioned(
+                    top: size.height*0.29,
+                    left: size.width*0.69,
+                    height: size.width*0.3,
+                    width: size.width*0.3,
+                    child: OrangeAvatarIcon(onPressed: null,),
+                  ),
+                ),
+              if (user.avatar=="Blue")
+                Visibility(
+                  visible: Visible,
+                  child: Positioned(
+                    top: size.height*0.29,
+                    left: size.width*0.69,
+                    height: size.width*0.3,
+                    width: size.width*0.3,
+                    child:BlueAvatarIcon(onPressed: null,),
+                  ),
+                ),
               Visibility(
-                visible: !Visible,
+                visible:Visible,
                 child: Positioned(
-                  bottom: size.height*0.88,
-                  left: size.width*0.275,
-                  right: size.width*0.275,
-                  child: SvgPicture.asset(TwoBars),
+                  top: size.height*0.1,
+                  left: size.width*0.1,
+                  height: size.width*0.6,
+                  width: size.width*0.6,
+                  child:SvgPicture.asset('assets/icons/bulleCompleter.svg'),
                 ),
               ),
-              Positioned(
-                top: size.height*0.5,
-                left: size.width*0.2,
-                height: size.width*0.3,
-                width: size.width*0.6,
-                child:SvgPicture.asset('assets/icons/TableauQ1.svg'),
+              Visibility(
+                visible:Visible,
+                child: Positioned(
+                  top: size.height*0.33,
+                  left: size.width*0.15,
+                  height: size.width*0.7,
+                  width: size.width*0.7,
+                  child:SvgPicture.asset('assets/icons/QuestFr3.svg'),
+                ),
               ),
+
               Visibility(
                 visible: Visible,
                 child: Positioned(
@@ -96,10 +161,11 @@ class _F_1_2_2nd_fourCState extends State<F_1_2_2nd_fourC> {
                       onPressed: (){
                         setState(() {
                           Visible=false;
+
                         });
                         print('exc');
                       },
-                      icon: SvgPicture.asset('assets/icons/Exclamative.svg')),
+                      icon: SvgPicture.asset('assets/icons/cazier.svg')),
                 ),
               ),
               Visibility(
@@ -113,10 +179,10 @@ class _F_1_2_2nd_fourCState extends State<F_1_2_2nd_fourC> {
                       onPressed: (){
                         setState(() {
                           Visible=false;
+
                         });
-                        print('dec');
                       },
-                      icon: SvgPicture.asset('assets/icons/Declarative.svg')),
+                      icon: SvgPicture.asset('assets/icons/cassier.svg')),
                 ),
               ),
               Visibility(
@@ -131,82 +197,32 @@ class _F_1_2_2nd_fourCState extends State<F_1_2_2nd_fourC> {
                         setState(() {
                           Visible=false;
                           correct=true;
+                          //test.score=test.score+1 ;
+                          test.q3=true ;
                         });
-                        scoreF.niv1+=1;
                         print('int');
                       },
-                      icon: SvgPicture.asset('assets/icons/Interrogative.svg')),
+                      icon: SvgPicture.asset('assets/icons/casier.svg')),
                 ),
               ),
-              //if (user.avatar=="Pink")
-              Visibility(
-                visible: Visible,
-                child: Positioned(
-                  top: size.height*0.36,
-                  left: size.width*0.72,
-                  height: size.width*0.3,
-                  width: size.width*0.3,
-                  child:PinkAvatarIcon(onPressed: null,),
-                ),
-              ),
-              if (user.avatar=="Purple")
-                Visibility(
-                  visible: Visible,
-                  child: Positioned(
-                    top: size.height*0.35,
-                    left: size.width*0.69,
-                    height: size.width*0.35,
-                    width: size.width*0.35,
-                    child:PurpleAvatarIcon(onPressed: null,
-                    ),
-                  ),
-                ),
-              if (user.avatar=="Orange")
-                Visibility(
-                  visible: Visible,
-                  child: Positioned(
-                    top: size.height*0.365,
-                    left: size.width*0.72,
-                    height: size.width*0.3,
-                    width: size.width*0.3,
-                    child: OrangeAvatarIcon(onPressed: null,),
-                  ),
-                ),
-              if (user.avatar=="Blue")
-                Visibility(
-                  visible: Visible,
-                  child: Positioned(
-                    top: size.height*0.36,
-                    left: size.width*0.72,
-                    height: size.width*0.3,
-                    width: size.width*0.3,
-                    child:BlueAvatarIcon(onPressed: null,),
-                  ),
-                ),
-
-              Positioned(
-                top: size.height*0.12,
-                left: size.width*0.2,
-                height: size.width*0.6,
-                width: size.width*0.6,
-                child:SvgPicture.asset('assets/icons/bulleTypePhrase.svg'),
-              ),
-
-
-
               Visibility(
                 visible: !Visible,
                 child: Positioned(
-                    top: size.height*0.8,
-                    left: 0.0,
-                    height: size.height*0.2,
-                    width: size.width*0.5,
-                    child: ButtonContinuer(onPressed: (){
-                      Navigator.push(
-                          context,
-                          new MaterialPageRoute(builder: (context) => new M_1_2()));
-                      print('Continuer');
-                    },)
+                  top: size.height*0.45,
+                  left: size.width*0.32,
+                  height: size.height*0.15,
+                  width: size.width*0.4,
+                  child: IconButton(
+                      onPressed: (){
+                        setState(() {
+                          Visible=false;
+                          correct=true;
+                         // test.score=test.score+1 ;
+                          test.q3=true ;
+                        });
+                        print('int');
+                      },
+                      icon: SvgPicture.asset('assets/icons/casier.svg')),
                 ),
               ),
               if (correct)
@@ -214,8 +230,9 @@ class _F_1_2_2nd_fourCState extends State<F_1_2_2nd_fourC> {
                   children: <Widget>[
                     Visibility(
                       visible: !Visible,
-                      child:Align(
-                          alignment: Alignment.center,
+                      child: Positioned(
+                          left: size.width*0.17,
+                          top:size.height*0.49,
                           child: SvgPicture.asset(Right)
                       ),
                     ),
@@ -275,13 +292,28 @@ class _F_1_2_2nd_fourCState extends State<F_1_2_2nd_fourC> {
                     ),
                   ],
                 ),
+              Visibility(
+                visible: !Visible,
+                child: Positioned(
+                    top: size.height*0.8,
+                    left: 0.0,
+                    height: size.height*0.2,
+                    width: size.width*0.5,
+                    child: ButtonContinuer(onPressed: (){
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => TestNivM2()));
+                      print('Continuer');},)
+                ),
+              ),
               if (!correct)
                 Stack(
                   children:[
                     Visibility(
                       visible: !Visible,
-                      child: Align(
-                          alignment: Alignment.center,
+                      child: Positioned(
+                          left: size.width*0.17,
+                          top:size.height*0.49,
                           child: SvgPicture.asset(Wrong)
                       ),
                     ),
@@ -331,6 +363,7 @@ class _F_1_2_2nd_fourCState extends State<F_1_2_2nd_fourC> {
                       ),
                   ],
                 ),
+
             ],
           ),
         ));

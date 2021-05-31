@@ -17,6 +17,7 @@ import 'package:somthn/Maths/M-1-4.dart';
 import 'package:somthn/WelcomePages/Settings.dart';
 import 'package:somthn/myicons.dart';
 import '../Services/Login.dart';
+import 'BienvenueFr.dart';
 
 class F_1_4 extends StatefulWidget {
   const F_1_4({Key key}) : super(key: key);
@@ -100,6 +101,7 @@ class _F_1_4State extends State<F_1_4> {
                     child: GoToButton(onPressed: (){
                       if((drag1=="assets/icons/m.svg")&&(drag2=="assets/icons/o.svg")&&(drag3=="assets/icons/u.svg")&&(drag4=="assets/icons/l.svg")&&(drag5=="assets/icons/i.svg")&&(drag6=="assets/icons/n.svg")){
                         print('correct');
+                        scoreF.niv1+=2;
                       setState(() {
                         Visible=false;
                       });}else if ((drag1==null)&&(drag2==null)&&(drag3==null)&&(drag4==null)&&(drag5==null)&&(drag6==null)){}

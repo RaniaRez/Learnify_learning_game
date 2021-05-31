@@ -37,6 +37,7 @@ import '../Services/SignUp.dart';
 import 'package:somthn/Francais/F-1-3-2-OneC.dart';
 import 'package:somthn/Francais/F-1-3-2-FourC.dart';
 import 'package:somthn/Francais/F-1-3-2-ThreeC.dart';
+import 'BienvenueFr.dart';
 class F_1_3 extends StatefulWidget {
   const F_1_3({Key key}) : super(key: key);
 
@@ -146,6 +147,7 @@ class _F_1_3State extends State<F_1_3> {
                         setState(() {
                         Visible=false;
                       });
+                        scoreF.niv1+=1;
                         },
                        icon: SvgPicture.asset('assets/icons/Canard.svg')),
                 ),

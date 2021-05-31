@@ -19,6 +19,7 @@ import 'package:somthn/Avatars/PinkAvatarIcon.dart';
 import 'package:somthn/Avatars/PurpleAvatarIcon.dart';
 import 'package:somthn/Avatars/BlueAvatarIcon.dart';
 import '../Services/Login.dart';
+import 'BienvenueFr.dart';
 
 class F_1_2 extends StatefulWidget {
   const F_1_2({Key key}) : super(key: key);
@@ -134,6 +135,7 @@ class _F_1_2State extends State<F_1_2> {
                         setState(() {
                           Visible=false;
                         });
+                        scoreF.niv1=scoreF.niv1+2;
                         print('int');
                       },
                       icon: SvgPicture.asset('assets/icons/Interrogative.svg')),

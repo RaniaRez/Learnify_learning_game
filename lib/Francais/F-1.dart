@@ -12,6 +12,7 @@ import 'package:somthn/Avatars/PinkAvatarIcon.dart';
 import 'package:somthn/Avatars/PurpleAvatarIcon.dart';
 import 'package:somthn/Avatars/BlueAvatarIcon.dart';
 import '../Services/Login.dart';
+import 'BienvenueFr.dart';
 
 
 class Fr1 extends StatefulWidget {
@@ -118,6 +119,8 @@ class _Fr1State extends State<Fr1> {
                 left:size.width*0.75,
                 child: GoToButton(onPressed: (){
                   print("HELL YEAH");
+                  scoreF.niv1=0;
+
                   Navigator.push(
                     context,
                     MaterialPageRoute(builder: (context) => F_1_1()),);
