@@ -4,25 +4,8 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:somthn/Buttons/BarreProgres.dart';
 import 'package:somthn/Francais/F-1-2.dart';
 import 'package:somthn/Francais/F-1.dart';
-import 'package:somthn/Francais/I-F-1-1.dart';
-import 'package:somthn/Maths/M-1-1-2ndAttempt.dart';
-import 'package:somthn/Maths/M-1-2.dart';
 import 'package:somthn/WelcomePages/Settings.dart';
-import 'package:somthn/Bulles/bulleQuest.dart';
-import 'package:somthn/Buttons/button0.dart';
-import 'package:somthn/Buttons/button1.dart';
-import 'package:somthn/Buttons/button2.dart';
-import 'package:somthn/Buttons/button3.dart';
-import 'package:somthn/Buttons/button4.dart';
-import 'package:somthn/Buttons/button5.dart';
-import 'package:somthn/Buttons/button6.dart';
-import 'package:somthn/Buttons/button7.dart';
-import 'package:somthn/Buttons/button8.dart';
-import 'package:somthn/Buttons/button9.dart';
 import 'package:somthn/Buttons/buttonContinuer.dart';
-import 'package:somthn/Buttons/buttonGoTo.dart';
-import 'package:somthn/Buttons/buttonQ.dart';
-import 'package:somthn/Buttons/buttonReset.dart';
 import 'package:somthn/myicons.dart';
 import '../Buttons/settingsButton.dart';
 import '../Buttons/BacksButton.dart';
@@ -30,9 +13,7 @@ import 'package:somthn/Avatars/OrangeAvatarIcon.dart';
 import 'package:somthn/Avatars/PinkAvatarIcon.dart';
 import 'package:somthn/Avatars/PurpleAvatarIcon.dart';
 import 'package:somthn/Avatars/BlueAvatarIcon.dart';
-import '../WelcomePages/ChooseAvatar.dart';
 import '../Services/Login.dart';
-import '../Services/SignUp.dart';
 
 class F_2_1_2nd_app extends StatefulWidget {
   const F_2_1_2nd_app({Key key}) : super(key: key);
@@ -69,7 +50,7 @@ class _F_2_1_2nd_appState extends State<F_2_1_2nd_app> {
                     Navigator.push(
                         context,
                         MaterialPageRoute(builder: (context) => Settings()));
-                    print("HELL YEAH");
+
                   },)
               ),
               Positioned(
@@ -172,7 +153,6 @@ class _F_2_1_2nd_appState extends State<F_2_1_2nd_app> {
                         setState(() {
                           Visible=false;
                         });
-                        print('alice');
                       },
                       icon: SvgPicture.asset('assets/icons/Alice.svg'),
                     ),)
@@ -190,7 +170,6 @@ class _F_2_1_2nd_appState extends State<F_2_1_2nd_app> {
                           Visible=false;
                           correct=true;
                         });
-                        print('est');
                       },
                       icon: SvgPicture.asset('assets/icons/Est.svg'),
                     ),)
@@ -207,7 +186,6 @@ class _F_2_1_2nd_appState extends State<F_2_1_2nd_app> {
                         setState(() {
                           Visible=false;
                         });
-                        print('entrain');
                       },
                       icon: SvgPicture.asset('assets/icons/en train.svg'),
                     ),)
@@ -225,7 +203,6 @@ class _F_2_1_2nd_appState extends State<F_2_1_2nd_app> {
                         setState(() {
                           Visible=false;
                         });
-                        print('lalangue');
                       },
                       icon: SvgPicture.asset('assets/icons/lalangue.svg'),
                     ),)
@@ -242,7 +219,6 @@ class _F_2_1_2nd_appState extends State<F_2_1_2nd_app> {
                         setState(() {
                           Visible=false;
                         });
-                        print('fr');
                       },
                       icon: SvgPicture.asset('assets/icons/Francaise.svg'),
                     ),)
@@ -272,7 +248,6 @@ class _F_2_1_2nd_appState extends State<F_2_1_2nd_app> {
                       Navigator.push(
                           context,
                           new MaterialPageRoute(builder: (context) => new F_1_2()));
-                      print('Continuer');
                     },)
                 ),
               ),

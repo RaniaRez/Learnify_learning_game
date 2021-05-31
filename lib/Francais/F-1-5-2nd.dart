@@ -10,10 +10,8 @@ import 'package:somthn/Buttons/buttonContinuer.dart';
 import 'package:somthn/Buttons/buttonGoTo.dart';
 import 'package:somthn/Buttons/buttonReset.dart';
 import 'package:somthn/Buttons/settingsButton.dart';
-import 'package:somthn/Francais/F-1-4-2ndAttempt.dart';
 import 'package:somthn/Francais/F-1.dart';
 import 'package:somthn/Francais/Niveau1Pass%C3%A9.dart';
-import 'package:somthn/Maths/M-1-4.dart';
 import 'package:somthn/WelcomePages/Settings.dart';
 import 'package:somthn/myicons.dart';
 import '../Services/Login.dart';
@@ -58,7 +56,6 @@ class _F_1_5_2ndState extends State<F_1_5_2nd> {
                     Navigator.push(
                         context,
                         MaterialPageRoute(builder: (context) => Settings()));
-                    print("HELL YEAH");
                   },)
               ),
               Positioned(
@@ -92,7 +89,6 @@ class _F_1_5_2ndState extends State<F_1_5_2nd> {
                   left: size.width*0.75,
                   child: GoToButton(onPressed: (){
                     if((drag1=="assets/icons/s.svg")&&(drag2=="assets/icons/o.svg")&&(drag3=="assets/icons/l.svg")){
-                      print('correct');
                       setState(() {
                         Visible=false;
                         correct=true;
@@ -102,8 +98,7 @@ class _F_1_5_2ndState extends State<F_1_5_2nd> {
 
                       });
                     }
-
-                    print("HELL YEAH");
+                    
 
                   },),
                 ),
@@ -140,7 +135,6 @@ class _F_1_5_2ndState extends State<F_1_5_2nd> {
                           drag2=null;
                           drag3=null;
                         });
-                        print('reset');
                       }
 
                   ),
@@ -156,8 +150,7 @@ class _F_1_5_2ndState extends State<F_1_5_2nd> {
                     child: ButtonContinuer(onPressed: (){
                       Navigator.push(
                           context,
-                          MaterialPageRoute(builder: (context) => Niveau1Pass()));
-                      print('Continuer');},)
+                          MaterialPageRoute(builder: (context) => Niveau1Pass()));},)
                 ),
               ),
               if (user.avatar=="Pink")
@@ -216,7 +209,7 @@ class _F_1_5_2ndState extends State<F_1_5_2nd> {
                       /// Draggable
                       Draggable<String>(
                         onDragCompleted: (){
-                          print('gfds');
+                            
                           letterO = 'assets/icons/o.svg';
                         },
                         data:
@@ -258,7 +251,7 @@ class _F_1_5_2ndState extends State<F_1_5_2nd> {
                       SizedBox( width: size.width*0.1,),
                       Draggable<String>(
                         onDragCompleted: (){
-                          print('gfds');
+                            
                           letterS = 'assets/icons/s.svg';
                         },
                         data:
@@ -298,7 +291,7 @@ class _F_1_5_2ndState extends State<F_1_5_2nd> {
                       SizedBox( width: size.width*0.1,),
                       Draggable<String>(
                         onDragCompleted: (){
-                          print('gfds');
+                            
                           letterL = 'assets/icons/l.svg';
                         },
                         data:

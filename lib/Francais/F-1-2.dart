@@ -7,8 +7,6 @@ import 'package:somthn/Francais/F-1-2-2-OneC.dart';
 import 'package:somthn/Francais/F-1-2-2-TwoC.dart';
 import 'package:somthn/Francais/F-1-3.dart';
 import 'package:somthn/Francais/F-1.dart';
-import 'package:somthn/Francais/I-F-1-1.dart';
-import 'package:somthn/Maths/M-1-2.dart';
 import 'package:somthn/WelcomePages/Settings.dart';
 import 'package:somthn/Buttons/buttonContinuer.dart';
 import 'package:somthn/myicons.dart';
@@ -54,7 +52,6 @@ class _F_1_2State extends State<F_1_2> {
                     Navigator.push(
                         context,
                         MaterialPageRoute(builder: (context) => Settings()));
-                    print("HELL YEAH");
                   },)
               ),
               Positioned(
@@ -100,7 +97,6 @@ class _F_1_2State extends State<F_1_2> {
                       Navigator.push(
                           context,
                           MaterialPageRoute(builder: (context) => F_1_2_2nd_oneC()));
-                      print('exc');
                     },
                       icon: SvgPicture.asset('assets/icons/Exclamative.svg')),
                 ),
@@ -117,7 +113,6 @@ class _F_1_2State extends State<F_1_2> {
                         Navigator.push(
                             context,
                             MaterialPageRoute(builder: (context) => F_1_2_2nd_twoC()));
-                        print('dec');
                       },
                       icon: SvgPicture.asset('assets/icons/Declarative.svg')),
                 ),
@@ -134,7 +129,6 @@ class _F_1_2State extends State<F_1_2> {
                         setState(() {
                           Visible=false;
                         });
-                        print('int');
                       },
                       icon: SvgPicture.asset('assets/icons/Interrogative.svg')),
                 ),
@@ -151,7 +145,7 @@ class _F_1_2State extends State<F_1_2> {
                         Navigator.push(
                             context,
                             MaterialPageRoute(builder: (context) => F_1_2_2nd_fourC()));
-                        print('imp');
+
                       },
                       icon: SvgPicture.asset('assets/icons/Imperative.svg')),
                 ),
@@ -244,7 +238,6 @@ class _F_1_2State extends State<F_1_2> {
                       Navigator.push(
                           context,
                           new MaterialPageRoute(builder: (context) => new F_1_3()));
-                      print('Continuer');
                     },)
                 ),
               ),

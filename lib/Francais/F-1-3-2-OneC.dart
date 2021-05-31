@@ -50,7 +50,6 @@ class _F_1_3_2nd_OneCState extends State<F_1_3_2nd_OneC> {
                     Navigator.push(
                         context,
                         MaterialPageRoute(builder: (context) => Settings()));
-                    print("HELL YEAH");
                   },)
               ),
               Positioned(
@@ -107,7 +106,6 @@ class _F_1_3_2nd_OneCState extends State<F_1_3_2nd_OneC> {
                         setState(() {
                           Visible=false;
                         });
-                        print('exc');
                       },
                       icon: SvgPicture.asset('assets/icons/Canar.svg')),
                 ),
@@ -126,7 +124,6 @@ class _F_1_3_2nd_OneCState extends State<F_1_3_2nd_OneC> {
                           Visible=false;
 
                         });
-                        print('int');
                       },
                       icon: SvgPicture.asset('assets/icons/Cannar.svg')),
                 ),
@@ -144,7 +141,7 @@ class _F_1_3_2nd_OneCState extends State<F_1_3_2nd_OneC> {
                           Visible=false;
                           correct=true;
                         });
-                        print('imp');
+
                       },
                       icon: SvgPicture.asset('assets/icons/Canard.svg')),
                 ),
@@ -209,7 +206,6 @@ class _F_1_3_2nd_OneCState extends State<F_1_3_2nd_OneC> {
                       Navigator.push(
                           context,
                           new MaterialPageRoute(builder: (context) => new F_1_4()));
-                      print('Continuer');
                     },)
                 ),
               ),

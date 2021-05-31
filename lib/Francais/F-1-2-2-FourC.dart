@@ -50,7 +50,6 @@ class _F_1_2_2nd_fourCState extends State<F_1_2_2nd_fourC> {
                     Navigator.push(
                         context,
                         MaterialPageRoute(builder: (context) => Settings()));
-                    print("HELL YEAH");
                   },)
               ),
               Positioned(
@@ -96,7 +95,6 @@ class _F_1_2_2nd_fourCState extends State<F_1_2_2nd_fourC> {
                         setState(() {
                           Visible=false;
                         });
-                        print('exc');
                       },
                       icon: SvgPicture.asset('assets/icons/Exclamative.svg')),
                 ),
@@ -131,7 +129,6 @@ class _F_1_2_2nd_fourCState extends State<F_1_2_2nd_fourC> {
                           Visible=false;
                           correct=true;
                         });
-                        print('int');
                       },
                       icon: SvgPicture.asset('assets/icons/Interrogative.svg')),
                 ),
@@ -203,7 +200,6 @@ class _F_1_2_2nd_fourCState extends State<F_1_2_2nd_fourC> {
                       Navigator.push(
                           context,
                           new MaterialPageRoute(builder: (context) => new M_1_2()));
-                      print('Continuer');
                     },)
                 ),
               ),

@@ -2,10 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:somthn/Avatars/OrangeAvatarIcon.dart';
 import 'package:somthn/Francais/F-1-1.dart';
-import 'package:somthn/Maths/M-1-1.dart';
 import 'package:somthn/WelcomePages/Settings.dart';
 import 'package:somthn/Buttons/buttonGoTo.dart';
-import 'package:somthn/myicons.dart';
 import '../Buttons/settingsButton.dart';
 import '../Buttons/BacksButton.dart';
 import 'package:somthn/Avatars/PinkAvatarIcon.dart';
@@ -46,7 +44,6 @@ class _Fr1State extends State<Fr1> {
                     Navigator.push(
                         context,
                         MaterialPageRoute(builder: (context) => Settings()));
-                    print("HELL YEAH");
                   },)
               ),
               Positioned(
@@ -117,7 +114,6 @@ class _Fr1State extends State<Fr1> {
                 top: size.height*0.8,
                 left:size.width*0.75,
                 child: GoToButton(onPressed: (){
-                  print("HELL YEAH");
                   Navigator.push(
                     context,
                     MaterialPageRoute(builder: (context) => F_1_1()),);

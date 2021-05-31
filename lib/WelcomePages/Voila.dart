@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:somthn/Avatars/BlueAvatarIcon.dart';
+import 'package:somthn/Avatars/OrangeAvatarIcon.dart';
+import 'package:somthn/Avatars/PinkAvatarIcon.dart';
 import 'package:somthn/Avatars/PurpleAvatarIcon.dart';
 import 'package:somthn/Branches/BranchIconSimple.dart';
 import 'package:somthn/Buttons/SinscrireButton.dart';
@@ -114,21 +117,59 @@ class _VoilaState extends State<Voila> {
                 },),
               ),
 
-            Positioned(
-              height: size.height*0.2,
-              width: size.width*0.35,
-              top:size.height*0.5,
-              right:size.width*0.65,
-              child:BranchIconSimple(),
-            ),
-            Positioned(
-              top: size.height*0.38,
-              right: size.width*0.7 ,
-              height: size.height*0.32,
-              width: size.width*0.32,
+            Visibility(
 
-              child:PurpleAvatarIcon(onPressed: null,),
+              child: Positioned(
+                top: size.height*0.62,
+                right: size.width*0.62 ,
+                child:BranchIconSimple(),
+              ),
             ),
+           if (user.avatar=="Pink")
+              Visibility(
+
+                child: Positioned(
+                  top: size.height*0.45,
+                  right: size.width*0.63 ,
+                  height: size.height*0.3,
+                  width: size.width*0.3,
+                  child:PinkAvatarIcon(onPressed: null,),
+                ),
+              ),
+            if (user.avatar=="Purple")
+              Visibility(
+
+                child: Positioned(
+                  top: size.height*0.43,
+                  right: size.width*0.63 ,
+                  height: size.height*0.35,
+                  width: size.width*0.35,
+
+                  child:PurpleAvatarIcon(onPressed: null,),
+                ),
+              ),
+            if (user.avatar=="Orange")
+              Visibility(
+
+                child: Positioned(
+                  top: size.height*0.46,
+                  right: size.width*0.63 ,
+                  height: size.height*0.3,
+                  width: size.width*0.3,
+                  child: OrangeAvatarIcon(onPressed: null,),
+                ),
+              ),
+            if (user.avatar=="Blue")
+              Visibility(
+
+                child: Positioned(
+                  top: size.height*0.45,
+                  right: size.width*0.63 ,
+                  height: size.height*0.3,
+                  width: size.width*0.3,
+                  child:BlueAvatarIcon(onPressed: null,),
+                ),
+              ),
 
 
             Positioned(

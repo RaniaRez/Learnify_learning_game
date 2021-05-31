@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:somthn/Bulles/BullenomIcon.dart';
 import 'package:somthn/Francais/NiveauFr.dart';
-import 'package:somthn/Maths/NiveauMath.dart';
 import 'package:somthn/WelcomePages/Settings.dart';
 import 'package:somthn/Buttons/buttonCommencerDroit.dart';
 import '../Buttons/settingsButton.dart';
@@ -11,10 +9,7 @@ import 'package:somthn/Avatars/OrangeAvatarIcon.dart';
 import 'package:somthn/Avatars/PinkAvatarIcon.dart';
 import 'package:somthn/Avatars/PurpleAvatarIcon.dart';
 import 'package:somthn/Avatars/BlueAvatarIcon.dart';
-//import '../WelcomePages/ChooseAvatar.dart';
-import 'package:somthn/TestDeNiveau/TestDeNiveau.dart';
 import '../Services/Login.dart';
-import '../Services/SignUp.dart';
 
 
 
@@ -52,7 +47,7 @@ class _BienvenueFrState extends State<BienvenueFr> {
                     Navigator.push(
                         context,
                         MaterialPageRoute(builder: (context) => Settings()));
-                    print("HELL YEAH");
+
                   },)
               ),
               Positioned(
@@ -68,7 +63,6 @@ class _BienvenueFrState extends State<BienvenueFr> {
                 height: size.height*0.55,
                 width: size.width*0.55,
                 child: ButtonCommencerD(onPressed: () {
-                  print('commencer');
                   Navigator.push(
 
                       context,

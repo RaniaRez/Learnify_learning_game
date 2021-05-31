@@ -12,6 +12,7 @@ import 'package:somthn/TestDeNiveau/TestNivMathQ2.dart';
 import 'package:somthn/TestDeNiveau/TestNivFrQ2.dart';
 import 'package:somthn/WelcomePages/Home.dart';
 import 'package:firebase_core/firebase_core.dart';
+import 'package:somthn/WelcomePages/Voila.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
@@ -23,5 +24,5 @@ void main() {
     }
   };
 
-  runApp(MaterialApp(home:TestNivM1()));
+  runApp(MaterialApp(home:Voila()));
 }

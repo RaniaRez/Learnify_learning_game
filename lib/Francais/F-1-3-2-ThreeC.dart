@@ -1,9 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:somthn/Buttons/BarreProgres.dart';
 import 'package:somthn/Francais/F-1-4.dart';
-import 'package:somthn/Maths/M-1-2.dart';
 import 'package:somthn/WelcomePages/Settings.dart';
 import 'package:somthn/Buttons/buttonContinuer.dart';
 import 'package:somthn/myicons.dart';
@@ -50,7 +48,6 @@ class _F_1_3_2nd_threeCState extends State<F_1_3_2nd_threeC> {
                     Navigator.push(
                         context,
                         MaterialPageRoute(builder: (context) => Settings()));
-                    print("HELL YEAH");
                   },)
               ),
               Positioned(
@@ -106,7 +103,6 @@ class _F_1_3_2nd_threeCState extends State<F_1_3_2nd_threeC> {
                         setState(() {
                           Visible=false;
                         });
-                        print('exc');
                       },
                       icon: SvgPicture.asset('assets/icons/UnCanar.svg')),
                 ),
@@ -124,7 +120,6 @@ class _F_1_3_2nd_threeCState extends State<F_1_3_2nd_threeC> {
                           Visible=false;
 
                         });
-                        print('int');
                       },
                       icon: SvgPicture.asset('assets/icons/Canar.svg')),
                 ),
@@ -142,7 +137,6 @@ class _F_1_3_2nd_threeCState extends State<F_1_3_2nd_threeC> {
                           Visible=false;
                           correct=true;
                         });
-                        print('imp');
                       },
                       icon: SvgPicture.asset('assets/icons/Canard.svg')),
                 ),
@@ -209,7 +203,6 @@ class _F_1_3_2nd_threeCState extends State<F_1_3_2nd_threeC> {
                       Navigator.push(
                           context,
                           new MaterialPageRoute(builder: (context) => new F_1_4()));
-                      print('Continuer');
                     },)
                 ),
               ),
