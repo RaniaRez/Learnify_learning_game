@@ -3,7 +3,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:somthn/Geographie/N1Q4T2_C_1.dart';
 import 'package:somthn/Geographie/N1Q4T2_C_2.dart';
 import 'package:somthn/Geographie/N1Q4T2_C_4.dart';
-import 'package:somthn/Geographie/N2Q3.dart';
+import 'package:somthn/Geographie/N2Q4.dart';
 import 'package:somthn/WelcomePages/Settings.dart';
 import 'package:somthn/WelcomePages/Home.dart';
 import 'package:vibration/vibration.dart';
@@ -21,14 +21,14 @@ import '../Services/Login.dart';
 
 import 'package:somthn/Bulles/BulleN1Q4T2.dart';
 
-class N2Q2T2_C_3 extends StatefulWidget {
-  const N2Q2T2_C_3({Key key}) : super(key: key);
+class N2Q3T2_C_2 extends StatefulWidget {
+  const N2Q3T2_C_2({Key key}) : super(key: key);
 
   @override
-  _N2Q2T2_C_3State createState() => _N2Q2T2_C_3State();
+  _N2Q3T2_C_2State createState() => _N2Q3T2_C_2State();
 }
 
-class _N2Q2T2_C_3State extends State<N2Q2T2_C_3> {
+class _N2Q3T2_C_2State extends State<N2Q3T2_C_2> {
   bool Visible = true;
   bool correct = false;
   bool oneClicked = false;
@@ -82,8 +82,9 @@ class _N2Q2T2_C_3State extends State<N2Q2T2_C_3> {
                 left: size.width*0.05,
                 height: size.height*0.3,
                 width: size.width*0.8,
-                child:SvgPicture.asset('assets/icons/N2Q2T2.svg'),
+                child:SvgPicture.asset('assets/icons/BulleN2Q3T2.svg'),
               ),
+
               Visibility(
                 visible: !Visible,
                 child: Positioned(
@@ -93,7 +94,6 @@ class _N2Q2T2_C_3State extends State<N2Q2T2_C_3> {
                   child: SvgPicture.asset(FourBars),
                 ),
               ),
-
               if (user.avatar=="Pink")
                 Visibility(
                   visible: Visible,
@@ -141,15 +141,16 @@ class _N2Q2T2_C_3State extends State<N2Q2T2_C_3> {
 
 
               Visibility(
-                visible: Visible,
+                visible: false,
                 child: Positioned(
                   top: size.height*0.5,
                   left: size.width*0.5,
                   height: size.height*0.3,
                   width: size.width*0.5,
                   child: IconButton(
-                    icon: SvgPicture.asset('assets/icons/Algeriens.svg'),
+                    icon: SvgPicture.asset('assets/icons/Kabyles.svg'),
                     onPressed: (){
+                      print('oran');
                       setState(() {
                         oneClicked = false;
                         twoClicked = true;
@@ -167,7 +168,7 @@ class _N2Q2T2_C_3State extends State<N2Q2T2_C_3> {
                   height: size.height*0.3,
                   width: size.width*0.5,
                   child: IconButton(
-                    icon: SvgPicture.asset('assets/icons/Alges.svg'),
+                    icon: SvgPicture.asset('assets/icons/Zoulous.svg'),
                     onPressed: (){
                       print('adrar');
                       setState(() {
@@ -180,14 +181,14 @@ class _N2Q2T2_C_3State extends State<N2Q2T2_C_3> {
                 ),
               ),
               Visibility(
-                visible: false,
+                visible: Visible,
                 child: Positioned(
                   top: size.height*0.6,
                   left: size.width*0,
                   height: size.height*0.3,
                   width: size.width*0.5,
                   child: IconButton(
-                    icon: SvgPicture.asset('assets/icons/Algerois.svg'),
+                    icon: SvgPicture.asset('assets/icons/Chaouis.svg'),
                     onPressed: (){
                       print('alger');
                       setState(() {
@@ -208,7 +209,7 @@ class _N2Q2T2_C_3State extends State<N2Q2T2_C_3> {
                   height: size.height*0.3,
                   width: size.width*0.5,
                   child: IconButton(
-                    icon: SvgPicture.asset('assets/icons/Algeriants.svg'),
+                    icon: SvgPicture.asset('assets/icons/Mozabites.svg'),
                     onPressed: (){
                       print('annaba');
                       setState(() {
@@ -231,7 +232,7 @@ class _N2Q2T2_C_3State extends State<N2Q2T2_C_3> {
                     child: ButtonContinuer(onPressed: (){
                       Navigator.push(
                           context,
-                          MaterialPageRoute(builder: (context) => N2Q3()));
+                          MaterialPageRoute(builder: (context) => N2Q4()));
                       print('Continuer');},)
                 ),
               ),
@@ -242,7 +243,7 @@ class _N2Q2T2_C_3State extends State<N2Q2T2_C_3> {
                   height: size.height*0.3,
                   width: size.width*0.5,
                   child: Visibility(
-                      visible: false,
+                      visible: (threeClicked && Visible),
                       child: IconButton(
                         onPressed: (){
                           if (threeClicked){
@@ -258,7 +259,7 @@ class _N2Q2T2_C_3State extends State<N2Q2T2_C_3> {
                           }
                           print('Alger');
                         },
-                        icon: SvgPicture.asset('assets/icons/Algerois.svg'),))
+                        icon: SvgPicture.asset('assets/icons/Chaouis.svg'),))
               ),
               Positioned(
                 top: size.height*0.7,
@@ -271,7 +272,7 @@ class _N2Q2T2_C_3State extends State<N2Q2T2_C_3> {
                         onPressed: (){
                           if (fourClicked) {
                             setState(() {
-                              correct = false;
+                              correct = true;
                               Visible = false;
 
                               print('Correct');
@@ -281,7 +282,7 @@ class _N2Q2T2_C_3State extends State<N2Q2T2_C_3> {
                           }
                           print('Alger');
                         },
-                        icon: SvgPicture.asset('assets/icons/Alges.svg'))
+                        icon: SvgPicture.asset('assets/icons/Zoulous.svg'))
                 ),
               ),
               Positioned(
@@ -291,14 +292,14 @@ class _N2Q2T2_C_3State extends State<N2Q2T2_C_3> {
                 width: size.width*0.5,
 
                 child: Visibility(
-                    visible: (twoClicked&&Visible),
+                    visible: false,
                     child: IconButton(
                         onPressed: (){
                           if (twoClicked) {
                             Vibration.vibrate();
 
                             setState(() {
-                              correct = true;
+                              correct = false;
                               Visible = false;
 
                               print('Correct');
@@ -306,7 +307,7 @@ class _N2Q2T2_C_3State extends State<N2Q2T2_C_3> {
                             print('Oran');
                           }
                         },
-                        icon: SvgPicture.asset('assets/icons/Algeriens.svg'))
+                        icon: SvgPicture.asset('assets/icons/Kabyles.svg'))
                 ),
               ),
               Positioned(
@@ -328,7 +329,7 @@ class _N2Q2T2_C_3State extends State<N2Q2T2_C_3> {
                               print('Correct');
                             });}
                         },
-                        icon: SvgPicture.asset('assets/icons/Algeriants.svg'))
+                        icon: SvgPicture.asset('assets/icons/Mozabites.svg'))
                 ),
               ),
               if (correct)
@@ -413,7 +414,7 @@ class _N2Q2T2_C_3State extends State<N2Q2T2_C_3> {
                               onPressed: (){
                                 print('3aychin ghaya kho');
                               },
-                              icon: SvgPicture.asset('assets/icons/Algeriens.svg'))
+                              icon: SvgPicture.asset('assets/icons/Zoulous.svg'))
                       ),
                     ),
                   ],

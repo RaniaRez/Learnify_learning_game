@@ -21,14 +21,14 @@ import '../Services/Login.dart';
 
 import 'package:somthn/Bulles/BulleN1Q4T2.dart';
 
-class N2Q2T2_C_3 extends StatefulWidget {
-  const N2Q2T2_C_3({Key key}) : super(key: key);
+class N2Q4T2_C_1 extends StatefulWidget {
+  const N2Q4T2_C_1({Key key}) : super(key: key);
 
   @override
-  _N2Q2T2_C_3State createState() => _N2Q2T2_C_3State();
+  _N2Q4T2_C_1State createState() => _N2Q4T2_C_1State();
 }
 
-class _N2Q2T2_C_3State extends State<N2Q2T2_C_3> {
+class _N2Q4T2_C_1State extends State<N2Q4T2_C_1> {
   bool Visible = true;
   bool correct = false;
   bool oneClicked = false;
@@ -82,7 +82,7 @@ class _N2Q2T2_C_3State extends State<N2Q2T2_C_3> {
                 left: size.width*0.05,
                 height: size.height*0.3,
                 width: size.width*0.8,
-                child:SvgPicture.asset('assets/icons/N2Q2T2.svg'),
+                child:SvgPicture.asset('assets/icons/BulleN2Q4T2.svg'),
               ),
               Visibility(
                 visible: !Visible,
@@ -93,7 +93,6 @@ class _N2Q2T2_C_3State extends State<N2Q2T2_C_3> {
                   child: SvgPicture.asset(FourBars),
                 ),
               ),
-
               if (user.avatar=="Pink")
                 Visibility(
                   visible: Visible,
@@ -148,7 +147,7 @@ class _N2Q2T2_C_3State extends State<N2Q2T2_C_3> {
                   height: size.height*0.3,
                   width: size.width*0.5,
                   child: IconButton(
-                    icon: SvgPicture.asset('assets/icons/Algeriens.svg'),
+                    icon: SvgPicture.asset('assets/icons/Alpes.svg'),
                     onPressed: (){
                       setState(() {
                         oneClicked = false;
@@ -167,7 +166,7 @@ class _N2Q2T2_C_3State extends State<N2Q2T2_C_3> {
                   height: size.height*0.3,
                   width: size.width*0.5,
                   child: IconButton(
-                    icon: SvgPicture.asset('assets/icons/Alges.svg'),
+                    icon: SvgPicture.asset('assets/icons/OuledNail.svg'),
                     onPressed: (){
                       print('adrar');
                       setState(() {
@@ -180,14 +179,14 @@ class _N2Q2T2_C_3State extends State<N2Q2T2_C_3> {
                 ),
               ),
               Visibility(
-                visible: false,
+                visible: Visible,
                 child: Positioned(
                   top: size.height*0.6,
                   left: size.width*0,
                   height: size.height*0.3,
                   width: size.width*0.5,
                   child: IconButton(
-                    icon: SvgPicture.asset('assets/icons/Algerois.svg'),
+                    icon: SvgPicture.asset('assets/icons/Tahat.svg'),
                     onPressed: (){
                       print('alger');
                       setState(() {
@@ -201,14 +200,14 @@ class _N2Q2T2_C_3State extends State<N2Q2T2_C_3> {
                 ),
               ),
               Visibility(
-                visible: Visible,
+                visible: false,
                 child: Positioned(
                   top: size.height*0.4,
                   left: size.width*0.0,
                   height: size.height*0.3,
                   width: size.width*0.5,
                   child: IconButton(
-                    icon: SvgPicture.asset('assets/icons/Algeriants.svg'),
+                    icon: SvgPicture.asset('assets/icons/LallaKhedidja.svg'),
                     onPressed: (){
                       print('annaba');
                       setState(() {
@@ -242,12 +241,12 @@ class _N2Q2T2_C_3State extends State<N2Q2T2_C_3> {
                   height: size.height*0.3,
                   width: size.width*0.5,
                   child: Visibility(
-                      visible: false,
+                      visible: (threeClicked && Visible),
                       child: IconButton(
                         onPressed: (){
-                          if (threeClicked){
-                            Vibration.vibrate();
+                          Vibration.vibrate();
 
+                          if (threeClicked){
                             setState(() {
                               correct = false;
                               Visible = false;
@@ -258,7 +257,7 @@ class _N2Q2T2_C_3State extends State<N2Q2T2_C_3> {
                           }
                           print('Alger');
                         },
-                        icon: SvgPicture.asset('assets/icons/Algerois.svg'),))
+                        icon: SvgPicture.asset('assets/icons/Tahat.svg'),))
               ),
               Positioned(
                 top: size.height*0.7,
@@ -270,6 +269,8 @@ class _N2Q2T2_C_3State extends State<N2Q2T2_C_3> {
                     child: IconButton(
                         onPressed: (){
                           if (fourClicked) {
+                            Vibration.vibrate();
+
                             setState(() {
                               correct = false;
                               Visible = false;
@@ -281,7 +282,7 @@ class _N2Q2T2_C_3State extends State<N2Q2T2_C_3> {
                           }
                           print('Alger');
                         },
-                        icon: SvgPicture.asset('assets/icons/Alges.svg'))
+                        icon: SvgPicture.asset('assets/icons/OuledNail.svg'))
                 ),
               ),
               Positioned(
@@ -294,6 +295,7 @@ class _N2Q2T2_C_3State extends State<N2Q2T2_C_3> {
                     visible: (twoClicked&&Visible),
                     child: IconButton(
                         onPressed: (){
+
                           if (twoClicked) {
                             Vibration.vibrate();
 
@@ -306,7 +308,7 @@ class _N2Q2T2_C_3State extends State<N2Q2T2_C_3> {
                             print('Oran');
                           }
                         },
-                        icon: SvgPicture.asset('assets/icons/Algeriens.svg'))
+                        icon: SvgPicture.asset('assets/icons/Alpes.svg'))
                 ),
               ),
               Positioned(
@@ -315,11 +317,10 @@ class _N2Q2T2_C_3State extends State<N2Q2T2_C_3> {
                 height: size.height*0.3,
                 width: size.width*0.5,
                 child: Visibility(
-                    visible: (oneClicked&&Visible),
+                    visible: false,
                     child: IconButton(
                         onPressed: (){
                           if (oneClicked) {
-                            Vibration.vibrate();
 
                             setState(() {
                               correct = false;
@@ -328,12 +329,26 @@ class _N2Q2T2_C_3State extends State<N2Q2T2_C_3> {
                               print('Correct');
                             });}
                         },
-                        icon: SvgPicture.asset('assets/icons/Algeriants.svg'))
+                        icon: SvgPicture.asset('assets/icons/LallaKhedidja.svg'))
                 ),
               ),
               if (correct)
                 Stack(
                   children: <Widget>[
+                    Positioned(
+                      top: size.height*0.45,
+                      left: size.width*0.2,
+                      height: size.height*0.3,
+                      width: size.width*0.6,
+                      child: Visibility(
+                          visible: !Visible,
+                          child: IconButton(
+                              onPressed: (){
+                                print('3aychin ghaya kho');
+                              },
+                              icon: SvgPicture.asset('assets/icons/Alpes.svg'))
+                      ),
+                    ),
                     Visibility(
                       visible: !Visible,
                       child:Align(
@@ -393,27 +408,6 @@ class _N2Q2T2_C_3State extends State<N2Q2T2_C_3> {
                           left: size.width*0.4,
                           top:size.height*0.7,
                           child: SvgPicture.asset(bulleBravo)
-                      ),
-                    ),
-                    Visibility(
-                      visible: !Visible,
-                      child:Align(
-                          alignment: Alignment.center,
-                          child: SvgPicture.asset(Right)
-                      ),
-                    ),
-                    Positioned(
-                      top: size.height*0.45,
-                      left: size.width*0.2,
-                      height: size.height*0.3,
-                      width: size.width*0.6,
-                      child: Visibility(
-                          visible: !Visible,
-                          child: IconButton(
-                              onPressed: (){
-                                print('3aychin ghaya kho');
-                              },
-                              icon: SvgPicture.asset('assets/icons/Algeriens.svg'))
                       ),
                     ),
                   ],
