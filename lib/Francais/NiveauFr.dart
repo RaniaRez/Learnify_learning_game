@@ -4,7 +4,6 @@ import 'package:somthn/Francais/F-1.dart';
 import 'package:somthn/Maths/M-2.dart';
 import 'package:somthn/Owls/BrownOwl.dart';
 import 'package:somthn/Owls/LockIcon.dart';
-import 'package:somthn/Maths/M-1.dart';
 import 'package:somthn/Avatars/PinkAvatarIcon.dart';
 import 'package:somthn/WelcomePages/Settings.dart';
 import 'package:somthn/Buttons/buttonDifficile.dart';
@@ -50,7 +49,7 @@ class _NiveauFrState extends State<NiveauFr> {
                   Navigator.push(
                       context,
                       MaterialPageRoute(builder: (context) => Fr1()));
-                  print('facile');}),
+                }),
               ),
 
               Positioned(
@@ -73,7 +72,6 @@ class _NiveauFrState extends State<NiveauFr> {
                   Navigator.push(
                       context,
                       MaterialPageRoute(builder: (context) => Math2()));
-                  print('Moyen');
                 }),
               ),
 
@@ -118,7 +116,6 @@ class _NiveauFrState extends State<NiveauFr> {
                     Navigator.push(
                         context,
                         MaterialPageRoute(builder: (context) => Settings()));
-                    print("HELL YEAH");
                   },)
               ),
               Positioned(

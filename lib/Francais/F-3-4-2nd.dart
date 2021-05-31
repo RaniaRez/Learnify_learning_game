@@ -10,8 +10,6 @@ import 'package:somthn/Buttons/buttonContinuer.dart';
 import 'package:somthn/Buttons/buttonGoTo.dart';
 import 'package:somthn/Buttons/buttonReset.dart';
 import 'package:somthn/Buttons/settingsButton.dart';
-import 'package:somthn/Francais/F-1-4-2ndAttempt.dart';
-import 'package:somthn/Francais/F-1-5.dart';
 import 'package:somthn/Francais/F-1.dart';
 import 'package:somthn/Francais/F-3-5.dart';
 import 'package:somthn/WelcomePages/Settings.dart';
@@ -65,7 +63,6 @@ bool correct=false;
                     Navigator.push(
                         context,
                         MaterialPageRoute(builder: (context) => Settings()));
-                    print("HELL YEAH");
                   },)
               ),
               Positioned(
@@ -100,7 +97,6 @@ bool correct=false;
                   left: size.width*0.75,
                   child: GoToButton(onPressed: (){
                     if((drag1=="assets/icons/h.svg")&&(drag2=="assets/icons/e.svg")&&(drag3=="assets/icons/u.svg")&&(drag4=="assets/icons/r.svg")&&(drag5=="assets/icons/e.svg")&&(drag6=="assets/icons/u.svg")&&(drag7=="assets/icons/x.svg")){
-                      print('correct');
                       setState(() {
                         Visible=false;
                         correct=false;
@@ -110,7 +106,6 @@ bool correct=false;
                         Visible=false;
                       });
                     }
-                    print("HELL YEAH");
 
                   },),
                 ),
@@ -230,7 +225,7 @@ bool correct=false;
                       /// Draggable
                       Draggable<String>(
                         onDragCompleted: (){
-                          print('gfds');
+                            
                           letterR = 'assets/icons/r.svg';
                         },
                         data:
@@ -272,7 +267,7 @@ bool correct=false;
                       SizedBox( width: size.width*0.1,),
                       Draggable<String>(
                         onDragCompleted: (){
-                          print('gfds');
+                            
                           letterU = 'assets/icons/u.svg';
                         },
                         data:
@@ -312,7 +307,7 @@ bool correct=false;
                       SizedBox( width: size.width*0.1,),
                       Draggable<String>(
                         onDragCompleted: (){
-                          print('gfds');
+                            
                           letterX = 'assets/icons/x.svg';
                         },
                         data:
@@ -373,7 +368,7 @@ bool correct=false;
                       /// Draggable
                       Draggable<String>(
                         onDragCompleted: (){
-                          print('gfds');
+                            
                           letterE = 'assets/icons/e.svg';
                         },
                         data:
@@ -415,7 +410,7 @@ bool correct=false;
                       SizedBox( width: size.width*0.1,),
                       Draggable<String>(
                         onDragCompleted: (){
-                          print('gfds');
+                            
                           letterH = 'assets/icons/h.svg';
                         },
                         data:
@@ -455,7 +450,7 @@ bool correct=false;
                       SizedBox( width: size.width*0.1,),
                       Draggable<String>(
                         onDragCompleted: (){
-                          print('gfds');
+                            
                           letterUU = 'assets/icons/u.svg';
                         },
                         data:
@@ -495,7 +490,7 @@ bool correct=false;
                       SizedBox( width: size.width*0.1,),
                       Draggable<String>(
                         onDragCompleted: (){
-                          print('gfds');
+                            
                           letterEE = 'assets/icons/e.svg';
                         },
                         data:

@@ -2,12 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:somthn/Avatars/OrangeAvatarIcon.dart';
 import 'package:somthn/Francais/F-1-1-2nd.dart';
-import 'package:somthn/Francais/F-1-1.dart';
 import 'package:somthn/Francais/F-1.dart';
-import 'package:somthn/Maths/M-1-1.dart';
 import 'package:somthn/WelcomePages/Settings.dart';
-import 'package:somthn/Buttons/buttonGoTo.dart';
-import 'package:somthn/myicons.dart';
 import '../Buttons/buttonReessayer.dart';
 import '../Buttons/settingsButton.dart';
 import '../Buttons/BacksButton.dart';
@@ -15,8 +11,6 @@ import 'package:somthn/Avatars/PinkAvatarIcon.dart';
 import 'package:somthn/Avatars/PurpleAvatarIcon.dart';
 import 'package:somthn/Avatars/BlueAvatarIcon.dart';
 import '../Services/Login.dart';
-import '../myicons.dart';
-import '../myicons.dart';
 
 
 class I_F_1_1 extends StatefulWidget {
@@ -51,7 +45,6 @@ class _I_F_1_1State extends State<I_F_1_1> {
                     Navigator.push(
                         context,
                         MaterialPageRoute(builder: (context) => Settings()));
-                    print("HELL YEAH");
                   },)
               ),
               Positioned(

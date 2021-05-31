@@ -1,18 +1,14 @@
 
 import 'package:flutter/material.dart';
-//import 'package:flutter_svg/svg.dart';
 import 'package:somthn/Buttons/HomeButton.dart';
 import 'package:somthn/Buttons/buttonInfo.dart';
 import 'package:somthn/Buttons/buttonMusic.dart';
 import 'package:somthn/Buttons/buttonSound.dart';
 import 'package:somthn/Buttons/buttonUserSettings.dart';
 import 'package:somthn/modification/Userinfo.dart';
-//import 'package:somthn/myicons.dart';
 import '../Buttons/BacksButton.dart';
 import '../Buttons/butttonExit.dart';
-
 import 'Home.dart';
-
 import '../Services/auth.dart';
 
 class Settings extends StatefulWidget {
@@ -64,7 +60,6 @@ class _SettingsState extends State<Settings> {
                   child: ButtonExit(onPressed:() {
                     try {
                       signOutGoogle();
-                      print("you signed out ");
                       Navigator.push(
                         context,
                         MaterialPageRoute(builder: (context) => Home()),);
@@ -87,7 +82,6 @@ class _SettingsState extends State<Settings> {
                   top: size.height*0.05,
                   right:size.width*0.75,
                   child:BacksButton(onPressed:() {
-    print("HELL YEAH");
     Navigator.pop(context);
     },
                   )
@@ -97,7 +91,6 @@ class _SettingsState extends State<Settings> {
                   top: size.height*0.04,
                   left:size.width*0.75,
                   child:InfoButton(onPressed:() {
-                    print("clicking");
                   })
               ),
 

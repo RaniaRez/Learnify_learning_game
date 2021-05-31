@@ -2,25 +2,15 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:somthn/Avatars/PurpleAvatarIcon.dart';
 import 'package:somthn/Branches/BranchIconSimple.dart';
-import 'package:somthn/Buttons/SinscrireButton.dart';
-import 'package:somthn/Buttons/seConnecterButton.dart';
-import 'package:somthn/WelcomePages/AllSet.dart';
-import 'package:somthn/WelcomePages/ChoixDomaines.dart';
 import 'package:somthn/Buttons/ClassementButton.dart';
 import 'package:somthn/WelcomePages/ChooseAvatar.dart';
 import 'package:somthn/classement/Classement.dart';
 import 'package:somthn/WelcomePages/Settings.dart';
-import 'package:somthn/modification/Userinfo.dart';
 import '../Buttons/settingsButton.dart';
 import '../Buttons/BacksButton.dart';
 import 'ClassUser.dart';
 import '../Buttons/buttonGoTo.dart';
 import '../Buttons/buttonStatistique.dart';
-import '../Buttons/buttonUserSettings.dart';
-//for backend
-//import '../Services/auth.dart';
-import '../Services/Login.dart';
-import '../Services/SignUp.dart';
 import '../Data/DataUser.dart';
 import '../classement/methodes.dart';
 import '../classement/Classement.dart';
@@ -67,7 +57,6 @@ class _ViteState extends State<Vite> {
                   Navigator.push(
                       context,
                       MaterialPageRoute(builder: (context) => Settings()));
-                  print("HELL YEAH");
                 },)
             ),
 
@@ -75,7 +64,6 @@ class _ViteState extends State<Vite> {
                 top: size.height*0.05,
                 right:size.width*0.75,
                 child: BacksButton(onPressed: (){
-                  print("HELL YEAH");
                   Navigator.pop(context);
                 },)
             ),
@@ -90,7 +78,6 @@ class _ViteState extends State<Vite> {
                 print(list[0].score);
                 print(list[1].score);
                 print(list[2].score);
-                print("kemelna");
                 Navigator.push(
                     context,
                     MaterialPageRoute(builder: (context) => Classement(value : list )));
@@ -135,8 +122,6 @@ class _ViteState extends State<Vite> {
                   Navigator.push(
                       context,
                       MaterialPageRoute(builder: (context) => ChooseAvatar()));
-
-                  print("HELL YEAH");
                 },
                 ),
 

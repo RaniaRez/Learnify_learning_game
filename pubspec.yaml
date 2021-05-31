@@ -36,6 +36,9 @@ dependencies:
   drag_and_drop_lists: ^0.3.2
   camera: ^0.7.0+4
   provider: ^4.3.2+3
+  simple_animations: ^3.1.1
+  flutter_easyloading: ^3.0.0
+  flutter_spinkit: ^5.0.0
 
 dev_dependencies:
   flutter_test:
