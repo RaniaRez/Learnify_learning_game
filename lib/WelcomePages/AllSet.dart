@@ -7,15 +7,12 @@ import 'package:somthn/Buttons/HomeButton.dart';
 import 'package:somthn/Avatars/OrangeAvatarIcon.dart';
 import 'package:somthn/Avatars/PinkAvatarIcon.dart';
 import 'package:somthn/Avatars/PurpleAvatarIcon.dart';
-import 'package:somthn/myicons.dart';
 import '../Buttons/settingsButton.dart';
 import '../Buttons/BacksButton.dart';
 import 'Home.dart';
 import 'Settings.dart';
 import '../Branches/BranchIconSimple.dart';
-//import 'ChooseAvatar.dart';
 import '../Services/Login.dart';
-import '../Services/SignUp.dart';
 
 
 
@@ -58,7 +55,6 @@ class _AllSetState extends State<AllSet> {
 
                 child: HomeButton(
                   onPressed: (){
-                    print("HELL");
                     Navigator.push(
                       context,
                       MaterialPageRoute(builder: (context) => Home()),);
@@ -146,8 +142,6 @@ class _AllSetState extends State<AllSet> {
     context,
     MaterialPageRoute(
     builder: (BuildContext context) => ChoixDomaine()));
-
-    print("non");
     }),
               ),
             ]

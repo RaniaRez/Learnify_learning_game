@@ -10,8 +10,6 @@ import 'package:somthn/Buttons/buttonContinuer.dart';
 import 'package:somthn/Buttons/buttonGoTo.dart';
 import 'package:somthn/Buttons/buttonReset.dart';
 import 'package:somthn/Buttons/settingsButton.dart';
-import 'package:somthn/Francais/F-1-4-2ndAttempt.dart';
-import 'package:somthn/Francais/F-1-5.dart';
 import 'package:somthn/Francais/F-1.dart';
 import 'package:somthn/Francais/F-3-4-2nd.dart';
 import 'package:somthn/Francais/F-3-5.dart';
@@ -66,7 +64,6 @@ class _F_3_4State extends State<F_3_4> {
                     Navigator.push(
                         context,
                         MaterialPageRoute(builder: (context) => Settings()));
-                    print("HELL YEAH");
                   },)
               ),
               Positioned(
@@ -101,7 +98,6 @@ class _F_3_4State extends State<F_3_4> {
                   left: size.width*0.75,
                   child: GoToButton(onPressed: (){
                     if((drag1=="assets/icons/h.svg")&&(drag2=="assets/icons/e.svg")&&(drag3=="assets/icons/u.svg")&&(drag4=="assets/icons/r.svg")&&(drag5=="assets/icons/e.svg")&&(drag6=="assets/icons/u.svg")&&(drag7=="assets/icons/x.svg")){
-                      print('correct');
                       setState(() {
                         Visible=false;
                       });}else if ((drag1==null)&&(drag2==null)&&(drag3==null)&&(drag4==null)&&(drag5==null)&&(drag6==null)&&(drag7==null)){}
@@ -110,7 +106,6 @@ class _F_3_4State extends State<F_3_4> {
                           context,
                           MaterialPageRoute(builder: (context) => F_3_4_2nd()));
                     }
-                    print("HELL YEAH");
 
                   },),
                 ),
@@ -119,7 +114,6 @@ class _F_3_4State extends State<F_3_4> {
                 top: size.height*0.532,
                 height: size.height*0.2,
                 width: size.width,
-
                 child: Visibility(
                   child: SvgPicture.asset("assets/icons/XLbutton.svg"),
                 ),
@@ -154,7 +148,6 @@ class _F_3_4State extends State<F_3_4> {
                           drag6=null;
                           drag7=null;
                         });
-                        print('reset');
                       }
 
                   ),
@@ -170,8 +163,7 @@ class _F_3_4State extends State<F_3_4> {
                     child: ButtonContinuer(onPressed: (){
                       Navigator.push(
                           context,
-                          MaterialPageRoute(builder: (context) => F_3_5()));
-                      print('Continuer');},)
+                          MaterialPageRoute(builder: (context) => F_3_5()));},)
                 ),
               ),
               if (user.avatar=="Pink")
@@ -230,7 +222,7 @@ class _F_3_4State extends State<F_3_4> {
                       /// Draggable
                       Draggable<String>(
                         onDragCompleted: (){
-                          print('gfds');
+                          
                           letterR = 'assets/icons/r.svg';
                         },
                         data:
@@ -272,7 +264,7 @@ class _F_3_4State extends State<F_3_4> {
                       SizedBox( width: size.width*0.1,),
                       Draggable<String>(
                         onDragCompleted: (){
-                          print('gfds');
+                          
                           letterU = 'assets/icons/u.svg';
                         },
                         data:
@@ -312,7 +304,7 @@ class _F_3_4State extends State<F_3_4> {
                       SizedBox( width: size.width*0.1,),
                       Draggable<String>(
                         onDragCompleted: (){
-                          print('gfds');
+                          
                           letterX = 'assets/icons/x.svg';
                         },
                         data:
@@ -373,7 +365,7 @@ class _F_3_4State extends State<F_3_4> {
                       /// Draggable
                       Draggable<String>(
                         onDragCompleted: (){
-                          print('gfds');
+                          
                           letterE = 'assets/icons/e.svg';
                         },
                         data:
@@ -415,7 +407,7 @@ class _F_3_4State extends State<F_3_4> {
                       SizedBox( width: size.width*0.1,),
                       Draggable<String>(
                         onDragCompleted: (){
-                          print('gfds');
+                          
                           letterH = 'assets/icons/h.svg';
                         },
                         data:
@@ -455,7 +447,7 @@ class _F_3_4State extends State<F_3_4> {
                       SizedBox( width: size.width*0.1,),
                       Draggable<String>(
                         onDragCompleted: (){
-                          print('gfds');
+                          
                           letterUU = 'assets/icons/u.svg';
                         },
                         data:
@@ -495,7 +487,7 @@ class _F_3_4State extends State<F_3_4> {
                       SizedBox( width: size.width*0.1,),
                       Draggable<String>(
                         onDragCompleted: (){
-                          print('gfds');
+                          
                           letterEE = 'assets/icons/e.svg';
                         },
                         data:

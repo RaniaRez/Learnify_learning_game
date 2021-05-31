@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:somthn/WelcomePages/ChoixDomaines.dart';
 import '../myicons.dart';
 import 'package:somthn/Maths/NiveauMath.dart';
 import 'package:somthn/WelcomePages/Settings.dart';
@@ -15,6 +16,8 @@ import '../Services/Login.dart';
 import '../Services/SignUp.dart';
 import 'ScoreMaths.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'TestNiv/BienvenueTest.dart';
+
 
 ScoreMaths scoreM ;
 
@@ -58,7 +61,9 @@ class _BienvenueMathState extends State<BienvenueMath> {
                   top: size.height*0.05,
                   right:size.width*0.75,
                   child: BacksButton(onPressed: (){
-                    Navigator.pop(context);
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => ChoixDomaine()));
                   },)
               ),
               Positioned(
@@ -75,10 +80,17 @@ class _BienvenueMathState extends State<BienvenueMath> {
                   scoreM.niv3=d.data["niv3"];*/
                   scoreM=new ScoreMaths(d.data["testFait"], d.data["niv1"], d.data["niv2"], d.data["niv3"]);
                   print(scoreM.niv1);
+                  if (scoreM.testFait){
                   Navigator.push(
 
                       context,
-                      MaterialPageRoute(builder: (context) => NiveauMath()));
+                      MaterialPageRoute(builder: (context) => NiveauMath()));}
+                  else {
+                    Navigator.push(
+
+                        context,
+                        MaterialPageRoute(builder: (context) => TestNiveau()));
+                  }
                 }
                 ),
               ),

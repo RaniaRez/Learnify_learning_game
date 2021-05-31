@@ -1,3 +1,4 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -5,6 +6,8 @@ import 'package:somthn/Buttons/BarreProgres.dart';
 import 'package:somthn/Maths/M-1-1-2ndAttempt.dart';
 import 'package:somthn/Maths/M-1-2.dart';
 import 'package:somthn/Maths/M-1.dart';
+import 'package:somthn/Maths/NiveauMath.dart';
+import 'package:somthn/TestDeNiveau/TestNivFrQ1.dart';
 import 'package:somthn/WelcomePages/Settings.dart';
 import 'package:somthn/Bulles/bulleQuest.dart';
 import 'package:somthn/Buttons/button0.dart';
@@ -17,32 +20,33 @@ import 'package:somthn/Buttons/button6.dart';
 import 'package:somthn/Buttons/button7.dart';
 import 'package:somthn/Buttons/button8.dart';
 import 'package:somthn/Buttons/button9.dart';
-import 'package:somthn/TestDeNiveau/TestNivMathQ3.dart';
 import 'package:somthn/Buttons/buttonContinuer.dart';
 import 'package:somthn/Buttons/buttonGoTo.dart';
 import 'package:somthn/Buttons/buttonQ.dart';
 import 'package:somthn/Buttons/buttonReset.dart';
 import 'package:somthn/myicons.dart';
-import '../Buttons/settingsButton.dart';
-import '../Buttons/BacksButton.dart';
+import '../../Buttons/settingsButton.dart';
+import '../../Buttons/BacksButton.dart';
 import 'package:somthn/Avatars/OrangeAvatarIcon.dart';
 import 'package:somthn/Avatars/PinkAvatarIcon.dart';
 import 'package:somthn/Avatars/PurpleAvatarIcon.dart';
 import 'package:somthn/Avatars/BlueAvatarIcon.dart';
-import '../WelcomePages/ChooseAvatar.dart';
-import '../Services/Login.dart';
-import '../Services/SignUp.dart';
-import '../Maths/BienvenueMath.dart';
+import '../../WelcomePages/ChooseAvatar.dart';
+import '../../Services/Login.dart';
+import '../../Services/SignUp.dart';
+import '../BienvenueMath.dart';
+import 'TestMaths.dart';
+import 'TestNivMathQ1.dart';
+import 'SetNiveaux.dart';
 
-
-class TestNivM2 extends StatefulWidget {
-  const TestNivM2({Key key}) : super(key: key);
+class TestNivM3 extends StatefulWidget {
+  const TestNivM3({Key key}) : super(key: key);
 
   @override
-  _TestNivM2State createState() => _TestNivM2State();
+  _TestNivM3State createState() => _TestNivM3State();
 }
 
-class _TestNivM2State extends State<TestNivM2> {
+class _TestNivM3State extends State<TestNivM3> {
   bool oneD = false;
   bool oneU = false;
   bool twoD = false;
@@ -113,10 +117,23 @@ class _TestNivM2State extends State<TestNivM2> {
                     setState(() {
                       if(!all){
 
-                      }else if ((zeroU) && (nineD)){
+                      }else if ((twoU) && (oneD)){
                         Visible = false;
                         correct = true;
                         print('Correct');
+                        test.q3=true ;
+                        print(scoreM.niv1);
+                        print(scoreM.niv2);
+                        print(scoreM.niv3);
+                        setNiv(test,scoreM);
+                        Firestore.instance.collection('users').document(user.uid).collection('domains').document('maths').updateData(
+                            {
+                              'testFait': scoreM.testFait ,
+                              'niv1': scoreM.niv1 ,
+                              'niv2': scoreM.niv2 ,
+                              'niv3': scoreM.niv3 ,
+                            }
+                        );
                       }else{
                         Visible = false;
                         print('Wrong');
@@ -174,10 +191,10 @@ class _TestNivM2State extends State<TestNivM2> {
 
               Positioned(
                 top: size.height*0.2,
-                left: size.width*0.2,
-                height: size.width*0.6,
-                width: size.width*0.6,
-                child:SvgPicture.asset('assets/icons/bulleNivMath2.svg'),
+                left: size.width*0.1,
+                height: size.width*0.8,
+                width: size.width*0.8,
+                child:SvgPicture.asset('assets/icons/bulleNivMath3.svg'),
               ),
 
 
@@ -579,7 +596,7 @@ class _TestNivM2State extends State<TestNivM2> {
                     child: ButtonContinuer(onPressed: (){
                       Navigator.push(
                           context,
-                          MaterialPageRoute(builder: (context) =>TestNivM3()));
+                          MaterialPageRoute(builder: (context) => NiveauMath()));
                       print('Continuer');},)
                 ),
               ),

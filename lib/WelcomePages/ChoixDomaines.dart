@@ -15,7 +15,6 @@ import '../Buttons/GaucheButton.dart';
 import '../Buttons/DroiteButton.dart';
 import '../Buttons/CentreButton.dart';
 import '../Services/Login.dart';
-import '../Services/SignUp.dart';
 
 
 
@@ -50,7 +49,6 @@ class _ChoixDomaineState extends State<ChoixDomaine> {
                     Navigator.push(
                         context,
                         MaterialPageRoute(builder: (context) => Settings()));
-                    print("HELL YEAH");
                   },)
               ),
 
@@ -58,7 +56,6 @@ class _ChoixDomaineState extends State<ChoixDomaine> {
                   top: size.height*0.05,
                   right:size.width*0.75,
                   child: BacksButton(onPressed: (){
-                    print("HELL YEAH");
                     Navigator.pop(
                       context,
                     );
@@ -67,7 +64,6 @@ class _ChoixDomaineState extends State<ChoixDomaine> {
               Positioned(
                   top: size.height*0.47,
                   right: size.width*0.61 ,
-
                   child:BranchIconSimple()
               ),
               if (user.avatar=="Pink")
@@ -141,7 +137,6 @@ class _ChoixDomaineState extends State<ChoixDomaine> {
                 height: size.height*0.1,
                 width: size.width*0.55,
                 child:  GaucheButton(onPressed:(){
-                    print('fr');
                       Navigator.push(
                           context,
                           MaterialPageRoute(
@@ -160,7 +155,6 @@ class _ChoixDomaineState extends State<ChoixDomaine> {
                           context,
                           MaterialPageRoute(
                               builder: (BuildContext context) => BienvenueGeo()));
-
                   }),
                 ),
             ]

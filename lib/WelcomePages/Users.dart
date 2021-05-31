@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:somthn/Buttons/SinscrireButton.dart';
 import 'package:somthn/Buttons/seConnecterButton.dart';
-import 'package:somthn/Services/auth.dart';
 import 'package:somthn/WelcomePages/ChoixDomaines.dart';
 import 'package:somthn/Buttons/ClassementButton.dart';
 import 'package:somthn/WelcomePages/ChooseAvatar.dart';
@@ -10,13 +9,9 @@ import 'package:somthn/WelcomePages/Settings.dart';
 import 'package:somthn/modification/Userinfo.dart';
 import '../Buttons/settingsButton.dart';
 import '../Buttons/BacksButton.dart';
-import 'ClassUser.dart';
 import '../Buttons/buttonGoTo.dart';
 import '../Buttons/buttonStatistique.dart';
 import '../Buttons/buttonUserSettings.dart';
-//for backend
-import 'package:cloud_firestore/cloud_firestore.dart';
-//import '../Services/auth.dart';
 import '../Services/Login.dart';
 import '../Services/SignUp.dart';
 import '../Data/DataUser.dart';
@@ -26,7 +21,6 @@ import '../classement/Classement.dart';
 
 
 
-List<User> Utilisateurs = [];
 class Users extends StatefulWidget {
   @override
   _UsersState createState() => _UsersState();
@@ -64,7 +58,6 @@ class _UsersState extends State<Users> {
                     Navigator.push(
                         context,
                         MaterialPageRoute(builder: (context) => Settings()));
-                    print("HELL YEAH");
                   },)
               ),
 
@@ -72,7 +65,6 @@ class _UsersState extends State<Users> {
                   top: size.height*0.05,
                   right:size.width*0.75,
                   child: BacksButton(onPressed: (){
-                    print("HELL YEAH");
                     Navigator.pop(context);
                   },)
               ),
@@ -86,7 +78,6 @@ class _UsersState extends State<Users> {
                     print(list[0].score);
                     print(list[1].score);
                     print(list[2].score);
-                    print("kemelna");
                     Navigator.push(
                         context,
                         MaterialPageRoute(builder: (context) => Classement(value : list )));
@@ -99,9 +90,7 @@ class _UsersState extends State<Users> {
                   width: size.width*0.6,
                   child: ButtonSeConnecter(onPressed: () async {
                     show();
-                    print('connect');
                     await googleLogin();
-                    print("khraconnecter");
                     print(user.uid);
                     /*DocumentReference q = await Firestore.instance.collection('users').document(user.uid);*/
 
@@ -119,7 +108,6 @@ class _UsersState extends State<Users> {
                     Navigator.push(context,
                       MaterialPageRoute(builder: (context) => ChooseAvatar()),);
                     await googleSignUp();
-                    print("khra");
                     print(user.uid);
                   })
               ),
@@ -128,7 +116,6 @@ class _UsersState extends State<Users> {
                 left:size.width*0.75,
                 child: Visibility(
                   child: GoToButton(onPressed: (){
-                    print("HELL YEAH");
                     Navigator.push(
                       context,
                       MaterialPageRoute(builder: (context) => ChoixDomaine()),);
@@ -145,7 +132,6 @@ class _UsersState extends State<Users> {
                     Navigator.push(
                         context,
                         MaterialPageRoute(builder: (context) => Userinfo()));
-                    print("HELL YEAH");
                   } ),
                  visible: _isVisible,
                  ),

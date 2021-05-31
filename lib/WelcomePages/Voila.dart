@@ -5,33 +5,18 @@ import 'package:somthn/Avatars/OrangeAvatarIcon.dart';
 import 'package:somthn/Avatars/PinkAvatarIcon.dart';
 import 'package:somthn/Avatars/PurpleAvatarIcon.dart';
 import 'package:somthn/Branches/BranchIconSimple.dart';
-import 'package:somthn/Buttons/SinscrireButton.dart';
-import 'package:somthn/Buttons/seConnecterButton.dart';
-import 'package:somthn/WelcomePages/AllSet.dart';
 import 'package:somthn/WelcomePages/ChoixDomaines.dart';
 import 'package:somthn/Buttons/ClassementButton.dart';
-import 'package:somthn/WelcomePages/ChooseAvatar.dart';
 import 'package:somthn/classement/Classement.dart';
 import 'package:somthn/WelcomePages/Settings.dart';
-import 'package:somthn/modification/Userinfo.dart';
 import '../Buttons/settingsButton.dart';
 import '../Buttons/BacksButton.dart';
-import 'ClassUser.dart';
 import '../Buttons/buttonGoTo.dart';
 import '../Buttons/buttonStatistique.dart';
-import '../Buttons/buttonUserSettings.dart';
-//for backend
-//import '../Services/auth.dart';
-import '../Services/Login.dart';
-import '../Services/SignUp.dart';
 import '../Data/DataUser.dart';
 import '../classement/methodes.dart';
 import '../classement/Classement.dart';
 
-
-
-
-List<User> Utilisateurs = [];
 class Voila extends StatefulWidget {
   @override
   _VoilaState createState() => _VoilaState();
@@ -69,7 +54,6 @@ class _VoilaState extends State<Voila> {
                   Navigator.push(
                       context,
                       MaterialPageRoute(builder: (context) => Settings()));
-                  print("HELL YEAH");
                 },)
             ),
 
@@ -77,7 +61,6 @@ class _VoilaState extends State<Voila> {
                 top: size.height*0.05,
                 right:size.width*0.75,
                 child: BacksButton(onPressed: (){
-                  print("HELL YEAH");
                   Navigator.pop(context);
                 },)
             ),
@@ -92,7 +75,6 @@ class _VoilaState extends State<Voila> {
                 print(list[0].score);
                 print(list[1].score);
                 print(list[2].score);
-                print("kemelna");
                 Navigator.push(
                     context,
                     MaterialPageRoute(builder: (context) => Classement(value : list )));
@@ -110,7 +92,6 @@ class _VoilaState extends State<Voila> {
               top: size.height*0.8,
               left:size.width*0.75,
                 child: GoToButton(onPressed: (){
-                  print("HELL YEAH");
                   Navigator.push(
                     context,
                     MaterialPageRoute(builder: (context) => ChoixDomaine()),);
