@@ -23,7 +23,7 @@ import 'package:somthn/Avatars/BlueAvatarIcon.dart';
 import '../Services/Login.dart';
 import 'BienvenueMath.dart';
 import 'M-3.dart';
-import 'NiveauMath.dart';
+//import 'NiveauMath.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 
 
@@ -661,7 +661,9 @@ class _M_3_5State extends State<M_3_5> {
                     height: size.height*0.2,
                     width: size.width*0.5,
                     child: ButtonContinuer(onPressed: (){
-                      Firestore.instance.collection('users').document(user.uid).collection('domains').document('maths').updateData({'niv1':scoreM.niv1});
+                      Firestore.instance.collection('users').document(user.uid).collection('domains').document('maths').updateData({'niv3':scoreM.niv3});
+                      if (scoreM.niv3>hs.niv3)
+                      { Firestore.instance.collection('users').document(user.uid).collection('domains').document('maths').updateData({'high3':scoreM.niv3});}
                       if (scoreM.niv3>=7.5) {
                         Navigator.push(
                             context,

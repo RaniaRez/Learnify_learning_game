@@ -2,10 +2,14 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:somthn/Buttons/BarreProgres.dart';
+import 'package:somthn/Maths/M-1-1-2ndAttempt.dart';
+import 'package:somthn/Maths/M-1-2.dart';
 import 'package:somthn/Maths/M-1.dart';
 import 'package:somthn/Maths/NiveauMath.dart';
-import 'TestNivMathQ1.dart';
+import 'package:somthn/TestDeNiveau/TestNivFrQ1.dart';
 import 'package:somthn/WelcomePages/Settings.dart';
+import 'package:somthn/Bulles/bulleQuest.dart';
 import 'package:somthn/Buttons/button0.dart';
 import 'package:somthn/Buttons/button1.dart';
 import 'package:somthn/Buttons/button2.dart';
@@ -27,8 +31,12 @@ import 'package:somthn/Avatars/OrangeAvatarIcon.dart';
 import 'package:somthn/Avatars/PinkAvatarIcon.dart';
 import 'package:somthn/Avatars/PurpleAvatarIcon.dart';
 import 'package:somthn/Avatars/BlueAvatarIcon.dart';
+import '../../WelcomePages/ChooseAvatar.dart';
 import '../../Services/Login.dart';
+import '../../Services/SignUp.dart';
 import '../BienvenueMath.dart';
+import 'TestMaths.dart';
+import 'TestNivMathQ1.dart';
 import 'SetNiveaux.dart';
 
 class TestNivM3 extends StatefulWidget {
@@ -108,24 +116,13 @@ class _TestNivM3State extends State<TestNivM3> {
                   child: GoToButton(onPressed: (){
                     setState(() {
                       if(!all){
+
                       }else if ((twoU) && (oneD)){
                         Visible = false;
                         correct = true;
                         print('Correct');
-                       // test.q3=true ;
-                        test.score=test.score+1 ;
-                        print(scoreM.niv1);
-                        print(scoreM.niv2);
-                        print(scoreM.niv3);
-                        setNiv(test,scoreM);
-                        Firestore.instance.collection('users').document(user.uid).collection('domains').document('maths').updateData(
-                            {
-                              'testFait': scoreM.testFait ,
-                              'niv1': scoreM.niv1 ,
-                              'niv2': scoreM.niv2 ,
-                              'niv3': scoreM.niv3 ,
-                            }
-                        );
+                        test.q3=true ;
+
                       }else{
                         Visible = false;
                         print('Wrong');
@@ -586,6 +583,18 @@ class _TestNivM3State extends State<TestNivM3> {
                     height: size.height*0.2,
                     width: size.width*0.5,
                     child: ButtonContinuer(onPressed: (){
+                      print(score.niv1);
+                      print(score.niv2);
+                      print(score.niv3);
+                      setNiv(test,score);
+                      Firestore.instance.collection('users').document(user.uid).collection('domains').document('maths').updateData(
+                          {
+                            'testFait': score.testFait ,
+                            'niv1': score.niv1 ,
+                            'niv2': score.niv2 ,
+                            'niv3': score.niv3 ,
+                          }
+                      );
                       Navigator.push(
                           context,
                           MaterialPageRoute(builder: (context) => NiveauMath()));

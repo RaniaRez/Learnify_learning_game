@@ -17,9 +17,11 @@ import '../Services/SignUp.dart';
 import 'ScoreMaths.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'TestNiv/BienvenueTest.dart';
+import 'HighestScore.dart';
 
-
-ScoreMaths scoreM ;
+ScoreMaths score ;
+ScoreMaths scoreM=new  ScoreMaths(true , 0,0,0);
+HighestScore hs ;
 
 class BienvenueMath extends StatefulWidget {
   @override
@@ -78,9 +80,10 @@ class _BienvenueMathState extends State<BienvenueMath> {
                   scoreM.niv1=d.data["niv1"];
                   scoreM.niv2=d.data["niv2"];
                   scoreM.niv3=d.data["niv3"];*/
-                  scoreM=new ScoreMaths(d.data["testFait"], d.data["niv1"], d.data["niv2"], d.data["niv3"]);
-                  print(scoreM.niv1);
-                  if (scoreM.testFait){
+                  score=new ScoreMaths(d.data["testFait"], d.data["niv1"], d.data["niv2"], d.data["niv3"]);
+                  hs=new HighestScore(d.data["high1"],d.data["high2"],d.data["high3"]);
+                  print(score.niv1);
+                  if (score.testFait){
                   Navigator.push(
 
                       context,

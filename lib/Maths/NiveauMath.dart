@@ -49,7 +49,7 @@ class _NiveauMathState extends State<NiveauMath> {
                 height: size.height*0.2,
                 width: size.width*0.5,
                   child:Buttonfacile (onPressed:(){
-                    print(scoreM.niv1);
+                    print(score.niv1);
                     Navigator.push(
                         context,
                         MaterialPageRoute(builder: (context) => Math1()));
@@ -74,8 +74,8 @@ class _NiveauMathState extends State<NiveauMath> {
                 height: size.height*0.2,
                 width: size.width*0.5,
                   child: ButtonMoyen(onPressed:(){
-                    print(scoreM.niv2);
-                    if (scoreM.niv2>=0){
+                    print(score.niv2);
+                    if (score.niv2>=0){
                     Navigator.push(
                         context,
                         MaterialPageRoute(builder: (context) => Math2()));}
@@ -102,7 +102,7 @@ class _NiveauMathState extends State<NiveauMath> {
                 width: size.width*0.5,
                   child: ButtonDifficile(onPressed:(){
                     print('hard');
-                    if (scoreM.niv3>=0){
+                    if (score.niv3>=0){
                     Navigator.push(
                         context,
                         MaterialPageRoute(builder: (context) => Math3()));}
