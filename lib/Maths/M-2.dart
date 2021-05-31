@@ -26,6 +26,7 @@ class _Math2State extends State<Math2> {
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
+
     return Scaffold(
       body:
       Container(
@@ -127,6 +128,7 @@ class _Math2State extends State<Math2> {
                 left:size.width*0.75,
                 child: GoToButton(onPressed: (){
                   print("HELL YEAH");
+                  scoreM.niv2=0;
                   Navigator.push(
                     context,
                     MaterialPageRoute(builder: (context) => M_2_1()),);

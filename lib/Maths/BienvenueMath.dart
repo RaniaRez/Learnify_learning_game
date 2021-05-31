@@ -16,7 +16,8 @@ import '../Services/Login.dart';
 import '../Services/SignUp.dart';
 import 'ScoreMaths.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'TestNiv/TestNivMathQ1.dart';
+import 'TestNiv/BienvenueTest.dart';
+
 
 ScoreMaths scoreM ;
 
@@ -88,7 +89,7 @@ class _BienvenueMathState extends State<BienvenueMath> {
                     Navigator.push(
 
                         context,
-                        MaterialPageRoute(builder: (context) => TestNivM1()));
+                        MaterialPageRoute(builder: (context) => TestNiveau()));
                   }
                 }
                 ),
