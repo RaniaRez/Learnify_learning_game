@@ -122,18 +122,7 @@ class _TestNivM3State extends State<TestNivM3> {
                         correct = true;
                         print('Correct');
                         test.q3=true ;
-                        print(scoreM.niv1);
-                        print(scoreM.niv2);
-                        print(scoreM.niv3);
-                        setNiv(test,scoreM);
-                        Firestore.instance.collection('users').document(user.uid).collection('domains').document('maths').updateData(
-                            {
-                              'testFait': scoreM.testFait ,
-                              'niv1': scoreM.niv1 ,
-                              'niv2': scoreM.niv2 ,
-                              'niv3': scoreM.niv3 ,
-                            }
-                        );
+
                       }else{
                         Visible = false;
                         print('Wrong');
@@ -594,6 +583,18 @@ class _TestNivM3State extends State<TestNivM3> {
                     height: size.height*0.2,
                     width: size.width*0.5,
                     child: ButtonContinuer(onPressed: (){
+                      print(score.niv1);
+                      print(score.niv2);
+                      print(score.niv3);
+                      setNiv(test,score);
+                      Firestore.instance.collection('users').document(user.uid).collection('domains').document('maths').updateData(
+                          {
+                            'testFait': score.testFait ,
+                            'niv1': score.niv1 ,
+                            'niv2': score.niv2 ,
+                            'niv3': score.niv3 ,
+                          }
+                      );
                       Navigator.push(
                           context,
                           MaterialPageRoute(builder: (context) => NiveauMath()));

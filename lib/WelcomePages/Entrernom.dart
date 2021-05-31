@@ -242,6 +242,9 @@ class _EntrernomState extends State<Entrernom> {
                             'niv1': scoreM.niv1 ,
                             'niv2': scoreM.niv2 ,
                             'niv3': scoreM.niv3 ,
+                            'high1':0,
+                            'high2':0,
+                            'high3':0,
                           }
                         );
                         ScoreFr scoreF =new ScoreFr(false,-1,-1,-1);
