@@ -6,8 +6,8 @@ import 'package:somthn/Maths/M-2-1.dart';
 import 'package:somthn/Maths/M-2-4.dart';
 import 'package:somthn/Maths/M-2-5-2ndAttemptThreeclick.dart';
 import 'package:somthn/TestDeNiveau/TestNivFrQ3.dart';
-import 'package:somthn/TestDeNiveau/TestNivMathQ1.dart';
-import 'package:somthn/TestDeNiveau/TestNivMathQ2.dart';
+import 'package:somthn/Maths/TestNiv/TestNivMathQ1.dart';
+import 'package:somthn/Maths/TestNiv/TestNivMathQ2.dart';
 
 import 'package:somthn/TestDeNiveau/TestNivFrQ2.dart';
 import 'package:somthn/WelcomePages/Home.dart';
@@ -23,5 +23,5 @@ void main() {
     }
   };
 
-  runApp(MaterialApp(home:TestNivM1()));
+  runApp(MaterialApp(home:Home()));
 }

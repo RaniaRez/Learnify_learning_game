@@ -13,7 +13,8 @@ import 'package:somthn/Buttons/buttonfacile.dart';
 import 'package:somthn/Owls/madGreenOwl.dart';
 import 'package:somthn/Buttons/settingsButton.dart';
 import '../Maths/BienvenueMath.dart';
-
+import 'TestNiv/TestNivMathQ3.dart';
+import 'TestNiv/TestNivMathQ1.dart';
 
 
 class NiveauMath extends StatefulWidget {
@@ -53,7 +54,6 @@ class _NiveauMathState extends State<NiveauMath> {
                         context,
                         MaterialPageRoute(builder: (context) => Math1()));
                     print('facile');
-                    //scoreM.niv1=0;
                   }),
                 ),
 
@@ -74,9 +74,11 @@ class _NiveauMathState extends State<NiveauMath> {
                 height: size.height*0.2,
                 width: size.width*0.5,
                   child: ButtonMoyen(onPressed:(){
+                    print(scoreM.niv2);
+                    if (scoreM.niv2>=0){
                     Navigator.push(
                         context,
-                        MaterialPageRoute(builder: (context) => Math2()));
+                        MaterialPageRoute(builder: (context) => Math2()));}
                     print('Moyen');
                   }),
                 ),
@@ -100,9 +102,10 @@ class _NiveauMathState extends State<NiveauMath> {
                 width: size.width*0.5,
                   child: ButtonDifficile(onPressed:(){
                     print('hard');
+                    if (scoreM.niv3>=0){
                     Navigator.push(
                         context,
-                        MaterialPageRoute(builder: (context) => Math3()));
+                        MaterialPageRoute(builder: (context) => Math3()));}
                   }),
                 ),
 
