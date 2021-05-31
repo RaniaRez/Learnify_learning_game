@@ -5,6 +5,7 @@ import 'package:somthn/Buttons/buttonGoTo.dart';
 import 'package:somthn/Maths/BienvenueMath.dart';
 import 'package:somthn/Maths/M-2.dart';
 import 'package:somthn/Maths/M-3.dart';
+import 'package:somthn/Maths/NiveauMath.dart';
 import 'package:somthn/WelcomePages/Settings.dart';
 import 'package:somthn/Mutual/Stars.dart';
 import 'package:somthn/myicons.dart';
@@ -159,7 +160,7 @@ class _Niveau3PassState extends State<Niveau3Pass> {
               child: GoToButton(onPressed: (){
                 Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => Math2()));
+                    MaterialPageRoute(builder: (context) => NiveauMath()));
               }),
             ),
 

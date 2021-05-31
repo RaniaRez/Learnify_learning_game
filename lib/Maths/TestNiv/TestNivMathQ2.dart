@@ -5,7 +5,6 @@ import 'package:somthn/Buttons/BarreProgres.dart';
 import 'package:somthn/Maths/M-1-1-2ndAttempt.dart';
 import 'package:somthn/Maths/M-1-2.dart';
 import 'package:somthn/Maths/M-1.dart';
-import 'package:somthn/TestDeNiveau/TestNivFrQ1.dart';
 import 'package:somthn/WelcomePages/Settings.dart';
 import 'package:somthn/Bulles/bulleQuest.dart';
 import 'package:somthn/Buttons/button0.dart';
@@ -18,31 +17,33 @@ import 'package:somthn/Buttons/button6.dart';
 import 'package:somthn/Buttons/button7.dart';
 import 'package:somthn/Buttons/button8.dart';
 import 'package:somthn/Buttons/button9.dart';
+import 'package:somthn/Maths/TestNiv/TestNivMathQ3.dart';
 import 'package:somthn/Buttons/buttonContinuer.dart';
 import 'package:somthn/Buttons/buttonGoTo.dart';
 import 'package:somthn/Buttons/buttonQ.dart';
 import 'package:somthn/Buttons/buttonReset.dart';
 import 'package:somthn/myicons.dart';
-import '../Buttons/settingsButton.dart';
-import '../Buttons/BacksButton.dart';
+import '../../Buttons/settingsButton.dart';
+import '../../Buttons/BacksButton.dart';
 import 'package:somthn/Avatars/OrangeAvatarIcon.dart';
 import 'package:somthn/Avatars/PinkAvatarIcon.dart';
 import 'package:somthn/Avatars/PurpleAvatarIcon.dart';
 import 'package:somthn/Avatars/BlueAvatarIcon.dart';
-import '../WelcomePages/ChooseAvatar.dart';
-import '../Services/Login.dart';
-import '../Services/SignUp.dart';
-import '../Maths/BienvenueMath.dart';
+import '../../WelcomePages/ChooseAvatar.dart';
+import '../../Services/Login.dart';
+import '../../Services/SignUp.dart';
+import '../BienvenueMath.dart';
+import 'TestNivMathQ1.dart';
 
 
-class TestNivM3 extends StatefulWidget {
-  const TestNivM3({Key key}) : super(key: key);
+class TestNivM2 extends StatefulWidget {
+  const TestNivM2({Key key}) : super(key: key);
 
   @override
-  _TestNivM3State createState() => _TestNivM3State();
+  _TestNivM2State createState() => _TestNivM2State();
 }
 
-class _TestNivM3State extends State<TestNivM3> {
+class _TestNivM2State extends State<TestNivM2> {
   bool oneD = false;
   bool oneU = false;
   bool twoD = false;
@@ -113,10 +114,11 @@ class _TestNivM3State extends State<TestNivM3> {
                     setState(() {
                       if(!all){
 
-                      }else if ((twoU) && (oneD)){
+                      }else if ((zeroU) && (nineD)){
                         Visible = false;
                         correct = true;
                         print('Correct');
+                        test.q2=true ;
                       }else{
                         Visible = false;
                         print('Wrong');
@@ -174,10 +176,10 @@ class _TestNivM3State extends State<TestNivM3> {
 
               Positioned(
                 top: size.height*0.2,
-                left: size.width*0.1,
-                height: size.width*0.8,
-                width: size.width*0.8,
-                child:SvgPicture.asset('assets/icons/bulleNivMath3.svg'),
+                left: size.width*0.2,
+                height: size.width*0.6,
+                width: size.width*0.6,
+                child:SvgPicture.asset('assets/icons/bulleNivMath2.svg'),
               ),
 
 
@@ -579,7 +581,7 @@ class _TestNivM3State extends State<TestNivM3> {
                     child: ButtonContinuer(onPressed: (){
                       Navigator.push(
                           context,
-                          MaterialPageRoute(builder: (context) => TestNivFr1()));
+                          MaterialPageRoute(builder: (context) =>TestNivM3()));
                       print('Continuer');},)
                 ),
               ),
