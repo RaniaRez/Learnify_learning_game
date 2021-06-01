@@ -1,11 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+
+import 'package:somthn/Geographie/N2Q4.dart';
+import 'package:somthn/Geographie/NiveauGeo.dart';
 import 'package:somthn/WelcomePages/Settings.dart';
 import 'package:somthn/WelcomePages/Home.dart';
-import 'package:somthn/Geographie/N2Q5.dart';
-
 import 'package:vibration/vibration.dart';
+
 import 'package:somthn/Buttons/buttonContinuer.dart';
+import 'package:somthn/Buttons/buttonQ.dart';
 import 'package:somthn/myicons.dart';
 import '../Buttons/settingsButton.dart';
 import '../Buttons/BacksButton.dart';
@@ -15,14 +18,16 @@ import 'package:somthn/Avatars/PurpleAvatarIcon.dart';
 import 'package:somthn/Avatars/BlueAvatarIcon.dart';
 import '../Services/Login.dart';
 
-class N2Q4T2_C_4 extends StatefulWidget {
-  const N2Q4T2_C_4({Key key}) : super(key: key);
+import 'package:somthn/Bulles/BulleN1Q4T2.dart';
+
+class N2Q5T2_C_1 extends StatefulWidget {
+  const N2Q5T2_C_1({Key key}) : super(key: key);
 
   @override
-  _N2Q4T2_C_4State createState() => _N2Q4T2_C_4State();
+  _N2Q5T2_C_1State createState() => _N2Q5T2_C_1State();
 }
 
-class _N2Q4T2_C_4State extends State<N2Q4T2_C_4> {
+class _N2Q5T2_C_1State extends State<N2Q5T2_C_1> {
   bool Visible = true;
   bool correct = false;
   bool oneClicked = false;
@@ -76,8 +81,9 @@ class _N2Q4T2_C_4State extends State<N2Q4T2_C_4> {
                 left: size.width*0.05,
                 height: size.height*0.3,
                 width: size.width*0.8,
-                child:SvgPicture.asset('assets/icons/BulleN2Q4T2.svg'),
+                child:SvgPicture.asset('assets/icons/BulleN2Q5T2.svg'),
               ),
+
               Visibility(
                 visible: !Visible,
                 child: Positioned(
@@ -141,8 +147,9 @@ class _N2Q4T2_C_4State extends State<N2Q4T2_C_4> {
                   height: size.height*0.3,
                   width: size.width*0.5,
                   child: IconButton(
-                    icon: SvgPicture.asset('assets/icons/Alpes.svg'),
+                    icon: SvgPicture.asset('assets/icons/800.svg'),
                     onPressed: (){
+                      print('oran');
                       setState(() {
                         oneClicked = false;
                         twoClicked = true;
@@ -153,14 +160,14 @@ class _N2Q4T2_C_4State extends State<N2Q4T2_C_4> {
                 ),
               ),
               Visibility(
-                visible: false,
+                visible: Visible,
                 child: Positioned(
                   top: size.height*0.7,
                   left: size.width*0.5,
                   height: size.height*0.3,
                   width: size.width*0.5,
                   child: IconButton(
-                    icon: SvgPicture.asset('assets/icons/OuledNail.svg'),
+                    icon: SvgPicture.asset('assets/icons/1200.svg'),
                     onPressed: (){
                       print('adrar');
                       setState(() {
@@ -180,7 +187,7 @@ class _N2Q4T2_C_4State extends State<N2Q4T2_C_4> {
                   height: size.height*0.3,
                   width: size.width*0.5,
                   child: IconButton(
-                    icon: SvgPicture.asset('assets/icons/Tahat.svg'),
+                    icon: SvgPicture.asset('assets/icons/1000.svg'),
                     onPressed: (){
                       print('alger');
                       setState(() {
@@ -194,14 +201,14 @@ class _N2Q4T2_C_4State extends State<N2Q4T2_C_4> {
                 ),
               ),
               Visibility(
-                visible: Visible,
+                visible: false,
                 child: Positioned(
                   top: size.height*0.4,
                   left: size.width*0.0,
                   height: size.height*0.3,
                   width: size.width*0.5,
                   child: IconButton(
-                    icon: SvgPicture.asset('assets/icons/LallaKhedidja.svg'),
+                    icon: SvgPicture.asset('assets/icons/300.svg'),
                     onPressed: (){
                       print('annaba');
                       setState(() {
@@ -224,7 +231,7 @@ class _N2Q4T2_C_4State extends State<N2Q4T2_C_4> {
                     child: ButtonContinuer(onPressed: (){
                       Navigator.push(
                           context,
-                          MaterialPageRoute(builder: (context) => N2Q5()));
+                          MaterialPageRoute(builder: (context) => NiveauGeo()));
                       print('Continuer');},)
                 ),
               ),
@@ -251,7 +258,7 @@ class _N2Q4T2_C_4State extends State<N2Q4T2_C_4> {
                           }
                           print('Alger');
                         },
-                        icon: SvgPicture.asset('assets/icons/Tahat.svg'),))
+                        icon: SvgPicture.asset('assets/icons/1000.svg'),))
               ),
               Positioned(
                 top: size.height*0.7,
@@ -259,14 +266,14 @@ class _N2Q4T2_C_4State extends State<N2Q4T2_C_4> {
                 height: size.height*0.3,
                 width: size.width*0.5,
                 child: Visibility(
-                    visible: (false),
+                    visible: (fourClicked&&Visible),
                     child: IconButton(
                         onPressed: (){
                           if (fourClicked) {
                             Vibration.vibrate();
 
                             setState(() {
-                              correct = false;
+                              correct = true;
                               Visible = false;
 
                               print('Correct');
@@ -276,7 +283,7 @@ class _N2Q4T2_C_4State extends State<N2Q4T2_C_4> {
                           }
                           print('Alger');
                         },
-                        icon: SvgPicture.asset('assets/icons/OuledNail.svg'))
+                        icon: SvgPicture.asset('assets/icons/1200.svg'))
                 ),
               ),
               Positioned(
@@ -294,7 +301,7 @@ class _N2Q4T2_C_4State extends State<N2Q4T2_C_4> {
                             Vibration.vibrate();
 
                             setState(() {
-                              correct = true;
+                              correct = false;
                               Visible = false;
 
                               print('Correct');
@@ -302,7 +309,7 @@ class _N2Q4T2_C_4State extends State<N2Q4T2_C_4> {
                             print('Oran');
                           }
                         },
-                        icon: SvgPicture.asset('assets/icons/Alpes.svg'))
+                        icon: SvgPicture.asset('assets/icons/800.svg'))
                 ),
               ),
               Positioned(
@@ -311,7 +318,7 @@ class _N2Q4T2_C_4State extends State<N2Q4T2_C_4> {
                 height: size.height*0.3,
                 width: size.width*0.5,
                 child: Visibility(
-                    visible: (oneClicked&&Visible),
+                    visible: false,
                     child: IconButton(
                         onPressed: (){
                           if (oneClicked) {
@@ -323,7 +330,7 @@ class _N2Q4T2_C_4State extends State<N2Q4T2_C_4> {
                               print('Correct');
                             });}
                         },
-                        icon: SvgPicture.asset('assets/icons/LallaKhedidja.svg'))
+                        icon: SvgPicture.asset('assets/icons/300.svg'))
                 ),
               ),
               if (correct)
@@ -340,7 +347,7 @@ class _N2Q4T2_C_4State extends State<N2Q4T2_C_4> {
                               onPressed: (){
                                 print('3aychin ghaya kho');
                               },
-                              icon: SvgPicture.asset('assets/icons/Alpes.svg'))
+                              icon: SvgPicture.asset('assets/icons/1200.svg'))
                       ),
                     ),
                     Visibility(
