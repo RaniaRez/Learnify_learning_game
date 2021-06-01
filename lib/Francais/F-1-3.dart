@@ -124,7 +124,7 @@ class _F_1_3State extends State<F_1_3> {
                         setState(() {
                         Visible=false;
                       });
-                        scoreF.niv1+=1;
+                        scoreF.niv1+=2;
                         },
                        icon: SvgPicture.asset('assets/icons/Canard.svg')),
                 ),
@@ -222,6 +222,8 @@ class _F_1_3State extends State<F_1_3> {
                     height: size.height*0.2,
                     width: size.width*0.5,
                     child: ButtonContinuer(onPressed: (){
+                      print('HADA SCORE');
+                      print(scoreF.niv1);
                       Navigator.push(
                           context,
                           new MaterialPageRoute(builder: (context) => new F_1_4()));

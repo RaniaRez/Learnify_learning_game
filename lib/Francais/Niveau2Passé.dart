@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:somthn/Buttons/HomeButton.dart';
 import 'package:somthn/Buttons/buttonGoTo.dart';
 import 'package:somthn/Francais/F-3.dart';
+import 'package:somthn/Francais/NiveauFr.dart';
 import 'package:somthn/WelcomePages/Settings.dart';
 import 'package:somthn/Mutual/Stars.dart';
 import 'package:somthn/myicons.dart';
@@ -58,9 +59,9 @@ class _Niveau2PassState extends State<Niveau2Pass> {
                 top: size.height*0.05,
                 right:size.width*0.75,
                 child: BacksButton(onPressed: (){
-                  Navigator.pop(
-                    context,
-                  );
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => NiveauFr()));
                 },)
             ),
             Positioned(

@@ -254,6 +254,9 @@ class _EntrernomState extends State<Entrernom> {
                               'niv1': scoreF.niv1 ,
                               'niv2': scoreF.niv2 ,
                               'niv3': scoreF.niv3 ,
+                              'high1':0,
+                              'high2':0,
+                              'high3':0,
                             }
                         );
                         ScoreGeo scoreG =new ScoreGeo(false,-1,-1,-1);
@@ -263,6 +266,9 @@ class _EntrernomState extends State<Entrernom> {
                               'niv1': scoreG.niv1 ,
                               'niv2': scoreG.niv2 ,
                               'niv3': scoreG.niv3 ,
+                              'high1':0,
+                              'high2':0,
+                              'high3':0,
                             }
                         );
                       });

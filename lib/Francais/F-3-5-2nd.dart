@@ -13,6 +13,7 @@ import 'package:somthn/Buttons/settingsButton.dart';
 import 'package:somthn/Francais/F-1.dart';
 import 'package:somthn/Francais/F-3.dart';
 import 'package:somthn/Francais/Niveau3Pass%C3%A9.dart';
+import 'package:somthn/Francais/NiveauFr.dart';
 import 'package:somthn/WelcomePages/Settings.dart';
 import 'package:somthn/myicons.dart';
 import '../Services/Login.dart';
@@ -177,7 +178,7 @@ bool correct=false;
                       else {
                         Navigator.push(
                             context,
-                            MaterialPageRoute(builder: (context) => Fr3()));
+                            MaterialPageRoute(builder: (context) => NiveauFr()));
                       }
 
                       },)

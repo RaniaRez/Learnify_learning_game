@@ -14,6 +14,7 @@ import 'package:somthn/Francais/F-1.dart';
 import 'package:somthn/Francais/F-3-5-2nd.dart';
 import 'package:somthn/Francais/F-3.dart';
 import 'package:somthn/Francais/Niveau3Pass%C3%A9.dart';
+import 'package:somthn/Francais/NiveauFr.dart';
 import 'package:somthn/WelcomePages/Settings.dart';
 import 'package:somthn/myicons.dart';
 import '../Services/Login.dart';

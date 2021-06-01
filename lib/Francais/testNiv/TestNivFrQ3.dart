@@ -2,7 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:somthn/Francais/F-1.dart';
-import 'package:somthn/Maths/TestNiv/TestNivMathQ2.dart';
+import 'package:somthn/Francais/testNiv/BienvenueTest.dart';
 import 'package:somthn/WelcomePages/Settings.dart';
 import 'package:somthn/Buttons/buttonContinuer.dart';
 import 'package:somthn/myicons.dart';
@@ -17,7 +17,6 @@ import 'TestNivFrQ1.dart';
 import '../NiveauFr.dart';
 import '../BienvenueFr.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'SetNiveaux.dart';
 
 class TestNivFr3 extends StatefulWidget {
   const TestNivFr3({Key key}) : super(key: key);
@@ -63,7 +62,7 @@ class _TestNivFr3State extends State<TestNivFr3> {
                   child: BacksButton(onPressed: (){
                     Navigator.push(
                         context,
-                        MaterialPageRoute(builder: (context) => Fr1()));
+                        MaterialPageRoute(builder: (context) => TestNiveau()));
                   },)
               ),
              if (user.avatar=="Pink")
@@ -282,12 +281,13 @@ class _TestNivFr3State extends State<TestNivFr3> {
                     width: size.width*0.5,
                     child: ButtonContinuer(onPressed: (){
 
-                      //goytest.q3=true ;
                       print(scoreF.niv1);
                       print(scoreF.niv2);
                       print(scoreF.niv3);
-                      setNiv(test,scoreF);
-                      Firestore.instance.collection('users').document(user.uid).collection('domains').document('maths').updateData(
+                      //setNiv(test,scoreF);
+                      scoreF.testFait=true;
+                      print(scoreF.testFait);
+                      Firestore.instance.collection('users').document(user.uid).collection('domains').document('francais').updateData(
                           {
                             'testFait': scoreF.testFait ,
                             'niv1': scoreF.niv1 ,

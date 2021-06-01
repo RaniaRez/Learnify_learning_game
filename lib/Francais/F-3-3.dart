@@ -175,6 +175,8 @@ class _F_3_3State extends State<F_3_3> {
                     height: size.height*0.2,
                     width: size.width*0.5,
                     child: ButtonContinuer(onPressed: (){
+                      print('HADA SCORE');
+                      print(scoreF.niv3);
                       Navigator.push(
                           context,
                           MaterialPageRoute(builder: (context) => F_3_4()));

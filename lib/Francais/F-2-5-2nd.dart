@@ -12,6 +12,7 @@ import 'package:somthn/Buttons/buttonReset.dart';
 import 'package:somthn/Buttons/settingsButton.dart';
 import 'package:somthn/Francais/F-1.dart';
 import 'package:somthn/Francais/Niveau2Pass%C3%A9.dart';
+import 'package:somthn/Francais/NiveauFr.dart';
 import 'package:somthn/WelcomePages/Settings.dart';
 import 'package:somthn/myicons.dart';
 import '../Services/Login.dart';
@@ -161,15 +162,24 @@ class _F_2_5_2ndState extends State<F_2_5_2nd> {
                       print("score final");
                       print(scoreF.niv2);
                       Firestore.instance.collection('users').document(user.uid).collection('domains').document('francais').updateData({'niv2':scoreF.niv2});
-                      if (scoreF.niv2>=7.5){
+                      if (scoreF.niv2>high.niv2)
+                      {
+                        Firestore.instance.collection('users').document(user.uid).collection('domains').document('francais').updateData({'niv2':scoreF.niv2});}
+                      if (scoreF.niv3>=0) {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(builder: (context) => NiveauFr()));
+                      }
+                      if (scoreF.niv2>=7.5) {
+                        if (scoreF.niv3<0) { scoreF.niv3=0;
+                        Firestore.instance.collection('users').document(user.uid).collection('domains').document('francais').updateData({'niv3':scoreF.niv3});
                         Navigator.push(
                             context,
                             MaterialPageRoute(builder: (context) => Niveau2Pass()));}
-                      else {
-                        Navigator.push(
-                            context,
-                            MaterialPageRoute(builder: (context) => Fr2()));
                       }
+                      else { Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => Fr2()));}
                     },)
                 ),
               ),

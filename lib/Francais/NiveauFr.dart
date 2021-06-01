@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:somthn/Buttons/BacksButton.dart';
 import 'package:somthn/Francais/F-1.dart';
 import 'package:somthn/Francais/F-3.dart';
+import 'package:somthn/Maths/BienvenueMath.dart';
 import 'package:somthn/Maths/M-2.dart';
 import 'package:somthn/Owls/BrownOwl.dart';
 import 'package:somthn/Owls/LockIcon.dart';
@@ -61,6 +62,7 @@ class _NiveauFrState extends State<NiveauFr> {
                 bottom:size.width*0.32,
                 child: PinkAvatarIcon(onPressed:null),
               ),
+              if (scoreF.niv1<0)
               Positioned(
                   top: size.height*0.82,
                   left: size.width*0.5,
@@ -81,6 +83,7 @@ class _NiveauFrState extends State<NiveauFr> {
                 }),
               ),
 
+              if (scoreF.niv2<0)
               Positioned(
                   top: size.height*0.57,
                   right: size.width*0.5,
@@ -115,6 +118,7 @@ class _NiveauFrState extends State<NiveauFr> {
                 top:size.width*0.36,
                 child:BrownOwl(onPressed:null),
               ),
+              if (scoreF.niv3<0)
               Positioned(
                   top: size.height*0.32,
                   right: size.width*0.44,
@@ -134,7 +138,9 @@ class _NiveauFrState extends State<NiveauFr> {
                   top: size.height*0.05,
                   right:size.width*0.75,
                   child: BacksButton(onPressed: (){
-                    Navigator.pop(context);
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => BienvenueFr()));
                   },)
               ),
             ]
