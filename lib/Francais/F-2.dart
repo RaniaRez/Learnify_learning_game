@@ -4,6 +4,7 @@ import 'package:somthn/Avatars/OrangeAvatarIcon.dart';
 import 'package:somthn/Bulles/BullenomIcon.dart';
 import 'package:somthn/Francais/F-1.dart';
 import 'package:somthn/Francais/F-2-1.dart';
+import 'package:somthn/Francais/NiveauFr.dart';
 import 'package:somthn/Maths/M-2-1.dart';
 import 'package:somthn/WelcomePages/Settings.dart';
 import 'package:somthn/Buttons/buttonGoTo.dart';
@@ -52,7 +53,7 @@ class _Fr2State extends State<Fr2> {
                     print("u clicked me");
                     Navigator.push(
                         context,
-                        MaterialPageRoute(builder: (context) => Fr1()));
+                        MaterialPageRoute(builder: (context) => NiveauFr()));
                   },)
               ),
 

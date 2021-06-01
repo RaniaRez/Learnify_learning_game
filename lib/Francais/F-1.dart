@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:somthn/Avatars/OrangeAvatarIcon.dart';
 import 'package:somthn/Francais/F-1-1.dart';
+import 'package:somthn/Francais/NiveauFr.dart';
 import 'package:somthn/Maths/M-1-1.dart';
 import 'package:somthn/WelcomePages/Settings.dart';
 import 'package:somthn/Buttons/buttonGoTo.dart';
@@ -54,7 +55,9 @@ class _Fr1State extends State<Fr1> {
                   top: size.height*0.05,
                   right:size.width*0.75,
                   child: BacksButton(onPressed: (){
-                    Navigator.pop(context);
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => NiveauFr()));
                   },)
               ),
 

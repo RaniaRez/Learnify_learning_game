@@ -24,5 +24,5 @@ void main() {
     }
   };
 
-  runApp(MaterialApp(home:Voila()));
+  runApp(MaterialApp(home:Home()));
 }

@@ -603,7 +603,7 @@ class _F_2_5State extends State<F_2_5> {
                     height: size.width*0.35,
                     width: size.width*0.35,
                     left: size.width*0.1,
-                    top:size.height*0.7,
+                    top:size.height*0.5,
                     child:Image.asset('images/HappyPurple.gif'),
                   ),
                 ),

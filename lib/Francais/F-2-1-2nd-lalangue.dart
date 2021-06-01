@@ -4,6 +4,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:somthn/Buttons/BarreProgres.dart';
 import 'package:somthn/Francais/F-1-2.dart';
 import 'package:somthn/Francais/F-1.dart';
+import 'package:somthn/Francais/F-2-3.dart';
 import 'package:somthn/WelcomePages/Settings.dart';
 import 'package:somthn/Buttons/buttonContinuer.dart';
 import 'package:somthn/myicons.dart';
@@ -253,7 +254,7 @@ class _F_2_1_2nd_lalangueState extends State<F_2_1_2nd_lalangue> {
                     child: ButtonContinuer(onPressed: (){
                       Navigator.push(
                           context,
-                          new MaterialPageRoute(builder: (context) => new F_1_2()));
+                          new MaterialPageRoute(builder: (context) => new F_2_3()));
                       print('Continuer');
                     },)
                 ),

@@ -282,7 +282,7 @@ class _TestNivFr3State extends State<TestNivFr3> {
                     width: size.width*0.5,
                     child: ButtonContinuer(onPressed: (){
 
-                      //test.q3=true ;
+                      //goytest.q3=true ;
                       print(scoreF.niv1);
                       print(scoreF.niv2);
                       print(scoreF.niv3);
