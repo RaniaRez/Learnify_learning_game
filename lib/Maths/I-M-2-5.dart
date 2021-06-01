@@ -19,6 +19,7 @@ import '../Services/Login.dart';
 import '../Services/SignUp.dart';
 
 import '../myicons.dart';
+import 'M-2-5-3rdAttempt.dart';
 import 'M-2.dart';
 
 class I_M_2_5_ extends StatefulWidget {
@@ -135,7 +136,7 @@ class _I_M_2_5_State extends State<I_M_2_5_> {
 
                   Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => M_2_4_3rd_()));}
+                      MaterialPageRoute(builder: (context) => M_2_5_3rd_()));}
 
                 ),
               ),
