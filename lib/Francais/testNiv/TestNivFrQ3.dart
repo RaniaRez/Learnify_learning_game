@@ -1,51 +1,31 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:somthn/Buttons/BarreProgres.dart';
-import 'package:somthn/Francais/F-1-2.dart';
 import 'package:somthn/Francais/F-1.dart';
-import 'package:somthn/Francais/F-2-3-2nd-OneC.dart';
-import 'package:somthn/Francais/F-2-3-2nd-TwoC.dart';
-import 'package:somthn/Francais/I-F-1-1.dart';
-import 'package:somthn/Maths/M-1-1-2ndAttempt.dart';
-import 'package:somthn/Maths/M-1-2.dart';
-import 'package:somthn/Maths/TestNiv/TestNivMathQ2.dart';
+import 'package:somthn/Francais/testNiv/BienvenueTest.dart';
 import 'package:somthn/WelcomePages/Settings.dart';
-import 'package:somthn/Bulles/bulleQuest.dart';
-import 'package:somthn/Buttons/button0.dart';
-import 'package:somthn/Buttons/button1.dart';
-import 'package:somthn/Buttons/button2.dart';
-import 'package:somthn/Buttons/button3.dart';
-import 'package:somthn/Buttons/button4.dart';
-import 'package:somthn/Buttons/button5.dart';
-import 'package:somthn/Buttons/button6.dart';
-import 'package:somthn/Buttons/button7.dart';
-import 'package:somthn/Buttons/button8.dart';
-import 'package:somthn/Buttons/button9.dart';
 import 'package:somthn/Buttons/buttonContinuer.dart';
-import 'package:somthn/Buttons/buttonGoTo.dart';
-import 'package:somthn/Buttons/buttonQ.dart';
-import 'package:somthn/Buttons/buttonReset.dart';
 import 'package:somthn/myicons.dart';
-import '../Buttons/settingsButton.dart';
-import '../Buttons/BacksButton.dart';
+import '../../Buttons/settingsButton.dart';
+import '../../Buttons/BacksButton.dart';
 import 'package:somthn/Avatars/OrangeAvatarIcon.dart';
 import 'package:somthn/Avatars/PinkAvatarIcon.dart';
 import 'package:somthn/Avatars/PurpleAvatarIcon.dart';
 import 'package:somthn/Avatars/BlueAvatarIcon.dart';
-import '../WelcomePages/ChooseAvatar.dart';
-import '../Services/Login.dart';
-import '../Services/SignUp.dart';
-import 'package:somthn/TestDeNiveau/TestNivFrQ2.dart';
+import '../../Services/Login.dart';
+import 'TestNivFrQ1.dart';
+import '../NiveauFr.dart';
+import '../BienvenueFr.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 
-class TestNivFr1 extends StatefulWidget {
-  const TestNivFr1({Key key}) : super(key: key);
+class TestNivFr3 extends StatefulWidget {
+  const TestNivFr3({Key key}) : super(key: key);
 
   @override
-  _TestNivFr1State createState() => _TestNivFr1State();
+  _TestNivFr3State createState() => _TestNivFr3State();
 }
 
-class _TestNivFr1State extends State<TestNivFr1> {
+class _TestNivFr3State extends State<TestNivFr3> {
   bool Visible = true;
   bool correct = false;
   @override
@@ -82,15 +62,15 @@ class _TestNivFr1State extends State<TestNivFr1> {
                   child: BacksButton(onPressed: (){
                     Navigator.push(
                         context,
-                        MaterialPageRoute(builder: (context) => Fr1()));
+                        MaterialPageRoute(builder: (context) => TestNiveau()));
                   },)
               ),
-              if (user.avatar=="Pink")
+             if (user.avatar=="Pink")
                 Visibility(
                   visible: Visible,
                   child: Positioned(
-                    top: size.height*0.5,
-                    left: size.width*0.72,
+                    top: size.height*0.29,
+                    left: size.width*0.69,
                     height: size.width*0.3,
                     width: size.width*0.3,
                     child:PinkAvatarIcon(onPressed: null,),
@@ -100,19 +80,19 @@ class _TestNivFr1State extends State<TestNivFr1> {
                 Visibility(
                   visible: Visible,
                   child: Positioned(
-                    top: size.height*0.49,
-                    left: size.width*0.69,
+                    top: size.height*0.28,
+                    left: size.width*0.65,
                     height: size.width*0.35,
                     width: size.width*0.35,
                     child:PurpleAvatarIcon(onPressed: null,),
                   ),
                 ),
-             if (user.avatar=="Orange")
+              if (user.avatar=="Orange")
                 Visibility(
                   visible: Visible,
                   child: Positioned(
-                    top: size.height*0.5,
-                    left: size.width*0.72,
+                    top: size.height*0.29,
+                    left: size.width*0.69,
                     height: size.width*0.3,
                     width: size.width*0.3,
                     child: OrangeAvatarIcon(onPressed: null,),
@@ -122,20 +102,33 @@ class _TestNivFr1State extends State<TestNivFr1> {
                 Visibility(
                   visible: Visible,
                   child: Positioned(
-                    top: size.height*0.5,
-                    left: size.width*0.72,
+                    top: size.height*0.29,
+                    left: size.width*0.69,
                     height: size.width*0.3,
                     width: size.width*0.3,
                     child:BlueAvatarIcon(onPressed: null,),
                   ),
                 ),
-              Positioned(
-                  top: size.height*0.2,
+              Visibility(
+                visible:Visible,
+                child: Positioned(
+                  top: size.height*0.1,
                   left: size.width*0.1,
                   height: size.width*0.6,
                   width: size.width*0.6,
-                  child:SvgPicture.asset('assets/icons/bulleNivFrQ1.svg'),
+                  child:SvgPicture.asset('assets/icons/bulleCompleter.svg'),
                 ),
+              ),
+              Visibility(
+                visible:Visible,
+                child: Positioned(
+                  top: size.height*0.33,
+                  left: size.width*0.15,
+                  height: size.width*0.7,
+                  width: size.width*0.7,
+                  child:SvgPicture.asset('assets/icons/QuestFr3.svg'),
+                ),
+              ),
 
               Visibility(
                 visible: Visible,
@@ -152,7 +145,7 @@ class _TestNivFr1State extends State<TestNivFr1> {
                         });
                         print('exc');
                       },
-                      icon: SvgPicture.asset('assets/icons/nagir.svg')),
+                      icon: SvgPicture.asset('assets/icons/cazier.svg')),
                 ),
               ),
               Visibility(
@@ -163,14 +156,14 @@ class _TestNivFr1State extends State<TestNivFr1> {
                   height: size.height*0.15,
                   width: size.width*0.4,
                   child: IconButton(
-                      onPressed: () {
+                      onPressed: (){
                         setState(() {
-                          Visible = false;
+                          Visible=false;
+
                         });
                       },
-                      icon: SvgPicture.asset('assets/icons/nagé.svg'),
+                      icon: SvgPicture.asset('assets/icons/cassier.svg')),
                 ),
-              ),
               ),
               Visibility(
                 visible: Visible,
@@ -184,16 +177,18 @@ class _TestNivFr1State extends State<TestNivFr1> {
                         setState(() {
                           Visible=false;
                           correct=true;
+                          //test.score=test.score+1 ;
+                          test.q3=true ;
                         });
                         print('int');
                       },
-                      icon: SvgPicture.asset('assets/icons/nager.svg')),
+                      icon: SvgPicture.asset('assets/icons/casier.svg')),
                 ),
               ),
               Visibility(
                 visible: !Visible,
                 child: Positioned(
-                  top: size.height*0.6,
+                  top: size.height*0.45,
                   left: size.width*0.32,
                   height: size.height*0.15,
                   width: size.width*0.4,
@@ -202,10 +197,12 @@ class _TestNivFr1State extends State<TestNivFr1> {
                         setState(() {
                           Visible=false;
                           correct=true;
+                         // test.score=test.score+1 ;
+                          test.q3=true ;
                         });
                         print('int');
                       },
-                      icon: SvgPicture.asset('assets/icons/nager.svg')),
+                      icon: SvgPicture.asset('assets/icons/casier.svg')),
                 ),
               ),
               if (correct)
@@ -215,7 +212,7 @@ class _TestNivFr1State extends State<TestNivFr1> {
                       visible: !Visible,
                       child: Positioned(
                           left: size.width*0.17,
-                          top:size.height*0.63,
+                          top:size.height*0.49,
                           child: SvgPicture.asset(Right)
                       ),
                     ),
@@ -283,9 +280,24 @@ class _TestNivFr1State extends State<TestNivFr1> {
                     height: size.height*0.2,
                     width: size.width*0.5,
                     child: ButtonContinuer(onPressed: (){
+
+                      print(scoreF.niv1);
+                      print(scoreF.niv2);
+                      print(scoreF.niv3);
+                      //setNiv(test,scoreF);
+                      scoreF.testFait=true;
+                      print(scoreF.testFait);
+                      Firestore.instance.collection('users').document(user.uid).collection('domains').document('francais').updateData(
+                          {
+                            'testFait': scoreF.testFait ,
+                            'niv1': scoreF.niv1 ,
+                            'niv2': scoreF.niv2 ,
+                            'niv3': scoreF.niv3 ,
+                          }
+                      );
                       Navigator.push(
                           context,
-                          MaterialPageRoute(builder: (context) => TestNivFr2()));
+                          MaterialPageRoute(builder: (context) => NiveauFr()));
                       print('Continuer');},)
                 ),
               ),
@@ -296,7 +308,7 @@ class _TestNivFr1State extends State<TestNivFr1> {
                       visible: !Visible,
                       child: Positioned(
                           left: size.width*0.17,
-                          top:size.height*0.63,
+                          top:size.height*0.49,
                           child: SvgPicture.asset(Wrong)
                       ),
                     ),

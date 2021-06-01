@@ -19,7 +19,7 @@ import 'package:somthn/Avatars/PinkAvatarIcon.dart';
 import 'package:somthn/Avatars/PurpleAvatarIcon.dart';
 import 'package:somthn/Avatars/BlueAvatarIcon.dart';
 import '../Services/Login.dart';
-
+import 'BienvenueFr.dart';
 class F_2_1 extends StatefulWidget {
   const F_2_1({Key key}) : super(key: key);
 
@@ -55,7 +55,7 @@ class _F_2_1State extends State<F_2_1> {
                     Navigator.push(
                         context,
                         MaterialPageRoute(builder: (context) => Settings()));
-
+                    print("HELL YEAH");
                   },)
               ),
               Positioned(
@@ -158,6 +158,7 @@ class _F_2_1State extends State<F_2_1> {
                         Navigator.push(
                             context,
                             MaterialPageRoute(builder: (context) => F_2_1_2nd_alice()));
+                        print('alice');
                       },
                       icon: SvgPicture.asset('assets/icons/Alice.svg'),
                     ),)
@@ -174,7 +175,9 @@ class _F_2_1State extends State<F_2_1> {
                         setState(() {
                           Visible=false;
                           correct=true;
+                          scoreF.niv2+=2;
                         });
+                        print('est');
                       },
                       icon: SvgPicture.asset('assets/icons/Est.svg'),
                     ),)
@@ -191,6 +194,7 @@ class _F_2_1State extends State<F_2_1> {
                         Navigator.push(
                             context,
                             MaterialPageRoute(builder: (context) => F_2_1_2nd_entrain()));
+                        print('entrain');
                       },
                       icon: SvgPicture.asset('assets/icons/en train.svg'),
                     ),)
@@ -207,6 +211,7 @@ class _F_2_1State extends State<F_2_1> {
                         Navigator.push(
                             context,
                             MaterialPageRoute(builder: (context) => F_2_1_2nd_app()));
+                        print('dapprendre');
                       },
                       icon: SvgPicture.asset('assets/icons/dapprendre.svg'),
                     ),)
@@ -223,6 +228,7 @@ class _F_2_1State extends State<F_2_1> {
                         Navigator.push(
                             context,
                             MaterialPageRoute(builder: (context) => F_2_1_2nd_lalangue()));
+                        print('lalangue');
                       },
                       icon: SvgPicture.asset('assets/icons/lalangue.svg'),
                     ),)
@@ -239,6 +245,7 @@ class _F_2_1State extends State<F_2_1> {
                         Navigator.push(
                             context,
                             MaterialPageRoute(builder: (context) => F_2_1_2nd_fr()));
+                        print('fr');
                       },
                       icon: SvgPicture.asset('assets/icons/Francaise.svg'),
                     ),)
@@ -265,9 +272,12 @@ class _F_2_1State extends State<F_2_1> {
                     height: size.height*0.2,
                     width: size.width*0.5,
                     child: ButtonContinuer(onPressed: (){
+                      print('HADA SCORE');
+                      print(scoreF.niv2);
                       Navigator.push(
                           context,
                           new MaterialPageRoute(builder: (context) => new F_2_3()));
+                      print('Continuer');
                     },)
                 ),
               ),

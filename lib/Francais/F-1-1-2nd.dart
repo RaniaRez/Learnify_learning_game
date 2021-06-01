@@ -14,6 +14,7 @@ import 'package:somthn/Avatars/PinkAvatarIcon.dart';
 import 'package:somthn/Avatars/PurpleAvatarIcon.dart';
 import 'package:somthn/Avatars/BlueAvatarIcon.dart';
 import '../Services/Login.dart';
+import 'BienvenueFr.dart';
 
 class F_1_1_2nd extends StatefulWidget {
   const F_1_1_2nd({Key key}) : super(key: key);
@@ -139,6 +140,7 @@ class _F_1_1_2ndState extends State<F_1_1_2nd> {
                     width: size.width*0.3,
                     child:PinkAvatarIcon(onPressed: (){
                       setState(() {
+                        scoreF.niv1+=1;
                         Visible=false;
                         correct=true;
                       });
@@ -155,6 +157,7 @@ class _F_1_1_2ndState extends State<F_1_1_2nd> {
                     width: size.width*0.35,
                     child:PurpleAvatarIcon(
                       onPressed: (){
+                        scoreF.niv1+=1;
                         setState(() {
                           Visible=false;
                           correct=true;
@@ -173,6 +176,7 @@ class _F_1_1_2ndState extends State<F_1_1_2nd> {
                     width: size.width*0.3,
                     child: OrangeAvatarIcon(
                       onPressed: (){
+                        scoreF.niv1+=1;
                         setState(() {
                           Visible=false;
                           correct=true;
@@ -191,6 +195,7 @@ class _F_1_1_2ndState extends State<F_1_1_2nd> {
                     width: size.width*0.3,
                     child:BlueAvatarIcon(
                       onPressed: (){
+                        scoreF.niv1+=1;
                         setState(() {
                           Visible=false;
                           correct=true;
@@ -216,6 +221,8 @@ class _F_1_1_2ndState extends State<F_1_1_2nd> {
                     height: size.height*0.2,
                     width: size.width*0.5,
                     child: ButtonContinuer(onPressed: (){
+                      print('HADA SCORE');
+                      print(scoreF.niv1);
                       Navigator.push(
                           context,
                           new MaterialPageRoute(builder: (context) => new F_1_2()));

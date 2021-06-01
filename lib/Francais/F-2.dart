@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:somthn/Avatars/OrangeAvatarIcon.dart';
+import 'package:somthn/Bulles/BullenomIcon.dart';
 import 'package:somthn/Francais/F-1.dart';
 import 'package:somthn/Francais/F-2-1.dart';
+import 'package:somthn/Francais/NiveauFr.dart';
+import 'package:somthn/Maths/M-2-1.dart';
 import 'package:somthn/WelcomePages/Settings.dart';
 import 'package:somthn/Buttons/buttonGoTo.dart';
 import 'package:somthn/myicons.dart';
@@ -11,7 +14,13 @@ import '../Buttons/BacksButton.dart';
 import 'package:somthn/Avatars/PinkAvatarIcon.dart';
 import 'package:somthn/Avatars/PurpleAvatarIcon.dart';
 import 'package:somthn/Avatars/BlueAvatarIcon.dart';
+import '../WelcomePages/ChooseAvatar.dart';
 import '../Services/Login.dart';
+import '../Services/SignUp.dart';
+import 'BienvenueFr.dart';
+
+
+
 class Fr2 extends StatefulWidget {
   @override
   _Fr2State createState() => _Fr2State();
@@ -41,9 +50,10 @@ class _Fr2State extends State<Fr2> {
                   right:size.width*0.75,
 
                   child: BacksButton(onPressed: (){
+                    print("u clicked me");
                     Navigator.push(
                         context,
-                        MaterialPageRoute(builder: (context) => Fr1()));
+                        MaterialPageRoute(builder: (context) => NiveauFr()));
                   },)
               ),
 
@@ -54,6 +64,7 @@ class _Fr2State extends State<Fr2> {
                     Navigator.push(
                         context,
                         MaterialPageRoute(builder: (context) => Settings()));
+                    print("settings");
                   },)
               ),
               Positioned(
@@ -119,6 +130,9 @@ class _Fr2State extends State<Fr2> {
                 top: size.height*0.8,
                 left:size.width*0.75,
                 child: GoToButton(onPressed: (){
+                  print("HELL YEAH");
+                  scoreF.niv2=0;
+
                   Navigator.push(
                     context,
                     MaterialPageRoute(builder: (context) => F_2_1()),);

@@ -15,6 +15,7 @@ import 'package:somthn/Francais/F-3-5.dart';
 import 'package:somthn/WelcomePages/Settings.dart';
 import 'package:somthn/myicons.dart';
 import '../Services/Login.dart';
+import 'BienvenueFr.dart';
 
 class F_3_4_2nd extends StatefulWidget {
   const F_3_4_2nd({Key key}) : super(key: key);
@@ -100,6 +101,8 @@ bool correct=false;
                       setState(() {
                         Visible=false;
                         correct=false;
+                        scoreF.niv3+=1;
+
                       });}else if ((drag1==null)&&(drag2==null)&&(drag3==null)&&(drag4==null)&&(drag5==null)&&(drag6==null)&&(drag7==null)){}
                     else{
                       setState(() {
@@ -163,6 +166,8 @@ bool correct=false;
                     height: size.height*0.2,
                     width: size.width*0.5,
                     child: ButtonContinuer(onPressed: (){
+                      print('HADA SCORE');
+                      print(scoreF.niv3);
                       Navigator.push(
                           context,
                           MaterialPageRoute(builder: (context) => F_3_5()));

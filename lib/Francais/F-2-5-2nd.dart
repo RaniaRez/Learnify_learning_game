@@ -12,9 +12,13 @@ import 'package:somthn/Buttons/buttonReset.dart';
 import 'package:somthn/Buttons/settingsButton.dart';
 import 'package:somthn/Francais/F-1.dart';
 import 'package:somthn/Francais/Niveau2Pass%C3%A9.dart';
+import 'package:somthn/Francais/NiveauFr.dart';
 import 'package:somthn/WelcomePages/Settings.dart';
 import 'package:somthn/myicons.dart';
 import '../Services/Login.dart';
+import 'BienvenueFr.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'F-2.dart';
 
 class F_2_5_2nd extends StatefulWidget {
   const F_2_5_2nd({Key key}) : super(key: key);
@@ -96,6 +100,7 @@ class _F_2_5_2ndState extends State<F_2_5_2nd> {
                       setState(() {
                         Visible=false;
                         correct=true;
+                        scoreF.niv2+=1;
                       });}else if ((drag1==null)&&(drag2==null)&&(drag3==null)&&(drag4==null)&&(drag5==null)){}
                     else{
                       setState(() {
@@ -154,9 +159,27 @@ class _F_2_5_2ndState extends State<F_2_5_2nd> {
                     height: size.height*0.2,
                     width: size.width*0.5,
                     child: ButtonContinuer(onPressed: (){
-                      Navigator.push(
+                      print("score final");
+                      print(scoreF.niv2);
+                      Firestore.instance.collection('users').document(user.uid).collection('domains').document('francais').updateData({'niv2':scoreF.niv2});
+                      if (scoreF.niv2>high.niv2)
+                      {
+                        Firestore.instance.collection('users').document(user.uid).collection('domains').document('francais').updateData({'niv2':scoreF.niv2});}
+                      if (scoreF.niv3>=0) {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(builder: (context) => NiveauFr()));
+                      }
+                      if (scoreF.niv2>=7.5) {
+                        if (scoreF.niv3<0) { scoreF.niv3=0;
+                        Firestore.instance.collection('users').document(user.uid).collection('domains').document('francais').updateData({'niv3':scoreF.niv3});
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(builder: (context) => Niveau2Pass()));}
+                      }
+                      else { Navigator.push(
                           context,
-                          MaterialPageRoute(builder: (context) => Niveau2Pass()));
+                          MaterialPageRoute(builder: (context) => Fr2()));}
                     },)
                 ),
               ),

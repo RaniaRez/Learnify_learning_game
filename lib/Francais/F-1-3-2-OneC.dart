@@ -14,7 +14,7 @@ import 'package:somthn/Avatars/PinkAvatarIcon.dart';
 import 'package:somthn/Avatars/PurpleAvatarIcon.dart';
 import 'package:somthn/Avatars/BlueAvatarIcon.dart';
 import '../Services/Login.dart';
-
+import 'BienvenueFr.dart';
 class F_1_3_2nd_OneC extends StatefulWidget {
   const F_1_3_2nd_OneC({Key key}) : super(key: key);
 
@@ -140,6 +140,7 @@ class _F_1_3_2nd_OneCState extends State<F_1_3_2nd_OneC> {
                         setState(() {
                           Visible=false;
                           correct=true;
+                          scoreF.niv1+=1;
                         });
 
                       },
@@ -203,6 +204,8 @@ class _F_1_3_2nd_OneCState extends State<F_1_3_2nd_OneC> {
                     height: size.height*0.2,
                     width: size.width*0.5,
                     child: ButtonContinuer(onPressed: (){
+                      print('HADA SCORE');
+                      print(scoreF.niv1);
                       Navigator.push(
                           context,
                           new MaterialPageRoute(builder: (context) => new F_1_4()));

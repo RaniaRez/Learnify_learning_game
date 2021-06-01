@@ -13,6 +13,7 @@ import 'package:somthn/Avatars/PinkAvatarIcon.dart';
 import 'package:somthn/Avatars/PurpleAvatarIcon.dart';
 import 'package:somthn/Avatars/BlueAvatarIcon.dart';
 import '../Services/Login.dart';
+import 'BienvenueFr.dart';
 
 class F_2_1_2nd extends StatefulWidget {
   const F_2_1_2nd({Key key}) : super(key: key);
@@ -49,6 +50,7 @@ class _F_2_1_2ndState extends State<F_2_1_2nd> {
                     Navigator.push(
                         context,
                         MaterialPageRoute(builder: (context) => Settings()));
+                    print("HELL YEAH");
                   },)
               ),
               Positioned(
@@ -149,6 +151,7 @@ class _F_2_1_2ndState extends State<F_2_1_2nd> {
                         setState(() {
                           Visible=false;
                         });
+                        print('alice');
                       },
                       icon: SvgPicture.asset('assets/icons/Alice.svg'),
                     ),)
@@ -165,7 +168,9 @@ class _F_2_1_2ndState extends State<F_2_1_2nd> {
                         setState(() {
                           Visible=false;
                           correct=true;
+                          scoreF.niv2+=2;
                         });
+                        print('est');
                       },
                       icon: SvgPicture.asset('assets/icons/Est.svg'),
                     ),)
@@ -182,6 +187,7 @@ class _F_2_1_2ndState extends State<F_2_1_2nd> {
                         setState(() {
                           Visible=false;
                         });
+                        print('entrain');
                       },
                       icon: SvgPicture.asset('assets/icons/en train.svg'),
                     ),)
@@ -198,7 +204,7 @@ class _F_2_1_2ndState extends State<F_2_1_2nd> {
                         setState(() {
                           Visible=false;
                         });
-
+                        print('dapprendre');
                       },
                       icon: SvgPicture.asset('assets/icons/dapprendre.svg'),
                     ),)
@@ -215,6 +221,7 @@ class _F_2_1_2ndState extends State<F_2_1_2nd> {
                         setState(() {
                           Visible=false;
                         });
+                        print('lalangue');
                       },
                       icon: SvgPicture.asset('assets/icons/lalangue.svg'),
                     ),)
@@ -231,7 +238,7 @@ class _F_2_1_2ndState extends State<F_2_1_2nd> {
                         setState(() {
                           Visible=false;
                         });
-
+                        print('fr');
                       },
                       icon: SvgPicture.asset('assets/icons/Francaise.svg'),
                     ),)
@@ -258,10 +265,12 @@ class _F_2_1_2ndState extends State<F_2_1_2nd> {
                     height: size.height*0.2,
                     width: size.width*0.5,
                     child: ButtonContinuer(onPressed: (){
+                      print('HADA SCORE');
+                      print(scoreF.niv2);
                       Navigator.push(
                           context,
                           new MaterialPageRoute(builder: (context) => new F_2_3()));
-
+                      print('Continuer');
                     },)
                 ),
               ),

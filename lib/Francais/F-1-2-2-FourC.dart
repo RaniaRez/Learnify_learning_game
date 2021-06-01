@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:somthn/Buttons/BarreProgres.dart';
+import 'package:somthn/Francais/F-1-3.dart';
 import 'package:somthn/Francais/F-1.dart';
 import 'package:somthn/Maths/M-1-2.dart';
 import 'package:somthn/WelcomePages/Settings.dart';
@@ -14,6 +15,7 @@ import 'package:somthn/Avatars/PinkAvatarIcon.dart';
 import 'package:somthn/Avatars/PurpleAvatarIcon.dart';
 import 'package:somthn/Avatars/BlueAvatarIcon.dart';
 import '../Services/Login.dart';
+import 'BienvenueFr.dart';
 
 class F_1_2_2nd_fourC extends StatefulWidget {
   const F_1_2_2nd_fourC({Key key}) : super(key: key);
@@ -50,6 +52,7 @@ class _F_1_2_2nd_fourCState extends State<F_1_2_2nd_fourC> {
                     Navigator.push(
                         context,
                         MaterialPageRoute(builder: (context) => Settings()));
+                    print("HELL YEAH");
                   },)
               ),
               Positioned(
@@ -95,6 +98,7 @@ class _F_1_2_2nd_fourCState extends State<F_1_2_2nd_fourC> {
                         setState(() {
                           Visible=false;
                         });
+                        print('exc');
                       },
                       icon: SvgPicture.asset('assets/icons/Exclamative.svg')),
                 ),
@@ -129,6 +133,8 @@ class _F_1_2_2nd_fourCState extends State<F_1_2_2nd_fourC> {
                           Visible=false;
                           correct=true;
                         });
+                        scoreF.niv1+=1;
+                        print('int');
                       },
                       icon: SvgPicture.asset('assets/icons/Interrogative.svg')),
                 ),
@@ -197,9 +203,12 @@ class _F_1_2_2nd_fourCState extends State<F_1_2_2nd_fourC> {
                     height: size.height*0.2,
                     width: size.width*0.5,
                     child: ButtonContinuer(onPressed: (){
+                      print('HADA SCORE');
+                      print(scoreF.niv1);
                       Navigator.push(
                           context,
-                          new MaterialPageRoute(builder: (context) => new M_1_2()));
+                          new MaterialPageRoute(builder: (context) => new F_1_3()));
+                      print('Continuer');
                     },)
                 ),
               ),

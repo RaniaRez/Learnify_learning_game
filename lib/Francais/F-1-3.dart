@@ -16,6 +16,7 @@ import '../Services/Login.dart';
 import 'package:somthn/Francais/F-1-3-2-OneC.dart';
 import 'package:somthn/Francais/F-1-3-2-FourC.dart';
 import 'package:somthn/Francais/F-1-3-2-ThreeC.dart';
+import 'BienvenueFr.dart';
 class F_1_3 extends StatefulWidget {
   const F_1_3({Key key}) : super(key: key);
 
@@ -123,6 +124,7 @@ class _F_1_3State extends State<F_1_3> {
                         setState(() {
                         Visible=false;
                       });
+                        scoreF.niv1+=2;
                         },
                        icon: SvgPicture.asset('assets/icons/Canard.svg')),
                 ),
@@ -220,6 +222,8 @@ class _F_1_3State extends State<F_1_3> {
                     height: size.height*0.2,
                     width: size.width*0.5,
                     child: ButtonContinuer(onPressed: (){
+                      print('HADA SCORE');
+                      print(scoreF.niv1);
                       Navigator.push(
                           context,
                           new MaterialPageRoute(builder: (context) => new F_1_4()));
