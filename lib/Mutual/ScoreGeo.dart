@@ -130,25 +130,53 @@ class _GeoScoreState extends State<GeoScore> {
                 child:SvgPicture.asset('assets/icons/tableauScore.svg'),
               ),
               Stack(
-                  children: <Widget>
-                  [
-                    Positioned(
-                      height: size.width*0.3,
-                      width: size.width*0.3,
-                      left: size.width*0.33,
-                      top:size.height*0.57,
-                      child:SvgPicture.asset('assets/icons/ButtonQ.svg'),
-                    ),
-                    Positioned(
-                      height: size.width*0.3,
-                      width: size.width*0.3,
-                      left: size.width*0.33,
-                      top:size.height*0.74,
-                      child:SvgPicture.asset('assets/icons/ButtonQ.svg'),
-                    )
-                  ]
-
-              )
+                children: <Widget>
+                [
+                  Positioned(
+                    height: size.width*0.3,
+                    width: size.width*0.3,
+                    left: size.width*0.33,
+                    top:size.height*0.57,
+                    child:SvgPicture.asset('assets/icons/ButtonQ.svg'),
+                  ),
+                  Positioned(
+                      left: size.width*0.43,
+                      top:size.height*0.62,
+                      child:Text(
+                        '30',
+                        style: TextStyle(
+                          fontSize: 30,
+                          fontFamily: 'Skranji-Bold',
+                          color: Colors.brown[700],
+                        ),
+                      )
+                  ) ,
+                ],
+              ),
+              Stack(
+                children: <Widget>
+                [
+                  Positioned(
+                    height: size.width*0.3,
+                    width: size.width*0.3,
+                    left: size.width*0.33,
+                    top:size.height*0.75,
+                    child:SvgPicture.asset('assets/icons/ButtonQ.svg'),
+                  ),
+                  Positioned(
+                      left: size.width*0.43,
+                      top:size.height*0.8,
+                      child:Text(
+                        '26',
+                        style: TextStyle(
+                          fontSize: 30,
+                          fontFamily: 'Skranji-Bold',
+                          color: Colors.brown[700],
+                        ),
+                      )
+                  ) ,
+                ],
+              ),
             ]
         ),
       ),

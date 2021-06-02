@@ -1,10 +1,7 @@
-
 import 'package:flutter/material.dart';
-import 'package:somthn/Francais/ScoreFr.dart';
 import 'package:somthn/Mutual/ScoreFr.dart';
 import 'package:somthn/Mutual/ScoreGeo.dart';
 import 'package:somthn/Mutual/ScoreMath.dart';
-import 'package:somthn/WelcomePages/Voila.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
@@ -15,6 +12,5 @@ void main() {
       'lettresEntre': []
     }
   };
-
-  runApp(MaterialApp(home: MathScore()));
+  runApp(MaterialApp(home: FrScore()));
 }
