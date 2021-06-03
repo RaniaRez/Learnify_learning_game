@@ -1,5 +1,7 @@
 
 import 'package:flutter/material.dart';
+import 'package:somthn/Francais/testNiv/TestNivFrQ1.dart';
+import 'package:somthn/Francais/testNiv/TestNivFrQ2.dart';
 import 'package:somthn/Maths/M-1.dart';
 import 'package:somthn/Maths/M-2.dart';
 import 'package:somthn/Maths/M-3-2.dart';
@@ -20,5 +22,5 @@ void main() {
     }
   };
 
-  runApp(MaterialApp(home: Niveau1Pass()));
+  runApp(MaterialApp(home: TestNivFr2()));
 }
