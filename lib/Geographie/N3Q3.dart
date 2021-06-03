@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:somthn/Geographie/N2Q4.dart';
 import 'package:somthn/Geographie/N3Q3T2_C_1.dart';
 import 'package:somthn/Geographie/N3Q3T2_C_3.dart';
 import 'package:somthn/Geographie/N3Q3T2_C_4.dart';
