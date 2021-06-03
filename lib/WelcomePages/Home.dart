@@ -11,18 +11,45 @@ import '../Services/Login.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:audioplayers/audio_cache.dart';
 import 'package:audioplayers/audioplayers.dart';
+/*import 'package:assets_audio_player/assets_audio_player.dart';
+import 'package:somthn/music.dart';*/
 
 
 
 
 
 class Home extends StatefulWidget {
+
   @override
   _HomeState createState() => _HomeState();
+
 }
 
 class _HomeState extends State<Home> {
+
   AudioPlayer advancedPlayer;
+
+
+  /*AssetsAudioPlayer _assetsAudioPlayer;
+
+  @override
+  void initState() {
+    super.initState();
+    _assetsAudioPlayer = AssetsAudioPlayer();
+    _assetsAudioPlayer.open(
+      AssetsAudio(
+        asset: "music.mp3",
+        folder: "assets/audio/",
+      ),
+    );
+    _assetsAudioPlayer.playOrPause();
+  }
+
+  @override
+  void dispose() {
+    _assetsAudioPlayer = null;
+    super.dispose();
+  }*/
 
   @override
   initState() {
@@ -31,6 +58,7 @@ class _HomeState extends State<Home> {
   }
 
   Future loadMusic() async {
+
     advancedPlayer = await AudioCache().loop("audio/music.mp3");
   }
 
@@ -60,10 +88,12 @@ class _HomeState extends State<Home> {
                   top: size.height*0.05,
                   left:size.width*0.75,
                   child:
-                  SettingsButton(onPressed: (){
+                  SettingsButton(onPressed: () async {
+                   // advancedPlayer = await Settings();
+
                     Navigator.push(
                         context,
-                        MaterialPageRoute(builder: (context) => Settings()));
+                        MaterialPageRoute(builder: (context) => Settings(value: advancedPlayer )));
                   },)
               ),
 
@@ -75,6 +105,8 @@ class _HomeState extends State<Home> {
                   height: size.height*0.6,
                   width: size.width*0.6,
                   child: ButtonAllonsy(onPressed: () async {
+                    int result = await advancedPlayer.pause();
+
                     await googleLogin();
                     print(user.uid);
                     String documentID= user.uid;
@@ -116,6 +148,9 @@ class _HomeState extends State<Home> {
                   left:size.width*0.1,
                   child:
                   SettingsButton(onPressed: (){
+                    /*void _playFile() async {
+                      MusicPlayer.instance.play("audio/Def.wav");
+                    }*/
                     print("ff");
                     showDialog(context: context,
                         builder: (BuildContext context){

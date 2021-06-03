@@ -33,8 +33,6 @@ class _ClassementState extends State<Classement> {
   _ClassementState({this.value});
   @override
 
-
-
   Widget build(BuildContext context)  {
 
     Size size = MediaQuery

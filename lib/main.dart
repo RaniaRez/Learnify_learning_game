@@ -3,6 +3,7 @@ import 'package:somthn/Mutual/ScoreFr.dart';
 import 'package:somthn/Mutual/ScoreGeo.dart';
 import 'package:somthn/Mutual/ScoreMath.dart';
 import 'package:somthn/Geographie/NiveauGeo.dart';
+import 'package:somthn/WelcomePages/Home.dart';
 
 void main() {
 /*  WidgetsFlutterBinding.ensureInitialized();
@@ -13,5 +14,5 @@ void main() {
       'lettresEntre': []
     }
   };*/
-  runApp(MaterialApp(home: NiveauGeo()));
+  runApp(MaterialApp(home: Home()));
 }
