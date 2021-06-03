@@ -130,7 +130,7 @@ class _F_1_1_2ndState extends State<F_1_1_2nd> {
                       icon: Image.asset('images/Cow.jpg')),
                 ),
               ),
-             // if (user.avatar=="Pink")
+              if (user.avatar=="Pink")
                 Visibility(
                   visible: Visible,
                   child: Positioned(

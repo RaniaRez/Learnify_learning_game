@@ -2,19 +2,24 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:somthn/Buttons/HomeButton.dart';
 import 'package:somthn/Buttons/buttonGoTo.dart';
-import 'package:somthn/Francais/F-2.dart';
-import 'package:somthn/Francais/NiveauFr.dart';
+import 'package:somthn/Buttons/buttonReset.dart';
+import 'package:somthn/Francais/F-1.dart';
+import 'package:somthn/Maths/BienvenueMath.dart';
+import 'package:somthn/Maths/M-2.dart';
 import 'package:somthn/WelcomePages/Settings.dart';
 import 'package:somthn/Mutual/Stars.dart';
 import 'package:somthn/myicons.dart';
 import '../Buttons/settingsButton.dart';
 import '../Buttons/BacksButton.dart';
 import '../WelcomePages/Home.dart';
+import '../WelcomePages/ChooseAvatar.dart';
 import 'package:somthn/Avatars/OrangeAvatarIcon.dart';
 import 'package:somthn/Avatars/PinkAvatarIcon.dart';
 import 'package:somthn/Avatars/PurpleAvatarIcon.dart';
 import 'package:somthn/Avatars/BlueAvatarIcon.dart';
 import '../Services/Login.dart';
+import '../Services/SignUp.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 
 
 class Niveau1Pass extends StatefulWidget {
@@ -30,6 +35,15 @@ class _Niveau1PassState extends State<Niveau1Pass> {
 
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
+    int score = 50;
+    bool complet = (score>7.5);
+    bool star1 = (score>10);
+    bool star2 = (score>20);
+    bool star3 = (score>30);
+    /*print("khra2");
+    print(scoreM.niv1);
+    print("khra2");
+    Firestore.instance.collection('users').document(user.uid).collection('domains').document('maths').updateData({'niv1':scoreM.niv1});*/
     return Scaffold(
       body:
       Container(
@@ -51,6 +65,7 @@ class _Niveau1PassState extends State<Niveau1Pass> {
                   Navigator.push(
                       context,
                       MaterialPageRoute(builder: (context) => Settings()));
+                  print("HELL YEAH");
                 },)
             ),
 
@@ -58,9 +73,10 @@ class _Niveau1PassState extends State<Niveau1Pass> {
                 top: size.height*0.05,
                 right:size.width*0.75,
                 child: BacksButton(onPressed: (){
+                  print("HELL YEAH");
                   Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => NiveauFr()));
+                      MaterialPageRoute(builder: (context) => Fr1() ));
                 },)
             ),
             Positioned(
@@ -68,6 +84,8 @@ class _Niveau1PassState extends State<Niveau1Pass> {
               left: size.width*0.39,
               child: HomeButton(
                 onPressed: (){
+                  //print("zbel2");
+                  print("HELL YEAH8");
                   Navigator.push(
                     context,
                     MaterialPageRoute(builder: (context) => Home()),);
@@ -76,78 +94,199 @@ class _Niveau1PassState extends State<Niveau1Pass> {
               ),
             ),
             Positioned(
-              top: size.height*0.65,
-              right: size.width*0.45,
-              child:StarIcon(),
+                top: size.height*0.42,
+                left: size.width*0.1,
+                height: size.height*0.3,
+                width: size.width*0.8,
+                child: Visibility(
+
+                    child: SvgPicture.asset('assets/icons/nivTab.svg'))
             ),
-            if (user.avatar=="Pink")
+            if ((complet)&&(user.avatar=="Pink"))
               Visibility(
 
                 child: Positioned(
-                  top: size.height*0.48,
-                  right: size.width*0.58,
-                  height: size.height*0.3,
+                  top: size.height*0.32,
+                  right: size.width*0.6,
+                  height: size.width*0.3,
                   width: size.width*0.3,
-                  child:Transform.rotate(
-                      angle: 6,
-                      child: PinkAvatarIcon(onPressed: null,)),
+                  child:PinkAvatarIcon(onPressed: null,),
                 ),
               ),
-            if (user.avatar=="Purple")
+            if ((complet)&&(user.avatar=="Purple"))
               Visibility(
 
                 child: Positioned(
-                  top: size.height*0.46,
-                  right: size.width*0.56,
-                  height: size.height*0.35,
+                  top: size.height*0.31,
+                  right: size.width*0.57,
+                  height: size.width*0.35,
                   width: size.width*0.35,
-                  child:Transform.rotate(
-                      angle: 6,
-                      child: PurpleAvatarIcon(onPressed: null,)),
+                  child:PurpleAvatarIcon(onPressed: null,),
                 ),
               ),
-            if (user.avatar=="Orange")
+            if ((complet)&&(user.avatar=="Orange"))
               Visibility(
 
                 child: Positioned(
-                  top: size.height*0.49,
-                  right: size.width*0.58,
-                  height: size.height*0.3,
+                  top: size.height*0.32,
+                  right: size.width*0.6,
+                  height: size.width*0.3,
                   width: size.width*0.3,
-                  child: Transform.rotate(
-                    angle: 6,
-                      child: OrangeAvatarIcon(onPressed: null,)),
+                  child: OrangeAvatarIcon(onPressed: null,),
                 ),
               ),
-            if (user.avatar=="Blue")
-            Positioned(
-              top: size.height*0.48,
-              right: size.width*0.58,
-              height: size.height*0.3,
-              width: size.width*0.3,
-                  child: Transform.rotate
-                    (
-                     angle:6,
-                      child: BlueAvatarIcon(onPressed: null,)),
+            if ((complet)&&(user.avatar=="Blue"))
+              Visibility(
+
+                child: Positioned(
+                  top: size.height*0.32,
+                  right: size.width*0.6,
+                  height: size.width*0.3,
+                  width: size.width*0.3,
+                  child:BlueAvatarIcon(onPressed: null,),
                 ),
+              ),
 
+            if ((!complet)&&(user.avatar=="Pink"))
+              Visibility(
+                child: Positioned(
+                  height: size.width*0.3,
+                  width: size.width*0.3,
+                  left: size.width*0.1,
+                  top:size.height*0.31,
+                  child: Image.asset('images/MadPink.gif'),
+                ),
+              ),
+            if ((!complet)&&(user.avatar=="Purple"))
+              Visibility(
 
+                child: Positioned(
+                  height: size.width*0.35,
+                  width: size.width*0.35,
+                  left: size.width*0.1,
+                  top:size.height*0.29,
+                  child:Image.asset('images/MadPurple.gif'),
+                ),
+              ),
+            if ((!complet)&&(user.avatar=="Orange"))
+              Visibility(
+
+                child: Positioned(
+                  height: size.width*0.3,
+                  width: size.width*0.3,
+                  left: size.width*0.1,
+                  top:size.height*0.31,
+                  child: Image.asset('images/MadOrange.gif'),
+                ),
+              ),
+            if ((!complet)&&(user.avatar=="Blue"))
+              Visibility(
+                child: Positioned(
+                  height: size.width*0.3,
+                  width: size.width*0.3,
+                  left: size.width*0.1,
+                  top:size.height*0.31,
+                  child:Image.asset('images/MadBlue.gif'),
+                ),
+              ),
+            Visibility(
+              visible: complet,
+              child: Positioned(
+                top: size.height*0.07,
+                right: size.width*0.07,
+                height: size.height*0.4,
+                width: size.width*0.6,
+                child:SvgPicture.asset(bulleNiveauPasse),
+              ),
+            ),
+            Visibility(
+              visible: !complet,
+              child: Positioned(
+                top: size.height*0.07,
+                right: size.width*0.07,
+                height: size.height*0.4,
+                width: size.width*0.6,
+                child:SvgPicture.asset('assets/icons/nivIncomplet.svg'),
+              ),
+            ),
             Positioned(
-              top: size.height*0.2,
-              right: size.width*0.2,
-              height: size.height*0.4,
-              width: size.width*0.6,
-              child:SvgPicture.asset(bulleNiveauPasse),
+
+              top: size.height*0.7,
+              left: size.width*0.08,
+              child: Row(
+                children: <Widget>[
+                  Container(
+                      height: size.height*0.15,
+                      width: size.height*0.15,
+                      child: SvgPicture.asset('assets/icons/EmptyStar.svg')),
+                  Container(
+                      height: size.height*0.15,
+                      width: size.height*0.15,
+                      child: SvgPicture.asset('assets/icons/EmptyStar.svg')),
+                  Container(
+                      height: size.height*0.15,
+                      width: size.height*0.15,
+                      child: SvgPicture.asset('assets/icons/EmptyStar.svg')),
+                ],
+              ),
+            ),
+            Positioned(
+
+              top: size.height*0.7,
+              left: size.width*0.08,
+              child: Row(
+                children: <Widget>[
+                  Visibility(
+                    visible: star1,
+                    child: Container(
+                        height: size.height*0.15,
+                        width: size.height*0.15,
+                        child: SvgPicture.asset('assets/icons/Star.svg')),
+                  ),
+                  Visibility(
+                    visible: star2,
+                    child: Container(
+                        height: size.height*0.15,
+                        width: size.height*0.15,
+                        child: SvgPicture.asset('assets/icons/Star.svg')),
+                  ),
+                  Visibility(
+                    visible: star3,
+                    child: Container(
+                        height: size.height*0.15,
+                        width: size.height*0.15,
+                        child: SvgPicture.asset('assets/icons/Star.svg')),
+                  ),
+                ],
+              ),
             ),
 
             Positioned(
-              top: size.height*0.83,
+              top: size.height*0.87,
               left: size.width*0.7 ,
-              child: GoToButton(onPressed: (){
-                Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => Fr2()));
+              child: Visibility(
+                visible: complet,
+                child: GoToButton(onPressed: (){
+                  print(scoreM.niv1);
+                  print('khra');
+                  //Firestore.instance.collection('users').document(user.uid).collection('domains').document('maths').updateData({'niv1':scoreM.niv1});
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => Math2()));
                 }),
+              ),
+            ),
+            Visibility(
+              visible: !complet,
+              child: Align(
+                alignment: Alignment.bottomCenter,
+                child: ButtonReset(
+                    onPressed: () {
+                      print('reset');
+                    }
+
+                ),
+              ),
             ),
 
           ],

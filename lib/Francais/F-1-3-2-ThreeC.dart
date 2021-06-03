@@ -144,7 +144,7 @@ class _F_1_3_2nd_threeCState extends State<F_1_3_2nd_threeC> {
                 ),
               ),
 
-              //if (user.avatar=="Pink")
+              if (user.avatar=="Pink")
               Visibility(
                 visible: Visible,
                 child: Positioned(

@@ -169,7 +169,7 @@ class _TestNivFr3State extends State<TestNivFr3> {
                 visible: Visible,
                 child: Positioned(
                   top: size.height*0.8,
-                  left: size.width*0.05,
+                  left: size.width*0.31,
                   height: size.height*0.15,
                   width: size.width*0.4,
                   child: IconButton(

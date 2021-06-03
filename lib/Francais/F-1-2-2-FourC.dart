@@ -139,7 +139,7 @@ class _F_1_2_2nd_fourCState extends State<F_1_2_2nd_fourC> {
                       icon: SvgPicture.asset('assets/icons/Interrogative.svg')),
                 ),
               ),
-              //if (user.avatar=="Pink")
+              if (user.avatar=="Pink")
               Visibility(
                 visible: Visible,
                 child: Positioned(

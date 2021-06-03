@@ -321,13 +321,6 @@ class _N3Q3State extends State<N3Q3> {
                         onPressed: (){
                           if (fourClicked){
                             Vibration.vibrate();
-                            setState(() {
-                              Navigator.push(
-                                  context,
-                                  MaterialPageRoute(builder: (context) => N3Q3T2_C_4()));
-                              print('Wrong');
-                            });
-
                             print('Correct');
                           }
                           print('2');
