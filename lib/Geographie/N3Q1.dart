@@ -312,7 +312,7 @@ class _N3Q1State extends State<N3Q1> {
                               print('Wrong');
                             });
 
-                            //print('Correct');
+                            print('Correct');
                           }
                           print('2');
                         },
