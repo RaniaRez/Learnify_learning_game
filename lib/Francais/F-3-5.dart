@@ -170,15 +170,12 @@ class _F_3_5State extends State<F_3_5> {
                       print("score final");
                       print(scoreF.niv3);
                       Firestore.instance.collection('users').document(user.uid).collection('domains').document('francais').updateData({'niv3':scoreF.niv3});
-                      if (scoreF.niv3>=7.5){
+                      if (scoreF.niv3>high.niv3)
+                      { high.niv3=scoreF.niv3 ;
+                      Firestore.instance.collection('users').document(user.uid).collection('domains').document('francais').updateData({'high3':scoreF.niv3});}
                         Navigator.push(
                             context,
-                            MaterialPageRoute(builder: (context) => Niveau3Pass()));}
-                      else {
-                        Navigator.push(
-                            context,
-                            MaterialPageRoute(builder: (context) => Fr3()));
-                      }
+                            MaterialPageRoute(builder: (context) => Niveau3Pass()));
                      },)
                 ),
               ),

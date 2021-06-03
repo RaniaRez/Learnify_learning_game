@@ -5,6 +5,7 @@ import 'package:somthn/Buttons/buttonGoTo.dart';
 import 'package:somthn/Buttons/buttonReset.dart';
 import 'package:somthn/Maths/BienvenueMath.dart';
 import 'package:somthn/Maths/M-2.dart';
+import 'package:somthn/Maths/M-3.dart';
 import 'package:somthn/WelcomePages/Settings.dart';
 import 'package:somthn/Mutual/Stars.dart';
 import 'package:somthn/myicons.dart';
@@ -35,11 +36,10 @@ class _Niveau2PassState extends State<Niveau2Pass> {
 
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
-    int score = 50;
-    bool complet = (score>7.5);
-    bool star1 = (score>10);
-    bool star2 = (score>20);
-    bool star3 = (score>30);
+    bool complet = (scoreM.niv2>7.5);
+    bool star1 = (hs.niv1>7.5);
+    bool star2 = (hs.niv2>7.5);
+    bool star3 = (hs.niv3>7.5);
     /*print("khra2");
     print(scoreM.niv1);
     print("khra2");
@@ -102,6 +102,36 @@ class _Niveau2PassState extends State<Niveau2Pass> {
 
                     child: SvgPicture.asset('assets/icons/nivTab.svg'))
             ),
+            Positioned(
+                top: size.height*0.61,
+                left: size.width*0.45,
+                child: FittedBox(
+                  fit: BoxFit.fitWidth,
+                  child: Text(
+                    scoreM.niv2 .toString(),
+                    style:TextStyle(
+                      fontSize: 30,
+                      fontFamily: 'Skranji-Bold',
+                      fontWeight: FontWeight.bold,
+                      color:Color(0xff693821),
+                    ),
+                  ),
+                )),
+            Positioned(
+                top: size.height*0.52,
+                left: size.width*0.45,
+                child: FittedBox(
+                  fit: BoxFit.fitWidth,
+                  child: Text(
+                    hs.niv2 .toString() ,
+                    style:TextStyle(
+                      fontSize: 30,
+                      fontFamily: 'Skranji-Bold',
+                      fontWeight: FontWeight.bold,
+                      color:Color(0xff693821),
+                    ),
+                  ),
+                )),
             if ((complet)&&(user.avatar=="Pink"))
               Visibility(
 
@@ -265,14 +295,14 @@ class _Niveau2PassState extends State<Niveau2Pass> {
               top: size.height*0.87,
               left: size.width*0.7 ,
               child: Visibility(
-                visible: complet,
+                visible: ((complet) || (score.niv3 >=0)),
                 child: GoToButton(onPressed: (){
-                  print(scoreM.niv1);
+                  print(scoreM.niv2);
                   print('khra');
                   //Firestore.instance.collection('users').document(user.uid).collection('domains').document('maths').updateData({'niv1':scoreM.niv1});
                   Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => Math2()));
+                      MaterialPageRoute(builder: (context) => Math3()));
                 }),
               ),
             ),
@@ -283,6 +313,9 @@ class _Niveau2PassState extends State<Niveau2Pass> {
                 child: ButtonReset(
                     onPressed: () {
                       print('reset');
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => Math2()));
                     }
 
                 ),

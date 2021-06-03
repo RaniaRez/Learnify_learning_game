@@ -19,6 +19,7 @@ import 'package:somthn/myicons.dart';
 import '../Services/Login.dart';
 import 'BienvenueFr.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'Niveau1Passé.dart';
 
 
 class F_1_5 extends StatefulWidget {
@@ -163,22 +164,13 @@ class _F_1_5State extends State<F_1_5> {
                       print(scoreF.niv1);
                       Firestore.instance.collection('users').document(user.uid).collection('domains').document('francais').updateData({'niv1':scoreF.niv1});
                       if (scoreF.niv1>high.niv1)
-                        {
-                          Firestore.instance.collection('users').document(user.uid).collection('domains').document('francais').updateData({'niv1':scoreF.niv1});}
-                          if (scoreF.niv2>=0) {
-                            Navigator.push(
-                                context,
-                                MaterialPageRoute(builder: (context) => NiveauFr()));
-                          }
-                          if (scoreF.niv1>=7.5) {
+                        { high.niv1=scoreF.niv1 ;
+                          Firestore.instance.collection('users').document(user.uid).collection('domains').document('francais').updateData({'high1':scoreF.niv1});}
                             if (scoreF.niv2<0) { scoreF.niv2=0;
-                            Firestore.instance.collection('users').document(user.uid).collection('domains').document('francais').updateData({'niv2':scoreF.niv2});
+                            Firestore.instance.collection('users').document(user.uid).collection('domains').document('francais').updateData({'niv2':scoreF.niv2});}
                             Navigator.push(
                             context,
-                            MaterialPageRoute(builder: (context) => Niveau1Pass()));}   }
-                            else { Navigator.push(
-                      context,
-                      MaterialPageRoute(builder: (context) => Fr1()));}
+                            MaterialPageRoute(builder: (context) => Niveau1Pass()));
 
                       print('Continuer');
 
