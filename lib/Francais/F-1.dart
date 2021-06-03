@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:somthn/Avatars/OrangeAvatarIcon.dart';
+import 'package:somthn/Branches/BranchIconSimple.dart';
 import 'package:somthn/Francais/F-1-1.dart';
 import 'package:somthn/Francais/NiveauFr.dart';
 import 'package:somthn/Maths/M-1-1.dart';
@@ -62,14 +63,23 @@ class _Fr1State extends State<Fr1> {
               ),
 
 
+              Visibility(
+
+                child: Positioned(
+                  top: size.height*0.62,
+                  right: size.width*0.62 ,
+                  child:BranchIconSimple(),
+                ),
+              ),
+
               if (user.avatar=="Pink")
                 Visibility(
 
                   child: Positioned(
-                    height: size.width*0.3,
+                    top: size.height*0.45,
+                    right: size.width*0.63 ,
+                    height: size.height*0.3,
                     width: size.width*0.3,
-                    left: size.width*0.1,
-                    bottom:size.width*0.7,
                     child:PinkAvatarIcon(onPressed: null,),
                   ),
                 ),
@@ -77,11 +87,11 @@ class _Fr1State extends State<Fr1> {
                 Visibility(
 
                   child: Positioned(
-                    height: size.width*0.35,
+                    top: size.height*0.43,
+                    right: size.width*0.63 ,
+                    height: size.height*0.35,
                     width: size.width*0.35,
 
-                    left: size.width*0.07,
-                    bottom:size.width*0.69,
                     child:PurpleAvatarIcon(onPressed: null,),
                   ),
                 ),
@@ -89,10 +99,10 @@ class _Fr1State extends State<Fr1> {
                 Visibility(
 
                   child: Positioned(
-                    height: size.width*0.3,
+                    top: size.height*0.46,
+                    right: size.width*0.63 ,
+                    height: size.height*0.3,
                     width: size.width*0.3,
-                    left: size.width*0.1,
-                    bottom:size.width*0.7,
                     child: OrangeAvatarIcon(onPressed: null,),
                   ),
                 ),
@@ -100,10 +110,10 @@ class _Fr1State extends State<Fr1> {
                 Visibility(
 
                   child: Positioned(
-                    height: size.width*0.3,
+                    top: size.height*0.45,
+                    right: size.width*0.63 ,
+                    height: size.height*0.3,
                     width: size.width*0.3,
-                    left: size.width*0.1,
-                    bottom:size.width*0.7,
                     child:BlueAvatarIcon(onPressed: null,),
                   ),
                 ),

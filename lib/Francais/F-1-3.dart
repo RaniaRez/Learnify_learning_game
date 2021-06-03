@@ -164,7 +164,7 @@ class _F_1_3State extends State<F_1_3> {
 
 
 
-
+              if (user.avatar=="Pink")
               Visibility(
                 visible: Visible,
                 child: Positioned(

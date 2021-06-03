@@ -136,7 +136,7 @@ class _F_3_2_2nd_FourState extends State<F_3_2_2nd_Four> {
                 ),
               ),
 
-              //if (user.avatar=="Pink")
+              if (user.avatar=="Pink")
               Visibility(
                 visible: Visible,
                 child: Positioned(

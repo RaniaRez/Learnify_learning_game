@@ -147,7 +147,7 @@ class _F_1_3_2nd_OneCState extends State<F_1_3_2nd_OneC> {
                       icon: SvgPicture.asset('assets/icons/Canard.svg')),
                 ),
               ),
-              //if (user.avatar=="Pink")
+              if (user.avatar=="Pink")
               Visibility(
                 visible: Visible,
                 child: Positioned(
