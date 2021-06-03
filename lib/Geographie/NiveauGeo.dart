@@ -5,6 +5,7 @@ import 'package:somthn/Owls/BrownOwl.dart';
 import 'package:somthn/Owls/LockIcon.dart';
 import './N2Q1.dart';
 import './N1Q2.dart';
+import './N3Q1.dart';
 
 import 'package:somthn/Avatars/PinkAvatarIcon.dart';
 import 'package:somthn/WelcomePages/Settings.dart';
@@ -96,6 +97,9 @@ class _NiveauGeoState extends State<NiveauGeo> {
                 height: size.height*0.2,
                 width: size.width*0.5,
                   child: ButtonDifficile(onPressed:(){
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => N3Q1()));
                     print('hard');
                   }),
                 ),

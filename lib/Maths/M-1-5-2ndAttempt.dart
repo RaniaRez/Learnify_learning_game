@@ -31,6 +31,7 @@ import 'BienvenueMath.dart';
 import 'M-1.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'Niveau1Passé.dart';
+import 'NiveauMath.dart';
 
 
 class M_1_5_2nd extends StatefulWidget {
@@ -593,12 +594,17 @@ class _M_1_5_2ndState extends State<M_1_5_2nd> {
                     width: size.width*0.5,
                     child: ButtonContinuer(onPressed: (){
                       Firestore.instance.collection('users').document(user.uid).collection('domains').document('maths').updateData({'niv1':scoreM.niv1});
-                      if (score.niv2<0)
-                      {  score.niv2=0;
-                      Firestore.instance.collection('users').document(user.uid).collection('domains').document('maths').updateData({'niv2':0});}
                       if (scoreM.niv1>hs.niv1)
                       { Firestore.instance.collection('users').document(user.uid).collection('domains').document('maths').updateData({'high1':scoreM.niv1});}
-                      if ((scoreM.niv1>7.5)||(scoreM.niv2>=0)){
+                      if (score.niv2>=0) {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(builder: (context) => NiveauMath()));
+                      }
+                      if (scoreM.niv1>7.5){
+                        if (score.niv2<0)
+                        {  score.niv2=0;
+                        Firestore.instance.collection('users').document(user.uid).collection('domains').document('maths').updateData({'niv2':0});}
                         Navigator.push(
                             context,
                             MaterialPageRoute(builder: (context) => Niveau1Pass()));

@@ -117,7 +117,7 @@ class _TestNivM3State extends State<TestNivM3> {
                     setState(() {
                       if(!all){
 
-                      }else if ((twoU) && (oneD)){
+                      }else if ((zeroU) && (twoD)){
                         Visible = false;
                         correct = true;
                         print('Correct');

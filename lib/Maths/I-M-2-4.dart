@@ -133,7 +133,7 @@ class _I_M_2_4_State extends State<I_M_2_4_> {
 
                   Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => M_2_5_3rd_()));}
+                      MaterialPageRoute(builder: (context) => M_2_4_3rd_()));}
 
                 ),
               ),
