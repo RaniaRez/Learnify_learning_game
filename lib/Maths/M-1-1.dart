@@ -5,7 +5,6 @@ import 'package:somthn/Buttons/BarreProgres.dart';
 import 'package:somthn/Maths/M-1-1-2ndAttempt.dart';
 import 'package:somthn/Maths/M-1-2.dart';
 import 'package:somthn/WelcomePages/Settings.dart';
-import 'package:somthn/Bulles/bulleQuest.dart';
 import 'package:somthn/Buttons/button0.dart';
 import 'package:somthn/Buttons/button1.dart';
 import 'package:somthn/Buttons/button2.dart';
@@ -27,11 +26,11 @@ import 'package:somthn/Avatars/OrangeAvatarIcon.dart';
 import 'package:somthn/Avatars/PinkAvatarIcon.dart';
 import 'package:somthn/Avatars/PurpleAvatarIcon.dart';
 import 'package:somthn/Avatars/BlueAvatarIcon.dart';
-import '../WelcomePages/ChooseAvatar.dart';
 import '../Services/Login.dart';
-import '../Services/SignUp.dart';
 import '../Maths/BienvenueMath.dart';
 import 'M-1.dart';
+import 'package:audioplayers/audio_cache.dart';
+import 'package:audioplayers/audioplayers.dart';
 
 class M_1_1 extends StatefulWidget {
   const M_1_1({Key key}) : super(key: key);
@@ -41,6 +40,16 @@ class M_1_1 extends StatefulWidget {
 }
 
 class _M_1_1State extends State<M_1_1> {
+  /*AudioPlayer advancedPlayer;
+
+
+  @override
+  initState() {
+    super.initState();
+    loadMusic();
+  }*/
+
+
   bool oneD = false;
   bool oneU = false;
   bool twoD = false;
@@ -66,6 +75,8 @@ class _M_1_1State extends State<M_1_1> {
   bool Visible = true;
   @override
   Widget build(BuildContext context) {
+
+
     Size size = MediaQuery.of(context).size;
     return Scaffold(
       body:
@@ -126,11 +137,14 @@ class _M_1_1State extends State<M_1_1> {
             if(!all){
 
             }else if ((zeroU) && (nineD)){
+
+
               Visible = false;
               print(scoreM.niv1);
              print('Correct');
              scoreM.niv1= scoreM.niv1+2;
               print(scoreM.niv1);
+
             }else{
               Navigator.push(
                   context,
@@ -650,6 +664,25 @@ class _M_1_1State extends State<M_1_1> {
                   left: size.width*0.4,
                   top:size.height*0.7,
                   child: SvgPicture.asset(bulleBravo)
+                /*AudioPlayer advancedPlayer;
+
+
+                @override
+                initState() {
+                super.initState();
+                loadMusic();
+                }
+
+                Future loadMusic() async {
+
+                advancedPlayer = await AudioCache().play("audio/mathsObserve.wav");
+                }
+
+                @override
+                void dispose() {
+                advancedPlayer = null;
+                super.dispose();
+                }*/
               ),
             )
             ],

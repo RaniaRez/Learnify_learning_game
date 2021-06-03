@@ -13,6 +13,8 @@ import 'package:somthn/Avatars/PurpleAvatarIcon.dart';
 import 'package:somthn/Avatars/BlueAvatarIcon.dart';
 import '../Services/Login.dart';
 import 'BienvenueFr.dart';
+import 'package:audioplayers/audio_cache.dart';
+import 'package:audioplayers/audioplayers.dart';
 
 class F_2_3_2ndFour extends StatefulWidget {
   const F_2_3_2ndFour({Key key}) : super(key: key);
@@ -22,6 +24,28 @@ class F_2_3_2ndFour extends StatefulWidget {
 }
 
 class _F_2_3_2ndFourState extends State<F_2_3_2ndFour> {
+
+  AudioPlayer advancedPlayer;
+
+
+  @override
+  initState() {
+    super.initState();
+    loadMusic();
+  }
+
+  Future loadMusic() async {
+
+    advancedPlayer = await AudioCache().play("audio/mathsMauvRep.wav");
+  }
+
+  @override
+  void dispose() {
+    advancedPlayer = null;
+    super.dispose();
+  }
+
+
   bool Visible = true;
   bool correct = false;
   @override

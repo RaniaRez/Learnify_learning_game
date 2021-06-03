@@ -1,26 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:somthn/Maths/M-1-5-3rdAttempt-1.dart';
-import 'package:somthn/Maths/M-1-5-3rdAttempt.dart';
-import 'package:somthn/Maths/M-2-4-3rdAttempt.dart';
-import 'dart:math';
 import 'package:somthn/WelcomePages/Settings.dart';
 import 'package:somthn/myicons.dart';
 import '../Buttons/settingsButton.dart';
 import '../Buttons/BacksButton.dart';
-import 'package:somthn/Avatars/OrangeAvatarIcon.dart';
-import 'package:somthn/Avatars/PinkAvatarIcon.dart';
-import 'package:somthn/Avatars/PurpleAvatarIcon.dart';
-import 'package:somthn/Avatars/BlueAvatarIcon.dart';
-//import '../WelcomePages/ChooseAvatar.dart';
 import 'package:somthn/Buttons/buttonAppliquer.dart';
-import 'package:somthn/Maths/M-1-4-3rdAttempt.dart';
 import '../Services/Login.dart';
-import '../Services/SignUp.dart';
-
 import '../myicons.dart';
 import 'M-2-5-3rdAttempt.dart';
 import 'M-2.dart';
+import 'package:audioplayers/audio_cache.dart';
+import 'package:audioplayers/audioplayers.dart';
 
 class I_M_2_5_ extends StatefulWidget {
   const I_M_2_5_({Key key}) : super(key: key);
@@ -30,6 +20,27 @@ class I_M_2_5_ extends StatefulWidget {
 }
 
 class _I_M_2_5_State extends State<I_M_2_5_> {
+
+  AudioPlayer advancedPlayer;
+
+
+  @override
+  initState() {
+    super.initState();
+    loadMusic();
+  }
+
+  Future loadMusic() async {
+
+    advancedPlayer = await AudioCache().play("audio/mathsObserve.wav");
+  }
+
+  @override
+  void dispose() {
+    advancedPlayer = null;
+    super.dispose();
+  }
+
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;

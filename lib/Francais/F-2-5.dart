@@ -222,7 +222,7 @@ class _F_2_5State extends State<F_2_5> {
                 Visibility(
                   visible: Visible,
                   child: Positioned(
-                    top: size.height*0.5,
+                    top: size.height*0.36,
                     left: size.width*0.72,
                     height: size.width*0.3,
                     width: size.width*0.3,

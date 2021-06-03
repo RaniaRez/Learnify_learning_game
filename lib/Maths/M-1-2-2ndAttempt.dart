@@ -32,6 +32,8 @@ import '../Services/Login.dart';
 import '../Services/SignUp.dart';
 import 'BienvenueMath.dart';
 import 'M-1.dart';
+import 'package:audioplayers/audio_cache.dart';
+import 'package:audioplayers/audioplayers.dart';
 
 class M_1_2_2nd extends StatefulWidget {
   const M_1_2_2nd({Key key}) : super(key: key);
@@ -41,6 +43,27 @@ class M_1_2_2nd extends StatefulWidget {
 }
 
 class _M_1_2_2ndState extends State<M_1_2_2nd> {
+
+  AudioPlayer advancedPlayer;
+
+
+  @override
+  initState() {
+    super.initState();
+    loadMusic();
+  }
+
+  Future loadMusic() async {
+
+    advancedPlayer = await AudioCache().play("audio/mathsMauvRep.wav");
+  }
+
+  @override
+  void dispose() {
+    advancedPlayer = null;
+    super.dispose();
+  }
+
   bool oneD = false;
   bool oneU = false;
   bool twoD = false;
