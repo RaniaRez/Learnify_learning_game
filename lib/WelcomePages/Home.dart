@@ -9,6 +9,8 @@ import '../Bulles/BulleIcon.dart';
 import 'Settings.dart';
 import '../Services/Login.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:audioplayers/audio_cache.dart';
+import 'package:audioplayers/audioplayers.dart';
 
 
 
@@ -19,6 +21,23 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
+  AudioPlayer advancedPlayer;
+
+  @override
+  initState() {
+    super.initState();
+    loadMusic();
+  }
+
+  Future loadMusic() async {
+    advancedPlayer = await AudioCache().loop("audio/music.mp3");
+  }
+
+  @override
+  void dispose() {
+    advancedPlayer = null;
+    super.dispose();
+  }
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
