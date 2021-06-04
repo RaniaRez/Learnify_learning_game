@@ -1,28 +1,72 @@
 
-//import 'dart:async';
-
 import 'package:flutter/material.dart';
 import 'package:somthn/WelcomePages/Vite.dart';
 import 'package:somthn/WelcomePages/Voila.dart';
 import 'package:somthn/WelcomePages/custom_dialog_box.dart';
-import 'package:somthn/WelcomePages/timer.dart';
 import '../Buttons/settingsButton.dart';
 import '../Buttons/ButtonAllons-y.dart';
 import '../Bulles/BulleIcon.dart';
 import 'Settings.dart';
 import '../Services/Login.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'timer.dart';
+import 'package:audioplayers/audio_cache.dart';
+import 'package:audioplayers/audioplayers.dart';
+/*import 'package:assets_audio_player/assets_audio_player.dart';
+import 'package:somthn/music.dart';*/
+
 
 
 
 
 class Home extends StatefulWidget {
+
   @override
   _HomeState createState() => _HomeState();
+
 }
 
 class _HomeState extends State<Home> {
+
+  AudioPlayer advancedPlayer;
+
+
+  /*AssetsAudioPlayer _assetsAudioPlayer;
+
+  @override
+  void initState() {
+    super.initState();
+    _assetsAudioPlayer = AssetsAudioPlayer();
+    _assetsAudioPlayer.open(
+      AssetsAudio(
+        asset: "music.mp3",
+        folder: "assets/audio/",
+      ),
+    );
+    _assetsAudioPlayer.playOrPause();
+  }
+
+  @override
+  void dispose() {
+    _assetsAudioPlayer = null;
+    super.dispose();
+  }*/
+
+  @override
+  initState() {
+    super.initState();
+    loadMusic();
+  }
+
+  Future loadMusic() async {
+
+    advancedPlayer = await AudioCache().loop("audio/music.mp3");
+  }
+
+  @override
+  void dispose() {
+    advancedPlayer = null;
+    super.dispose();
+  }
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
@@ -44,10 +88,12 @@ class _HomeState extends State<Home> {
                   top: size.height*0.05,
                   left:size.width*0.75,
                   child:
-                  SettingsButton(onPressed: (){
+                  SettingsButton(onPressed: () async {
+                   // advancedPlayer = await Settings();
+
                     Navigator.push(
                         context,
-                        MaterialPageRoute(builder: (context) => Settings()));
+                        MaterialPageRoute(builder: (context) => Settings(value: advancedPlayer )));
                   },)
               ),
 
@@ -59,8 +105,9 @@ class _HomeState extends State<Home> {
                   height: size.height*0.6,
                   width: size.width*0.6,
                   child: ButtonAllonsy(onPressed: () async {
+                    int result = await advancedPlayer.pause();
+
                     await googleLogin();
-                    timeCounter();
                     print(user.uid);
                     String documentID= user.uid;
                     var d= await Firestore.instance.collection('users').document(documentID).get();
@@ -96,23 +143,6 @@ class _HomeState extends State<Home> {
                 height: size.height*0.6,
                 width: size.width*0.7,
                 child:BulleIcon(onPressed: (){}),
-              ), Positioned(
-                  top: size.height*0.05,
-                  left:size.width*0.1,
-                  child:
-                  SettingsButton(onPressed: (){
-                    print("ff");
-                    showDialog(context: context,
-                        builder: (BuildContext context){
-                          return CustomDialogBox(
-                            title: "Custom Dialog Demo",
-                            descriptions: "Hii all this is a custom dialog in flutter and  you will be use in your flutter applications",
-                            text: "Yes",
-                          );
-                        }
-                    );
-                  },
-                  )
               ),
 
 

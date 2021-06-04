@@ -10,13 +10,21 @@ import '../Buttons/BacksButton.dart';
 import '../Buttons/butttonExit.dart';
 import 'Home.dart';
 import '../Services/auth.dart';
+import 'package:audioplayers/audio_cache.dart';
+import 'package:audioplayers/audioplayers.dart';
+import 'Home.dart';
 
 class Settings extends StatefulWidget {
+  AudioPlayer value = new AudioPlayer();
+  Settings ({this.value});
   @override
   _SettingsState createState() => _SettingsState();
 }
 
 class _SettingsState extends State<Settings> {
+  AudioPlayer value = new AudioPlayer();
+  _SettingsState({this.value});
+
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
@@ -37,7 +45,10 @@ class _SettingsState extends State<Settings> {
         Positioned(
             top: size.height*0.4,
             left:size.width*0.6,
-            child:MusicButton(onPressed:null,)
+            child:MusicButton(onPressed: () async {
+              AudioPlayer advancedPlayer;
+              int result = await advancedPlayer.pause();
+            })
             ),
               Positioned(
                   top: size.height*0.4,

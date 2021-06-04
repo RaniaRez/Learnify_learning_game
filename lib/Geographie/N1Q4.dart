@@ -3,7 +3,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:somthn/Geographie/N1Q4T2_C_1.dart';
 import 'package:somthn/Geographie/N1Q4T2_C_2.dart';
 import 'package:somthn/Geographie/N1Q4T2_C_4.dart';
-import 'package:somthn/Maths/M-2-5.dart';
+import 'package:somthn/Geographie/N1Q5.dart';
 import 'package:somthn/WelcomePages/Settings.dart';
 import 'package:somthn/Buttons/buttonContinuer.dart';
 import 'package:somthn/Buttons/buttonQ.dart';
@@ -15,6 +15,7 @@ import 'package:somthn/Avatars/PinkAvatarIcon.dart';
 import 'package:somthn/Avatars/PurpleAvatarIcon.dart';
 import 'package:somthn/Avatars/BlueAvatarIcon.dart';
 import '../Services/Login.dart';
+import 'package:vibration/vibration.dart';
 
 import 'package:somthn/Bulles/BulleN1Q4.dart';
 
@@ -230,7 +231,7 @@ class _N1Q4State extends State<N1Q4> {
                     child: ButtonContinuer(onPressed: (){
                       Navigator.push(
                           context,
-                          MaterialPageRoute(builder: (context) => M_2_5()));
+                          MaterialPageRoute(builder: (context) => N1Q5()));
                       print('Continuer');},)
                 ),
               ),
@@ -319,6 +320,7 @@ class _N1Q4State extends State<N1Q4> {
                     child: IconButton(
                         onPressed: (){
                           if (fourClicked)  {
+                            Vibration.vibrate();
                             Navigator.push(
                                 context,
                                 MaterialPageRoute(builder: (context) => N1Q4T2_C4()));
@@ -340,6 +342,7 @@ class _N1Q4State extends State<N1Q4> {
                     child: IconButton(
                         onPressed: (){
                           if (twoClicked)  {
+                            Vibration.vibrate();
                             Navigator.push(
                                 context,
                                 MaterialPageRoute(builder: (context) => N1Q4T2_C2()));
@@ -360,6 +363,7 @@ class _N1Q4State extends State<N1Q4> {
                     child: IconButton(
                         onPressed: (){
                           if (oneClicked)  {
+                            Vibration.vibrate();
                             Navigator.push(
                                 context,
                                 MaterialPageRoute(builder: (context) => N1Q4T2_C1()));
@@ -368,6 +372,14 @@ class _N1Q4State extends State<N1Q4> {
                           print('3');
                         },
                         icon: SvgPicture.asset('assets/icons/Annaba.svg'))
+                ),
+
+              ),
+              Visibility(
+                visible: !Visible,
+                child:Align(
+                    alignment: Alignment.center,
+                    child: SvgPicture.asset(Right)
                 ),
               ),
             ],

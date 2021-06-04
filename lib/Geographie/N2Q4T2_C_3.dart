@@ -297,8 +297,6 @@ class _N2Q4T2_C_3State extends State<N2Q4T2_C_3> {
                         onPressed: (){
 
                           if (twoClicked) {
-                            Vibration.vibrate();
-
                             setState(() {
                               correct = true;
                               Visible = false;

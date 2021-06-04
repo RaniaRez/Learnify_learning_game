@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:somthn/Bulles/BullenomIcon.dart';
 import 'package:somthn/Francais/NiveauFr.dart';
-import 'package:somthn/Maths/NiveauMath.dart';
 import 'package:somthn/WelcomePages/ChoixDomaines.dart';
 import 'package:somthn/WelcomePages/Settings.dart';
 import 'package:somthn/Buttons/buttonCommencerDroit.dart';
@@ -12,13 +10,14 @@ import 'package:somthn/Avatars/OrangeAvatarIcon.dart';
 import 'package:somthn/Avatars/PinkAvatarIcon.dart';
 import 'package:somthn/Avatars/PurpleAvatarIcon.dart';
 import 'package:somthn/Avatars/BlueAvatarIcon.dart';
-//import 'package:somthn/Francais/testNiv/TestDeNiveau.dart';
 import '../Services/Login.dart';
 import 'ScoreFr.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'NiveauFr.dart';
 import 'testNiv/BienvenueTest.dart';
 import 'package:somthn/Maths/HighestScore.dart';
+import 'package:audioplayers/audio_cache.dart';
+import 'package:audioplayers/audioplayers.dart';
 HighestScore high ;
 
 ScoreFr scoreF;
@@ -29,6 +28,26 @@ class BienvenueFr extends StatefulWidget {
 }
 
 class _BienvenueFrState extends State<BienvenueFr> {
+  AudioPlayer advancedPlayer;
+
+
+  @override
+  initState() {
+    super.initState();
+    loadMusic();
+  }
+
+  Future loadMusic() async {
+
+    advancedPlayer = await AudioCache().play("audio/introfr.wav");
+  }
+
+  @override
+  void dispose() {
+    advancedPlayer = null;
+    super.dispose();
+  }
+
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;

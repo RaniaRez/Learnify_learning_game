@@ -13,6 +13,9 @@ import 'Home.dart';
 import 'Settings.dart';
 import '../Branches/BranchIconSimple.dart';
 import '../Services/Login.dart';
+import 'package:audioplayers/audio_cache.dart';
+import 'package:audioplayers/audioplayers.dart';
+
 
 
 
@@ -22,6 +25,27 @@ class AllSet extends StatefulWidget {
 }
 
 class _AllSetState extends State<AllSet> {
+
+  AudioPlayer advancedPlayer;
+
+
+  @override
+  initState() {
+    super.initState();
+    loadMusic();
+  }
+
+  Future loadMusic() async {
+
+    advancedPlayer = await AudioCache().play("audio/pret.wav");
+  }
+
+  @override
+  void dispose() {
+    advancedPlayer = null;
+    super.dispose();
+  }
+
   @override
 
   Widget build(BuildContext context) {

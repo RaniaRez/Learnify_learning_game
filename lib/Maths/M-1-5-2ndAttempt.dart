@@ -21,17 +21,14 @@ import 'package:somthn/Buttons/buttonReset.dart';
 import 'package:somthn/myicons.dart';
 import '../Buttons/settingsButton.dart';
 import '../Buttons/BacksButton.dart';
-import 'package:somthn/Avatars/OrangeAvatarIcon.dart';
-import 'package:somthn/Avatars/PinkAvatarIcon.dart';
-import 'package:somthn/Avatars/BlueAvatarIcon.dart';
-import '../WelcomePages/ChooseAvatar.dart';
 import '../Services/Login.dart';
-import '../Services/SignUp.dart';
 import 'BienvenueMath.dart';
 import 'M-1.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'Niveau1Passé.dart';
 import 'NiveauMath.dart';
+import 'package:audioplayers/audio_cache.dart';
+import 'package:audioplayers/audioplayers.dart';
 
 
 class M_1_5_2nd extends StatefulWidget {
@@ -42,6 +39,26 @@ class M_1_5_2nd extends StatefulWidget {
 }
 
 class _M_1_5_2ndState extends State<M_1_5_2nd> {
+
+  AudioPlayer advancedPlayer;
+
+
+  @override
+  initState() {
+    super.initState();
+    loadMusic();
+  }
+
+  Future loadMusic() async {
+
+    advancedPlayer = await AudioCache().play("audio/mathsMauvRep.wav");
+  }
+
+  @override
+  void dispose() {
+    advancedPlayer = null;
+    super.dispose();
+  }
 
   bool oneD = false;
   bool oneU = false;

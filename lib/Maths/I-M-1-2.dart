@@ -1,23 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:somthn/Maths/M-1-1-3rdAttempt-1.dart';
-import 'dart:math';
 import 'package:somthn/Maths/M-1-2-3rdAttempt-1.dart';
-
 import 'package:somthn/WelcomePages/Settings.dart';
-import 'package:somthn/myicons.dart';
 import '../Buttons/BarreProgres.dart';
 import '../Buttons/settingsButton.dart';
 import '../Buttons/BacksButton.dart';
-import 'package:somthn/Avatars/OrangeAvatarIcon.dart';
-import 'package:somthn/Avatars/PinkAvatarIcon.dart';
-import 'package:somthn/Avatars/PurpleAvatarIcon.dart';
-import 'package:somthn/Avatars/BlueAvatarIcon.dart';
-import '../WelcomePages/ChooseAvatar.dart';
 import 'package:somthn/Buttons/buttonAppliquer.dart';
 import '../Services/Login.dart';
-import '../Services/SignUp.dart';
 import 'M-1.dart';
+import 'package:audioplayers/audio_cache.dart';
+import 'package:audioplayers/audioplayers.dart';
+
 class I_M_1_2_ extends StatefulWidget {
   const I_M_1_2_({Key key}) : super(key: key);
 

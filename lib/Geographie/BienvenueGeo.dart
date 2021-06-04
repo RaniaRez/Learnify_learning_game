@@ -15,6 +15,8 @@ import '../myicons.dart';
 import './NiveauGeo.dart';
 import '../WelcomePages/ChoixDomaines.dart';
 
+import 'package:audioplayers/audio_cache.dart';
+import 'package:audioplayers/audioplayers.dart';
 
 
 
@@ -24,6 +26,27 @@ class BienvenueGeo extends StatefulWidget {
 }
 
 class _BienvenueGeoState extends State<BienvenueGeo> {
+
+  AudioPlayer advancedPlayer;
+
+
+  @override
+  initState() {
+    super.initState();
+    loadMusic();
+  }
+
+  Future loadMusic() async {
+
+    advancedPlayer = await AudioCache().play("audio/IntroGeo.wav");
+  }
+
+  @override
+  void dispose() {
+    advancedPlayer = null;
+    super.dispose();
+  }
+
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;

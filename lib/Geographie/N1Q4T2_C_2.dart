@@ -2,9 +2,10 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:somthn/Buttons/BarreProgres.dart';
-import 'package:somthn/Maths/M-1-2.dart';
+import 'package:somthn/Geographie/N1Q5.dart';
 import 'package:somthn/WelcomePages/Settings.dart';
 import 'package:somthn/WelcomePages/Home.dart';
+import 'package:vibration/vibration.dart';
 
 import 'package:somthn/Buttons/buttonContinuer.dart';
 import 'package:somthn/myicons.dart';
@@ -227,7 +228,7 @@ class _N1Q4T2_C2State extends State<N1Q4T2_C2> {
                     child: ButtonContinuer(onPressed: (){
                       Navigator.push(
                           context,
-                          MaterialPageRoute(builder: (context) => Home()));
+                          MaterialPageRoute(builder: (context) => N1Q5()));
                       print('Continuer');},)
                 ),
               ),
@@ -265,6 +266,7 @@ class _N1Q4T2_C2State extends State<N1Q4T2_C2> {
                     child: IconButton(
                         onPressed: (){
                           if (fourClicked) {
+                            Vibration.vibrate();
                             setState(() {
                               correct = false;
                               Visible = false;
@@ -288,6 +290,7 @@ class _N1Q4T2_C2State extends State<N1Q4T2_C2> {
                     child: IconButton(
                         onPressed: (){
                           if (twoClicked) {
+                            Vibration.vibrate();
                             setState(() {
                               correct = false;
                               Visible = false;
@@ -309,6 +312,7 @@ class _N1Q4T2_C2State extends State<N1Q4T2_C2> {
                     child: IconButton(
                         onPressed: (){
                           if (oneClicked) {
+                            Vibration.vibrate();
                             setState(() {
                               correct = false;
                               Visible = false;
@@ -383,6 +387,13 @@ class _N1Q4T2_C2State extends State<N1Q4T2_C2> {
                           child: SvgPicture.asset(bulleBravo)
                       ),
                     ),
+                    Visibility(
+                      visible: !Visible,
+                      child:Align(
+                          alignment: Alignment.center,
+                          child: SvgPicture.asset(Right)
+                      ),
+                    ),
                   ],
                 ),
               if (!correct)
@@ -439,6 +450,7 @@ class _N1Q4T2_C2State extends State<N1Q4T2_C2> {
                           child:Image.asset('images/MadBlue.gif'),
                         ),
                       ),
+
                   ],
                 ),
             ],

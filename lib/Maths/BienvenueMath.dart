@@ -18,6 +18,9 @@ import 'ScoreMaths.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'TestNiv/BienvenueTest.dart';
 import 'HighestScore.dart';
+import 'package:audioplayers/audio_cache.dart';
+import 'package:audioplayers/audioplayers.dart';
+
 
 ScoreMaths score ;
 ScoreMaths scoreM=new  ScoreMaths(true , 0,0,0);
@@ -29,6 +32,26 @@ class BienvenueMath extends StatefulWidget {
 }
 
 class _BienvenueMathState extends State<BienvenueMath> {
+
+  AudioPlayer advancedPlayer;
+
+
+  @override
+  initState() {
+    super.initState();
+    loadMusic();
+  }
+
+  Future loadMusic() async {
+
+    advancedPlayer = await AudioCache().play("audio/Bienvenue_maths.wav");
+  }
+
+  @override
+  void dispose() {
+    advancedPlayer = null;
+    super.dispose();
+  }
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;

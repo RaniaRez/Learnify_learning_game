@@ -17,13 +17,35 @@ import '../Data/DataUser.dart';
 import '../classement/methodes.dart';
 import '../classement/Classement.dart';
 import '../Services/Login.dart';
-
+import 'package:audioplayers/audio_cache.dart';
+import 'package:audioplayers/audioplayers.dart';
 class Voila extends StatefulWidget {
   @override
   _VoilaState createState() => _VoilaState();
 }
 
 class _VoilaState extends State<Voila> {
+
+  AudioPlayer advancedPlayer;
+
+
+  @override
+  initState() {
+    super.initState();
+    loadMusic();
+  }
+
+  Future loadMusic() async {
+
+    advancedPlayer = await AudioCache().play("audio/pret.wav");
+  }
+
+  @override
+  void dispose() {
+    advancedPlayer = null;
+    super.dispose();
+  }
+
   @override
   bool _isVisible = false;
 

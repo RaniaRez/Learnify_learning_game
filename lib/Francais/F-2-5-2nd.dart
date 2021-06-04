@@ -19,6 +19,8 @@ import '../Services/Login.dart';
 import 'BienvenueFr.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'F-2.dart';
+import 'package:audioplayers/audio_cache.dart';
+import 'package:audioplayers/audioplayers.dart';
 
 class F_2_5_2nd extends StatefulWidget {
   const F_2_5_2nd({Key key}) : super(key: key);
@@ -28,6 +30,28 @@ class F_2_5_2nd extends StatefulWidget {
 }
 
 class _F_2_5_2ndState extends State<F_2_5_2nd> {
+
+  AudioPlayer advancedPlayer;
+
+
+  @override
+  initState() {
+    super.initState();
+    loadMusic();
+  }
+
+  Future loadMusic() async {
+
+    advancedPlayer = await AudioCache().play("audio/mathsMauvRep.wav");
+  }
+
+  @override
+  void dispose() {
+    advancedPlayer = null;
+    super.dispose();
+  }
+
+
   bool Visible = true;
   String letterE;
   String letterO;
