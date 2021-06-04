@@ -1,13 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-//import 'package:somthn/Geographie/N2Q4.dart';
 import 'package:somthn/Geographie/N3Q4T2_C_2.dart';
 import 'package:somthn/Geographie/N3Q4T2_C_3.dart';
 import 'package:somthn/Geographie/N3Q4T2_C_4.dart';
 import 'package:somthn/Geographie/N3Q5.dart';
 import 'package:somthn/WelcomePages/Settings.dart';
 import 'package:somthn/Buttons/buttonContinuer.dart';
-import 'package:somthn/Buttons/buttonQ.dart';
 import 'package:somthn/myicons.dart';
 import '../Buttons/settingsButton.dart';
 import '../Buttons/BacksButton.dart';
@@ -16,9 +14,11 @@ import 'package:somthn/Avatars/PinkAvatarIcon.dart';
 import 'package:somthn/Avatars/PurpleAvatarIcon.dart';
 import 'package:somthn/Avatars/BlueAvatarIcon.dart';
 import '../Services/Login.dart';
-
 import 'package:vibration/vibration.dart';
 import 'package:somthn/Geographie/BienvenueGeo.dart';
+import 'package:audioplayers/audio_cache.dart';
+import 'package:audioplayers/audioplayers.dart';
+
 
 class N3Q4 extends StatefulWidget {
   const N3Q4({Key key}) : super(key: key);
@@ -27,6 +27,28 @@ class N3Q4 extends StatefulWidget {
   _N3Q4State createState() => _N3Q4State();
 }
 class _N3Q4State extends State<N3Q4> {
+
+  AudioPlayer advancedPlayer;
+
+
+  @override
+  initState() {
+    super.initState();
+    loadMusic();
+  }
+
+  Future loadMusic() async {
+
+    advancedPlayer = await AudioCache().play("audio/doubleClic.wav");
+  }
+
+  @override
+  void dispose() {
+    advancedPlayer = null;
+    super.dispose();
+  }
+
+  final player = AudioCache();
   bool oneClicked = false;
   bool twoClicked = false;
   bool threeClicked = false;
@@ -104,9 +126,8 @@ class _N3Q4State extends State<N3Q4> {
                     icon: SvgPicture.asset('assets/icons/QuestionMark.svg'),
                     onPressed: (){
                       print('QuestionMark');
-                      setState(() {
-
-                      });},
+                      player.play('audio/geoAnimal.wav');
+                    },
                   ),
                 ),
               ),

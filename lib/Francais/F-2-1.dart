@@ -20,6 +20,9 @@ import 'package:somthn/Avatars/PurpleAvatarIcon.dart';
 import 'package:somthn/Avatars/BlueAvatarIcon.dart';
 import '../Services/Login.dart';
 import 'BienvenueFr.dart';
+import 'package:audioplayers/audio_cache.dart';
+import 'package:audioplayers/audioplayers.dart';
+
 class F_2_1 extends StatefulWidget {
   const F_2_1({Key key}) : super(key: key);
 
@@ -28,6 +31,9 @@ class F_2_1 extends StatefulWidget {
 }
 
 class _F_2_1State extends State<F_2_1> {
+
+  AudioPlayer advancedPlayer;
+
   bool Visible = true;
   bool correct = false;
   @override
@@ -325,14 +331,17 @@ class _F_2_1State extends State<F_2_1> {
                     child:Image.asset('images/HappyBlue.gif'),
                   ),
                 ),
+
               Visibility(
+
                 visible: !Visible,
                 child: Positioned(
                     height: size.width*0.45,
                     width: size.width*0.45,
                     left: size.width*0.4,
                     top:size.height*0.7,
-                    child: SvgPicture.asset(bulleBravo)
+                   child: SvgPicture.asset(bulleBravo)
+
                 ),
               )
             ],

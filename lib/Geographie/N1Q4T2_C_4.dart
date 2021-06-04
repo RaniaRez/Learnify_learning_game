@@ -1,10 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:somthn/Buttons/BarreProgres.dart';
-import 'package:somthn/WelcomePages/Home.dart';
 import 'package:vibration/vibration.dart';
-
 import 'package:somthn/Geographie/N1Q5.dart';
 import 'package:somthn/WelcomePages/Settings.dart';
 import 'package:somthn/Buttons/buttonContinuer.dart';
@@ -17,6 +14,8 @@ import 'package:somthn/Avatars/PurpleAvatarIcon.dart';
 import 'package:somthn/Avatars/BlueAvatarIcon.dart';
 import '../Services/Login.dart';
 import 'package:somthn/Bulles/BulleN1Q4T2.dart';
+import 'package:audioplayers/audio_cache.dart';
+import 'package:audioplayers/audioplayers.dart';
 
 class N1Q4T2_C4 extends StatefulWidget {
   const N1Q4T2_C4({Key key}) : super(key: key);
@@ -26,6 +25,27 @@ class N1Q4T2_C4 extends StatefulWidget {
 }
 
 class _N1Q4T2_C4State extends State<N1Q4T2_C4> {
+
+  AudioPlayer advancedPlayer;
+
+
+  @override
+  initState() {
+    super.initState();
+    loadMusic();
+  }
+
+  Future loadMusic() async {
+
+    advancedPlayer = await AudioCache().play("audio/mathsMauvRep.wav");
+  }
+
+  @override
+  void dispose() {
+    advancedPlayer = null;
+    super.dispose();
+  }
+
   bool Visible = true;
   bool correct = false;
   bool oneClicked = false;

@@ -17,6 +17,8 @@ import 'package:somthn/WelcomePages/Settings.dart';
 import 'package:somthn/myicons.dart';
 import '../Services/Login.dart';
 import 'BienvenueFr.dart';
+import 'package:audioplayers/audio_cache.dart';
+import 'package:audioplayers/audioplayers.dart';
 
 class F_2_4 extends StatefulWidget {
   const F_2_4({Key key}) : super(key: key);
@@ -26,6 +28,27 @@ class F_2_4 extends StatefulWidget {
 }
 
 class _F_2_4State extends State<F_2_4> {
+
+  AudioPlayer advancedPlayer;
+
+  @override
+  initState() {
+    super.initState();
+    loadMusic();
+  }
+
+  Future loadMusic() async {
+
+    advancedPlayer = await AudioCache().play("audio/frPrincesse.wav");
+  }
+
+  @override
+  void dispose() {
+    advancedPlayer = null;
+    super.dispose();
+  }
+
+
   bool Visible = true;
   String letterP;
   String letterR;

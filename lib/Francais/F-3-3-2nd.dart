@@ -39,7 +39,7 @@ class _F_3_3_2ndState extends State<F_3_3_2nd> {
 
   Future loadMusic() async {
 
-    advancedPlayer = await AudioCache().play("audio/mathsMauvRep.wav");
+    advancedPlayer = await AudioCache().play("audio/frGn.wav");
   }
 
   @override
