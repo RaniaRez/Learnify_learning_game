@@ -11,4 +11,5 @@ void setNiv(TestMaths t,ScoreMaths s){
         s.niv3 = 0;
       }
     }
+
 }

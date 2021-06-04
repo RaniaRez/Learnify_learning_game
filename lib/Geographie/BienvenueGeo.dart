@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:somthn/WelcomePages/ChoixDomaines.dart';
 import 'package:somthn/WelcomePages/Settings.dart';
-import 'package:somthn/TestDeNiveau/TestDeniveau.dart';
+//import 'package:somthn/TestDeNiveau/TestDeniveau.dart';
 import 'package:somthn/Buttons/buttonCommencerDroit.dart';
 import '../Buttons/settingsButton.dart';
 import '../Buttons/BacksButton.dart';
@@ -12,6 +13,7 @@ import '../Services/Login.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import '../myicons.dart';
 import './NiveauGeo.dart';
+import '../WelcomePages/ChoixDomaines.dart';
 
 
 
@@ -56,7 +58,9 @@ class _BienvenueGeoState extends State<BienvenueGeo> {
                   top: size.height*0.05,
                   right:size.width*0.75,
                   child: BacksButton(onPressed: (){
-                    Navigator.pop(context);
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => ChoixDomaine()));
                   },)
               ),
               Positioned(

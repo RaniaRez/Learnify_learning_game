@@ -64,6 +64,7 @@ class _NiveauMathState extends State<NiveauMath> {
                 bottom:size.width*0.32,
                 child: PinkAvatarIcon(onPressed:null),
               ),
+              if (score.niv1<0)
               Positioned(
                 top: size.height*0.82,
                 left: size.width*0.5,
@@ -82,7 +83,7 @@ class _NiveauMathState extends State<NiveauMath> {
                     print('Moyen');
                   }),
                 ),
-
+              if (score.niv2<0)
               Positioned(
                 top: size.height*0.57,
                 right: size.width*0.5,
@@ -116,6 +117,7 @@ class _NiveauMathState extends State<NiveauMath> {
                 top:size.width*0.36,
                 child:BrownOwl(onPressed:null),
               ),
+              if (score.niv3<0)
               Positioned(
                 top: size.height*0.32,
                 right: size.width*0.44,

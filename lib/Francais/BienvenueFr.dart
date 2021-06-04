@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:somthn/Bulles/BullenomIcon.dart';
 import 'package:somthn/Francais/NiveauFr.dart';
+import 'package:somthn/Maths/NiveauMath.dart';
+import 'package:somthn/WelcomePages/ChoixDomaines.dart';
 import 'package:somthn/WelcomePages/Settings.dart';
 import 'package:somthn/Buttons/buttonCommencerDroit.dart';
 import '../Buttons/settingsButton.dart';
@@ -9,10 +12,16 @@ import 'package:somthn/Avatars/OrangeAvatarIcon.dart';
 import 'package:somthn/Avatars/PinkAvatarIcon.dart';
 import 'package:somthn/Avatars/PurpleAvatarIcon.dart';
 import 'package:somthn/Avatars/BlueAvatarIcon.dart';
+//import 'package:somthn/Francais/testNiv/TestDeNiveau.dart';
 import '../Services/Login.dart';
+import 'ScoreFr.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'NiveauFr.dart';
+import 'testNiv/BienvenueTest.dart';
+import 'package:somthn/Maths/HighestScore.dart';
+HighestScore high ;
 
-
-
+ScoreFr scoreF;
 
 class BienvenueFr extends StatefulWidget {
   @override
@@ -47,14 +56,16 @@ class _BienvenueFrState extends State<BienvenueFr> {
                     Navigator.push(
                         context,
                         MaterialPageRoute(builder: (context) => Settings()));
-
+                    print("HELL YEAH");
                   },)
               ),
               Positioned(
                   top: size.height*0.05,
                   right:size.width*0.75,
                   child: BacksButton(onPressed: (){
-                    Navigator.pop(context);
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => ChoixDomaine()));
                   },)
               ),
               Positioned(
@@ -62,11 +73,26 @@ class _BienvenueFrState extends State<BienvenueFr> {
                 right: size.width*0.48,
                 height: size.height*0.55,
                 width: size.width*0.55,
-                child: ButtonCommencerD(onPressed: () {
-                  Navigator.push(
+                child: ButtonCommencerD(onPressed: () async {
+                  print('commencer');
+                  var d=await Firestore.instance.collection('users').document(user.uid).collection('domains').document('francais').get();
 
-                      context,
-                      MaterialPageRoute(builder: (context) => NiveauFr()));
+                  scoreF=new ScoreFr(d.data["testFait"], d.data["niv1"], d.data["niv2"], d.data["niv3"]);
+                  high=new HighestScore(d.data["high1"],d.data["high2"],d.data["high3"]);
+
+                  print(scoreF.niv1);
+                  if (scoreF.testFait){
+                    Navigator.push(
+
+                        context,
+                        MaterialPageRoute(builder: (context) => NiveauFr()));}
+                  else {
+                    Navigator.push(
+
+                        context,
+                        MaterialPageRoute(builder: (context) => TestNiveau()));
+                  }
+
                 }
                 ),
               ),

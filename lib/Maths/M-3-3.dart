@@ -167,7 +167,7 @@ class _M_3_3State extends State<M_3_3> {
                 child: Positioned(
 
                     top: size.height*0.84,
-                    left: size.width*0.035,
+
                     height: size.width*0.2,
                     width: size.width*0.33,
                     child: QButton(onPressed: null,)
@@ -177,7 +177,7 @@ class _M_3_3State extends State<M_3_3> {
                 visible: Visible,
                 child: Positioned(
                   top: size.height*0.85,
-                  left: size.width*0.12,
+                  left: size.width*0.08,
                   child: IconButton(
                     iconSize: 50,
                     onPressed: (){
@@ -207,7 +207,7 @@ class _M_3_3State extends State<M_3_3> {
                 visible: Visible,
                 child: Positioned(
                     top: size.height*0.75,
-                    right: size.width*0.03,
+                    right: size.width*0.0,
                     height: size.width*0.2,
                     width: size.width*0.33,
                     child: QButton(onPressed: null,)
@@ -217,7 +217,7 @@ class _M_3_3State extends State<M_3_3> {
                 visible: Visible,
                 child: Positioned(
                   top: size.height*0.76,
-                  right: size.width*0.12,
+                  right: size.width*0.08,
                   child: IconButton(
                     iconSize: 50,
                     onPressed: (){
@@ -285,6 +285,7 @@ class _M_3_3State extends State<M_3_3> {
               ),
               Positioned(
                 top:size.height*0.76,
+                left: size.width*-0.035,
                 height: size.height*0.25,
                 width:size.width*0.4,
                 child: Visibility(
@@ -301,12 +302,12 @@ class _M_3_3State extends State<M_3_3> {
                 ),
               ),
               Positioned(
-                left: size.width*0.6,
+                right: size.width*-0.035,
                 top:size.height*0.68,
                 height: size.height*0.25,
                 width:size.width*0.4,
                 child: Visibility(
-                 visible: twoClicked&&Visible,
+                  visible: twoClicked&&Visible,
 
                   child: IconButton(
                     onPressed: (){
@@ -327,21 +328,19 @@ class _M_3_3State extends State<M_3_3> {
                 top:size.height*0.73,
                 height: size.height*0.25,
                 width:size.width*0.4,
-                child: Transform.rotate(
-                  angle: 7,
-                  child: Visibility(
-                    visible: threeClicked&&Visible,
+                child: Visibility(
+                  visible: threeClicked&&Visible,
 
-                    child: IconButton(
-                      onPressed: (){
-                        setState(() {
-                          Visible = false;
-                        });
-                      },
-                      icon: SvgPicture.asset(quotes),
-                    ),
-
+                  child: IconButton(
+                    onPressed: (){
+                      setState(() {
+                        Visible = false;
+                      });
+                    },
+                    icon: SvgPicture.asset('assets/icons/Quotes2.svg'),
                   ),
+
+
                 ),
               ),
               Visibility(

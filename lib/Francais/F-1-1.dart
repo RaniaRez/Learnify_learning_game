@@ -5,6 +5,7 @@ import 'package:somthn/Buttons/BarreProgres.dart';
 import 'package:somthn/Francais/F-1-2.dart';
 import 'package:somthn/Francais/F-1.dart';
 import 'package:somthn/Francais/I-F-1-1.dart';
+import 'package:somthn/Maths/BienvenueMath.dart';
 import 'package:somthn/WelcomePages/Settings.dart';
 import 'package:somthn/Buttons/buttonContinuer.dart';
 import 'package:somthn/myicons.dart';
@@ -15,6 +16,7 @@ import 'package:somthn/Avatars/PinkAvatarIcon.dart';
 import 'package:somthn/Avatars/PurpleAvatarIcon.dart';
 import 'package:somthn/Avatars/BlueAvatarIcon.dart';
 import '../Services/Login.dart';
+import 'BienvenueFr.dart';
 
 
 class F_1_1 extends StatefulWidget {
@@ -175,6 +177,8 @@ class _F_1_1State extends State<F_1_1> {
                   width: size.width*0.4,
                   child: IconButton(
                       onPressed: (){
+                        print('HADA SCORE');
+                        print(scoreF.niv1);
                         Navigator.push(
                             context,
                             MaterialPageRoute(builder: (context) => I_F_1_1()));
@@ -185,7 +189,7 @@ class _F_1_1State extends State<F_1_1> {
 
 
 
-              //if (user.avatar=="Pink")
+              if (user.avatar=="Pink")
                 Visibility(
                   visible: Visible,
                   child: Positioned(
@@ -195,6 +199,7 @@ class _F_1_1State extends State<F_1_1> {
                     width: size.width*0.3,
                     child:PinkAvatarIcon(onPressed: (){
                       setState(() {
+                        scoreF.niv1+=2;
                         Visible=false;
                       });
                     },),
@@ -210,6 +215,7 @@ class _F_1_1State extends State<F_1_1> {
                     width: size.width*0.35,
                     child:PurpleAvatarIcon(
                       onPressed: (){
+                        scoreF.niv1+=2;
                         setState(() {
                           Visible=false;
                         });
@@ -227,6 +233,7 @@ class _F_1_1State extends State<F_1_1> {
                     width: size.width*0.3,
                     child: OrangeAvatarIcon(
                       onPressed: (){
+                        scoreF.niv1+=2;
                         setState(() {
                           Visible=false;
                         });
@@ -244,6 +251,7 @@ class _F_1_1State extends State<F_1_1> {
                     width: size.width*0.3,
                     child:BlueAvatarIcon(
                       onPressed: (){
+                        scoreF.niv1+=2;
                         setState(() {
                           Visible=false;
                         });
@@ -269,6 +277,8 @@ class _F_1_1State extends State<F_1_1> {
                     height: size.height*0.2,
                     width: size.width*0.5,
                     child: ButtonContinuer(onPressed: (){
+                      print('HADA SCORE');
+                      print(scoreF.niv1);
                       Navigator.push(
                           context,
                           new MaterialPageRoute(builder: (context) => new F_1_2()));

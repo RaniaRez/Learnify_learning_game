@@ -12,6 +12,7 @@ import 'package:somthn/Avatars/PinkAvatarIcon.dart';
 import 'package:somthn/Avatars/PurpleAvatarIcon.dart';
 import 'package:somthn/Avatars/BlueAvatarIcon.dart';
 import '../Services/Login.dart';
+import 'BienvenueFr.dart';
 
 class F_2_3_2ndFour extends StatefulWidget {
   const F_2_3_2ndFour({Key key}) : super(key: key);
@@ -123,13 +124,14 @@ class _F_2_3_2ndFourState extends State<F_2_3_2ndFour> {
                         setState(() {
                           Visible=false;
                           correct=true;
+                          scoreF.niv2+=1;
                         });
                       },
                       icon: SvgPicture.asset('assets/icons/gu.svg')),
                 ),
               ),
 
-              //if (user.avatar=="Pink")
+              if (user.avatar=="Pink")
               Visibility(
                 visible: Visible,
                 child: Positioned(
@@ -193,6 +195,8 @@ class _F_2_3_2ndFourState extends State<F_2_3_2ndFour> {
                     height: size.height*0.2,
                     width: size.width*0.5,
                     child: ButtonContinuer(onPressed: (){
+                      print('HADA SCORE');
+                      print(scoreF.niv2);
                       Navigator.push(
                           context,
                           new MaterialPageRoute(builder: (context) => new F_2_4()));

@@ -11,10 +11,15 @@ import 'package:somthn/Buttons/buttonGoTo.dart';
 import 'package:somthn/Buttons/buttonReset.dart';
 import 'package:somthn/Buttons/settingsButton.dart';
 import 'package:somthn/Francais/F-1.dart';
+import 'package:somthn/Francais/F-3.dart';
 import 'package:somthn/Francais/Niveau3Pass%C3%A9.dart';
+import 'package:somthn/Francais/NiveauFr.dart';
 import 'package:somthn/WelcomePages/Settings.dart';
 import 'package:somthn/myicons.dart';
 import '../Services/Login.dart';
+import 'BienvenueFr.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
+
 
 class F_3_5_2nd extends StatefulWidget {
   const F_3_5_2nd({Key key}) : super(key: key);
@@ -99,6 +104,8 @@ bool correct=false;
                       setState(() {
                         Visible=false;
                         correct=false;
+                        scoreF.niv3+=1;
+
                       });}else if ((drag1==null)&&(drag2==null)&&(drag3==null)&&(drag4==null)&&(drag5==null)&&(drag6==null)){}
                     else{
                       setState(() {
@@ -160,9 +167,18 @@ bool correct=false;
                     height: size.height*0.2,
                     width: size.width*0.5,
                     child: ButtonContinuer(onPressed: (){
-                      Navigator.push(
-                          context,
-                          MaterialPageRoute(builder: (context) => Niveau3Pass()));},)
+
+                      print("score final");
+                      print(scoreF.niv3);
+                      Firestore.instance.collection('users').document(user.uid).collection('domains').document('francais').updateData({'niv3':scoreF.niv3});
+                      if (scoreF.niv3>high.niv3)
+                      { high.niv3=scoreF.niv3 ;
+                      Firestore.instance.collection('users').document(user.uid).collection('domains').document('francais').updateData({'high3':scoreF.niv3});}
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(builder: (context) => Niveau3Pass()));
+
+                      },)
                 ),
               ),
               if (user.avatar=="Pink")

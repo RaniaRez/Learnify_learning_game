@@ -11,11 +11,15 @@ import 'package:somthn/Buttons/buttonGoTo.dart';
 import 'package:somthn/Buttons/buttonReset.dart';
 import 'package:somthn/Buttons/settingsButton.dart';
 import 'package:somthn/Francais/F-1.dart';
+import 'package:somthn/Francais/F-2.dart';
 import 'package:somthn/Francais/Niveau2Pass%C3%A9.dart';
+import 'package:somthn/Francais/NiveauFr.dart';
 import 'package:somthn/WelcomePages/Settings.dart';
 import 'package:somthn/myicons.dart';
 import '../Services/Login.dart';
 import 'F-2-5-2nd.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'BienvenueFr.dart';
 
 class F_2_5 extends StatefulWidget {
   const F_2_5({Key key}) : super(key: key);
@@ -94,6 +98,7 @@ class _F_2_5State extends State<F_2_5> {
                   left: size.width*0.75,
                   child: GoToButton(onPressed: (){
                     if((drag1=="assets/icons/v.svg")&&(drag2=="assets/icons/o.svg")&&(drag3=="assets/icons/i.svg")&&(drag4=="assets/icons/l.svg")&&(drag5=="assets/icons/e.svg")){
+                      scoreF.niv2+=2;
                       setState(() {
                         Visible=false;
                       });}else if ((drag1==null)&&(drag2==null)&&(drag3==null)){}
@@ -155,16 +160,27 @@ class _F_2_5State extends State<F_2_5> {
                     height: size.height*0.2,
                     width: size.width*0.5,
                     child: ButtonContinuer(onPressed: (){
-                      Navigator.push(
-                          context,
-                          MaterialPageRoute(builder: (context) => Niveau2Pass()));},)
+
+                      print("score final");
+                      print(scoreF.niv2);
+                      Firestore.instance.collection('users').document(user.uid).collection('domains').document('francais').updateData({'niv2':scoreF.niv2});
+                      if (scoreF.niv2>high.niv2)
+                      { high.niv2=scoreF.niv2 ;
+                        Firestore.instance.collection('users').document(user.uid).collection('domains').document('francais').updateData({'high2':scoreF.niv2});}
+                        if (scoreF.niv3<0) { scoreF.niv3=0;
+                        Firestore.instance.collection('users').document(user.uid).collection('domains').document('francais').updateData({'niv3':scoreF.niv3});}
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(builder: (context) => Niveau2Pass()));
+
+                      },)
                 ),
               ),
               if (user.avatar=="Pink")
                 Visibility(
                   visible: Visible,
                   child: Positioned(
-                    top: size.height*0.5,
+                    top: size.height*0.36,
                     left: size.width*0.72,
                     height: size.width*0.3,
                     width: size.width*0.3,
@@ -587,7 +603,7 @@ class _F_2_5State extends State<F_2_5> {
                     height: size.width*0.35,
                     width: size.width*0.35,
                     left: size.width*0.1,
-                    top:size.height*0.7,
+                    top:size.height*0.5,
                     child:Image.asset('images/HappyPurple.gif'),
                   ),
                 ),

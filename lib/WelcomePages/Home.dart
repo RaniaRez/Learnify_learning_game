@@ -1,14 +1,18 @@
 
+//import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:somthn/WelcomePages/Vite.dart';
 import 'package:somthn/WelcomePages/Voila.dart';
 import 'package:somthn/WelcomePages/custom_dialog_box.dart';
+import 'package:somthn/WelcomePages/timer.dart';
 import '../Buttons/settingsButton.dart';
 import '../Buttons/ButtonAllons-y.dart';
 import '../Bulles/BulleIcon.dart';
 import 'Settings.dart';
 import '../Services/Login.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'timer.dart';
 
 
 
@@ -56,6 +60,7 @@ class _HomeState extends State<Home> {
                   width: size.width*0.6,
                   child: ButtonAllonsy(onPressed: () async {
                     await googleLogin();
+                    timeCounter();
                     print(user.uid);
                     String documentID= user.uid;
                     var d= await Firestore.instance.collection('users').document(documentID).get();

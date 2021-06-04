@@ -6,13 +6,14 @@ import 'package:somthn/Avatars/PinkAvatarIcon.dart';
 import 'package:somthn/Avatars/PurpleAvatarIcon.dart';
 import 'package:somthn/Avatars/BlueAvatarIcon.dart';
 import 'package:somthn/Buttons/buttonCommencer.dart';
-import '../Buttons/settingsButton.dart';
-import '../WelcomePages/Users.dart';
-import '../WelcomePages/Settings.dart';
-import '../myicons.dart';
-import '../WelcomePages/ChooseAvatar.dart';
-import '../Services/Login.dart';
-import '../Services/SignUp.dart';
+import 'package:somthn/Buttons/settingsButton.dart';
+import 'package:somthn/WelcomePages/Users.dart';
+import 'package:somthn/WelcomePages/Settings.dart';
+import 'package:somthn/myicons.dart';
+import 'package:somthn/WelcomePages/ChooseAvatar.dart';
+import 'package:somthn/Services/Login.dart';
+import 'package:somthn/Services/SignUp.dart';
+import 'TestNivFrQ1.dart';
 
 class TestNiveau extends StatefulWidget {
   @override
@@ -53,7 +54,7 @@ class _TestNiveauState extends State<TestNiveau> {
                   child: ButtonCommencer(onPressed: (){
                     Navigator.push(
                         context,
-                        MaterialPageRoute(builder: (context) => Users()));
+                        MaterialPageRoute(builder: (context) => TestNivFr1()));
                     print("allons-y");
                   } )),
               Positioned(
@@ -81,16 +82,16 @@ class _TestNiveauState extends State<TestNiveau> {
                     width: size.width*0.5,
                     left: size.width*0.52,
                     top:size.height*0.4,
-                  child: SvgPicture.asset(SimpleBranch2)),
-                ),
+                    child: SvgPicture.asset(SimpleBranch2)),
+              ),
               if (user.avatar=="Pink")
                 Visibility(
 
                   child: Positioned(
-                     top: size.height*0.45,
-                     right: size.width*0.05 ,
-                      height: size.height*0.3,
-                     width: size.width*0.3,
+                    top: size.height*0.45,
+                    right: size.width*0.05 ,
+                    height: size.height*0.3,
+                    width: size.width*0.3,
                     child:PinkAvatarIcon(onPressed: null,),
                   ),
                 ),

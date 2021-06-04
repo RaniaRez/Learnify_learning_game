@@ -1,15 +1,20 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:somthn/Avatars/OrangeAvatarIcon.dart';
+import 'package:somthn/Branches/BranchIconSimple.dart';
 import 'package:somthn/Francais/F-1-1.dart';
+import 'package:somthn/Francais/NiveauFr.dart';
+import 'package:somthn/Maths/M-1-1.dart';
 import 'package:somthn/WelcomePages/Settings.dart';
 import 'package:somthn/Buttons/buttonGoTo.dart';
+import 'package:somthn/myicons.dart';
 import '../Buttons/settingsButton.dart';
 import '../Buttons/BacksButton.dart';
 import 'package:somthn/Avatars/PinkAvatarIcon.dart';
 import 'package:somthn/Avatars/PurpleAvatarIcon.dart';
 import 'package:somthn/Avatars/BlueAvatarIcon.dart';
 import '../Services/Login.dart';
+import 'BienvenueFr.dart';
 
 
 class Fr1 extends StatefulWidget {
@@ -44,25 +49,37 @@ class _Fr1State extends State<Fr1> {
                     Navigator.push(
                         context,
                         MaterialPageRoute(builder: (context) => Settings()));
+                    print("HELL YEAH");
                   },)
               ),
               Positioned(
                   top: size.height*0.05,
                   right:size.width*0.75,
                   child: BacksButton(onPressed: (){
-                    Navigator.pop(context);
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => NiveauFr()));
                   },)
               ),
 
+
+              Visibility(
+
+                child: Positioned(
+                  top: size.height*0.62,
+                  right: size.width*0.62 ,
+                  child:BranchIconSimple(),
+                ),
+              ),
 
               if (user.avatar=="Pink")
                 Visibility(
 
                   child: Positioned(
-                    height: size.width*0.3,
+                    top: size.height*0.45,
+                    right: size.width*0.63 ,
+                    height: size.height*0.3,
                     width: size.width*0.3,
-                    left: size.width*0.1,
-                    bottom:size.width*0.7,
                     child:PinkAvatarIcon(onPressed: null,),
                   ),
                 ),
@@ -70,11 +87,11 @@ class _Fr1State extends State<Fr1> {
                 Visibility(
 
                   child: Positioned(
-                    height: size.width*0.35,
+                    top: size.height*0.43,
+                    right: size.width*0.63 ,
+                    height: size.height*0.35,
                     width: size.width*0.35,
 
-                    left: size.width*0.07,
-                    bottom:size.width*0.69,
                     child:PurpleAvatarIcon(onPressed: null,),
                   ),
                 ),
@@ -82,10 +99,10 @@ class _Fr1State extends State<Fr1> {
                 Visibility(
 
                   child: Positioned(
-                    height: size.width*0.3,
+                    top: size.height*0.46,
+                    right: size.width*0.63 ,
+                    height: size.height*0.3,
                     width: size.width*0.3,
-                    left: size.width*0.1,
-                    bottom:size.width*0.7,
                     child: OrangeAvatarIcon(onPressed: null,),
                   ),
                 ),
@@ -93,10 +110,10 @@ class _Fr1State extends State<Fr1> {
                 Visibility(
 
                   child: Positioned(
-                    height: size.width*0.3,
+                    top: size.height*0.45,
+                    right: size.width*0.63 ,
+                    height: size.height*0.3,
                     width: size.width*0.3,
-                    left: size.width*0.1,
-                    bottom:size.width*0.7,
                     child:BlueAvatarIcon(onPressed: null,),
                   ),
                 ),
@@ -114,6 +131,9 @@ class _Fr1State extends State<Fr1> {
                 top: size.height*0.8,
                 left:size.width*0.75,
                 child: GoToButton(onPressed: (){
+                  print("HELL YEAH");
+                  scoreF.niv1=0;
+
                   Navigator.push(
                     context,
                     MaterialPageRoute(builder: (context) => F_1_1()),);

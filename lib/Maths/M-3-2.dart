@@ -47,6 +47,7 @@ class _M_3_2State extends State<M_3_2> {
   bool correct = false;
   bool oneClicked = false;
   bool twoClicked = false;
+  bool threeClicked=false;
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
@@ -100,50 +101,7 @@ class _M_3_2State extends State<M_3_2> {
                   child: SvgPicture.asset(TwoBars),
                 ),
               ),
-              if (user.avatar=="Pink")
-                Visibility(
-                  visible: Visible,
-                  child: Positioned(
-                    top: size.height*0.5,
-                    left: size.width*0.72,
-                    height: size.width*0.3,
-                    width: size.width*0.3,
-                    child:PinkAvatarIcon(onPressed: null,),
-                  ),
-                ),
-              if (user.avatar=="Purple")
-                Visibility(
-                  visible: Visible,
-                  child: Positioned(
-                    top: size.height*0.49,
-                    left: size.width*0.69,
-                    height: size.width*0.35,
-                    width: size.width*0.35,
-                    child:PurpleAvatarIcon(onPressed: null,),
-                  ),
-                ),
-              if (user.avatar=="Orange")
-                Visibility(
-                  visible: Visible,
-                  child: Positioned(
-                    top: size.height*0.5,
-                    left: size.width*0.72,
-                    height: size.width*0.3,
-                    width: size.width*0.3,
-                    child: OrangeAvatarIcon(onPressed: null,),
-                  ),
-                ),
-              if (user.avatar=="Blue")
-                Visibility(
-                  visible: Visible,
-                  child: Positioned(
-                    top: size.height*0.5,
-                    left: size.width*0.72,
-                    height: size.width*0.3,
-                    width: size.width*0.3,
-                    child:BlueAvatarIcon(onPressed: null,),
-                  ),
-                ),
+
               Positioned(
                 top: size.height*0.2,
                 left: size.width*0.1,
@@ -156,8 +114,7 @@ class _M_3_2State extends State<M_3_2> {
                 visible: Visible,
                 child: Positioned(
 
-                    top: size.height*0.84,
-                    left: size.width*0.1,
+                    top: size.height*0.74,
                     height: size.width*0.2,
                     width: size.width*0.33,
                     child: QButton(onPressed: null,)
@@ -166,8 +123,8 @@ class _M_3_2State extends State<M_3_2> {
               Visibility(
                 visible: Visible,
                 child: Positioned(
-                  top: size.height*0.85,
-                  left: size.width*0.18,
+                  top: size.height*0.75,
+                  left: size.width*0.08,
                   child: IconButton(
                     iconSize: 50,
                     onPressed: (){
@@ -175,6 +132,7 @@ class _M_3_2State extends State<M_3_2> {
                       setState(() {
                         oneClicked = true;
                         twoClicked = false;
+                        threeClicked=false;
                       });},
                     icon: FittedBox(
                       fit: BoxFit.fitWidth,
@@ -195,8 +153,9 @@ class _M_3_2State extends State<M_3_2> {
               Visibility(
                 visible: Visible,
                 child: Positioned(
-                    top: size.height*0.75,
-                    right: size.width*0.1,
+
+                    top: size.height*0.7,
+                    left: size.width*0.34,
                     height: size.width*0.2,
                     width: size.width*0.33,
                     child: QButton(onPressed: null,)
@@ -205,14 +164,55 @@ class _M_3_2State extends State<M_3_2> {
               Visibility(
                 visible: Visible,
                 child: Positioned(
-                  top: size.height*0.76,
-                  right: size.width*0.18,
+                  top: size.height*0.71,
+                  left: size.width*0.425,
                   child: IconButton(
                     iconSize: 50,
                     onPressed: (){
                       print('frdv');
                       setState(() {
                         oneClicked = false;
+                        twoClicked = false;
+                        threeClicked=true;
+                      });},
+                    icon: FittedBox(
+                      fit: BoxFit.fitWidth,
+                      child: Text(
+                        '7',
+                        style:TextStyle(
+                          fontSize: 30,
+                          fontFamily: 'Skranji-Bold',
+                          fontWeight: FontWeight.bold,
+                          color:Colors.brown[700],
+                        ),
+                        textAlign: TextAlign.center,
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+              Visibility(
+                visible: Visible,
+                child: Positioned(
+                    top: size.height*0.65,
+                    right: size.width*0.0,
+                    height: size.width*0.2,
+                    width: size.width*0.33,
+                    child: QButton(onPressed: null,)
+                ),
+              ),
+              Visibility(
+                visible: Visible,
+                child: Positioned(
+                  top: size.height*0.66,
+                  right: size.width*0.08,
+                  child: IconButton(
+                    iconSize: 50,
+                    onPressed: (){
+                      print('frdv');
+                      setState(() {
+                        oneClicked = false;
+                        threeClicked=false;
                         twoClicked = true;
                       });},
                     icon: FittedBox(
@@ -232,8 +232,8 @@ class _M_3_2State extends State<M_3_2> {
                 ),
               ),
               Positioned(
-                left: size.width*0.06,
-                top:size.height*0.76,
+                left: size.width*-0.035,
+                top:size.height*0.66,
                 height: size.height*0.25,
                 width:size.width*0.4,
                 child: Visibility(
@@ -250,8 +250,26 @@ class _M_3_2State extends State<M_3_2> {
                 ),
               ),
               Positioned(
-                right: size.width*0.065,
-                top:size.height*0.68,
+                left: size.width*0.31,
+                top:size.height*0.62,
+                height: size.height*0.25,
+                width:size.width*0.4,
+                child: Visibility(
+                  visible: threeClicked&&Visible,
+                  child: IconButton(
+                    onPressed: (){
+                      setState(() {
+                        Visible = false;
+                      });
+                    },
+                    icon: SvgPicture.asset('assets/icons/Quotes2.svg'),
+                  ),
+
+                ),
+              ),
+              Positioned(
+                right: size.width*-0.035,
+                top:size.height*0.58,
                 height: size.height*0.25,
                 width:size.width*0.4,
                 child: Visibility(
@@ -271,6 +289,50 @@ class _M_3_2State extends State<M_3_2> {
 
                 ),
               ),
+               if (user.avatar=="Pink")
+              Visibility(
+                visible: Visible,
+                child: Positioned(
+                  top: size.height*0.525,
+                  left: size.width*0.72,
+                  height: size.width*0.3,
+                  width: size.width*0.3,
+                  child:PinkAvatarIcon(onPressed: null,),
+                ),
+              ),
+              if (user.avatar=="Purple")
+                Visibility(
+                  visible: Visible,
+                  child: Positioned(
+                    top: size.height*0.52,
+                    left: size.width*0.69,
+                    height: size.width*0.35,
+                    width: size.width*0.35,
+                    child:PurpleAvatarIcon(onPressed: null,),
+                  ),
+                ),
+              if (user.avatar=="Orange")
+                Visibility(
+                  visible: Visible,
+                  child: Positioned(
+                    top: size.height*0.53,
+                    left: size.width*0.72,
+                    height: size.width*0.3,
+                    width: size.width*0.3,
+                    child: OrangeAvatarIcon(onPressed: null,),
+                  ),
+                ),
+             if (user.avatar=="Blue")
+                Visibility(
+                  visible: Visible,
+                  child: Positioned(
+                    top: size.height*0.525,
+                    left: size.width*0.72,
+                    height: size.width*0.3,
+                    width: size.width*0.3,
+                    child:BlueAvatarIcon(onPressed: null,),
+                  ),
+                ),
               Visibility(
                 visible: !Visible,
                 child: Positioned(

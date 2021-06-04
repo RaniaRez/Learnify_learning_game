@@ -13,9 +13,14 @@ import 'package:somthn/Buttons/settingsButton.dart';
 import 'package:somthn/Francais/F-1-5-2nd.dart';
 import 'package:somthn/Francais/F-1.dart';
 import 'package:somthn/Francais/Niveau1Pass%C3%A9.dart';
+import 'package:somthn/Francais/NiveauFr.dart';
 import 'package:somthn/WelcomePages/Settings.dart';
 import 'package:somthn/myicons.dart';
 import '../Services/Login.dart';
+import 'BienvenueFr.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'Niveau1Passé.dart';
+
 
 class F_1_5 extends StatefulWidget {
   const F_1_5({Key key}) : super(key: key);
@@ -56,6 +61,7 @@ class _F_1_5State extends State<F_1_5> {
                     Navigator.push(
                         context,
                         MaterialPageRoute(builder: (context) => Settings()));
+                    print("HELL YEAH");
                   },)
               ),
               Positioned(
@@ -90,6 +96,10 @@ class _F_1_5State extends State<F_1_5> {
                   left: size.width*0.75,
                   child: GoToButton(onPressed: (){
                     if((drag1=="assets/icons/s.svg")&&(drag2=="assets/icons/o.svg")&&(drag3=="assets/icons/l.svg")){
+                      print('correct');
+                      scoreF.niv1+=2;
+                      print('HADA SCORE');
+                      print(scoreF.niv1);
                       setState(() {
                         Visible=false;
                       });}else if ((drag1==null)&&(drag2==null)&&(drag3==null)){}
@@ -98,6 +108,7 @@ class _F_1_5State extends State<F_1_5> {
                           context,
                           MaterialPageRoute(builder: (context) => F_1_5_2nd()));
                     }
+                    print("HELL YEAH");
 
                   },),
                 ),
@@ -134,6 +145,7 @@ class _F_1_5State extends State<F_1_5> {
                           drag2=null;
                           drag3=null;
                         });
+                        print('reset');
                       }
 
                   ),
@@ -147,9 +159,22 @@ class _F_1_5State extends State<F_1_5> {
                     height: size.height*0.2,
                     width: size.width*0.5,
                     child: ButtonContinuer(onPressed: (){
-                      Navigator.push(
-                          context,
-                          MaterialPageRoute(builder: (context) => Niveau1Pass()));},)
+
+                      print("score final");
+                      print(scoreF.niv1);
+                      Firestore.instance.collection('users').document(user.uid).collection('domains').document('francais').updateData({'niv1':scoreF.niv1});
+                      if (scoreF.niv1>high.niv1)
+                        { high.niv1=scoreF.niv1 ;
+                          Firestore.instance.collection('users').document(user.uid).collection('domains').document('francais').updateData({'high1':scoreF.niv1});}
+                            if (scoreF.niv2<0) { scoreF.niv2=0;
+                            Firestore.instance.collection('users').document(user.uid).collection('domains').document('francais').updateData({'niv2':scoreF.niv2});}
+                            Navigator.push(
+                            context,
+                            MaterialPageRoute(builder: (context) => Niveau1Pass()));
+
+                      print('Continuer');
+
+                      },)
                 ),
               ),
               if (user.avatar=="Pink")
@@ -208,7 +233,7 @@ class _F_1_5State extends State<F_1_5> {
                       /// Draggable
                       Draggable<String>(
                         onDragCompleted: (){
-                            
+                          print('gfds');
                           letterO = 'assets/icons/o.svg';
                         },
                         data:
@@ -250,7 +275,7 @@ class _F_1_5State extends State<F_1_5> {
                       SizedBox( width: size.width*0.1,),
                       Draggable<String>(
                         onDragCompleted: (){
-                            
+                          print('gfds');
                           letterS = 'assets/icons/s.svg';
                         },
                         data:
@@ -290,7 +315,7 @@ class _F_1_5State extends State<F_1_5> {
                       SizedBox( width: size.width*0.1,),
                       Draggable<String>(
                         onDragCompleted: (){
-                            
+                          print('gfds');
                           letterL = 'assets/icons/l.svg';
                         },
                         data:

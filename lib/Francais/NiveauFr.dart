@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:somthn/Buttons/BacksButton.dart';
 import 'package:somthn/Francais/F-1.dart';
+import 'package:somthn/Francais/F-3.dart';
+import 'package:somthn/Maths/BienvenueMath.dart';
 import 'package:somthn/Maths/M-2.dart';
 import 'package:somthn/Owls/BrownOwl.dart';
 import 'package:somthn/Owls/LockIcon.dart';
+import 'package:somthn/Maths/M-1.dart';
 import 'package:somthn/Avatars/PinkAvatarIcon.dart';
 import 'package:somthn/WelcomePages/Settings.dart';
 import 'package:somthn/Buttons/buttonDifficile.dart';
@@ -11,8 +14,8 @@ import 'package:somthn/Buttons/buttonMoyen.dart';
 import 'package:somthn/Buttons/buttonfacile.dart';
 import 'package:somthn/Owls/madGreenOwl.dart';
 import 'package:somthn/Buttons/settingsButton.dart';
-
-
+import 'F-2.dart';
+import 'BienvenueFr.dart';
 
 class NiveauFr extends StatefulWidget {
   @override
@@ -49,7 +52,7 @@ class _NiveauFrState extends State<NiveauFr> {
                   Navigator.push(
                       context,
                       MaterialPageRoute(builder: (context) => Fr1()));
-                }),
+                  print('facile');}),
               ),
 
               Positioned(
@@ -59,6 +62,7 @@ class _NiveauFrState extends State<NiveauFr> {
                 bottom:size.width*0.32,
                 child: PinkAvatarIcon(onPressed:null),
               ),
+              if (scoreF.niv1<0)
               Positioned(
                   top: size.height*0.82,
                   left: size.width*0.5,
@@ -69,12 +73,17 @@ class _NiveauFrState extends State<NiveauFr> {
                 height: size.height*0.2,
                 width: size.width*0.5,
                 child: ButtonMoyen(onPressed:(){
-                  Navigator.push(
-                      context,
-                      MaterialPageRoute(builder: (context) => Math2()));
+                  print(scoreF.niv2);
+                  if (scoreF.niv2>=0){
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => Fr2()));}
+
+                  print('Moyen');
                 }),
               ),
 
+              if (scoreF.niv2<0)
               Positioned(
                   top: size.height*0.57,
                   right: size.width*0.5,
@@ -93,6 +102,11 @@ class _NiveauFrState extends State<NiveauFr> {
                 height: size.height*0.2,
                 width: size.width*0.5,
                 child: ButtonDifficile(onPressed:(){
+                  print(scoreF.niv3);
+                  if (scoreF.niv3>=0){
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => Fr3()));}
                   print('hard');
                 }),
               ),
@@ -104,6 +118,7 @@ class _NiveauFrState extends State<NiveauFr> {
                 top:size.width*0.36,
                 child:BrownOwl(onPressed:null),
               ),
+              if (scoreF.niv3<0)
               Positioned(
                   top: size.height*0.32,
                   right: size.width*0.44,
@@ -116,13 +131,16 @@ class _NiveauFrState extends State<NiveauFr> {
                     Navigator.push(
                         context,
                         MaterialPageRoute(builder: (context) => Settings()));
+                    print("HELL YEAH");
                   },)
               ),
               Positioned(
                   top: size.height*0.05,
                   right:size.width*0.75,
                   child: BacksButton(onPressed: (){
-                    Navigator.pop(context);
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => BienvenueFr()));
                   },)
               ),
             ]
