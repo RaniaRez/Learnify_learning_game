@@ -15,6 +15,8 @@ import 'package:somthn/Buttons/buttonfacile.dart';
 import 'package:somthn/Owls/madGreenOwl.dart';
 import 'package:somthn/Buttons/settingsButton.dart';
 
+import 'N1Q3.dart';
+
 
 
 class NiveauGeo extends StatefulWidget {
@@ -51,7 +53,7 @@ class _NiveauGeoState extends State<NiveauGeo> {
                   child:Buttonfacile (onPressed:(){
                     Navigator.push(
                         context,
-                        MaterialPageRoute(builder: (context) => N1Q2()));
+                        MaterialPageRoute(builder: (context) => N1Q3()));
                     print('facile');}),
                 ),
 

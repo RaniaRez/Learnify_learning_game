@@ -7,12 +7,30 @@ import 'package:somthn/Buttons/HomeButton.dart';
 import 'package:somthn/Avatars/OrangeAvatarIcon.dart';
 import 'package:somthn/Avatars/PinkAvatarIcon.dart';
 import 'package:somthn/Avatars/PurpleAvatarIcon.dart';
+import 'package:somthn/Francais/ScoreFr.dart';
+import 'package:somthn/Geographie/ScoreGeo.dart';
+import 'package:somthn/Maths/HighestScore.dart';
+import 'package:somthn/Statistics/ScoreFr.dart';
+import 'package:somthn/Statistics/ScoreGeo.dart';
+import 'package:somthn/Statistics/ScoreMath.dart';
 import 'package:somthn/WelcomePages/Settings.dart';
 import '../Buttons/settingsButton.dart';
 import '../Buttons/BacksButton.dart';
 import '../WelcomePages/Home.dart';
 import '../Services/Login.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
+import '../Maths/ScoreMaths.dart';
+import '../Francais/ScoreFr.dart';
+import 'ScoreFinal.dart';
 
+ScoreMaths scorM;
+HighestScore highM;
+
+ScoreFr scorF ;
+HighestScore highF ;
+
+ScoreGeo scorG ;
+HighestScore highG ;
 
 
 class Stats extends StatefulWidget {
@@ -24,9 +42,11 @@ class Stats extends StatefulWidget {
 
 class _StatsState extends State<Stats> {
   @override
-  Widget build(BuildContext context) {
-    String name = 'Nada';
+  Widget build(BuildContext context)  {
+    String name = user.username;
+
     Size size = MediaQuery.of(context).size;
+
     return Scaffold(
       body:
       Container(
@@ -108,8 +128,15 @@ class _StatsState extends State<Stats> {
               child: Container(
                 height: 70,
                   width: 70,
-                  child: GoToButton(onPressed: (){
+                  child: GoToButton(onPressed: () async {
                     print('math');
+                    // infos maths
+                    var dm=await  Firestore.instance.collection('users').document(user.uid).collection('domains').document('maths').get();
+                    scorM =new ScoreMaths(dm.data["testFait"], dm.data["niv1"], dm.data["niv2"], dm.data["niv3"]);
+                    highM =new HighestScore(dm.data["high1"],dm.data["high2"],dm.data["high3"]);
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => MathScore()),);
                   },)),
             ),
             Positioned(
@@ -118,8 +145,24 @@ class _StatsState extends State<Stats> {
               child: Container(
                   height: 70,
                   width: 70,
-                  child: GoToButton(onPressed: (){
+                  child: GoToButton(onPressed: ()async {
                     print('scorefinal');
+                    // infos maths
+                    var dm=await  Firestore.instance.collection('users').document(user.uid).collection('domains').document('maths').get();
+                    scorM =new ScoreMaths(dm.data["testFait"], dm.data["niv1"], dm.data["niv2"], dm.data["niv3"]);
+                    highM =new HighestScore(dm.data["high1"],dm.data["high2"],dm.data["high3"]);
+                    //infos fr
+                    var df=await Firestore.instance.collection('users').document(user.uid).collection('domains').document('francais').get();
+                    scorF =new ScoreFr(df.data["testFait"], df.data["niv1"], df.data["niv2"], df.data["niv3"]);
+                    highF =new HighestScore(df.data["high1"],df.data["high2"],df.data["high3"]);
+                    // infos geo
+                    var dg=await Firestore.instance.collection('users').document(user.uid).collection('domains').document('geographie').get();
+                    scorG =new ScoreGeo(dg.data["testFait"], dg.data["niv1"], dg.data["niv2"], dg.data["niv3"]);
+                    highG =new HighestScore(dg.data["high1"],dg.data["high2"],dg.data["high3"]);
+
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => FinalScore()),);
                   },)),
             ),
             Positioned(
@@ -140,8 +183,15 @@ class _StatsState extends State<Stats> {
               child: Container(
                   height: 70,
                   width: 70,
-                  child: GoToButton(onPressed: (){
+                  child: GoToButton(onPressed: () async {
                     print('fr');
+                    //infos fr
+                    var df=await Firestore.instance.collection('users').document(user.uid).collection('domains').document('francais').get();
+                    scorF =new ScoreFr(df.data["testFait"], df.data["niv1"], df.data["niv2"], df.data["niv3"]);
+                    highF =new HighestScore(df.data["high1"],df.data["high2"],df.data["high3"]);
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => FrScore()),);
                   },)),
             ),
             Positioned(
@@ -156,8 +206,16 @@ class _StatsState extends State<Stats> {
               child: Container(
                   height: 70,
                   width: 70,
-                  child: GoToButton(onPressed: (){
+                  child: GoToButton(onPressed: () async {
                     print('geo');
+
+                    // infos geo
+                    var dg=await Firestore.instance.collection('users').document(user.uid).collection('domains').document('geographie').get();
+                    scorG =new ScoreGeo(dg.data["testFait"], dg.data["niv1"], dg.data["niv2"], dg.data["niv3"]);
+                    highG =new HighestScore(dg.data["high1"],dg.data["high2"],dg.data["high3"]);
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => GeoScore()),);
                   },)),
             ),
             if (user.avatar=="Pink")

@@ -19,6 +19,8 @@ import '../classement/Classement.dart';
 import '../Services/Login.dart';
 import 'package:audioplayers/audio_cache.dart';
 import 'package:audioplayers/audioplayers.dart';
+import '../Statistics/Statistiques.dart';
+
 class Voila extends StatefulWidget {
   @override
   _VoilaState createState() => _VoilaState();
@@ -179,7 +181,12 @@ class _VoilaState extends State<Voila> {
             Positioned(
               top: size.height*0.8,
               right:size.width*0.75,
-              child: StatistiqueButton(onPressed: null,),
+              child: StatistiqueButton(onPressed:(){
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => Stats()));
+
+              }),
 
             ),
           ],

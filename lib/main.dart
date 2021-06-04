@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:somthn/Mutual/ScoreFr.dart';
-import 'package:somthn/Mutual/ScoreGeo.dart';
-import 'package:somthn/Mutual/ScoreMath.dart';
+import 'package:somthn/Statistics/ScoreFr.dart';
+import 'package:somthn/Statistics/ScoreGeo.dart';
+import 'package:somthn/Statistics/ScoreMath.dart';
 import 'package:somthn/Geographie/NiveauGeo.dart';
 import 'package:somthn/WelcomePages/Home.dart';
+import 'package:somthn/WelcomePages/Voila.dart';
 
 void main() {
 /*  WidgetsFlutterBinding.ensureInitialized();
