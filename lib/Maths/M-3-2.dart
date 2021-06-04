@@ -2,24 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:somthn/Buttons/BarreProgres.dart';
 import 'package:somthn/Maths/BienvenueMath.dart';
-import 'package:somthn/Maths/M-1-2.dart';
 import 'package:somthn/Maths/M-3-3.dart';
 import 'package:somthn/WelcomePages/Settings.dart';
-import 'package:somthn/Bulles/bulleQuest.dart';
-import 'package:somthn/Buttons/button0.dart';
-import 'package:somthn/Buttons/button1.dart';
-import 'package:somthn/Buttons/button2.dart';
-import 'package:somthn/Buttons/button3.dart';
-import 'package:somthn/Buttons/button4.dart';
-import 'package:somthn/Buttons/button5.dart';
-import 'package:somthn/Buttons/button6.dart';
-import 'package:somthn/Buttons/button7.dart';
-import 'package:somthn/Buttons/button8.dart';
-import 'package:somthn/Buttons/button9.dart';
 import 'package:somthn/Buttons/buttonContinuer.dart';
-import 'package:somthn/Buttons/buttonGoTo.dart';
 import 'package:somthn/Buttons/buttonQ.dart';
-import 'package:somthn/Buttons/buttonReset.dart';
 import 'package:somthn/myicons.dart';
 import '../Buttons/settingsButton.dart';
 import '../Buttons/BacksButton.dart';
@@ -27,12 +13,11 @@ import 'package:somthn/Avatars/OrangeAvatarIcon.dart';
 import 'package:somthn/Avatars/PinkAvatarIcon.dart';
 import 'package:somthn/Avatars/PurpleAvatarIcon.dart';
 import 'package:somthn/Avatars/BlueAvatarIcon.dart';
-//import '../WelcomePages/ChooseAvatar.dart';
 import '../Services/Login.dart';
-import '../Services/SignUp.dart';
 import 'BienvenueMath.dart';
 import 'M-3.dart';
-import 'NiveauMath.dart';
+import 'package:audioplayers/audio_cache.dart';
+import 'package:audioplayers/audioplayers.dart';
 
 
 class M_3_2 extends StatefulWidget {
@@ -43,6 +28,26 @@ class M_3_2 extends StatefulWidget {
 }
 
 class _M_3_2State extends State<M_3_2> {
+
+  AudioPlayer advancedPlayer;
+
+  @override
+  initState() {
+    super.initState();
+    loadMusic();
+  }
+
+  Future loadMusic() async {
+
+    advancedPlayer = await AudioCache().play("audio/doubleClic.wav");
+  }
+
+  @override
+  void dispose() {
+    advancedPlayer = null;
+    super.dispose();
+  }
+
   bool Visible = true;
   bool correct = false;
   bool oneClicked = false;

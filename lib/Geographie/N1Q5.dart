@@ -15,11 +15,9 @@ import 'package:somthn/Avatars/PinkAvatarIcon.dart';
 import 'package:somthn/Avatars/PurpleAvatarIcon.dart';
 import 'package:somthn/Avatars/BlueAvatarIcon.dart';
 import '../Services/Login.dart';
-
+import 'package:audioplayers/audio_cache.dart';
+import 'package:audioplayers/audioplayers.dart';
 import 'package:vibration/vibration.dart';
-
-import 'package:somthn/Bulles/BulleN1Q4.dart';
-
 
 
 
@@ -31,6 +29,27 @@ class N1Q5 extends StatefulWidget {
   _N1Q5State createState() => _N1Q5State();
 }
 class _N1Q5State extends State<N1Q5> {
+
+  AudioPlayer advancedPlayer;
+
+
+  @override
+  initState() {
+    super.initState();
+    loadMusic();
+  }
+
+  Future loadMusic() async {
+
+    advancedPlayer = await AudioCache().play("audio/doubleClic.wav");
+  }
+
+  @override
+  void dispose() {
+    advancedPlayer = null;
+    super.dispose();
+  }
+
   bool oneClicked = false;
   bool twoClicked = false;
   bool threeClicked = false;

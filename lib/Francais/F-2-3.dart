@@ -46,6 +46,8 @@ class _F_2_3State extends State<F_2_3> {
     advancedPlayer = null;
     super.dispose();
   }
+  final player = AudioCache();
+
 
   bool Visible = true;
   @override
@@ -316,8 +318,10 @@ class _F_2_3State extends State<F_2_3> {
                     left: size.width*0.4,
                     top:size.height*0.7,
                     child: SvgPicture.asset(bulleBravo)
-                ),
+
+    ),
               )
+
             ],
           ),
         ));

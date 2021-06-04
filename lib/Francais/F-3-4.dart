@@ -17,6 +17,8 @@ import 'package:somthn/WelcomePages/Settings.dart';
 import 'package:somthn/myicons.dart';
 import '../Services/Login.dart';
 import 'BienvenueFr.dart';
+import 'package:audioplayers/audio_cache.dart';
+import 'package:audioplayers/audioplayers.dart';
 
 class F_3_4 extends StatefulWidget {
   const F_3_4({Key key}) : super(key: key);
@@ -26,6 +28,9 @@ class F_3_4 extends StatefulWidget {
 }
 
 class _F_3_4State extends State<F_3_4> {
+
+
+
   bool Visible = true;
   String letterH;
   String letterE;

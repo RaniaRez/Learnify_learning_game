@@ -1,15 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-//import 'package:somthn/Geographie/N1Q4T2_C_1.dart';
-//import 'package:somthn/Geographie/N1Q4T2_C_2.dart';
-//import 'package:somthn/Geographie/N1Q4T2_C_4.dart';
 import 'package:somthn/Geographie/NiveauGeo.dart';
 import 'package:somthn/WelcomePages/Settings.dart';
-import 'package:somthn/WelcomePages/Home.dart';
 import 'package:vibration/vibration.dart';
-
 import 'package:somthn/Buttons/buttonContinuer.dart';
-import 'package:somthn/Buttons/buttonQ.dart';
 import 'package:somthn/myicons.dart';
 import '../Buttons/settingsButton.dart';
 import '../Buttons/BacksButton.dart';
@@ -18,9 +12,9 @@ import 'package:somthn/Avatars/PinkAvatarIcon.dart';
 import 'package:somthn/Avatars/PurpleAvatarIcon.dart';
 import 'package:somthn/Avatars/BlueAvatarIcon.dart';
 import '../Services/Login.dart';
-
-import 'package:somthn/Bulles/BulleN1Q4T2.dart';
 import 'package:somthn/Geographie/BienvenueGeo.dart';
+import 'package:audioplayers/audio_cache.dart';
+import 'package:audioplayers/audioplayers.dart';
 
 class N3Q5T2_C_2 extends StatefulWidget {
   const N3Q5T2_C_2({Key key}) : super(key: key);
@@ -30,6 +24,28 @@ class N3Q5T2_C_2 extends StatefulWidget {
 }
 
 class _N3Q5T2_C_2State extends State<N3Q5T2_C_2> {
+
+  AudioPlayer advancedPlayer;
+
+
+  @override
+  initState() {
+    super.initState();
+    loadMusic();
+  }
+
+  Future loadMusic() async {
+
+    advancedPlayer = await AudioCache().play("audio/mathsMauvRep.wav");
+  }
+
+  @override
+  void dispose() {
+    advancedPlayer = null;
+    super.dispose();
+  }
+
+  final player = AudioCache();
   bool Visible = true;
   bool correct = false;
   bool oneClicked = false;
@@ -108,9 +124,8 @@ class _N3Q5T2_C_2State extends State<N3Q5T2_C_2> {
                     icon: SvgPicture.asset('assets/icons/QuestionMark.svg'),
                     onPressed: (){
                       print('QuestionMark');
-                      setState(() {
-
-                      });},
+                      player.play('audio/geomonnaie.wav');
+                    },
                   ),
                 ),
               ),

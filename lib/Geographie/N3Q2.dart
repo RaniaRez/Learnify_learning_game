@@ -6,7 +6,6 @@ import 'package:somthn/Geographie/N3Q2T2_C_3.dart';
 import 'package:somthn/Geographie/N3Q3.dart';
 import 'package:somthn/WelcomePages/Settings.dart';
 import 'package:somthn/Buttons/buttonContinuer.dart';
-import 'package:somthn/Buttons/buttonQ.dart';
 import 'package:somthn/myicons.dart';
 import '../Buttons/settingsButton.dart';
 import '../Buttons/BacksButton.dart';
@@ -15,12 +14,10 @@ import 'package:somthn/Avatars/PinkAvatarIcon.dart';
 import 'package:somthn/Avatars/PurpleAvatarIcon.dart';
 import 'package:somthn/Avatars/BlueAvatarIcon.dart';
 import '../Services/Login.dart';
-
 import 'package:vibration/vibration.dart';
-
-import 'package:somthn/Bulles/BulleN1Q4.dart';
 import 'package:somthn/Geographie/BienvenueGeo.dart';
-
+import 'package:audioplayers/audio_cache.dart';
+import 'package:audioplayers/audioplayers.dart';
 
 
 
@@ -32,6 +29,29 @@ class N3Q2 extends StatefulWidget {
   _N3Q2State createState() => _N3Q2State();
 }
 class _N3Q2State extends State<N3Q2> {
+
+  AudioPlayer advancedPlayer;
+
+
+  @override
+  initState() {
+    super.initState();
+    loadMusic();
+  }
+
+  Future loadMusic() async {
+
+    advancedPlayer = await AudioCache().play("audio/doubleClic.wav");
+  }
+
+  @override
+  void dispose() {
+    advancedPlayer = null;
+    super.dispose();
+  }
+
+  final player = AudioCache();
+
   bool oneClicked = false;
   bool twoClicked = false;
   bool threeClicked = false;
@@ -107,12 +127,11 @@ class _N3Q2State extends State<N3Q2> {
                   child: IconButton(
                     iconSize: 64,
                     icon: SvgPicture.asset('assets/icons/QuestionMark.svg'),
-                    onPressed: (){
+                    onPressed: () {
                       print('QuestionMark');
-                      setState(() {
-
-                      });},
-                  ),
+                      player.play('audio/geoMonument.wav');
+                    }
+                      ),
                 ),
               ),
 

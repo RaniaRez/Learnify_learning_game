@@ -1,13 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-//import 'package:somthn/Geographie/N2Q4.dart';
 import 'package:somthn/Geographie/N3Q5T2_C_2.dart';
 import 'package:somthn/Geographie/N3Q5T2_C_1.dart';
 import 'package:somthn/Geographie/N3Q5T2_C_4.dart';
 import 'package:somthn/Geographie/NiveauGeo.dart';
 import 'package:somthn/WelcomePages/Settings.dart';
 import 'package:somthn/Buttons/buttonContinuer.dart';
-import 'package:somthn/Buttons/buttonQ.dart';
 import 'package:somthn/myicons.dart';
 import '../Buttons/settingsButton.dart';
 import '../Buttons/BacksButton.dart';
@@ -16,10 +14,10 @@ import 'package:somthn/Avatars/PinkAvatarIcon.dart';
 import 'package:somthn/Avatars/PurpleAvatarIcon.dart';
 import 'package:somthn/Avatars/BlueAvatarIcon.dart';
 import '../Services/Login.dart';
-
 import 'package:vibration/vibration.dart';
 import 'package:somthn/Geographie/BienvenueGeo.dart';
-
+import 'package:audioplayers/audio_cache.dart';
+import 'package:audioplayers/audioplayers.dart';
 class N3Q5 extends StatefulWidget {
   const N3Q5({Key key}) : super(key: key);
 
@@ -27,6 +25,27 @@ class N3Q5 extends StatefulWidget {
   _N3Q5State createState() => _N3Q5State();
 }
 class _N3Q5State extends State<N3Q5> {
+  AudioPlayer advancedPlayer;
+
+
+  @override
+  initState() {
+    super.initState();
+    loadMusic();
+  }
+
+  Future loadMusic() async {
+
+    advancedPlayer = await AudioCache().play("audio/doubleClic.wav");
+  }
+
+  @override
+  void dispose() {
+    advancedPlayer = null;
+    super.dispose();
+  }
+
+  final player = AudioCache();
   bool oneClicked = false;
   bool twoClicked = false;
   bool threeClicked = false;
@@ -94,7 +113,7 @@ class _N3Q5State extends State<N3Q5> {
                 ),
               ),
 
-              Visibility(
+              /*Visibility(
                 visible: Visible,
                 child: Positioned(
                   top: size.height*0.468,
@@ -104,12 +123,11 @@ class _N3Q5State extends State<N3Q5> {
                     icon: SvgPicture.asset('assets/icons/QuestionMark.svg'),
                     onPressed: (){
                       print('QuestionMark');
-                      setState(() {
-
-                      });},
+                      player.play('audio/geomonnaie.wav');
+                    },
                   ),
                 ),
-              ),
+              ),*/
 
               if (user.avatar=="Pink")
                 Visibility(
@@ -166,9 +184,11 @@ class _N3Q5State extends State<N3Q5> {
                     icon: SvgPicture.asset('assets/icons/AudioIcon.svg'),
                     onPressed: (){
                       print('playAudio2');
-                      setState(() {
+                      //player.play('audio/algeria.mp3').timeout(Duration(days: 0, minutes: 0, seconds: 5,milliseconds: 0, microseconds: 0),   onTimeout:() => player.clear('audio/algeria.mp3') );
+                      player.play('audio/algeriaoff.wav');
+                      //timeCounter();
 
-                      });},
+                      },
                   ),
                 ),
               ),
@@ -183,9 +203,8 @@ class _N3Q5State extends State<N3Q5> {
                     icon: SvgPicture.asset('assets/icons/AudioIcon.svg'),
                     onPressed: (){
                       print('playAudio4');
-                      setState(() {
-
-                      });},
+                      player.play('audio/braziloff.wav');
+                      },
                   ),
                 ),
               ),
@@ -200,9 +219,8 @@ class _N3Q5State extends State<N3Q5> {
                     icon: SvgPicture.asset('assets/icons/AudioIcon.svg'),
                     onPressed: (){
                       print('playAudio1');
-                      setState(() {
-
-                      });},
+                      player.play('audio/italyoff.wav');
+                      },
                   ),
                 ),
               ),
@@ -217,9 +235,8 @@ class _N3Q5State extends State<N3Q5> {
                     icon: SvgPicture.asset('assets/icons/AudioIcon.svg'),
                     onPressed: (){
                       print('playAudio3');
-                      setState(() {
-
-                      });},
+                      player.play('audio/singapouroff.wav');
+                      },
                   ),
                 ),
               ),

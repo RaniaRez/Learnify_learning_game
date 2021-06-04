@@ -7,21 +7,18 @@ import 'package:somthn/Maths/BienvenueMath.dart';
 import 'package:somthn/Maths/M-2.dart';
 import 'package:somthn/Maths/M-3.dart';
 import 'package:somthn/WelcomePages/Settings.dart';
-import 'package:somthn/Mutual/Stars.dart';
 import 'package:somthn/myicons.dart';
 import '../Buttons/settingsButton.dart';
 import '../Buttons/BacksButton.dart';
 import '../WelcomePages/Home.dart';
-import '../WelcomePages/ChooseAvatar.dart';
 import 'package:somthn/Avatars/OrangeAvatarIcon.dart';
 import 'package:somthn/Avatars/PinkAvatarIcon.dart';
 import 'package:somthn/Avatars/PurpleAvatarIcon.dart';
 import 'package:somthn/Avatars/BlueAvatarIcon.dart';
 import '../Services/Login.dart';
-import '../Services/SignUp.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'BienvenueMath.dart';
-import 'M-1.dart';
+import 'package:audioplayers/audio_cache.dart';
+import 'package:audioplayers/audioplayers.dart';
 
 class Niveau2Pass extends StatefulWidget {
   @override
@@ -29,10 +26,27 @@ class Niveau2Pass extends StatefulWidget {
 }
 
 class _Niveau2PassState extends State<Niveau2Pass> {
+
+  AudioPlayer advancedPlayer;
+
   @override
+  initState() {
+    super.initState();
+    loadMusic();
+  }
 
+  Future loadMusic() async {
 
+    advancedPlayer = await AudioCache().play("audio/niveauPasse.wav");
+  }
 
+  @override
+  void dispose() {
+    advancedPlayer = null;
+    super.dispose();
+  }
+
+  @override
 
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
