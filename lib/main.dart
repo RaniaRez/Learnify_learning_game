@@ -2,7 +2,7 @@
 import 'package:flutter/material.dart';
 import 'package:somthn/Mutual/Statistiques.dart';
 import 'package:somthn/WelcomePages/Home.dart';
-import 'Geographie/N3Q1.dart';
+import 'Geographie/N3Q5.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
@@ -14,5 +14,5 @@ void main() {
     }
   };
 
-  runApp(MaterialApp(home: N3Q1()));
+  runApp(MaterialApp(home: N3Q5()));
 }
