@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:somthn/Avatars/OrangeAvatarIcon.dart';
+import 'package:somthn/Branches/BranchIconSimple.dart';
 import 'package:somthn/Maths/M-1-1.dart';
 import 'package:somthn/WelcomePages/Settings.dart';
 import 'package:somthn/Buttons/buttonGoTo.dart';
@@ -60,38 +61,46 @@ class _Math1State extends State<Math1> {
                         MaterialPageRoute(builder: (context) => NiveauMath() ));
                   },)
               ),
+              Visibility(
 
-             if (user.avatar=="Pink")
+                child: Positioned(
+                  top: size.height*0.62,
+                  right: size.width*0.62 ,
+                  child:BranchIconSimple(),
+                ),
+              ),
+
+              if (user.avatar=="Pink")
                 Visibility(
 
                   child: Positioned(
-                    height: size.width*0.3,
+                    top: size.height*0.45,
+                    right: size.width*0.63 ,
+                    height: size.height*0.3,
                     width: size.width*0.3,
-                    left: size.width*0.1,
-                    bottom:size.width*0.7,
                     child:PinkAvatarIcon(onPressed: null,),
                   ),
                 ),
-             if (user.avatar=="Purple")
+              if (user.avatar=="Purple")
                 Visibility(
 
                   child: Positioned(
-                    height: size.width*0.35,
+                    top: size.height*0.43,
+                    right: size.width*0.63 ,
+                    height: size.height*0.35,
                     width: size.width*0.35,
 
-                    left: size.width*0.07,
-                    bottom:size.width*0.69,
                     child:PurpleAvatarIcon(onPressed: null,),
                   ),
                 ),
-             if (user.avatar=="Orange")
+              if (user.avatar=="Orange")
                 Visibility(
 
                   child: Positioned(
-                    height: size.width*0.3,
+                    top: size.height*0.46,
+                    right: size.width*0.63 ,
+                    height: size.height*0.3,
                     width: size.width*0.3,
-                    left: size.width*0.1,
-                    bottom:size.width*0.7,
                     child: OrangeAvatarIcon(onPressed: null,),
                   ),
                 ),
@@ -99,14 +108,13 @@ class _Math1State extends State<Math1> {
                 Visibility(
 
                   child: Positioned(
-                    height: size.width*0.3,
+                    top: size.height*0.45,
+                    right: size.width*0.63 ,
+                    height: size.height*0.3,
                     width: size.width*0.3,
-                    left: size.width*0.1,
-                    bottom:size.width*0.7,
                     child:BlueAvatarIcon(onPressed: null,),
                   ),
                 ),
-
               Positioned(
                 height: size.width*0.7,
                 width: size.width*0.7,
@@ -114,6 +122,7 @@ class _Math1State extends State<Math1> {
                 top:size.height*0.2,
                 child:SvgPicture.asset(bulleCalculReflechi1),
               ),
+
 
 
               Positioned(

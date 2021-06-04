@@ -92,7 +92,7 @@ class _F_2_1_2nd_appState extends State<F_2_1_2nd_app> {
                   child:SvgPicture.asset('assets/icons/SquareTable.svg'),
                 ),
               ),
-              //if (user.avatar=="Pink")
+              if (user.avatar=="Pink")
               Visibility(
                 visible: Visible,
                 child: Positioned(

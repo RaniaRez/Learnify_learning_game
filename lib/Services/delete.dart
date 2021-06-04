@@ -5,6 +5,7 @@ import '../Data/database.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 
 import 'auth.dart';
+import 'Login.dart';
 //import 'package:cloud_functions/cloud_functions.dart';
 
 Future<void> delete() async  {
@@ -16,7 +17,7 @@ final AuthCredential credential = GoogleAuthProvider.getCredential(
     accessToken: googleSignInAuthentication.accessToken
 );*/
 
-//googleLogin()
+googleLogin();
 signOutGoogle();
 await user.delete();
 await Firestore.instance.collection("users").document(user.uid).delete();

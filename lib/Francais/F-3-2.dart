@@ -154,7 +154,7 @@ class _F_3_2State extends State<F_3_2> {
                       icon: SvgPicture.asset('assets/icons/mets.svg')),
                 ),
               ),
-              //if (user.avatar=="Pink")
+              if (user.avatar=="Pink")
               Visibility(
                 visible: Visible,
                 child: Positioned(

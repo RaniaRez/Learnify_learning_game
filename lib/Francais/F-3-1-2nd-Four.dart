@@ -135,7 +135,7 @@ class _F_3_1_2nd_FourState extends State<F_3_1_2nd_Four> {
                       icon: SvgPicture.asset('assets/icons/OnButton.svg')),
                 ),
               ),
-              //if (user.avatar=="Pink")
+              if (user.avatar=="Pink")
               Visibility(
                 visible: Visible,
                 child: Positioned(

@@ -133,7 +133,7 @@ class _TestNivFr2State extends State<TestNivFr2> {
                         });
                         print('exc');
                       },
-                      icon: SvgPicture.asset('assets/icons/ecole.svg')),
+                      icon: SvgPicture.asset('assets/icons/ecoleb.svg')),
                 ),
               ),
               Visibility(
@@ -150,14 +150,14 @@ class _TestNivFr2State extends State<TestNivFr2> {
 
                         });
                       },
-                      icon: SvgPicture.asset('assets/icons/eleve.svg')),
+                      icon: SvgPicture.asset('assets/icons/eleveb.svg')),
                 ),
               ),
               Visibility(
                 visible: Visible,
                 child: Positioned(
                   top: size.height*0.8,
-                  left: size.width*0.05,
+                  left: size.width*0.31,
                   height: size.height*0.15,
                   width: size.width*0.4,
                   child: IconButton(

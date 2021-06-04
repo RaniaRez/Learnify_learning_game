@@ -13,6 +13,7 @@ import 'package:somthn/Avatars/PinkAvatarIcon.dart';
 import 'package:somthn/Avatars/PurpleAvatarIcon.dart';
 import 'package:somthn/Avatars/BlueAvatarIcon.dart';
 import '../../Services/Login.dart';
+import 'SetNiveaux.dart';
 import 'TestNivFrQ1.dart';
 import '../NiveauFr.dart';
 import '../BienvenueFr.dart';
@@ -169,7 +170,7 @@ class _TestNivFr3State extends State<TestNivFr3> {
                 visible: Visible,
                 child: Positioned(
                   top: size.height*0.8,
-                  left: size.width*0.05,
+                  left: size.width*0.31,
                   height: size.height*0.15,
                   width: size.width*0.4,
                   child: IconButton(
@@ -284,7 +285,7 @@ class _TestNivFr3State extends State<TestNivFr3> {
                       print(scoreF.niv1);
                       print(scoreF.niv2);
                       print(scoreF.niv3);
-                      //setNiv(test,scoreF);
+                      setNiv(test,scoreF);
                       scoreF.testFait=true;
                       print(scoreF.testFait);
                       Firestore.instance.collection('users').document(user.uid).collection('domains').document('francais').updateData(

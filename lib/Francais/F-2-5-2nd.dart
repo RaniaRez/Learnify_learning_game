@@ -163,23 +163,13 @@ class _F_2_5_2ndState extends State<F_2_5_2nd> {
                       print(scoreF.niv2);
                       Firestore.instance.collection('users').document(user.uid).collection('domains').document('francais').updateData({'niv2':scoreF.niv2});
                       if (scoreF.niv2>high.niv2)
-                      {
-                        Firestore.instance.collection('users').document(user.uid).collection('domains').document('francais').updateData({'niv2':scoreF.niv2});}
-                      if (scoreF.niv3>=0) {
-                        Navigator.push(
-                            context,
-                            MaterialPageRoute(builder: (context) => NiveauFr()));
-                      }
-                      if (scoreF.niv2>=7.5) {
+                      { high.niv2=scoreF.niv2 ;
+                        Firestore.instance.collection('users').document(user.uid).collection('domains').document('francais').updateData({'high2':scoreF.niv2});}
                         if (scoreF.niv3<0) { scoreF.niv3=0;
-                        Firestore.instance.collection('users').document(user.uid).collection('domains').document('francais').updateData({'niv3':scoreF.niv3});
+                        Firestore.instance.collection('users').document(user.uid).collection('domains').document('francais').updateData({'niv3':scoreF.niv3});}
                         Navigator.push(
                             context,
-                            MaterialPageRoute(builder: (context) => Niveau2Pass()));}
-                      }
-                      else { Navigator.push(
-                          context,
-                          MaterialPageRoute(builder: (context) => Fr2()));}
+                            MaterialPageRoute(builder: (context) => Niveau2Pass()));
                     },)
                 ),
               ),

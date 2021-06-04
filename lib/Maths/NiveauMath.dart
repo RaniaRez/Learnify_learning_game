@@ -117,7 +117,7 @@ class _NiveauMathState extends State<NiveauMath> {
                 top:size.width*0.36,
                 child:BrownOwl(onPressed:null),
               ),
-              if (score.niv2<0)
+              if (score.niv3<0)
               Positioned(
                 top: size.height*0.32,
                 right: size.width*0.44,
