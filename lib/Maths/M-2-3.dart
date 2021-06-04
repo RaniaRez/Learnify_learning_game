@@ -1,19 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:somthn/Buttons/BarreProgres.dart';
-import 'package:somthn/Maths/M-1-5-2ndAttempt.dart';
-import 'package:somthn/Maths/M-2-2-2ndAttemptFourclick.dart';
-import 'package:somthn/Maths/M-2-2-2ndAttemptOneclick.dart';
-import 'package:somthn/Maths/M-2-2-2ndAttemptThreeclick.dart';
 import 'package:somthn/Maths/M-2-3-2ndAttemptFourclick.dart';
 import 'package:somthn/Maths/M-2-3-2ndAttemptThreeclick.dart';
 import 'package:somthn/Maths/M-2-3-2ndAttemptTwoclick.dart';
 import 'package:somthn/Maths/M-2-4.dart';
-import 'package:somthn/Mutual/Niveau1Pass%C3%A9.dart';
 import 'package:somthn/WelcomePages/Settings.dart';
-import 'package:somthn/Bulles/bulleQuest.dart';
 import 'package:somthn/Buttons/buttonContinuer.dart';
-import 'package:somthn/Buttons/buttonGoTo.dart';
 import 'package:somthn/Buttons/buttonQ.dart';
 import 'package:somthn/myicons.dart';
 import '../Buttons/settingsButton.dart';
@@ -23,13 +15,10 @@ import 'package:somthn/Avatars/PinkAvatarIcon.dart';
 import 'package:somthn/Avatars/PurpleAvatarIcon.dart';
 import 'package:somthn/Avatars/BlueAvatarIcon.dart';
 import '../Services/Login.dart';
-import 'M-2-1-2ndAttemptOneclick.dart';
-import 'M-2-1-2ndAttemptThreeclick.dart';
-import 'M-2-1-2ndAttemptFourclick.dart';
-
 import 'BienvenueMath.dart';
 import 'M-2.dart';
-import 'NiveauMath.dart';
+import 'package:audioplayers/audio_cache.dart';
+import 'package:audioplayers/audioplayers.dart';
 
 
 class M_2_3 extends StatefulWidget {
@@ -39,6 +28,26 @@ class M_2_3 extends StatefulWidget {
   _M_2_3State createState() => _M_2_3State();
 }
 class _M_2_3State extends State<M_2_3> {
+
+  AudioPlayer advancedPlayer;
+
+  @override
+  initState() {
+    super.initState();
+    loadMusic();
+  }
+
+  Future loadMusic() async {
+
+    advancedPlayer = await AudioCache().play("audio/doubleClic.wav");
+  }
+
+  @override
+  void dispose() {
+    advancedPlayer = null;
+    super.dispose();
+  }
+
   bool oneClicked = false;
   bool twoClicked = false;
   bool threeClicked = false;

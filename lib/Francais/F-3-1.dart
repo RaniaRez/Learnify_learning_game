@@ -18,6 +18,8 @@ import 'package:somthn/Avatars/PurpleAvatarIcon.dart';
 import 'package:somthn/Avatars/BlueAvatarIcon.dart';
 import '../Services/Login.dart';
 import 'BienvenueFr.dart';
+import 'package:audioplayers/audio_cache.dart';
+import 'package:audioplayers/audioplayers.dart';
 
 class F_3_1 extends StatefulWidget {
   const F_3_1({Key key}) : super(key: key);
@@ -27,6 +29,27 @@ class F_3_1 extends StatefulWidget {
 }
 
 class _F_3_1State extends State<F_3_1> {
+
+  AudioPlayer advancedPlayer;
+
+  @override
+  initState() {
+    super.initState();
+    loadMusic();
+  }
+
+  Future loadMusic() async {
+
+    advancedPlayer = await AudioCache().play("audio/doubleClic.wav");
+  }
+
+  @override
+  void dispose() {
+    advancedPlayer = null;
+    super.dispose();
+  }
+
+
   bool Visible = true;
   @override
   Widget build(BuildContext context) {

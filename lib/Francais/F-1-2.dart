@@ -30,6 +30,25 @@ class F_1_2 extends StatefulWidget {
 
 class _F_1_2State extends State<F_1_2> {
 
+  AudioPlayer advancedPlayer;
+
+
+  @override
+  initState() {
+    super.initState();
+    loadMusic();
+  }
+
+  Future loadMusic() async {
+
+    advancedPlayer = await AudioCache().play("audio/doubleClic.wav");
+  }
+
+  @override
+  void dispose() {
+    advancedPlayer = null;
+    super.dispose();
+  }
 
   bool Visible = true;
   @override
