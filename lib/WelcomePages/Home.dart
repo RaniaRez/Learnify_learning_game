@@ -1,5 +1,4 @@
 
-import 'package:bouncing_widget/bouncing_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:somthn/WelcomePages/Vite.dart';
 import 'package:somthn/WelcomePages/Voila.dart';
@@ -85,7 +84,18 @@ class _HomeState extends State<Home> {
                         image: AssetImage("images/forestbackground.jpg"),
                         fit: BoxFit.cover)),
               ),
+              Positioned(
+                  top: size.height*0.05,
+                  left:size.width*0.75,
+                  child:
+                  SettingsButton(onPressed: () async {
+                   // advancedPlayer = await Settings();
 
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => Settings(value: advancedPlayer )));
+                  },)
+              ),
 
 
 
@@ -134,19 +144,9 @@ class _HomeState extends State<Home> {
                 width: size.width*0.7,
                 child:BulleIcon(onPressed: (){}),
               ),
-              Positioned(
-                  top: size.height*0.05,
-                  left:size.width*0.75,
-                  child:
-                  SettingsButton(onPressed: () {
-                    print('s');
-                    // advancedPlayer = await Settings();
 
-                    //  Navigator.push(
-                    //    context,
-                    //   MaterialPageRoute(builder: (context) => Settings(value: advancedPlayer )));
-                  },)
-              ),
+
+
             ]
         ),
       ),
