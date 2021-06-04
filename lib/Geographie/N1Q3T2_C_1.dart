@@ -3,7 +3,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:somthn/Geographie/N1Q4T2_C_1.dart';
 import 'package:somthn/Geographie/N1Q4T2_C_2.dart';
 import 'package:somthn/Geographie/N1Q4T2_C_4.dart';
-import 'package:somthn/Geographie/N3Q2.dart';
+import 'package:somthn/Geographie/N1Q4.dart';
 import 'package:somthn/WelcomePages/Settings.dart';
 import 'package:somthn/WelcomePages/Home.dart';
 import 'package:vibration/vibration.dart';
@@ -21,14 +21,14 @@ import '../Services/Login.dart';
 
 import 'package:somthn/Bulles/BulleN1Q4T2.dart';
 
-class N3Q4T2_C_1 extends StatefulWidget {
-  const N3Q4T2_C_1({Key key}) : super(key: key);
+class N1Q3T2_C_1 extends StatefulWidget {
+  const N1Q3T2_C_1({Key key}) : super(key: key);
 
   @override
-  _N3Q4T2_C_1State createState() => _N3Q4T2_C_1State();
+  _N1Q3T2_C_1State createState() => _N1Q3T2_C_1State();
 }
 
-class _N3Q4T2_C_1State extends State<N3Q4T2_C_1> {
+class _N1Q3T2_C_1State extends State<N1Q3T2_C_1> {
   bool Visible = true;
   bool correct = false;
   bool oneClicked = false;
@@ -81,10 +81,9 @@ class _N3Q4T2_C_1State extends State<N3Q4T2_C_1> {
                 bottom: size.height*0.55,
                 left: size.width*0.05,
                 height: size.height*0.3,
-                width: size.width*0.8,
-                child:SvgPicture.asset('assets/icons/BulleN3Q2T2.svg'),
+                width: size.width*0.7,
+                child:SvgPicture.asset('assets/icons/BulleN1Q3T2.svg'),
               ),
-
               Visibility(
                 visible: !Visible,
                 child: Positioned(
@@ -148,9 +147,8 @@ class _N3Q4T2_C_1State extends State<N3Q4T2_C_1> {
                   height: size.height*0.3,
                   width: size.width*0.5,
                   child: IconButton(
-                    icon: SvgPicture.asset('assets/icons/Santa.svg'),
+                    icon: SvgPicture.asset('assets/icons/Algeria.svg'),
                     onPressed: (){
-                      print('oran');
                       setState(() {
                         oneClicked = false;
                         twoClicked = true;
@@ -168,7 +166,7 @@ class _N3Q4T2_C_1State extends State<N3Q4T2_C_1> {
                   height: size.height*0.3,
                   width: size.width*0.5,
                   child: IconButton(
-                    icon: SvgPicture.asset('assets/icons/Pise.svg'),
+                    icon: SvgPicture.asset('assets/icons/Tunisie.svg'),
                     onPressed: (){
                       print('adrar');
                       setState(() {
@@ -188,7 +186,7 @@ class _N3Q4T2_C_1State extends State<N3Q4T2_C_1> {
                   height: size.height*0.3,
                   width: size.width*0.5,
                   child: IconButton(
-                    icon: SvgPicture.asset('assets/icons/Ketchaoua.svg'),
+                    icon: SvgPicture.asset('assets/icons/Libie.svg'),
                     onPressed: (){
                       print('alger');
                       setState(() {
@@ -209,7 +207,7 @@ class _N3Q4T2_C_1State extends State<N3Q4T2_C_1> {
                   height: size.height*0.3,
                   width: size.width*0.5,
                   child: IconButton(
-                    icon: SvgPicture.asset('assets/icons/Pise.svg'),
+                    icon: SvgPicture.asset('assets/icons/France.svg'),
                     onPressed: (){
                       print('annaba');
                       setState(() {
@@ -232,7 +230,7 @@ class _N3Q4T2_C_1State extends State<N3Q4T2_C_1> {
                     child: ButtonContinuer(onPressed: (){
                       Navigator.push(
                           context,
-                          MaterialPageRoute(builder: (context) => N3Q2()));
+                          MaterialPageRoute(builder: (context) => N1Q4()));
                       print('Continuer');},)
                 ),
               ),
@@ -259,7 +257,7 @@ class _N3Q4T2_C_1State extends State<N3Q4T2_C_1> {
                           }
                           print('Alger');
                         },
-                        icon: SvgPicture.asset('assets/icons/Ketchaoua.svg'),))
+                        icon: SvgPicture.asset('assets/icons/Libie.svg'),))
               ),
               Positioned(
                 top: size.height*0.7,
@@ -274,7 +272,7 @@ class _N3Q4T2_C_1State extends State<N3Q4T2_C_1> {
                             Vibration.vibrate();
 
                             setState(() {
-                              correct = true;
+                              correct = false;
                               Visible = false;
 
                               print('Correct');
@@ -284,7 +282,7 @@ class _N3Q4T2_C_1State extends State<N3Q4T2_C_1> {
                           }
                           print('Alger');
                         },
-                        icon: SvgPicture.asset('assets/icons/Pise.svg'))
+                        icon: SvgPicture.asset('assets/icons/Tunisie.svg'))
                 ),
               ),
               Positioned(
@@ -302,7 +300,7 @@ class _N3Q4T2_C_1State extends State<N3Q4T2_C_1> {
                             Vibration.vibrate();
 
                             setState(() {
-                              correct = false;
+                              correct = true;
                               Visible = false;
 
                               print('Correct');
@@ -310,7 +308,7 @@ class _N3Q4T2_C_1State extends State<N3Q4T2_C_1> {
                             print('Oran');
                           }
                         },
-                        icon: SvgPicture.asset('assets/icons/Santa.svg'))
+                        icon: SvgPicture.asset('assets/icons/Algeria.svg'))
                 ),
               ),
               Positioned(
@@ -331,7 +329,7 @@ class _N3Q4T2_C_1State extends State<N3Q4T2_C_1> {
                               print('Correct');
                             });}
                         },
-                        icon: SvgPicture.asset('assets/icons/Pise.svg'))
+                        icon: SvgPicture.asset('assets/icons/France.svg'))
                 ),
               ),
               if (correct)
@@ -348,7 +346,7 @@ class _N3Q4T2_C_1State extends State<N3Q4T2_C_1> {
                               onPressed: (){
                                 print('3aychin ghaya kho');
                               },
-                              icon: SvgPicture.asset('assets/icons/Pise.svg'))
+                              icon: SvgPicture.asset('assets/icons/Algeria.svg'))
                       ),
                     ),
                     Visibility(
@@ -468,25 +466,6 @@ class _N3Q4T2_C_1State extends State<N3Q4T2_C_1> {
                           child:Image.asset('images/MadBlue.gif'),
                         ),
                       ),
-
-                    Visibility(
-                      visible: Visible,
-                      child: Positioned(
-                        top: size.height*0.75,
-                        left: size.width*0.0,
-                        height: size.height*0.3,
-                        width: size.width*0.5,
-                        child: IconButton(
-                          icon: SvgPicture.asset('assets/icons/QuestionMark.svg'),
-                          onPressed: (){
-                            print('QuestionMark');
-                            setState(() {
-
-                            });},
-                        ),
-                      ),
-                    ),
-
                   ],
                 ),
             ],

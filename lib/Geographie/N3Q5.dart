@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:somthn/Geographie/N3Q5T2_C_1.dart';
+//import 'package:somthn/Geographie/N2Q4.dart';
 import 'package:somthn/Geographie/N3Q5T2_C_2.dart';
-import 'package:somthn/Geographie/N3Q5T2_C_3.dart';
+import 'package:somthn/Geographie/N3Q5T2_C_1.dart';
+import 'package:somthn/Geographie/N3Q5T2_C_4.dart';
 import 'package:somthn/Geographie/NiveauGeo.dart';
 import 'package:somthn/WelcomePages/Settings.dart';
 import 'package:somthn/Buttons/buttonContinuer.dart';
@@ -17,12 +18,7 @@ import 'package:somthn/Avatars/BlueAvatarIcon.dart';
 import '../Services/Login.dart';
 
 import 'package:vibration/vibration.dart';
-
-import 'package:somthn/Bulles/BulleN1Q4.dart';
-
-
-
-
+import 'package:somthn/Geographie/BienvenueGeo.dart';
 
 class N3Q5 extends StatefulWidget {
   const N3Q5({Key key}) : super(key: key);
@@ -58,8 +54,11 @@ class _N3Q5State extends State<N3Q5> {
                   right:size.width*0.75,
 
                   child: BacksButton(onPressed: (){
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => BienvenueGeo()));
                     print("back");
-                    Navigator.pop(context);
+                    //Navigator.pop(context);
                   },)
               ),
 
@@ -79,11 +78,11 @@ class _N3Q5State extends State<N3Q5> {
                   right: size.width*0.275,
                   child: SvgPicture.asset(FourBars)),
               Positioned(
-                bottom: size.height*0.55,
+                bottom: size.height*0.57,
                 left: size.width*0.05,
                 height: size.height*0.3,
-                width: size.width*0.8,
-                child:SvgPicture.asset('assets/icons/BulleN3Q3.svg'),
+                width: size.width*0.6,
+                child:SvgPicture.asset('assets/icons/BulleN3Q5.svg'),
               ),
               Visibility(
                 visible: !Visible,
@@ -91,15 +90,33 @@ class _N3Q5State extends State<N3Q5> {
                   bottom: size.height*0.88,
                   left: size.width*0.275,
                   right: size.width*0.275,
-                  child: SvgPicture.asset(FourBars),
+                  child: SvgPicture.asset(FiveBars),
                 ),
               ),
+
+              Visibility(
+                visible: Visible,
+                child: Positioned(
+                  top: size.height*0.468,
+                  left: size.width*0.7,
+                  child: IconButton(
+                    iconSize: 64,
+                    icon: SvgPicture.asset('assets/icons/QuestionMark.svg'),
+                    onPressed: (){
+                      print('QuestionMark');
+                      setState(() {
+
+                      });},
+                  ),
+                ),
+              ),
+
               if (user.avatar=="Pink")
                 Visibility(
                   visible: Visible,
                   child: Positioned(
-                    top: size.height*0.38,
-                    left: size.width*0.72,
+                    top: size.height*0.35,
+                    left: size.width*0.66,
                     height: size.width*0.3,
                     width: size.width*0.3,
                     child:PinkAvatarIcon(onPressed: null,),
@@ -109,8 +126,8 @@ class _N3Q5State extends State<N3Q5> {
                 Visibility(
                   visible: Visible,
                   child: Positioned(
-                    top: size.height*0.38,
-                    left: size.width*0.72,
+                    top: size.height*0.34,
+                    left: size.width*0.62,
                     height: size.width*0.35,
                     width: size.width*0.35,
                     child:PurpleAvatarIcon(onPressed: null,),
@@ -120,8 +137,8 @@ class _N3Q5State extends State<N3Q5> {
                 Visibility(
                   visible: Visible,
                   child: Positioned(
-                    top: size.height*0.38,
-                    left: size.width*0.72,
+                    top: size.height*0.353,
+                    left: size.width*0.645,
                     height: size.width*0.3,
                     width: size.width*0.3,
                     child: OrangeAvatarIcon(onPressed: null,),
@@ -131,8 +148,8 @@ class _N3Q5State extends State<N3Q5> {
                 Visibility(
                   visible: Visible,
                   child: Positioned(
-                    top: size.height*0.38,
-                    left: size.width*0.72,
+                    top: size.height*0.348,
+                    left: size.width*0.645,
                     height: size.width*0.3,
                     width: size.width*0.3,
                     child:BlueAvatarIcon(onPressed: null,),
@@ -142,19 +159,15 @@ class _N3Q5State extends State<N3Q5> {
               Visibility(
                 visible: Visible,
                 child: Positioned(
-                  top: size.height*0.4,
-                  left: size.width*0.0,
-                  height: size.height*0.3,
-                  width: size.width*0.5,
+                  top: size.height*0.61,
+                  left: size.width*0.75,
                   child: IconButton(
-                    icon: SvgPicture.asset('assets/icons/Alger.svg'),
+                    iconSize: 64,
+                    icon: SvgPicture.asset('assets/icons/AudioIcon.svg'),
                     onPressed: (){
-                      print('alger');
+                      print('playAudio2');
                       setState(() {
-                        oneClicked = true;
-                        twoClicked = false;
-                        threeClicked = false;
-                        fourClicked = false;
+
                       });},
                   ),
                 ),
@@ -163,14 +176,64 @@ class _N3Q5State extends State<N3Q5> {
               Visibility(
                 visible: Visible,
                 child: Positioned(
-                  top: size.height*0.5,
-                  left: size.width*0.5,
-                  height: size.height*0.3,
-                  width: size.width*0.5,
+                  top: size.height*0.81,
+                  left: size.width*0.75,
                   child: IconButton(
-                    icon: SvgPicture.asset('assets/icons/Constantine.svg'),
+                    iconSize: 64,
+                    icon: SvgPicture.asset('assets/icons/AudioIcon.svg'),
                     onPressed: (){
-                      print('constantine');
+                      print('playAudio4');
+                      setState(() {
+
+                      });},
+                  ),
+                ),
+              ),
+
+              Visibility(
+                visible: Visible,
+                child: Positioned(
+                  top: size.height*0.51,
+                  left: size.width*0.3,
+                  child: IconButton(
+                    iconSize: 64,
+                    icon: SvgPicture.asset('assets/icons/AudioIcon.svg'),
+                    onPressed: (){
+                      print('playAudio1');
+                      setState(() {
+
+                      });},
+                  ),
+                ),
+              ),
+
+              Visibility(
+                visible: Visible,
+                child: Positioned(
+                  top: size.height*0.71,
+                  left: size.width*0.3,
+                  child: IconButton(
+                    iconSize: 64,
+                    icon: SvgPicture.asset('assets/icons/AudioIcon.svg'),
+                    onPressed: (){
+                      print('playAudio3');
+                      setState(() {
+
+                      });},
+                  ),
+                ),
+              ),
+
+              Visibility(
+                visible: Visible,
+                child: Positioned(
+                  top: size.height*0.6,
+                  left: size.width*0.55,
+                  child: IconButton(
+                    iconSize: 80,
+                    icon: SvgPicture.asset('assets/icons/Audio2.svg'),
+                    onPressed: (){
+                      print('con');
                       setState(() {
                         oneClicked = false;
                         twoClicked = true;
@@ -180,19 +243,35 @@ class _N3Q5State extends State<N3Q5> {
                   ),
                 ),
               ),
-
-
               Visibility(
                 visible: Visible,
                 child: Positioned(
-                  top: size.height*0.6,
-                  left: size.width*0,
-                  height: size.height*0.3,
-                  width: size.width*0.5,
+                  top: size.height*0.8,
+                  left: size.width*0.55,
                   child: IconButton(
-                    icon: SvgPicture.asset('assets/icons/Annaba.svg'),
+                    iconSize: 80,
+                    icon: SvgPicture.asset('assets/icons/Audio4.svg'),
                     onPressed: (){
-                      print('anaba');
+                      print('meditera');
+                      setState(() {
+                        oneClicked = false;
+                        twoClicked = false;
+                        threeClicked = false;
+                        fourClicked = true;
+                      });},
+                  ),
+                ),
+              ),
+              Visibility(
+                visible: Visible,
+                child: Positioned(
+                  top: size.height*0.7,
+                  left: size.width*0.1,
+                  child: IconButton(
+                    iconSize: 80,
+                    icon: SvgPicture.asset('assets/icons/Audio3.svg'),
+                    onPressed: (){
+                      print('merNoire');
                       setState(() {
                         oneClicked = false;
                         twoClicked = false;
@@ -203,23 +282,21 @@ class _N3Q5State extends State<N3Q5> {
 
                 ),
               ),
-
               Visibility(
                 visible: Visible,
                 child: Positioned(
-                  top: size.height*0.7,
-                  left: size.width*0.5,
-                  height: size.height*0.3,
-                  width: size.width*0.5,
+                  top: size.height*0.5,
+                  left: size.width*0.1,
                   child: IconButton(
-                    icon: SvgPicture.asset('assets/icons/Bejaia.svg'),
+                    iconSize: 80,
+                    icon: SvgPicture.asset('assets/icons/Audio1.svg'),
                     onPressed: (){
-                      print('Bejaia');
+                      print('mermorte');
                       setState(() {
-                        oneClicked = false;
+                        oneClicked = true;
                         twoClicked = false;
                         threeClicked = false;
-                        fourClicked = true;
+                        fourClicked = false;
                       });},
                   ),
                 ),
@@ -295,40 +372,57 @@ class _N3Q5State extends State<N3Q5> {
               ),
 
               Positioned(
-                  top: size.height*0.6,
-                  left: size.width*0,
-                  height: size.height*0.3,
-                  width: size.width*0.5,
+                  top: size.height*0.7,
+                  left: size.width*0.1,
                   child: Visibility(
                       visible: (threeClicked && Visible),
                       child: IconButton(
+                        iconSize: 80,
                         onPressed: (){
                           if (threeClicked){
-                            //Vibration.vibrate();
-                            setState(() {
-                              Navigator.push(
-                                  context,
-                                  MaterialPageRoute(builder: (context) => N3Q5T2_C_3()));
-                              print('Wrong');
-                            });
+                            Vibration.vibrate();
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(builder: (context) => N3Q5T2_C_2()));
+                            print('Wrong');
 
-                            //print('Correct');
+                            print('Correct');
                           }
                           print('2');
                         },
-                        icon: SvgPicture.asset('assets/icons/Annaba.svg'),))
+                        icon: SvgPicture.asset('assets/icons/Audio3.svg'),))
               ),
-
               Positioned(
-                top: size.height*0.7,
-                left: size.width*0.5,
-                height: size.height*0.3,
-                width: size.width*0.5,
-                child: Visibility(
-                    visible: (fourClicked&&Visible),
-                    child: IconButton(
+                  top: size.height*0.8,
+                  left: size.width*0.55,
+                  child: Visibility(
+                      visible: (fourClicked && Visible),
+                      child: IconButton(
+                        iconSize: 80,
                         onPressed: (){
                           if (fourClicked){
+                            Vibration.vibrate();
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(builder: (context) => N3Q5T2_C_4()));
+                            print('Wrong');
+
+                            print('Correct');
+                          }
+                          print('2');
+                        },
+                        icon: SvgPicture.asset('assets/icons/Audio4.svg'),))
+              ),
+              Positioned(
+                top: size.height*0.6,
+                left: size.width*0.55,
+
+                child: Visibility(
+                    visible: (twoClicked&&Visible),
+                    child: IconButton(
+                        iconSize: 80,
+                        onPressed: (){
+                          if (twoClicked){
                             setState(() {
                               Visible = false;
                             });
@@ -337,43 +431,17 @@ class _N3Q5State extends State<N3Q5> {
                           }
                           print('2');
                         },
-                        icon: SvgPicture.asset('assets/icons/Bejaia.svg'))
+                        icon: SvgPicture.asset('assets/icons/Audio2.svg'))
                 ),
               ),
+
               Positioned(
                 top: size.height*0.5,
-                left: size.width*0.5,
-                height: size.height*0.3,
-                width: size.width*0.5,
-
-                child: Visibility(
-                    visible: (twoClicked&&Visible),
-                    child: IconButton(
-                        onPressed: (){
-                          if (twoClicked){
-                            Vibration.vibrate();
-                            setState(() {
-                              Navigator.push(
-                                  context,
-                                  MaterialPageRoute(builder: (context) => N3Q5T2_C_2()));
-                              print('Wrong');
-                            });
-
-                            //print('Correct');
-                          }
-                          print('2');
-                        },
-                        icon: SvgPicture.asset('assets/icons/Constantine.svg'))
-                ),
-              ),
-              Positioned(
-                top: size.height*0.4,
-                left: size.width*0.0,
-                height: size.height*0.3,
-                width: size.width*0.5,
+                left: size.width*0.1,
                 child: Visibility(
                     visible: (oneClicked&&Visible),
                     child: IconButton(
+                        iconSize: 80,
                         onPressed: (){
                           if (oneClicked)  {
                             Vibration.vibrate();
@@ -384,42 +452,33 @@ class _N3Q5State extends State<N3Q5> {
                           }
                           print('3');
                         },
-                        icon: SvgPicture.asset('assets/icons/Alger.svg'))
+                        icon: SvgPicture.asset('assets/icons/Audio1.svg'))
                 ),
               ),
-              Positioned(
+              /*Positioned(
                 top: size.height*0.45,
                 left: size.width*0.2,
-                height: size.height*0.3,
-                width: size.width*0.6,
                 child: Visibility(
                     visible: !Visible,
                     child: IconButton(
+                        iconSize: 80,
                         onPressed: (){
                           print('3aychin ghaya kho');
                         },
-                        icon: SvgPicture.asset('assets/icons/Constantine.svg'))
+                        icon: SvgPicture.asset('assets/icons/1.svg'))
                 ),
-              ),
+
+              ),*/
               Visibility(
                 visible: !Visible,
-                child:Align(
-                    alignment: Alignment.center,
-                    child: SvgPicture.asset(Right)
-                ),
-              ),
-
-              Visibility(
-                visible: Visible,
                 child: Positioned(
-                  top: size.height*0.75,
-                  left: size.width*0.0,
-                  height: size.height*0.3,
-                  width: size.width*0.5,
+                  top: size.height*0.56,
+                  left: size.width*0.35,
                   child: IconButton(
-                    icon: SvgPicture.asset('assets/icons/QuestionMark.svg'),
+                    iconSize: 100,
+                    icon: SvgPicture.asset('assets/icons/AudioIcon.svg'),
                     onPressed: (){
-                      print('QuestionMark');
+                      print('playAudio1');
                       setState(() {
 
                       });},
@@ -427,6 +486,13 @@ class _N3Q5State extends State<N3Q5> {
                 ),
               ),
 
+              Visibility(
+                visible: !Visible,
+                child:Align(
+                    alignment: Alignment.center,
+                    child: SvgPicture.asset(Right)
+                ),
+              ),
             ],
           ),
         ));

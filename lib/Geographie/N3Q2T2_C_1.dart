@@ -20,6 +20,7 @@ import 'package:somthn/Avatars/BlueAvatarIcon.dart';
 import '../Services/Login.dart';
 
 import 'package:somthn/Bulles/BulleN1Q4T2.dart';
+import 'package:somthn/Geographie/BienvenueGeo.dart';
 
 class N3Q2T2_C_1 extends StatefulWidget {
   const N3Q2T2_C_1({Key key}) : super(key: key);
@@ -57,8 +58,11 @@ class _N3Q2T2_C_1State extends State<N3Q2T2_C_1> {
                   right:size.width*0.75,
 
                   child: BacksButton(onPressed: (){
-                    print("u clicked me");
-                    Navigator.pop(context);
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => BienvenueGeo()));
+                    print("back");
+                    //Navigator.pop(context);
                   },)
               ),
 
@@ -76,30 +80,47 @@ class _N3Q2T2_C_1State extends State<N3Q2T2_C_1> {
                   bottom: size.height*0.88,
                   left: size.width*0.275,
                   right: size.width*0.275,
-                  child: SvgPicture.asset(FourBars)),
+                  child: SvgPicture.asset('assets/icons/OneBar.svg')),
               Positioned(
-                bottom: size.height*0.55,
+                bottom: size.height*0.57,
                 left: size.width*0.05,
                 height: size.height*0.3,
-                width: size.width*0.8,
+                width: size.width*0.6,
                 child:SvgPicture.asset('assets/icons/BulleN3Q2T2.svg'),
               ),
-
               Visibility(
                 visible: !Visible,
                 child: Positioned(
                   bottom: size.height*0.88,
                   left: size.width*0.275,
                   right: size.width*0.275,
-                  child: SvgPicture.asset(FourBars),
+                  child: SvgPicture.asset(TwoBars),
                 ),
               ),
+
+              Visibility(
+                visible: Visible,
+                child: Positioned(
+                  top: size.height*0.468,
+                  left: size.width*0.7,
+                  child: IconButton(
+                    iconSize: 64,
+                    icon: SvgPicture.asset('assets/icons/QuestionMark.svg'),
+                    onPressed: (){
+                      print('QuestionMark');
+                      setState(() {
+
+                      });},
+                  ),
+                ),
+              ),
+
               if (user.avatar=="Pink")
                 Visibility(
                   visible: Visible,
                   child: Positioned(
-                    top: size.height*0.38,
-                    left: size.width*0.72,
+                    top: size.height*0.35,
+                    left: size.width*0.66,
                     height: size.width*0.3,
                     width: size.width*0.3,
                     child:PinkAvatarIcon(onPressed: null,),
@@ -109,8 +130,8 @@ class _N3Q2T2_C_1State extends State<N3Q2T2_C_1> {
                 Visibility(
                   visible: Visible,
                   child: Positioned(
-                    top: size.height*0.38,
-                    left: size.width*0.72,
+                    top: size.height*0.34,
+                    left: size.width*0.62,
                     height: size.width*0.35,
                     width: size.width*0.35,
                     child:PurpleAvatarIcon(onPressed: null,),
@@ -120,8 +141,8 @@ class _N3Q2T2_C_1State extends State<N3Q2T2_C_1> {
                 Visibility(
                   visible: Visible,
                   child: Positioned(
-                    top: size.height*0.38,
-                    left: size.width*0.72,
+                    top: size.height*0.353,
+                    left: size.width*0.645,
                     height: size.width*0.3,
                     width: size.width*0.3,
                     child: OrangeAvatarIcon(onPressed: null,),
@@ -131,8 +152,8 @@ class _N3Q2T2_C_1State extends State<N3Q2T2_C_1> {
                 Visibility(
                   visible: Visible,
                   child: Positioned(
-                    top: size.height*0.38,
-                    left: size.width*0.72,
+                    top: size.height*0.348,
+                    left: size.width*0.645,
                     height: size.width*0.3,
                     width: size.width*0.3,
                     child:BlueAvatarIcon(onPressed: null,),
@@ -143,9 +164,9 @@ class _N3Q2T2_C_1State extends State<N3Q2T2_C_1> {
               Visibility(
                 visible: Visible,
                 child: Positioned(
-                  top: size.height*0.5,
+                  top: size.height*0.6,
                   left: size.width*0.5,
-                  height: size.height*0.3,
+                  height: size.height*0.1,
                   width: size.width*0.5,
                   child: IconButton(
                     icon: SvgPicture.asset('assets/icons/Santa.svg'),
@@ -163,9 +184,9 @@ class _N3Q2T2_C_1State extends State<N3Q2T2_C_1> {
               Visibility(
                 visible: Visible,
                 child: Positioned(
-                  top: size.height*0.7,
+                  top: size.height*0.8,
                   left: size.width*0.5,
-                  height: size.height*0.3,
+                  height: size.height*0.1,
                   width: size.width*0.5,
                   child: IconButton(
                     icon: SvgPicture.asset('assets/icons/Pise.svg'),
@@ -183,9 +204,9 @@ class _N3Q2T2_C_1State extends State<N3Q2T2_C_1> {
               Visibility(
                 visible: Visible,
                 child: Positioned(
-                  top: size.height*0.6,
+                  top: size.height*0.7,
                   left: size.width*0,
-                  height: size.height*0.3,
+                  height: size.height*0.1,
                   width: size.width*0.5,
                   child: IconButton(
                     icon: SvgPicture.asset('assets/icons/Ketchaoua.svg'),
@@ -204,9 +225,9 @@ class _N3Q2T2_C_1State extends State<N3Q2T2_C_1> {
               Visibility(
                 visible: false,
                 child: Positioned(
-                  top: size.height*0.4,
+                  top: size.height*0.5,
                   left: size.width*0.0,
-                  height: size.height*0.3,
+                  height: size.height*0.1,
                   width: size.width*0.5,
                   child: IconButton(
                     icon: SvgPicture.asset('assets/icons/Pise.svg'),
@@ -238,9 +259,9 @@ class _N3Q2T2_C_1State extends State<N3Q2T2_C_1> {
               ),
               //Second click
               Positioned(
-                  top: size.height*0.6,
+                  top: size.height*0.7,
                   left: size.width*0,
-                  height: size.height*0.3,
+                  height: size.height*0.1,
                   width: size.width*0.5,
                   child: Visibility(
                       visible: (threeClicked && Visible),
@@ -262,9 +283,9 @@ class _N3Q2T2_C_1State extends State<N3Q2T2_C_1> {
                         icon: SvgPicture.asset('assets/icons/Ketchaoua.svg'),))
               ),
               Positioned(
-                top: size.height*0.7,
+                top: size.height*0.8,
                 left: size.width*0.5,
-                height: size.height*0.3,
+                height: size.height*0.1,
                 width: size.width*0.5,
                 child: Visibility(
                     visible: (fourClicked&&Visible),
@@ -288,9 +309,9 @@ class _N3Q2T2_C_1State extends State<N3Q2T2_C_1> {
                 ),
               ),
               Positioned(
-                top: size.height*0.5,
+                top: size.height*0.6,
                 left: size.width*0.5,
-                height: size.height*0.3,
+                height: size.height*0.1,
                 width: size.width*0.5,
 
                 child: Visibility(
@@ -314,9 +335,9 @@ class _N3Q2T2_C_1State extends State<N3Q2T2_C_1> {
                 ),
               ),
               Positioned(
-                top: size.height*0.4,
+                top: size.height*0.5,
                 left: size.width*0.0,
-                height: size.height*0.3,
+                height: size.height*0.1,
                 width: size.width*0.5,
                 child: Visibility(
                     visible: false,
@@ -468,24 +489,6 @@ class _N3Q2T2_C_1State extends State<N3Q2T2_C_1> {
                           child:Image.asset('images/MadBlue.gif'),
                         ),
                       ),
-
-                    Visibility(
-                      visible: Visible,
-                      child: Positioned(
-                        top: size.height*0.75,
-                        left: size.width*0.0,
-                        height: size.height*0.3,
-                        width: size.width*0.5,
-                        child: IconButton(
-                          icon: SvgPicture.asset('assets/icons/QuestionMark.svg'),
-                          onPressed: (){
-                            print('QuestionMark');
-                            setState(() {
-
-                            });},
-                        ),
-                      ),
-                    ),
 
                   ],
                 ),
