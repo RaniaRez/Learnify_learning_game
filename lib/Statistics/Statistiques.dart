@@ -114,7 +114,7 @@ class _StatsState extends State<Stats> {
                 left:size.width*0.25,
                 child: FittedBox(
               child: Text(
-                'Salut $name \n voyons tes\nstatistique',
+                'Salut $name \n voyons tes\nstatistiques',
                     style: TextStyle(
                       fontFamily: 'Skranji-Bold',
                       color: Colors.brown[800],
@@ -178,7 +178,7 @@ class _StatsState extends State<Stats> {
 
             ),
             Positioned(
-              top:size.height*0.44,
+              top:size.height*0.43,
               right:size.width*0.05,
               child: Container(
                   height: 70,
