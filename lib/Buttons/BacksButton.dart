@@ -10,12 +10,11 @@ class BacksButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return BouncingWidget(
       onPressed: onPressed,
-      scaleFactor: 1.5,
+      scaleFactor: 2,
       duration: Duration(milliseconds: 100),
       child: IconButton(
           icon : SvgPicture.asset(backButton),
           iconSize: 70.0,
-          onPressed: onPressed
       ),
     );
   }
