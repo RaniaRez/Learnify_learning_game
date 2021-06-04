@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:somthn/Francais/testNiv/TestNivFrQ1.dart';
 //import 'package:somthn/Francais/F-1.dart';
 import 'package:somthn/Geographie/TestNiv/BienvenueTest.dart';
 import 'package:somthn/WelcomePages/Settings.dart';
@@ -19,9 +20,8 @@ import 'TestGeo3.dart';
 import '../BienvenueGeo.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'SetNiveaux.dart';
+import 'TestGeo1.dart';
 
-
-TestGeo test =new  TestGeo();
 
 
 class TestGeo2 extends StatefulWidget {
@@ -135,7 +135,7 @@ class _TestGeo2State extends State<TestGeo2> {
                         setState(() {
                           Visible=false;
                           correct=true;
-                          test.q1=true ;
+                          testG.q2=true ;
                         });
                         print('int');
                       },

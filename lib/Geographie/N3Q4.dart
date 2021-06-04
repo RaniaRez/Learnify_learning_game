@@ -18,6 +18,7 @@ import 'package:vibration/vibration.dart';
 import 'package:somthn/Geographie/BienvenueGeo.dart';
 import 'package:audioplayers/audio_cache.dart';
 import 'package:audioplayers/audioplayers.dart';
+import 'BienvenueGeo.dart';
 
 
 class N3Q4 extends StatefulWidget {
@@ -390,6 +391,7 @@ class _N3Q4State extends State<N3Q4> {
                             });
 
                             print('Correct');
+                            scoreG.niv3+=2;
                           }
                           print('2');
                         },

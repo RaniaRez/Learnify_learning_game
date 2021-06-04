@@ -1,3 +1,4 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:somthn/Geographie/NiveauGeo.dart';
@@ -15,6 +16,7 @@ import '../Services/Login.dart';
 import 'package:somthn/Geographie/BienvenueGeo.dart';
 import 'package:audioplayers/audio_cache.dart';
 import 'package:audioplayers/audioplayers.dart';
+import 'BienvenueGeo.dart';
 
 class N3Q5T2_C_4 extends StatefulWidget {
   const N3Q5T2_C_4({Key key}) : super(key: key);
@@ -295,6 +297,12 @@ class _N3Q5T2_C_4State extends State<N3Q5T2_C_4> {
                     height: size.height*0.2,
                     width: size.width*0.5,
                     child: ButtonContinuer(onPressed: (){
+                      print("score final");
+                      print(scoreG.niv3);
+                      Firestore.instance.collection('users').document(user.uid).collection('domains').document('geographie').updateData({'niv3':scoreG.niv3});
+                      if (scoreG.niv3>highG.niv3)
+                      { highG.niv3=scoreG.niv3 ;
+                      Firestore.instance.collection('users').document(user.uid).collection('domains').document('geographie').updateData({'high3':scoreG.niv3});}
                       Navigator.push(
                           context,
                           MaterialPageRoute(builder: (context) => NiveauGeo()));
@@ -368,6 +376,7 @@ class _N3Q5T2_C_4State extends State<N3Q5T2_C_4> {
                               Visible = false;
 
                               print('Correct');
+                              scoreG.niv3++ ;
                             });
                             print('Oran');
                           }

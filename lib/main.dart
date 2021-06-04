@@ -5,6 +5,7 @@ import 'package:somthn/Statistics/ScoreMath.dart';
 import 'package:somthn/Geographie/NiveauGeo.dart';
 import 'package:somthn/WelcomePages/Home.dart';
 import 'package:somthn/WelcomePages/Voila.dart';
+import 'Geographie/TestNiv/BienvenueTest.dart';
 
 void main() {
 /*  WidgetsFlutterBinding.ensureInitialized();
@@ -15,5 +16,5 @@ void main() {
       'lettresEntre': []
     }
   };*/
-  runApp(MaterialApp(home: Home()));
+  runApp(MaterialApp(home: TestNiveau()));
 }

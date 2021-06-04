@@ -15,6 +15,7 @@ import '../Services/Login.dart';
 import 'package:somthn/Geographie/BienvenueGeo.dart';
 import 'package:audioplayers/audio_cache.dart';
 import 'package:audioplayers/audioplayers.dart';
+import 'BienvenueGeo.dart';
 
 class N3Q2T2_C_3 extends StatefulWidget {
   const N3Q2T2_C_3({Key key}) : super(key: key);
@@ -312,6 +313,7 @@ class _N3Q2T2_C_3State extends State<N3Q2T2_C_3> {
                               Visible = false;
 
                               print('Correct');
+                              scoreG.niv3++ ;
                             });
 
 

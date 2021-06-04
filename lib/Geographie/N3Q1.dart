@@ -18,6 +18,7 @@ import 'package:vibration/vibration.dart';
 import 'package:somthn/Geographie/BienvenueGeo.dart';
 import 'package:audioplayers/audio_cache.dart';
 import 'package:audioplayers/audioplayers.dart';
+import 'BienvenueGeo.dart';
 
 
 
@@ -60,6 +61,7 @@ class _N3Q1State extends State<N3Q1> {
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
+    scoreG.niv3=0 ;
     return Container(
         height: size.height,
         width: size.width,
@@ -378,6 +380,7 @@ class _N3Q1State extends State<N3Q1> {
                             });
 
                             print('Correct');
+                            scoreG.niv3+=2 ;
                           }
                           print('2');
                         },
