@@ -143,26 +143,6 @@ class _HomeState extends State<Home> {
                 height: size.height*0.6,
                 width: size.width*0.7,
                 child:BulleIcon(onPressed: (){}),
-              ), Positioned(
-                  top: size.height*0.05,
-                  left:size.width*0.1,
-                  child:
-                  SettingsButton(onPressed: (){
-                    /*void _playFile() async {
-                      MusicPlayer.instance.play("audio/Def.wav");
-                    }*/
-                    print("ff");
-                    showDialog(context: context,
-                        builder: (BuildContext context){
-                          return CustomDialogBox(
-                            title: "Custom Dialog Demo",
-                            descriptions: "Hii all this is a custom dialog in flutter and  you will be use in your flutter applications",
-                            text: "Yes",
-                          );
-                        }
-                    );
-                  },
-                  )
               ),
 
 
