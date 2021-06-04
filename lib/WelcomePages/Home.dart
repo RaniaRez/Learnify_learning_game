@@ -1,4 +1,5 @@
 
+import 'package:bouncing_widget/bouncing_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:somthn/WelcomePages/Vite.dart';
 import 'package:somthn/WelcomePages/Voila.dart';
@@ -84,18 +85,7 @@ class _HomeState extends State<Home> {
                         image: AssetImage("images/forestbackground.jpg"),
                         fit: BoxFit.cover)),
               ),
-              Positioned(
-                  top: size.height*0.05,
-                  left:size.width*0.75,
-                  child:
-                  SettingsButton(onPressed: () async {
-                   // advancedPlayer = await Settings();
 
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(builder: (context) => Settings(value: advancedPlayer )));
-                  },)
-              ),
 
 
 
@@ -143,30 +133,20 @@ class _HomeState extends State<Home> {
                 height: size.height*0.6,
                 width: size.width*0.7,
                 child:BulleIcon(onPressed: (){}),
-              ), Positioned(
-                  top: size.height*0.05,
-                  left:size.width*0.1,
-                  child:
-                  SettingsButton(onPressed: (){
-                    /*void _playFile() async {
-                      MusicPlayer.instance.play("audio/Def.wav");
-                    }*/
-                    print("ff");
-                    showDialog(context: context,
-                        builder: (BuildContext context){
-                          return CustomDialogBox(
-                            title: "Custom Dialog Demo",
-                            descriptions: "Hii all this is a custom dialog in flutter and  you will be use in your flutter applications",
-                            text: "Yes",
-                          );
-                        }
-                    );
-                  },
-                  )
               ),
+              Positioned(
+                  top: size.height*0.05,
+                  left:size.width*0.75,
+                  child:
+                  SettingsButton(onPressed: () {
+                    print('s');
+                    // advancedPlayer = await Settings();
 
-
-
+                    //  Navigator.push(
+                    //    context,
+                    //   MaterialPageRoute(builder: (context) => Settings(value: advancedPlayer )));
+                  },)
+              ),
             ]
         ),
       ),

@@ -1,16 +1,28 @@
+import 'package:animate_do/animate_do.dart';
+import 'package:bouncing_widget/bouncing_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import '../myicons.dart';
 import 'package:flutter/foundation.dart';
-class ButtonAllonsy extends StatelessWidget {
+class ButtonAllonsy extends StatefulWidget {
   ButtonAllonsy({@required this.onPressed});
   final GestureTapCallback onPressed;
+
+  @override
+  _ButtonAllonsyState createState() => _ButtonAllonsyState();
+}
+
+class _ButtonAllonsyState extends State<ButtonAllonsy> {
   @override
   Widget build(BuildContext context) {
-    return IconButton(
+    return BouncingWidget(
+        onPressed: widget.onPressed,
+        scaleFactor: 1.5,
+        duration: Duration(milliseconds: 100),
+      child:IconButton(
         icon :
         SvgPicture.asset(buttonAllonsy),
-        onPressed: onPressed
-    );
+
+    ));
   }
 }
