@@ -1,13 +1,12 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:somthn/Buttons/BarreProgres.dart';
-import 'package:somthn/WelcomePages/Home.dart';
-import 'package:vibration/vibration.dart';
-
-import 'package:somthn/Geographie/N1Q5.dart';
+import 'package:somthn/Geographie/N1Q3T2_C_1.dart';
+import 'package:somthn/Geographie/N1Q3T2_C_3.dart';
+import 'package:somthn/Geographie/N1Q3T2_C_4.dart';
+import 'package:somthn/Geographie/N1Q4.dart';
 import 'package:somthn/WelcomePages/Settings.dart';
 import 'package:somthn/Buttons/buttonContinuer.dart';
+import 'package:somthn/Buttons/buttonQ.dart';
 import 'package:somthn/myicons.dart';
 import '../Buttons/settingsButton.dart';
 import '../Buttons/BacksButton.dart';
@@ -16,22 +15,21 @@ import 'package:somthn/Avatars/PinkAvatarIcon.dart';
 import 'package:somthn/Avatars/PurpleAvatarIcon.dart';
 import 'package:somthn/Avatars/BlueAvatarIcon.dart';
 import '../Services/Login.dart';
-import 'package:somthn/Bulles/BulleN1Q4T2.dart';
 
-class N1Q4T2_C4 extends StatefulWidget {
-  const N1Q4T2_C4({Key key}) : super(key: key);
+import 'package:vibration/vibration.dart';
+
+class N1Q3 extends StatefulWidget {
+  const N1Q3({Key key}) : super(key: key);
 
   @override
-  _N1Q4T2_C4State createState() => _N1Q4T2_C4State();
+  _N1Q3State createState() => _N1Q3State();
 }
-
-class _N1Q4T2_C4State extends State<N1Q4T2_C4> {
-  bool Visible = true;
-  bool correct = false;
+class _N1Q3State extends State<N1Q3> {
   bool oneClicked = false;
   bool twoClicked = false;
   bool threeClicked = false;
   bool fourClicked = false;
+  bool Visible = true;
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
@@ -78,8 +76,8 @@ class _N1Q4T2_C4State extends State<N1Q4T2_C4> {
                 bottom: size.height*0.55,
                 left: size.width*0.05,
                 height: size.height*0.3,
-                width: size.width*0.8,
-                child:BulleN1Q4T2(),
+                width: size.width*0.7,
+                child:SvgPicture.asset('assets/icons/BulleN1Q3.svg'),
               ),
               Visibility(
                 visible: !Visible,
@@ -144,9 +142,9 @@ class _N1Q4T2_C4State extends State<N1Q4T2_C4> {
                   height: size.height*0.3,
                   width: size.width*0.5,
                   child: IconButton(
-                    icon: SvgPicture.asset('assets/icons/Oran.svg'),
+                    icon: SvgPicture.asset('assets/icons/Algeria.svg'),
                     onPressed: (){
-                      print('oran');
+                      print('merRouge');
                       setState(() {
                         oneClicked = false;
                         twoClicked = true;
@@ -157,16 +155,16 @@ class _N1Q4T2_C4State extends State<N1Q4T2_C4> {
                 ),
               ),
               Visibility(
-                visible: false,
+                visible: Visible,
                 child: Positioned(
                   top: size.height*0.7,
                   left: size.width*0.5,
                   height: size.height*0.3,
                   width: size.width*0.5,
                   child: IconButton(
-                    icon: SvgPicture.asset('assets/icons/Adrar.svg'),
+                    icon: SvgPicture.asset('assets/icons/Tunisie.svg'),
                     onPressed: (){
-                      print('adrar');
+                      print('meditera');
                       setState(() {
                         oneClicked = false;
                         twoClicked = false;
@@ -184,9 +182,9 @@ class _N1Q4T2_C4State extends State<N1Q4T2_C4> {
                   height: size.height*0.3,
                   width: size.width*0.5,
                   child: IconButton(
-                    icon: SvgPicture.asset('assets/icons/Alger.svg'),
+                    icon: SvgPicture.asset('assets/icons/Libie.svg'),
                     onPressed: (){
-                      print('alger');
+                      print('merNoire');
                       setState(() {
                         oneClicked = false;
                         twoClicked = false;
@@ -205,9 +203,9 @@ class _N1Q4T2_C4State extends State<N1Q4T2_C4> {
                   height: size.height*0.3,
                   width: size.width*0.5,
                   child: IconButton(
-                    icon: SvgPicture.asset('assets/icons/Annaba.svg'),
+                    icon: SvgPicture.asset('assets/icons/France.svg'),
                     onPressed: (){
-                      print('annaba');
+                      print('mermorte');
                       setState(() {
                         oneClicked = true;
                         twoClicked = false;
@@ -228,11 +226,65 @@ class _N1Q4T2_C4State extends State<N1Q4T2_C4> {
                     child: ButtonContinuer(onPressed: (){
                       Navigator.push(
                           context,
-                          MaterialPageRoute(builder: (context) => N1Q5()));
+                          MaterialPageRoute(builder: (context) => N1Q4()));
                       print('Continuer');},)
                 ),
               ),
-              //Second click
+              if (user.avatar=="Pink")
+                Visibility(
+                  visible: !Visible,
+                  child: Positioned(
+                    height: size.width*0.3,
+                    width: size.width*0.3,
+                    left: size.width*0.1,
+                    top:size.height*0.729,
+                    child:Image.asset('images/HappyPink.gif'),
+                  ),
+                ),
+              if (user.avatar=="Purple")
+                Visibility(
+                  visible: !Visible,
+                  child: Positioned(
+                    height: size.width*0.35,
+                    width: size.width*0.35,
+                    left: size.width*0.1,
+                    top:size.height*0.7,
+                    child:Image.asset('images/HappyPurple.gif'),
+                  ),
+                ),
+              if (user.avatar=="Orange")
+                Visibility(
+                  visible: !Visible,
+                  child: Positioned(
+                    height: size.width*0.3,
+                    width: size.width*0.3,
+                    left: size.width*0.1,
+                    top:size.height*0.729,
+                    child: Image.asset('images/HappyOrange.gif'),
+                  ),
+                ),
+              if (user.avatar=="Blue")
+                Visibility(
+                  visible: !Visible,
+                  child: Positioned(
+                    height: size.width*0.3,
+                    width: size.width*0.3,
+                    left: size.width*0.1,
+                    top:size.height*0.729,
+                    child:Image.asset('images/HappyBlue.gif'),
+                  ),
+                ),
+              Visibility(
+                visible: !Visible,
+                child: Positioned(
+                    height: size.width*0.45,
+                    width: size.width*0.45,
+                    left: size.width*0.4,
+                    top:size.height*0.7,
+                    child: SvgPicture.asset(bulleBravo)
+                ),
+              ),
+
               Positioned(
                   top: size.height*0.6,
                   left: size.width*0,
@@ -243,18 +295,19 @@ class _N1Q4T2_C4State extends State<N1Q4T2_C4> {
                       child: IconButton(
                         onPressed: (){
                           if (threeClicked){
+                            Vibration.vibrate();
                             setState(() {
-                              correct = true;
-                              Visible = false;
-
-                              print('Correct');
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(builder: (context) => N1Q3T2_C_3()));
+                              print('Wrong');
                             });
 
-
+                            print('Correct');
                           }
-                          print('Alger');
+                          print('2');
                         },
-                        icon: SvgPicture.asset('assets/icons/Alger.svg'),))
+                        icon: SvgPicture.asset('assets/icons/Libie.svg'),))
               ),
               Positioned(
                 top: size.height*0.7,
@@ -265,18 +318,20 @@ class _N1Q4T2_C4State extends State<N1Q4T2_C4> {
                     visible: (fourClicked&&Visible),
                     child: IconButton(
                         onPressed: (){
-                          if (fourClicked) {
+                          if (fourClicked){
                             Vibration.vibrate();
                             setState(() {
-                              correct = false;
-                              Visible = false;
-
-                              print('Correct');
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(builder: (context) => N1Q3T2_C_4()));
+                              print('Wrong');
                             });
-                            print('Adrar');
+
+                            print('Correct');
                           }
+                          print('2');
                         },
-                        icon: SvgPicture.asset('assets/icons/Adrar.svg'))
+                        icon: SvgPicture.asset('assets/icons/Tunisie.svg'))
                 ),
               ),
               Positioned(
@@ -289,17 +344,16 @@ class _N1Q4T2_C4State extends State<N1Q4T2_C4> {
                     visible: (twoClicked&&Visible),
                     child: IconButton(
                         onPressed: (){
-                          if (twoClicked) {
-                            Vibration.vibrate();
+                          if (twoClicked){
                             setState(() {
-                              correct = false;
                               Visible = false;
-
-                              print('Correct');
                             });
-                            print('Oran');
-                          }},
-                        icon: SvgPicture.asset('assets/icons/Oran.svg'))
+
+                            print('Correct');
+                          }
+                          print('2');
+                        },
+                        icon: SvgPicture.asset('assets/icons/Algeria.svg'))
                 ),
               ),
               Positioned(
@@ -308,151 +362,42 @@ class _N1Q4T2_C4State extends State<N1Q4T2_C4> {
                 height: size.height*0.3,
                 width: size.width*0.5,
                 child: Visibility(
-                    visible: false,
+                    visible: (oneClicked&&Visible),
                     child: IconButton(
                         onPressed: (){
-                          if (oneClicked) {
+                          if (oneClicked)  {
                             Vibration.vibrate();
-                            setState(() {
-                              correct = false;
-                              Visible = false;
-
-                              print('Correct');
-                            });}
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(builder: (context) => N1Q3T2_C_1()));
+                            print('Wrong');
+                          }
+                          print('3');
                         },
-                        icon: SvgPicture.asset('assets/icons/Annaba.svg'))
+                        icon: SvgPicture.asset('assets/icons/France.svg'))
                 ),
               ),
-              if (correct)
-                Stack(
-                  children: <Widget>[
-                    Visibility(
-                      visible: !Visible,
-                      child:Align(
-                          alignment: Alignment.center,
-                          child: SvgPicture.asset(Right)
-                      ),
-                    ),
-                    if (user.avatar=="Pink")
-                      Visibility(
-                        visible: !Visible,
-                        child: Positioned(
-                          height: size.width*0.3,
-                          width: size.width*0.3,
-                          left: size.width*0.1,
-                          top:size.height*0.729,
-                          child:Image.asset('images/HappyPink.gif'),
-                        ),
-                      ),
-                    if (user.avatar=="Purple")
-                      Visibility(
-                        visible: !Visible,
-                        child: Positioned(
-                          height: size.width*0.35,
-                          width: size.width*0.35,
-                          left: size.width*0.1,
-                          top:size.height*0.7,
-                          child:Image.asset('images/HappyPurple.gif'),
-                        ),
-                      ),
-                    if (user.avatar=="Orange")
-                      Visibility(
-                        visible: !Visible,
-                        child: Positioned(
-                          height: size.width*0.3,
-                          width: size.width*0.3,
-                          left: size.width*0.1,
-                          top:size.height*0.729,
-                          child: Image.asset('images/HappyOrange.gif'),
-                        ),
-                      ),
-                    if (user.avatar=="Blue")
-                      Visibility(
-                        visible: !Visible,
-                        child: Positioned(
-                          height: size.width*0.3,
-                          width: size.width*0.3,
-                          left: size.width*0.1,
-                          top:size.height*0.729,
-                          child:Image.asset('images/HappyBlue.gif'),
-                        ),
-                      ),
-                    Visibility(
-                      visible: !Visible,
-                      child: Positioned(
-                          height: size.width*0.45,
-                          width: size.width*0.45,
-                          left: size.width*0.4,
-                          top:size.height*0.7,
-                          child: SvgPicture.asset(bulleBravo)
-                      ),
-                    ),
-                    Visibility(
-                      visible: !Visible,
-                      child:Align(
-                          alignment: Alignment.center,
-                          child: SvgPicture.asset(Right)
-                      ),
-                    ),
-                  ],
+              Positioned(
+                top: size.height*0.45,
+                left: size.width*0.2,
+                height: size.height*0.3,
+                width: size.width*0.6,
+                child: Visibility(
+                    visible: !Visible,
+                    child: IconButton(
+                        onPressed: (){
+                          print('3aychin ghaya kho');
+                        },
+                        icon: SvgPicture.asset('assets/icons/Algeria.svg'))
                 ),
-              if (!correct)
-                Stack(
-                  children:[
-                    Visibility(
-                      visible: !Visible,
-                      child: Align(
-                          alignment: Alignment.center,
-                          child: SvgPicture.asset(Wrong)
-                      ),
-                    ),
-                    if (user.avatar=="Pink")
-                      Visibility(
-                        visible: !Visible,
-                        child: Positioned(
-                          height: size.width*0.3,
-                          width: size.width*0.3,
-                          left: size.width*0.1,
-                          top:size.height*0.729,
-                          child: Image.asset('images/MadPink.gif'),
-                        ),
-                      ),
-                    if (user.avatar=="Purple")
-                      Visibility(
-                        visible: !Visible,
-                        child: Positioned(
-                          height: size.width*0.35,
-                          width: size.width*0.35,
-                          left: size.width*0.1,
-                          top:size.height*0.7,
-                          child:Image.asset('images/MadPurple.gif'),
-                        ),
-                      ),
-                    if (user.avatar=="Orange")
-                      Visibility(
-                        visible: !Visible,
-                        child: Positioned(
-                          height: size.width*0.3,
-                          width: size.width*0.3,
-                          left: size.width*0.1,
-                          top:size.height*0.729,
-                          child: Image.asset('images/MadOrange.gif'),
-                        ),
-                      ),
-                    if (user.avatar=="Blue")
-                      Visibility(
-                        visible: !Visible,
-                        child: Positioned(
-                          height: size.width*0.3,
-                          width: size.width*0.3,
-                          left: size.width*0.1,
-                          top:size.height*0.729,
-                          child:Image.asset('images/MadBlue.gif'),
-                        ),
-                      ),
-
-                  ],
+              ),
+              Visibility(
+                visible: !Visible,
+                child:Align(
+                    alignment: Alignment.center,
+                    child: SvgPicture.asset(Right)
                 ),
+              ),
             ],
           ),
         ));

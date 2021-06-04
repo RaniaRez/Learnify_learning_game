@@ -1,6 +1,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:somthn/Francais/F-1-4.dart';
+import 'package:somthn/Geographie/N1Q3.dart';
 import 'package:somthn/Geographie/NiveauGeo.dart';
 import 'package:somthn/Maths/M-1-2.dart';
 import 'package:somthn/Maths/M-2-1.dart';
@@ -15,5 +16,5 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:somthn/WelcomePages/Voila.dart';
 
 void main() {
-  runApp(MaterialApp(home:NiveauGeo()));
+  runApp(MaterialApp(home:N1Q3()));
 }

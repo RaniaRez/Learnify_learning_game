@@ -10,22 +10,21 @@ import 'package:somthn/Buttons/buttonContinuer.dart';
 import 'package:somthn/Buttons/buttonGoTo.dart';
 import 'package:somthn/Buttons/buttonReset.dart';
 import 'package:somthn/Buttons/settingsButton.dart';
-import 'package:somthn/Francais/F-1-4-2ndAttempt.dart';
 import 'package:somthn/Francais/F-1-5.dart';
 import 'package:somthn/Francais/F-1.dart';
-import 'package:somthn/Geographie/NiveauGeo.dart';
+
 import 'package:somthn/WelcomePages/Settings.dart';
 import 'package:somthn/myicons.dart';
 import '../Services/Login.dart';
 
-class N1Q2 extends StatefulWidget {
-  const N1Q2({Key key}) : super(key: key);
+class F_1_4_2nd extends StatefulWidget {
+  const F_1_4_2nd({Key key}) : super(key: key);
 
   @override
-  _N1Q2State createState() => _N1Q2State();
+  _F_1_4_2ndState createState() => _F_1_4_2ndState();
 }
 
-class _N1Q2State extends State<N1Q2> {
+class _F_1_4_2ndState extends State<F_1_4_2nd> {
   bool Visible = true;
   String letterA;
   String letterM;
@@ -40,7 +39,7 @@ class _N1Q2State extends State<N1Q2> {
   String drag4;
   String drag5;
   String drag6;
-
+  bool correct=false;
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
@@ -54,7 +53,7 @@ class _N1Q2State extends State<N1Q2> {
                 constraints: BoxConstraints.expand(),
                 decoration: BoxDecoration(
                     image: DecorationImage(
-                        image: AssetImage("images/geo_BG.jpg"),
+                        image: AssetImage("images/frBG.jpg"),
                         fit: BoxFit.cover)),),
               Positioned(
                   top: size.height*0.05,
@@ -72,7 +71,7 @@ class _N1Q2State extends State<N1Q2> {
                   child: BacksButton(onPressed: (){
                     Navigator.push(
                         context,
-                        MaterialPageRoute(builder: (context) => NiveauGeo()));
+                        MaterialPageRoute(builder: (context) => Fr1()));
                   },)
               ),
               Positioned(
@@ -100,11 +99,13 @@ class _N1Q2State extends State<N1Q2> {
                     if((drag1=="assets/icons/m.svg")&&(drag2=="assets/icons/o.svg")&&(drag3=="assets/icons/u.svg")&&(drag4=="assets/icons/l.svg")&&(drag5=="assets/icons/i.svg")&&(drag6=="assets/icons/n.svg")){
                       setState(() {
                         Visible=false;
+                        correct=true;
                       });}else if ((drag1==null)&&(drag2==null)&&(drag3==null)&&(drag4==null)&&(drag5==null)&&(drag6==null)){}
                     else{
-                      Navigator.push(
-                          context,
-                          MaterialPageRoute(builder: (context) => F_1_4_2nd()));
+                      setState(() {
+                        Visible=false;
+                      });
+
                     }
 
                   },),
@@ -125,7 +126,7 @@ class _N1Q2State extends State<N1Q2> {
                 left: size.width*0.2,
                 height: size.width*0.5,
                 width: size.width*0.5,
-                child:SvgPicture.asset('assets/icons/bulleDictée.svg'),
+                child:SvgPicture.asset('assets/icons/bulle2ndAttempt.svg'),
               ),
               Visibility(
                 visible: Visible,
@@ -222,7 +223,7 @@ class _N1Q2State extends State<N1Q2> {
                       /////////////////////
                       /// Draggable
                       Draggable<String>(
-                        onDragStarted: (){
+                        onDragCompleted: (){
 
                           letterA = 'assets/icons/a.svg';
                         },
@@ -264,7 +265,7 @@ class _N1Q2State extends State<N1Q2> {
                       ),
                       SizedBox( width: size.width*0.1,),
                       Draggable<String>(
-                        onDragStarted: (){
+                        onDragCompleted: (){
 
                           letterM = 'assets/icons/m.svg';
                         },
@@ -304,7 +305,7 @@ class _N1Q2State extends State<N1Q2> {
                       ),
                       SizedBox( width: size.width*0.1,),
                       Draggable<String>(
-                        onDragStarted: (){
+                        onDragCompleted: (){
 
                           letterI = 'assets/icons/i.svg';
                         },
@@ -365,7 +366,7 @@ class _N1Q2State extends State<N1Q2> {
                       /////////////////////
                       /// Draggable
                       Draggable<String>(
-                        onDragStarted: (){
+                        onDragCompleted: (){
 
                           letterO = 'assets/icons/o.svg';
                         },
@@ -407,7 +408,7 @@ class _N1Q2State extends State<N1Q2> {
                       ),
                       SizedBox( width: size.width*0.1,),
                       Draggable<String>(
-                        onDragStarted: (){
+                        onDragCompleted: (){
 
                           letterN = 'assets/icons/n.svg';
                         },
@@ -447,7 +448,7 @@ class _N1Q2State extends State<N1Q2> {
                       ),
                       SizedBox( width: size.width*0.1,),
                       Draggable<String>(
-                        onDragStarted: (){
+                        onDragCompleted: (){
 
                           letterU = 'assets/icons/u.svg';
                         },
@@ -487,7 +488,7 @@ class _N1Q2State extends State<N1Q2> {
                       ),
                       SizedBox( width: size.width*0.1,),
                       Draggable<String>(
-                        onDragStarted: (){
+                        onDragCompleted: (){
 
                           letterL = 'assets/icons/l.svg';
                         },
@@ -676,60 +677,128 @@ class _N1Q2State extends State<N1Q2> {
                   ],
                 ),
               ),
-              if (user.avatar=="Pink")
-                Visibility(
-                  visible: !Visible,
-                  child: Positioned(
-                    height: size.width*0.3,
-                    width: size.width*0.3,
-                    left: size.width*0.1,
-                    top:size.height*0.729,
-                    child:Image.asset('images/HappyPink.gif'),
-                  ),
+              if (correct)
+                Stack(
+                  children: <Widget>[
+                    Visibility(
+                      visible: !Visible,
+                      child:Align(
+                          alignment: Alignment.center,
+                          child: SvgPicture.asset(Right)
+                      ),
+                    ),
+                    if (user.avatar=="Pink")
+                      Visibility(
+                        visible: !Visible,
+                        child: Positioned(
+                          height: size.width*0.3,
+                          width: size.width*0.3,
+                          left: size.width*0.1,
+                          top:size.height*0.729,
+                          child:Image.asset('images/HappyPink.gif'),
+                        ),
+                      ),
+                    if (user.avatar=="Purple")
+                      Visibility(
+                        visible: !Visible,
+                        child: Positioned(
+                          height: size.width*0.35,
+                          width: size.width*0.35,
+                          left: size.width*0.1,
+                          top:size.height*0.7,
+                          child:Image.asset('images/HappyPurple.gif'),
+                        ),
+                      ),
+                    if (user.avatar=="Orange")
+                      Visibility(
+                        visible: !Visible,
+                        child: Positioned(
+                          height: size.width*0.3,
+                          width: size.width*0.3,
+                          left: size.width*0.1,
+                          top:size.height*0.729,
+                          child: Image.asset('images/HappyOrange.gif'),
+                        ),
+                      ),
+                    if (user.avatar=="Blue")
+                      Visibility(
+                        visible: !Visible,
+                        child: Positioned(
+                          height: size.width*0.3,
+                          width: size.width*0.3,
+                          left: size.width*0.1,
+                          top:size.height*0.729,
+                          child:Image.asset('images/HappyBlue.gif'),
+                        ),
+                      ),
+                    Visibility(
+                      visible: !Visible,
+                      child: Positioned(
+                          height: size.width*0.45,
+                          width: size.width*0.45,
+                          left: size.width*0.4,
+                          top:size.height*0.7,
+                          child: SvgPicture.asset(bulleBravo)
+                      ),
+                    ),
+                  ],
                 ),
-              if (user.avatar=="Purple")
-                Visibility(
-                  visible: !Visible,
-                  child: Positioned(
-                    height: size.width*0.35,
-                    width: size.width*0.35,
-                    left: size.width*0.1,
-                    top:size.height*0.7,
-                    child:Image.asset('images/HappyPurple.gif'),
-                  ),
+              if (!correct)
+                Stack(
+                  children:[
+                    Visibility(
+                      visible: !Visible,
+                      child: Align(
+                          alignment: Alignment.center,
+                          child: SvgPicture.asset(Wrong)
+                      ),
+                    ),
+                    if (user.avatar=="Pink")
+                      Visibility(
+                        visible: !Visible,
+                        child: Positioned(
+                          height: size.width*0.3,
+                          width: size.width*0.3,
+                          left: size.width*0.1,
+                          top:size.height*0.729,
+                          child: Image.asset('images/MadPink.gif'),
+                        ),
+                      ),
+                    if (user.avatar=="Purple")
+                      Visibility(
+                        visible: !Visible,
+                        child: Positioned(
+                          height: size.width*0.35,
+                          width: size.width*0.35,
+                          left: size.width*0.1,
+                          top:size.height*0.7,
+                          child:Image.asset('images/MadPurple.gif'),
+                        ),
+                      ),
+                    if (user.avatar=="Orange")
+                      Visibility(
+                        visible: !Visible,
+                        child: Positioned(
+                          height: size.width*0.3,
+                          width: size.width*0.3,
+                          left: size.width*0.1,
+                          top:size.height*0.729,
+                          child: Image.asset('images/MadOrange.gif'),
+                        ),
+                      ),
+                    if (user.avatar=="Blue")
+                      Visibility(
+                        visible: !Visible,
+                        child: Positioned(
+                          height: size.width*0.3,
+                          width: size.width*0.3,
+                          left: size.width*0.1,
+                          top:size.height*0.729,
+                          child:Image.asset('images/MadBlue.gif'),
+                        ),
+                      ),
+                  ],
                 ),
-              if (user.avatar=="Orange")
-                Visibility(
-                  visible: !Visible,
-                  child: Positioned(
-                    height: size.width*0.3,
-                    width: size.width*0.3,
-                    left: size.width*0.1,
-                    top:size.height*0.729,
-                    child: Image.asset('images/HappyOrange.gif'),
-                  ),
-                ),
-              if (user.avatar=="Blue")
-                Visibility(
-                  visible: !Visible,
-                  child: Positioned(
-                    height: size.width*0.3,
-                    width: size.width*0.3,
-                    left: size.width*0.1,
-                    top:size.height*0.729,
-                    child:Image.asset('images/HappyBlue.gif'),
-                  ),
-                ),
-              Visibility(
-                visible: !Visible,
-                child: Positioned(
-                    height: size.width*0.45,
-                    width: size.width*0.45,
-                    left: size.width*0.4,
-                    top:size.height*0.7,
-                    child: SvgPicture.asset(bulleBravo)
-                ),
-              )
             ]
         ),
       ),
