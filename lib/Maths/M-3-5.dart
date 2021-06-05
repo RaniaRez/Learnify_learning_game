@@ -400,9 +400,6 @@ class _M_3_5State extends State<M_3_5> {
                     child: IconButton(
                         onPressed: (){
                           if (fourClicked)  {
-                            Navigator.push(
-                                context,
-                                MaterialPageRoute(builder: (context) => Niveau3Pass()));
                             print('Wrong');
                           }
                           print('4');
@@ -421,9 +418,6 @@ class _M_3_5State extends State<M_3_5> {
                     child: IconButton(
                         onPressed: (){
                           if (twoClicked)  {
-                            Navigator.push(
-                                context,
-                                MaterialPageRoute(builder: (context) => Niveau3Pass()));
                             print('Wrong');
                           }
                           print('1');
@@ -441,9 +435,6 @@ class _M_3_5State extends State<M_3_5> {
                     child: IconButton(
                         onPressed: (){
                           if (threeClicked)  {
-                            Navigator.push(
-                                context,
-                                MaterialPageRoute(builder: (context) => Niveau3Pass()));
                             print('Wrong');
                           }
                           print('3');
@@ -677,17 +668,10 @@ class _M_3_5State extends State<M_3_5> {
                       if (scoreM.niv3>hs.niv3)
                       { hs.niv3=scoreM.niv3 ;
                         Firestore.instance.collection('users').document(user.uid).collection('domains').document('maths').updateData({'high3':scoreM.niv3});}
-                      if (scoreM.niv3>=7.5) {
                         Navigator.push(
                             context,
                             MaterialPageRoute(builder: (context) => Niveau3Pass()));
-                      }
-                      else {
-                        Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => Math3()));
-                      }
+
                       print('Continuer');},)
                 ),
               ),

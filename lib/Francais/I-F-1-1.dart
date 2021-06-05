@@ -3,6 +3,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:somthn/Avatars/OrangeAvatarIcon.dart';
 import 'package:somthn/Francais/F-1-1-2nd.dart';
 import 'package:somthn/Francais/F-1.dart';
+import 'package:somthn/Francais/F-3.dart';
 import 'package:somthn/WelcomePages/Settings.dart';
 import '../Buttons/buttonReessayer.dart';
 import '../Buttons/settingsButton.dart';
@@ -53,7 +54,7 @@ class _I_F_1_1State extends State<I_F_1_1> {
                   child: BacksButton(onPressed: (){
                     Navigator.push(
                         context,
-                        MaterialPageRoute(builder: (context) => Fr1()));
+                        MaterialPageRoute(builder: (context) => Fr3()));
                   },)
               ),
 

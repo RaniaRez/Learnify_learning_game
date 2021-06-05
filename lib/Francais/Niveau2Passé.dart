@@ -1,3 +1,4 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:somthn/Buttons/HomeButton.dart';
@@ -56,6 +57,9 @@ class _Niveau2PassState extends State<Niveau2Pass> {
     bool star1 = (high.niv1>=7.5);
     bool star2 = (high.niv2>=7.5);
     bool star3 = (high.niv3>=7.5);
+    if ((scoreF.niv3<0)&&(complet)) {
+      scoreF.niv3=0;
+    Firestore.instance.collection('users').document(user.uid).collection('domains').document('francais').updateData({'niv3':scoreF.niv3});}
     return Scaffold(
       body:
       Container(
@@ -126,7 +130,7 @@ class _Niveau2PassState extends State<Niveau2Pass> {
                 child: FittedBox(
                   fit: BoxFit.fitWidth,
                   child: Text(
-                    scoreF.niv2.toString(),
+                    high.niv2 .toString(),
                     style:TextStyle(
                       fontSize: 30,
                       fontFamily: 'Skranji-Bold',
@@ -141,7 +145,7 @@ class _Niveau2PassState extends State<Niveau2Pass> {
                 child: FittedBox(
                   fit: BoxFit.fitWidth,
                   child: Text(
-                    high.niv2 .toString() ,
+                    scoreF.niv2.toString(),
                     style:TextStyle(
                       fontSize: 30,
                       fontFamily: 'Skranji-Bold',

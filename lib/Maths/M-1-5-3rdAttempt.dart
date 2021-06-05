@@ -597,9 +597,6 @@ class _M_1_5_3rdState extends State<M_1_5_3rd> {
                       if (scoreM.niv1>hs.niv1)
                       { hs.niv1=scoreM.niv1;
                       Firestore.instance.collection('users').document(user.uid).collection('domains').document('maths').updateData({'high1':scoreM.niv1});}
-                        if (score.niv2<0)
-                        {  score.niv2=0;
-                        Firestore.instance.collection('users').document(user.uid).collection('domains').document('maths').updateData({'niv2':0});}
                         Navigator.push(
                             context,
                             MaterialPageRoute(builder: (context) => Niveau1Pass()));

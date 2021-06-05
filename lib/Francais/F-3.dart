@@ -71,7 +71,7 @@ class _Fr3State extends State<Fr3> {
                     print("u clicked me");
                     Navigator.push(
                         context,
-                        MaterialPageRoute(builder: (context) => NiveauFr()));
+                        MaterialPageRoute(builder: (context) => Fr3()));
                   },)
               ),
 

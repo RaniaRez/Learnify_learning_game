@@ -88,9 +88,7 @@ class _BienvenueFrState extends State<BienvenueFr> {
                   child: BacksButton(onPressed: () async {
                     int result = await advancedPlayer.pause();
 
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(builder: (context) => ChoixDomaine()));
+                    Navigator.pop(context);
                   },)
               ),
               Positioned(

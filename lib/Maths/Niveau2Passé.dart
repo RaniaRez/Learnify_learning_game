@@ -1,3 +1,4 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:somthn/Buttons/HomeButton.dart';
@@ -54,6 +55,10 @@ class _Niveau2PassState extends State<Niveau2Pass> {
     bool star1 = (hs.niv1>7.5);
     bool star2 = (hs.niv2>7.5);
     bool star3 = (hs.niv3>7.5);
+    if ((score.niv3<0)&&(complet))
+    { score.niv3=0;
+    Firestore.instance.collection('users').document(user.uid).collection('domains').document('maths').updateData({'niv3':0});
+    }
     /*print("khra2");
     print(scoreM.niv1);
     print("khra2");
