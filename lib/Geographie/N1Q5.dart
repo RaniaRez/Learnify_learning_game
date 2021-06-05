@@ -34,7 +34,8 @@ class N1Q5 extends StatefulWidget {
   _N1Q5State createState() => _N1Q5State();
 }
 class _N1Q5State extends State<N1Q5> {
-
+  var player = AudioCache();
+  var player2 = AudioPlayer ();
   AudioPlayer advancedPlayer;
 
 
@@ -81,7 +82,9 @@ class _N1Q5State extends State<N1Q5> {
                   top: size.height*0.05,
                   right:size.width*0.75,
 
-                  child: BacksButton(onPressed: (){
+                  child: BacksButton(onPressed: () async {
+                    player2.stop();
+                    int result = await advancedPlayer.pause();
                     print("u clicked me");
                     Navigator.push(
                         context,
@@ -92,7 +95,9 @@ class _N1Q5State extends State<N1Q5> {
               Positioned(
                   top:size.height*0.05,
                   left:size.width*0.75,
-                  child: SettingsButton(onPressed: (){
+                  child: SettingsButton(onPressed: () async {
+                    player2.stop();
+                    int result = await advancedPlayer.pause();
                     Navigator.push(
                         context,
                         MaterialPageRoute(builder: (context) => Settings()));
@@ -255,7 +260,9 @@ class _N1Q5State extends State<N1Q5> {
                     left: 0.0,
                     height: size.height*0.2,
                     width: size.width*0.5,
-                    child: ButtonContinuer(onPressed: (){
+                    child: ButtonContinuer(onPressed: () async {
+                      player2.stop();
+                      int result = await advancedPlayer.pause();
                       print("score final");
                       print(scoreG.niv1);
                       Firestore.instance.collection('users').document(user.uid).collection('domains').document('geographie').updateData({'niv1':scoreG.niv1});
@@ -331,7 +338,9 @@ class _N1Q5State extends State<N1Q5> {
                   child: Visibility(
                       visible: (threeClicked && Visible),
                       child: IconButton(
-                        onPressed: (){
+                        onPressed: () async {
+                          player2.stop();
+                          int result = await advancedPlayer.pause();
                           if (threeClicked){
                             Vibration.vibrate();
                             setState(() {
@@ -355,8 +364,11 @@ class _N1Q5State extends State<N1Q5> {
                 child: Visibility(
                     visible: (fourClicked&&Visible),
                     child: IconButton(
-                        onPressed: (){
+                        onPressed: () async {
+                          player2.stop();
+                          int result = await advancedPlayer.pause();
                           if (fourClicked){
+                            player2 =  await player.play('audio/mathsBravo.wav');
                             setState(() {
                               Visible = false;
                             });
@@ -378,7 +390,9 @@ class _N1Q5State extends State<N1Q5> {
                 child: Visibility(
                     visible: (twoClicked&&Visible),
                     child: IconButton(
-                        onPressed: (){
+                        onPressed: () async {
+                          player2.stop();
+                          int result = await advancedPlayer.pause();
                           if (twoClicked){
                             Vibration.vibrate();
                             setState(() {
@@ -403,7 +417,9 @@ class _N1Q5State extends State<N1Q5> {
                 child: Visibility(
                     visible: (oneClicked&&Visible),
                     child: IconButton(
-                        onPressed: (){
+                        onPressed: () async {
+                          player2.stop();
+                          int result = await advancedPlayer.pause();
                           if (oneClicked)  {
                             Vibration.vibrate();
                             Navigator.push(

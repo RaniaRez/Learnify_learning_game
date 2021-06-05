@@ -27,7 +27,8 @@ class N2Q1T2_C_1 extends StatefulWidget {
 }
 
 class _N2Q1T2_C_1State extends State<N2Q1T2_C_1> {
-
+  var player = AudioCache();
+  var player2 = AudioPlayer ();
   AudioPlayer advancedPlayer;
 
 
@@ -75,7 +76,9 @@ class _N2Q1T2_C_1State extends State<N2Q1T2_C_1> {
                   top: size.height*0.05,
                   right:size.width*0.75,
 
-                  child: BacksButton(onPressed: (){
+                  child: BacksButton(onPressed: () async {
+                    player2.stop();
+                    int result = await advancedPlayer.pause();
                     print("u clicked me");
                     Navigator.push(
                         context,
@@ -86,7 +89,9 @@ class _N2Q1T2_C_1State extends State<N2Q1T2_C_1> {
               Positioned(
                   top:size.height*0.05,
                   left:size.width*0.75,
-                  child: SettingsButton(onPressed: (){
+                  child: SettingsButton(onPressed: () async {
+                    player2.stop();
+                    int result = await advancedPlayer.pause();
                     Navigator.push(
                         context,
                         MaterialPageRoute(builder: (context) => Settings()));
@@ -250,7 +255,9 @@ class _N2Q1T2_C_1State extends State<N2Q1T2_C_1> {
                     left: 0.0,
                     height: size.height*0.2,
                     width: size.width*0.5,
-                    child: ButtonContinuer(onPressed: (){
+                    child: ButtonContinuer(onPressed: () async {
+                      player2.stop();
+                      int result = await advancedPlayer.pause();
                       Navigator.push(
                           context,
                           MaterialPageRoute(builder: (context) => N2Q2()));
@@ -266,7 +273,9 @@ class _N2Q1T2_C_1State extends State<N2Q1T2_C_1> {
                   child: Visibility(
                       visible: (threeClicked && Visible),
                       child: IconButton(
-                        onPressed: (){
+                        onPressed: () async {
+                          player2.stop();
+                          int result = await advancedPlayer.pause();
                           Vibration.vibrate();
 
                           if (threeClicked){
@@ -290,8 +299,12 @@ class _N2Q1T2_C_1State extends State<N2Q1T2_C_1> {
                 child: Visibility(
                     visible: (fourClicked&&Visible),
                     child: IconButton(
-                        onPressed: (){
+                        onPressed: () async {
+                          player2.stop();
+                          int result = await advancedPlayer.pause();
                           if (fourClicked) {
+                            player2 =  await player.play('audio/mathsBravo.wav');
+
                             Vibration.vibrate();
 
                             setState(() {
@@ -318,8 +331,9 @@ class _N2Q1T2_C_1State extends State<N2Q1T2_C_1> {
                 child: Visibility(
                     visible: (twoClicked&&Visible),
                     child: IconButton(
-                        onPressed: (){
-
+                        onPressed: () async {
+                          player2.stop();
+                          int result = await advancedPlayer.pause();
                           if (twoClicked) {
                             Vibration.vibrate();
 
@@ -343,9 +357,10 @@ class _N2Q1T2_C_1State extends State<N2Q1T2_C_1> {
                 child: Visibility(
                     visible: false,
                     child: IconButton(
-                        onPressed: (){
+                        onPressed: () async {
                           if (oneClicked) {
-
+                            player2.stop();
+                            int result = await advancedPlayer.pause();
                             setState(() {
                               correct = false;
                               Visible = false;
@@ -367,7 +382,9 @@ class _N2Q1T2_C_1State extends State<N2Q1T2_C_1> {
                       child: Visibility(
                           visible: !Visible,
                           child: IconButton(
-                              onPressed: (){
+                              onPressed: () async {
+                                player2.stop();
+                                int result = await advancedPlayer.pause();
                                 print('3aychin ghaya kho');
                               },
                               icon: SvgPicture.asset('assets/icons/Mediterannee.svg'))

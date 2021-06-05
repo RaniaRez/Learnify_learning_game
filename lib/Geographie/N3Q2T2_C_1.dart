@@ -26,7 +26,8 @@ class N3Q2T2_C_1 extends StatefulWidget {
 }
 
 class _N3Q2T2_C_1State extends State<N3Q2T2_C_1> {
-
+  var player = AudioCache();
+  var player2 = AudioPlayer ();
   AudioPlayer advancedPlayer;
 
 
@@ -47,7 +48,6 @@ class _N3Q2T2_C_1State extends State<N3Q2T2_C_1> {
     super.dispose();
   }
 
-  final player = AudioCache();
   bool Visible = true;
   bool correct = false;
   bool oneClicked = false;
@@ -75,7 +75,9 @@ class _N3Q2T2_C_1State extends State<N3Q2T2_C_1> {
                   top: size.height*0.05,
                   right:size.width*0.75,
 
-                  child: BacksButton(onPressed: (){
+                  child: BacksButton(onPressed: () async {
+                    player2.stop();
+                    int result = await advancedPlayer.pause();
                     Navigator.push(
                         context,
                         MaterialPageRoute(builder: (context) => NiveauGeo()));
@@ -87,7 +89,9 @@ class _N3Q2T2_C_1State extends State<N3Q2T2_C_1> {
               Positioned(
                   top:size.height*0.05,
                   left:size.width*0.75,
-                  child: SettingsButton(onPressed: (){
+                  child: SettingsButton(onPressed: () async {
+                    player2.stop();
+                    int result = await advancedPlayer.pause();
                     Navigator.push(
                         context,
                         MaterialPageRoute(builder: (context) => Settings()));
@@ -124,9 +128,11 @@ class _N3Q2T2_C_1State extends State<N3Q2T2_C_1> {
                   child: IconButton(
                     iconSize: 64,
                     icon: SvgPicture.asset('assets/icons/QuestionMark.svg'),
-                    onPressed: () {
+                    onPressed: () async {
+                      player2.stop();
+                      int result = await advancedPlayer.pause();
                       print('QuestionMark');
-                      player.play('audio/geoMonument.wav');
+                      player2 =  await player.play('audio/geoMonument.wav');
                     }
                       ),
                 ),
@@ -187,7 +193,9 @@ class _N3Q2T2_C_1State extends State<N3Q2T2_C_1> {
                   width: size.width*0.5,
                   child: IconButton(
                     icon: SvgPicture.asset('assets/icons/Santa.svg'),
-                    onPressed: (){
+                    onPressed: () async {
+                      player2.stop();
+                      int result = await advancedPlayer.pause();
                       print('oran');
                       setState(() {
                         oneClicked = false;
@@ -207,7 +215,9 @@ class _N3Q2T2_C_1State extends State<N3Q2T2_C_1> {
                   width: size.width*0.5,
                   child: IconButton(
                     icon: SvgPicture.asset('assets/icons/Pise.svg'),
-                    onPressed: (){
+                    onPressed: () async {
+                      player2.stop();
+                      int result = await advancedPlayer.pause();
                       print('adrar');
                       setState(() {
                         oneClicked = false;
@@ -227,7 +237,9 @@ class _N3Q2T2_C_1State extends State<N3Q2T2_C_1> {
                   width: size.width*0.5,
                   child: IconButton(
                     icon: SvgPicture.asset('assets/icons/Ketchaoua.svg'),
-                    onPressed: (){
+                    onPressed: () async {
+                      player2.stop();
+                      int result = await advancedPlayer.pause();
                       print('alger');
                       setState(() {
                         oneClicked = false;
@@ -248,7 +260,9 @@ class _N3Q2T2_C_1State extends State<N3Q2T2_C_1> {
                   width: size.width*0.5,
                   child: IconButton(
                     icon: SvgPicture.asset('assets/icons/Pise.svg'),
-                    onPressed: (){
+                    onPressed: () async {
+                      player2.stop();
+                      int result = await advancedPlayer.pause();
                       print('annaba');
                       setState(() {
                         oneClicked = true;
@@ -267,7 +281,9 @@ class _N3Q2T2_C_1State extends State<N3Q2T2_C_1> {
                     left: 0.0,
                     height: size.height*0.2,
                     width: size.width*0.5,
-                    child: ButtonContinuer(onPressed: (){
+                    child: ButtonContinuer(onPressed: () async {
+                      player2.stop();
+                      int result = await advancedPlayer.pause();
                       print(scoreG.niv3);
                       Navigator.push(
                           context,
@@ -284,7 +300,9 @@ class _N3Q2T2_C_1State extends State<N3Q2T2_C_1> {
                   child: Visibility(
                       visible: (threeClicked && Visible),
                       child: IconButton(
-                        onPressed: (){
+                        onPressed: () async {
+                          player2.stop();
+                          int result = await advancedPlayer.pause();
                           Vibration.vibrate();
 
                           if (threeClicked){
@@ -308,8 +326,11 @@ class _N3Q2T2_C_1State extends State<N3Q2T2_C_1> {
                 child: Visibility(
                     visible: (fourClicked&&Visible),
                     child: IconButton(
-                        onPressed: (){
+                        onPressed: () async {
+                          player2.stop();
+                          int result = await advancedPlayer.pause();
                           if (fourClicked) {
+                            player2 =  await player.play('audio/mathsBravo.wav');
                             Vibration.vibrate();
 
                             setState(() {
@@ -336,8 +357,9 @@ class _N3Q2T2_C_1State extends State<N3Q2T2_C_1> {
                 child: Visibility(
                     visible: (twoClicked&&Visible),
                     child: IconButton(
-                        onPressed: (){
-
+                        onPressed: () async {
+                          player2.stop();
+                          int result = await advancedPlayer.pause();
                           if (twoClicked) {
                             Vibration.vibrate();
 
@@ -361,7 +383,9 @@ class _N3Q2T2_C_1State extends State<N3Q2T2_C_1> {
                 child: Visibility(
                     visible: false,
                     child: IconButton(
-                        onPressed: (){
+                        onPressed: () async {
+                          player2.stop();
+                          int result = await advancedPlayer.pause();
                           if (oneClicked) {
 
                             setState(() {
@@ -385,7 +409,9 @@ class _N3Q2T2_C_1State extends State<N3Q2T2_C_1> {
                       child: Visibility(
                           visible: !Visible,
                           child: IconButton(
-                              onPressed: (){
+                              onPressed: () async {
+                                player2.stop();
+                                int result = await advancedPlayer.pause();
                                 print('3aychin ghaya kho');
                               },
                               icon: SvgPicture.asset('assets/icons/Pise.svg'))

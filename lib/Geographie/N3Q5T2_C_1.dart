@@ -28,7 +28,8 @@ class N3Q5T2_C_1 extends StatefulWidget {
 }
 
 class _N3Q5T2_C_1State extends State<N3Q5T2_C_1> {
-
+  var player = AudioCache();
+  var player2 = AudioPlayer ();
   AudioPlayer advancedPlayer;
 
 
@@ -49,7 +50,6 @@ class _N3Q5T2_C_1State extends State<N3Q5T2_C_1> {
     super.dispose();
   }
 
-  final player = AudioCache();
   bool Visible = true;
   bool correct = false;
   bool oneClicked = false;
@@ -118,7 +118,7 @@ class _N3Q5T2_C_1State extends State<N3Q5T2_C_1> {
                 ),
               ),
 
-              Visibility(
+             /*Visibility(
                 visible: Visible,
                 child: Positioned(
                   top: size.height*0.468,
@@ -132,7 +132,7 @@ class _N3Q5T2_C_1State extends State<N3Q5T2_C_1> {
                     },
                   ),
                 ),
-              ),
+              ),*/
 
               if (user.avatar=="Pink")
                 Visibility(
@@ -187,11 +187,12 @@ class _N3Q5T2_C_1State extends State<N3Q5T2_C_1> {
                   child: IconButton(
                     iconSize: 64,
                     icon: SvgPicture.asset('assets/icons/AudioIcon.svg'),
-                    onPressed: (){
-                      print('playAudio4');
-                      setState(() {
-
-                      });},
+                    onPressed: () async{
+                      player2.stop();
+                      int result = await advancedPlayer.pause();
+                      print('playAudio2');
+                      player2 =  await player.play('audio/algeriaoff.wav');
+                      },
                   ),
                 ),
               ),
@@ -204,11 +205,11 @@ class _N3Q5T2_C_1State extends State<N3Q5T2_C_1> {
                   child: IconButton(
                     iconSize: 64,
                     icon: SvgPicture.asset('assets/icons/AudioIcon.svg'),
-                    onPressed: (){
-                      print('playAudio1');
-                      setState(() {
-
-                      });},
+                    onPressed: () async {
+                      print('playAudio4');
+                      player2.stop();
+                      int result = await advancedPlayer.pause();
+                      player2 =  await player.play('audio/braziloff.wav');},
                   ),
                 ),
               ),
@@ -221,11 +222,11 @@ class _N3Q5T2_C_1State extends State<N3Q5T2_C_1> {
                   child: IconButton(
                     iconSize: 64,
                     icon: SvgPicture.asset('assets/icons/AudioIcon.svg'),
-                    onPressed: (){
+                    onPressed: () async {
                       print('playAudio3');
-                      setState(() {
-
-                      });},
+                      player2.stop();
+                      int result = await advancedPlayer.pause();
+                      player2 =  await player.play('audio/singapouroff.wav');},
                   ),
                 ),
               ),
@@ -298,7 +299,9 @@ class _N3Q5T2_C_1State extends State<N3Q5T2_C_1> {
                     left: 0.0,
                     height: size.height*0.2,
                     width: size.width*0.5,
-                    child: ButtonContinuer(onPressed: (){
+                    child: ButtonContinuer(onPressed: () async {
+                      player2.stop();
+                      int result = await advancedPlayer.pause();
                       print("score final");
                       print(scoreG.niv3);
                       Firestore.instance.collection('users').document(user.uid).collection('domains').document('geographie').updateData({'niv3':scoreG.niv3});
@@ -319,7 +322,9 @@ class _N3Q5T2_C_1State extends State<N3Q5T2_C_1> {
                       visible: (threeClicked && Visible),
                       child: IconButton(
                         iconSize:80,
-                        onPressed: (){
+                        onPressed: () async {
+                          player2.stop();
+                          int result = await advancedPlayer.pause();
                           Vibration.vibrate();
 
                           if (threeClicked){
@@ -342,7 +347,9 @@ class _N3Q5T2_C_1State extends State<N3Q5T2_C_1> {
                     visible: (fourClicked&&Visible),
                     child: IconButton(
                       iconSize: 80,
-                        onPressed: (){
+                        onPressed: () async {
+                          player2.stop();
+                          int result = await advancedPlayer.pause();
                           if (fourClicked) {
                             Vibration.vibrate();
 
@@ -368,9 +375,11 @@ class _N3Q5T2_C_1State extends State<N3Q5T2_C_1> {
                     visible: (twoClicked&&Visible),
                     child: IconButton(
                       iconSize:80,
-                        onPressed: (){
-
+                        onPressed: () async {
+                          player2.stop();
+                          int result = await advancedPlayer.pause();
                           if (twoClicked) {
+                            player2 =  await player.play('audio/mathsBravo.wav');
                             Vibration.vibrate();
 
                             setState(() {
@@ -411,11 +420,11 @@ class _N3Q5T2_C_1State extends State<N3Q5T2_C_1> {
                         child: IconButton(
                           iconSize: 100,
                           icon: SvgPicture.asset('assets/icons/AudioIcon.svg'),
-                          onPressed: (){
+                          onPressed: () async {
                             print('playAudio1');
-                            setState(() {
-
-                            });},
+                            player2.stop();
+                            int result = await advancedPlayer.pause();
+                            player2 =  await player.play('audio/italyoff.wav');},
                         ),
                       ),
                     ),

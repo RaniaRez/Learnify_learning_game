@@ -6,7 +6,6 @@ import 'package:somthn/Geographie/N2Q3T2_C_3.dart';
 import 'package:somthn/Geographie/N2Q4.dart';
 import 'package:somthn/WelcomePages/Settings.dart';
 import 'package:somthn/Buttons/buttonContinuer.dart';
-import 'package:somthn/Buttons/buttonQ.dart';
 import 'package:somthn/myicons.dart';
 import '../Buttons/settingsButton.dart';
 import '../Buttons/BacksButton.dart';
@@ -18,7 +17,6 @@ import '../Services/Login.dart';
 import 'package:audioplayers/audio_cache.dart';
 import 'package:audioplayers/audioplayers.dart';
 import 'package:vibration/vibration.dart';
-
 import 'BienvenueGeo.dart';
 import 'NiveauGeo.dart';
 
@@ -33,7 +31,8 @@ class N2Q3 extends StatefulWidget {
   _N2Q3State createState() => _N2Q3State();
 }
 class _N2Q3State extends State<N2Q3> {
-
+  var player = AudioCache();
+  var player2 = AudioPlayer ();
   AudioPlayer advancedPlayer;
 
 
@@ -80,7 +79,9 @@ class _N2Q3State extends State<N2Q3> {
                   top: size.height*0.05,
                   right:size.width*0.75,
 
-                  child: BacksButton(onPressed: (){
+                  child: BacksButton(onPressed: () async {
+                    player2.stop();
+                    int result = await advancedPlayer.pause();
                     print("u clicked me");
                     Navigator.push(
                         context,
@@ -91,7 +92,9 @@ class _N2Q3State extends State<N2Q3> {
               Positioned(
                   top:size.height*0.05,
                   left:size.width*0.75,
-                  child: SettingsButton(onPressed: (){
+                  child: SettingsButton(onPressed: () async {
+                    player2.stop();
+                    int result = await advancedPlayer.pause();
                     Navigator.push(
                         context,
                         MaterialPageRoute(builder: (context) => Settings()));
@@ -255,7 +258,9 @@ class _N2Q3State extends State<N2Q3> {
                     left: 0.0,
                     height: size.height*0.2,
                     width: size.width*0.5,
-                    child: ButtonContinuer(onPressed: (){
+                    child: ButtonContinuer(onPressed: () async {
+                      player2.stop();
+                      int result = await advancedPlayer.pause();
                       Navigator.push(
                           context,
                           MaterialPageRoute(builder: (context) => N2Q4()));
@@ -325,7 +330,9 @@ class _N2Q3State extends State<N2Q3> {
                   child: Visibility(
                       visible: (threeClicked && Visible),
                       child: IconButton(
-                        onPressed: (){
+                        onPressed: () async {
+                          player2.stop();
+                          int result = await advancedPlayer.pause();
                           if (threeClicked){
                             Vibration.vibrate();
                             setState(() {
@@ -349,8 +356,11 @@ class _N2Q3State extends State<N2Q3> {
                 child: Visibility(
                     visible: (fourClicked&&Visible),
                     child: IconButton(
-                        onPressed: (){
+                        onPressed: () async {
+                          player2.stop();
+                          int result = await advancedPlayer.pause();
                           if (fourClicked){
+                            player2 =  await player.play('audio/mathsBravo.wav');
                             setState(() {
                               Visible = false;
                               scoreG.niv2+=2;
@@ -372,7 +382,9 @@ class _N2Q3State extends State<N2Q3> {
                 child: Visibility(
                     visible: (twoClicked&&Visible),
                     child: IconButton(
-                        onPressed: (){
+                        onPressed: () async {
+                          player2.stop();
+                          int result = await advancedPlayer.pause();
                           if (twoClicked){
                             Vibration.vibrate();
                             setState(() {
