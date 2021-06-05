@@ -133,6 +133,8 @@ class _F_2_4_2ndState extends State<F_2_4_2nd> {
                   top: size.height*0.47,
                   left: size.width*0.75,
                   child: GoToButton(onPressed: () async {
+                    int result = await advancedPlayer.pause();
+
                     if((drag1=="assets/icons/p.svg")&&(drag2=="assets/icons/r.svg")&&(drag3=="assets/icons/i.svg")&&(drag4=="assets/icons/n.svg")&&(drag5=="assets/icons/c.svg")&&(drag6=="assets/icons/e.svg")&&(drag7=="assets/icons/s.svg")&&(drag8=="assets/icons/s.svg")&&(drag9=="assets/icons/e.svg")){
                       player2 =  await player.play('audio/mathsBravo.wav');
                       setState(() {

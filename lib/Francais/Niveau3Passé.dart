@@ -318,7 +318,6 @@ class _Niveau3PassState extends State<Niveau3Pass> {
                   int result = await advancedPlayer.pause();
 
                   print(scoreM.niv1);
-                  print('khra');
                   //Firestore.instance.collection('users').document(user.uid).collection('domains').document('maths').updateData({'niv1':scoreM.niv1});
                   Navigator.push(
                       context,

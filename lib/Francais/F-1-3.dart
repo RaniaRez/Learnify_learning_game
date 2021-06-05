@@ -133,7 +133,9 @@ class _F_1_3State extends State<F_1_3> {
                   height: size.width*0.4,
                   width: size.width*0.4,
                   child: IconButton(
-                      onPressed: (){
+                      onPressed: () async {
+                        int result = await advancedPlayer.pause();
+
                         Navigator.push(
                             context,
                             MaterialPageRoute(builder: (context) => F_1_3_2nd_OneC()));
@@ -170,7 +172,9 @@ class _F_1_3State extends State<F_1_3> {
                   height: size.width*0.4,
                   width: size.width*0.4,
                   child: IconButton(
-                      onPressed: (){
+                      onPressed: () async {
+                        int result = await advancedPlayer.pause();
+
                         Navigator.push(
                             context,
                             MaterialPageRoute(builder: (context) =>F_1_3_2nd_threeC()));

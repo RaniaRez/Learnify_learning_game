@@ -181,7 +181,9 @@ class _F_2_1_2nd_entrainState extends State<F_2_1_2nd_entrain> {
                   child: Visibility(
                     visible: Visible,
                     child: IconButton(
-                      onPressed: (){
+                      onPressed: () async {
+                        int result = await advancedPlayer.pause();
+
                         setState(() {
                           Visible=false;
                         });
@@ -199,6 +201,8 @@ class _F_2_1_2nd_entrainState extends State<F_2_1_2nd_entrain> {
                     visible: Visible,
                     child: IconButton(
                       onPressed: () async {
+                        int result = await advancedPlayer.pause();
+
                         player2 =  await player.play('audio/mathsBravo.wav');
 
                         setState(() {
@@ -220,7 +224,9 @@ class _F_2_1_2nd_entrainState extends State<F_2_1_2nd_entrain> {
                   child: Visibility(
                     visible: Visible,
                     child: IconButton(
-                      onPressed: (){
+                      onPressed: () async {
+                        int result = await advancedPlayer.pause();
+
                         setState(() {
                           Visible=false;
                         });
@@ -237,7 +243,9 @@ class _F_2_1_2nd_entrainState extends State<F_2_1_2nd_entrain> {
                   child: Visibility(
                     visible: Visible,
                     child: IconButton(
-                      onPressed: (){
+                      onPressed: () async {
+                        int result = await advancedPlayer.pause();
+
                         setState(() {
                           Visible=false;
                         });
@@ -254,7 +262,9 @@ class _F_2_1_2nd_entrainState extends State<F_2_1_2nd_entrain> {
                   child: Visibility(
                     visible: Visible,
                     child: IconButton(
-                      onPressed: (){
+                      onPressed: () async {
+                        int result = await advancedPlayer.pause();
+
                         setState(() {
                           Visible=false;
                         });

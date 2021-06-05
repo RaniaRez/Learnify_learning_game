@@ -127,7 +127,8 @@ class _F_1_1_2ndState extends State<F_1_1_2nd> {
                   height: size.width*0.4,
                   width: size.width*0.4,
                   child: IconButton(
-                      onPressed: (){
+                      onPressed: () async {
+                        int result = await advancedPlayer.pause();
                         setState(() {
                           Visible=false;
                         });
@@ -153,7 +154,9 @@ class _F_1_1_2ndState extends State<F_1_1_2nd> {
                   height: size.width*0.4,
                   width: size.width*0.4,
                   child: IconButton(
-                      onPressed: (){
+                      onPressed: () async {
+                        int result = await advancedPlayer.pause();
+
                         setState(() {
                           Visible=false;
                         });
@@ -170,6 +173,8 @@ class _F_1_1_2ndState extends State<F_1_1_2nd> {
                     height: size.width*0.3,
                     width: size.width*0.3,
                     child:PinkAvatarIcon(onPressed: () async {
+                      int result = await advancedPlayer.pause();
+
                       player2 =  await player.play('audio/mathsBravo.wav');
 
                       setState(() {
@@ -190,6 +195,8 @@ class _F_1_1_2ndState extends State<F_1_1_2nd> {
                     width: size.width*0.35,
                     child:PurpleAvatarIcon(
                       onPressed: () async {
+                        int result = await advancedPlayer.pause();
+
                         player2 =  await player.play('audio/mathsBravo.wav');
 
                         scoreF.niv1+=1;
@@ -211,6 +218,8 @@ class _F_1_1_2ndState extends State<F_1_1_2nd> {
                     width: size.width*0.3,
                     child: OrangeAvatarIcon(
                       onPressed: () async {
+                        int result = await advancedPlayer.pause();
+
                         player2 =  await player.play('audio/mathsBravo.wav');
 
                         scoreF.niv1+=1;
@@ -232,6 +241,8 @@ class _F_1_1_2ndState extends State<F_1_1_2nd> {
                     width: size.width*0.3,
                     child:BlueAvatarIcon(
                       onPressed: () async {
+                        int result = await advancedPlayer.pause();
+
                         player2 =  await player.play('audio/mathsBravo.wav');
 
                         scoreF.niv1+=1;

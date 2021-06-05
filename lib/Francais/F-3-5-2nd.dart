@@ -129,6 +129,8 @@ bool correct=false;
                   top: size.height*0.47,
                   left: size.width*0.75,
                   child: GoToButton(onPressed: () async {
+                    int result = await advancedPlayer.pause();
+
                     if((drag1=="assets/icons/gb.svg")&&(drag2=="assets/icons/i.svg")&&(drag3=="assets/icons/r.svg")&&(drag4=="assets/icons/a.svg")&&(drag5=="assets/icons/f.svg")&&(drag6=="assets/icons/e.svg")){
                       player2 =  await player.play('audio/mathsBravo.wav');
 

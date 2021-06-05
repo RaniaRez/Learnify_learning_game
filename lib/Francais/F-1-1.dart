@@ -104,7 +104,9 @@ class _F_1_1State extends State<F_1_1> {
                   height: size.width*0.4,
                   width: size.width*0.4,
                   child: IconButton(
-                    onPressed: (){
+                    onPressed: () {
+                      player2.stop();
+
                     Navigator.push(
                     context,
                     MaterialPageRoute(builder: (context) => I_F_1_1()));
@@ -131,6 +133,8 @@ class _F_1_1State extends State<F_1_1> {
                   width: size.width*0.4,
                   child: IconButton(
                       onPressed: (){
+                        player2.stop();
+
                         Navigator.push(
                             context,
                             MaterialPageRoute(builder: (context) => I_F_1_1()));
@@ -157,6 +161,8 @@ class _F_1_1State extends State<F_1_1> {
                   width: size.width*0.4,
                   child: IconButton(
                       onPressed: (){
+                        player2.stop();
+
                         Navigator.push(
                             context,
                             MaterialPageRoute(builder: (context) => I_F_1_1()));
@@ -183,6 +189,7 @@ class _F_1_1State extends State<F_1_1> {
                   width: size.width*0.4,
                   child: IconButton(
                       onPressed: (){
+                        player2.stop();
 
                         print('HADA SCORE');
                         print(scoreF.niv1);
@@ -291,7 +298,6 @@ class _F_1_1State extends State<F_1_1> {
                     height: size.height*0.2,
                     width: size.width*0.5,
                     child: ButtonContinuer(onPressed: () async {
-
                       player2.stop();
                       print('HADA SCORE');
                       print(scoreF.niv1);

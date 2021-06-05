@@ -98,6 +98,7 @@ class _F_1_4_2ndState extends State<F_1_4_2nd> {
                   right:size.width*0.75,
                   child: BacksButton(onPressed: () async {
                     player2.stop();
+                    int result = await advancedPlayer.pause();
 
                     Navigator.push(
                         context,
@@ -128,6 +129,8 @@ class _F_1_4_2ndState extends State<F_1_4_2nd> {
                   child: GoToButton(onPressed: () async{
                     if((drag1=="assets/icons/m.svg")&&(drag2=="assets/icons/o.svg")&&(drag3=="assets/icons/u.svg")&&(drag4=="assets/icons/l.svg")&&(drag5=="assets/icons/i.svg")&&(drag6=="assets/icons/n.svg")){
                       print('correct');
+                      int result = await advancedPlayer.pause();
+
                       player2 =  await player.play('audio/mathsBravo.wav');
 
                       scoreF.niv1+=1;
@@ -136,7 +139,9 @@ class _F_1_4_2ndState extends State<F_1_4_2nd> {
                         correct=true;
                       });}else if ((drag1==null)&&(drag2==null)&&(drag3==null)&&(drag4==null)&&(drag5==null)&&(drag6==null)){}
                    else{
-                     setState(() {
+                      int result = await advancedPlayer.pause();
+
+                      setState(() {
                        Visible=false;
                      });
 

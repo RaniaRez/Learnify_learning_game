@@ -132,7 +132,9 @@ class _F_1_3_2nd_fourCState extends State<F_1_3_2nd_fourC> {
                   height: size.height*0.15,
                   width: size.width*0.4,
                   child: IconButton(
-                      onPressed: (){
+                      onPressed: () async {
+                        int result = await advancedPlayer.pause();
+
                         setState(() {
                           Visible=false;
                         });
@@ -149,6 +151,8 @@ class _F_1_3_2nd_fourCState extends State<F_1_3_2nd_fourC> {
                   width: size.width*0.4,
                   child: IconButton(
                       onPressed: () async {
+                        int result = await advancedPlayer.pause();
+
                         player2 =  await player.play('audio/mathsBravo.wav');
 
                         setState(() {
@@ -168,7 +172,9 @@ class _F_1_3_2nd_fourCState extends State<F_1_3_2nd_fourC> {
                   height: size.height*0.15,
                   width: size.width*0.4,
                   child: IconButton(
-                      onPressed: (){
+                      onPressed: () async {
+                        int result = await advancedPlayer.pause();
+
                         setState(() {
                           Visible=false;
 

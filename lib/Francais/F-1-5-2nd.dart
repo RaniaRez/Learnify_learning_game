@@ -125,6 +125,8 @@ class _F_1_5_2ndState extends State<F_1_5_2nd> {
                   child: GoToButton(onPressed: () async {
                     if((drag1=="assets/icons/s.svg")&&(drag2=="assets/icons/o.svg")&&(drag3=="assets/icons/l.svg")){
                       print('correct');
+                      int result = await advancedPlayer.pause();
+
                       player2 =  await player.play('audio/mathsBravo.wav');
 
                       scoreF.niv1+=1;
@@ -133,7 +135,10 @@ class _F_1_5_2ndState extends State<F_1_5_2nd> {
                       setState(() {
                         Visible=false;
                         correct=true;
-                      });}else if ((drag1==null)&&(drag2==null)&&(drag3==null)){}else{
+                      });}else if ((drag1==null)&&(drag2==null)&&(drag3==null)){                   int result = await advancedPlayer.pause();
+                    }else{
+                      int result = await advancedPlayer.pause();
+
                       setState(() {
                         Visible=false;
 
@@ -191,6 +196,7 @@ class _F_1_5_2ndState extends State<F_1_5_2nd> {
                     height: size.height*0.2,
                     width: size.width*0.5,
                     child: ButtonContinuer(onPressed: () async {
+
                       player2.stop();
                       int result = await advancedPlayer.pause();
 
