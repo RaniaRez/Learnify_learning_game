@@ -134,16 +134,7 @@ class _StatsState extends State<Stats> {
                 child: SvgPicture.asset('assets/icons/Mathtx.svg')
 
             ),
-            Positioned(
-              top:size.height*0.44,
-              right:size.width*0.05,
-              child: Container(
-                  height: 70,
-                  width: 70,
-                  child: GoToButton(onPressed: (){
-                    print('fr');
-                  },)),
-            ),
+
             Positioned(
                 top: size.height*0.56,
                 left:size.width*0.05,
@@ -203,6 +194,16 @@ class _StatsState extends State<Stats> {
                   child:BlueAvatarIcon(onPressed: null,),
                 ),
               ),
+            Positioned(
+              top:size.height*0.44,
+              right:size.width*0.05,
+              child: Container(
+                  height: 70,
+                  width: 70,
+                  child: GoToButton(onPressed: (){
+                    print('fr');
+                  },)),
+            ),
           ],
         ),
       ),
