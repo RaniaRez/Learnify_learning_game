@@ -20,6 +20,7 @@ import 'package:somthn/Geographie/N1Q3.dart';
 import 'package:somthn/WelcomePages/Settings.dart';
 import 'package:somthn/myicons.dart';
 import '../Services/Login.dart';
+import 'BienvenueGeo.dart';
 
 class N1Q2 extends StatefulWidget {
   const N1Q2({Key key}) : super(key: key);
@@ -104,6 +105,7 @@ class _N1Q2State extends State<N1Q2> {
                     if((drag1=="assets/icons/a.svg")&&(drag2=="assets/icons/l.svg")&&(drag3=="assets/icons/g.svg")&&(drag4=="assets/icons/e.svg")&&(drag5=="assets/icons/r.svg")&&(drag6=="assets/icons/i.svg")&&(drag7=="assets/icons/e.svg")){
                       setState(() {
                         Visible=false;
+                        scoreG.niv1+=2;
                       });}else if ((drag1==null)&&(drag2==null)&&(drag3==null)&&(drag4==null)&&(drag5==null)&&(drag6==null)&&(drag7==null)){}
                     else{
                       Navigator.push(

@@ -16,6 +16,7 @@ import 'package:somthn/Geographie/BienvenueGeo.dart';
 import 'package:audioplayers/audio_cache.dart';
 import 'package:audioplayers/audioplayers.dart';
 import 'BienvenueGeo.dart';
+import 'NiveauGeo.dart';
 
 class N3Q1T2_C_3 extends StatefulWidget {
   const N3Q1T2_C_3({Key key}) : super(key: key);
@@ -78,7 +79,7 @@ class _N3Q1T2_C_3State extends State<N3Q1T2_C_3> {
                   child: BacksButton(onPressed: (){
                     Navigator.push(
                         context,
-                        MaterialPageRoute(builder: (context) => BienvenueGeo()));
+                        MaterialPageRoute(builder: (context) => NiveauGeo()));
                     print("back");
                     //Navigator.pop(context);
                   },)

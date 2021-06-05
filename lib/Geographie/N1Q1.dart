@@ -20,6 +20,7 @@ import 'package:somthn/Geographie/N1Q2.dart';
 import 'package:somthn/WelcomePages/Settings.dart';
 import 'package:somthn/myicons.dart';
 import '../Services/Login.dart';
+import 'BienvenueGeo.dart';
 
 class N1Q1 extends StatefulWidget {
   const N1Q1({Key key}) : super(key: key);
@@ -50,6 +51,7 @@ class _N1Q1State extends State<N1Q1> {
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
+    scoreG.niv1=0;
     return Scaffold(
       body: Container(
         height: size.height,
@@ -113,6 +115,7 @@ class _N1Q1State extends State<N1Q1> {
                     if((drag1=="assets/icons/posA.svg")&&(drag2=="assets/icons/posB.svg" ||drag2=="assets/icons/posH.svg" )&&(drag3=="assets/icons/posC.svg")&&(drag4=="assets/icons/posD.svg")&&(drag5=="assets/icons/posE.svg")&&(drag6=="assets/icons/posF.svg")&&(drag7=="assets/icons/posG.svg")&&(drag8=="assets/icons/posH.svg" ||drag8=="assets/icons/posB.svg" )){
                       setState(() {
                         Visible=false;
+                        scoreG.niv1+=2;
                       });}else if ((drag1==null)&&(drag2==null)&&(drag3==null)&&(drag4==null)&&(drag5==null)&&(drag6==null)&&(drag7==null)&&(drag8==null)){}
                     else{
                       Navigator.push(
@@ -172,6 +175,7 @@ class _N1Q1State extends State<N1Q1> {
                     height: size.height*0.2,
                     width: size.width*0.5,
                     child: ButtonContinuer(onPressed: (){
+                      scoreG.niv1+=2;
                       Navigator.push(
                           context,
                           MaterialPageRoute(builder: (context) => N1Q2()));},)

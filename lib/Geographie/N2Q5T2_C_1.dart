@@ -1,3 +1,4 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:somthn/Geographie/NiveauGeo.dart';
@@ -14,6 +15,9 @@ import 'package:somthn/Avatars/BlueAvatarIcon.dart';
 import '../Services/Login.dart';
 import 'package:audioplayers/audio_cache.dart';
 import 'package:audioplayers/audioplayers.dart';
+
+import 'BienvenueGeo.dart';
+import 'Niv2Passé.dart';
 
 
 class N2Q5T2_C_1 extends StatefulWidget {
@@ -74,7 +78,9 @@ class _N2Q5T2_C_1State extends State<N2Q5T2_C_1> {
 
                   child: BacksButton(onPressed: (){
                     print("u clicked me");
-                    Navigator.pop(context);
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => NiveauGeo()));
                   },)
               ),
 
@@ -246,9 +252,15 @@ class _N2Q5T2_C_1State extends State<N2Q5T2_C_1> {
                     height: size.height*0.2,
                     width: size.width*0.5,
                     child: ButtonContinuer(onPressed: (){
+                      print("score final");
+                      print(scoreG.niv2);
+                      Firestore.instance.collection('users').document(user.uid).collection('domains').document('geographie').updateData({'niv2':scoreG.niv2});
+                      if (scoreG.niv2>highG.niv2)
+                      { highG.niv2=scoreG.niv2 ;
+                      Firestore.instance.collection('users').document(user.uid).collection('domains').document('geographie').updateData({'high2':scoreG.niv2});}
                       Navigator.push(
                           context,
-                          MaterialPageRoute(builder: (context) => NiveauGeo()));
+                          MaterialPageRoute(builder: (context) => Niveau2Pass()));
                       print('Continuer');},)
                 ),
               ),
@@ -292,6 +304,7 @@ class _N2Q5T2_C_1State extends State<N2Q5T2_C_1> {
                             setState(() {
                               correct = true;
                               Visible = false;
+                              scoreG.niv2++;
 
                               print('Correct');
                             });

@@ -19,6 +19,9 @@ import 'package:audioplayers/audio_cache.dart';
 import 'package:audioplayers/audioplayers.dart';
 import 'package:vibration/vibration.dart';
 
+import 'BienvenueGeo.dart';
+import 'NiveauGeo.dart';
+
 
 
 
@@ -60,6 +63,7 @@ class _N2Q1State extends State<N2Q1> {
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
+    scoreG.niv2=0;
     return Container(
         height: size.height,
         width: size.width,
@@ -80,7 +84,9 @@ class _N2Q1State extends State<N2Q1> {
 
                   child: BacksButton(onPressed: (){
                     print("u clicked me");
-                    Navigator.pop(context);
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => NiveauGeo()));
                   },)
               ),
 
@@ -348,6 +354,7 @@ class _N2Q1State extends State<N2Q1> {
                           if (fourClicked){
                             setState(() {
                               Visible = false;
+                              scoreG.niv2+=2;
                             });
 
                             print('Correct');

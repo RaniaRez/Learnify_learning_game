@@ -1,3 +1,4 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:somthn/Buttons/HomeButton.dart';
@@ -58,6 +59,10 @@ class _Niveau1PassState extends State<Niveau1Pass> {
     bool star1 = (highG.niv1>=7.5);
     bool star2 = (highG.niv2>=7.5);
     bool star3 = (highG.niv3>=7.5);
+    if (complet ) {
+      if (scoreG.niv2<0)
+      {scoreG.niv2=0;
+    Firestore.instance.collection('users').document(user.uid).collection('domains').document('geographie').updateData({'niv2':scoreG.niv2});}}
 
     return Scaffold(
       body:

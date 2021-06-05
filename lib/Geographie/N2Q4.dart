@@ -18,6 +18,8 @@ import '../Services/Login.dart';
 import 'package:audioplayers/audio_cache.dart';
 import 'package:audioplayers/audioplayers.dart';
 import 'package:vibration/vibration.dart';
+import 'BienvenueGeo.dart';
+import 'NiveauGeo.dart';
 
 class N2Q4 extends StatefulWidget {
   const N2Q4({Key key}) : super(key: key);
@@ -75,7 +77,9 @@ class _N2Q4State extends State<N2Q4> {
 
                   child: BacksButton(onPressed: (){
                     print("u clicked me");
-                    Navigator.pop(context);
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => NiveauGeo()));
                   },)
               ),
 
@@ -369,6 +373,7 @@ class _N2Q4State extends State<N2Q4> {
                           if (twoClicked){
                             setState(() {
                               Visible = false;
+                              scoreG.niv2+=2;
                             });
 
                             print('Correct');

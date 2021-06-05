@@ -16,5 +16,5 @@ void main() {
       'lettresEntre': []
     }
   };*/
-  runApp(MaterialApp(home: TestNiveau()));
+  runApp(MaterialApp(home: Home()));
 }

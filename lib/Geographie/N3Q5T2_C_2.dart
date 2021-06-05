@@ -1,6 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:somthn/Geographie/Niv3Pass%C3%A9.dart';
 import 'package:somthn/Geographie/NiveauGeo.dart';
 import 'package:somthn/WelcomePages/Settings.dart';
 import 'package:vibration/vibration.dart';
@@ -78,7 +79,7 @@ class _N3Q5T2_C_2State extends State<N3Q5T2_C_2> {
                   child: BacksButton(onPressed: (){
                     Navigator.push(
                         context,
-                        MaterialPageRoute(builder: (context) => BienvenueGeo()));
+                        MaterialPageRoute(builder: (context) => NiveauGeo()));
                     print("back");
                     //Navigator.pop(context);
                   },)
@@ -305,7 +306,7 @@ class _N3Q5T2_C_2State extends State<N3Q5T2_C_2> {
                       Firestore.instance.collection('users').document(user.uid).collection('domains').document('geographie').updateData({'high3':scoreG.niv3});}
                       Navigator.push(
                           context,
-                          MaterialPageRoute(builder: (context) => NiveauGeo()));
+                          MaterialPageRoute(builder: (context) => Niveau3Pass()));
                       print('Continuer');},)
                 ),
               ),

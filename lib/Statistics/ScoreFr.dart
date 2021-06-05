@@ -95,7 +95,7 @@ class _FrScoreState extends State<FrScore> {
                     child:PurpleAvatarIcon(onPressed: null,),
                   ),
                 ),
-             // if (user.avatar=="Orange")
+              if (user.avatar=="Orange")
                 Visibility(
 
                   child: Positioned(
@@ -112,8 +112,8 @@ class _FrScoreState extends State<FrScore> {
                   child: Positioned(
                     height: size.width*0.3,
                     width: size.width*0.3,
-                    left: size.width*0.1,
-                    bottom:size.width*0.7,
+                    left: size.width*0.6,
+                    bottom:size.width*0.99,
                     child:BlueAvatarIcon(onPressed: null,),
                   ),
                 ),

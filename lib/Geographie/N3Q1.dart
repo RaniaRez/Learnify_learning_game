@@ -4,6 +4,7 @@ import 'package:somthn/Geographie/N3Q1T2_C_1.dart';
 import 'package:somthn/Geographie/N3Q1T2_C_2.dart';
 import 'package:somthn/Geographie/N3Q1T2_C_3.dart';
 import 'package:somthn/Geographie/N3Q2.dart';
+import 'package:somthn/Geographie/NiveauGeo.dart';
 import 'package:somthn/WelcomePages/Settings.dart';
 import 'package:somthn/Buttons/buttonContinuer.dart';
 import 'package:somthn/myicons.dart';
@@ -83,7 +84,7 @@ class _N3Q1State extends State<N3Q1> {
                   child: BacksButton(onPressed: (){
                     Navigator.push(
                         context,
-                        MaterialPageRoute(builder: (context) => BienvenueGeo()));
+                        MaterialPageRoute(builder: (context) => NiveauGeo()));
                     print("back");
                     //Navigator.pop(context);
                   },)
