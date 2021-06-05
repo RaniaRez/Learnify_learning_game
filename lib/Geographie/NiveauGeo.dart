@@ -5,6 +5,8 @@ import 'package:somthn/Owls/BrownOwl.dart';
 import 'package:somthn/Owls/LockIcon.dart';
 import './N2Q1.dart';
 import './N1Q2.dart';
+import './N1Q1.dart';
+
 import './N3Q1.dart';
 
 import 'package:somthn/Avatars/PinkAvatarIcon.dart';
@@ -51,7 +53,7 @@ class _NiveauGeoState extends State<NiveauGeo> {
                   child:Buttonfacile (onPressed:(){
                     Navigator.push(
                         context,
-                        MaterialPageRoute(builder: (context) => N1Q2()));
+                        MaterialPageRoute(builder: (context) => N1Q1()));
                     print('facile');}),
                 ),
 

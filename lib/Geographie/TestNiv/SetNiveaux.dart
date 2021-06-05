@@ -11,6 +11,4 @@ void setNiv(TestGeo t,ScoreGeo s){
       s.niv3 = 0;
     }
   }
-
-
 }
