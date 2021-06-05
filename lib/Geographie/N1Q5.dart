@@ -4,6 +4,7 @@ import 'package:somthn/Geographie/N1Q5T2_C_1.dart';
 import 'package:somthn/Geographie/N1Q5T2_C_2.dart';
 import 'package:somthn/Geographie/N1Q5T2_C_3.dart';
 import 'package:somthn/Geographie/N2Q2.dart';
+import 'package:somthn/Geographie/NiveauGeo.dart';
 import 'package:somthn/WelcomePages/Settings.dart';
 import 'package:somthn/Buttons/buttonContinuer.dart';
 import 'package:somthn/Buttons/buttonQ.dart';
@@ -251,7 +252,7 @@ class _N1Q5State extends State<N1Q5> {
                     child: ButtonContinuer(onPressed: (){
                       Navigator.push(
                           context,
-                          MaterialPageRoute(builder: (context) => N2Q2()));
+                          MaterialPageRoute(builder: (context) => NiveauGeo()));
                       print('Continuer');},)
                 ),
               ),

@@ -10,29 +10,28 @@ import 'package:somthn/Buttons/buttonContinuer.dart';
 import 'package:somthn/Buttons/buttonGoTo.dart';
 import 'package:somthn/Buttons/buttonReset.dart';
 import 'package:somthn/Buttons/settingsButton.dart';
+import 'package:somthn/Francais/F-1-5.dart';
 import 'package:somthn/Francais/F-1.dart';
-import 'package:somthn/Francais/Niveau3Pass%C3%A9.dart';
+import 'package:somthn/Geographie/NiveauGeo.dart';
+import 'package:somthn/Geographie/N1Q2.dart';
+
 import 'package:somthn/WelcomePages/Settings.dart';
 import 'package:somthn/myicons.dart';
 import '../Services/Login.dart';
-import 'BienvenueFr.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:audioplayers/audio_cache.dart';
 import 'package:audioplayers/audioplayers.dart';
 
-
-class F_3_5_2nd extends StatefulWidget {
-  const F_3_5_2nd({Key key}) : super(key: key);
+class N1Q1T2 extends StatefulWidget {
+  const N1Q1T2({Key key}) : super(key: key);
 
   @override
-  _F_3_5_2ndState createState() => _F_3_5_2ndState();
+  _N1Q1T2State createState() => _N1Q1T2State();
 }
 
-class _F_3_5_2ndState extends State<F_3_5_2nd> {
+class _N1Q1T2State extends State<N1Q1T2> {
 
   AudioPlayer advancedPlayer;
-  var player = AudioCache();
-  var player2 = AudioPlayer ();
+
 
   @override
   initState() {
@@ -51,22 +50,24 @@ class _F_3_5_2ndState extends State<F_3_5_2nd> {
     super.dispose();
   }
 
-
   bool Visible = true;
-  String letterG;
-  String letterI;
-  String letterR;
-  String letterA;
-  String letterF;
-  String letterE;
-  String letterL;
+  String a;
+  String b;
+  String c;
+  String d;
+  String e;
+  String f;
+  String g;
+  String h;
   String drag1;
   String drag2;
   String drag3;
   String drag4;
   String drag5;
   String drag6;
-bool correct=false;
+  String drag7;
+  String drag8;
+  bool correct=false;
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
@@ -80,16 +81,13 @@ bool correct=false;
                 constraints: BoxConstraints.expand(),
                 decoration: BoxDecoration(
                     image: DecorationImage(
-                        image: AssetImage("images/frBG.jpg"),
+                        image: AssetImage("images/geo_BG.jpg"),
                         fit: BoxFit.cover)),),
               Positioned(
                   top: size.height*0.05,
                   left:size.width*0.75,
                   child:
-                  SettingsButton(onPressed: () async {
-                    player2.stop();
-                    int result = await advancedPlayer.pause();
-
+                  SettingsButton(onPressed: (){
                     Navigator.push(
                         context,
                         MaterialPageRoute(builder: (context) => Settings()));
@@ -98,20 +96,17 @@ bool correct=false;
               Positioned(
                   top: size.height*0.05,
                   right:size.width*0.75,
-                  child: BacksButton(onPressed: () async {
-                    player2.stop();
-                    int result = await advancedPlayer.pause();
-
+                  child: BacksButton(onPressed: (){
                     Navigator.push(
                         context,
-                        MaterialPageRoute(builder: (context) => Fr1()));
+                        MaterialPageRoute(builder: (context) => NiveauGeo()));
                   },)
               ),
               Positioned(
                   bottom: size.height*0.88,
                   left: size.width*0.275,
                   right: size.width*0.275,
-                  child: SvgPicture.asset(FourBars)),
+                  child: SvgPicture.asset(ThreeBars)),
 
               Visibility(
                 visible: !Visible,
@@ -119,7 +114,7 @@ bool correct=false;
                   bottom: size.height*0.88,
                   left: size.width*0.275,
                   right: size.width*0.275,
-                  child: SvgPicture.asset(FiveBars),
+                  child: SvgPicture.asset(FourBars),
                 ),
               ),
 
@@ -128,43 +123,32 @@ bool correct=false;
                 child: Positioned(
                   top: size.height*0.47,
                   left: size.width*0.75,
-                  child: GoToButton(onPressed: () async {
-                    if((drag1=="assets/icons/gb.svg")&&(drag2=="assets/icons/i.svg")&&(drag3=="assets/icons/r.svg")&&(drag4=="assets/icons/a.svg")&&(drag5=="assets/icons/f.svg")&&(drag6=="assets/icons/e.svg")){
-                      player2 =  await player.play('audio/mathsBravo.wav');
-
+                  child: GoToButton(onPressed: (){
+                    if((drag1=="assets/icons/posA.svg")&&(drag2=="assets/icons/posB.svg" ||drag2=="assets/icons/posH.svg" )&&(drag3=="assets/icons/posC.svg")&&(drag4=="assets/icons/posD.svg")&&(drag5=="assets/icons/posE.svg")&&(drag6=="assets/icons/posF.svg")&&(drag7=="assets/icons/posG.svg")&&(drag8=="assets/icons/posH.svg" ||drag8=="assets/icons/posB.svg" )){
                       setState(() {
+                        correct = true;
                         Visible=false;
-                        correct=false;
-                        scoreF.niv3+=1;
-
-
-                      });}else if ((drag1==null)&&(drag2==null)&&(drag3==null)&&(drag4==null)&&(drag5==null)&&(drag6==null)){}
+                      });}else if ((drag1==null)&&(drag2==null)&&(drag3==null)&&(drag4==null)&&(drag5==null)&&(drag6==null)&&(drag7==null)&&(drag8==null)){}
                     else{
                       setState(() {
                         Visible=false;
-                      });
-                    }
+                        correct = false;
+                      });}
 
                   },),
                 ),
               ),
               Positioned(
-                top: size.height*0.585,
-                left: size.width*0.1,
-                height: size.height*0.1,
-                width: size.width*0.8,
+                top: size.height*0.535,
+                left:size.width*0.05,
+                height: size.height*0.2,
+                width: size.width*0.9,
 
                 child: Visibility(
-                  child: SvgPicture.asset("assets/icons/bigButton.svg"),
+                  child: Image.asset("images/BigButton2.jpg"),
                 ),
               ),
-              Positioned(
-                top: size.height*0.15,
-                left: size.width*0.2,
-                height: size.width*0.5,
-                width: size.width*0.5,
-                child:SvgPicture.asset('assets/icons/bulle2ndAttempt.svg'),
-              ),
+
               Visibility(
                 visible: Visible,
                 child: Positioned(
@@ -173,18 +157,22 @@ bool correct=false;
                   child: ButtonReset(
                       onPressed: () {
                         setState(() {
-                          letterA="";
-                          letterG="";
-                          letterI="";
-                          letterR="";
-                          letterF="";
-                          letterE="";
+                          a="";
+                          b="";
+                          c="";
+                          d="";
+                          e="";
+                          f="";
+                          g="";
+                          h="";
                           drag1=null;
                           drag2=null;
                           drag3=null;
                           drag4=null;
                           drag5=null;
                           drag6=null;
+                          drag7= null;
+                          drag8= null;
                         });
                       }
 
@@ -199,19 +187,9 @@ bool correct=false;
                     height: size.height*0.2,
                     width: size.width*0.5,
                     child: ButtonContinuer(onPressed: (){
-                      player2.stop();
-
-                      print("score final");
-                      print(scoreF.niv3);
-                      Firestore.instance.collection('users').document(user.uid).collection('domains').document('francais').updateData({'niv3':scoreF.niv3});
-                      if (scoreF.niv3>high.niv3)
-                      { high.niv3=scoreF.niv3 ;
-                      Firestore.instance.collection('users').document(user.uid).collection('domains').document('francais').updateData({'high3':scoreF.niv3});}
-                        Navigator.push(
-                            context,
-                            MaterialPageRoute(builder: (context) => Niveau3Pass()));
-
-                      },)
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => N1Q2()));},)
                 ),
               ),
               if (user.avatar=="Pink")
@@ -259,8 +237,8 @@ bool correct=false;
                   ),
                 ),
               Positioned(
-                top: size.height*0.8,
-                right: size.width*0.23,
+                top: size.height*0.75,
+                right: size.width*0.16,
                 child: Visibility(
                   visible: Visible,
                   child: Row(
@@ -270,123 +248,135 @@ bool correct=false;
                       /// Draggable
                       Draggable<String>(
                         onDragCompleted: (){
-                          letterA = 'assets/icons/a.svg';
+
+                          a = 'assets/icons/posA.svg';
                         },
                         data:
-                        "assets/icons/a.svg",
+                        "assets/icons/posA.svg",
                         child: Container(
-                          width: 50,
-                          height: 50,
+                          width: 65,
+                          height: 65,
                           alignment: Alignment.center,
-                          child: letterA == 'assets/icons/a.svg'
+                          //color: Colors.purple,
+                          child: a == 'assets/icons/posA.svg'
                               ? Container()
                               : SvgPicture.asset(
-                            'assets/icons/a.svg',
-                            height: 50,
-                            width: 50,
+                            'assets/icons/posA.svg',
+                            height: 65,
+                            width: 65,
                           ),
                         ),
 
                         // The widget to show under the pointer when a drag is under way
                         feedback:
                         Container(
-                          width: 50,
-                          height: 50,
+                          //color: Colors.purple,
+                          width: 65,
+                          height: 65,
                           alignment: Alignment.center,
                           child: SvgPicture.asset(
-                            'assets/icons/a.svg',
-                            height: 50,
-                            width: 50,
+                            'assets/icons/posA.svg',
+                            height: 65,
+                            width: 65,
                           ),
                         ),
                         childWhenDragging: Container(
                           //color: Colors.purple,
-                          width: 50,
-                          height: 50,),
+                          width: 65,
+                          height: 65,),
 
 
                       ),
                       SizedBox( width: size.width*0.1,),
                       Draggable<String>(
                         onDragCompleted: (){
-                          letterF = 'assets/icons/f.svg';
+
+                          c = 'assets/icons/posC.svg';
                         },
                         data:
-                        "assets/icons/f.svg",
+                        "assets/icons/posC.svg",
                         child: Container(
-                          width: 50,
-                          height: 50,
+                          width: 65,
+                          height: 65,
                           alignment: Alignment.center,
-                          child: letterF == 'assets/icons/f.svg'
+                          //color: Colors.purple,
+                          child: c == 'assets/icons/posC.svg'
                               ? Container()
                               : SvgPicture.asset(
-                            'assets/icons/f.svg',
-                            height: 50,
-                            width: 50,
+                            'assets/icons/posC.svg',
+                            height: 65,
+                            width: 65,
                           ),
                         ),
 
                         // The widget to show under the pointer when a drag is under way
                         feedback:
                         Container(
-                          width: 50,
-                          height: 50,
+                          //color: Colors.purple,
+                          width: 65,
+                          height: 65,
                           alignment: Alignment.center,
                           child: SvgPicture.asset(
-                            'assets/icons/f.svg',
-                            height: 50,
-                            width: 50,
+                            'assets/icons/posC.svg',
+                            height: 65,
+                            width: 65,
                           ),
                         ),
                         childWhenDragging: Container(
                           //color: Colors.purple,
-                          width: 50,
-                          height: 50,),
+                          width: 65,
+                          height: 65,),
                       ),
                       SizedBox( width: size.width*0.1,),
                       Draggable<String>(
                         onDragCompleted: (){
-                          letterI = 'assets/icons/i.svg';
+
+                          d = 'assets/icons/posD.svg';
                         },
                         data:
-                        "assets/icons/i.svg",
+                        "assets/icons/posD.svg",
                         child: Container(
-                          width: 50,
-                          height: 50,
+                          width: 65,
+                          height: 65,
                           alignment: Alignment.center,
-                          child: letterI == 'assets/icons/i.svg'
+                          //color: Colors.purple,
+                          child: d == 'assets/icons/posD.svg'
                               ? Container()
                               : SvgPicture.asset(
-                            'assets/icons/i.svg',
-                            height: 50,
-                            width: 50,
+                            'assets/icons/posD.svg',
+                            height: 65,
+                            width: 65,
                           ),
                         ),
 
                         // The widget to show under the pointer when a drag is under way
                         feedback:
                         Container(
-                          width: 50,
-                          height: 50,
+                          //color: Colors.purple,
+                          width: 65,
+                          height: 65,
                           alignment: Alignment.center,
                           child: SvgPicture.asset(
-                            'assets/icons/i.svg',
-                            height: 50,
-                            width: 50,
+                            'assets/icons/posD.svg',
+                            height: 65,
+                            width: 65,
                           ),
                         ),
                         childWhenDragging: Container(
                           //color: Colors.purple,
-                          width: 50,
-                          height: 50,),
+                          width: 65,
+                          height: 65,),
                       ),
+
+                      ////////////////////////
                     ],
                   ),
                 ),
+
               ),
               Positioned(
-                top: size.height*0.9,
-                left: size.width*0.1,
+                top: size.height*0.83,
+                right: size.width*0.16,
                 child: Visibility(
                   visible: Visible,
                   child: Row(
@@ -396,135 +386,22 @@ bool correct=false;
                       /// Draggable
                       Draggable<String>(
                         onDragCompleted: (){
-                          letterG = 'assets/icons/gb.svg';
+
+                          b = 'assets/icons/posB.svg';
                         },
                         data:
-                        "assets/icons/gb.svg",
+                        "assets/icons/posB.svg",
                         child: Container(
-                          width: 50,
-                          height: 50,
+                          width: 65,
+                          height: 65,
                           alignment: Alignment.center,
-                          child: letterG == 'assets/icons/gb.svg'
+                          //color: Colors.purple,
+                          child: b == 'assets/icons/posB.svg'
                               ? Container()
                               : SvgPicture.asset(
-                            'assets/icons/gb.svg',
-                            height: 50,
-                            width: 50,
-                          ),
-                        ),
-
-                        // The widget to show under the pointer when a drag is under way
-                        feedback:
-                        Container(
-                          width: 50,
-                          height: 50,
-                          alignment: Alignment.center,
-                          child: SvgPicture.asset(
-                            'assets/icons/gb.svg',
-                            height: 50,
-                            width: 50,
-                          ),
-                        ),
-                        childWhenDragging: Container(
-                          //color: Colors.purple,
-                          width: 50,
-                          height: 50,),
-
-
-                      ),
-                      SizedBox( width: size.width*0.1,),
-                      Draggable<String>(
-                        onDragCompleted: (){
-                          letterR = 'assets/icons/r.svg';
-                        },
-                        data:
-                        "assets/icons/r.svg",
-                        child: Container(
-                          width: 50,
-                          height: 50,
-                          alignment: Alignment.center,
-                          //color: Colors.purple,
-                          child: letterR == 'assets/icons/r.svg'
-                              ? Container()
-                              : SvgPicture.asset(
-                            'assets/icons/r.svg',
-                            height: 50,
-                            width: 50,
-                          ),
-                        ),
-
-                        // The widget to show under the pointer when a drag is under way
-                        feedback:
-                        Container(
-                          width: 50,
-                          height: 50,
-                          alignment: Alignment.center,
-                          child: SvgPicture.asset(
-                            'assets/icons/r.svg',
-                            height: 50,
-                            width: 50,
-                          ),
-                        ),
-                        childWhenDragging: Container(
-                          //color: Colors.purple,
-                          width: 50,
-                          height: 50,),
-                      ),
-                      SizedBox( width: size.width*0.1,),
-                      Draggable<String>(
-                        onDragCompleted: (){
-                          letterE = 'assets/icons/e.svg';
-                        },
-                        data:
-                        "assets/icons/e.svg",
-                        child: Container(
-                          width: 50,
-                          height: 50,
-                          alignment: Alignment.center,
-                          //color: Colors.purple,
-                          child: letterE == 'assets/icons/e.svg'
-                              ? Container()
-                              : SvgPicture.asset(
-                            'assets/icons/e.svg',
-                            height: 50,
-                            width: 50,
-                          ),
-                        ),
-
-                        feedback:
-                        Container(
-                          width: 50,
-                          height: 50,
-                          alignment: Alignment.center,
-                          child: SvgPicture.asset(
-                            'assets/icons/e.svg',
-                            height: 50,
-                            width: 50,
-                          ),
-                        ),
-                        childWhenDragging: Container(
-                          width: 50,
-                          height: 50,),
-                      ),
-                      SizedBox( width: size.width*0.1,),
-                      Draggable<String>(
-                        onDragCompleted: (){
-                          print('gfds');
-                          letterL = 'assets/icons/l.svg';
-                        },
-                        data:
-                        "assets/icons/l.svg",
-                        child: Container(
-                          width: 50,
-                          height: 50,
-                          alignment: Alignment.center,
-                          //color: Colors.purple,
-                          child: letterL == 'assets/icons/l.svg'
-                              ? Container()
-                              : SvgPicture.asset(
-                            'assets/icons/l.svg',
-                            height: 50,
-                            width: 50,
+                            'assets/icons/posB.svg',
+                            height: 65,
+                            width: 65,
                           ),
                         ),
 
@@ -532,28 +409,211 @@ bool correct=false;
                         feedback:
                         Container(
                           //color: Colors.purple,
-                          width: 50,
-                          height: 50,
+                          width: 65,
+                          height: 65,
                           alignment: Alignment.center,
                           child: SvgPicture.asset(
-                            'assets/icons/l.svg',
-                            height: 50,
-                            width: 50,
+                            'assets/icons/posB.svg',
+                            height: 65,
+                            width: 65,
                           ),
                         ),
                         childWhenDragging: Container(
                           //color: Colors.purple,
-                          width: 50,
-                          height: 50,),
+                          width: 65,
+                          height: 65,),
+
+
                       ),
+                      SizedBox( width: size.width*0.1,),
+                      Draggable<String>(
+                        onDragCompleted: (){
+
+                          f = 'assets/icons/posF.svg';
+                        },
+                        data:
+                        "assets/icons/posF.svg",
+                        child: Container(
+                          width: 65,
+                          height: 65,
+                          alignment: Alignment.center,
+                          //color: Colors.purple,
+                          child: f == 'assets/icons/posF.svg'
+                              ? Container()
+                              : SvgPicture.asset(
+                            'assets/icons/posF.svg',
+                            height: 65,
+                            width: 65,
+                          ),
+                        ),
+
+                        // The widget to show under the pointer when a drag is under way
+                        feedback:
+                        Container(
+                          //color: Colors.purple,
+                          width: 65,
+                          height: 65,
+                          alignment: Alignment.center,
+                          child: SvgPicture.asset(
+                            'assets/icons/posF.svg',
+                            height: 65,
+                            width: 65,
+                          ),
+                        ),
+                        childWhenDragging: Container(
+                          //color: Colors.purple,
+                          width: 65,
+                          height: 65,),
+                      ),
+                      SizedBox( width: size.width*0.1,),
+                      Draggable<String>(
+                        onDragCompleted: (){
+
+                          e = 'assets/icons/posE.svg';
+                        },
+                        data:
+                        "assets/icons/posE.svg",
+                        child: Container(
+                          width: 65,
+                          height: 65,
+                          alignment: Alignment.center,
+                          //color: Colors.purple,
+                          child: e == 'assets/icons/posE.svg'
+                              ? Container()
+                              : SvgPicture.asset(
+                            'assets/icons/posE.svg',
+                            height: 65,
+                            width: 65,
+                          ),
+                        ),
+
+                        // The widget to show under the pointer when a drag is under way
+                        feedback:
+                        Container(
+                          //color: Colors.purple,
+                          width: 65,
+                          height: 65,
+                          alignment: Alignment.center,
+                          child: SvgPicture.asset(
+                            'assets/icons/posE.svg',
+                            height: 65,
+                            width: 65,
+                          ),
+                        ),
+                        childWhenDragging: Container(
+                          //color: Colors.purple,
+                          width: 65,
+                          height: 65,),
+                      ),
+
+                      ////////////////////////
                     ],
                   ),
                 ),
 
               ),
               Positioned(
-                top: size.height*0.6,
-                left: size.width*0.14,
+                top: size.height*0.91,
+                right: size.width*0.2,
+                child: Visibility(
+                  visible: Visible,
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      /////////////////////
+                      /// Draggable
+                      Draggable<String>(
+                        onDragCompleted: (){
+
+                          g = 'assets/icons/posG.svg';
+                        },
+                        data:
+                        "assets/icons/posG.svg",
+                        child: Container(
+                          width: 65,
+                          height: 65,
+                          alignment: Alignment.center,
+                          //color: Colors.purple,
+                          child: g == 'assets/icons/posG.svg'
+                              ? Container()
+                              : SvgPicture.asset(
+                            'assets/icons/posG.svg',
+                            height: 65,
+                            width: 65,
+                          ),
+                        ),
+
+                        // The widget to show under the pointer when a drag is under way
+                        feedback:
+                        Container(
+                          //color: Colors.purple,
+                          width: 65,
+                          height: 65,
+                          alignment: Alignment.center,
+                          child: SvgPicture.asset(
+                            'assets/icons/posG.svg',
+                            height: 65,
+                            width: 65,
+                          ),
+                        ),
+                        childWhenDragging: Container(
+                          //color: Colors.purple,
+                          width: 65,
+                          height: 65,),
+
+
+                      ),
+                      SizedBox( width: size.width*0.1,),
+                      Draggable<String>(
+                        onDragCompleted: (){
+
+                          h = 'assets/icons/posH.svg';
+                        },
+                        data:
+                        "assets/icons/posH.svg",
+                        child: Container(
+                          width: 65,
+                          height: 65,
+                          alignment: Alignment.center,
+                          //color: Colors.purple,
+                          child: h == 'assets/icons/posH.svg'
+                              ? Container()
+                              : SvgPicture.asset(
+                            'assets/icons/posH.svg',
+                            height: 65,
+                            width: 65,
+                          ),
+                        ),
+
+                        // The widget to show under the pointer when a drag is under way
+                        feedback:
+                        Container(
+                          //color: Colors.purple,
+                          width: 65,
+                          height: 65,
+                          alignment: Alignment.center,
+                          child: SvgPicture.asset(
+                            'assets/icons/posH.svg',
+                            height: 65,
+                            width: 65,
+                          ),
+                        ),
+                        childWhenDragging: Container(
+                          //color: Colors.purple,
+                          width: 65,
+                          height: 65,),
+                      ),
+                      SizedBox( width: size.width*0.1,),
+                      ////////////////////////
+                    ],
+                  ),
+                ),
+
+              ),
+
+              Positioned(
+                top: size.height*0.5405,
+                left: size.width*0.418,
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
@@ -565,15 +625,15 @@ bool correct=false;
                       },
                       builder: (_, candidateData, rejectedData) {
                         return Container(
-                          width: 50,
-                          height: 50,
+                          width: 65,
+                          height: 65,
 
                           alignment: Alignment.center,
                           child: drag1 != null
                               ? SvgPicture.asset(
                             drag1,
-                            height: 50,
-                            width: 50,
+                            height: 65,
+                            width: 65,
                           )
                               : Container(),
                         );
@@ -587,21 +647,30 @@ bool correct=false;
                       },
                       builder: (_, candidateData, rejectedData) {
                         return Container(
-                          width: 50,
-                          height: 50,
+                          width: 65,
+                          height: 65,
 
                           alignment: Alignment.center,
                           child: drag2 != null
                               ? SvgPicture.asset(
 
                             drag2,
-                            height: 50,
-                            width: 50,
+                            height: 65,
+                            width: 65,
                           )
                               : Container(),
                         );
                       },
                     ),
+                  ],
+                ),
+              ),
+              Positioned(
+                top: size.height*0.599,
+                left: size.width*0.25,
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
                     DragTarget<String>(
                       onAccept: (value) {
                         setState(() {
@@ -610,16 +679,15 @@ bool correct=false;
                       },
                       builder: (_, candidateData, rejectedData) {
                         return Container(
-                          width: 50,
-                          height: 50,
+                          width: 65,
+                          height: 65,
 
                           alignment: Alignment.center,
                           child: drag3 != null
                               ? SvgPicture.asset(
-
                             drag3,
-                            height: 50,
-                            width: 50,
+                            height: 65,
+                            width: 65,
                           )
                               : Container(),
                         );
@@ -633,38 +701,16 @@ bool correct=false;
                       },
                       builder: (_, candidateData, rejectedData) {
                         return Container(
-                          width: 50,
-                          height: 50,
+                          width: 65,
+                          height: 65,
 
                           alignment: Alignment.center,
                           child: drag4 != null
                               ? SvgPicture.asset(
 
                             drag4,
-                            height: 50,
-                            width: 50,
-                          )
-                              : Container(),
-                        );
-                      },
-                    ), DragTarget<String>(
-                      onAccept: (value) {
-                        setState(() {
-                          drag5 = value;
-                        });
-                      },
-                      builder: (_, candidateData, rejectedData) {
-                        return Container(
-                          width: 50,
-                          height: 50,
-
-                          alignment: Alignment.center,
-                          child: drag5 != null
-                              ? SvgPicture.asset(
-
-                            drag5,
-                            height: 50,
-                            width: 50,
+                            height: 65,
+                            width: 65,
                           )
                               : Container(),
                         );
@@ -673,21 +719,98 @@ bool correct=false;
                     DragTarget<String>(
                       onAccept: (value) {
                         setState(() {
+                          drag5 = value;
+                        });
+                      },
+                      builder: (_, candidateData, rejectedData) {
+                        return Container(
+                          width: 65,
+                          height: 65,
+
+                          alignment: Alignment.center,
+                          child: drag5 != null
+                              ? SvgPicture.asset(
+
+                            drag5,
+                            height: 65,
+                            width: 65,
+                          )
+                              : Container(),
+                        );
+                      },
+                    ),
+                  ],
+                ),
+              ),
+              Positioned(
+                top: size.height*0.657,
+                left: size.width*0.25,
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    DragTarget<String>(
+                      onAccept: (value) {
+                        setState(() {
                           drag6 = value;
                         });
                       },
                       builder: (_, candidateData, rejectedData) {
                         return Container(
-                          width: 50,
-                          height: 50,
+                          width: 65,
+                          height: 65,
 
                           alignment: Alignment.center,
                           child: drag6 != null
                               ? SvgPicture.asset(
-
                             drag6,
-                            height: 50,
-                            width: 50,
+                            height: 65,
+                            width: 65,
+                          )
+                              : Container(),
+                        );
+                      },
+                    ),
+                    DragTarget<String>(
+                      onAccept: (value) {
+                        setState(() {
+                          drag7 = value;
+                        });
+                      },
+                      builder: (_, candidateData, rejectedData) {
+                        return Container(
+                          width: 65,
+                          height: 65,
+
+                          alignment: Alignment.center,
+                          child: drag7 != null
+                              ? SvgPicture.asset(
+
+                            drag7,
+                            height: 65,
+                            width: 65,
+                          )
+                              : Container(),
+                        );
+                      },
+                    ),
+                    DragTarget<String>(
+                      onAccept: (value) {
+                        setState(() {
+                          drag8 = value;
+                        });
+                      },
+                      builder: (_, candidateData, rejectedData) {
+                        return Container(
+                          width: 65,
+                          height: 65,
+
+                          alignment: Alignment.center,
+                          child: drag8 != null
+                              ? SvgPicture.asset(
+
+                            drag8,
+                            height: 65,
+                            width: 65,
                           )
                               : Container(),
                         );

@@ -1,5 +1,6 @@
 
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:somthn/WelcomePages/Vite.dart';
 import 'package:somthn/WelcomePages/Voila.dart';
 import 'package:somthn/WelcomePages/custom_dialog_box.dart';
@@ -96,9 +97,6 @@ class _HomeState extends State<Home> {
                         MaterialPageRoute(builder: (context) => Settings(value: advancedPlayer )));
                   },)
               ),
-
-
-
               Positioned(
                   top: size.height*0.55,
                   right : size.height*0.1,

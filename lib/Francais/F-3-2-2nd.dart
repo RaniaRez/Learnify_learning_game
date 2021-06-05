@@ -26,7 +26,8 @@ class F_3_2_2nd extends StatefulWidget {
 }
 
 class _F_3_2_2ndState extends State<F_3_2_2nd> {
-
+  var player = AudioCache();
+  var player2 = AudioPlayer ();
   AudioPlayer advancedPlayer;
 
 
@@ -72,6 +73,8 @@ class _F_3_2_2ndState extends State<F_3_2_2nd> {
                   left:size.width*0.75,
                   child:
                   SettingsButton(onPressed: (){
+                    player2.stop();
+
                     Navigator.push(
                         context,
                         MaterialPageRoute(builder: (context) => Settings()));
@@ -81,6 +84,8 @@ class _F_3_2_2ndState extends State<F_3_2_2nd> {
                   top: size.height*0.05,
                   right:size.width*0.75,
                   child: BacksButton(onPressed: (){
+                    player2.stop();
+
                     Navigator.push(
                         context,
                         MaterialPageRoute(builder: (context) => Fr1()));
@@ -148,7 +153,9 @@ class _F_3_2_2ndState extends State<F_3_2_2nd> {
                   height: size.height*0.15,
                   width: size.width*0.4,
                   child: IconButton(
-                      onPressed: (){
+                      onPressed: () async {
+                        player2 =  await player.play('audio/mathsBravo.wav');
+
                         setState(() {
                           Visible=false;
                           correct=true;
@@ -239,6 +246,8 @@ class _F_3_2_2ndState extends State<F_3_2_2nd> {
                     height: size.height*0.2,
                     width: size.width*0.5,
                     child: ButtonContinuer(onPressed: (){
+                      player2.stop();
+
                       print('HADA SCORE');
                       print(scoreF.niv3);
                       Navigator.push(

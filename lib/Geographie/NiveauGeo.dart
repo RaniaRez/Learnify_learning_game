@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:somthn/Buttons/BacksButton.dart';
+import 'package:somthn/Maths/M-2.dart';
 import 'package:somthn/Owls/BrownOwl.dart';
 import 'package:somthn/Owls/LockIcon.dart';
 import './N2Q1.dart';
 import './N1Q2.dart';
+import './N1Q1.dart';
+
 import './N3Q1.dart';
 
 import 'package:somthn/Avatars/PinkAvatarIcon.dart';
@@ -13,10 +16,6 @@ import 'package:somthn/Buttons/buttonMoyen.dart';
 import 'package:somthn/Buttons/buttonfacile.dart';
 import 'package:somthn/Owls/madGreenOwl.dart';
 import 'package:somthn/Buttons/settingsButton.dart';
-
-import 'BienvenueGeo.dart';
-
-import 'N1Q3.dart';
 
 
 
@@ -54,7 +53,7 @@ class _NiveauGeoState extends State<NiveauGeo> {
                   child:Buttonfacile (onPressed:(){
                     Navigator.push(
                         context,
-                        MaterialPageRoute(builder: (context) => N1Q3()));
+                        MaterialPageRoute(builder: (context) => N1Q1()));
                     print('facile');}),
                 ),
 
@@ -65,7 +64,6 @@ class _NiveauGeoState extends State<NiveauGeo> {
                 bottom:size.width*0.32,
                 child: PinkAvatarIcon(onPressed:null),
               ),
-              if (scoreG.niv1<0)
               Positioned(
                 top: size.height*0.82,
                 left: size.width*0.5,
@@ -76,14 +74,13 @@ class _NiveauGeoState extends State<NiveauGeo> {
                 height: size.height*0.2,
                 width: size.width*0.5,
                   child: ButtonMoyen(onPressed:(){
-                    if (scoreG.niv2>=0){
                     Navigator.push(
                         context,
                         MaterialPageRoute(builder: (context) => N2Q1()));
-                    print('Moyen');}
+                    print('Moyen');
                   }),
                 ),
-              if (scoreG.niv2<0)
+
               Positioned(
                 top: size.height*0.57,
                 right: size.width*0.5,
@@ -102,11 +99,10 @@ class _NiveauGeoState extends State<NiveauGeo> {
                 height: size.height*0.2,
                 width: size.width*0.5,
                   child: ButtonDifficile(onPressed:(){
-                    if (scoreG.niv3>=0){
                     Navigator.push(
                         context,
                         MaterialPageRoute(builder: (context) => N3Q1()));
-                    print('hard');}
+                    print('hard');
                   }),
                 ),
 
@@ -117,7 +113,6 @@ class _NiveauGeoState extends State<NiveauGeo> {
                 top:size.width*0.36,
                 child:BrownOwl(onPressed:null),
               ),
-              if (scoreG.niv3<0)
               Positioned(
                 top: size.height*0.32,
                 right: size.width*0.44,
@@ -137,9 +132,7 @@ class _NiveauGeoState extends State<NiveauGeo> {
                   top: size.height*0.05,
                   right:size.width*0.75,
                   child: BacksButton(onPressed: (){
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(builder: (context) => BienvenueGeo()));
+                    Navigator.pop(context);
                   },)
               ),
             ]

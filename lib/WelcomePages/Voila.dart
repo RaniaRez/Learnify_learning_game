@@ -5,6 +5,7 @@ import 'package:somthn/Avatars/OrangeAvatarIcon.dart';
 import 'package:somthn/Avatars/PinkAvatarIcon.dart';
 import 'package:somthn/Avatars/PurpleAvatarIcon.dart';
 import 'package:somthn/Branches/BranchIconSimple.dart';
+import 'package:somthn/Mutual/Statistiques.dart';
 import 'package:somthn/WelcomePages/ChoixDomaines.dart';
 import 'package:somthn/Buttons/ClassementButton.dart';
 import 'package:somthn/classement/Classement.dart';
@@ -19,8 +20,6 @@ import '../classement/Classement.dart';
 import '../Services/Login.dart';
 import 'package:audioplayers/audio_cache.dart';
 import 'package:audioplayers/audioplayers.dart';
-import '../Statistics/Statistiques.dart';
-
 class Voila extends StatefulWidget {
   @override
   _VoilaState createState() => _VoilaState();
@@ -75,7 +74,9 @@ class _VoilaState extends State<Voila> {
             Positioned(
                 top: size.height*0.05,
                 left:size.width*0.75,
-                child: SettingsButton(onPressed: (){
+                child: SettingsButton(onPressed: () async {
+                  int result = await advancedPlayer.pause();
+
                   Navigator.push(
                       context,
                       MaterialPageRoute(builder: (context) => Settings()));
@@ -85,7 +86,9 @@ class _VoilaState extends State<Voila> {
             Positioned(
                 top: size.height*0.05,
                 right:size.width*0.75,
-                child: BacksButton(onPressed: (){
+                child: BacksButton(onPressed: () async {
+                  int result = await advancedPlayer.pause();
+
                   Navigator.pop(context);
                 },)
             ),
@@ -93,6 +96,8 @@ class _VoilaState extends State<Voila> {
               top: size.height*0.05,
               left: size.width*0.4,
               child: ClassementButton(onPressed: ()  async {
+                int result = await advancedPlayer.pause();
+
                 List<DataUser> list = new List<DataUser>.empty(growable: true);
                 list = await classement();
                 list.sort((a, b) => b.score.compareTo(a.score));
@@ -116,7 +121,9 @@ class _VoilaState extends State<Voila> {
             Positioned(
               top: size.height*0.8,
               left:size.width*0.75,
-                child: GoToButton(onPressed: (){
+                child: GoToButton(onPressed: () async {
+                  int result = await advancedPlayer.pause();
+
                   Navigator.push(
                     context,
                     MaterialPageRoute(builder: (context) => ChoixDomaine()),);
@@ -181,12 +188,11 @@ class _VoilaState extends State<Voila> {
             Positioned(
               top: size.height*0.8,
               right:size.width*0.75,
-              child: StatistiqueButton(onPressed:(){
+              child: StatistiqueButton(onPressed: (){
                 Navigator.push(
                     context,
                     MaterialPageRoute(builder: (context) => Stats()));
-
-              }),
+              },),
 
             ),
           ],
