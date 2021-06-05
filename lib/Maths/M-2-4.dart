@@ -13,7 +13,6 @@ import 'package:somthn/Maths/M-2-4-2ndAttemptThreeclick.dart';
 import 'package:somthn/Maths/M-2-4-2ndAttemptTwoclick.dart';
 import 'package:somthn/Maths/M-2-5-2ndAttemptThreeclick.dart';
 import 'package:somthn/Maths/M-2-5.dart';
-import 'package:somthn/Mutual/Niveau1Pass%C3%A9.dart';
 import 'package:somthn/WelcomePages/Settings.dart';
 import 'package:somthn/Bulles/bulleQuest.dart';
 import 'package:somthn/Buttons/buttonContinuer.dart';

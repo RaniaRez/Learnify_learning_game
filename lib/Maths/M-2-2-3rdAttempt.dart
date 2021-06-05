@@ -5,7 +5,6 @@ import 'package:somthn/Maths/I-M-2-1.dart';
 import 'package:somthn/Maths/M-1-5-2ndAttempt.dart';
 import 'package:somthn/Maths/M-2-2.dart';
 import 'package:somthn/Maths/M-2-3.dart';
-import 'package:somthn/Mutual/Niveau1Pass%C3%A9.dart';
 import 'package:somthn/WelcomePages/Settings.dart';
 import 'package:somthn/Bulles/bulleQuest.dart';
 import 'package:somthn/Buttons/buttonContinuer.dart';

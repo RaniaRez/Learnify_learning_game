@@ -5,7 +5,6 @@ import 'package:somthn/Maths/M-2-5-2ndAttemptFourclick.dart';
 import 'package:somthn/Maths/M-2-5-2ndAttemptThreeclick.dart';
 import 'package:somthn/Maths/M-2-5-2ndAttemptTwoclick.dart';
 import 'package:somthn/Maths/M-2.dart';
-import 'package:somthn/Maths/Niveau2Pass%C3%A9.dart';
 import 'package:somthn/WelcomePages/Settings.dart';
 import 'package:somthn/Buttons/buttonContinuer.dart';
 import 'package:somthn/Buttons/buttonQ.dart';
@@ -20,6 +19,7 @@ import '../Services/Login.dart';
 import 'BienvenueMath.dart';
 import 'package:audioplayers/audio_cache.dart';
 import 'package:audioplayers/audioplayers.dart';
+import 'Niveau2Passé.dart';
 
 
 class M_2_5 extends StatefulWidget {

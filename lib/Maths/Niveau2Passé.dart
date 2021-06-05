@@ -127,7 +127,7 @@ class _Niveau2PassState extends State<Niveau2Pass> {
                 child: FittedBox(
                   fit: BoxFit.fitWidth,
                   child: Text(
-                    scoreM.niv2 .toString(),
+                    hs.niv2 .toString(),
                     style:TextStyle(
                       fontSize: 30,
                       fontFamily: 'Skranji-Bold',
@@ -142,7 +142,7 @@ class _Niveau2PassState extends State<Niveau2Pass> {
                 child: FittedBox(
                   fit: BoxFit.fitWidth,
                   child: Text(
-                    hs.niv2 .toString() ,
+                    scoreM.niv2 .toString() ,
                     style:TextStyle(
                       fontSize: 30,
                       fontFamily: 'Skranji-Bold',

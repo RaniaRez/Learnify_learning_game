@@ -1,13 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:somthn/Buttons/BarreProgres.dart';
-import 'package:somthn/Maths/I-M-2-1.dart';
-import 'package:somthn/Maths/M-1-5-2ndAttempt.dart';
-import 'package:somthn/Maths/M-2-2.dart';
-import 'package:somthn/Maths/M-2-3.dart';
 import 'package:somthn/Maths/Niveau2Pass%C3%A9.dart';
-import 'package:somthn/Mutual/Niveau1Pass%C3%A9.dart';
 import 'package:somthn/WelcomePages/Settings.dart';
 import 'package:somthn/Bulles/bulleQuest.dart';
 import 'package:somthn/Buttons/buttonContinuer.dart';

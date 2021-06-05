@@ -10,9 +10,7 @@ import 'package:somthn/Buttons/buttonContinuer.dart';
 import 'package:somthn/Buttons/buttonGoTo.dart';
 import 'package:somthn/Buttons/buttonReset.dart';
 import 'package:somthn/Buttons/settingsButton.dart';
-import 'package:somthn/Francais/F-1.dart';
 import 'package:somthn/Francais/Niveau2Pass%C3%A9.dart';
-import 'package:somthn/Francais/NiveauFr.dart';
 import 'package:somthn/WelcomePages/Settings.dart';
 import 'package:somthn/myicons.dart';
 import '../Services/Login.dart';
@@ -213,7 +211,7 @@ class _F_2_5_2ndState extends State<F_2_5_2nd> {
                 Visibility(
                   visible: Visible,
                   child: Positioned(
-                    top: size.height*0.5,
+                    top: size.height*0.36,
                     left: size.width*0.72,
                     height: size.width*0.3,
                     width: size.width*0.3,
