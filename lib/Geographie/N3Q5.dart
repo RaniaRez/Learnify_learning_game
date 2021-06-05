@@ -20,7 +20,7 @@ import 'package:somthn/Geographie/BienvenueGeo.dart';
 import 'package:audioplayers/audio_cache.dart';
 import 'package:audioplayers/audioplayers.dart';
 import 'BienvenueGeo.dart';
-import '../Mutual/Niveau3Passé.dart';
+import 'Niv3Passé.dart';
 
 
 class N3Q5 extends StatefulWidget {

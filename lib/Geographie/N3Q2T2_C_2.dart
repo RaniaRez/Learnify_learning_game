@@ -247,6 +247,7 @@ class _N3Q2T2_C_2State extends State<N3Q2T2_C_2> {
                     height: size.height*0.2,
                     width: size.width*0.5,
                     child: ButtonContinuer(onPressed: (){
+                      print(scoreG.niv3);
                       Navigator.push(
                           context,
                           MaterialPageRoute(builder: (context) => N3Q3()));

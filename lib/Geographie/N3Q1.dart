@@ -279,6 +279,8 @@ class _N3Q1State extends State<N3Q1> {
                     height: size.height*0.2,
                     width: size.width*0.5,
                     child: ButtonContinuer(onPressed: (){
+                      scoreG.niv3+=2 ;
+                      print(scoreG.niv3);
                       Navigator.push(
                           context,
                           MaterialPageRoute(builder: (context) => N3Q2()));
@@ -380,7 +382,7 @@ class _N3Q1State extends State<N3Q1> {
                             });
 
                             print('Correct');
-                            scoreG.niv3+=2 ;
+
                           }
                           print('2');
                         },
