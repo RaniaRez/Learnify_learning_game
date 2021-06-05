@@ -141,14 +141,17 @@ class _GeoScoreState extends State<GeoScore> {
                     child:SvgPicture.asset('assets/icons/ButtonQ.svg'),
                   ),
                   Positioned(
-                      left: size.width*0.43,
+                      left: size.width*0.45,
                       top:size.height*0.62,
-                      child:Text(
-                       high.toString(),
-                        style: TextStyle(
-                          fontSize: 30,
-                          fontFamily: 'Skranji-Bold',
-                          color: Colors.brown[700],
+                      child: FittedBox(
+                        fit: BoxFit.fitWidth,
+                        child: Text(
+                         high.toString(),
+                          style: TextStyle(
+                            fontSize: 30,
+                            fontFamily: 'Skranji-Bold',
+                            color:Color(0xff693821),
+                          ),
                         ),
                       )
                   ) ,
@@ -165,14 +168,17 @@ class _GeoScoreState extends State<GeoScore> {
                     child:SvgPicture.asset('assets/icons/ButtonQ.svg'),
                   ),
                   Positioned(
-                      left: size.width*0.43,
+                      left: size.width*0.45,
                       top:size.height*0.8,
-                      child:Text(
-                        score.toString(),
-                        style: TextStyle(
-                          fontSize: 30,
-                          fontFamily: 'Skranji-Bold',
-                          color: Colors.brown[700],
+                      child: FittedBox(
+                        fit: BoxFit.fitWidth,
+                        child: Text(
+                          score.toString(),
+                          style: TextStyle(
+                            fontSize: 30,
+                            fontFamily: 'Skranji-Bold',
+                            color: Color(0xff693821),
+                          ),
                         ),
                       )
                   ) ,
