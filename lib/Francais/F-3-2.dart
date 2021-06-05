@@ -30,7 +30,8 @@ class F_3_2 extends StatefulWidget {
 
 class _F_3_2State extends State<F_3_2> {
   AudioPlayer advancedPlayer;
-
+  var player = AudioCache();
+  var player2 = AudioPlayer ();
   @override
   initState() {
     super.initState();
@@ -71,6 +72,8 @@ class _F_3_2State extends State<F_3_2> {
                   left:size.width*0.75,
                   child:
                   SettingsButton(onPressed: (){
+                    player2.stop();
+
                     Navigator.push(
                         context,
                         MaterialPageRoute(builder: (context) => Settings()));
@@ -80,6 +83,8 @@ class _F_3_2State extends State<F_3_2> {
                   top: size.height*0.05,
                   right:size.width*0.75,
                   child: BacksButton(onPressed: (){
+                    player2.stop();
+
                     Navigator.push(
                         context,
                         MaterialPageRoute(builder: (context) => Fr1()));
@@ -107,6 +112,7 @@ class _F_3_2State extends State<F_3_2> {
                 width: size.width*0.6,
                 child:SvgPicture.asset('assets/icons/F3T2.svg'),
               ),
+
               Visibility(
                 visible: Visible,
                 child: Positioned(
@@ -149,7 +155,11 @@ class _F_3_2State extends State<F_3_2> {
                   height: size.height*0.15,
                   width: size.width*0.4,
                   child: IconButton(
-                      onPressed: (){
+                      onPressed: () async {
+                        int result = await advancedPlayer.pause();
+
+                        player2 =  await player.play('audio/mathsBravo.wav');
+
                         scoreF.niv3+=2;
 
                         setState(() {
@@ -260,6 +270,8 @@ class _F_3_2State extends State<F_3_2> {
                     height: size.height*0.2,
                     width: size.width*0.5,
                     child: ButtonContinuer(onPressed: (){
+                      player2.stop();
+
                       print('HADA SCORE');
                       print(scoreF.niv3);
                       Navigator.push(

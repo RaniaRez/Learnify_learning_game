@@ -73,7 +73,9 @@ class _Niveau2PassState extends State<Niveau2Pass> {
             Positioned(
                 top: size.height*0.05,
                 left:size.width*0.75,
-                child: SettingsButton(onPressed: (){
+                child: SettingsButton(onPressed: () async {
+                  int result = await advancedPlayer.pause();
+
                   Navigator.push(
                       context,
                       MaterialPageRoute(builder: (context) => Settings()));
@@ -84,7 +86,9 @@ class _Niveau2PassState extends State<Niveau2Pass> {
             Positioned(
                 top: size.height*0.05,
                 right:size.width*0.75,
-                child: BacksButton(onPressed: (){
+                child: BacksButton(onPressed: () async{
+                  int result = await advancedPlayer.pause();
+
                   print("HELL YEAH");
                   Navigator.push(
                       context,
@@ -95,7 +99,9 @@ class _Niveau2PassState extends State<Niveau2Pass> {
               top: size.height*0.047,
               left: size.width*0.39,
               child: HomeButton(
-                onPressed: (){
+                onPressed: () async {
+                  int result = await advancedPlayer.pause();
+
                   //print("zbel2");
                   print("HELL YEAH8");
                   Navigator.push(

@@ -62,7 +62,9 @@ class _TestNiveauState extends State<TestNiveau> {
               Positioned(
                   top: size.height*0.05,
                   right:size.width*0.75,
-                  child: BacksButton(onPressed: (){
+                  child: BacksButton(onPressed: () async{
+                    int result = await advancedPlayer.pause();
+
                     print("HELL YEAH");
                     Navigator.pop(context);
                   },)
@@ -72,7 +74,9 @@ class _TestNiveauState extends State<TestNiveau> {
                   right: size.width*0.25,
                   height: size.height*0.55,
                   width: size.width*0.55,
-                  child: ButtonCommencer(onPressed: (){
+                  child: ButtonCommencer(onPressed: () async {
+                    int result = await advancedPlayer.pause();
+
                     Navigator.push(
                         context,
                         MaterialPageRoute(builder: (context) => TestNivFr1()));
@@ -82,7 +86,9 @@ class _TestNiveauState extends State<TestNiveau> {
                   top: size.height*0.05,
                   left:size.width*0.75,
                   child:
-                  SettingsButton(onPressed: (){
+                  SettingsButton(onPressed: () async{
+                    int result = await advancedPlayer.pause();
+
                     Navigator.push(
                         context,
                         MaterialPageRoute(builder: (context) => Settings()));
