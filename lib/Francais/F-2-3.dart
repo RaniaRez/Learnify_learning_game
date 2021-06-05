@@ -266,8 +266,9 @@ class _F_2_3State extends State<F_2_3> {
                     left: 0.0,
                     height: size.height*0.2,
                     width: size.width*0.5,
-                    child: ButtonContinuer(onPressed: (){
+                    child: ButtonContinuer(onPressed: () async {
                       player2.stop();
+                      int result = await advancedPlayer.pause();
 
                       print('HADA SCORE');
                       print(scoreF.niv2);

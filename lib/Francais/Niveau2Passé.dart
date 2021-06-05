@@ -314,7 +314,9 @@ class _Niveau2PassState extends State<Niveau2Pass> {
               left: size.width*0.7 ,
               child: Visibility(
                 visible:((complet) || (scoreF.niv3 >=0 )),
-                child: GoToButton(onPressed: (){
+                child: GoToButton(onPressed: () async {
+                  int result = await advancedPlayer.pause();
+
                   print(scoreM.niv1);
                   print('khra');
                   //Firestore.instance.collection('users').document(user.uid).collection('domains').document('maths').updateData({'niv1':scoreM.niv1});

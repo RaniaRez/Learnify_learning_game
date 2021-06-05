@@ -194,6 +194,7 @@ class _F_1_5_2ndState extends State<F_1_5_2nd> {
                       player2.stop();
                       int result = await advancedPlayer.pause();
 
+
                       print("score final");
                       print(scoreF.niv1);
                       Firestore.instance.collection('users').document(user.uid).collection('domains').document('francais').updateData({'niv1':scoreF.niv1});

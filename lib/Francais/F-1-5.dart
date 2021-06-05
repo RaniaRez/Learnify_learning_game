@@ -166,7 +166,7 @@ class _F_1_5State extends State<F_1_5> {
                     left: 0.0,
                     height: size.height*0.2,
                     width: size.width*0.5,
-                    child: ButtonContinuer(onPressed: (){
+                    child: ButtonContinuer(onPressed: ()  {
                       player2.stop();
 
 

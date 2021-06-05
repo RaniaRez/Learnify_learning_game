@@ -73,7 +73,9 @@ class _VoilaState extends State<Voila> {
             Positioned(
                 top: size.height*0.05,
                 left:size.width*0.75,
-                child: SettingsButton(onPressed: (){
+                child: SettingsButton(onPressed: () async {
+                  int result = await advancedPlayer.pause();
+
                   Navigator.push(
                       context,
                       MaterialPageRoute(builder: (context) => Settings()));
@@ -83,7 +85,9 @@ class _VoilaState extends State<Voila> {
             Positioned(
                 top: size.height*0.05,
                 right:size.width*0.75,
-                child: BacksButton(onPressed: (){
+                child: BacksButton(onPressed: () async {
+                  int result = await advancedPlayer.pause();
+
                   Navigator.pop(context);
                 },)
             ),
@@ -91,6 +95,8 @@ class _VoilaState extends State<Voila> {
               top: size.height*0.05,
               left: size.width*0.4,
               child: ClassementButton(onPressed: ()  async {
+                int result = await advancedPlayer.pause();
+
                 List<DataUser> list = new List<DataUser>.empty(growable: true);
                 list = await classement();
                 list.sort((a, b) => b.score.compareTo(a.score));
@@ -114,7 +120,9 @@ class _VoilaState extends State<Voila> {
             Positioned(
               top: size.height*0.8,
               left:size.width*0.75,
-                child: GoToButton(onPressed: (){
+                child: GoToButton(onPressed: () async {
+                  int result = await advancedPlayer.pause();
+
                   Navigator.push(
                     context,
                     MaterialPageRoute(builder: (context) => ChoixDomaine()),);
