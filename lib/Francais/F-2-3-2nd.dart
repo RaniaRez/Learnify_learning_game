@@ -16,6 +16,8 @@ import 'BienvenueFr.dart';
 import 'package:audioplayers/audio_cache.dart';
 import 'package:audioplayers/audioplayers.dart';
 
+import 'F-2.dart';
+
 class F_1_2 extends StatefulWidget {
   const F_1_2({Key key}) : super(key: key);
 
@@ -84,7 +86,9 @@ class _F_1_2State extends State<F_1_2> {
                   child: BacksButton(onPressed: (){
                     player2.stop();
 
-                    Navigator.pop(context);
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => Fr2()));
                   },)
               ),
               Positioned(

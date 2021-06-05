@@ -7,6 +7,7 @@ import 'package:somthn/Francais/F-3-2-2ndFour.dart';
 import 'package:somthn/Francais/F-3-2-2ndOne.dart';
 import 'package:somthn/Francais/F-3-2-2ndTwo.dart';
 import 'package:somthn/Francais/F-3-3.dart';
+import 'package:somthn/Francais/F-3.dart';
 import 'package:somthn/WelcomePages/Settings.dart';
 import 'package:somthn/Buttons/buttonContinuer.dart';
 import 'package:somthn/myicons.dart';
@@ -89,7 +90,7 @@ class _F_3_2State extends State<F_3_2> {
 
                     Navigator.push(
                         context,
-                        MaterialPageRoute(builder: (context) => Fr1()));
+                        MaterialPageRoute(builder: (context) => Fr3()));
                   },)
               ),
               Positioned(

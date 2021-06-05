@@ -12,6 +12,7 @@ import 'package:somthn/Buttons/buttonReset.dart';
 import 'package:somthn/Buttons/settingsButton.dart';
 import 'package:somthn/Francais/F-1.dart';
 import 'package:somthn/Francais/F-3-5.dart';
+import 'package:somthn/Francais/F-3.dart';
 import 'package:somthn/WelcomePages/Settings.dart';
 import 'package:somthn/myicons.dart';
 import '../Services/Login.dart';
@@ -103,7 +104,7 @@ bool correct=false;
 
                     Navigator.push(
                         context,
-                        MaterialPageRoute(builder: (context) => Fr1()));
+                        MaterialPageRoute(builder: (context) => Fr3()));
                   },)
               ),
               Positioned(

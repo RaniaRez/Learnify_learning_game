@@ -4,6 +4,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:somthn/Buttons/BarreProgres.dart';
 import 'package:somthn/Francais/F-1.dart';
 import 'package:somthn/Francais/F-2-3.dart';
+import 'package:somthn/Francais/F-2.dart';
 import 'package:somthn/WelcomePages/Settings.dart';
 import 'package:somthn/Buttons/buttonContinuer.dart';
 import 'package:somthn/myicons.dart';
@@ -91,7 +92,7 @@ class _F_2_1_2nd_entrainState extends State<F_2_1_2nd_entrain> {
 
                     Navigator.push(
                         context,
-                        MaterialPageRoute(builder: (context) => Fr1()));
+                        MaterialPageRoute(builder: (context) => Fr2()));
                   },)
               ),
               Positioned(

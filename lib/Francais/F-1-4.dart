@@ -264,7 +264,7 @@ class _F_1_4State extends State<F_1_4> {
                         /////////////////////
                         /// Draggable
                         Draggable<String>(
-                          onDragStarted: (){
+                          onDragCompleted: (){
                             print('gfds');
                               letterA = 'assets/icons/a.svg';
                           },
@@ -306,7 +306,7 @@ class _F_1_4State extends State<F_1_4> {
                           ),
                         SizedBox( width: size.width*0.1,),
                         Draggable<String>(
-                          onDragStarted: (){
+                          onDragCompleted: (){
                             print('gfds');
                             letterM = 'assets/icons/m.svg';
                           },
@@ -346,7 +346,7 @@ class _F_1_4State extends State<F_1_4> {
                         ),
                         SizedBox( width: size.width*0.1,),
                         Draggable<String>(
-                          onDragStarted: (){
+                          onDragCompleted: (){
                             print('gfds');
                             letterI = 'assets/icons/i.svg';
                           },
@@ -407,7 +407,7 @@ class _F_1_4State extends State<F_1_4> {
                         /////////////////////
                         /// Draggable
                         Draggable<String>(
-                          onDragStarted: (){
+                          onDragCompleted: (){
                             print('gfds');
                             letterO = 'assets/icons/o.svg';
                           },
@@ -449,7 +449,7 @@ class _F_1_4State extends State<F_1_4> {
                         ),
                         SizedBox( width: size.width*0.1,),
                         Draggable<String>(
-                          onDragStarted: (){
+                          onDragCompleted: (){
                             print('gfds');
                             letterN = 'assets/icons/n.svg';
                           },
@@ -489,7 +489,7 @@ class _F_1_4State extends State<F_1_4> {
                         ),
                         SizedBox( width: size.width*0.1,),
                         Draggable<String>(
-                          onDragStarted: (){
+                          onDragCompleted: (){
                             print('gfds');
                             letterU = 'assets/icons/u.svg';
                           },
@@ -529,7 +529,7 @@ class _F_1_4State extends State<F_1_4> {
                         ),
                         SizedBox( width: size.width*0.1,),
                         Draggable<String>(
-                          onDragStarted: (){
+                          onDragCompleted: (){
                             print('gfds');
                             letterL = 'assets/icons/l.svg';
                           },

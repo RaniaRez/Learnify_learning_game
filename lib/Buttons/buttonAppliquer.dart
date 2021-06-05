@@ -5,7 +5,9 @@ import 'package:flutter/foundation.dart';
 import '../myicons.dart';
 class AppliquerButton extends StatelessWidget {
   AppliquerButton({@required this.onPressed});
+
   final GestureTapCallback onPressed;
+
   @override
   Widget build(BuildContext context) {
     return BouncingWidget(
@@ -13,8 +15,8 @@ class AppliquerButton extends StatelessWidget {
       scaleFactor: 1.5,
       duration: Duration(milliseconds: 100),
       child: IconButton(
-          icon : SvgPicture.asset(ButtonAppliquer),
-          iconSize: 200.0,
+        icon: SvgPicture.asset(ButtonAppliquer),
+        iconSize: 200.0,
       ),
     );
   }
