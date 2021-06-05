@@ -227,6 +227,7 @@ class _Name extends State<Name> {
                     child:Container(
                         margin:EdgeInsets.symmetric(horizontal:20 ),
                         child:TextField(
+                          maxLength: 5,
                           controller: Username,
                           onEditingComplete: ()  {
                             print("done");
