@@ -198,9 +198,6 @@ class _F_1_2State extends State<F_1_2> {
                   height: size.width*0.3,
                   width: size.width*0.3,
                   child:PinkAvatarIcon(onPressed: (){
-                    setState(() {
-                      Visible=false;
-                    });
                   },),
                 ),
               ),
@@ -214,9 +211,6 @@ class _F_1_2State extends State<F_1_2> {
                     width: size.width*0.35,
                     child:PurpleAvatarIcon(
                       onPressed: (){
-                        setState(() {
-                          Visible=false;
-                        });
                       },
                     ),
                   ),
@@ -231,9 +225,6 @@ class _F_1_2State extends State<F_1_2> {
                     width: size.width*0.3,
                     child: OrangeAvatarIcon(
                       onPressed: (){
-                        setState(() {
-                          Visible=false;
-                        });
                       },
                     ),
                   ),
@@ -248,9 +239,6 @@ class _F_1_2State extends State<F_1_2> {
                     width: size.width*0.3,
                     child:BlueAvatarIcon(
                       onPressed: (){
-                        setState(() {
-                          Visible=false;
-                        });
                       },
                     ),
                   ),
