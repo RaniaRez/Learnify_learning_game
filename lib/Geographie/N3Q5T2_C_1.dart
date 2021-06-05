@@ -1,5 +1,7 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:somthn/Geographie/Niv3Pass%C3%A9.dart';
 import 'package:somthn/Geographie/NiveauGeo.dart';
 import 'package:somthn/WelcomePages/Settings.dart';
 import 'package:vibration/vibration.dart';
@@ -15,6 +17,8 @@ import '../Services/Login.dart';
 import 'package:somthn/Geographie/BienvenueGeo.dart';
 import 'package:audioplayers/audio_cache.dart';
 import 'package:audioplayers/audioplayers.dart';
+import 'BienvenueGeo.dart';
+
 
 class N3Q5T2_C_1 extends StatefulWidget {
   const N3Q5T2_C_1({Key key}) : super(key: key);
@@ -76,7 +80,7 @@ class _N3Q5T2_C_1State extends State<N3Q5T2_C_1> {
                   child: BacksButton(onPressed: (){
                     Navigator.push(
                         context,
-                        MaterialPageRoute(builder: (context) => BienvenueGeo()));
+                        MaterialPageRoute(builder: (context) => NiveauGeo()));
                     print("back");
                     //Navigator.pop(context);
                   },)
@@ -295,9 +299,15 @@ class _N3Q5T2_C_1State extends State<N3Q5T2_C_1> {
                     height: size.height*0.2,
                     width: size.width*0.5,
                     child: ButtonContinuer(onPressed: (){
+                      print("score final");
+                      print(scoreG.niv3);
+                      Firestore.instance.collection('users').document(user.uid).collection('domains').document('geographie').updateData({'niv3':scoreG.niv3});
+                      if (scoreG.niv3>highG.niv3)
+                      { highG.niv3=scoreG.niv3 ;
+                      Firestore.instance.collection('users').document(user.uid).collection('domains').document('geographie').updateData({'high3':scoreG.niv3});}
                       Navigator.push(
                           context,
-                          MaterialPageRoute(builder: (context) => NiveauGeo()));
+                          MaterialPageRoute(builder: (context) => Niveau3Pass()));
                       print('Continuer');},)
                 ),
               ),
@@ -368,6 +378,7 @@ class _N3Q5T2_C_1State extends State<N3Q5T2_C_1> {
                               Visible = false;
 
                               print('Correct');
+                              scoreG.niv3++ ;
                             });
                             print('Oran');
                           }

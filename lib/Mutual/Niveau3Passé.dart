@@ -43,7 +43,7 @@ class _Niveau3PassState extends State<Niveau3Pass> {
               constraints: BoxConstraints.expand(),
               decoration: BoxDecoration(
                   image: DecorationImage(
-                      image: AssetImage("images/forestbackground.jpg"),
+                      image: AssetImage("images/geo_BG.jpg"),
                       fit: BoxFit.cover)),
             ),
             Positioned(

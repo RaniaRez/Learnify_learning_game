@@ -1,9 +1,11 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:somthn/Geographie/N1Q5T2_C_1.dart';
 import 'package:somthn/Geographie/N1Q5T2_C_2.dart';
 import 'package:somthn/Geographie/N1Q5T2_C_3.dart';
 import 'package:somthn/Geographie/N2Q2.dart';
+import 'package:somthn/Geographie/Niv1Pass%C3%A9.dart';
 import 'package:somthn/Geographie/NiveauGeo.dart';
 import 'package:somthn/WelcomePages/Settings.dart';
 import 'package:somthn/Buttons/buttonContinuer.dart';
@@ -19,6 +21,8 @@ import '../Services/Login.dart';
 import 'package:audioplayers/audio_cache.dart';
 import 'package:audioplayers/audioplayers.dart';
 import 'package:vibration/vibration.dart';
+
+import 'BienvenueGeo.dart';
 
 
 
@@ -79,7 +83,9 @@ class _N1Q5State extends State<N1Q5> {
 
                   child: BacksButton(onPressed: (){
                     print("u clicked me");
-                    Navigator.pop(context);
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => NiveauGeo()));
                   },)
               ),
 
@@ -250,9 +256,15 @@ class _N1Q5State extends State<N1Q5> {
                     height: size.height*0.2,
                     width: size.width*0.5,
                     child: ButtonContinuer(onPressed: (){
+                      print("score final");
+                      print(scoreG.niv1);
+                      Firestore.instance.collection('users').document(user.uid).collection('domains').document('geographie').updateData({'niv1':scoreG.niv1});
+                      if (scoreG.niv1>highG.niv1)
+                      { highG.niv1=scoreG.niv1 ;
+                      Firestore.instance.collection('users').document(user.uid).collection('domains').document('geographie').updateData({'high1':scoreG.niv1});}
                       Navigator.push(
                           context,
-                          MaterialPageRoute(builder: (context) => NiveauGeo()));
+                          MaterialPageRoute(builder: (context) => Niveau1Pass()));
                       print('Continuer');},)
                 ),
               ),
@@ -348,6 +360,7 @@ class _N1Q5State extends State<N1Q5> {
                             setState(() {
                               Visible = false;
                             });
+                            scoreG.niv1+=2;
 
                             print('Correct');
                           }

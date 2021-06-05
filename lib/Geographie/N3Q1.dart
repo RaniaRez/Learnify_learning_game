@@ -4,6 +4,7 @@ import 'package:somthn/Geographie/N3Q1T2_C_1.dart';
 import 'package:somthn/Geographie/N3Q1T2_C_2.dart';
 import 'package:somthn/Geographie/N3Q1T2_C_3.dart';
 import 'package:somthn/Geographie/N3Q2.dart';
+import 'package:somthn/Geographie/NiveauGeo.dart';
 import 'package:somthn/WelcomePages/Settings.dart';
 import 'package:somthn/Buttons/buttonContinuer.dart';
 import 'package:somthn/myicons.dart';
@@ -18,6 +19,7 @@ import 'package:vibration/vibration.dart';
 import 'package:somthn/Geographie/BienvenueGeo.dart';
 import 'package:audioplayers/audio_cache.dart';
 import 'package:audioplayers/audioplayers.dart';
+import 'BienvenueGeo.dart';
 
 
 
@@ -60,6 +62,7 @@ class _N3Q1State extends State<N3Q1> {
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
+    scoreG.niv3=0 ;
     return Container(
         height: size.height,
         width: size.width,
@@ -81,7 +84,7 @@ class _N3Q1State extends State<N3Q1> {
                   child: BacksButton(onPressed: (){
                     Navigator.push(
                         context,
-                        MaterialPageRoute(builder: (context) => BienvenueGeo()));
+                        MaterialPageRoute(builder: (context) => NiveauGeo()));
                     print("back");
                     //Navigator.pop(context);
                   },)
@@ -277,6 +280,8 @@ class _N3Q1State extends State<N3Q1> {
                     height: size.height*0.2,
                     width: size.width*0.5,
                     child: ButtonContinuer(onPressed: (){
+                      scoreG.niv3+=2 ;
+                      print(scoreG.niv3);
                       Navigator.push(
                           context,
                           MaterialPageRoute(builder: (context) => N3Q2()));
@@ -378,6 +383,7 @@ class _N3Q1State extends State<N3Q1> {
                             });
 
                             print('Correct');
+
                           }
                           print('2');
                         },

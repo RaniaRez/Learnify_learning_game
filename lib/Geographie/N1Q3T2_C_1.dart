@@ -14,6 +14,8 @@ import 'package:somthn/Avatars/BlueAvatarIcon.dart';
 import '../Services/Login.dart';
 import 'package:audioplayers/audio_cache.dart';
 import 'package:audioplayers/audioplayers.dart';
+import 'BienvenueGeo.dart';
+import 'NiveauGeo.dart';
 
 class N1Q3T2_C_1 extends StatefulWidget {
   const N1Q3T2_C_1({Key key}) : super(key: key);
@@ -73,7 +75,9 @@ class _N1Q3T2_C_1State extends State<N1Q3T2_C_1> {
 
                   child: BacksButton(onPressed: (){
                     print("u clicked me");
-                    Navigator.pop(context);
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => NiveauGeo()));
                   },)
               ),
 
@@ -317,7 +321,7 @@ class _N1Q3T2_C_1State extends State<N1Q3T2_C_1> {
                             setState(() {
                               correct = true;
                               Visible = false;
-
+                              scoreG.niv1++;
                               print('Correct');
                             });
                             print('Oran');

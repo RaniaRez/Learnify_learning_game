@@ -7,6 +7,7 @@ import 'package:somthn/Avatars/PurpleAvatarIcon.dart';
 import 'package:somthn/Avatars/BlueAvatarIcon.dart';
 import 'package:somthn/Buttons/buttonCommencer.dart';
 import 'package:somthn/Buttons/settingsButton.dart';
+import 'package:somthn/Geographie/BienvenueGeo.dart';
 import 'package:somthn/WelcomePages/Users.dart';
 import 'package:somthn/WelcomePages/Settings.dart';
 import 'package:somthn/myicons.dart';
@@ -43,7 +44,9 @@ class _TestNiveauState extends State<TestNiveau> {
                   right:size.width*0.75,
                   child: BacksButton(onPressed: (){
                     print("HELL YEAH");
-                    Navigator.pop(context);
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => BienvenueGeo()));
                   },)
               ),
               Positioned(

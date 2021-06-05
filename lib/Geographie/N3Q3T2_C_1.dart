@@ -15,6 +15,8 @@ import '../Services/Login.dart';
 import 'package:somthn/Geographie/BienvenueGeo.dart';
 import 'package:audioplayers/audio_cache.dart';
 import 'package:audioplayers/audioplayers.dart';
+import 'BienvenueGeo.dart';
+import 'NiveauGeo.dart';
 
 class N3Q3T2_C_1 extends StatefulWidget {
   const N3Q3T2_C_1({Key key}) : super(key: key);
@@ -76,7 +78,7 @@ class _N3Q3T2_C_1State extends State<N3Q3T2_C_1> {
                   child: BacksButton(onPressed: (){
                     Navigator.push(
                         context,
-                        MaterialPageRoute(builder: (context) => BienvenueGeo()));
+                        MaterialPageRoute(builder: (context) => NiveauGeo()));
                     print("back");
                     //Navigator.pop(context);
                   },)
@@ -266,6 +268,7 @@ class _N3Q3T2_C_1State extends State<N3Q3T2_C_1> {
                     height: size.height*0.2,
                     width: size.width*0.5,
                     child: ButtonContinuer(onPressed: (){
+                      print(scoreG.niv3);
                       Navigator.push(
                           context,
                           MaterialPageRoute(builder: (context) => N3Q4()));
@@ -342,6 +345,7 @@ class _N3Q3T2_C_1State extends State<N3Q3T2_C_1> {
                               Visible = false;
 
                               print('Correct');
+                              scoreG.niv3++ ;
                             });
                             print('Oran');
                           }

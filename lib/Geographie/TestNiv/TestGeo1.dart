@@ -21,7 +21,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'SetNiveaux.dart';
 
 
-TestGeo test =new  TestGeo();
+TestGeo testG =new  TestGeo();
 
 
 class TestGeo1 extends StatefulWidget {
@@ -186,7 +186,7 @@ class _TestGeo1State extends State<TestGeo1> {
                         setState(() {
                           Visible=false;
                           correct=true;
-                          test.q1=true ;
+                          testG.q1=true ;
                         });
                         print('int');
                       },
@@ -208,6 +208,7 @@ class _TestGeo1State extends State<TestGeo1> {
                           correct=true;
                         });
                         print('int');
+
                       },
                       icon: SvgPicture.asset('assets/icons/AlgerieTest.svg')),
                 ),

@@ -7,4 +7,8 @@ class HighestScore{
   this.niv1=n1;
   this.niv2=n2;
   this.niv3=n3;}
+
+  int somme (){
+    return (this.niv1 + this.niv2 +this.niv3 );
+  }
 }

@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:somthn/Geographie/NiveauGeo.dart';
 //import 'package:somthn/Francais/F-1.dart';
 import 'package:somthn/Geographie/TestNiv/BienvenueTest.dart';
 import 'package:somthn/WelcomePages/Settings.dart';
@@ -18,9 +19,9 @@ import 'TestGeo.dart';
 import '../BienvenueGeo.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'SetNiveaux.dart';
+import 'TestGeo1.dart';
 
 
-TestGeo test =new  TestGeo();
 
 
 class TestGeo3 extends StatefulWidget {
@@ -167,7 +168,7 @@ class _TestGeo3State extends State<TestGeo3> {
                         setState(() {
                           Visible=false;
                           correct=true;
-                          test.q1=true ;
+                          testG.q3=true ;
                         });
                         print('int');
                       },
@@ -287,23 +288,22 @@ class _TestGeo3State extends State<TestGeo3> {
                     width: size.width*0.5,
                     child: ButtonContinuer(onPressed: (){
 
-                      //test.q1=true ;
-                      /* print(scoreF.niv1);
-                      print(scoreF.niv2);
-                      print(scoreF.niv3);
-                      setNiv(test,scoreF);
-                      Firestore.instance.collection('users').document(user.uid).collection('domains').document('maths').updateData(
+                       print(scoreG.niv1);
+                      print(scoreG.niv2);
+                      print(scoreG.niv3);
+                      setNiv(testG,scoreG);
+                      Firestore.instance.collection('users').document(user.uid).collection('domains').document('geographie').updateData(
                           {
-                            'testFait': scoreF.testFait ,
-                            'niv1': scoreF.niv1 ,
-                            'niv2': scoreF.niv2 ,
-                            'niv3': scoreF.niv3 ,
+                            'testFait': scoreG.testFait ,
+                            'niv1': scoreG.niv1 ,
+                            'niv2': scoreG.niv2 ,
+                            'niv3': scoreG.niv3 ,
                           }
-                      );*/
+                      );
 
                       Navigator.push(
                           context,
-                          MaterialPageRoute(builder: (context) => BienvenueGeo()));//
+                          MaterialPageRoute(builder: (context) => NiveauGeo()));//
                       print('Continuer');},)
                 ),
               ),

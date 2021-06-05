@@ -20,6 +20,9 @@ import 'package:audioplayers/audio_cache.dart';
 import 'package:audioplayers/audioplayers.dart';
 import 'package:somthn/Bulles/BulleN1Q4.dart';
 
+import 'BienvenueGeo.dart';
+import 'NiveauGeo.dart';
+
 
 
 
@@ -80,7 +83,9 @@ class _N1Q4State extends State<N1Q4> {
 
                   child: BacksButton(onPressed: (){
                     print("u clicked me");
-                    Navigator.pop(context);
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => NiveauGeo()));
                   },)
               ),
 
@@ -324,6 +329,7 @@ class _N1Q4State extends State<N1Q4> {
                           if (threeClicked){
                             setState(() {
                               Visible = false;
+                              scoreG.niv1+=2;
                             });
 
                             print('Correct');

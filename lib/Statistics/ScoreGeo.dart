@@ -1,5 +1,3 @@
-
-
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:somthn/Avatars/OrangeAvatarIcon.dart';
@@ -7,6 +5,7 @@ import 'package:somthn/Buttons/HomeButton.dart';
 import 'package:somthn/Francais/F-1-1.dart';
 import 'package:somthn/Francais/NiveauFr.dart';
 import 'package:somthn/Maths/M-1-1.dart';
+import 'package:somthn/Statistics/Statistiques.dart';
 import 'package:somthn/WelcomePages/Home.dart';
 import 'package:somthn/WelcomePages/Settings.dart';
 import 'package:somthn/Buttons/buttonGoTo.dart';
@@ -19,15 +18,17 @@ import 'package:somthn/Avatars/BlueAvatarIcon.dart';
 import '../Services/Login.dart';
 
 
-class FrScore extends StatefulWidget {
+class GeoScore extends StatefulWidget {
   @override
-  _FrScoreState createState() => _FrScoreState();
+  _GeoScoreState createState() => _GeoScoreState();
 }
 
-class _FrScoreState extends State<FrScore> {
+class _GeoScoreState extends State<GeoScore> {
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
+    int score=scorG.somme() ;
+    int high=highG.somme();
     return Container(
       height: size.height,
       width: size.width,
@@ -39,7 +40,7 @@ class _FrScoreState extends State<FrScore> {
                 constraints: BoxConstraints.expand(),
                 decoration: BoxDecoration(
                     image: DecorationImage(
-                        image: AssetImage("images/frBG.jpg"),
+                        image: AssetImage("images/forestbackground.jpg"),
                         fit: BoxFit.cover)),
               ),
 
@@ -57,9 +58,7 @@ class _FrScoreState extends State<FrScore> {
                   top: size.height*0.05,
                   right:size.width*0.75,
                   child: BacksButton(onPressed: (){
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(builder: (context) => NiveauFr()));
+                    Navigator.pop(context);
                   },)
               ),
               Positioned(
@@ -94,7 +93,7 @@ class _FrScoreState extends State<FrScore> {
                     child:PurpleAvatarIcon(onPressed: null,),
                   ),
                 ),
-             // if (user.avatar=="Orange")
+              if (user.avatar=="Orange")
                 Visibility(
 
                   child: Positioned(
@@ -111,8 +110,8 @@ class _FrScoreState extends State<FrScore> {
                   child: Positioned(
                     height: size.width*0.3,
                     width: size.width*0.3,
-                    left: size.width*0.1,
-                    bottom:size.width*0.7,
+                    left: size.width*0.65,
+                    bottom:size.width*0.94,
                     child:BlueAvatarIcon(onPressed: null,),
                   ),
                 ),
@@ -122,7 +121,7 @@ class _FrScoreState extends State<FrScore> {
                 width: size.width*0.5,
                 left: size.width*0.25,
                 top:size.height*0.2,
-                child:SvgPicture.asset('assets/icons/bulleFr.svg'),
+                child:SvgPicture.asset('assets/icons/bulleGeo.svg'),
               ),
               Positioned(
                 height: size.width*0.8,
@@ -145,7 +144,7 @@ class _FrScoreState extends State<FrScore> {
                       left: size.width*0.43,
                       top:size.height*0.62,
                       child:Text(
-                        '30',
+                       high.toString(),
                         style: TextStyle(
                           fontSize: 30,
                           fontFamily: 'Skranji-Bold',
@@ -169,7 +168,7 @@ class _FrScoreState extends State<FrScore> {
                       left: size.width*0.43,
                       top:size.height*0.8,
                       child:Text(
-                        '26',
+                        score.toString(),
                         style: TextStyle(
                           fontSize: 30,
                           fontFamily: 'Skranji-Bold',

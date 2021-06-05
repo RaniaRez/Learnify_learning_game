@@ -21,6 +21,8 @@ import '../Services/Login.dart';
 import 'package:audioplayers/audio_cache.dart';
 import 'package:audioplayers/audioplayers.dart';
 
+import 'BienvenueGeo.dart';
+
 class N1Q1T2 extends StatefulWidget {
   const N1Q1T2({Key key}) : super(key: key);
 
@@ -128,6 +130,7 @@ class _N1Q1T2State extends State<N1Q1T2> {
                       setState(() {
                         correct = true;
                         Visible=false;
+                        scoreG.niv1++;
                       });}else if ((drag1==null)&&(drag2==null)&&(drag3==null)&&(drag4==null)&&(drag5==null)&&(drag6==null)&&(drag7==null)&&(drag8==null)){}
                     else{
                       setState(() {
