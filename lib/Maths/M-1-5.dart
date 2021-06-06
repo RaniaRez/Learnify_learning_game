@@ -26,13 +26,20 @@ import 'package:somthn/Avatars/OrangeAvatarIcon.dart';
 import 'package:somthn/Avatars/PinkAvatarIcon.dart';
 import 'package:somthn/Avatars/PurpleAvatarIcon.dart';
 import 'package:somthn/Avatars/BlueAvatarIcon.dart';
-import '../WelcomePages/ChooseAvatar.dart';
 import '../Services/Login.dart';
-import '../Services/SignUp.dart';
 import 'BienvenueMath.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'HighestScore.dart';
 import 'M-1.dart';
 import 'Niveau1Passé.dart';
+
+import 'package:somthn/Francais/ScoreFr.dart';
+import 'package:somthn/Geographie/ScoreGeo.dart';
+
+
+ScoreGeo scorG;
+ScoreFr scorF ;
+HighestScore highG , highF;
 
 
 class M_1_5 extends StatefulWidget {
@@ -593,12 +600,27 @@ class _M_1_5State extends State<M_1_5> {
                     left: 0.0,
                     height: size.height*0.2,
                     width: size.width*0.5,
-                    child: ButtonContinuer(onPressed: (){
+                    child: ButtonContinuer(onPressed: ()async {
                       Firestore.instance.collection('users').document(user.uid).collection('domains').document('maths').updateData({'niv1':scoreM.niv1});
                       if (scoreM.niv1>hs.niv1)
                       { hs.niv1=scoreM.niv1;
                         Firestore.instance.collection('users').document(user.uid).collection('domains').document('maths').updateData({'high1':scoreM.niv1});}
-                        Navigator.push(
+                      // infos geo
+                      var dm=await  Firestore.instance.collection('users').document(user.uid).collection('domains').document('geographie').get();
+                      scorG =new ScoreGeo(dm.data["testFait"], dm.data["niv1"], dm.data["niv2"], dm.data["niv3"]);
+                      highG =new HighestScore(dm.data["high1"],dm.data["high2"],dm.data["high3"]);
+                      //infos fr
+                      var df=await Firestore.instance.collection('users').document(user.uid).collection('domains').document('francais').get();
+                      scorF =new ScoreFr(df.data["testFait"], df.data["niv1"], df.data["niv2"], df.data["niv3"]);
+                      highF =new HighestScore(df.data["high1"],df.data["high2"],df.data["high3"]);
+                      int score=scoreM.somme()+scorF.somme() +scorG.somme() ;
+                      int high=hs.somme()+highF.somme() +highG.somme() ;
+                      var doc=await Firestore.instance.collection('users').document(user.uid).get();
+                      if (doc.data['finalScore']<high){
+                        Firestore.instance.collection('users').document(user.uid).updateData({'finalScore':high});
+                      }
+                      Firestore.instance.collection('users').document(user.uid).updateData({'score':score});
+                      Navigator.push(
                             context,
                             MaterialPageRoute(builder: (context) => Niveau1Pass()));
 
