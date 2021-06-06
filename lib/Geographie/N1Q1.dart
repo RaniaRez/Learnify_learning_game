@@ -20,6 +20,8 @@ import 'N1.dart';
 import 'package:audioplayers/audio_cache.dart';
 import 'package:audioplayers/audioplayers.dart';
 
+import 'BienvenueGeo.dart';
+
 class N1Q1 extends StatefulWidget {
   const N1Q1({Key key}) : super(key: key);
 

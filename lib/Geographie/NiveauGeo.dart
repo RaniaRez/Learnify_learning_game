@@ -77,9 +77,10 @@ class _NiveauGeoState extends State<NiveauGeo> {
                 height: size.height*0.2,
                 width: size.width*0.5,
                   child: ButtonMoyen(onPressed:(){
+                    if (scoreG.niv2>=0){
                     Navigator.push(
                         context,
-                        MaterialPageRoute(builder: (context) => Geo2()));
+                        MaterialPageRoute(builder: (context) => Geo2()));}
                     print('Moyen');
                   }),
                 ),
@@ -102,9 +103,10 @@ class _NiveauGeoState extends State<NiveauGeo> {
                 height: size.height*0.2,
                 width: size.width*0.5,
                   child: ButtonDifficile(onPressed:(){
+                    if (scoreG.niv3>=0){
                     Navigator.push(
                         context,
-                        MaterialPageRoute(builder: (context) => Geo3()));
+                        MaterialPageRoute(builder: (context) => Geo3()));}
                     print('hard');
                   }),
                 ),
