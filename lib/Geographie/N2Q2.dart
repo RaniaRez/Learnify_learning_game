@@ -388,9 +388,11 @@ class _N2Q2State extends State<N2Q2> {
                             setState(() {
                               Visible = false;
                               scoreG.niv2+=2;
+
                             });
 
                             print('Correct');
+                            print(scoreG.niv2);
                           }
                           print('2');
                         },

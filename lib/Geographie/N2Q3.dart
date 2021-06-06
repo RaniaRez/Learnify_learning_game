@@ -367,6 +367,7 @@ class _N2Q3State extends State<N2Q3> {
                             });
 
                             print('Correct');
+                            print(scoreG.niv2);
                           }
                           print('2');
                         },

@@ -40,6 +40,7 @@ class _N3Q1State extends State<N3Q1> {
   initState() {
     super.initState();
     loadMusic();
+    scoreG.niv3=0 ;
   }
 
   Future loadMusic() async {
@@ -62,7 +63,7 @@ class _N3Q1State extends State<N3Q1> {
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
-    scoreG.niv3=0 ;
+
     return Container(
         height: size.height,
         width: size.width,

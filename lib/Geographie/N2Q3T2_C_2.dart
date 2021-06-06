@@ -309,6 +309,7 @@ class _N2Q3T2_C_2State extends State<N2Q3T2_C_2> {
                               scoreG.niv2++;
 
                               print('Correct');
+                              print(scoreG.niv2);
                             });
 
 

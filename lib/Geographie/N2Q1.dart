@@ -28,6 +28,7 @@ import 'NiveauGeo.dart';
 class N2Q1 extends StatefulWidget {
   const N2Q1({Key key}) : super(key: key);
 
+
   @override
   _N2Q1State createState() => _N2Q1State();
 }
@@ -41,6 +42,7 @@ class _N2Q1State extends State<N2Q1> {
   initState() {
     super.initState();
     loadMusic();
+    scoreG.niv2=0;
   }
 
   Future loadMusic() async {
@@ -62,7 +64,6 @@ class _N2Q1State extends State<N2Q1> {
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
-    scoreG.niv2=0;
     return Container(
         height: size.height,
         width: size.width,
@@ -369,8 +370,9 @@ class _N2Q1State extends State<N2Q1> {
                             });
 
                             print('Correct');
+                            print(scoreG.niv2);
+                            print("lkhra lmhboul");
                           }
-                          print('2');
                         },
                         icon: SvgPicture.asset('assets/icons/Mediterannee.svg'))
                 ),

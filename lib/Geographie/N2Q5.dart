@@ -22,6 +22,15 @@ import 'package:vibration/vibration.dart';
 import 'BienvenueGeo.dart';
 import 'Niv2Passé.dart';
 
+import '../Maths/ScoreMaths.dart';
+import'../Francais/ScoreFr.dart';
+import'../Maths/HighestScore.dart';
+
+ScoreMaths scorM;
+ScoreFr scorF ;
+HighestScore highM , highF;
+
+
 
 
 
@@ -268,6 +277,23 @@ class _N2Q5State extends State<N2Q5> {
                       if (scoreG.niv2>highG.niv2)
                       { highG.niv2=scoreG.niv2 ;
                       Firestore.instance.collection('users').document(user.uid).collection('domains').document('geographie').updateData({'high2':scoreG.niv2});}
+                      // infos maths
+                      var dm=await  Firestore.instance.collection('users').document(user.uid).collection('domains').document('maths').get();
+                      scorM =new ScoreMaths(dm.data["testFait"], dm.data["niv1"], dm.data["niv2"], dm.data["niv3"]);
+                      highM =new HighestScore(dm.data["high1"],dm.data["high2"],dm.data["high3"]);
+                      //infos fr
+                      var df=await Firestore.instance.collection('users').document(user.uid).collection('domains').document('francais').get();
+                      scorF =new ScoreFr(df.data["testFait"], df.data["niv1"], df.data["niv2"], df.data["niv3"]);
+                      highF =new HighestScore(df.data["high1"],df.data["high2"],df.data["high3"]);
+                      int score=scorM.somme()+scorF.somme() +scoreG.somme() ;
+                      int high=highM.somme()+highF.somme() +highG.somme() ;
+                      DocumentSnapshot dc=await Firestore.instance.collection('users').document(user.uid).get();
+                      int f=dc.data['finalScore'];
+                      print(f);
+                      if (f<high){
+                        Firestore.instance.collection('users').document(user.uid).updateData({'finalScore':high});
+                      }
+                      Firestore.instance.collection('users').document(user.uid).updateData({'score':score});
                       Navigator.push(
                           context,
                           MaterialPageRoute(builder: (context) => Niveau2Pass()));
@@ -374,6 +400,7 @@ class _N2Q5State extends State<N2Q5> {
                             });
 
                             print('Correct');
+                            print(scoreG.niv2);
                           }
                           print('2');
                         },

@@ -24,6 +24,16 @@ import 'package:vibration/vibration.dart';
 
 import 'BienvenueGeo.dart';
 
+import '../Maths/ScoreMaths.dart';
+import'../Francais/ScoreFr.dart';
+import'../Maths/HighestScore.dart';
+
+ScoreMaths scorM;
+ScoreFr scorF ;
+HighestScore highM , highF;
+
+
+
 
 
 
@@ -269,6 +279,22 @@ class _N1Q5State extends State<N1Q5> {
                       if (scoreG.niv1>highG.niv1)
                       { highG.niv1=scoreG.niv1 ;
                       Firestore.instance.collection('users').document(user.uid).collection('domains').document('geographie').updateData({'high1':scoreG.niv1});}
+                      // infos maths
+                      var dm=await  Firestore.instance.collection('users').document(user.uid).collection('domains').document('maths').get();
+                      scorM =new ScoreMaths(dm.data["testFait"], dm.data["niv1"], dm.data["niv2"], dm.data["niv3"]);
+                      highM =new HighestScore(dm.data["high1"],dm.data["high2"],dm.data["high3"]);
+                      //infos fr
+                      var df=await Firestore.instance.collection('users').document(user.uid).collection('domains').document('francais').get();
+                      scorF =new ScoreFr(df.data["testFait"], df.data["niv1"], df.data["niv2"], df.data["niv3"]);
+                      highF =new HighestScore(df.data["high1"],df.data["high2"],df.data["high3"]);
+                      int score=scorM.somme()+scorF.somme() +scoreG.somme() ;
+                      int high=highM.somme()+highF.somme() +highG.somme() ;
+                      var doc=await Firestore.instance.collection('users').document(user.uid).get();
+                      if (doc.data['finalScore']<high){
+                        Firestore.instance.collection('users').document(user.uid).updateData({'finalScore':high});
+                      }
+                        Firestore.instance.collection('users').document(user.uid).updateData({'score':score});
+
                       Navigator.push(
                           context,
                           MaterialPageRoute(builder: (context) => Niveau1Pass()));
