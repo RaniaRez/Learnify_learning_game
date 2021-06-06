@@ -2,7 +2,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:somthn/Geographie/Niv1Pass%C3%A9.dart';
-import 'package:somthn/Geographie/NiveauGeo.dart';
+import 'package:somthn/Geographie/N1.dart';
 import 'package:somthn/WelcomePages/Settings.dart';
 import 'package:vibration/vibration.dart';
 import 'package:somthn/Buttons/buttonContinuer.dart';
@@ -90,7 +90,7 @@ class _N1Q5T2_C_1State extends State<N1Q5T2_C_1> {
                     print("u clicked me");
                     Navigator.push(
                         context,
-                        MaterialPageRoute(builder: (context) => NiveauGeo()));
+                        MaterialPageRoute(builder: (context) => Geo1()));
                   },)
               ),
 

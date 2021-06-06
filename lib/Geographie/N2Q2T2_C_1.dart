@@ -16,7 +16,7 @@ import 'package:audioplayers/audio_cache.dart';
 import 'package:audioplayers/audioplayers.dart';
 
 import 'BienvenueGeo.dart';
-import 'NiveauGeo.dart';
+import 'N2.dart';
 
 
 class N2Q2T2_C_1 extends StatefulWidget {
@@ -82,7 +82,7 @@ class _N2Q2T2_C_1State extends State<N2Q2T2_C_1> {
                     print("u clicked me");
                     Navigator.push(
                         context,
-                        MaterialPageRoute(builder: (context) => NiveauGeo()));
+                        MaterialPageRoute(builder: (context) => Geo2()));
                   },)
               ),
 

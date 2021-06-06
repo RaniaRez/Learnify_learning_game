@@ -288,7 +288,7 @@ class _TestGeo3State extends State<TestGeo3> {
                     width: size.width*0.5,
                     child: ButtonContinuer(onPressed: (){
 
-                       print(scoreG.niv1);
+                      print(scoreG.niv1);
                       print(scoreG.niv2);
                       print(scoreG.niv3);
                       setNiv(testG,scoreG);

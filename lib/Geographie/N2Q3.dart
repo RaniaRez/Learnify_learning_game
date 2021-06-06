@@ -18,7 +18,7 @@ import 'package:audioplayers/audio_cache.dart';
 import 'package:audioplayers/audioplayers.dart';
 import 'package:vibration/vibration.dart';
 import 'BienvenueGeo.dart';
-import 'NiveauGeo.dart';
+import 'N2.dart';
 
 
 
@@ -85,7 +85,7 @@ class _N2Q3State extends State<N2Q3> {
                     print("u clicked me");
                     Navigator.push(
                         context,
-                        MaterialPageRoute(builder: (context) => NiveauGeo()));
+                        MaterialPageRoute(builder: (context) => Geo2()));
                   },)
               ),
 
