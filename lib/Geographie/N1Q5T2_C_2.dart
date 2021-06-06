@@ -1,16 +1,11 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:somthn/Geographie/N1Q4T2_C_1.dart';
-import 'package:somthn/Geographie/N1Q4T2_C_2.dart';
-import 'package:somthn/Geographie/N1Q4T2_C_4.dart';
-import 'package:somthn/Geographie/N2Q2.dart';
-import 'package:somthn/Geographie/NiveauGeo.dart';
+import 'package:somthn/Geographie/Niv1Pass%C3%A9.dart';
+import 'package:somthn/Geographie/N1.dart';
 import 'package:somthn/WelcomePages/Settings.dart';
-import 'package:somthn/WelcomePages/Home.dart';
 import 'package:vibration/vibration.dart';
-
 import 'package:somthn/Buttons/buttonContinuer.dart';
-import 'package:somthn/Buttons/buttonQ.dart';
 import 'package:somthn/myicons.dart';
 import '../Buttons/settingsButton.dart';
 import '../Buttons/BacksButton.dart';
@@ -19,8 +14,18 @@ import 'package:somthn/Avatars/PinkAvatarIcon.dart';
 import 'package:somthn/Avatars/PurpleAvatarIcon.dart';
 import 'package:somthn/Avatars/BlueAvatarIcon.dart';
 import '../Services/Login.dart';
+import 'package:audioplayers/audio_cache.dart';
+import 'package:audioplayers/audioplayers.dart';
 
-import 'package:somthn/Bulles/BulleN1Q4T2.dart';
+import 'BienvenueGeo.dart';
+
+import '../Maths/ScoreMaths.dart';
+import'../Francais/ScoreFr.dart';
+import'../Maths/HighestScore.dart';
+
+ScoreMaths scorM;
+ScoreFr scorF ;
+HighestScore highM , highF;
 
 class N1Q5T2_C_2 extends StatefulWidget {
   const N1Q5T2_C_2({Key key}) : super(key: key);
@@ -30,6 +35,28 @@ class N1Q5T2_C_2 extends StatefulWidget {
 }
 
 class _N1Q5T2_C_2State extends State<N1Q5T2_C_2> {
+  var player = AudioCache();
+  var player2 = AudioPlayer ();
+  AudioPlayer advancedPlayer;
+
+
+  @override
+  initState() {
+    super.initState();
+    loadMusic();
+  }
+
+  Future loadMusic() async {
+
+    advancedPlayer = await AudioCache().play("audio/mathsMauvRep.wav");
+  }
+
+  @override
+  void dispose() {
+    advancedPlayer = null;
+    super.dispose();
+  }
+
   bool Visible = true;
   bool correct = false;
   bool oneClicked = false;
@@ -57,16 +84,22 @@ class _N1Q5T2_C_2State extends State<N1Q5T2_C_2> {
                   top: size.height*0.05,
                   right:size.width*0.75,
 
-                  child: BacksButton(onPressed: (){
+                  child: BacksButton(onPressed: () async {
+                    player2.stop();
+                    int result = await advancedPlayer.pause();
                     print("u clicked me");
-                    Navigator.pop(context);
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => Geo1()));
                   },)
               ),
 
               Positioned(
                   top:size.height*0.05,
                   left:size.width*0.75,
-                  child: SettingsButton(onPressed: (){
+                  child: SettingsButton(onPressed: () async {
+                    player2.stop();
+                    int result = await advancedPlayer.pause();
                     Navigator.push(
                         context,
                         MaterialPageRoute(builder: (context) => Settings()));
@@ -230,10 +263,33 @@ class _N1Q5T2_C_2State extends State<N1Q5T2_C_2> {
                     left: 0.0,
                     height: size.height*0.2,
                     width: size.width*0.5,
-                    child: ButtonContinuer(onPressed: (){
+                    child: ButtonContinuer(onPressed: () async {
+                      player2.stop();
+                      int result = await advancedPlayer.pause();
+                      print("score final");
+                      print(scoreG.niv1);
+                      Firestore.instance.collection('users').document(user.uid).collection('domains').document('geographie').updateData({'niv1':scoreG.niv1});
+                      if (scoreG.niv1>highG.niv1)
+                      { highG.niv1=scoreG.niv1 ;
+                      Firestore.instance.collection('users').document(user.uid).collection('domains').document('geographie').updateData({'high1':scoreG.niv1});}
+                      // infos maths
+                      var dm=await  Firestore.instance.collection('users').document(user.uid).collection('domains').document('maths').get();
+                      scorM =new ScoreMaths(dm.data["testFait"], dm.data["niv1"], dm.data["niv2"], dm.data["niv3"]);
+                      highM =new HighestScore(dm.data["high1"],dm.data["high2"],dm.data["high3"]);
+                      //infos fr
+                      var df=await Firestore.instance.collection('users').document(user.uid).collection('domains').document('francais').get();
+                      scorF =new ScoreFr(df.data["testFait"], df.data["niv1"], df.data["niv2"], df.data["niv3"]);
+                      highF =new HighestScore(df.data["high1"],df.data["high2"],df.data["high3"]);
+                      int score=scorM.somme()+scorF.somme() +scoreG.somme() ;
+                      int high=highM.somme()+highF.somme() +highG.somme() ;
+                      var doc=await Firestore.instance.collection('users').document(user.uid).get();
+                      if (doc.data['finalScore']<high){
+                        Firestore.instance.collection('users').document(user.uid).updateData({'finalScore':high});
+                      }
+                      Firestore.instance.collection('users').document(user.uid).updateData({'score':score});
                       Navigator.push(
                           context,
-                          MaterialPageRoute(builder: (context) => NiveauGeo()));
+                          MaterialPageRoute(builder: (context) => Niveau1Pass()));
                       print('Continuer');},)
                 ),
               ),
@@ -246,10 +302,11 @@ class _N1Q5T2_C_2State extends State<N1Q5T2_C_2> {
                   child: Visibility(
                       visible: (threeClicked && Visible),
                       child: IconButton(
-                        onPressed: (){
+                        onPressed: () async {
                           if (threeClicked){
                             Vibration.vibrate();
-
+                            player2.stop();
+                            int result = await advancedPlayer.pause();
                             setState(() {
                               correct = false;
                               Visible = false;
@@ -270,11 +327,15 @@ class _N1Q5T2_C_2State extends State<N1Q5T2_C_2> {
                 child: Visibility(
                     visible: (fourClicked&&Visible),
                     child: IconButton(
-                        onPressed: (){
+                        onPressed: () async {
+                          player2.stop();
+                          int result = await advancedPlayer.pause();
                           if (fourClicked) {
+                            player2 =  await player.play('audio/mathsBravo.wav');
                             setState(() {
                               correct = true;
                               Visible = false;
+                              scoreG.niv1++;
 
                               print('Correct');
                             });
@@ -295,7 +356,9 @@ class _N1Q5T2_C_2State extends State<N1Q5T2_C_2> {
                 child: Visibility(
                     visible: false,
                     child: IconButton(
-                        onPressed: (){
+                        onPressed: () async {
+                          player2.stop();
+                          int result = await advancedPlayer.pause();
                           if (twoClicked) {
                             Vibration.vibrate();
 
@@ -319,7 +382,9 @@ class _N1Q5T2_C_2State extends State<N1Q5T2_C_2> {
                 child: Visibility(
                     visible: (oneClicked&&Visible),
                     child: IconButton(
-                        onPressed: (){
+                        onPressed: () async {
+                          player2.stop();
+                          int result = await advancedPlayer.pause();
                           if (oneClicked) {
                             Vibration.vibrate();
 

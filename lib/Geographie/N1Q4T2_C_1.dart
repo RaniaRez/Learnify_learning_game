@@ -1,15 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:somthn/Geographie/N1Q5.dart';
-import 'package:somthn/Geographie/N1Q4T2_C_2.dart';
-import 'package:somthn/Geographie/N1Q4T2_C_4.dart';
-import 'package:somthn/Maths/M-2-5.dart';
 import 'package:somthn/WelcomePages/Settings.dart';
-import 'package:somthn/WelcomePages/Home.dart';
 import 'package:vibration/vibration.dart';
-
 import 'package:somthn/Buttons/buttonContinuer.dart';
-import 'package:somthn/Buttons/buttonQ.dart';
 import 'package:somthn/myicons.dart';
 import '../Buttons/settingsButton.dart';
 import '../Buttons/BacksButton.dart';
@@ -18,8 +12,12 @@ import 'package:somthn/Avatars/PinkAvatarIcon.dart';
 import 'package:somthn/Avatars/PurpleAvatarIcon.dart';
 import 'package:somthn/Avatars/BlueAvatarIcon.dart';
 import '../Services/Login.dart';
-
 import 'package:somthn/Bulles/BulleN1Q4T2.dart';
+import 'package:audioplayers/audio_cache.dart';
+import 'package:audioplayers/audioplayers.dart';
+
+import 'BienvenueGeo.dart';
+import 'N1.dart';
 
 class N1Q4T2_C1 extends StatefulWidget {
   const N1Q4T2_C1({Key key}) : super(key: key);
@@ -29,6 +27,28 @@ class N1Q4T2_C1 extends StatefulWidget {
 }
 
 class _N1Q4T2_C1State extends State<N1Q4T2_C1> {
+  var player = AudioCache();
+  var player2 = AudioPlayer ();
+  AudioPlayer advancedPlayer;
+
+
+  @override
+  initState() {
+    super.initState();
+    loadMusic();
+  }
+
+  Future loadMusic() async {
+
+    advancedPlayer = await AudioCache().play("audio/mathsMauvRep.wav");
+  }
+
+  @override
+  void dispose() {
+    advancedPlayer = null;
+    super.dispose();
+  }
+
   bool Visible = true;
   bool correct = false;
   bool oneClicked = false;
@@ -56,16 +76,22 @@ class _N1Q4T2_C1State extends State<N1Q4T2_C1> {
                   top: size.height*0.05,
                   right:size.width*0.75,
 
-                  child: BacksButton(onPressed: (){
+                  child: BacksButton(onPressed: () async {
+                    player2.stop();
+                    int result = await advancedPlayer.pause();
                     print("u clicked me");
-                    Navigator.pop(context);
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => Geo1()));
                   },)
               ),
 
               Positioned(
                   top:size.height*0.05,
                   left:size.width*0.75,
-                  child: SettingsButton(onPressed: (){
+                  child: SettingsButton(onPressed: () async {
+                    player2.stop();
+                    int result = await advancedPlayer.pause();
                     Navigator.push(
                         context,
                         MaterialPageRoute(builder: (context) => Settings()));
@@ -228,7 +254,9 @@ class _N1Q4T2_C1State extends State<N1Q4T2_C1> {
                     left: 0.0,
                     height: size.height*0.2,
                     width: size.width*0.5,
-                    child: ButtonContinuer(onPressed: (){
+                    child: ButtonContinuer(onPressed: () async {
+                      player2.stop();
+                      int result = await advancedPlayer.pause();
                       Navigator.push(
                           context,
                           MaterialPageRoute(builder: (context) => N1Q5()));
@@ -244,11 +272,16 @@ class _N1Q4T2_C1State extends State<N1Q4T2_C1> {
                   child: Visibility(
                       visible: (threeClicked && Visible),
                       child: IconButton(
-                        onPressed: (){
+                        onPressed: () async {
+                          player2.stop();
+                          int result = await advancedPlayer.pause();
                           if (threeClicked){
+                            player2 =  await player.play('audio/mathsBravo.wav');
+
                             setState(() {
                               correct = true;
                               Visible = false;
+                              scoreG.niv1++;
 
                               print('Correct');
                             });
@@ -267,7 +300,9 @@ class _N1Q4T2_C1State extends State<N1Q4T2_C1> {
                 child: Visibility(
                     visible: (fourClicked&&Visible),
                     child: IconButton(
-                        onPressed: (){
+                        onPressed: () async {
+                          player2.stop();
+                          int result = await advancedPlayer.pause();
                           if (fourClicked) {
                             Vibration.vibrate();
                             setState(() {
@@ -291,7 +326,9 @@ class _N1Q4T2_C1State extends State<N1Q4T2_C1> {
                 child: Visibility(
                     visible: (twoClicked&&Visible),
                     child: IconButton(
-                        onPressed: (){
+                        onPressed: () async {
+                          player2.stop();
+                          int result = await advancedPlayer.pause();
                           if (twoClicked) {
                             Vibration.vibrate();
                           setState(() {
@@ -313,7 +350,9 @@ class _N1Q4T2_C1State extends State<N1Q4T2_C1> {
                 child: Visibility(
                     visible: false,
                     child: IconButton(
-                        onPressed: (){
+                        onPressed: () async {
+                          player2.stop();
+                          int result = await advancedPlayer.pause();
                           if (oneClicked) {
                             Vibration.vibrate();
                             setState(() {

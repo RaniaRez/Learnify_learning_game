@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:somthn/Maths/M-1-5-2ndAttempt.dart';
-import 'package:somthn/Maths/Niveau1Pass%C3%A9.dart';
 import 'package:somthn/Maths/NiveauMath.dart';
 
 import 'package:somthn/WelcomePages/Settings.dart';
@@ -33,7 +32,7 @@ import '../Services/SignUp.dart';
 import 'BienvenueMath.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'M-1.dart';
-//import 'Niveau1Passé.dart';
+import 'Niveau1Passé.dart';
 
 
 class M_1_5 extends StatefulWidget {
@@ -599,9 +598,6 @@ class _M_1_5State extends State<M_1_5> {
                       if (scoreM.niv1>hs.niv1)
                       { hs.niv1=scoreM.niv1;
                         Firestore.instance.collection('users').document(user.uid).collection('domains').document('maths').updateData({'high1':scoreM.niv1});}
-                        if (score.niv2<0)
-                        { score.niv2=0;
-                        Firestore.instance.collection('users').document(user.uid).collection('domains').document('maths').updateData({'niv2':0});}
                         Navigator.push(
                             context,
                             MaterialPageRoute(builder: (context) => Niveau1Pass()));

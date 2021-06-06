@@ -12,6 +12,7 @@ import 'package:somthn/Buttons/buttonReset.dart';
 import 'package:somthn/Buttons/settingsButton.dart';
 import 'package:somthn/Francais/F-1.dart';
 import 'package:somthn/Francais/F-3-4.dart';
+import 'package:somthn/Francais/F-3.dart';
 import 'package:somthn/WelcomePages/Settings.dart';
 import 'package:somthn/myicons.dart';
 import '../Services/Login.dart';
@@ -29,7 +30,8 @@ class F_3_3_2nd extends StatefulWidget {
 class _F_3_3_2ndState extends State<F_3_3_2nd> {
 
   AudioPlayer advancedPlayer;
-
+  var player = AudioCache();
+  var player2 = AudioPlayer ();
 
   @override
   initState() {
@@ -39,7 +41,7 @@ class _F_3_3_2ndState extends State<F_3_3_2nd> {
 
   Future loadMusic() async {
 
-    advancedPlayer = await AudioCache().play("audio/mathsMauvRep.wav");
+    advancedPlayer = await AudioCache().play("audio/frGn.wav");
   }
 
   @override
@@ -88,7 +90,10 @@ class _F_3_3_2ndState extends State<F_3_3_2nd> {
                   top: size.height*0.05,
                   left:size.width*0.75,
                   child:
-                  SettingsButton(onPressed: (){
+                  SettingsButton(onPressed: () async {
+                    player2.stop();
+                    int result = await advancedPlayer.pause();
+
                     Navigator.push(
                         context,
                         MaterialPageRoute(builder: (context) => Settings()));
@@ -97,10 +102,13 @@ class _F_3_3_2ndState extends State<F_3_3_2nd> {
               Positioned(
                   top: size.height*0.05,
                   right:size.width*0.75,
-                  child: BacksButton(onPressed: (){
+                  child: BacksButton(onPressed: () async {
+                    player2.stop();
+                    int result = await advancedPlayer.pause();
+
                     Navigator.push(
                         context,
-                        MaterialPageRoute(builder: (context) => Fr1()));
+                        MaterialPageRoute(builder: (context) => Fr3()));
                   },)
               ),
               Positioned(
@@ -124,11 +132,16 @@ class _F_3_3_2ndState extends State<F_3_3_2nd> {
                 child: Positioned(
                   top: size.height*0.47,
                   left: size.width*0.75,
-                  child: GoToButton(onPressed: (){
+                  child: GoToButton(onPressed: () async {
+                    int result = await advancedPlayer.pause();
+
                     if((drag1=="assets/icons/r.svg")&&(drag2=="assets/icons/o.svg")&&(drag3=="assets/icons/s.svg")&&(drag4=="assets/icons/s.svg")&&(drag5=="assets/icons/i.svg")&&(drag6=="assets/icons/gb.svg")&&(drag7=="assets/icons/n.svg")&&(drag8=="assets/icons/o.svg")&&(drag9=="assets/icons/l.svg")){
+                      player2 =  await player.play('audio/mathsBravo.wav');
+
                       setState(() {
                         Visible=false;
                         correct=true;
+
                         scoreF.niv3+=1;
 
                       });}else if ((drag1==null)&&(drag2==null)&&(drag3==null)&&(drag4==null)&&(drag5==null)&&(drag6==null)&&(drag7==null)&&(drag8==null)&&(drag9==null)){}
@@ -196,6 +209,8 @@ class _F_3_3_2ndState extends State<F_3_3_2nd> {
                     height: size.height*0.2,
                     width: size.width*0.5,
                     child: ButtonContinuer(onPressed: (){
+                      player2.stop();
+
                       print('HADA SCORE');
                       print(scoreF.niv3);
                       Navigator.push(

@@ -9,6 +9,7 @@ import 'package:somthn/Francais/F-2-1-2nd-Francaise.dart';
 import 'package:somthn/Francais/F-2-1-2nd-dapprendre.dart';
 import 'package:somthn/Francais/F-2-1-2nd-lalangue.dart';
 import 'package:somthn/Francais/F-2-3.dart';
+import 'package:somthn/Francais/F-2.dart';
 import 'package:somthn/WelcomePages/Settings.dart';
 import 'package:somthn/Buttons/buttonContinuer.dart';
 import 'package:somthn/myicons.dart';
@@ -20,6 +21,9 @@ import 'package:somthn/Avatars/PurpleAvatarIcon.dart';
 import 'package:somthn/Avatars/BlueAvatarIcon.dart';
 import '../Services/Login.dart';
 import 'BienvenueFr.dart';
+import 'package:audioplayers/audio_cache.dart';
+import 'package:audioplayers/audioplayers.dart';
+
 class F_2_1 extends StatefulWidget {
   const F_2_1({Key key}) : super(key: key);
 
@@ -28,6 +32,10 @@ class F_2_1 extends StatefulWidget {
 }
 
 class _F_2_1State extends State<F_2_1> {
+
+  AudioPlayer advancedPlayer;
+  var player = AudioCache();
+  var player2 = AudioPlayer ();
   bool Visible = true;
   bool correct = false;
   @override
@@ -52,6 +60,8 @@ class _F_2_1State extends State<F_2_1> {
                   left:size.width*0.75,
                   child:
                   SettingsButton(onPressed: (){
+                    player2.stop();
+
                     Navigator.push(
                         context,
                         MaterialPageRoute(builder: (context) => Settings()));
@@ -62,9 +72,11 @@ class _F_2_1State extends State<F_2_1> {
                   top: size.height*0.05,
                   right:size.width*0.75,
                   child: BacksButton(onPressed: (){
+                    player2.stop();
+
                     Navigator.push(
                         context,
-                        MaterialPageRoute(builder: (context) => Fr1()));
+                        MaterialPageRoute(builder: (context) => Fr2()));
                   },)
               ),
               Positioned(
@@ -171,7 +183,9 @@ class _F_2_1State extends State<F_2_1> {
                   child: Visibility(
                     visible: Visible,
                     child: IconButton(
-                      onPressed: (){
+                      onPressed: () async {
+                        player2 =  await player.play('audio/mathsBravo.wav');
+
                         setState(() {
                           Visible=false;
                           correct=true;
@@ -272,6 +286,8 @@ class _F_2_1State extends State<F_2_1> {
                     height: size.height*0.2,
                     width: size.width*0.5,
                     child: ButtonContinuer(onPressed: (){
+                      player2.stop();
+
                       print('HADA SCORE');
                       print(scoreF.niv2);
                       Navigator.push(
@@ -325,14 +341,17 @@ class _F_2_1State extends State<F_2_1> {
                     child:Image.asset('images/HappyBlue.gif'),
                   ),
                 ),
+
               Visibility(
+
                 visible: !Visible,
                 child: Positioned(
                     height: size.width*0.45,
                     width: size.width*0.45,
                     left: size.width*0.4,
                     top:size.height*0.7,
-                    child: SvgPicture.asset(bulleBravo)
+                   child: SvgPicture.asset(bulleBravo)
+
                 ),
               )
             ],

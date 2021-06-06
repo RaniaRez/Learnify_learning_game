@@ -1,17 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:somthn/Buttons/BarreProgres.dart';
-import 'package:somthn/Maths/I-M-2-1.dart';
-import 'package:somthn/Maths/M-1-5-2ndAttempt.dart';
-import 'package:somthn/Maths/M-2-2.dart';
-import 'package:somthn/Maths/M-2-3.dart';
-import 'package:somthn/Maths/M-2-5.dart';
 import 'package:somthn/Maths/Niveau3Pass%C3%A9.dart';
-import 'package:somthn/Mutual/Niveau1Pass%C3%A9.dart';
 import 'package:somthn/WelcomePages/Settings.dart';
-import 'package:somthn/Bulles/bulleQuest.dart';
 import 'package:somthn/Buttons/buttonContinuer.dart';
-import 'package:somthn/Buttons/buttonGoTo.dart';
 import 'package:somthn/Buttons/buttonQ.dart';
 import 'package:somthn/myicons.dart';
 import '../Buttons/settingsButton.dart';
@@ -23,8 +14,9 @@ import 'package:somthn/Avatars/BlueAvatarIcon.dart';
 import '../Services/Login.dart';
 import 'BienvenueMath.dart';
 import 'M-3.dart';
-//import 'NiveauMath.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:audioplayers/audio_cache.dart';
+import 'package:audioplayers/audioplayers.dart';
 
 
 
@@ -37,6 +29,26 @@ class M_3_5 extends StatefulWidget {
   _M_3_5State createState() => _M_3_5State();
 }
 class _M_3_5State extends State<M_3_5> {
+
+  AudioPlayer advancedPlayer;
+
+  @override
+  initState() {
+    super.initState();
+    loadMusic();
+  }
+
+  Future loadMusic() async {
+
+    advancedPlayer = await AudioCache().play("audio/doubleClic.wav");
+  }
+
+  @override
+  void dispose() {
+    advancedPlayer = null;
+    super.dispose();
+  }
+
   bool oneClicked = false;
   bool twoClicked = false;
   bool threeClicked = false;
@@ -388,9 +400,6 @@ class _M_3_5State extends State<M_3_5> {
                     child: IconButton(
                         onPressed: (){
                           if (fourClicked)  {
-                            Navigator.push(
-                                context,
-                                MaterialPageRoute(builder: (context) => Niveau3Pass()));
                             print('Wrong');
                           }
                           print('4');
@@ -409,9 +418,6 @@ class _M_3_5State extends State<M_3_5> {
                     child: IconButton(
                         onPressed: (){
                           if (twoClicked)  {
-                            Navigator.push(
-                                context,
-                                MaterialPageRoute(builder: (context) => Niveau3Pass()));
                             print('Wrong');
                           }
                           print('1');
@@ -429,9 +435,6 @@ class _M_3_5State extends State<M_3_5> {
                     child: IconButton(
                         onPressed: (){
                           if (threeClicked)  {
-                            Navigator.push(
-                                context,
-                                MaterialPageRoute(builder: (context) => Niveau3Pass()));
                             print('Wrong');
                           }
                           print('3');
@@ -665,17 +668,10 @@ class _M_3_5State extends State<M_3_5> {
                       if (scoreM.niv3>hs.niv3)
                       { hs.niv3=scoreM.niv3 ;
                         Firestore.instance.collection('users').document(user.uid).collection('domains').document('maths').updateData({'high3':scoreM.niv3});}
-                      if (scoreM.niv3>=7.5) {
                         Navigator.push(
                             context,
                             MaterialPageRoute(builder: (context) => Niveau3Pass()));
-                      }
-                      else {
-                        Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => Math3()));
-                      }
+
                       print('Continuer');},)
                 ),
               ),

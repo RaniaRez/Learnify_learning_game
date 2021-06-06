@@ -17,6 +17,8 @@ import 'BienvenueFr.dart';
 import 'package:audioplayers/audio_cache.dart';
 import 'package:audioplayers/audioplayers.dart';
 
+import 'F-2.dart';
+
 class F_2_1_2nd extends StatefulWidget {
   const F_2_1_2nd({Key key}) : super(key: key);
 
@@ -28,7 +30,8 @@ class _F_2_1_2ndState extends State<F_2_1_2nd> {
 
 
   AudioPlayer advancedPlayer;
-
+  var player = AudioCache();
+  var player2 = AudioPlayer ();
 
   @override
   initState() {
@@ -70,7 +73,10 @@ class _F_2_1_2ndState extends State<F_2_1_2nd> {
                   top: size.height*0.05,
                   left:size.width*0.75,
                   child:
-                  SettingsButton(onPressed: (){
+                  SettingsButton(onPressed: () async {
+                    player2.stop();
+                    int result = await advancedPlayer.pause();
+
                     Navigator.push(
                         context,
                         MaterialPageRoute(builder: (context) => Settings()));
@@ -80,8 +86,13 @@ class _F_2_1_2ndState extends State<F_2_1_2nd> {
               Positioned(
                   top: size.height*0.05,
                   right:size.width*0.75,
-                  child: BacksButton(onPressed: (){
-                    Navigator.pop(context);
+                  child: BacksButton(onPressed: () async {
+                    player2.stop();
+                    int result = await advancedPlayer.pause();
+
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => Fr2()));
                   },)
               ),
               Positioned(
@@ -188,7 +199,9 @@ class _F_2_1_2ndState extends State<F_2_1_2nd> {
                   child: Visibility(
                     visible: Visible,
                     child: IconButton(
-                      onPressed: (){
+                      onPressed: () async {
+                        player2 =  await player.play('audio/mathsBravo.wav');
+
                         setState(() {
                           Visible=false;
                           correct=true;
@@ -288,7 +301,10 @@ class _F_2_1_2ndState extends State<F_2_1_2nd> {
                     left: 0.0,
                     height: size.height*0.2,
                     width: size.width*0.5,
-                    child: ButtonContinuer(onPressed: (){
+                    child: ButtonContinuer(onPressed: () async {
+                      player2.stop();
+                      int result = await advancedPlayer.pause();
+
                       print('HADA SCORE');
                       print(scoreF.niv2);
                       Navigator.push(

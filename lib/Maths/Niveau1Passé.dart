@@ -1,3 +1,4 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:somthn/Buttons/HomeButton.dart';
@@ -7,21 +8,19 @@ import 'package:somthn/Maths/BienvenueMath.dart';
 import 'package:somthn/Maths/M-2.dart';
 import 'package:somthn/Maths/NiveauMath.dart';
 import 'package:somthn/WelcomePages/Settings.dart';
-import 'package:somthn/Mutual/Stars.dart';
 import 'package:somthn/myicons.dart';
 import '../Buttons/settingsButton.dart';
 import '../Buttons/BacksButton.dart';
 import '../WelcomePages/Home.dart';
-import '../WelcomePages/ChooseAvatar.dart';
 import 'package:somthn/Avatars/OrangeAvatarIcon.dart';
 import 'package:somthn/Avatars/PinkAvatarIcon.dart';
 import 'package:somthn/Avatars/PurpleAvatarIcon.dart';
 import 'package:somthn/Avatars/BlueAvatarIcon.dart';
 import '../Services/Login.dart';
-import '../Services/SignUp.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'BienvenueMath.dart';
 import 'M-1.dart';
+import 'package:audioplayers/audio_cache.dart';
+import 'package:audioplayers/audioplayers.dart';
 
 class Niveau1Pass extends StatefulWidget {
   @override
@@ -29,10 +28,27 @@ class Niveau1Pass extends StatefulWidget {
 }
 
 class _Niveau1PassState extends State<Niveau1Pass> {
+
+  AudioPlayer advancedPlayer;
+
   @override
+  initState() {
+    super.initState();
+    loadMusic();
+  }
 
+  Future loadMusic() async {
 
+    advancedPlayer = await AudioCache().play("audio/niveauPasse.wav");
+  }
 
+  @override
+  void dispose() {
+    advancedPlayer = null;
+    super.dispose();
+  }
+
+  @override
 
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
@@ -40,10 +56,11 @@ class _Niveau1PassState extends State<Niveau1Pass> {
     bool star1 = (hs.niv1>7.5) ;
     bool star2 = (hs.niv2>7.5) ;
     bool star3 = (hs.niv3>7.5) ;
-    /*print("khra2");
-    print(scoreM.niv1);
-    print("khra2");
-    Firestore.instance.collection('users').document(user.uid).collection('domains').document('maths').updateData({'niv1':scoreM.niv1});*/
+    if ((score.niv2<0)&&(complet))
+    { score.niv2=0;
+    Firestore.instance.collection('users').document(user.uid).collection('domains').document('maths').updateData({'niv2':0});}
+
+
     return Scaffold(
       body:
       Container(
@@ -108,7 +125,7 @@ class _Niveau1PassState extends State<Niveau1Pass> {
                 child: FittedBox(
                   fit: BoxFit.fitWidth,
                   child: Text(
-                    scoreM.niv1 .toString(),
+                    hs.niv1 .toString(),
                     style:TextStyle(
                       fontSize: 30,
                       fontFamily: 'Skranji-Bold',
@@ -123,7 +140,7 @@ class _Niveau1PassState extends State<Niveau1Pass> {
                 child: FittedBox(
                   fit: BoxFit.fitWidth,
                   child: Text(
-                      hs.niv1 .toString() ,
+                    scoreM.niv1 .toString(),
                     style:TextStyle(
                       fontSize: 30,
                       fontFamily: 'Skranji-Bold',

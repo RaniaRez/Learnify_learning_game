@@ -13,11 +13,12 @@ import 'package:somthn/Buttons/settingsButton.dart';
 import 'package:somthn/Francais/F-1-4-2ndAttempt.dart';
 import 'package:somthn/Francais/F-1-5.dart';
 import 'package:somthn/Francais/F-1.dart';
-import 'package:somthn/Maths/M-1-4.dart';
 import 'package:somthn/WelcomePages/Settings.dart';
 import 'package:somthn/myicons.dart';
 import '../Services/Login.dart';
 import 'BienvenueFr.dart';
+import 'package:audioplayers/audio_cache.dart';
+import 'package:audioplayers/audioplayers.dart';
 
 class F_1_4 extends StatefulWidget {
   const F_1_4({Key key}) : super(key: key);
@@ -27,6 +28,27 @@ class F_1_4 extends StatefulWidget {
 }
 
 class _F_1_4State extends State<F_1_4> {
+
+  AudioPlayer advancedPlayer;
+  var player = AudioCache();
+  var player2 = AudioPlayer ();
+  @override
+  initState() {
+    super.initState();
+    loadMusic();
+  }
+
+  Future loadMusic() async {
+
+    advancedPlayer = await AudioCache().play("audio/frMoulin.wav");
+  }
+
+  @override
+  void dispose() {
+    advancedPlayer = null;
+    super.dispose();
+  }
+
   bool Visible = true;
   String letterA;
   String letterM;
@@ -62,6 +84,8 @@ class _F_1_4State extends State<F_1_4> {
                     left:size.width*0.75,
                     child:
                     SettingsButton(onPressed: (){
+                      player2.stop();
+
                       Navigator.push(
                           context,
                           MaterialPageRoute(builder: (context) => Settings()));
@@ -72,6 +96,8 @@ class _F_1_4State extends State<F_1_4> {
                     top: size.height*0.05,
                     right:size.width*0.75,
                     child: BacksButton(onPressed: (){
+                      player2.stop();
+
                       Navigator.push(
                           context,
                           MaterialPageRoute(builder: (context) => Fr1()));
@@ -98,9 +124,13 @@ class _F_1_4State extends State<F_1_4> {
                   child: Positioned(
                     top: size.height*0.47,
                     left: size.width*0.75,
-                    child: GoToButton(onPressed: (){
+                    child: GoToButton(onPressed: () async {
+                      int result = await advancedPlayer.pause();
+
                       if((drag1=="assets/icons/m.svg")&&(drag2=="assets/icons/o.svg")&&(drag3=="assets/icons/u.svg")&&(drag4=="assets/icons/l.svg")&&(drag5=="assets/icons/i.svg")&&(drag6=="assets/icons/n.svg")){
                         print('correct');
+                        player2 =  await player.play('audio/mathsBravo.wav');
+
                         scoreF.niv1+=2;
                       setState(() {
                         Visible=false;
@@ -167,7 +197,10 @@ class _F_1_4State extends State<F_1_4> {
                       left: 0.0,
                       height: size.height*0.2,
                       width: size.width*0.5,
-                      child: ButtonContinuer(onPressed: (){
+                      child: ButtonContinuer(onPressed: () async{
+                        player2.stop();
+                        int result = await advancedPlayer.pause();
+
                         print('HADA SCORE');
                         print(scoreF.niv1);
                         Navigator.push(
@@ -231,7 +264,7 @@ class _F_1_4State extends State<F_1_4> {
                         /////////////////////
                         /// Draggable
                         Draggable<String>(
-                          onDragStarted: (){
+                          onDragCompleted: (){
                             print('gfds');
                               letterA = 'assets/icons/a.svg';
                           },
@@ -273,7 +306,7 @@ class _F_1_4State extends State<F_1_4> {
                           ),
                         SizedBox( width: size.width*0.1,),
                         Draggable<String>(
-                          onDragStarted: (){
+                          onDragCompleted: (){
                             print('gfds');
                             letterM = 'assets/icons/m.svg';
                           },
@@ -313,7 +346,7 @@ class _F_1_4State extends State<F_1_4> {
                         ),
                         SizedBox( width: size.width*0.1,),
                         Draggable<String>(
-                          onDragStarted: (){
+                          onDragCompleted: (){
                             print('gfds');
                             letterI = 'assets/icons/i.svg';
                           },
@@ -374,7 +407,7 @@ class _F_1_4State extends State<F_1_4> {
                         /////////////////////
                         /// Draggable
                         Draggable<String>(
-                          onDragStarted: (){
+                          onDragCompleted: (){
                             print('gfds');
                             letterO = 'assets/icons/o.svg';
                           },
@@ -416,7 +449,7 @@ class _F_1_4State extends State<F_1_4> {
                         ),
                         SizedBox( width: size.width*0.1,),
                         Draggable<String>(
-                          onDragStarted: (){
+                          onDragCompleted: (){
                             print('gfds');
                             letterN = 'assets/icons/n.svg';
                           },
@@ -456,7 +489,7 @@ class _F_1_4State extends State<F_1_4> {
                         ),
                         SizedBox( width: size.width*0.1,),
                         Draggable<String>(
-                          onDragStarted: (){
+                          onDragCompleted: (){
                             print('gfds');
                             letterU = 'assets/icons/u.svg';
                           },
@@ -496,7 +529,7 @@ class _F_1_4State extends State<F_1_4> {
                         ),
                         SizedBox( width: size.width*0.1,),
                         Draggable<String>(
-                          onDragStarted: (){
+                          onDragCompleted: (){
                             print('gfds');
                             letterL = 'assets/icons/l.svg';
                           },

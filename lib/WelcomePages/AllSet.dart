@@ -78,7 +78,9 @@ class _AllSetState extends State<AllSet> {
                 left: size.width*0.39,
 
                 child: HomeButton(
-                  onPressed: (){
+                  onPressed: () async {
+                    int result = await advancedPlayer.pause();
+
                     Navigator.push(
                       context,
                       MaterialPageRoute(builder: (context) => Home()),);
@@ -89,7 +91,9 @@ class _AllSetState extends State<AllSet> {
               Positioned(
                   top:size.height*0.05,
                   left:size.width*0.75,
-                  child: SettingsButton(onPressed: (){
+                  child: SettingsButton(onPressed: () async {
+                    int result = await advancedPlayer.pause();
+
                     Navigator.push(
                         context,
                         MaterialPageRoute(builder: (context) => Settings()));
@@ -160,13 +164,13 @@ class _AllSetState extends State<AllSet> {
               Positioned(
                 top: size.height*0.83,
                 left: size.width*0.7 ,
-                child: GoToButton(onPressed: (){
-
-    Navigator.push(
-    context,
-    MaterialPageRoute(
-    builder: (BuildContext context) => ChoixDomaine()));
-    }),
+                child: GoToButton(onPressed: () async {
+                  int result = await advancedPlayer.pause();
+                  Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                  builder: (BuildContext context) => ChoixDomaine()));
+                  }),
               ),
             ]
         ),

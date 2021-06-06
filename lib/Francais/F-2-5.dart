@@ -10,16 +10,16 @@ import 'package:somthn/Buttons/buttonContinuer.dart';
 import 'package:somthn/Buttons/buttonGoTo.dart';
 import 'package:somthn/Buttons/buttonReset.dart';
 import 'package:somthn/Buttons/settingsButton.dart';
-import 'package:somthn/Francais/F-1.dart';
 import 'package:somthn/Francais/F-2.dart';
 import 'package:somthn/Francais/Niveau2Pass%C3%A9.dart';
-import 'package:somthn/Francais/NiveauFr.dart';
 import 'package:somthn/WelcomePages/Settings.dart';
 import 'package:somthn/myicons.dart';
 import '../Services/Login.dart';
 import 'F-2-5-2nd.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'BienvenueFr.dart';
+import 'package:audioplayers/audio_cache.dart';
+import 'package:audioplayers/audioplayers.dart';
 
 class F_2_5 extends StatefulWidget {
   const F_2_5({Key key}) : super(key: key);
@@ -29,6 +29,8 @@ class F_2_5 extends StatefulWidget {
 }
 
 class _F_2_5State extends State<F_2_5> {
+  var player = AudioCache();
+  var player2 = AudioPlayer ();
   bool Visible = true;
   String letterE;
   String letterO;
@@ -61,6 +63,8 @@ class _F_2_5State extends State<F_2_5> {
                   left:size.width*0.75,
                   child:
                   SettingsButton(onPressed: (){
+                    player2.stop();
+
                     Navigator.push(
                         context,
                         MaterialPageRoute(builder: (context) => Settings()));
@@ -70,9 +74,11 @@ class _F_2_5State extends State<F_2_5> {
                   top: size.height*0.05,
                   right:size.width*0.75,
                   child: BacksButton(onPressed: (){
+                    player2.stop();
+
                     Navigator.push(
                         context,
-                        MaterialPageRoute(builder: (context) => Fr1()));
+                        MaterialPageRoute(builder: (context) => Fr2()));
                   },)
               ),
               Positioned(
@@ -96,9 +102,10 @@ class _F_2_5State extends State<F_2_5> {
                 child: Positioned(
                   top: size.height*0.5,
                   left: size.width*0.75,
-                  child: GoToButton(onPressed: (){
+                  child: GoToButton(onPressed: () async {
                     if((drag1=="assets/icons/v.svg")&&(drag2=="assets/icons/o.svg")&&(drag3=="assets/icons/i.svg")&&(drag4=="assets/icons/l.svg")&&(drag5=="assets/icons/e.svg")){
                       scoreF.niv2+=2;
+                      player2 =  await player.play('audio/mathsBravo.wav');
                       setState(() {
                         Visible=false;
                       });}else if ((drag1==null)&&(drag2==null)&&(drag3==null)){}
@@ -160,6 +167,7 @@ class _F_2_5State extends State<F_2_5> {
                     height: size.height*0.2,
                     width: size.width*0.5,
                     child: ButtonContinuer(onPressed: (){
+                      player2.stop();
 
                       print("score final");
                       print(scoreF.niv2);
@@ -167,8 +175,6 @@ class _F_2_5State extends State<F_2_5> {
                       if (scoreF.niv2>high.niv2)
                       { high.niv2=scoreF.niv2 ;
                         Firestore.instance.collection('users').document(user.uid).collection('domains').document('francais').updateData({'high2':scoreF.niv2});}
-                        if (scoreF.niv3<0) { scoreF.niv3=0;
-                        Firestore.instance.collection('users').document(user.uid).collection('domains').document('francais').updateData({'niv3':scoreF.niv3});}
                         Navigator.push(
                             context,
                             MaterialPageRoute(builder: (context) => Niveau2Pass()));

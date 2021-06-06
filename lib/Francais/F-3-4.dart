@@ -17,6 +17,10 @@ import 'package:somthn/WelcomePages/Settings.dart';
 import 'package:somthn/myicons.dart';
 import '../Services/Login.dart';
 import 'BienvenueFr.dart';
+import 'package:audioplayers/audio_cache.dart';
+import 'package:audioplayers/audioplayers.dart';
+
+import 'F-3.dart';
 
 class F_3_4 extends StatefulWidget {
   const F_3_4({Key key}) : super(key: key);
@@ -26,6 +30,10 @@ class F_3_4 extends StatefulWidget {
 }
 
 class _F_3_4State extends State<F_3_4> {
+
+  var player = AudioCache();
+  var player2 = AudioPlayer ();
+
   bool Visible = true;
   String letterH;
   String letterE;
@@ -62,6 +70,8 @@ class _F_3_4State extends State<F_3_4> {
                   left:size.width*0.75,
                   child:
                   SettingsButton(onPressed: (){
+                    player2.stop();
+
                     Navigator.push(
                         context,
                         MaterialPageRoute(builder: (context) => Settings()));
@@ -71,9 +81,11 @@ class _F_3_4State extends State<F_3_4> {
                   top: size.height*0.05,
                   right:size.width*0.75,
                   child: BacksButton(onPressed: (){
+                    player2.stop();
+
                     Navigator.push(
                         context,
-                        MaterialPageRoute(builder: (context) => Fr1()));
+                        MaterialPageRoute(builder: (context) => Fr3()));
                   },)
               ),
               Positioned(
@@ -97,9 +109,11 @@ class _F_3_4State extends State<F_3_4> {
                 child: Positioned(
                   top: size.height*0.47,
                   left: size.width*0.75,
-                  child: GoToButton(onPressed: (){
+                  child: GoToButton(onPressed: () async {
                     if((drag1=="assets/icons/h.svg")&&(drag2=="assets/icons/e.svg")&&(drag3=="assets/icons/u.svg")&&(drag4=="assets/icons/r.svg")&&(drag5=="assets/icons/e.svg")&&(drag6=="assets/icons/u.svg")&&(drag7=="assets/icons/x.svg")){
                       scoreF.niv3+=2;
+                      player2 =  await player.play('audio/mathsBravo.wav');
+
 
                       setState(() {
                         Visible=false;
@@ -164,6 +178,8 @@ class _F_3_4State extends State<F_3_4> {
                     height: size.height*0.2,
                     width: size.width*0.5,
                     child: ButtonContinuer(onPressed: (){
+                      player2.stop();
+
                       print('HADA SCORE');
                       print(scoreF.niv3);
                       Navigator.push(

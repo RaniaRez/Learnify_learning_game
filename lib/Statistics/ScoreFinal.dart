@@ -11,17 +11,20 @@ import 'package:somthn/Avatars/PinkAvatarIcon.dart';
 import 'package:somthn/Avatars/PurpleAvatarIcon.dart';
 import 'package:somthn/Avatars/BlueAvatarIcon.dart';
 import '../Services/Login.dart';
+import 'Statistiques.dart';
 
 
-class MathScore extends StatefulWidget {
+class FinalScore extends StatefulWidget {
   @override
-  _MathScoreState createState() => _MathScoreState();
+  _FinalScoreState createState() => _FinalScoreState();
 }
 
-class _MathScoreState extends State<MathScore> {
+class _FinalScoreState extends State<FinalScore> {
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
+    int score=scorM.somme()+scorF.somme() +scorG.somme() ;
+    int high=highM.somme()+highF.somme() +highG.somme() ;
     return Container(
       height: size.height,
       width: size.width,
@@ -33,7 +36,7 @@ class _MathScoreState extends State<MathScore> {
                 constraints: BoxConstraints.expand(),
                 decoration: BoxDecoration(
                     image: DecorationImage(
-                        image: AssetImage("images/frBG.jpg"),
+                        image: AssetImage("images/forestbackground.jpg"),
                         fit: BoxFit.cover)),
               ),
 
@@ -51,9 +54,8 @@ class _MathScoreState extends State<MathScore> {
                   top: size.height*0.05,
                   right:size.width*0.75,
                   child: BacksButton(onPressed: (){
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(builder: (context) => NiveauFr()));
+                    print("lekhlaye3");
+                    Navigator.pop(context);
                   },)
               ),
               Positioned(
@@ -140,7 +142,7 @@ class _MathScoreState extends State<MathScore> {
                       left: size.width*0.43,
                       top:size.height*0.62,
                       child:Text(
-                        '30',
+                        high.toString() ,
                         style: TextStyle(
                           fontSize: 30,
                           fontFamily: 'Skranji-Bold',
@@ -164,7 +166,7 @@ class _MathScoreState extends State<MathScore> {
                       left: size.width*0.43,
                       top:size.height*0.8,
                       child:Text(
-                        '26',
+                        score.toString(),
                         style: TextStyle(
                           fontSize: 30,
                           fontFamily: 'Skranji-Bold',
@@ -181,4 +183,3 @@ class _MathScoreState extends State<MathScore> {
 
   }
 }
-

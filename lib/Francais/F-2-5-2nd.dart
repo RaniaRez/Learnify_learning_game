@@ -10,9 +10,7 @@ import 'package:somthn/Buttons/buttonContinuer.dart';
 import 'package:somthn/Buttons/buttonGoTo.dart';
 import 'package:somthn/Buttons/buttonReset.dart';
 import 'package:somthn/Buttons/settingsButton.dart';
-import 'package:somthn/Francais/F-1.dart';
 import 'package:somthn/Francais/Niveau2Pass%C3%A9.dart';
-import 'package:somthn/Francais/NiveauFr.dart';
 import 'package:somthn/WelcomePages/Settings.dart';
 import 'package:somthn/myicons.dart';
 import '../Services/Login.dart';
@@ -32,7 +30,8 @@ class F_2_5_2nd extends StatefulWidget {
 class _F_2_5_2ndState extends State<F_2_5_2nd> {
 
   AudioPlayer advancedPlayer;
-
+  var player = AudioCache();
+  var player2 = AudioPlayer ();
 
   @override
   initState() {
@@ -42,7 +41,7 @@ class _F_2_5_2ndState extends State<F_2_5_2nd> {
 
   Future loadMusic() async {
 
-    advancedPlayer = await AudioCache().play("audio/mathsMauvRep.wav");
+    advancedPlayer = await AudioCache().play("audio/frBateau.wav");
   }
 
   @override
@@ -83,7 +82,10 @@ class _F_2_5_2ndState extends State<F_2_5_2nd> {
                   top: size.height*0.05,
                   left:size.width*0.75,
                   child:
-                  SettingsButton(onPressed: (){
+                  SettingsButton(onPressed: () async {
+                    player2.stop();
+                    int result = await advancedPlayer.pause();
+
                     Navigator.push(
                         context,
                         MaterialPageRoute(builder: (context) => Settings()));
@@ -92,10 +94,13 @@ class _F_2_5_2ndState extends State<F_2_5_2nd> {
               Positioned(
                   top: size.height*0.05,
                   right:size.width*0.75,
-                  child: BacksButton(onPressed: (){
+                  child: BacksButton(onPressed: () async {
+                    player2.stop();
+                    int result = await advancedPlayer.pause();
+
                     Navigator.push(
                         context,
-                        MaterialPageRoute(builder: (context) => Fr1()));
+                        MaterialPageRoute(builder: (context) => Fr2()));
                   },)
               ),
               Positioned(
@@ -119,11 +124,15 @@ class _F_2_5_2ndState extends State<F_2_5_2nd> {
                 child: Positioned(
                   top: size.height*0.47,
                   left: size.width*0.75,
-                  child: GoToButton(onPressed: (){
+                  child: GoToButton(onPressed: () async {
+                    int result = await advancedPlayer.pause();
+
                     if((drag1=="assets/icons/v.svg")&&(drag2=="assets/icons/o.svg")&&(drag3=="assets/icons/i.svg")&&(drag4=="assets/icons/l.svg")&&(drag5=="assets/icons/e.svg")){
+                      player2 =  await player.play('audio/mathsBravo.wav');
                       setState(() {
                         Visible=false;
                         correct=true;
+
                         scoreF.niv2+=1;
                       });}else if ((drag1==null)&&(drag2==null)&&(drag3==null)&&(drag4==null)&&(drag5==null)){}
                     else{
@@ -182,15 +191,16 @@ class _F_2_5_2ndState extends State<F_2_5_2nd> {
                     left: 0.0,
                     height: size.height*0.2,
                     width: size.width*0.5,
-                    child: ButtonContinuer(onPressed: (){
+                    child: ButtonContinuer(onPressed: () async {
+                      player2.stop();
+                      int result = await advancedPlayer.pause();
+
                       print("score final");
                       print(scoreF.niv2);
                       Firestore.instance.collection('users').document(user.uid).collection('domains').document('francais').updateData({'niv2':scoreF.niv2});
                       if (scoreF.niv2>high.niv2)
                       { high.niv2=scoreF.niv2 ;
                         Firestore.instance.collection('users').document(user.uid).collection('domains').document('francais').updateData({'high2':scoreF.niv2});}
-                        if (scoreF.niv3<0) { scoreF.niv3=0;
-                        Firestore.instance.collection('users').document(user.uid).collection('domains').document('francais').updateData({'niv3':scoreF.niv3});}
                         Navigator.push(
                             context,
                             MaterialPageRoute(builder: (context) => Niveau2Pass()));
@@ -201,7 +211,7 @@ class _F_2_5_2ndState extends State<F_2_5_2nd> {
                 Visibility(
                   visible: Visible,
                   child: Positioned(
-                    top: size.height*0.5,
+                    top: size.height*0.36,
                     left: size.width*0.72,
                     height: size.width*0.3,
                     width: size.width*0.3,

@@ -18,6 +18,8 @@ import 'testNiv/BienvenueTest.dart';
 import 'package:somthn/Maths/HighestScore.dart';
 import 'package:audioplayers/audio_cache.dart';
 import 'package:audioplayers/audioplayers.dart';
+
+
 HighestScore high ;
 
 ScoreFr scoreF;
@@ -71,7 +73,9 @@ class _BienvenueFrState extends State<BienvenueFr> {
                   top: size.height*0.05,
                   left:size.width*0.75,
                   child:
-                  SettingsButton(onPressed: (){
+                  SettingsButton(onPressed: () async {
+                    int result = await advancedPlayer.pause();
+
                     Navigator.push(
                         context,
                         MaterialPageRoute(builder: (context) => Settings()));
@@ -81,10 +85,10 @@ class _BienvenueFrState extends State<BienvenueFr> {
               Positioned(
                   top: size.height*0.05,
                   right:size.width*0.75,
-                  child: BacksButton(onPressed: (){
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(builder: (context) => ChoixDomaine()));
+                  child: BacksButton(onPressed: () async {
+                    int result = await advancedPlayer.pause();
+
+                    Navigator.pop(context);
                   },)
               ),
               Positioned(
@@ -93,6 +97,9 @@ class _BienvenueFrState extends State<BienvenueFr> {
                 height: size.height*0.55,
                 width: size.width*0.55,
                 child: ButtonCommencerD(onPressed: () async {
+
+                  int result = await advancedPlayer.pause();
+
                   print('commencer');
                   var d=await Firestore.instance.collection('users').document(user.uid).collection('domains').document('francais').get();
 

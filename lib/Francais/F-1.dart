@@ -65,7 +65,9 @@ class _Fr1State extends State<Fr1> {
                   top: size.height*0.05,
                   left:size.width*0.75,
                   child:
-                  SettingsButton(onPressed: (){
+                  SettingsButton(onPressed: () async {
+                    int result = await advancedPlayer.pause();
+
                     Navigator.push(
                         context,
                         MaterialPageRoute(builder: (context) => Settings()));
@@ -75,7 +77,9 @@ class _Fr1State extends State<Fr1> {
               Positioned(
                   top: size.height*0.05,
                   right:size.width*0.75,
-                  child: BacksButton(onPressed: (){
+                  child: BacksButton(onPressed: () async {
+                    int result = await advancedPlayer.pause();
+
                     Navigator.push(
                         context,
                         MaterialPageRoute(builder: (context) => NiveauFr()));
@@ -150,7 +154,9 @@ class _Fr1State extends State<Fr1> {
               Positioned(
                 top: size.height*0.8,
                 left:size.width*0.75,
-                child: GoToButton(onPressed: (){
+                child: GoToButton(onPressed: () async {
+                  int result = await advancedPlayer.pause();
+
                   print("HELL YEAH");
                   scoreF.niv1=0;
 

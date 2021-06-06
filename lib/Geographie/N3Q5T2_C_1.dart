@@ -1,15 +1,11 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-//import 'package:somthn/Geographie/N1Q4T2_C_1.dart';
-//import 'package:somthn/Geographie/N1Q4T2_C_2.dart';
-//import 'package:somthn/Geographie/N1Q4T2_C_4.dart';
-import 'package:somthn/Geographie/NiveauGeo.dart';
+import 'package:somthn/Geographie/Niv3Pass%C3%A9.dart';
+import 'package:somthn/Geographie/N3.dart';
 import 'package:somthn/WelcomePages/Settings.dart';
-import 'package:somthn/WelcomePages/Home.dart';
 import 'package:vibration/vibration.dart';
-
 import 'package:somthn/Buttons/buttonContinuer.dart';
-import 'package:somthn/Buttons/buttonQ.dart';
 import 'package:somthn/myicons.dart';
 import '../Buttons/settingsButton.dart';
 import '../Buttons/BacksButton.dart';
@@ -18,9 +14,20 @@ import 'package:somthn/Avatars/PinkAvatarIcon.dart';
 import 'package:somthn/Avatars/PurpleAvatarIcon.dart';
 import 'package:somthn/Avatars/BlueAvatarIcon.dart';
 import '../Services/Login.dart';
-
-import 'package:somthn/Bulles/BulleN1Q4T2.dart';
 import 'package:somthn/Geographie/BienvenueGeo.dart';
+import 'package:audioplayers/audio_cache.dart';
+import 'package:audioplayers/audioplayers.dart';
+import 'BienvenueGeo.dart';
+
+import '../Maths/ScoreMaths.dart';
+import'../Francais/ScoreFr.dart';
+import'../Maths/HighestScore.dart';
+
+ScoreMaths scorM;
+ScoreFr scorF ;
+HighestScore highM , highF;
+
+
 
 class N3Q5T2_C_1 extends StatefulWidget {
   const N3Q5T2_C_1({Key key}) : super(key: key);
@@ -30,6 +37,28 @@ class N3Q5T2_C_1 extends StatefulWidget {
 }
 
 class _N3Q5T2_C_1State extends State<N3Q5T2_C_1> {
+  var player = AudioCache();
+  var player2 = AudioPlayer ();
+  AudioPlayer advancedPlayer;
+
+
+  @override
+  initState() {
+    super.initState();
+    loadMusic();
+  }
+
+  Future loadMusic() async {
+
+    advancedPlayer = await AudioCache().play("audio/mathsMauvRep.wav");
+  }
+
+  @override
+  void dispose() {
+    advancedPlayer = null;
+    super.dispose();
+  }
+
   bool Visible = true;
   bool correct = false;
   bool oneClicked = false;
@@ -60,7 +89,7 @@ class _N3Q5T2_C_1State extends State<N3Q5T2_C_1> {
                   child: BacksButton(onPressed: (){
                     Navigator.push(
                         context,
-                        MaterialPageRoute(builder: (context) => BienvenueGeo()));
+                        MaterialPageRoute(builder: (context) => Geo3()));
                     print("back");
                     //Navigator.pop(context);
                   },)
@@ -98,7 +127,7 @@ class _N3Q5T2_C_1State extends State<N3Q5T2_C_1> {
                 ),
               ),
 
-              Visibility(
+             /*Visibility(
                 visible: Visible,
                 child: Positioned(
                   top: size.height*0.468,
@@ -108,12 +137,11 @@ class _N3Q5T2_C_1State extends State<N3Q5T2_C_1> {
                     icon: SvgPicture.asset('assets/icons/QuestionMark.svg'),
                     onPressed: (){
                       print('QuestionMark');
-                      setState(() {
-
-                      });},
+                      player.play('audio/geomonnaie.wav');
+                    },
                   ),
                 ),
-              ),
+              ),*/
 
               if (user.avatar=="Pink")
                 Visibility(
@@ -168,11 +196,12 @@ class _N3Q5T2_C_1State extends State<N3Q5T2_C_1> {
                   child: IconButton(
                     iconSize: 64,
                     icon: SvgPicture.asset('assets/icons/AudioIcon.svg'),
-                    onPressed: (){
-                      print('playAudio4');
-                      setState(() {
-
-                      });},
+                    onPressed: () async{
+                      player2.stop();
+                      int result = await advancedPlayer.pause();
+                      print('playAudio2');
+                      player2 =  await player.play('audio/algeriaoff.wav');
+                      },
                   ),
                 ),
               ),
@@ -185,11 +214,11 @@ class _N3Q5T2_C_1State extends State<N3Q5T2_C_1> {
                   child: IconButton(
                     iconSize: 64,
                     icon: SvgPicture.asset('assets/icons/AudioIcon.svg'),
-                    onPressed: (){
-                      print('playAudio1');
-                      setState(() {
-
-                      });},
+                    onPressed: () async {
+                      print('playAudio4');
+                      player2.stop();
+                      int result = await advancedPlayer.pause();
+                      player2 =  await player.play('audio/braziloff.wav');},
                   ),
                 ),
               ),
@@ -202,11 +231,11 @@ class _N3Q5T2_C_1State extends State<N3Q5T2_C_1> {
                   child: IconButton(
                     iconSize: 64,
                     icon: SvgPicture.asset('assets/icons/AudioIcon.svg'),
-                    onPressed: (){
+                    onPressed: () async {
                       print('playAudio3');
-                      setState(() {
-
-                      });},
+                      player2.stop();
+                      int result = await advancedPlayer.pause();
+                      player2 =  await player.play('audio/singapouroff.wav');},
                   ),
                 ),
               ),
@@ -279,10 +308,33 @@ class _N3Q5T2_C_1State extends State<N3Q5T2_C_1> {
                     left: 0.0,
                     height: size.height*0.2,
                     width: size.width*0.5,
-                    child: ButtonContinuer(onPressed: (){
+                    child: ButtonContinuer(onPressed: () async {
+                      player2.stop();
+                      int result = await advancedPlayer.pause();
+                      print("score final");
+                      print(scoreG.niv3);
+                      Firestore.instance.collection('users').document(user.uid).collection('domains').document('geographie').updateData({'niv3':scoreG.niv3});
+                      if (scoreG.niv3>highG.niv3)
+                      { highG.niv3=scoreG.niv3 ;
+                      Firestore.instance.collection('users').document(user.uid).collection('domains').document('geographie').updateData({'high3':scoreG.niv3});}
+                      // infos maths
+                      var dm=await  Firestore.instance.collection('users').document(user.uid).collection('domains').document('maths').get();
+                      scorM =new ScoreMaths(dm.data["testFait"], dm.data["niv1"], dm.data["niv2"], dm.data["niv3"]);
+                      highM =new HighestScore(dm.data["high1"],dm.data["high2"],dm.data["high3"]);
+                      //infos fr
+                      var df=await Firestore.instance.collection('users').document(user.uid).collection('domains').document('francais').get();
+                      scorF =new ScoreFr(df.data["testFait"], df.data["niv1"], df.data["niv2"], df.data["niv3"]);
+                      highF =new HighestScore(df.data["high1"],df.data["high2"],df.data["high3"]);
+                      int score=scorM.somme()+scorF.somme() +scoreG.somme() ;
+                      int high=highM.somme()+highF.somme() +highG.somme() ;
+                      var doc=await Firestore.instance.collection('users').document(user.uid).get();
+                      if (doc.data['finalScore']<high){
+                        Firestore.instance.collection('users').document(user.uid).updateData({'finalScore':high});
+                      }
+                      Firestore.instance.collection('users').document(user.uid).updateData({'score':score});
                       Navigator.push(
                           context,
-                          MaterialPageRoute(builder: (context) => NiveauGeo()));
+                          MaterialPageRoute(builder: (context) => Niveau3Pass()));
                       print('Continuer');},)
                 ),
               ),
@@ -294,7 +346,9 @@ class _N3Q5T2_C_1State extends State<N3Q5T2_C_1> {
                       visible: (threeClicked && Visible),
                       child: IconButton(
                         iconSize:80,
-                        onPressed: (){
+                        onPressed: () async {
+                          player2.stop();
+                          int result = await advancedPlayer.pause();
                           Vibration.vibrate();
 
                           if (threeClicked){
@@ -317,7 +371,9 @@ class _N3Q5T2_C_1State extends State<N3Q5T2_C_1> {
                     visible: (fourClicked&&Visible),
                     child: IconButton(
                       iconSize: 80,
-                        onPressed: (){
+                        onPressed: () async {
+                          player2.stop();
+                          int result = await advancedPlayer.pause();
                           if (fourClicked) {
                             Vibration.vibrate();
 
@@ -343,9 +399,11 @@ class _N3Q5T2_C_1State extends State<N3Q5T2_C_1> {
                     visible: (twoClicked&&Visible),
                     child: IconButton(
                       iconSize:80,
-                        onPressed: (){
-
+                        onPressed: () async {
+                          player2.stop();
+                          int result = await advancedPlayer.pause();
                           if (twoClicked) {
+                            player2 =  await player.play('audio/mathsBravo.wav');
                             Vibration.vibrate();
 
                             setState(() {
@@ -353,6 +411,7 @@ class _N3Q5T2_C_1State extends State<N3Q5T2_C_1> {
                               Visible = false;
 
                               print('Correct');
+                              scoreG.niv3++ ;
                             });
                             print('Oran');
                           }
@@ -385,11 +444,11 @@ class _N3Q5T2_C_1State extends State<N3Q5T2_C_1> {
                         child: IconButton(
                           iconSize: 100,
                           icon: SvgPicture.asset('assets/icons/AudioIcon.svg'),
-                          onPressed: (){
+                          onPressed: () async {
                             print('playAudio1');
-                            setState(() {
-
-                            });},
+                            player2.stop();
+                            int result = await advancedPlayer.pause();
+                            player2 =  await player.play('audio/italyoff.wav');},
                         ),
                       ),
                     ),

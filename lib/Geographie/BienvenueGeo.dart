@@ -14,10 +14,17 @@ import 'package:flutter_svg/flutter_svg.dart';
 import '../myicons.dart';
 import './NiveauGeo.dart';
 import '../WelcomePages/ChoixDomaines.dart';
+import 'ScoreGeo.dart';
+import '../Maths/HighestScore.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'TestNiv/BienvenueTest.dart';
 
 import 'package:audioplayers/audio_cache.dart';
 import 'package:audioplayers/audioplayers.dart';
 
+
+ScoreGeo scoreG ;
+HighestScore highG ;
 
 
 class BienvenueGeo extends StatefulWidget {
@@ -91,12 +98,25 @@ class _BienvenueGeoState extends State<BienvenueGeo> {
                 right: size.width*0.48,
                 height: size.height*0.55,
                 width: size.width*0.55,
-                child: ButtonCommencerD(onPressed: () {
+                child: ButtonCommencerD(onPressed: () async  {
                   print('commencer');
-                  Navigator.push(
+                  var d=await Firestore.instance.collection('users').document(user.uid).collection('domains').document('geographie').get();
 
-                      context,
-                      MaterialPageRoute(builder: (context) => NiveauGeo()));
+                  scoreG=new ScoreGeo(d.data["testFait"], d.data["niv1"], d.data["niv2"], d.data["niv3"]);
+                  highG=new HighestScore(d.data["high1"],d.data["high2"],d.data["high3"]);
+
+                  print(scoreG.niv1);
+                  if (scoreG.testFait){
+                    Navigator.push(
+
+                        context,
+                        MaterialPageRoute(builder: (context) => NiveauGeo()));}
+                  else {
+                    Navigator.push(
+
+                        context,
+                        MaterialPageRoute(builder: (context) => TestNiveau()));
+                  }
                 }
                 ),
               ),

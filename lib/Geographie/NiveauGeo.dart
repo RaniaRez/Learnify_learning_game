@@ -3,6 +3,7 @@ import 'package:somthn/Buttons/BacksButton.dart';
 import 'package:somthn/Maths/M-2.dart';
 import 'package:somthn/Owls/BrownOwl.dart';
 import 'package:somthn/Owls/LockIcon.dart';
+
 import './N2.dart';
 import './N1.dart';
 import './N3.dart';
@@ -15,6 +16,7 @@ import 'package:somthn/Buttons/buttonMoyen.dart';
 import 'package:somthn/Buttons/buttonfacile.dart';
 import 'package:somthn/Owls/madGreenOwl.dart';
 import 'package:somthn/Buttons/settingsButton.dart';
+import 'BienvenueGeo.dart';
 
 
 
@@ -53,6 +55,7 @@ class _NiveauGeoState extends State<NiveauGeo> {
                     Navigator.push(
                         context,
                         MaterialPageRoute(builder: (context) => Geo1()));
+
                     print('facile');}),
                 ),
 
@@ -63,6 +66,7 @@ class _NiveauGeoState extends State<NiveauGeo> {
                 bottom:size.width*0.34,
                 child: PinkAvatarIcon(onPressed:null),
               ),
+              if (scoreG.niv1<0)
               Positioned(
                 top: size.height*0.82,
                 left: size.width*0.5,
@@ -79,7 +83,7 @@ class _NiveauGeoState extends State<NiveauGeo> {
                     print('Moyen');
                   }),
                 ),
-
+              if (scoreG.niv2<0)
               Positioned(
                 top: size.height*0.57,
                 right: size.width*0.5,
@@ -112,6 +116,7 @@ class _NiveauGeoState extends State<NiveauGeo> {
                 top:size.width*0.42,
                 child:BrownOwl(onPressed:null),
               ),
+              if (scoreG.niv3<0)
               Positioned(
                 top: size.height*0.32,
                 right: size.width*0.44,

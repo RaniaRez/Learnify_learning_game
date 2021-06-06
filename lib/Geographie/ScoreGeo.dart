@@ -10,4 +10,7 @@ class ScoreGeo{
     this.niv2=niv2;
     this.niv3=niv3;
   }
+  int somme (){
+    return (this.niv1 + this.niv2 +this.niv3 );
+  }
 }

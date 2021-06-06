@@ -235,7 +235,7 @@ class _EntrernomState extends State<Entrernom> {
                         user.SetUsername(Username.text);
                         _GoTo = true;
                         print(user.username);
-                        DatabaseService(uid: user.uid).updateUserData(user.username,user.avatar, 0);
+                        DatabaseService(uid: user.uid).updateUserData(user.username,user.avatar, 0,0);
                         ScoreMaths scoreM=new ScoreMaths(false,-1,-1,-1);
                         Firestore.instance.collection('users').document(user.uid).collection('domains').document('maths').setData(
                           {

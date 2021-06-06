@@ -13,10 +13,13 @@ import 'package:somthn/Buttons/settingsButton.dart';
 import 'package:somthn/Francais/F-1.dart';
 import 'package:somthn/Francais/F-3-3-2nd.dart';
 import 'package:somthn/Francais/F-3-4.dart';
+import 'package:somthn/Francais/F-3.dart';
 import 'package:somthn/WelcomePages/Settings.dart';
 import 'package:somthn/myicons.dart';
 import '../Services/Login.dart';
 import 'BienvenueFr.dart';
+import 'package:audioplayers/audio_cache.dart';
+import 'package:audioplayers/audioplayers.dart';
 
 class F_3_3 extends StatefulWidget {
   const F_3_3({Key key}) : super(key: key);
@@ -26,6 +29,28 @@ class F_3_3 extends StatefulWidget {
 }
 
 class _F_3_3State extends State<F_3_3> {
+
+  AudioPlayer advancedPlayer;
+  var player = AudioCache();
+  var player2 = AudioPlayer ();
+  @override
+  initState() {
+    super.initState();
+    loadMusic();
+  }
+
+  Future loadMusic() async {
+
+    advancedPlayer = await AudioCache().play("audio/frRossignol.wav");
+  }
+
+  @override
+  void dispose() {
+    advancedPlayer = null;
+    super.dispose();
+  }
+
+
   bool Visible = true;
   String letterR;
   String letterO;
@@ -65,7 +90,10 @@ class _F_3_3State extends State<F_3_3> {
                   top: size.height*0.05,
                   left:size.width*0.75,
                   child:
-                  SettingsButton(onPressed: (){
+                  SettingsButton(onPressed: () async {
+                    player2.stop();
+                    int result = await advancedPlayer.pause();
+
                     Navigator.push(
                         context,
                         MaterialPageRoute(builder: (context) => Settings()));
@@ -74,10 +102,13 @@ class _F_3_3State extends State<F_3_3> {
               Positioned(
                   top: size.height*0.05,
                   right:size.width*0.75,
-                  child: BacksButton(onPressed: (){
+                  child: BacksButton(onPressed: () async {
+                    player2.stop();
+                    int result = await advancedPlayer.pause();
+
                     Navigator.push(
                         context,
-                        MaterialPageRoute(builder: (context) => Fr1()));
+                        MaterialPageRoute(builder: (context) => Fr3()));
                   },)
               ),
               Positioned(
@@ -101,9 +132,13 @@ class _F_3_3State extends State<F_3_3> {
                 child: Positioned(
                   top: size.height*0.47,
                   left: size.width*0.75,
-                  child: GoToButton(onPressed: (){
+                  child: GoToButton(onPressed: () async {
+                    int result = await advancedPlayer.pause();
+
                     if((drag1=="assets/icons/r.svg")&&(drag2=="assets/icons/o.svg")&&(drag3=="assets/icons/s.svg")&&(drag4=="assets/icons/s.svg")&&(drag5=="assets/icons/i.svg")&&(drag6=="assets/icons/gb.svg")&&(drag7=="assets/icons/n.svg")&&(drag8=="assets/icons/o.svg")&&(drag9=="assets/icons/l.svg")){
                       print('correct');
+                      player2 =  await player.play('audio/mathsBravo.wav');
+
                       scoreF.niv3+=2;
 
                       setState(() {
@@ -174,7 +209,10 @@ class _F_3_3State extends State<F_3_3> {
                     left: 0.0,
                     height: size.height*0.2,
                     width: size.width*0.5,
-                    child: ButtonContinuer(onPressed: (){
+                    child: ButtonContinuer(onPressed: () async {
+                      player2.stop();
+                      int result = await advancedPlayer.pause();
+
                       print('HADA SCORE');
                       print(scoreF.niv3);
                       Navigator.push(

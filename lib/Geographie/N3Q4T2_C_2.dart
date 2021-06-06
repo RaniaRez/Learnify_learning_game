@@ -1,15 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:somthn/Geographie/N1Q4T2_C_1.dart';
-import 'package:somthn/Geographie/N1Q4T2_C_2.dart';
-import 'package:somthn/Geographie/N1Q4T2_C_4.dart';
 import 'package:somthn/Geographie/N3Q5.dart';
 import 'package:somthn/WelcomePages/Settings.dart';
-import 'package:somthn/WelcomePages/Home.dart';
 import 'package:vibration/vibration.dart';
-
 import 'package:somthn/Buttons/buttonContinuer.dart';
-import 'package:somthn/Buttons/buttonQ.dart';
 import 'package:somthn/myicons.dart';
 import '../Buttons/settingsButton.dart';
 import '../Buttons/BacksButton.dart';
@@ -18,9 +12,11 @@ import 'package:somthn/Avatars/PinkAvatarIcon.dart';
 import 'package:somthn/Avatars/PurpleAvatarIcon.dart';
 import 'package:somthn/Avatars/BlueAvatarIcon.dart';
 import '../Services/Login.dart';
-
-import 'package:somthn/Bulles/BulleN1Q4T2.dart';
 import 'package:somthn/Geographie/BienvenueGeo.dart';
+import 'package:audioplayers/audio_cache.dart';
+import 'package:audioplayers/audioplayers.dart';
+import 'BienvenueGeo.dart';
+import 'N3.dart';
 
 class N3Q4T2_C_2 extends StatefulWidget {
   const N3Q4T2_C_2({Key key}) : super(key: key);
@@ -30,6 +26,28 @@ class N3Q4T2_C_2 extends StatefulWidget {
 }
 
 class _N3Q4T2_C_2State extends State<N3Q4T2_C_2> {
+  var player = AudioCache();
+  var player2 = AudioPlayer ();
+  AudioPlayer advancedPlayer;
+
+
+  @override
+  initState() {
+    super.initState();
+    loadMusic();
+  }
+
+  Future loadMusic() async {
+
+    advancedPlayer = await AudioCache().play("audio/mathsMauvRep.wav");
+  }
+
+  @override
+  void dispose() {
+    advancedPlayer = null;
+    super.dispose();
+  }
+
   bool Visible = true;
   bool correct = false;
   bool oneClicked = false;
@@ -60,7 +78,7 @@ class _N3Q4T2_C_2State extends State<N3Q4T2_C_2> {
                   child: BacksButton(onPressed: (){
                     Navigator.push(
                         context,
-                        MaterialPageRoute(builder: (context) => BienvenueGeo()));
+                        MaterialPageRoute(builder: (context) => Geo3()));
                     print("back");
                     //Navigator.pop(context);
                   },)
@@ -106,11 +124,12 @@ class _N3Q4T2_C_2State extends State<N3Q4T2_C_2> {
                   child: IconButton(
                     iconSize: 64,
                     icon: SvgPicture.asset('assets/icons/QuestionMark.svg'),
-                    onPressed: (){
+                    onPressed: () async {
+                      player2.stop();
+                      int result = await advancedPlayer.pause();
                       print('QuestionMark');
-                      setState(() {
-
-                      });},
+                      player2 =  await player.play('audio/geoAnimal.wav');
+                    },
                   ),
                 ),
               ),
@@ -230,7 +249,10 @@ class _N3Q4T2_C_2State extends State<N3Q4T2_C_2> {
                     left: 0.0,
                     height: size.height*0.2,
                     width: size.width*0.5,
-                    child: ButtonContinuer(onPressed: (){
+                    child: ButtonContinuer(onPressed: () async {
+                      player2.stop();
+                      int result = await advancedPlayer.pause();
+                      print(scoreG.niv3);
                       Navigator.push(
                           context,
                           MaterialPageRoute(builder: (context) => N3Q5()));
@@ -246,7 +268,9 @@ class _N3Q4T2_C_2State extends State<N3Q4T2_C_2> {
                   child: Visibility(
                       visible: (threeClicked && Visible),
                       child: IconButton(
-                        onPressed: (){
+                        onPressed: () async {
+                          player2.stop();
+                          int result = await advancedPlayer.pause();
                           Vibration.vibrate();
 
                           if (threeClicked){
@@ -270,8 +294,11 @@ class _N3Q4T2_C_2State extends State<N3Q4T2_C_2> {
                 child: Visibility(
                     visible: (fourClicked&&Visible),
                     child: IconButton(
-                        onPressed: (){
+                        onPressed: () async {
+                          player2.stop();
+                          int result = await advancedPlayer.pause();
                           if (fourClicked) {
+                            player2 =  await player.play('audio/mathsBravo.wav');
                             Vibration.vibrate();
 
                             setState(() {
@@ -279,6 +306,7 @@ class _N3Q4T2_C_2State extends State<N3Q4T2_C_2> {
                               Visible = false;
 
                               print('Correct');
+                              scoreG.niv3++ ;
                             });
 
 
@@ -297,8 +325,9 @@ class _N3Q4T2_C_2State extends State<N3Q4T2_C_2> {
                 child: Visibility(
                     visible: (twoClicked&&Visible),
                     child: IconButton(
-                        onPressed: (){
-
+                        onPressed: () async {
+                          player2.stop();
+                          int result = await advancedPlayer.pause();
                           if (twoClicked) {
                             Vibration.vibrate();
 

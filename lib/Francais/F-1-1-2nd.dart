@@ -15,6 +15,8 @@ import 'package:somthn/Avatars/PurpleAvatarIcon.dart';
 import 'package:somthn/Avatars/BlueAvatarIcon.dart';
 import '../Services/Login.dart';
 import 'BienvenueFr.dart';
+import 'package:audioplayers/audio_cache.dart';
+import 'package:audioplayers/audioplayers.dart';
 
 class F_1_1_2nd extends StatefulWidget {
   const F_1_1_2nd({Key key}) : super(key: key);
@@ -24,6 +26,29 @@ class F_1_1_2nd extends StatefulWidget {
 }
 
 class _F_1_1_2ndState extends State<F_1_1_2nd> {
+  var player = AudioCache();
+  var player2 = AudioPlayer ();
+
+  AudioPlayer advancedPlayer;
+
+
+  @override
+  initState() {
+    super.initState();
+    loadMusic();
+  }
+
+  Future loadMusic() async {
+
+    advancedPlayer = await AudioCache().play("audio/mathsMauvRep.wav");
+  }
+
+  @override
+  void dispose() {
+    advancedPlayer = null;
+    super.dispose();
+  }
+
   bool Visible = true;
   bool correct = false;
   @override
@@ -47,7 +72,10 @@ class _F_1_1_2ndState extends State<F_1_1_2nd> {
                   top: size.height*0.05,
                   left:size.width*0.75,
                   child:
-                  SettingsButton(onPressed: (){
+                  SettingsButton(onPressed: () async {
+                    player2.stop();
+                    int result = await advancedPlayer.pause();
+
                     Navigator.push(
                         context,
                         MaterialPageRoute(builder: (context) => Settings()));
@@ -56,7 +84,10 @@ class _F_1_1_2ndState extends State<F_1_1_2nd> {
               Positioned(
                   top: size.height*0.05,
                   right:size.width*0.75,
-                  child: BacksButton(onPressed: (){
+                  child: BacksButton(onPressed: () async {
+                    player2.stop();
+                    int result = await advancedPlayer.pause();
+
                     Navigator.push(
                         context,
                         MaterialPageRoute(builder: (context) => Fr1()));
@@ -96,7 +127,8 @@ class _F_1_1_2ndState extends State<F_1_1_2nd> {
                   height: size.width*0.4,
                   width: size.width*0.4,
                   child: IconButton(
-                      onPressed: (){
+                      onPressed: () async {
+                        int result = await advancedPlayer.pause();
                         setState(() {
                           Visible=false;
                         });
@@ -122,7 +154,9 @@ class _F_1_1_2ndState extends State<F_1_1_2nd> {
                   height: size.width*0.4,
                   width: size.width*0.4,
                   child: IconButton(
-                      onPressed: (){
+                      onPressed: () async {
+                        int result = await advancedPlayer.pause();
+
                         setState(() {
                           Visible=false;
                         });
@@ -138,7 +172,11 @@ class _F_1_1_2ndState extends State<F_1_1_2nd> {
                     left: size.width*0.72,
                     height: size.width*0.3,
                     width: size.width*0.3,
-                    child:PinkAvatarIcon(onPressed: (){
+                    child:PinkAvatarIcon(onPressed: () async {
+                      int result = await advancedPlayer.pause();
+
+                      player2 =  await player.play('audio/mathsBravo.wav');
+
                       setState(() {
                         scoreF.niv1+=1;
                         Visible=false;
@@ -156,7 +194,11 @@ class _F_1_1_2ndState extends State<F_1_1_2nd> {
                     height: size.width*0.35,
                     width: size.width*0.35,
                     child:PurpleAvatarIcon(
-                      onPressed: (){
+                      onPressed: () async {
+                        int result = await advancedPlayer.pause();
+
+                        player2 =  await player.play('audio/mathsBravo.wav');
+
                         scoreF.niv1+=1;
                         setState(() {
                           Visible=false;
@@ -175,7 +217,11 @@ class _F_1_1_2ndState extends State<F_1_1_2nd> {
                     height: size.width*0.3,
                     width: size.width*0.3,
                     child: OrangeAvatarIcon(
-                      onPressed: (){
+                      onPressed: () async {
+                        int result = await advancedPlayer.pause();
+
+                        player2 =  await player.play('audio/mathsBravo.wav');
+
                         scoreF.niv1+=1;
                         setState(() {
                           Visible=false;
@@ -194,7 +240,11 @@ class _F_1_1_2ndState extends State<F_1_1_2nd> {
                     height: size.width*0.3,
                     width: size.width*0.3,
                     child:BlueAvatarIcon(
-                      onPressed: (){
+                      onPressed: () async {
+                        int result = await advancedPlayer.pause();
+
+                        player2 =  await player.play('audio/mathsBravo.wav');
+
                         scoreF.niv1+=1;
                         setState(() {
                           Visible=false;
@@ -220,7 +270,10 @@ class _F_1_1_2ndState extends State<F_1_1_2nd> {
                     left: 0.0,
                     height: size.height*0.2,
                     width: size.width*0.5,
-                    child: ButtonContinuer(onPressed: (){
+                    child: ButtonContinuer(onPressed: () async {
+                      player2.stop();
+                      int result = await advancedPlayer.pause();
+
                       print('HADA SCORE');
                       print(scoreF.niv1);
                       Navigator.push(

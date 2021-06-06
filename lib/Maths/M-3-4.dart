@@ -1,11 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:somthn/Buttons/BarreProgres.dart';
-import 'package:somthn/Maths/M-1-2.dart';
-import 'package:somthn/Maths/M-1-3.dart';
 import 'package:somthn/Maths/M-3-5.dart';
 import 'package:somthn/WelcomePages/Settings.dart';
-import 'package:somthn/Bulles/bulleQuest.dart';
 import 'package:somthn/Buttons/button0.dart';
 import 'package:somthn/Buttons/button1.dart';
 import 'package:somthn/Buttons/button2.dart';
@@ -21,20 +17,18 @@ import 'package:somthn/Buttons/buttonGoTo.dart';
 import 'package:somthn/Buttons/buttonQ.dart';
 import 'package:somthn/Buttons/buttonReset.dart';
 import 'package:somthn/myicons.dart';
-import '../Buttons/BarreProgres.dart';
 import '../Buttons/settingsButton.dart';
 import '../Buttons/BacksButton.dart';
 import 'package:somthn/Avatars/OrangeAvatarIcon.dart';
 import 'package:somthn/Avatars/PinkAvatarIcon.dart';
 import 'package:somthn/Avatars/PurpleAvatarIcon.dart';
 import 'package:somthn/Avatars/BlueAvatarIcon.dart';
-//import '../WelcomePages/ChooseAvatar.dart';
 import '../myicons.dart';
 import '../Services/Login.dart';
-import '../Services/SignUp.dart';
 import 'BienvenueMath.dart';
 import 'M-3.dart';
-import 'NiveauMath.dart';
+import 'package:audioplayers/audio_cache.dart';
+import 'package:audioplayers/audioplayers.dart';
 
 
 class M_3_4 extends StatefulWidget {
@@ -45,6 +39,27 @@ class M_3_4 extends StatefulWidget {
 }
 
 class _M_3_4State extends State<M_3_4> {
+
+  AudioPlayer advancedPlayer;
+
+
+  @override
+  initState() {
+    super.initState();
+    loadMusic();
+  }
+
+  Future loadMusic() async {
+
+    advancedPlayer = await AudioCache().play("audio/maths00.wav");
+  }
+
+  @override
+  void dispose() {
+    advancedPlayer = null;
+    super.dispose();
+  }
+
   bool oneD = false;
   bool oneU = false;
   bool twoD = false;

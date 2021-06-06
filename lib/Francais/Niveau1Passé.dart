@@ -1,3 +1,4 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:somthn/Buttons/HomeButton.dart';
@@ -6,22 +7,19 @@ import 'package:somthn/Buttons/buttonReset.dart';
 import 'package:somthn/Francais/F-1.dart';
 import 'package:somthn/Francais/F-2.dart';
 import 'package:somthn/Maths/BienvenueMath.dart';
-import 'package:somthn/Maths/M-2.dart';
 import 'package:somthn/WelcomePages/Settings.dart';
-import 'package:somthn/Mutual/Stars.dart';
 import 'package:somthn/myicons.dart';
 import '../Buttons/settingsButton.dart';
 import '../Buttons/BacksButton.dart';
 import '../WelcomePages/Home.dart';
-import '../WelcomePages/ChooseAvatar.dart';
 import 'package:somthn/Avatars/OrangeAvatarIcon.dart';
 import 'package:somthn/Avatars/PinkAvatarIcon.dart';
 import 'package:somthn/Avatars/PurpleAvatarIcon.dart';
 import 'package:somthn/Avatars/BlueAvatarIcon.dart';
 import '../Services/Login.dart';
-import '../Services/SignUp.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'BienvenueFr.dart';
+import 'package:audioplayers/audio_cache.dart';
+import 'package:audioplayers/audioplayers.dart';
 
 
 class Niveau1Pass extends StatefulWidget {
@@ -30,10 +28,27 @@ class Niveau1Pass extends StatefulWidget {
 }
 
 class _Niveau1PassState extends State<Niveau1Pass> {
+
+  AudioPlayer advancedPlayer;
+
   @override
+  initState() {
+    super.initState();
+    loadMusic();
+  }
 
+  Future loadMusic() async {
 
+    advancedPlayer = await AudioCache().play("audio/niveauPasse.wav");
+  }
 
+  @override
+  void dispose() {
+    advancedPlayer = null;
+    super.dispose();
+  }
+
+  @override
 
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
@@ -41,6 +56,8 @@ class _Niveau1PassState extends State<Niveau1Pass> {
     bool star1 = (high.niv1>=7.5);
     bool star2 = (high.niv2>=7.5);
     bool star3 = (high.niv3>=7.5);
+    if ((scoreF.niv2<0)&&(complet)) { scoreF.niv2=0;
+    Firestore.instance.collection('users').document(user.uid).collection('domains').document('francais').updateData({'niv2':scoreF.niv2});}
     /*print("khra2");
     print(scoreM.niv1);
     print("khra2");
@@ -62,7 +79,9 @@ class _Niveau1PassState extends State<Niveau1Pass> {
             Positioned(
                 top: size.height*0.05,
                 left:size.width*0.75,
-                child: SettingsButton(onPressed: (){
+                child: SettingsButton(onPressed: () async {
+                  int result = await advancedPlayer.pause();
+
                   Navigator.push(
                       context,
                       MaterialPageRoute(builder: (context) => Settings()));
@@ -73,7 +92,9 @@ class _Niveau1PassState extends State<Niveau1Pass> {
             Positioned(
                 top: size.height*0.05,
                 right:size.width*0.75,
-                child: BacksButton(onPressed: (){
+                child: BacksButton(onPressed: () async {
+                  int result = await advancedPlayer.pause();
+
                   print("HELL YEAH");
                   Navigator.push(
                       context,
@@ -84,8 +105,9 @@ class _Niveau1PassState extends State<Niveau1Pass> {
               top: size.height*0.047,
               left: size.width*0.39,
               child: HomeButton(
-                onPressed: (){
-                  //print("zbel2");
+                onPressed: () async {
+                  int result = await advancedPlayer.pause();
+
                   print("HELL YEAH8");
                   Navigator.push(
                     context,
@@ -109,7 +131,7 @@ class _Niveau1PassState extends State<Niveau1Pass> {
                 child: FittedBox(
                   fit: BoxFit.fitWidth,
                   child: Text(
-                    scoreF.niv1 .toString(),
+                    high.niv1 .toString(),
                     style:TextStyle(
                       fontSize: 30,
                       fontFamily: 'Skranji-Bold',
@@ -124,7 +146,7 @@ class _Niveau1PassState extends State<Niveau1Pass> {
                 child: FittedBox(
                   fit: BoxFit.fitWidth,
                   child: Text(
-                    high.niv1 .toString() ,
+                    scoreF.niv1 .toString() ,
                     style:TextStyle(
                       fontSize: 30,
                       fontFamily: 'Skranji-Bold',
@@ -297,7 +319,9 @@ class _Niveau1PassState extends State<Niveau1Pass> {
               left: size.width*0.7 ,
               child: Visibility(
                 visible: ((complet) || (scoreF.niv2 >=0 )) ,
-                child: GoToButton(onPressed: (){
+                child: GoToButton(onPressed: () async {
+                  int result = await advancedPlayer.pause();
+
                   print(scoreM.niv1);
                   print('khra');
                   //Firestore.instance.collection('users').document(user.uid).collection('domains').document('maths').updateData({'niv1':scoreM.niv1});
