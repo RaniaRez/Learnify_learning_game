@@ -23,6 +23,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import '../Maths/ScoreMaths.dart';
 import '../Francais/ScoreFr.dart';
 import 'ScoreFinal.dart';
+import 'ClassScore.dart';
 
 ScoreMaths scorM;
 HighestScore highM;
@@ -32,6 +33,8 @@ HighestScore highF ;
 
 ScoreGeo scorG ;
 HighestScore highG ;
+
+Score total;
 
 
 
@@ -147,18 +150,8 @@ class _StatsState extends State<Stats> {
                   width: 70,
                   child: GoToButton(onPressed: () async {
                     print('scorefinal');
-                    // infos maths
-                    var dm=await  Firestore.instance.collection('users').document(user.uid).collection('domains').document('maths').get();
-                    scorM =new ScoreMaths(dm.data["testFait"], dm.data["niv1"], dm.data["niv2"], dm.data["niv3"]);
-                    highM =new HighestScore(dm.data["high1"],dm.data["high2"],dm.data["high3"]);
-                    //infos fr
-                    var df=await Firestore.instance.collection('users').document(user.uid).collection('domains').document('francais').get();
-                    scorF =new ScoreFr(df.data["testFait"], df.data["niv1"], df.data["niv2"], df.data["niv3"]);
-                    highF =new HighestScore(df.data["high1"],df.data["high2"],df.data["high3"]);
-                    // infos geo
-                    var dg=await Firestore.instance.collection('users').document(user.uid).collection('domains').document('geographie').get();
-                    scorG =new ScoreGeo(dg.data["testFait"], dg.data["niv1"], dg.data["niv2"], dg.data["niv3"]);
-                    highG =new HighestScore(dg.data["high1"],dg.data["high2"],dg.data["high3"]);
+                    var doc=await  Firestore.instance.collection('users').document(user.uid).get();
+                    total=new Score(doc.data['score'],doc.data['finalScore']);
 
                      Navigator.push(
                       context,

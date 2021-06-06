@@ -206,7 +206,6 @@ class _N1Q1State extends State<N1Q1> {
                     child: ButtonContinuer(onPressed: () async {
                       player2.stop();
                       int result = await advancedPlayer.pause();
-                      scoreG.niv1+=2;
                       Navigator.push(
                           context,
                           MaterialPageRoute(builder: (context) => N1Q2()));},)

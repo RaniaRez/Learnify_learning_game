@@ -16,9 +16,9 @@ final AuthCredential credential = GoogleAuthProvider.getCredential(
     idToken: googleSignInAuthentication.idToken,
     accessToken: googleSignInAuthentication.accessToken
 );*/
-
+  signOutGoogle();
 googleLogin();
-signOutGoogle();
+
 await user.delete();
 await Firestore.instance.collection("users").document(user.uid).delete();
 }

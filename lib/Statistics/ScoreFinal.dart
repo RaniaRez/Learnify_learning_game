@@ -23,8 +23,6 @@ class _FinalScoreState extends State<FinalScore> {
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
-    int score=scorM.somme()+scorF.somme() +scorG.somme() ;
-    int high=highM.somme()+highF.somme() +highG.somme() ;
     return Container(
       height: size.height,
       width: size.width,
@@ -142,7 +140,7 @@ class _FinalScoreState extends State<FinalScore> {
                       left: size.width*0.43,
                       top:size.height*0.62,
                       child:Text(
-                        high.toString() ,
+                        total.high.toString() ,
                         style: TextStyle(
                           fontSize: 30,
                           fontFamily: 'Skranji-Bold',
@@ -166,7 +164,7 @@ class _FinalScoreState extends State<FinalScore> {
                       left: size.width*0.43,
                       top:size.height*0.8,
                       child:Text(
-                        score.toString(),
+                        total.score.toString(),
                         style: TextStyle(
                           fontSize: 30,
                           fontFamily: 'Skranji-Bold',

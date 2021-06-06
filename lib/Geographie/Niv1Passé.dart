@@ -5,6 +5,7 @@ import 'package:somthn/Buttons/HomeButton.dart';
 import 'package:somthn/Buttons/buttonGoTo.dart';
 import 'package:somthn/Buttons/buttonReset.dart';
 import 'package:somthn/Francais/F-3.dart';
+import 'package:somthn/Geographie/N1Q1.dart';
 import 'package:somthn/Geographie/N2Q1.dart';
 import 'package:somthn/Geographie/N3Q1.dart';
 import 'package:somthn/Maths/BienvenueMath.dart';
@@ -334,7 +335,7 @@ class _Niveau1PassState extends State<Niveau1Pass> {
                       print('reset');
                       Navigator.push(
                           context,
-                          MaterialPageRoute(builder: (context) => N3Q1()));
+                          MaterialPageRoute(builder: (context) => N1Q1()));
                     }
 
                 ),
