@@ -105,12 +105,12 @@ class _N2Q3State extends State<N2Q3> {
                   bottom: size.height*0.88,
                   left: size.width*0.275,
                   right: size.width*0.275,
-                  child: SvgPicture.asset(FourBars)),
+                  child: SvgPicture.asset(TwoBars)),
               Positioned(
                 bottom: size.height*0.55,
                 left: size.width*0.05,
                 height: size.height*0.3,
-                width: size.width*0.8,
+                width: size.width*0.7,
                 child:SvgPicture.asset('assets/icons/BulleN2Q3.svg'),
               ),
               Visibility(
@@ -119,7 +119,7 @@ class _N2Q3State extends State<N2Q3> {
                   bottom: size.height*0.88,
                   left: size.width*0.275,
                   right: size.width*0.275,
-                  child: SvgPicture.asset(FourBars),
+                  child: SvgPicture.asset(ThreeBars),
                 ),
               ),
               if (user.avatar=="Pink")
@@ -172,9 +172,9 @@ class _N2Q3State extends State<N2Q3> {
               Visibility(
                 visible: Visible,
                 child: Positioned(
-                  top: size.height*0.5,
+                  top: size.height*0.6,
                   left: size.width*0.5,
-                  height: size.height*0.3,
+                  height: size.height*0.1,
                   width: size.width*0.5,
                   child: IconButton(
                     icon: SvgPicture.asset('assets/icons/Kabyles.svg'),
@@ -192,9 +192,9 @@ class _N2Q3State extends State<N2Q3> {
               Visibility(
                 visible: Visible,
                 child: Positioned(
-                  top: size.height*0.7,
+                  top: size.height*0.8,
                   left: size.width*0.5,
-                  height: size.height*0.3,
+                  height: size.height*0.1,
                   width: size.width*0.5,
                   child: IconButton(
                     icon: SvgPicture.asset('assets/icons/Zoulous.svg'),
@@ -212,9 +212,9 @@ class _N2Q3State extends State<N2Q3> {
               Visibility(
                 visible: Visible,
                 child: Positioned(
-                  top: size.height*0.6,
+                  top: size.height*0.7,
                   left: size.width*0,
-                  height: size.height*0.3,
+                  height: size.height*0.1,
                   width: size.width*0.5,
                   child: IconButton(
                     icon: SvgPicture.asset('assets/icons/Chaouis.svg'),
@@ -233,9 +233,9 @@ class _N2Q3State extends State<N2Q3> {
               Visibility(
                 visible: Visible,
                 child: Positioned(
-                  top: size.height*0.4,
+                  top: size.height*0.5,
                   left: size.width*0.0,
-                  height: size.height*0.3,
+                  height: size.height*0.1,
                   width: size.width*0.5,
                   child: IconButton(
                     icon: SvgPicture.asset('assets/icons/Mozabites.svg'),
@@ -323,9 +323,9 @@ class _N2Q3State extends State<N2Q3> {
               ),
 
               Positioned(
-                  top: size.height*0.6,
+                  top: size.height*0.7,
                   left: size.width*0,
-                  height: size.height*0.3,
+                  height: size.height*0.1,
                   width: size.width*0.5,
                   child: Visibility(
                       visible: (threeClicked && Visible),
@@ -349,9 +349,9 @@ class _N2Q3State extends State<N2Q3> {
                         icon: SvgPicture.asset('assets/icons/Chaouis.svg'),))
               ),
               Positioned(
-                top: size.height*0.7,
+                top: size.height*0.8,
                 left: size.width*0.5,
-                height: size.height*0.3,
+                height: size.height*0.1,
                 width: size.width*0.5,
                 child: Visibility(
                     visible: (fourClicked&&Visible),
@@ -375,9 +375,9 @@ class _N2Q3State extends State<N2Q3> {
                 ),
               ),
               Positioned(
-                top: size.height*0.5,
+                top: size.height*0.6,
                 left: size.width*0.5,
-                height: size.height*0.3,
+                height: size.height*0.1,
                 width: size.width*0.5,
 
                 child: Visibility(
@@ -403,9 +403,9 @@ class _N2Q3State extends State<N2Q3> {
                 ),
               ),
               Positioned(
-                top: size.height*0.4,
+                top: size.height*0.5,
                 left: size.width*0.0,
-                height: size.height*0.3,
+                height: size.height*0.1,
                 width: size.width*0.5,
                 child: Visibility(
                     visible: (oneClicked&&Visible),

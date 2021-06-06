@@ -100,12 +100,12 @@ class _N2Q4T2_C_4State extends State<N2Q4T2_C_4> {
                   bottom: size.height*0.88,
                   left: size.width*0.275,
                   right: size.width*0.275,
-                  child: SvgPicture.asset(FourBars)),
+                  child: SvgPicture.asset(ThreeBars)),
               Positioned(
                 bottom: size.height*0.55,
                 left: size.width*0.05,
                 height: size.height*0.3,
-                width: size.width*0.8,
+                width: size.width*0.7,
                 child:SvgPicture.asset('assets/icons/BulleN2Q4T2.svg'),
               ),
               Visibility(
@@ -166,9 +166,9 @@ class _N2Q4T2_C_4State extends State<N2Q4T2_C_4> {
               Visibility(
                 visible: Visible,
                 child: Positioned(
-                  top: size.height*0.5,
+                  top: size.height*0.6,
                   left: size.width*0.5,
-                  height: size.height*0.3,
+                  height: size.height*0.1,
                   width: size.width*0.5,
                   child: IconButton(
                     icon: SvgPicture.asset('assets/icons/Alpes.svg'),
@@ -185,9 +185,9 @@ class _N2Q4T2_C_4State extends State<N2Q4T2_C_4> {
               Visibility(
                 visible: false,
                 child: Positioned(
-                  top: size.height*0.7,
+                  top: size.height*0.8,
                   left: size.width*0.5,
-                  height: size.height*0.3,
+                  height: size.height*0.1,
                   width: size.width*0.5,
                   child: IconButton(
                     icon: SvgPicture.asset('assets/icons/OuledNail.svg'),
@@ -205,9 +205,9 @@ class _N2Q4T2_C_4State extends State<N2Q4T2_C_4> {
               Visibility(
                 visible: Visible,
                 child: Positioned(
-                  top: size.height*0.6,
+                  top: size.height*0.7,
                   left: size.width*0,
-                  height: size.height*0.3,
+                  height: size.height*0.1,
                   width: size.width*0.5,
                   child: IconButton(
                     icon: SvgPicture.asset('assets/icons/Tahat.svg'),
@@ -226,9 +226,9 @@ class _N2Q4T2_C_4State extends State<N2Q4T2_C_4> {
               Visibility(
                 visible: Visible,
                 child: Positioned(
-                  top: size.height*0.4,
+                  top: size.height*0.5,
                   left: size.width*0.0,
-                  height: size.height*0.3,
+                  height: size.height*0.1,
                   width: size.width*0.5,
                   child: IconButton(
                     icon: SvgPicture.asset('assets/icons/LallaKhedidja.svg'),
@@ -262,9 +262,9 @@ class _N2Q4T2_C_4State extends State<N2Q4T2_C_4> {
               ),
               //Second click
               Positioned(
-                  top: size.height*0.6,
+                  top: size.height*0.7,
                   left: size.width*0,
-                  height: size.height*0.3,
+                  height: size.height*0.1,
                   width: size.width*0.5,
                   child: Visibility(
                       visible: (threeClicked && Visible),
@@ -288,9 +288,9 @@ class _N2Q4T2_C_4State extends State<N2Q4T2_C_4> {
                         icon: SvgPicture.asset('assets/icons/Tahat.svg'),))
               ),
               Positioned(
-                top: size.height*0.7,
+                top: size.height*0.8,
                 left: size.width*0.5,
-                height: size.height*0.3,
+                height: size.height*0.1,
                 width: size.width*0.5,
                 child: Visibility(
                     visible: (false),
@@ -316,9 +316,9 @@ class _N2Q4T2_C_4State extends State<N2Q4T2_C_4> {
                 ),
               ),
               Positioned(
-                top: size.height*0.5,
+                top: size.height*0.6,
                 left: size.width*0.5,
-                height: size.height*0.3,
+                height: size.height*0.1,
                 width: size.width*0.5,
 
                 child: Visibility(
@@ -344,9 +344,9 @@ class _N2Q4T2_C_4State extends State<N2Q4T2_C_4> {
                 ),
               ),
               Positioned(
-                top: size.height*0.4,
+                top: size.height*0.5,
                 left: size.width*0.0,
-                height: size.height*0.3,
+                height: size.height*0.1,
                 width: size.width*0.5,
                 child: Visibility(
                     visible: (oneClicked&&Visible),
