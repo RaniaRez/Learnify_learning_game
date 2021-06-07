@@ -26,14 +26,13 @@ import 'package:somthn/Avatars/OrangeAvatarIcon.dart';
 import 'package:somthn/Avatars/PinkAvatarIcon.dart';
 import 'package:somthn/Avatars/PurpleAvatarIcon.dart';
 import 'package:somthn/Avatars/BlueAvatarIcon.dart';
-import '../WelcomePages/ChooseAvatar.dart';
 import '../Services/Login.dart';
-import '../Services/SignUp.dart';
 import 'BienvenueMath.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'M-1.dart';
 import 'Niveau1Passé.dart';
-
+import 'package:audioplayers/audio_cache.dart';
+import 'package:audioplayers/audioplayers.dart';
 
 class M_1_5 extends StatefulWidget {
   const M_1_5({Key key}) : super(key: key);
@@ -42,6 +41,8 @@ class M_1_5 extends StatefulWidget {
   _M_1_5State createState() => _M_1_5State();
 }
 class _M_1_5State extends State<M_1_5> {
+  var player = AudioCache();
+  var player2 = AudioPlayer ();
   bool oneD = false;
   bool oneU = false;
   bool twoD = false;
@@ -86,7 +87,9 @@ class _M_1_5State extends State<M_1_5> {
                   top: size.height*0.05,
                   left:size.width*0.75,
                   child:
-                  SettingsButton(onPressed: (){
+                  SettingsButton(onPressed: () async {
+                    player2.stop();
+                    //int result = await advancedPlayer.pause();
                     Navigator.push(
                         context,
                         MaterialPageRoute(builder: (context) => Settings()));
@@ -96,7 +99,9 @@ class _M_1_5State extends State<M_1_5> {
               Positioned(
                   top: size.height*0.05,
                   right:size.width*0.75,
-                  child: BacksButton(onPressed: (){
+                  child: BacksButton(onPressed: () async {
+                    player2.stop();
+                    //int result = await advancedPlayer.pause();
                     Navigator.push(
                         context,
                         MaterialPageRoute(builder: (context) => Math1() ));
@@ -123,8 +128,11 @@ class _M_1_5State extends State<M_1_5> {
                 child: Positioned(
                   top: size.height*0.6,
                   left: size.width*0.75,
-                  child: GoToButton(onPressed: (){
-                    setState(() {
+                  child: GoToButton(onPressed: () async {
+                    player2.stop();
+                   //int result = await advancedPlayer.pause();
+                    setState(()  {
+
                       if(!all){
 
                       }else if ((eightU) && (fiveD)){
@@ -593,7 +601,9 @@ class _M_1_5State extends State<M_1_5> {
                     left: 0.0,
                     height: size.height*0.2,
                     width: size.width*0.5,
-                    child: ButtonContinuer(onPressed: (){
+                    child: ButtonContinuer(onPressed: () async {
+                      player2.stop();
+                      //int result = await advancedPlayer.pause();
                       Firestore.instance.collection('users').document(user.uid).collection('domains').document('maths').updateData({'niv1':scoreM.niv1});
                       if (scoreM.niv1>hs.niv1)
                       { hs.niv1=scoreM.niv1;

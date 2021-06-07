@@ -25,12 +25,11 @@ import 'package:somthn/Avatars/OrangeAvatarIcon.dart';
 import 'package:somthn/Avatars/PinkAvatarIcon.dart';
 import 'package:somthn/Avatars/PurpleAvatarIcon.dart';
 import 'package:somthn/Avatars/BlueAvatarIcon.dart';
-//import '../WelcomePages/ChooseAvatar.dart';
 import '../Services/Login.dart';
-import '../Services/SignUp.dart';
 import 'BienvenueMath.dart';
 import 'M-1.dart';
-
+import 'package:audioplayers/audio_cache.dart';
+import 'package:audioplayers/audioplayers.dart';
 
 class M_1_4 extends StatefulWidget {
   const M_1_4({Key key}) : super(key: key);
@@ -40,6 +39,8 @@ class M_1_4 extends StatefulWidget {
 }
 
 class _M_1_4State extends State<M_1_4> {
+  var player = AudioCache();
+  var player2 = AudioPlayer ();
   bool oneD = false;
   bool oneU = false;
   bool twoD = false;
@@ -84,7 +85,9 @@ class _M_1_4State extends State<M_1_4> {
                   top: size.height*0.05,
                   left:size.width*0.75,
                   child:
-                  SettingsButton(onPressed: (){
+                  SettingsButton(onPressed: () async {
+                    player2.stop();
+                    //int result = await advancedPlayer.pause();
                     Navigator.push(
                         context,
                         MaterialPageRoute(builder: (context) => Settings()));
@@ -94,7 +97,9 @@ class _M_1_4State extends State<M_1_4> {
               Positioned(
                   top: size.height*0.05,
                   right:size.width*0.75,
-                  child: BacksButton(onPressed: (){
+                  child: BacksButton(onPressed: () async {
+                    player2.stop();
+                    //int result = await advancedPlayer.pause();
                     Navigator.push(
                         context,
                         MaterialPageRoute(builder: (context) => Math1() ));
@@ -121,8 +126,11 @@ class _M_1_4State extends State<M_1_4> {
                 child: Positioned(
                   top: size.height*0.6,
                   left: size.width*0.75,
-                  child: GoToButton(onPressed: (){
-                    setState(() {
+                  child: GoToButton(onPressed: () async {
+                    player2.stop();
+                  // int result = await advancedPlayer.pause();
+                    setState(()  {
+
                       if(!all){
 
                       }else if ((threeU) && (twoD)){
@@ -586,7 +594,9 @@ class _M_1_4State extends State<M_1_4> {
                     left: 0.0,
                     height: size.height*0.2,
                     width: size.width*0.5,
-                    child: ButtonContinuer(onPressed: (){
+                    child: ButtonContinuer(onPressed: () async {
+                      player2.stop();
+                      //int result = await advancedPlayer.pause();
                       Navigator.pushReplacement(
                           context,
                           MaterialPageRoute(builder: (context) => M_1_5()));

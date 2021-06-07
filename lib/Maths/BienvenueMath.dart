@@ -11,9 +11,7 @@ import 'package:somthn/Avatars/OrangeAvatarIcon.dart';
 import 'package:somthn/Avatars/PinkAvatarIcon.dart';
 import 'package:somthn/Avatars/PurpleAvatarIcon.dart';
 import 'package:somthn/Avatars/BlueAvatarIcon.dart';
-import '../WelcomePages/ChooseAvatar.dart';
 import '../Services/Login.dart';
-import '../Services/SignUp.dart';
 import 'ScoreMaths.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'TestNiv/BienvenueTest.dart';
@@ -32,7 +30,8 @@ class BienvenueMath extends StatefulWidget {
 }
 
 class _BienvenueMathState extends State<BienvenueMath> {
-
+  var player = AudioCache();
+  var player2 = AudioPlayer ();
   AudioPlayer advancedPlayer;
 
 
@@ -97,6 +96,8 @@ class _BienvenueMathState extends State<BienvenueMath> {
                height: size.height*0.55,
                 width: size.width*0.55,
                 child: ButtonCommencerD(onPressed: () async  {
+                  player2.stop();
+                  int result = await advancedPlayer.pause();
                   print('commencer');
                   var d=await Firestore.instance.collection('users').document(user.uid).collection('domains').document('maths').get();
                   /*scoreM.testFait=d.data["testFait"];

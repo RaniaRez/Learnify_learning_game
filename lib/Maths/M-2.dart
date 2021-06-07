@@ -23,6 +23,8 @@ class Math2 extends StatefulWidget {
 }
 
 class _Math2State extends State<Math2> {
+  var player = AudioCache();
+  var player2 = AudioPlayer ();
 
   AudioPlayer advancedPlayer;
 
@@ -150,7 +152,9 @@ class _Math2State extends State<Math2> {
               Positioned(
                 top: size.height*0.8,
                 left:size.width*0.75,
-                child: GoToButton(onPressed: (){
+                child: GoToButton(onPressed: () async {
+                  player2.stop();
+                  int result = await advancedPlayer.pause();
                   print("HELL YEAH");
                   scoreM.niv2=0;
                   Navigator.push(

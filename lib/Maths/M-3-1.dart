@@ -2,24 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:somthn/Buttons/BarreProgres.dart';
 import 'package:somthn/Maths/BienvenueMath.dart';
-import 'package:somthn/Maths/M-1-2.dart';
 import 'package:somthn/Maths/M-3-2.dart';
 import 'package:somthn/WelcomePages/Settings.dart';
-import 'package:somthn/Bulles/bulleQuest.dart';
-import 'package:somthn/Buttons/button0.dart';
-import 'package:somthn/Buttons/button1.dart';
-import 'package:somthn/Buttons/button2.dart';
-import 'package:somthn/Buttons/button3.dart';
-import 'package:somthn/Buttons/button4.dart';
-import 'package:somthn/Buttons/button5.dart';
-import 'package:somthn/Buttons/button6.dart';
-import 'package:somthn/Buttons/button7.dart';
-import 'package:somthn/Buttons/button8.dart';
-import 'package:somthn/Buttons/button9.dart';
 import 'package:somthn/Buttons/buttonContinuer.dart';
-import 'package:somthn/Buttons/buttonGoTo.dart';
-import 'package:somthn/Buttons/buttonQ.dart';
-import 'package:somthn/Buttons/buttonReset.dart';
 import 'package:somthn/myicons.dart';
 import '../Buttons/settingsButton.dart';
 import '../Buttons/BacksButton.dart';
@@ -27,11 +12,10 @@ import 'package:somthn/Avatars/OrangeAvatarIcon.dart';
 import 'package:somthn/Avatars/PinkAvatarIcon.dart';
 import 'package:somthn/Avatars/PurpleAvatarIcon.dart';
 import 'package:somthn/Avatars/BlueAvatarIcon.dart';
-//import '../WelcomePages/ChooseAvatar.dart';
 import '../Services/Login.dart';
-import '../Services/SignUp.dart';
 import 'M-3.dart';
-import 'NiveauMath.dart';
+import 'package:audioplayers/audio_cache.dart';
+import 'package:audioplayers/audioplayers.dart';
 
 
 class M_3_1 extends StatefulWidget {
@@ -42,6 +26,8 @@ class M_3_1 extends StatefulWidget {
 }
 
 class _M_3_1State extends State<M_3_1> {
+  var player = AudioCache();
+  var player2 = AudioPlayer ();
   bool Visible = true;
   bool correct = false;
   @override
@@ -65,7 +51,9 @@ class _M_3_1State extends State<M_3_1> {
                   top: size.height*0.05,
                   left:size.width*0.75,
                   child:
-                  SettingsButton(onPressed: (){
+                  SettingsButton(onPressed: () async {
+                    player2.stop();
+                   // int result = await advancedPlayer.pause();
                     Navigator.push(
                         context,
                         MaterialPageRoute(builder: (context) => Settings()));
@@ -75,7 +63,9 @@ class _M_3_1State extends State<M_3_1> {
               Positioned(
                   top: size.height*0.05,
                   right:size.width*0.75,
-                  child: BacksButton(onPressed: (){
+                  child: BacksButton(onPressed: () async {
+                    player2.stop();
+                   // int result = await advancedPlayer.pause();
                     Navigator.push(
                         context,
                         MaterialPageRoute(builder: (context) =>Math3()));
@@ -166,7 +156,9 @@ class _M_3_1State extends State<M_3_1> {
                   height: size.width*0.2,
                   width: size.width*0.2,
                   child: IconButton(
-                    onPressed: () {
+                    onPressed: ()  async {
+                      player2.stop();
+                      player2 =  await player.play('audio/mathsBravo.wav');
                       setState(() {
                         Visible = false;
                         correct = true;
@@ -222,7 +214,9 @@ class _M_3_1State extends State<M_3_1> {
                     left: 0.0,
                     height: size.height*0.2,
                     width: size.width*0.5,
-                    child: ButtonContinuer(onPressed: (){
+                    child: ButtonContinuer(onPressed: () async {
+                      player2.stop();
+                      //int result = await advancedPlayer.pause();
                       Navigator.push(
                           context,
                           MaterialPageRoute(builder: (context) => M_3_2()));

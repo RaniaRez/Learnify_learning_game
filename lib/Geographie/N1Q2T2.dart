@@ -7,13 +7,10 @@ import 'package:somthn/Avatars/PinkAvatarIcon.dart';
 import 'package:somthn/Avatars/PurpleAvatarIcon.dart';
 import 'package:somthn/Buttons/BacksButton.dart';
 import 'package:somthn/Geographie/N1Q3.dart';
-
 import 'package:somthn/Buttons/buttonContinuer.dart';
 import 'package:somthn/Buttons/buttonGoTo.dart';
 import 'package:somthn/Buttons/buttonReset.dart';
 import 'package:somthn/Buttons/settingsButton.dart';
-import 'package:somthn/Francais/F-1-5.dart';
-import 'package:somthn/Francais/F-1.dart';
 import 'package:somthn/Geographie/NiveauGeo.dart';
 import 'package:somthn/WelcomePages/Settings.dart';
 import 'package:somthn/myicons.dart';
