@@ -4,7 +4,7 @@ import 'package:somthn/Geographie/N3Q1T2_C_1.dart';
 import 'package:somthn/Geographie/N3Q1T2_C_2.dart';
 import 'package:somthn/Geographie/N3Q1T2_C_3.dart';
 import 'package:somthn/Geographie/N3Q2.dart';
-import 'package:somthn/Geographie/NiveauGeo.dart';
+import 'package:somthn/Geographie/N3.dart';
 import 'package:somthn/WelcomePages/Settings.dart';
 import 'package:somthn/Buttons/buttonContinuer.dart';
 import 'package:somthn/myicons.dart';
@@ -40,6 +40,7 @@ class _N3Q1State extends State<N3Q1> {
   initState() {
     super.initState();
     loadMusic();
+    scoreG.niv3=0 ;
   }
 
   Future loadMusic() async {
@@ -62,7 +63,7 @@ class _N3Q1State extends State<N3Q1> {
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
-    scoreG.niv3=0 ;
+
     return Container(
         height: size.height,
         width: size.width,
@@ -86,7 +87,7 @@ class _N3Q1State extends State<N3Q1> {
                     int result = await advancedPlayer.pause();
                     Navigator.push(
                         context,
-                        MaterialPageRoute(builder: (context) => NiveauGeo()));
+                        MaterialPageRoute(builder: (context) => Geo3()));
                     print("back");
                     //Navigator.pop(context);
                   },)

@@ -179,7 +179,9 @@ class _M_3_1State extends State<M_3_1> {
                   height: size.width*0.2,
                   width: size.width*0.2,
                   child: IconButton(
-                      onPressed: () {
+                      onPressed: () async {
+                        player2.stop();
+                        //int result = await advancedPlayer.pause();
                         setState(() {
                           Visible = false;
                         });
@@ -197,7 +199,9 @@ class _M_3_1State extends State<M_3_1> {
                   height: size.width*0.2,
                   width: size.width*0.2,
                   child: IconButton(
-                      onPressed: () {
+                      onPressed: () async {
+                        player2.stop();
+
                         setState(() {
                           Visible = false;
                         });

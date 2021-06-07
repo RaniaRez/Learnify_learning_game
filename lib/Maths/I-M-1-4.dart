@@ -19,7 +19,8 @@ class I_M_1_4_ extends StatefulWidget {
 }
 
 class _I_M_1_4_State extends State<I_M_1_4_> {
-
+  var player = AudioCache();
+  var player2 = AudioPlayer ();
   AudioPlayer advancedPlayer;
 
 
@@ -139,9 +140,10 @@ class _I_M_1_4_State extends State<I_M_1_4_> {
               Positioned(
                 bottom: size.height*0.05,
                 right: size.width*0.5 ,
-                child: AppliquerButton(onPressed : (){
+                child: AppliquerButton(onPressed : () async {
 
-
+                  player2.stop();
+                  int result = await advancedPlayer.pause();
 
                     Navigator.push(
                         context,

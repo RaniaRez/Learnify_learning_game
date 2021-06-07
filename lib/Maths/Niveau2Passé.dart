@@ -28,24 +28,8 @@ class Niveau2Pass extends StatefulWidget {
 
 class _Niveau2PassState extends State<Niveau2Pass> {
 
-  AudioPlayer advancedPlayer;
-
-  @override
-  initState() {
-    super.initState();
-    loadMusic();
-  }
-
-  Future loadMusic() async {
-
-    advancedPlayer = await AudioCache().play("audio/niveauPasse.wav");
-  }
-
-  @override
-  void dispose() {
-    advancedPlayer = null;
-    super.dispose();
-  }
+  var player = AudioCache();
+  var player2 = AudioPlayer ();
 
   @override
 
@@ -315,7 +299,11 @@ class _Niveau2PassState extends State<Niveau2Pass> {
               left: size.width*0.7 ,
               child: Visibility(
                 visible: ((complet) || (score.niv3 >=0)),
-                child: GoToButton(onPressed: (){
+                child: GoToButton(onPressed: () async {
+                  player2.stop();
+                  // int result = await advancedPlayer.pause();
+                  player2 =  await player.play('audio/niveauPasse.wav');
+                  //int result = await advancedPlayer.pause();
                   print(scoreM.niv2);
                   print('khra');
                   //Firestore.instance.collection('users').document(user.uid).collection('domains').document('maths').updateData({'niv1':scoreM.niv1});

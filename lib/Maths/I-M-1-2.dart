@@ -19,6 +19,27 @@ class I_M_1_2_ extends StatefulWidget {
 }
 
 class _I_M_1_2_State extends State<I_M_1_2_> {
+  var player = AudioCache();
+  var player2 = AudioPlayer ();
+  AudioPlayer advancedPlayer;
+
+
+  @override
+  initState() {
+    super.initState();
+    loadMusic();
+  }
+
+  Future loadMusic() async {
+
+    advancedPlayer = await AudioCache().play("audio/mathsObserve.wav");
+  }
+
+  @override
+  void dispose() {
+    advancedPlayer = null;
+    super.dispose();
+  }
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
@@ -117,8 +138,9 @@ class _I_M_1_2_State extends State<I_M_1_2_> {
               Positioned(
                 bottom: size.height*0.05,
                 right: size.width*0.5 ,
-                child: AppliquerButton(onPressed : (){
-
+                child: AppliquerButton(onPressed : () async {
+                  player2.stop();
+                  int result = await advancedPlayer.pause();
                     Navigator.push(
                         context,
                         MaterialPageRoute(builder: (context) => M_1_2_3rd_1()));

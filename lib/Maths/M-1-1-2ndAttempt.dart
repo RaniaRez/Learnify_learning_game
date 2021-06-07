@@ -141,15 +141,18 @@ class _M_1_1_2ndState extends State<M_1_1_2nd> {
                   left: size.width*0.75,
                   child: GoToButton(onPressed: () async {
                     int result = await advancedPlayer.pause();
+                    player2 =  await player.play('audio/mathsBravo.wav');
+
                     setState(()   {
                       if(!all){
 
                       }else if ((zeroU) && (nineD)){
-                        player2.stop();
+                       // player2.stop();
                         Visible = false;
                         print('Correct');
                         scoreM.niv1=scoreM.niv1+1;
                       }else{
+                        player2.stop();
                         Navigator.push(
                             context,
                             MaterialPageRoute(builder: (context) => I_M_1_1_())

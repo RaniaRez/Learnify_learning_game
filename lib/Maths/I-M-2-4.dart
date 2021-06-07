@@ -14,13 +14,13 @@ import 'package:audioplayers/audioplayers.dart';
 
 class I_M_2_4_ extends StatefulWidget {
   const I_M_2_4_({Key key}) : super(key: key);
-
   @override
   _I_M_2_4_State createState() => _I_M_2_4_State();
 }
 
 class _I_M_2_4_State extends State<I_M_2_4_> {
-
+  var player = AudioCache();
+  var player2 = AudioPlayer ();
   AudioPlayer advancedPlayer;
 
 
@@ -142,7 +142,9 @@ class _I_M_2_4_State extends State<I_M_2_4_> {
               Positioned(
                 bottom: size.height*0.05,
                 right: size.width*0.5 ,
-                child: AppliquerButton(onPressed : (){
+                child: AppliquerButton(onPressed : () async {
+                  player2.stop();
+                  int result = await advancedPlayer.pause();
                   print('appliquer');
 
 

@@ -20,7 +20,7 @@ import 'package:audioplayers/audioplayers.dart';
 import 'package:somthn/Bulles/BulleN1Q4.dart';
 
 import 'BienvenueGeo.dart';
-import 'NiveauGeo.dart';
+import 'N1.dart';
 
 
 
@@ -87,7 +87,7 @@ class _N1Q4State extends State<N1Q4> {
                     print("u clicked me");
                     Navigator.push(
                         context,
-                        MaterialPageRoute(builder: (context) => NiveauGeo()));
+                        MaterialPageRoute(builder: (context) => Geo1()));
                   },)
               ),
 

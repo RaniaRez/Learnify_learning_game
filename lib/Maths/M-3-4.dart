@@ -149,6 +149,8 @@ class _M_3_4State extends State<M_3_4> {
                   left: size.width*0.75,
                   child: GoToButton(onPressed: () async {
                     player2.stop();
+                    int result = await advancedPlayer.pause();
+                    player2 =  await player.play('audio/mathsBravo.wav');
                     setState(() {
                       if ((zeroU) && (zeroD)){
                         Visible = false;
@@ -157,6 +159,7 @@ class _M_3_4State extends State<M_3_4> {
                         scoreM.niv3+=2;
                         print(scoreM.niv3);
                       }else{
+                        player2.stop();
                         Visible=false;
                         print('Wrong');
                       }

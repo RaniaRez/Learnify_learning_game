@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:somthn/Maths/I-M-1-5.dart';
-import 'package:somthn/Maths/M-2.dart';
 import 'package:somthn/WelcomePages/Settings.dart';
-import 'package:somthn/Bulles/bulleQuest.dart';
 import 'package:somthn/Buttons/button0.dart';
 import 'package:somthn/Buttons/button1.dart';
 import 'package:somthn/Buttons/button2.dart';
@@ -148,7 +146,8 @@ class _M_1_5_2ndState extends State<M_1_5_2nd> {
                   left: size.width*0.75,
                   child: GoToButton(onPressed: () async {
                     player2.stop();
-                  int result = await advancedPlayer.pause();
+                    int result = await advancedPlayer.pause();
+                    player2 =  await player.play('audio/mathsBravo.wav');
                     setState(()  {
 
                       if(!all){
@@ -159,6 +158,7 @@ class _M_1_5_2ndState extends State<M_1_5_2nd> {
                         scoreM.niv1=scoreM.niv1+1;
                         print(scoreM.niv1);
                       }else{
+                        player2.stop();
                         Navigator.push(
                             context,
                             MaterialPageRoute(builder: (context) => I_M_1_5_()));
@@ -624,9 +624,9 @@ class _M_1_5_2ndState extends State<M_1_5_2nd> {
                       if (scoreM.niv1>hs.niv1)
                       { hs.niv1=scoreM.niv1;
                       Firestore.instance.collection('users').document(user.uid).collection('domains').document('maths').updateData({'high1':scoreM.niv1});}
-                        Navigator.push(
-                            context,
-                            MaterialPageRoute(builder: (context) => Niveau1Pass()));
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => Niveau1Pass()));
                     },)
                 ),
               ),

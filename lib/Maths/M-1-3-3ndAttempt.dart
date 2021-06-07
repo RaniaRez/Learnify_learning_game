@@ -130,7 +130,9 @@ class _M_1_3_3rdState extends State<M_1_3_3rd> {
                   left: size.width*0.75,
                   child: GoToButton(onPressed: () async {
                     player2.stop();
-                  // int result = await advancedPlayer.pause();
+                    player2 =  await player.play('audio/mathsBravo.wav');
+
+                    // int result = await advancedPlayer.pause();
                     setState(()  {
 
                       if(!all){
@@ -140,6 +142,8 @@ class _M_1_3_3rdState extends State<M_1_3_3rd> {
                         correct=true;
                         print('Correct');
                       }else{
+                        player2.stop();
+
                         Visible=false;
                         Navigator.push(
                             context,

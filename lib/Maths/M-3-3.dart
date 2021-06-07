@@ -302,6 +302,7 @@ class _M_3_3State extends State<M_3_3> {
                   child: IconButton(
                     onPressed: () async {
                       player2.stop();
+                      int result = await advancedPlayer.pause();
                       setState(() {
                         //int result = await advancedPlayer.pause();
                         Visible = false;
@@ -322,11 +323,10 @@ class _M_3_3State extends State<M_3_3> {
 
                   child: IconButton(
                     onPressed: ()  async  {
+                      player2.stop();
+                      int result = await advancedPlayer.pause();
                       player2 =  await player.play('audio/mathsBravo.wav');
                       setState(()   {
-                        player2.stop();
-
-                        //int result = await advancedPlayer.pause();
                         Visible = false;
                         correct = true;
                       });
@@ -349,6 +349,7 @@ class _M_3_3State extends State<M_3_3> {
                   child: IconButton(
                     onPressed: () async {
                       player2.stop();
+                      int result = await advancedPlayer.pause();
                       setState(() {
 
                         //int result = await advancedPlayer.pause();

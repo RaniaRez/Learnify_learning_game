@@ -17,7 +17,7 @@ import 'package:somthn/Bulles/BulleN1Q4T2.dart';
 import 'package:audioplayers/audio_cache.dart';
 import 'package:audioplayers/audioplayers.dart';
 import 'BienvenueGeo.dart';
-import 'NiveauGeo.dart';
+import 'N1.dart';
 
 class N1Q4T2_C2 extends StatefulWidget {
   const N1Q4T2_C2({Key key}) : super(key: key);
@@ -82,7 +82,7 @@ class _N1Q4T2_C2State extends State<N1Q4T2_C2> {
                     print("u clicked me");
                     Navigator.push(
                         context,
-                        MaterialPageRoute(builder: (context) => NiveauGeo()));
+                        MaterialPageRoute(builder: (context) => Geo1()));
                   },)
               ),
 

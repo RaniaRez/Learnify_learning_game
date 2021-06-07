@@ -16,9 +16,11 @@ import 'package:somthn/Geographie/N1Q2.dart';
 import 'package:somthn/WelcomePages/Settings.dart';
 import 'package:somthn/myicons.dart';
 import '../Services/Login.dart';
-import 'BienvenueGeo.dart';
+import 'N1.dart';
 import 'package:audioplayers/audio_cache.dart';
 import 'package:audioplayers/audioplayers.dart';
+
+import 'BienvenueGeo.dart';
 
 class N1Q1 extends StatefulWidget {
   const N1Q1({Key key}) : super(key: key);
@@ -37,6 +39,7 @@ class _N1Q1State extends State<N1Q1> {
   initState() {
     super.initState();
     loadMusic();
+    scoreG.niv1=0;
   }
 
   Future loadMusic() async {
@@ -71,7 +74,7 @@ class _N1Q1State extends State<N1Q1> {
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
-    scoreG.niv1=0;
+
     return Scaffold(
       body: Container(
         height: size.height,
@@ -104,14 +107,14 @@ class _N1Q1State extends State<N1Q1> {
                     int result = await advancedPlayer.pause();
                     Navigator.push(
                         context,
-                        MaterialPageRoute(builder: (context) => NiveauGeo()));
+                        MaterialPageRoute(builder: (context) => Geo1()));
                   },)
               ),
               Positioned(
                   bottom: size.height*0.88,
                   left: size.width*0.275,
                   right: size.width*0.275,
-                  child: SvgPicture.asset(ThreeBars)),
+                  child: SvgPicture.asset(barreProgress)),
 
               Visibility(
                 visible: !Visible,
@@ -119,7 +122,7 @@ class _N1Q1State extends State<N1Q1> {
                   bottom: size.height*0.88,
                   left: size.width*0.275,
                   right: size.width*0.275,
-                  child: SvgPicture.asset(FourBars),
+                  child: SvgPicture.asset(TwoBars),
                 ),
               ),
               Positioned(
@@ -205,7 +208,6 @@ class _N1Q1State extends State<N1Q1> {
                     child: ButtonContinuer(onPressed: () async {
                       player2.stop();
                       int result = await advancedPlayer.pause();
-                      scoreG.niv1+=2;
                       Navigator.push(
                           context,
                           MaterialPageRoute(builder: (context) => N1Q2()));},)

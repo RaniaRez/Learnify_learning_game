@@ -592,7 +592,7 @@ class _M_3_5State extends State<M_3_5> {
                         onPressed: () async {
                           if (twoClicked)  {
                             player2.stop();
-                            //int result = await advancedPlayer.pause();
+                            int result = await advancedPlayer.pause();
                             setState(() {
                               Visible = false;
                               correct=false;
@@ -616,7 +616,7 @@ class _M_3_5State extends State<M_3_5> {
                         onPressed: () async {
                           if (fourClicked)  {
                             player2.stop();
-                            //int result = await advancedPlayer.pause();
+                            int result = await advancedPlayer.pause();
                             setState(() {
                               Visible = false;
                               correct=false;
@@ -640,7 +640,7 @@ class _M_3_5State extends State<M_3_5> {
                           if (oneClicked){
                             player2.stop();
                             player2 =  await player.play('audio/mathsBravo.wav');
-                            //int result = await advancedPlayer.pause();
+                            int result = await advancedPlayer.pause();
                             setState(() {
                               Visible = false;
                               correct = true;
@@ -665,6 +665,7 @@ class _M_3_5State extends State<M_3_5> {
                         onPressed: () async {
                           if (threeClicked)  {
                             player2.stop();
+                            int result = await advancedPlayer.pause();
                             //int result = await advancedPlayer.pause();
                             setState(() {
                               Visible = false;
@@ -688,6 +689,7 @@ class _M_3_5State extends State<M_3_5> {
                     child: ButtonContinuer(onPressed: () async {
                       player2.stop();
                       int result = await advancedPlayer.pause();
+
                       Firestore.instance.collection('users').document(user.uid).collection('domains').document('maths').updateData({'niv3':scoreM.niv3});
                       if (scoreM.niv3>hs.niv3)
                       { hs.niv3=scoreM.niv3 ;

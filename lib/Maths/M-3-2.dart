@@ -250,7 +250,9 @@ class _M_3_2State extends State<M_3_2> {
                 child: Visibility(
                   visible: oneClicked&&Visible,
                     child: IconButton(
-                      onPressed: (){
+                      onPressed: () async {
+                        player2.stop();
+                        int result = await advancedPlayer.pause();
                         setState(() {
                           Visible = false;
                         });
@@ -268,7 +270,9 @@ class _M_3_2State extends State<M_3_2> {
                 child: Visibility(
                   visible: threeClicked&&Visible,
                   child: IconButton(
-                    onPressed: (){
+                    onPressed: () async {
+                      player2.stop();
+                      int result = await advancedPlayer.pause();
                       setState(() {
                         Visible = false;
                       });
@@ -289,6 +293,8 @@ class _M_3_2State extends State<M_3_2> {
                   child: IconButton(
                     onPressed: () async {
                       player2.stop();
+                      int result = await advancedPlayer.pause();
+
                       player2 =  await player.play('audio/mathsBravo.wav');
                       setState(() {
                         Visible = false;

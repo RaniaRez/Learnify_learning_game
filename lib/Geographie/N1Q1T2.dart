@@ -12,7 +12,7 @@ import 'package:somthn/Buttons/buttonReset.dart';
 import 'package:somthn/Buttons/settingsButton.dart';
 import 'package:somthn/Francais/F-1-5.dart';
 import 'package:somthn/Francais/F-1.dart';
-import 'package:somthn/Geographie/NiveauGeo.dart';
+import 'package:somthn/Geographie/N1.dart';
 import 'package:somthn/Geographie/N1Q2.dart';
 
 import 'package:somthn/WelcomePages/Settings.dart';
@@ -107,14 +107,14 @@ class _N1Q1T2State extends State<N1Q1T2> {
                     int result = await advancedPlayer.pause();
                     Navigator.push(
                         context,
-                        MaterialPageRoute(builder: (context) => NiveauGeo()));
+                        MaterialPageRoute(builder: (context) => Geo1()));
                   },)
               ),
               Positioned(
                   bottom: size.height*0.88,
                   left: size.width*0.275,
                   right: size.width*0.275,
-                  child: SvgPicture.asset(ThreeBars)),
+                  child: SvgPicture.asset(barreProgress)),
 
               Visibility(
                 visible: !Visible,
@@ -122,7 +122,7 @@ class _N1Q1T2State extends State<N1Q1T2> {
                   bottom: size.height*0.88,
                   left: size.width*0.275,
                   right: size.width*0.275,
-                  child: SvgPicture.asset(FourBars),
+                  child: SvgPicture.asset(TwoBars),
                 ),
               ),
 

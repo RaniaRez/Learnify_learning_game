@@ -131,6 +131,8 @@ class _M_1_5State extends State<M_1_5> {
                   child: GoToButton(onPressed: () async {
                     player2.stop();
                    //int result = await advancedPlayer.pause();
+                    player2 =  await player.play('audio/mathsBravo.wav');
+
                     setState(()  {
 
                       if(!all){
@@ -144,6 +146,7 @@ class _M_1_5State extends State<M_1_5> {
                        // print('khra');
                         //Firestore.instance.collection('users').document(user.uid).collection('domains').document('maths').updateData({'niv1':scoreM.niv1});
                       }else{
+                        player2.stop();
                         Navigator.push(
                             context,
                             MaterialPageRoute(builder: (context) => M_1_5_2nd()));
