@@ -488,6 +488,7 @@ class _M_2_3_3rd_State extends State<M_2_3_3rd_> {
                           if (twoClicked)  {
                             player2.stop();
                            // int result = await advancedPlayer.pause();
+                            player2 =  await player.play('audio/losing.wav');
                             setState(() {
                               Visible = false;
                               correct=false;
@@ -512,6 +513,7 @@ class _M_2_3_3rd_State extends State<M_2_3_3rd_> {
                           if (fourClicked)  {
                             player2.stop();
                             //int result = await advancedPlayer.pause();
+                            player2 =  await player.play('audio/losing.wav');
                             setState(() {
                               Visible = false;
                               correct=false;
@@ -560,6 +562,7 @@ class _M_2_3_3rd_State extends State<M_2_3_3rd_> {
                           if (threeClicked)  {
                             player2.stop();
                             //int result = await advancedPlayer.pause();
+                            player2 =  await player.play('audio/losing.wav');
                             setState(() {
                               Visible = false;
                               print('Wrong');

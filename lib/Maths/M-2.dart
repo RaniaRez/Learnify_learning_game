@@ -69,7 +69,9 @@ class _Math2State extends State<Math2> {
                   top: size.height*0.05,
                   right:size.width*0.75,
 
-                  child: BacksButton(onPressed: (){
+                  child: BacksButton(onPressed: ()async {
+                    player2.stop();
+                    int result = await advancedPlayer.pause();
                     print("u clicked me");
                     Navigator.push(
                         context,
@@ -80,7 +82,9 @@ class _Math2State extends State<Math2> {
               Positioned(
                   top:size.height*0.05,
                   left:size.width*0.75,
-                  child: SettingsButton(onPressed: (){
+                  child: SettingsButton(onPressed: ()async {
+                    player2.stop();
+                    int result = await advancedPlayer.pause();
                     Navigator.push(
                         context,
                         MaterialPageRoute(builder: (context) => Settings()));

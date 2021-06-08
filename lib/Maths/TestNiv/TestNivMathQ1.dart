@@ -34,6 +34,8 @@ import '../../Services/Login.dart';
 import '../../Services/SignUp.dart';
 import '../BienvenueMath.dart';
 import 'TestMaths.dart';
+import 'package:audioplayers/audio_cache.dart';
+import 'package:audioplayers/audioplayers.dart';
 
 TestMaths test =new  TestMaths();
 
@@ -45,6 +47,8 @@ class TestNivM1 extends StatefulWidget {
 }
 
 class _TestNivM1State extends State<TestNivM1> {
+  var player = AudioCache();
+  var player2 = AudioPlayer ();
   bool oneD = false;
   bool oneU = false;
   bool twoD = false;
@@ -111,7 +115,7 @@ class _TestNivM1State extends State<TestNivM1> {
                 child: Positioned(
                   top: size.height*0.6,
                   left: size.width*0.75,
-                  child: GoToButton(onPressed: (){
+                  child: GoToButton(onPressed: ()async {
                     setState(() {
                       if(!all){
 
@@ -125,6 +129,8 @@ class _TestNivM1State extends State<TestNivM1> {
                         print('Wrong');
                       }
                     });
+                    if (correct) {player2 =  await player.play('audio/winning.wav');}
+                    else { player2 =  await player.play('audio/losing.wav');}
                     print("HELL YEAH");
 
                   },),

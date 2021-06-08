@@ -151,7 +151,7 @@ class _M_1_1_2ndState extends State<M_1_1_2nd> {
                         Visible = false;
                         print('Correct');
                         scoreM.niv1=scoreM.niv1+1;
-                      }else{
+                      }else {
                         player2.stop();
                         Navigator.push(
                             context,

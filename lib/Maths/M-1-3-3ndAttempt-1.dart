@@ -145,12 +145,10 @@ class _M_1_3_3rd_1State extends State<M_1_3_3rd_1> {
                       }else{
                         player2.stop();
                         Visible=false;
-                        Navigator.push(
-                            context,
-                            MaterialPageRoute(builder: (context) => M_1_4()));
                         print('Wrong');
                       }
                     });
+                    if (!correct) {player2 =  await player.play('audio/losing.wav');}
                     print("HELL YEAH");
 
                   },),

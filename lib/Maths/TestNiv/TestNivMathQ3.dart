@@ -38,6 +38,8 @@ import '../BienvenueMath.dart';
 import 'TestMaths.dart';
 import 'TestNivMathQ1.dart';
 import 'SetNiveaux.dart';
+import 'package:audioplayers/audio_cache.dart';
+import 'package:audioplayers/audioplayers.dart';
 
 class TestNivM3 extends StatefulWidget {
   const TestNivM3({Key key}) : super(key: key);
@@ -47,6 +49,8 @@ class TestNivM3 extends StatefulWidget {
 }
 
 class _TestNivM3State extends State<TestNivM3> {
+  var player = AudioCache();
+  var player2 = AudioPlayer ();
   bool oneD = false;
   bool oneU = false;
   bool twoD = false;
@@ -113,7 +117,7 @@ class _TestNivM3State extends State<TestNivM3> {
                 child: Positioned(
                   top: size.height*0.6,
                   left: size.width*0.75,
-                  child: GoToButton(onPressed: (){
+                  child: GoToButton(onPressed: () async {
                     setState(() {
                       if(!all){
 
@@ -128,6 +132,8 @@ class _TestNivM3State extends State<TestNivM3> {
                         print('Wrong');
                       }
                     });
+                    if (correct) {player2 =  await player.play('audio/winning.wav');}
+                    else { player2 =  await player.play('audio/losing.wav');}
                     print("HELL YEAH");
 
                   },),

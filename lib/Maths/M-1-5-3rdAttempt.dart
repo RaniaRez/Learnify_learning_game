@@ -156,6 +156,7 @@ class _M_1_5_3rdState extends State<M_1_5_3rd> {
                         print('Wrong');
                       }
                     });
+                    if (!correct) {player2 =  await player.play('audio/losing.wav');}
                     print("HELL YEAH");
 
                   },),
