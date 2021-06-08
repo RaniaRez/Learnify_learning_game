@@ -26,6 +26,9 @@ import 'package:somthn/Francais/ScoreFr.dart';
 import 'package:somthn/Geographie/ScoreGeo.dart';
 
 
+
+
+
 ScoreGeo scorG;
 ScoreFr scorF ;
 HighestScore highG , highF;
