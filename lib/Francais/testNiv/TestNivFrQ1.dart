@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:somthn/Francais/testNiv/BienvenueTest.dart';
+import 'package:somthn/Francais/testNiv/boxDialogTestFr.dart';
 import 'package:somthn/WelcomePages/Settings.dart';
 import 'package:somthn/Buttons/buttonContinuer.dart';
 import 'package:somthn/myicons.dart';
@@ -61,9 +62,11 @@ class _TestNivFr1State extends State<TestNivFr1> {
                   top: size.height*0.05,
                   right:size.width*0.75,
                   child: BacksButton(onPressed: (){
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(builder: (context) => TestNiveau()));
+                    showDialog(context: context,
+                        builder: (BuildContext context){
+                          return customDialogTest();
+                        }
+                    );
                   },)
               ),
               if (user.avatar=="Pink")
