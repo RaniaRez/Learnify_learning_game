@@ -1,32 +1,14 @@
-import 'dart:ui';
-import 'constants.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:somthn/Francais/F-1.dart';
+class customDialog1 extends StatelessWidget {
+  const customDialog1({Key key}) : super(key: key);
 
-class CustomDialogBox extends StatefulWidget {
-
-  bool validate;
-  setTrue() {
-    this.validate = true;
-  }
-  setFalse() {
-    this.validate = false;
-  }
-  @override
-  _CustomDialogBoxState createState() => _CustomDialogBoxState();
-}
-
-class _CustomDialogBoxState extends State<CustomDialogBox> {
   @override
   Widget build(BuildContext context) {
-    Size size = MediaQuery
-        .of(context)
-        .size;
+    Size size = MediaQuery.of(context).size;
     return Dialog(
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(Constants.padding),
-      ),
       elevation: 0,
       backgroundColor: Colors.transparent,
       child: Stack(
@@ -44,15 +26,18 @@ class _CustomDialogBoxState extends State<CustomDialogBox> {
                   child: SizedBox(
                     height: size.height * 0.15,
                     width: size.height * 0.3,
-                    child: Text(
-                      'DUMP SHIT LOSING ALL YOUR PROGRESS',
-                      style: TextStyle(
-                        fontSize: 26,
-                        fontFamily: 'Skranji-Bold',
-                        fontWeight: FontWeight.bold,
-                        color: Color(0xff693821),
+                    child: FittedBox(
+                      fit: BoxFit.fitWidth,
+                      child: Text(
+                        'DUMP SHIT LOSING \nALL YOUR PROGRESS',
+                        style: TextStyle(
+                          fontSize: 26,
+                          fontFamily: 'Skranji-Bold',
+                          fontWeight: FontWeight.bold,
+                          color: Color(0xff693821),
+                        ),
+                        textAlign: TextAlign.center,
                       ),
-                      textAlign: TextAlign.center,
                     ),
                   ),
                 )
@@ -66,7 +51,9 @@ class _CustomDialogBoxState extends State<CustomDialogBox> {
                 child: IconButton(
                   icon: SvgPicture.asset('assets/icons/oui.svg'),
                   onPressed: () {
-
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => Fr1()));
                   },),
               ),
             ),
@@ -77,6 +64,9 @@ class _CustomDialogBoxState extends State<CustomDialogBox> {
                 height: size.height * 0.1,
                 width: size.width * 0.3,
                 child: IconButton(
+                    onPressed: () {
+                      Navigator.pop(context);
+                    },
                     icon: SvgPicture.asset('assets/icons/non.svg')),
               ),
             ),
@@ -87,3 +77,4 @@ class _CustomDialogBoxState extends State<CustomDialogBox> {
     );
   }
 }
+

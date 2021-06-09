@@ -3,12 +3,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:somthn/Buttons/BarreProgres.dart';
 import 'package:somthn/Francais/F-1-2.dart';
-import 'package:somthn/Francais/F-1.dart';
 import 'package:somthn/Francais/I-F-1-1.dart';
-import 'package:somthn/Mutual/boxDialog.dart';
+import 'package:somthn/Francais/boxDialog1.dart';
 import 'package:somthn/WelcomePages/Settings.dart';
 import 'package:somthn/Buttons/buttonContinuer.dart';
-import 'package:somthn/WelcomePages/custom_dialog_box.dart';
 import 'package:somthn/myicons.dart';
 import '../Buttons/settingsButton.dart';
 import '../Buttons/BacksButton.dart';
@@ -33,7 +31,7 @@ class _F_1_1State extends State<F_1_1> {
   var player = AudioCache();
   var player2 = AudioPlayer ();
   bool Visible = true;
-  bool valid;
+  bool valid=false;
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
@@ -69,18 +67,11 @@ class _F_1_1State extends State<F_1_1> {
                   child: BacksButton(onPressed: (){
                    showDialog(context: context,
                         builder: (BuildContext context){
-                          return customDialog(context, valid);
+                          return customDialog1();
                         }
                     );
-                    if (valid ){
-                      print('gg');
-                    }else{
-                      print('fucked');
-                    }
                     player2.stop();
-                   // Navigator.push(
-                       // context,
-                      //  MaterialPageRoute(builder: (context) => Fr1()));
+
                   },)
               ),
               Positioned(

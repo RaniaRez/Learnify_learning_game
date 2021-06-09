@@ -5,7 +5,6 @@ import 'package:somthn/Buttons/buttonInfo.dart';
 import 'package:somthn/Buttons/buttonMusic.dart';
 import 'package:somthn/Buttons/buttonSound.dart';
 import 'package:somthn/Buttons/buttonUserSettings.dart';
-import 'package:somthn/WelcomePages/custom_dialog_box.dart';
 import 'package:somthn/modification/Userinfo.dart';
 import '../Buttons/BacksButton.dart';
 import '../Buttons/butttonExit.dart';
@@ -55,14 +54,6 @@ class _SettingsState extends State<Settings> {
                   top: size.height*0.4,
                   right:size.width*0.6,
                   child:SoundButton(onPressed:(){
-                    showDialog(context: context,
-                        builder: (BuildContext context){
-                          return CustomDialogBox(
-
-                          );
-                        }
-                    );
-
                   },)
               ),
               Positioned(
