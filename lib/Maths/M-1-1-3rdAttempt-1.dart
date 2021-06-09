@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:somthn/Buttons/BarreProgres.dart';
 import 'package:somthn/Maths/M-1-2.dart';
+import 'package:somthn/Maths/boxDialogMath1.dart';
 import 'package:somthn/WelcomePages/Settings.dart';
 import 'package:somthn/Bulles/bulleQuest.dart';
 import 'package:somthn/Buttons/button0.dart';
@@ -29,6 +30,8 @@ import 'package:somthn/Avatars/BlueAvatarIcon.dart';
 import '../Services/Login.dart';
 import '../Services/SignUp.dart';
 import 'M-1.dart';
+import 'package:audioplayers/audio_cache.dart';
+import 'package:audioplayers/audioplayers.dart';
 
 class M_1_1_3rd_1 extends StatefulWidget {
   const M_1_1_3rd_1({Key key}) : super(key: key);
@@ -38,6 +41,9 @@ class M_1_1_3rd_1 extends StatefulWidget {
 }
 
 class _M_1_1_3rd_1State extends State<M_1_1_3rd_1> {
+  var player = AudioCache();
+  var player2 = AudioPlayer ();
+
   bool oneD = false;
   bool oneU = false;
   bool twoD = false;
@@ -83,7 +89,9 @@ class _M_1_1_3rd_1State extends State<M_1_1_3rd_1> {
                   top: size.height*0.05,
                   left:size.width*0.75,
                   child:
-                  SettingsButton(onPressed: (){
+                  SettingsButton(onPressed: () async {
+                    player2.stop();
+                   // int result = await advancedPlayer.pause();
                     Navigator.push(
                         context,
                         MaterialPageRoute(builder: (context) => Settings()));
@@ -93,10 +101,14 @@ class _M_1_1_3rd_1State extends State<M_1_1_3rd_1> {
               Positioned(
                   top: size.height*0.05,
                   right:size.width*0.75,
-                  child: BacksButton(onPressed: (){
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(builder: (context) => Math1() ));
+                  child: BacksButton(onPressed: () async {
+                    player2.stop();
+                   // int result = await advancedPlayer.pause();
+                    showDialog(context: context,
+                        builder: (BuildContext context){
+                          return customDialogMath1();
+                        }
+                    );
                   },)
               ),
 
@@ -120,8 +132,13 @@ class _M_1_1_3rd_1State extends State<M_1_1_3rd_1> {
                 child: Positioned(
                   top: size.height*0.6,
                   left: size.width*0.75,
-                  child: GoToButton(onPressed: (){
-                    setState(() {
+                  child: GoToButton(onPressed: () async {
+                    player2.stop();
+                    //int result = await advancedPlayer.pause();
+                    player2 =  await player.play('audio/mathsBravo.wav');
+
+
+                    setState(()  {
                       if(!all){
 
                       }else if ((zeroU) && (sevenD)){
@@ -129,10 +146,13 @@ class _M_1_1_3rd_1State extends State<M_1_1_3rd_1> {
                         correct = true;
                         print('Correct');
                       }else{
+                        player2.stop();
+
                         Visible = false;
                         print('Wrong');
                       }
                     });
+                    if (!correct) {player2 =  await player.play('audio/losing.wav');}
                     print("HELL YEAH");
 
                   },),
@@ -587,7 +607,9 @@ class _M_1_1_3rd_1State extends State<M_1_1_3rd_1> {
                     left: 0.0,
                     height: size.height*0.2,
                     width: size.width*0.5,
-                    child: ButtonContinuer(onPressed: (){
+                    child: ButtonContinuer(onPressed: () async {
+                      player2.stop();
+                      //int result = await advancedPlayer.pause();
                       Navigator.push(
                           context,
                           MaterialPageRoute(builder: (context) => M_1_2()));

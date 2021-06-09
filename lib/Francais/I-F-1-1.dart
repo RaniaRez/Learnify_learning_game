@@ -4,6 +4,8 @@ import 'package:somthn/Avatars/OrangeAvatarIcon.dart';
 import 'package:somthn/Francais/F-1-1-2nd.dart';
 import 'package:somthn/Francais/F-1.dart';
 import 'package:somthn/Francais/F-3.dart';
+import 'package:somthn/Francais/boxDialog1.dart';
+import 'package:somthn/Francais/boxDialog3.dart';
 import 'package:somthn/WelcomePages/Settings.dart';
 import '../Buttons/buttonReessayer.dart';
 import '../Buttons/settingsButton.dart';
@@ -52,9 +54,11 @@ class _I_F_1_1State extends State<I_F_1_1> {
                   top: size.height*0.05,
                   right:size.width*0.75,
                   child: BacksButton(onPressed: (){
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(builder: (context) => Fr3()));
+                    showDialog(context: context,
+                        builder: (BuildContext context){
+                          return customDialog1();
+                        }
+                    );
                   },)
               ),
 

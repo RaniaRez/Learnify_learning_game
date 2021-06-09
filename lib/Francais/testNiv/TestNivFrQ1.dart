@@ -1,7 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:somthn/Francais/F-1.dart';
 import 'package:somthn/Francais/testNiv/BienvenueTest.dart';
 import 'package:somthn/WelcomePages/Settings.dart';
 import 'package:somthn/Buttons/buttonContinuer.dart';
@@ -15,9 +14,6 @@ import 'package:somthn/Avatars/BlueAvatarIcon.dart';
 import '../../Services/Login.dart';
 import 'package:somthn/Francais/testNiv/TestNivFrQ2.dart';
 import 'TestFr.dart';
-import '../BienvenueFr.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
-import 'SetNiveaux.dart';
 
 
 TestFr test =new  TestFr();

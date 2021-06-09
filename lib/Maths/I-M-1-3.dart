@@ -3,6 +3,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'dart:math';
 import 'package:somthn/Maths/M-1-3-3ndAttempt-1.dart';
 import 'package:somthn/Maths/M-1-3-3ndAttempt.dart';
+import 'package:somthn/Maths/boxDialogMath1.dart';
 import 'package:somthn/WelcomePages/Settings.dart';
 import 'package:somthn/myicons.dart';
 import '../Buttons/settingsButton.dart';
@@ -22,7 +23,8 @@ class I_M_1_3_ extends StatefulWidget {
 }
 
 class _I_M_1_3_State extends State<I_M_1_3_> {
-
+  var player = AudioCache();
+  var player2 = AudioPlayer ();
   AudioPlayer advancedPlayer;
 
 
@@ -75,9 +77,12 @@ class _I_M_1_3_State extends State<I_M_1_3_> {
                   top: size.height*0.05,
                   right:size.width*0.75,
                   child: BacksButton(onPressed: (){
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(builder: (context) => Math1() ));
+                    showDialog(context: context,
+                        builder: (BuildContext context){
+                          return customDialogMath1();
+                        }
+                    );
+
                   },)
               ),
               Positioned(
@@ -141,7 +146,9 @@ class _I_M_1_3_State extends State<I_M_1_3_> {
               Positioned(
                 bottom: size.height*0.05,
                 right: size.width*0.5 ,
-                child: AppliquerButton(onPressed : (){
+                child: AppliquerButton(onPressed : () async {
+                  player2.stop();
+                  int result = await advancedPlayer.pause();
                   final _random = new Random();
                   int rnd = 0 + _random.nextInt(1);
                   if(rnd==0){

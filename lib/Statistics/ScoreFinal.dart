@@ -23,6 +23,8 @@ class _FinalScoreState extends State<FinalScore> {
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
+    int score=scorM.somme()+scorF.somme() +scorG.somme() ;
+    int high=highM.somme()+highF.somme() +highG.somme() ;
     return Container(
       height: size.height,
       width: size.width,
@@ -113,11 +115,11 @@ class _FinalScoreState extends State<FinalScore> {
                 ),
 
               Positioned(
-                height: size.width*0.5,
-                width: size.width*0.5,
-                left: size.width*0.25,
-                top:size.height*0.2,
-                child:SvgPicture.asset('assets/icons/bulleMath.svg'),
+                height: size.width*0.6,
+                width: size.width*0.6,
+                left: size.width*0.2,
+                top:size.height*0.15,
+                child:SvgPicture.asset('assets/icons/ScoreTotal.svg'),
               ),
               Positioned(
                 height: size.width*0.8,
@@ -137,14 +139,19 @@ class _FinalScoreState extends State<FinalScore> {
                     child:SvgPicture.asset('assets/icons/ButtonQ.svg'),
                   ),
                   Positioned(
-                      left: size.width*0.43,
+                      left: size.width*0.45,
                       top:size.height*0.62,
-                      child:Text(
-                        total.high.toString() ,
-                        style: TextStyle(
-                          fontSize: 30,
-                          fontFamily: 'Skranji-Bold',
-                          color: Colors.brown[700],
+                      child: FittedBox(
+                        fit: BoxFit.fitWidth,
+
+                        child: Text(
+                          high.toString() ,
+                          style: TextStyle(
+                            fontSize: 30,
+                            fontFamily: 'Skranji-Bold',
+                             color: Color(0xff693821),
+
+                          ),
                         ),
                       )
                   ) ,
@@ -161,14 +168,17 @@ class _FinalScoreState extends State<FinalScore> {
                     child:SvgPicture.asset('assets/icons/ButtonQ.svg'),
                   ),
                   Positioned(
-                      left: size.width*0.43,
+                      left: size.width*0.45,
                       top:size.height*0.8,
-                      child:Text(
-                        total.score.toString(),
-                        style: TextStyle(
-                          fontSize: 30,
-                          fontFamily: 'Skranji-Bold',
-                          color: Colors.brown[700],
+                      child: FittedBox(
+                        fit: BoxFit.fitWidth,
+                        child: Text(
+                          score.toString(),
+                          style: TextStyle(
+                            fontSize: 30,
+                            fontFamily: 'Skranji-Bold',
+                            color: Color(0xff693821),
+                          ),
                         ),
                       )
                   ) ,

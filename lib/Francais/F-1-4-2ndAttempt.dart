@@ -12,6 +12,7 @@ import 'package:somthn/Buttons/buttonReset.dart';
 import 'package:somthn/Buttons/settingsButton.dart';
 import 'package:somthn/Francais/F-1-5.dart';
 import 'package:somthn/Francais/F-1.dart';
+import 'package:somthn/Francais/boxDialog1.dart';
 import 'package:somthn/WelcomePages/Settings.dart';
 import 'package:somthn/myicons.dart';
 import '../Services/Login.dart';
@@ -100,9 +101,11 @@ class _F_1_4_2ndState extends State<F_1_4_2nd> {
                     player2.stop();
                     int result = await advancedPlayer.pause();
 
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(builder: (context) => Fr1()));
+                    showDialog(context: context,
+                        builder: (BuildContext context){
+                          return customDialog1();
+                        }
+                    );
                   },)
               ),
               Positioned(

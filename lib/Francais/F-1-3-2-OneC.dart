@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:somthn/Francais/F-1-4.dart';
+import 'package:somthn/Francais/boxDialog1.dart';
 import 'package:somthn/WelcomePages/Settings.dart';
 import 'package:somthn/Buttons/buttonContinuer.dart';
 import 'package:somthn/myicons.dart';
@@ -84,7 +85,11 @@ class _F_1_3_2nd_OneCState extends State<F_1_3_2nd_OneC> {
                   child: BacksButton(onPressed: ()async {
                     player2.stop();
                     int result = await advancedPlayer.pause();
-                    Navigator.pop(context);
+                    showDialog(context: context,
+                        builder: (BuildContext context){
+                          return customDialog1();
+                        }
+                    );
                   },)
               ),
 

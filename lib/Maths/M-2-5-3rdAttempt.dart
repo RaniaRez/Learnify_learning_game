@@ -2,10 +2,9 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:somthn/Maths/Niveau2Pass%C3%A9.dart';
+import 'package:somthn/Maths/boxDialogMath2.dart';
 import 'package:somthn/WelcomePages/Settings.dart';
-import 'package:somthn/Bulles/bulleQuest.dart';
 import 'package:somthn/Buttons/buttonContinuer.dart';
-import 'package:somthn/Buttons/buttonGoTo.dart';
 import 'package:somthn/Buttons/buttonQ.dart';
 import 'package:somthn/myicons.dart';
 import '../Buttons/settingsButton.dart';
@@ -17,18 +16,16 @@ import 'package:somthn/Avatars/BlueAvatarIcon.dart';
 import '../Services/Login.dart';
 import 'BienvenueMath.dart';
 import 'M-2.dart';
-import 'NiveauMath.dart';
+import 'package:audioplayers/audio_cache.dart';
+import 'package:audioplayers/audioplayers.dart';
 
-import 'HighestScore.dart';
 import 'package:somthn/Francais/ScoreFr.dart';
 import 'package:somthn/Geographie/ScoreGeo.dart';
-
+import 'HighestScore.dart';
 
 ScoreGeo scorG;
 ScoreFr scorF ;
 HighestScore highG , highF;
-
-
 
 class M_2_5_3rd_ extends StatefulWidget {
   const M_2_5_3rd_({Key key}) : super(key: key);
@@ -37,6 +34,8 @@ class M_2_5_3rd_ extends StatefulWidget {
   _M_2_5_3rd_State createState() => _M_2_5_3rd_State();
 }
 class _M_2_5_3rd_State extends State<M_2_5_3rd_> {
+  var player = AudioCache();
+  var player2 = AudioPlayer ();
   bool oneClicked = false;
   bool twoClicked = false;
   bool threeClicked = false;
@@ -64,18 +63,24 @@ class _M_2_5_3rd_State extends State<M_2_5_3rd_> {
                   top: size.height*0.05,
                   right:size.width*0.75,
 
-                  child: BacksButton(onPressed: (){
+                  child: BacksButton(onPressed: () async {
+                    player2.stop();
+                 //   int result = await advancedPlayer.pause();
                     print("u clicked me");
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(builder: (context) => Math2()));
+                    showDialog(context: context,
+                        builder: (BuildContext context){
+                          return customDialogMath2();
+                        }
+                    );
                   },)
               ),
 
               Positioned(
                   top:size.height*0.05,
                   left:size.width*0.75,
-                  child: SettingsButton(onPressed: (){
+                  child: SettingsButton(onPressed: () async {
+                    player2.stop();
+                    //int result = await advancedPlayer.pause();
                     Navigator.push(
                         context,
                         MaterialPageRoute(builder: (context) => Settings()));
@@ -491,8 +496,11 @@ class _M_2_5_3rd_State extends State<M_2_5_3rd_> {
                 child: Visibility(
                     visible: (twoClicked && Visible),
                     child: IconButton(
-                        onPressed: (){
+                        onPressed: () async {
                           if (twoClicked)  {
+                            player2.stop();
+                            //int result = await advancedPlayer.pause();
+                            player2 =  await player.play('audio/losing.wav');
                             setState(() {
                               Visible = false;
                               correct=false;
@@ -513,8 +521,11 @@ class _M_2_5_3rd_State extends State<M_2_5_3rd_> {
                 child: Visibility(
                     visible: (fourClicked&&Visible),
                     child: IconButton(
-                        onPressed: (){
+                        onPressed: () async {
                           if (fourClicked)  {
+                            player2.stop();
+                            //int result = await advancedPlayer.pause();
+                            player2 =  await player.play('audio/losing.wav');
                             setState(() {
                               Visible = false;
                               correct=false;
@@ -534,8 +545,11 @@ class _M_2_5_3rd_State extends State<M_2_5_3rd_> {
                 child: Visibility(
                     visible: (oneClicked&&Visible),
                     child: IconButton(
-                        onPressed: (){
+                        onPressed: () async {
                           if (oneClicked){
+                            player2.stop();
+                            player2 =  await player.play('audio/mathsBravo.wav');
+                            //int result = await advancedPlayer.pause();
                             setState(() {
                               Visible = false;
                               correct = true;
@@ -556,8 +570,11 @@ class _M_2_5_3rd_State extends State<M_2_5_3rd_> {
                 child: Visibility(
                     visible: (threeClicked&&Visible),
                     child: IconButton(
-                        onPressed: (){
+                        onPressed: () async {
                           if (threeClicked)  {
+                            player2.stop();
+                            //int result = await advancedPlayer.pause();
+                            player2 =  await player.play('audio/losing.wav');
                             setState(() {
                               Visible = false;
                               print('Wrong');
@@ -577,7 +594,9 @@ class _M_2_5_3rd_State extends State<M_2_5_3rd_> {
                     left: 0.0,
                     height: size.height*0.2,
                     width: size.width*0.5,
-                    child: ButtonContinuer(onPressed: ()async {
+                    child: ButtonContinuer(onPressed: () async {
+                      player2.stop();
+                     // int result = await advancedPlayer.pause();
                       print("score final");
                       print(scoreM.niv2);
                       Firestore.instance.collection('users').document(user.uid).collection('domains').document('maths').updateData({'niv2':scoreM.niv2});

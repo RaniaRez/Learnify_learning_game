@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:somthn/WelcomePages/Vite.dart';
 import 'package:somthn/WelcomePages/Voila.dart';
-import 'package:somthn/WelcomePages/custom_dialog_box.dart';
 import '../Buttons/settingsButton.dart';
 import '../Buttons/ButtonAllons-y.dart';
 import '../Bulles/BulleIcon.dart';

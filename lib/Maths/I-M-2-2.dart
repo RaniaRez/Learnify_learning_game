@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:somthn/Maths/M-2-2-3rdAttempt.dart';
+import 'package:somthn/Maths/boxDialogMath2.dart';
 import 'package:somthn/WelcomePages/Settings.dart';
 import '../Buttons/BarreProgres.dart';
 import '../Buttons/settingsButton.dart';
@@ -20,7 +21,8 @@ class I_M_2_2_ extends StatefulWidget {
 }
 
 class _I_M_2_2_State extends State<I_M_2_2_> {
-
+  var player = AudioCache();
+  var player2 = AudioPlayer ();
   AudioPlayer advancedPlayer;
 
 
@@ -73,9 +75,12 @@ class _I_M_2_2_State extends State<I_M_2_2_> {
                   top: size.height*0.05,
                   right:size.width*0.75,
                   child: BacksButton(onPressed: (){
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(builder: (context) => Math2()));
+                    showDialog(context: context,
+                        builder: (BuildContext context){
+                          return customDialogMath2();
+                        }
+                    );
+
                   },)
               ),
               Positioned(
@@ -138,7 +143,9 @@ class _I_M_2_2_State extends State<I_M_2_2_> {
               Positioned(
                 bottom: size.height*0.05,
                 right: size.width*0.5 ,
-                child: AppliquerButton(onPressed : (){
+                child: AppliquerButton(onPressed : () async {
+                  player2.stop();
+                  int result = await advancedPlayer.pause();
                   print('appliquer');
 
 

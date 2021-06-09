@@ -3,7 +3,6 @@ class DataUser{
   String username ;
   String avatar ;
   int score ;
-  //jikj
 
   DataUser( this.documentID ,this.username,this.avatar ,this.score );
 }

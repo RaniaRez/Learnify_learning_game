@@ -4,6 +4,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:somthn/Buttons/BarreProgres.dart';
 import 'package:somthn/Maths/M-1-1-2ndAttempt.dart';
 import 'package:somthn/Maths/M-1-2.dart';
+import 'package:somthn/Maths/boxDialogMath1.dart';
 import 'package:somthn/WelcomePages/Settings.dart';
 import 'package:somthn/Buttons/button0.dart';
 import 'package:somthn/Buttons/button1.dart';
@@ -40,14 +41,9 @@ class M_1_1 extends StatefulWidget {
 }
 
 class _M_1_1State extends State<M_1_1> {
-  /*AudioPlayer advancedPlayer;
+  var player = AudioCache();
+  var player2 = AudioPlayer ();
 
-
-  @override
-  initState() {
-    super.initState();
-    loadMusic();
-  }*/
 
 
   bool oneD = false;
@@ -96,20 +92,27 @@ class _M_1_1State extends State<M_1_1> {
                   top: size.height*0.05,
                   left:size.width*0.75,
                   child:
-                  SettingsButton(onPressed: (){
+                  SettingsButton(onPressed: () async {
+                    player2.stop();
+                   // int result = await advancedPlayer.pause();
                     Navigator.push(
                         context,
                         MaterialPageRoute(builder: (context) => Settings()));
                     print("HELL YEAH");
                   },)
               ),
+
               Positioned(
                   top: size.height*0.05,
                   right:size.width*0.75,
-                  child: BacksButton(onPressed: (){
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(builder: (context) => Math1() ));
+                  child:
+                  BacksButton(onPressed: () async {
+                    player2.stop();
+                    showDialog(context: context,
+                        builder: (BuildContext context){
+                          return customDialogMath1();
+                        }
+                    );
                   },)
               ),
               Positioned(
@@ -132,8 +135,13 @@ class _M_1_1State extends State<M_1_1> {
         child: Positioned(
           top: size.height*0.6,
           left: size.width*0.75,
-        child: GoToButton(onPressed: (){
-          setState(() {
+        child: GoToButton(onPressed: () async {
+          player2.stop();
+
+          //int result = await advancedPlayer.pause();
+          player2 =  await player.play('audio/mathsBravo.wav');
+
+          setState(()   {
             if(!all){
 
             }else if ((zeroU) && (nineD)){
@@ -146,9 +154,12 @@ class _M_1_1State extends State<M_1_1> {
               print(scoreM.niv1);
 
             }else{
+              player2.stop();
+
               Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => M_1_1_2nd()));
+                  MaterialPageRoute(builder: (context) => M_1_1_2nd())
+              );
              print('Wrong');
             }
           });
@@ -604,7 +615,9 @@ class _M_1_1State extends State<M_1_1> {
                     left: 0.0,
                     height: size.height*0.2,
                     width: size.width*0.5,
-                    child: ButtonContinuer(onPressed: (){
+                    child: ButtonContinuer(onPressed: () async {
+                      player2.stop();
+                      //int result = await advancedPlayer.pause();
                       Navigator.push(
                           context,
                           new MaterialPageRoute(builder: (context) => new M_1_2()));

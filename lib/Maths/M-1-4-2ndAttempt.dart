@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:somthn/Maths/M-1-5.dart';
+import 'package:somthn/Maths/boxDialogMath1.dart';
 import 'package:somthn/WelcomePages/Settings.dart';
 import 'package:somthn/Buttons/button0.dart';
 import 'package:somthn/Buttons/button1.dart';
@@ -34,6 +35,8 @@ class M_1_4_2nd extends StatefulWidget {
 }
 
 class _M_1_4_2ndState extends State<M_1_4_2nd> {
+  var player = AudioCache();
+  var player2 = AudioPlayer ();
 
   AudioPlayer advancedPlayer;
 
@@ -99,7 +102,9 @@ class _M_1_4_2ndState extends State<M_1_4_2nd> {
                   top: size.height*0.05,
                   left:size.width*0.75,
                   child:
-                  SettingsButton(onPressed: (){
+                  SettingsButton(onPressed: () async {
+                    player2.stop();
+                    int result = await advancedPlayer.pause();
                     Navigator.push(
                         context,
                         MaterialPageRoute(builder: (context) => Settings()));
@@ -109,10 +114,14 @@ class _M_1_4_2ndState extends State<M_1_4_2nd> {
               Positioned(
                   top: size.height*0.05,
                   right:size.width*0.75,
-                  child: BacksButton(onPressed: (){
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(builder: (context) => Math1() ));
+                  child: BacksButton(onPressed: () async {
+                    player2.stop();
+                    int result = await advancedPlayer.pause();
+                    showDialog(context: context,
+                        builder: (BuildContext context){
+                          return customDialogMath1();
+                        }
+                    );
                   },)
               ),
 
@@ -136,8 +145,13 @@ class _M_1_4_2ndState extends State<M_1_4_2nd> {
                 child: Positioned(
                   top: size.height*0.6,
                   left: size.width*0.75,
-                  child: GoToButton(onPressed: (){
-                    setState(() {
+                  child: GoToButton(onPressed: () async {
+                    player2.stop();
+                  int result = await advancedPlayer.pause();
+                    player2 =  await player.play('audio/mathsBravo.wav');
+
+                    setState(()   {
+
                       if(!all){
 
                       }else if ((threeU) && (twoD)){
@@ -145,6 +159,7 @@ class _M_1_4_2ndState extends State<M_1_4_2nd> {
                         print('Correct');
                         scoreM.niv1=scoreM.niv1+1;
                       }else{
+                        player2.stop();
                         Navigator.push(
                             context,
                             MaterialPageRoute(builder: (context) => I_M_1_4_()));
@@ -602,7 +617,9 @@ class _M_1_4_2ndState extends State<M_1_4_2nd> {
                     left: 0.0,
                     height: size.height*0.2,
                     width: size.width*0.5,
-                    child: ButtonContinuer(onPressed: (){
+                    child: ButtonContinuer(onPressed: () async {
+                      player2.stop();
+                      int result = await advancedPlayer.pause();
                       Navigator.push(
                           context,
                           MaterialPageRoute(builder: (context) => M_1_5()));

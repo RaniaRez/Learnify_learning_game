@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:somthn/Maths/I-M-1-5.dart';
-import 'package:somthn/Maths/M-2.dart';
+import 'package:somthn/Maths/boxDialogMath1.dart';
 import 'package:somthn/WelcomePages/Settings.dart';
-import 'package:somthn/Bulles/bulleQuest.dart';
 import 'package:somthn/Buttons/button0.dart';
 import 'package:somthn/Buttons/button1.dart';
 import 'package:somthn/Buttons/button2.dart';
@@ -28,10 +27,10 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'Niveau1Passé.dart';
 import 'package:audioplayers/audio_cache.dart';
 import 'package:audioplayers/audioplayers.dart';
-import 'HighestScore.dart';
+
 import 'package:somthn/Francais/ScoreFr.dart';
 import 'package:somthn/Geographie/ScoreGeo.dart';
-
+import 'HighestScore.dart';
 
 ScoreGeo scorG;
 ScoreFr scorF ;
@@ -46,6 +45,8 @@ class M_1_5_2nd extends StatefulWidget {
 }
 
 class _M_1_5_2ndState extends State<M_1_5_2nd> {
+  var player = AudioCache();
+  var player2 = AudioPlayer ();
 
   AudioPlayer advancedPlayer;
 
@@ -111,7 +112,9 @@ class _M_1_5_2ndState extends State<M_1_5_2nd> {
                   top: size.height*0.05,
                   left:size.width*0.75,
                   child:
-                  SettingsButton(onPressed: (){
+                  SettingsButton(onPressed: () async {
+                    player2.stop();
+                    int result = await advancedPlayer.pause();
                     Navigator.push(
                         context,
                         MaterialPageRoute(builder: (context) => Settings()));
@@ -121,10 +124,14 @@ class _M_1_5_2ndState extends State<M_1_5_2nd> {
               Positioned(
                   top: size.height*0.05,
                   right:size.width*0.75,
-                  child: BacksButton(onPressed: (){
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(builder: (context) => Math1() ));
+                  child: BacksButton(onPressed: () async {
+                    player2.stop();
+                    int result = await advancedPlayer.pause();
+                    showDialog(context: context,
+                        builder: (BuildContext context){
+                          return customDialogMath1();
+                        }
+                    );
                   },)
               ),
 
@@ -148,8 +155,12 @@ class _M_1_5_2ndState extends State<M_1_5_2nd> {
                 child: Positioned(
                   top: size.height*0.6,
                   left: size.width*0.75,
-                  child: GoToButton(onPressed: (){
-                    setState(() {
+                  child: GoToButton(onPressed: () async {
+                    player2.stop();
+                    int result = await advancedPlayer.pause();
+                    player2 =  await player.play('audio/mathsBravo.wav');
+                    setState(()  {
+
                       if(!all){
 
                       }else if ((eightU) && (fiveD)){
@@ -158,6 +169,7 @@ class _M_1_5_2ndState extends State<M_1_5_2nd> {
                         scoreM.niv1=scoreM.niv1+1;
                         print(scoreM.niv1);
                       }else{
+                        player2.stop();
                         Navigator.push(
                             context,
                             MaterialPageRoute(builder: (context) => I_M_1_5_()));
@@ -616,7 +628,9 @@ class _M_1_5_2ndState extends State<M_1_5_2nd> {
                     left: 0.0,
                     height: size.height*0.2,
                     width: size.width*0.5,
-                    child: ButtonContinuer(onPressed: ()async {
+                    child: ButtonContinuer(onPressed: () async {
+                      player2.stop();
+                      int result = await advancedPlayer.pause();
                       Firestore.instance.collection('users').document(user.uid).collection('domains').document('maths').updateData({'niv1':scoreM.niv1});
                       if (scoreM.niv1>hs.niv1)
                       { hs.niv1=scoreM.niv1;
@@ -637,8 +651,8 @@ class _M_1_5_2ndState extends State<M_1_5_2nd> {
                       }
                       Firestore.instance.collection('users').document(user.uid).updateData({'score':score});
                       Navigator.push(
-                            context,
-                            MaterialPageRoute(builder: (context) => Niveau1Pass()));
+                          context,
+                          MaterialPageRoute(builder: (context) => Niveau1Pass()));
                     },)
                 ),
               ),
