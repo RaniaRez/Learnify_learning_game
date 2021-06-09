@@ -12,6 +12,7 @@ import 'package:somthn/Buttons/buttonReset.dart';
 import 'package:somthn/Buttons/settingsButton.dart';
 import 'package:somthn/Francais/F-2.dart';
 import 'package:somthn/Francais/Niveau2Pass%C3%A9.dart';
+import 'package:somthn/Francais/boxDialog2.dart';
 import 'package:somthn/WelcomePages/Settings.dart';
 import 'package:somthn/myicons.dart';
 import '../Services/Login.dart';
@@ -84,9 +85,11 @@ class _F_2_5State extends State<F_2_5> {
                   child: BacksButton(onPressed: (){
                     player2.stop();
 
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(builder: (context) => Fr2()));
+                    showDialog(context: context,
+                        builder: (BuildContext context){
+                          return customDialog2();
+                        }
+                    );
                   },)
               ),
               Positioned(

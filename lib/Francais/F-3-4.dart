@@ -13,6 +13,7 @@ import 'package:somthn/Buttons/settingsButton.dart';
 import 'package:somthn/Francais/F-1.dart';
 import 'package:somthn/Francais/F-3-4-2nd.dart';
 import 'package:somthn/Francais/F-3-5.dart';
+import 'package:somthn/Francais/boxDialog3.dart';
 import 'package:somthn/WelcomePages/Settings.dart';
 import 'package:somthn/myicons.dart';
 import '../Services/Login.dart';
@@ -83,9 +84,11 @@ class _F_3_4State extends State<F_3_4> {
                   child: BacksButton(onPressed: (){
                     player2.stop();
 
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(builder: (context) => Fr3()));
+                    showDialog(context: context,
+                        builder: (BuildContext context){
+                          return customDialog3();
+                        }
+                    );
                   },)
               ),
               Positioned(

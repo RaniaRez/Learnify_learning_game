@@ -13,6 +13,7 @@ import 'package:somthn/Buttons/settingsButton.dart';
 import 'package:somthn/Francais/F-1.dart';
 import 'package:somthn/Francais/F-3.dart';
 import 'package:somthn/Francais/Niveau3Pass%C3%A9.dart';
+import 'package:somthn/Francais/boxDialog3.dart';
 import 'package:somthn/WelcomePages/Settings.dart';
 import 'package:somthn/myicons.dart';
 import '../Services/Login.dart';
@@ -110,9 +111,11 @@ bool correct=false;
                     player2.stop();
                     int result = await advancedPlayer.pause();
 
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(builder: (context) => Fr3()));
+                    showDialog(context: context,
+                        builder: (BuildContext context){
+                          return customDialog3();
+                        }
+                    );
                   },)
               ),
               Positioned(
