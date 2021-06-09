@@ -13,7 +13,7 @@ import 'Home.dart';
 import '../Services/auth.dart';
 import 'package:audioplayers/audio_cache.dart';
 import 'package:audioplayers/audioplayers.dart';
-import 'Home.dart';
+
 
 class Settings extends StatefulWidget {
   AudioPlayer value = new AudioPlayer();
@@ -58,9 +58,7 @@ class _SettingsState extends State<Settings> {
                     showDialog(context: context,
                         builder: (BuildContext context){
                           return CustomDialogBox(
-                            title: "Custom Dialog Demo",
-                            descriptions: "Hii all this is a custom dialog in flutter and  you will be use in your flutter applications",
-                            text: "Yes",
+
                           );
                         }
                     );

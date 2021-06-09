@@ -1,7 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:somthn/Francais/F-1.dart';
 import 'package:somthn/Francais/testNiv/BienvenueTest.dart';
 import 'package:somthn/Francais/testNiv/TestNivFrQ3.dart';
 import 'package:somthn/WelcomePages/Settings.dart';
@@ -15,9 +14,6 @@ import 'package:somthn/Avatars/PurpleAvatarIcon.dart';
 import 'package:somthn/Avatars/BlueAvatarIcon.dart';
 import '../../Services/Login.dart';
 import 'TestNivFrQ1.dart';
-import '../BienvenueFr.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
-import 'SetNiveaux.dart';
 
 class TestNivFr2 extends StatefulWidget {
   const TestNivFr2({Key key}) : super(key: key);
