@@ -7,6 +7,7 @@ import 'package:somthn/Maths/M-1-1-2ndAttempt.dart';
 import 'package:somthn/Maths/M-1-2.dart';
 import 'package:somthn/Maths/M-1.dart';
 import 'package:somthn/Maths/NiveauMath.dart';
+import 'package:somthn/Maths/boxDialogTestMath.dart';
 //import 'package:somthn/TestDeNiveau/TestNivFrQ1.dart';
 import 'package:somthn/WelcomePages/Settings.dart';
 import 'package:somthn/Bulles/bulleQuest.dart';
@@ -107,9 +108,11 @@ class _TestNivM3State extends State<TestNivM3> {
                   top: size.height*0.05,
                   right:size.width*0.75,
                   child: BacksButton(onPressed: (){
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(builder: (context) => BienvenueMath() ));
+                    showDialog(context: context,
+                        builder: (BuildContext context){
+                          return customDialogMathTest();
+                        }
+                    );
                   },)
               ),
               Visibility(

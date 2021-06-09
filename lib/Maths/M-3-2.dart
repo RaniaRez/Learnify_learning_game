@@ -3,6 +3,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:somthn/Buttons/BarreProgres.dart';
 import 'package:somthn/Maths/BienvenueMath.dart';
 import 'package:somthn/Maths/M-3-3.dart';
+import 'package:somthn/Maths/boxDialogMath3.dart';
 import 'package:somthn/WelcomePages/Settings.dart';
 import 'package:somthn/Buttons/buttonContinuer.dart';
 import 'package:somthn/Buttons/buttonQ.dart';
@@ -91,9 +92,11 @@ class _M_3_2State extends State<M_3_2> {
                   child: BacksButton(onPressed: () async {
                     player2.stop();
                     int result = await advancedPlayer.pause();
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(builder: (context) => Math3()));
+                    showDialog(context: context,
+                        builder: (BuildContext context){
+                          return customDialogMath3();
+                        }
+                    );
                   },)
               ),
 
