@@ -129,7 +129,7 @@ class _N1Q2State extends State<N1Q2> {
                   child: GoToButton(onPressed: () async {
                     player2.stop();
                     int result = await advancedPlayer.pause();
-                    if((drag1=="assets/icons/a.svg")&&(drag2=="assets/icons/l.svg")&&(drag3=="assets/icons/g.svg")&&(drag4=="assets/icons/e.svg")&&(drag5=="assets/icons/r.svg")&&(drag6=="assets/icons/i.svg")&&(drag7=="assets/icons/e.svg")){
+                    if((drag1=="assets/icons/a.svg")&&(drag2=="assets/icons/l.svg")&&(drag3=="assets/icons/gb.svg")&&(drag4=="assets/icons/e.svg")&&(drag5=="assets/icons/r.svg")&&(drag6=="assets/icons/i.svg")&&(drag7=="assets/icons/e.svg")){
                       player2 =  await player.play('audio/mathsBravo.wav');
                       setState(() {
                         Visible=false;
@@ -343,19 +343,19 @@ class _N1Q2State extends State<N1Q2> {
                       Draggable<String>(
                         onDragCompleted: (){
 
-                          letterG = 'assets/icons/g.svg';
+                          letterG = 'assets/icons/gb.svg';
                         },
                         data:
-                        "assets/icons/g.svg",
+                        "assets/icons/gb.svg",
                         child: Container(
                           width: 50,
                           height: 50,
                           alignment: Alignment.center,
                           //color: Colors.purple,
-                          child: letterG == 'assets/icons/g.svg'
+                          child: letterG == 'assets/icons/gb.svg'
                               ? Container()
                               : SvgPicture.asset(
-                            'assets/icons/g.svg',
+                            'assets/icons/gb.svg',
                             height: 50,
                             width: 50,
                           ),
@@ -369,7 +369,7 @@ class _N1Q2State extends State<N1Q2> {
                           height: 50,
                           alignment: Alignment.center,
                           child: SvgPicture.asset(
-                            'assets/icons/g.svg',
+                            'assets/icons/gb.svg',
                             height: 50,
                             width: 50,
                           ),
