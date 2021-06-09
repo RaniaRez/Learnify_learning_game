@@ -5,6 +5,7 @@ import 'package:somthn/Buttons/BarreProgres.dart';
 import 'package:somthn/Francais/F-1.dart';
 import 'package:somthn/Francais/F-2-3.dart';
 import 'package:somthn/Francais/F-2.dart';
+import 'package:somthn/Francais/boxDialog2.dart';
 import 'package:somthn/WelcomePages/Settings.dart';
 import 'package:somthn/Buttons/buttonContinuer.dart';
 import 'package:somthn/myicons.dart';
@@ -90,9 +91,11 @@ class _F_2_1_2nd_entrainState extends State<F_2_1_2nd_entrain> {
                     player2.stop();
                     int result = await advancedPlayer.pause();
 
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(builder: (context) => Fr2()));
+                    showDialog(context: context,
+                        builder: (BuildContext context){
+                          return customDialog2();
+                        }
+                    );
                   },)
               ),
               Positioned(
