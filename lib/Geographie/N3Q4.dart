@@ -19,7 +19,7 @@ import 'package:somthn/Geographie/BienvenueGeo.dart';
 import 'package:audioplayers/audio_cache.dart';
 import 'package:audioplayers/audioplayers.dart';
 import 'BienvenueGeo.dart';
-import 'NiveauGeo.dart';
+import 'N3.dart';
 
 
 class N3Q4 extends StatefulWidget {
@@ -29,7 +29,8 @@ class N3Q4 extends StatefulWidget {
   _N3Q4State createState() => _N3Q4State();
 }
 class _N3Q4State extends State<N3Q4> {
-
+  var player = AudioCache();
+  var player2 = AudioPlayer ();
   AudioPlayer advancedPlayer;
 
 
@@ -50,7 +51,6 @@ class _N3Q4State extends State<N3Q4> {
     super.dispose();
   }
 
-  final player = AudioCache();
   bool oneClicked = false;
   bool twoClicked = false;
   bool threeClicked = false;
@@ -80,7 +80,7 @@ class _N3Q4State extends State<N3Q4> {
                   child: BacksButton(onPressed: (){
                     Navigator.push(
                         context,
-                        MaterialPageRoute(builder: (context) => NiveauGeo()));
+                        MaterialPageRoute(builder: (context) => Geo3()));
                     print("back");
                     //Navigator.pop(context);
                   },)
@@ -126,9 +126,11 @@ class _N3Q4State extends State<N3Q4> {
                   child: IconButton(
                     iconSize: 64,
                     icon: SvgPicture.asset('assets/icons/QuestionMark.svg'),
-                    onPressed: (){
+                    onPressed: () async {
+                      player2.stop();
+                      int result = await advancedPlayer.pause();
                       print('QuestionMark');
-                      player.play('audio/geoAnimal.wav');
+                      player2 =  await player.play('audio/geoAnimal.wav');
                     },
                   ),
                 ),
@@ -270,7 +272,9 @@ class _N3Q4State extends State<N3Q4> {
                     left: 0.0,
                     height: size.height*0.2,
                     width: size.width*0.5,
-                    child: ButtonContinuer(onPressed: (){
+                    child: ButtonContinuer(onPressed: () async {
+                      player2.stop();
+                      int result = await advancedPlayer.pause();
                       print(scoreG.niv3);
                       Navigator.push(
                           context,
@@ -341,7 +345,9 @@ class _N3Q4State extends State<N3Q4> {
                   child: Visibility(
                       visible: (threeClicked && Visible),
                       child: IconButton(
-                        onPressed: (){
+                        onPressed: () async {
+                          player2.stop();
+                          int result = await advancedPlayer.pause();
                           if (threeClicked){
                             Vibration.vibrate();
                             Navigator.push(
@@ -363,7 +369,9 @@ class _N3Q4State extends State<N3Q4> {
                   child: Visibility(
                       visible: (fourClicked && Visible),
                       child: IconButton(
-                        onPressed: (){
+                        onPressed: () async {
+                          player2.stop();
+                          int result = await advancedPlayer.pause();
                           if (fourClicked){
                             Vibration.vibrate();
                             Navigator.push(
@@ -386,8 +394,9 @@ class _N3Q4State extends State<N3Q4> {
                 child: Visibility(
                     visible: (oneClicked&&Visible),
                     child: IconButton(
-                        onPressed: (){
+                        onPressed: () async {
                           if (oneClicked){
+                            player2 =  await player.play('audio/mathsBravo.wav');
                             setState(() {
                               Visible = false;
                             });
@@ -409,7 +418,9 @@ class _N3Q4State extends State<N3Q4> {
                 child: Visibility(
                     visible: (twoClicked&&Visible),
                     child: IconButton(
-                        onPressed: (){
+                        onPressed: () async {
+                          player2.stop();
+                          int result = await advancedPlayer.pause();
                           if (twoClicked)  {
                             Vibration.vibrate();
                             Navigator.push(

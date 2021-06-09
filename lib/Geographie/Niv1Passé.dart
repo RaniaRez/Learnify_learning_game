@@ -5,8 +5,8 @@ import 'package:somthn/Buttons/HomeButton.dart';
 import 'package:somthn/Buttons/buttonGoTo.dart';
 import 'package:somthn/Buttons/buttonReset.dart';
 import 'package:somthn/Francais/F-3.dart';
-import 'package:somthn/Geographie/N2Q1.dart';
-import 'package:somthn/Geographie/N3Q1.dart';
+import 'package:somthn/Geographie/N2.dart';
+import 'package:somthn/Geographie/N1.dart';
 import 'package:somthn/Maths/BienvenueMath.dart';
 import 'package:somthn/WelcomePages/Settings.dart';
 import 'package:somthn/myicons.dart';
@@ -262,7 +262,7 @@ class _Niveau1PassState extends State<Niveau1Pass> {
             Positioned(
 
               top: size.height*0.7,
-              left: size.width*0.08,
+              left: size.width*0.037,
               child: Row(
                 children: <Widget>[
                   Container(
@@ -283,7 +283,7 @@ class _Niveau1PassState extends State<Niveau1Pass> {
             Positioned(
 
               top: size.height*0.7,
-              left: size.width*0.08,
+              left: size.width*0.037,
               child: Row(
                 children: <Widget>[
                   Visibility(
@@ -321,7 +321,7 @@ class _Niveau1PassState extends State<Niveau1Pass> {
                   //Firestore.instance.collection('users').document(user.uid).collection('domains').document('maths').updateData({'niv1':scoreM.niv1});
                   Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => N2Q1()));
+                      MaterialPageRoute(builder: (context) => Geo2()));
                 }),
               ),
             ),
@@ -334,7 +334,7 @@ class _Niveau1PassState extends State<Niveau1Pass> {
                       print('reset');
                       Navigator.push(
                           context,
-                          MaterialPageRoute(builder: (context) => N3Q1()));
+                          MaterialPageRoute(builder: (context) => Geo1()));
                     }
 
                 ),

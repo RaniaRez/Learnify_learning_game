@@ -16,7 +16,7 @@ import 'package:audioplayers/audio_cache.dart';
 import 'package:audioplayers/audioplayers.dart';
 
 import 'BienvenueGeo.dart';
-import 'NiveauGeo.dart';
+import 'N2.dart';
 
 
 class N2Q2T2_C_1 extends StatefulWidget {
@@ -27,7 +27,8 @@ class N2Q2T2_C_1 extends StatefulWidget {
 }
 
 class _N2Q2T2_C_1State extends State<N2Q2T2_C_1> {
-
+  var player = AudioCache();
+  var player2 = AudioPlayer ();
   AudioPlayer advancedPlayer;
 
 
@@ -75,18 +76,22 @@ class _N2Q2T2_C_1State extends State<N2Q2T2_C_1> {
                   top: size.height*0.05,
                   right:size.width*0.75,
 
-                  child: BacksButton(onPressed: (){
+                  child: BacksButton(onPressed: () async {
+                    player2.stop();
+                    int result = await advancedPlayer.pause();
                     print("u clicked me");
                     Navigator.push(
                         context,
-                        MaterialPageRoute(builder: (context) => NiveauGeo()));
+                        MaterialPageRoute(builder: (context) => Geo2()));
                   },)
               ),
 
               Positioned(
                   top:size.height*0.05,
                   left:size.width*0.75,
-                  child: SettingsButton(onPressed: (){
+                  child: SettingsButton(onPressed: () async {
+                    player2.stop();
+                    int result = await advancedPlayer.pause();
                     Navigator.push(
                         context,
                         MaterialPageRoute(builder: (context) => Settings()));
@@ -97,7 +102,7 @@ class _N2Q2T2_C_1State extends State<N2Q2T2_C_1> {
                   bottom: size.height*0.88,
                   left: size.width*0.275,
                   right: size.width*0.275,
-                  child: SvgPicture.asset(FourBars)),
+                  child: SvgPicture.asset(barreProgress)),
               Positioned(
                 bottom: size.height*0.55,
                 left: size.width*0.05,
@@ -111,7 +116,7 @@ class _N2Q2T2_C_1State extends State<N2Q2T2_C_1> {
                   bottom: size.height*0.88,
                   left: size.width*0.275,
                   right: size.width*0.275,
-                  child: SvgPicture.asset(FourBars),
+                  child: SvgPicture.asset(TwoBars),
                 ),
               ),
               if (user.avatar=="Pink")
@@ -163,9 +168,9 @@ class _N2Q2T2_C_1State extends State<N2Q2T2_C_1> {
               Visibility(
                 visible: Visible,
                 child: Positioned(
-                  top: size.height*0.5,
+                  top: size.height*0.6,
                   left: size.width*0.5,
-                  height: size.height*0.3,
+                  height: size.height*0.1,
                   width: size.width*0.5,
                   child: IconButton(
                     icon: SvgPicture.asset('assets/icons/Algeriens.svg'),
@@ -182,9 +187,9 @@ class _N2Q2T2_C_1State extends State<N2Q2T2_C_1> {
               Visibility(
                 visible: Visible,
                 child: Positioned(
-                  top: size.height*0.7,
+                  top: size.height*0.8,
                   left: size.width*0.5,
-                  height: size.height*0.3,
+                  height: size.height*0.1,
                   width: size.width*0.5,
                   child: IconButton(
                     icon: SvgPicture.asset('assets/icons/Alges.svg'),
@@ -202,9 +207,9 @@ class _N2Q2T2_C_1State extends State<N2Q2T2_C_1> {
               Visibility(
                 visible: Visible,
                 child: Positioned(
-                  top: size.height*0.6,
+                  top: size.height*0.7,
                   left: size.width*0,
-                  height: size.height*0.3,
+                  height: size.height*0.1,
                   width: size.width*0.5,
                   child: IconButton(
                     icon: SvgPicture.asset('assets/icons/Algerois.svg'),
@@ -223,9 +228,9 @@ class _N2Q2T2_C_1State extends State<N2Q2T2_C_1> {
               Visibility(
                 visible: false,
                 child: Positioned(
-                  top: size.height*0.4,
+                  top: size.height*0.5,
                   left: size.width*0.0,
-                  height: size.height*0.3,
+                  height: size.height*0.1,
                   width: size.width*0.5,
                   child: IconButton(
                     icon: SvgPicture.asset('assets/icons/Algeriants.svg'),
@@ -248,7 +253,9 @@ class _N2Q2T2_C_1State extends State<N2Q2T2_C_1> {
                     left: 0.0,
                     height: size.height*0.2,
                     width: size.width*0.5,
-                    child: ButtonContinuer(onPressed: (){
+                    child: ButtonContinuer(onPressed: () async {
+                      player2.stop();
+                      int result = await advancedPlayer.pause();
                       Navigator.push(
                           context,
                           MaterialPageRoute(builder: (context) => N2Q3()));
@@ -257,14 +264,16 @@ class _N2Q2T2_C_1State extends State<N2Q2T2_C_1> {
               ),
               //Second click
               Positioned(
-                  top: size.height*0.6,
+                  top: size.height*0.7,
                   left: size.width*0,
-                  height: size.height*0.3,
+                  height: size.height*0.1,
                   width: size.width*0.5,
                   child: Visibility(
                       visible: (threeClicked && Visible),
                       child: IconButton(
-                        onPressed: (){
+                        onPressed: () async {
+                          player2.stop();
+                          int result = await advancedPlayer.pause();
                           Vibration.vibrate();
 
                           if (threeClicked){
@@ -281,14 +290,16 @@ class _N2Q2T2_C_1State extends State<N2Q2T2_C_1> {
                         icon: SvgPicture.asset('assets/icons/Algerois.svg'),))
               ),
               Positioned(
-                top: size.height*0.7,
+                top: size.height*0.8,
                 left: size.width*0.5,
-                height: size.height*0.3,
+                height: size.height*0.1,
                 width: size.width*0.5,
                 child: Visibility(
                     visible: (fourClicked&&Visible),
                     child: IconButton(
-                        onPressed: (){
+                        onPressed: () async {
+                          player2.stop();
+                          int result = await advancedPlayer.pause();
                           if (fourClicked) {
                             Vibration.vibrate();
 
@@ -307,17 +318,19 @@ class _N2Q2T2_C_1State extends State<N2Q2T2_C_1> {
                 ),
               ),
               Positioned(
-                top: size.height*0.5,
+                top: size.height*0.6,
                 left: size.width*0.5,
-                height: size.height*0.3,
+                height: size.height*0.1,
                 width: size.width*0.5,
 
                 child: Visibility(
                     visible: (twoClicked&&Visible),
                     child: IconButton(
-                        onPressed: (){
-
+                        onPressed: () async {
+                          player2.stop();
+                          int result = await advancedPlayer.pause();
                           if (twoClicked) {
+                            player2 =  await player.play('audio/mathsBravo.wav');
                             Vibration.vibrate();
 
                             setState(() {
@@ -326,6 +339,7 @@ class _N2Q2T2_C_1State extends State<N2Q2T2_C_1> {
                               scoreG.niv2++;
 
                               print('Correct');
+                              print(scoreG.niv2);
                             });
                             print('Oran');
                           }
@@ -334,16 +348,17 @@ class _N2Q2T2_C_1State extends State<N2Q2T2_C_1> {
                 ),
               ),
               Positioned(
-                top: size.height*0.4,
+                top: size.height*0.5,
                 left: size.width*0.0,
-                height: size.height*0.3,
+                height: size.height*0.1,
                 width: size.width*0.5,
                 child: Visibility(
                     visible: false,
                     child: IconButton(
-                        onPressed: (){
+                        onPressed: () async {
                           if (oneClicked) {
-
+                            player2.stop();
+                            int result = await advancedPlayer.pause();
                             setState(() {
                               correct = false;
                               Visible = false;

@@ -34,6 +34,8 @@ import '../../Services/Login.dart';
 import '../../Services/SignUp.dart';
 import '../BienvenueMath.dart';
 import 'TestNivMathQ1.dart';
+import 'package:audioplayers/audio_cache.dart';
+import 'package:audioplayers/audioplayers.dart';
 
 
 class TestNivM2 extends StatefulWidget {
@@ -44,6 +46,8 @@ class TestNivM2 extends StatefulWidget {
 }
 
 class _TestNivM2State extends State<TestNivM2> {
+  var player = AudioCache();
+  var player2 = AudioPlayer ();
   bool oneD = false;
   bool oneU = false;
   bool twoD = false;
@@ -102,7 +106,7 @@ class _TestNivM2State extends State<TestNivM2> {
                   child: BacksButton(onPressed: (){
                     Navigator.push(
                         context,
-                        MaterialPageRoute(builder: (context) => Math1() ));
+                        MaterialPageRoute(builder: (context) => BienvenueMath() ));
                   },)
               ),
               Visibility(
@@ -110,7 +114,7 @@ class _TestNivM2State extends State<TestNivM2> {
                 child: Positioned(
                   top: size.height*0.6,
                   left: size.width*0.75,
-                  child: GoToButton(onPressed: (){
+                  child: GoToButton(onPressed: ()async {
                     setState(() {
                       if(!all){
 
@@ -124,6 +128,8 @@ class _TestNivM2State extends State<TestNivM2> {
                         print('Wrong');
                       }
                     });
+                    if (correct) {player2 =  await player.play('audio/winning.wav');}
+                    else { player2 =  await player.play('audio/losing.wav');}
                     print("HELL YEAH");
 
                   },),

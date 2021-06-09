@@ -8,7 +8,7 @@ import 'auth.dart';
 import 'Login.dart';
 //import 'package:cloud_functions/cloud_functions.dart';
 
-Future<void> delete() async  {
+/*Future<void> delete() async  {
 FirebaseUser user = await FirebaseAuth.instance.currentUser();
 /*final GoogleSignInAccount googleSignInAccount = await googleSignIn.signIn();
 final GoogleSignInAuthentication googleSignInAuthentication = await googleSignInAccount.authentication;
@@ -16,18 +16,18 @@ final AuthCredential credential = GoogleAuthProvider.getCredential(
     idToken: googleSignInAuthentication.idToken,
     accessToken: googleSignInAuthentication.accessToken
 );*/
-
+  signOutGoogle();
 googleLogin();
-signOutGoogle();
+
 await user.delete();
 await Firestore.instance.collection("users").document(user.uid).delete();
-}
+}*/
 
-/*final FirebaseAuth _auth = FirebaseAuth.instance;
+final FirebaseAuth _auth = FirebaseAuth.instance;
 final GoogleSignIn googleSignIn = GoogleSignIn();
 
 Future<void> delete() async  {
-  final GoogleSignInAccount googleSignInAccount = await googleSignIn.signIn();
+/*  final GoogleSignInAccount googleSignInAccount = await googleSignIn.signIn();
   final GoogleSignInAuthentication googleSignInAuthentication = await googleSignInAccount
       .authentication;
   final AuthCredential credential = GoogleAuthProvider.getCredential(
@@ -43,7 +43,7 @@ Future<void> delete() async  {
 
 
   await DatabaseService(uid: user.uid);  //called from database class
-  await user.delete();
+  await user.delete();*/
 
   try {
     final GoogleSignInAccount googleSignInAccount = await googleSignIn.signIn();
@@ -55,11 +55,12 @@ Future<void> delete() async  {
         accessToken: googleSignInAuthentication.accessToken);
     print(user);
     AuthResult result = await user.reauthenticateWithCredential(credentials);
-    await DatabaseService(uid: result.user.uid).delete(); // called from database class
+    //await DatabaseService(uid: result.user.uid); // called from database class
+    await Firestore.instance.collection("users").document(user.uid).delete();
     await result.user.delete();
     return true;
   } catch (e) {
     print(e.toString());
     return null;
   }
-}*/
+}

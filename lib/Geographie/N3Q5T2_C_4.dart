@@ -2,7 +2,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:somthn/Geographie/Niv3Pass%C3%A9.dart';
-import 'package:somthn/Geographie/NiveauGeo.dart';
+import 'package:somthn/Geographie/N3.dart';
 import 'package:somthn/WelcomePages/Settings.dart';
 import 'package:vibration/vibration.dart';
 import 'package:somthn/Buttons/buttonContinuer.dart';
@@ -19,6 +19,15 @@ import 'package:audioplayers/audio_cache.dart';
 import 'package:audioplayers/audioplayers.dart';
 import 'BienvenueGeo.dart';
 
+import '../Maths/ScoreMaths.dart';
+import'../Francais/ScoreFr.dart';
+import'../Maths/HighestScore.dart';
+
+ScoreMaths scorM;
+ScoreFr scorF ;
+HighestScore highM , highF;
+
+
 class N3Q5T2_C_4 extends StatefulWidget {
   const N3Q5T2_C_4({Key key}) : super(key: key);
 
@@ -27,7 +36,8 @@ class N3Q5T2_C_4 extends StatefulWidget {
 }
 
 class _N3Q5T2_C_4State extends State<N3Q5T2_C_4> {
-
+  var player = AudioCache();
+  var player2 = AudioPlayer ();
   AudioPlayer advancedPlayer;
 
 
@@ -48,7 +58,6 @@ class _N3Q5T2_C_4State extends State<N3Q5T2_C_4> {
     super.dispose();
   }
 
-  final player = AudioCache();
   bool Visible = true;
   bool correct = false;
   bool oneClicked = false;
@@ -79,7 +88,7 @@ class _N3Q5T2_C_4State extends State<N3Q5T2_C_4> {
                   child: BacksButton(onPressed: (){
                     Navigator.push(
                         context,
-                        MaterialPageRoute(builder: (context) => NiveauGeo()));
+                        MaterialPageRoute(builder: (context) => Geo3()));
                     print("back");
                     //Navigator.pop(context);
                   },)
@@ -117,7 +126,7 @@ class _N3Q5T2_C_4State extends State<N3Q5T2_C_4> {
                 ),
               ),
 
-              Visibility(
+              /*Visibility(
                 visible: Visible,
                 child: Positioned(
                   top: size.height*0.468,
@@ -131,7 +140,7 @@ class _N3Q5T2_C_4State extends State<N3Q5T2_C_4> {
                     },
                   ),
                 ),
-              ),
+              ),*/
 
               if (user.avatar=="Pink")
                 Visibility(
@@ -186,11 +195,11 @@ class _N3Q5T2_C_4State extends State<N3Q5T2_C_4> {
                   child: IconButton(
                     iconSize: 64,
                     icon: SvgPicture.asset('assets/icons/AudioIcon.svg'),
-                    onPressed: (){
+                    onPressed: () async {
                       print('playAudio3');
-                      setState(() {
-
-                      });},
+                      player2.stop();
+                      int result = await advancedPlayer.pause();
+                      player2 =  await player.play('audio/singapouroff.wav');},
                   ),
                 ),
               ),
@@ -203,11 +212,11 @@ class _N3Q5T2_C_4State extends State<N3Q5T2_C_4> {
                   child: IconButton(
                     iconSize: 64,
                     icon: SvgPicture.asset('assets/icons/AudioIcon.svg'),
-                    onPressed: (){
+                    onPressed: () async {
                       print('playAudio2');
-                      setState(() {
-
-                      });},
+                      player2.stop();
+                      int result = await advancedPlayer.pause();
+                      player2 =  await player.play('audio/algeriaoff.wav');},
                   ),
                 ),
               ),
@@ -220,11 +229,11 @@ class _N3Q5T2_C_4State extends State<N3Q5T2_C_4> {
                   child: IconButton(
                     iconSize: 64,
                     icon: SvgPicture.asset('assets/icons/AudioIcon.svg'),
-                    onPressed: (){
+                    onPressed: () async {
                       print('playAudio1');
-                      setState(() {
-
-                      });},
+                      player2.stop();
+                      int result = await advancedPlayer.pause();
+                      player2 =  await player.play('audio/braziloff.wav');},
                   ),
                 ),
               ),
@@ -297,13 +306,30 @@ class _N3Q5T2_C_4State extends State<N3Q5T2_C_4> {
                     left: 0.0,
                     height: size.height*0.2,
                     width: size.width*0.5,
-                    child: ButtonContinuer(onPressed: (){
+                    child: ButtonContinuer(onPressed: () async {
+                      player2.stop();
+                      int result = await advancedPlayer.pause();
                       print("score final");
                       print(scoreG.niv3);
                       Firestore.instance.collection('users').document(user.uid).collection('domains').document('geographie').updateData({'niv3':scoreG.niv3});
                       if (scoreG.niv3>highG.niv3)
                       { highG.niv3=scoreG.niv3 ;
                       Firestore.instance.collection('users').document(user.uid).collection('domains').document('geographie').updateData({'high3':scoreG.niv3});}
+                      // infos maths
+                      var dm=await  Firestore.instance.collection('users').document(user.uid).collection('domains').document('maths').get();
+                      scorM =new ScoreMaths(dm.data["testFait"], dm.data["niv1"], dm.data["niv2"], dm.data["niv3"]);
+                      highM =new HighestScore(dm.data["high1"],dm.data["high2"],dm.data["high3"]);
+                      //infos fr
+                      var df=await Firestore.instance.collection('users').document(user.uid).collection('domains').document('francais').get();
+                      scorF =new ScoreFr(df.data["testFait"], df.data["niv1"], df.data["niv2"], df.data["niv3"]);
+                      highF =new HighestScore(df.data["high1"],df.data["high2"],df.data["high3"]);
+                      int score=scorM.somme()+scorF.somme() +scoreG.somme() ;
+                      int high=highM.somme()+highF.somme() +highG.somme() ;
+                      var doc=await Firestore.instance.collection('users').document(user.uid).get();
+                      if (doc.data['finalScore']<high){
+                        Firestore.instance.collection('users').document(user.uid).updateData({'finalScore':high});
+                      }
+                      Firestore.instance.collection('users').document(user.uid).updateData({'score':score});
                       Navigator.push(
                           context,
                           MaterialPageRoute(builder: (context) => Niveau3Pass()));
@@ -318,7 +344,9 @@ class _N3Q5T2_C_4State extends State<N3Q5T2_C_4> {
                       visible: (threeClicked && Visible),
                       child: IconButton(
                         iconSize:80,
-                        onPressed: (){
+                        onPressed: () async {
+                          player2.stop();
+                          int result = await advancedPlayer.pause();
                           Vibration.vibrate();
 
                           if (threeClicked){
@@ -341,7 +369,9 @@ class _N3Q5T2_C_4State extends State<N3Q5T2_C_4> {
                     visible: (fourClicked&&Visible),
                     child: IconButton(
                         iconSize: 80,
-                        onPressed: (){
+                        onPressed: () async {
+                          player2.stop();
+                          int result = await advancedPlayer.pause();
                           if (fourClicked) {
                             Vibration.vibrate();
 
@@ -367,10 +397,12 @@ class _N3Q5T2_C_4State extends State<N3Q5T2_C_4> {
                     visible: (twoClicked&&Visible),
                     child: IconButton(
                         iconSize:80,
-                        onPressed: (){
-
+                        onPressed: () async {
+                          player2.stop();
+                          int result = await advancedPlayer.pause();
                           if (twoClicked) {
                             Vibration.vibrate();
+                            player2 =  await player.play('audio/mathsBravo.wav');
 
                             setState(() {
                               correct = true;

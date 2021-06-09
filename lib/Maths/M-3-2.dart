@@ -28,6 +28,8 @@ class M_3_2 extends StatefulWidget {
 }
 
 class _M_3_2State extends State<M_3_2> {
+  var player = AudioCache();
+  var player2 = AudioPlayer ();
 
   AudioPlayer advancedPlayer;
 
@@ -74,7 +76,9 @@ class _M_3_2State extends State<M_3_2> {
                   top: size.height*0.05,
                   left:size.width*0.75,
                   child:
-                  SettingsButton(onPressed: (){
+                  SettingsButton(onPressed: () async {
+                    player2.stop();
+                    int result = await advancedPlayer.pause();
                     Navigator.push(
                         context,
                         MaterialPageRoute(builder: (context) => Settings()));
@@ -84,7 +88,9 @@ class _M_3_2State extends State<M_3_2> {
               Positioned(
                   top: size.height*0.05,
                   right:size.width*0.75,
-                  child: BacksButton(onPressed: (){
+                  child: BacksButton(onPressed: () async {
+                    player2.stop();
+                    int result = await advancedPlayer.pause();
                     Navigator.push(
                         context,
                         MaterialPageRoute(builder: (context) => Math3()));
@@ -244,7 +250,9 @@ class _M_3_2State extends State<M_3_2> {
                 child: Visibility(
                   visible: oneClicked&&Visible,
                     child: IconButton(
-                      onPressed: (){
+                      onPressed: () async {
+                        player2.stop();
+                        int result = await advancedPlayer.pause();
                         setState(() {
                           Visible = false;
                         });
@@ -262,7 +270,9 @@ class _M_3_2State extends State<M_3_2> {
                 child: Visibility(
                   visible: threeClicked&&Visible,
                   child: IconButton(
-                    onPressed: (){
+                    onPressed: () async {
+                      player2.stop();
+                      int result = await advancedPlayer.pause();
                       setState(() {
                         Visible = false;
                       });
@@ -281,7 +291,11 @@ class _M_3_2State extends State<M_3_2> {
                   visible: twoClicked&&Visible,
 
                   child: IconButton(
-                    onPressed: (){
+                    onPressed: () async {
+                      player2.stop();
+                      int result = await advancedPlayer.pause();
+
+                      player2 =  await player.play('audio/mathsBravo.wav');
                       setState(() {
                         Visible = false;
                         correct = true;
@@ -345,7 +359,9 @@ class _M_3_2State extends State<M_3_2> {
                     left: 0.0,
                     height: size.height*0.2,
                     width: size.width*0.5,
-                    child: ButtonContinuer(onPressed: (){
+                    child: ButtonContinuer(onPressed: () async {
+                      player2.stop();
+                      int result = await advancedPlayer.pause();
                       Navigator.push(
                           context,
                           MaterialPageRoute(builder: (context) => M_3_3()));

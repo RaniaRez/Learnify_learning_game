@@ -7,6 +7,7 @@ import 'package:somthn/Francais/F-1-2-2-OneC.dart';
 import 'package:somthn/Francais/F-1-2-2-TwoC.dart';
 import 'package:somthn/Francais/F-1-3.dart';
 import 'package:somthn/Francais/F-1.dart';
+import 'package:somthn/Francais/boxDialog1.dart';
 import 'package:somthn/WelcomePages/Settings.dart';
 import 'package:somthn/Buttons/buttonContinuer.dart';
 import 'package:somthn/myicons.dart';
@@ -89,9 +90,11 @@ class _F_1_2State extends State<F_1_2> {
                   child: BacksButton(onPressed: (){
                     player2.stop();
 
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(builder: (context) => Fr1()));
+                    showDialog(context: context,
+                        builder: (BuildContext context){
+                          return customDialog1();
+                        }
+                    );
                   },)
               ),
               Positioned(

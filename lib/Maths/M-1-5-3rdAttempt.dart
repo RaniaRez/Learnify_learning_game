@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:somthn/Maths/M-1-2-2ndAttempt.dart';
 import 'package:somthn/Maths/M-1-5.dart';
-import 'package:somthn/Mutual/Niveau1Pass%C3%A9.dart';
+import 'package:somthn/Maths/boxDialogMath1.dart';
 import 'package:somthn/WelcomePages/Settings.dart';
 import 'package:somthn/Bulles/bulleQuest.dart';
 import 'package:somthn/Buttons/button0.dart';
@@ -26,15 +26,21 @@ import 'package:somthn/Avatars/OrangeAvatarIcon.dart';
 import 'package:somthn/Avatars/PinkAvatarIcon.dart';
 import 'package:somthn/Avatars/PurpleAvatarIcon.dart';
 import 'package:somthn/Avatars/BlueAvatarIcon.dart';
-import '../WelcomePages/ChooseAvatar.dart';
 import '../Services/Login.dart';
-import '../Services/SignUp.dart';
 import 'M-1.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
-//import 'Niveau1Passé.dart';
+import 'Niveau1Passé.dart';
 import 'BienvenueMath.dart';
-import 'NiveauMath.dart';
+import 'package:audioplayers/audio_cache.dart';
+import 'package:audioplayers/audioplayers.dart';
 
+import 'package:somthn/Francais/ScoreFr.dart';
+import 'package:somthn/Geographie/ScoreGeo.dart';
+import 'HighestScore.dart';
+
+ScoreGeo scorG;
+ScoreFr scorF ;
+HighestScore highG , highF;
 
 
 class M_1_5_3rd extends StatefulWidget {
@@ -45,6 +51,8 @@ class M_1_5_3rd extends StatefulWidget {
 }
 
 class _M_1_5_3rdState extends State<M_1_5_3rd> {
+  var player = AudioCache();
+  var player2 = AudioPlayer ();
   bool oneD = false;
   bool oneU = false;
   bool twoD = false;
@@ -90,7 +98,9 @@ class _M_1_5_3rdState extends State<M_1_5_3rd> {
                   top: size.height*0.05,
                   left:size.width*0.75,
                   child:
-                  SettingsButton(onPressed: (){
+                  SettingsButton(onPressed: () async {
+                    player2.stop();
+                    //int result = await advancedPlayer.pause();
                     Navigator.push(
                         context,
                         MaterialPageRoute(builder: (context) => Settings()));
@@ -100,10 +110,14 @@ class _M_1_5_3rdState extends State<M_1_5_3rd> {
               Positioned(
                   top: size.height*0.05,
                   right:size.width*0.75,
-                  child: BacksButton(onPressed: (){
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(builder: (context) => Math1() ));
+                  child: BacksButton(onPressed: () async {
+                    player2.stop();
+                    //int result = await advancedPlayer.pause();
+                    showDialog(context: context,
+                        builder: (BuildContext context){
+                          return customDialogMath1();
+                        }
+                    );
                   },)
               ),
               Positioned(
@@ -126,8 +140,13 @@ class _M_1_5_3rdState extends State<M_1_5_3rd> {
                 child: Positioned(
                   top: size.height*0.6,
                   left: size.width*0.75,
-                  child: GoToButton(onPressed: (){
-                    setState(() {
+                  child: GoToButton(onPressed: () async {
+                    player2.stop();
+                  // int result = await advancedPlayer.pause();
+                    player2 =  await player.play('audio/mathsBravo.wav');
+
+                    setState(()   {
+
                       if(!all){
 
                       }else if ((nineU) && (twoD)){
@@ -135,10 +154,12 @@ class _M_1_5_3rdState extends State<M_1_5_3rd> {
                         Visible = false;
                         print('Correct');
                       }else{
+                        player2.stop();
                         Visible=false;
                         print('Wrong');
                       }
                     });
+                    if (!correct) {player2 =  await player.play('audio/losing.wav');}
                     print("HELL YEAH");
 
                   },),
@@ -590,17 +611,31 @@ class _M_1_5_3rdState extends State<M_1_5_3rd> {
                     left: 0.0,
                     height: size.height*0.2,
                     width: size.width*0.5,
-                    child: ButtonContinuer(onPressed: (){
-
+                    child: ButtonContinuer(onPressed: () async {
+                      player2.stop();
+                      //int result = await advancedPlayer.pause();
+                      print("khra");
                       Firestore.instance.collection('users').document(user.uid).collection('domains').document('maths').updateData({'niv1':scoreM.niv1});
 
                       if (scoreM.niv1>hs.niv1)
                       { hs.niv1=scoreM.niv1;
                       Firestore.instance.collection('users').document(user.uid).collection('domains').document('maths').updateData({'high1':scoreM.niv1});}
-                        if (score.niv2<0)
-                        {  score.niv2=0;
-                        Firestore.instance.collection('users').document(user.uid).collection('domains').document('maths').updateData({'niv2':0});}
-                        Navigator.push(
+                      // infos geo
+                      var dm=await  Firestore.instance.collection('users').document(user.uid).collection('domains').document('geographie').get();
+                      scorG =new ScoreGeo(dm.data["testFait"], dm.data["niv1"], dm.data["niv2"], dm.data["niv3"]);
+                      highG =new HighestScore(dm.data["high1"],dm.data["high2"],dm.data["high3"]);
+                      //infos fr
+                      var df=await Firestore.instance.collection('users').document(user.uid).collection('domains').document('francais').get();
+                      scorF =new ScoreFr(df.data["testFait"], df.data["niv1"], df.data["niv2"], df.data["niv3"]);
+                      highF =new HighestScore(df.data["high1"],df.data["high2"],df.data["high3"]);
+                      int score=scoreM.somme()+scorF.somme() +scorG.somme() ;
+                      int high=hs.somme()+highF.somme() +highG.somme() ;
+                      var doc=await Firestore.instance.collection('users').document(user.uid).get();
+                      if (doc.data['finalScore']<high){
+                        Firestore.instance.collection('users').document(user.uid).updateData({'finalScore':high});
+                      }
+                      Firestore.instance.collection('users').document(user.uid).updateData({'score':score});
+                      Navigator.push(
                             context,
                             MaterialPageRoute(builder: (context) => Niveau1Pass()));
                       },)

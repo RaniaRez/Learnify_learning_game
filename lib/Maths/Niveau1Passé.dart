@@ -1,3 +1,4 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:somthn/Buttons/HomeButton.dart';
@@ -27,25 +28,9 @@ class Niveau1Pass extends StatefulWidget {
 }
 
 class _Niveau1PassState extends State<Niveau1Pass> {
+  var player = AudioCache();
+  var player2 = AudioPlayer ();
 
-  AudioPlayer advancedPlayer;
-
-  @override
-  initState() {
-    super.initState();
-    loadMusic();
-  }
-
-  Future loadMusic() async {
-
-    advancedPlayer = await AudioCache().play("audio/niveauPasse.wav");
-  }
-
-  @override
-  void dispose() {
-    advancedPlayer = null;
-    super.dispose();
-  }
 
   @override
 
@@ -55,6 +40,10 @@ class _Niveau1PassState extends State<Niveau1Pass> {
     bool star1 = (hs.niv1>7.5) ;
     bool star2 = (hs.niv2>7.5) ;
     bool star3 = (hs.niv3>7.5) ;
+    if ((score.niv2<0)&&(complet))
+    { score.niv2=0;
+    Firestore.instance.collection('users').document(user.uid).collection('domains').document('maths').updateData({'niv2':0});}
+
 
     return Scaffold(
       body:
@@ -120,7 +109,7 @@ class _Niveau1PassState extends State<Niveau1Pass> {
                 child: FittedBox(
                   fit: BoxFit.fitWidth,
                   child: Text(
-                    scoreM.niv1 .toString(),
+                    hs.niv1 .toString(),
                     style:TextStyle(
                       fontSize: 30,
                       fontFamily: 'Skranji-Bold',
@@ -135,7 +124,7 @@ class _Niveau1PassState extends State<Niveau1Pass> {
                 child: FittedBox(
                   fit: BoxFit.fitWidth,
                   child: Text(
-                      hs.niv1 .toString() ,
+                    scoreM.niv1 .toString(),
                     style:TextStyle(
                       fontSize: 30,
                       fontFamily: 'Skranji-Bold',
@@ -308,9 +297,11 @@ class _Niveau1PassState extends State<Niveau1Pass> {
               left: size.width*0.7 ,
               child: Visibility(
                 visible: ((complet) || (score.niv2>=0)),
-                child: GoToButton(onPressed: (){
+                child: GoToButton(onPressed: () async {
+                  player2.stop();
+                 // int result = await advancedPlayer.pause();
+                  player2 =  await player.play('audio/niveauPasse.wav');
                   print(scoreM.niv1);
-                  print('khra');
                   //Firestore.instance.collection('users').document(user.uid).collection('domains').document('maths').updateData({'niv1':scoreM.niv1});
                   Navigator.push(
                       context,

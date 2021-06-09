@@ -3,6 +3,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:somthn/Buttons/BarreProgres.dart';
 import 'package:somthn/Maths/I-M-2-2.dart';
 import 'package:somthn/Maths/M-2-3.dart';
+import 'package:somthn/Maths/boxDialogMath2.dart';
 import 'package:somthn/WelcomePages/Settings.dart';
 import 'package:somthn/Buttons/buttonContinuer.dart';
 import 'package:somthn/Buttons/buttonQ.dart';
@@ -22,6 +23,8 @@ class M_2_2_2nd_One extends StatefulWidget {
   _M_2_2_2nd_OneState createState() => _M_2_2_2nd_OneState();
 }
 class _M_2_2_2nd_OneState extends State<M_2_2_2nd_One> {
+  var player = AudioCache();
+  var player2 = AudioPlayer ();
 
   AudioPlayer advancedPlayer;
 
@@ -69,18 +72,24 @@ class _M_2_2_2nd_OneState extends State<M_2_2_2nd_One> {
                   top: size.height*0.05,
                   right:size.width*0.75,
 
-                  child: BacksButton(onPressed: (){
+                  child: BacksButton(onPressed: () async {
+                    player2.stop();
+                    int result = await advancedPlayer.pause();
                     print("u clicked me");
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(builder: (context) => Math2()));
+                    showDialog(context: context,
+                        builder: (BuildContext context){
+                          return customDialogMath2();
+                        }
+                    );
                   },)
               ),
 
               Positioned(
                   top:size.height*0.05,
                   left:size.width*0.75,
-                  child: SettingsButton(onPressed: (){
+                  child: SettingsButton(onPressed: () async {
+                    player2.stop();
+                    int result = await advancedPlayer.pause();
                     Navigator.push(
                         context,
                         MaterialPageRoute(builder: (context) => Settings()));
@@ -331,7 +340,9 @@ class _M_2_2_2nd_OneState extends State<M_2_2_2nd_One> {
                     left: 0.0,
                     height: size.height*0.2,
                     width: size.width*0.5,
-                    child: ButtonContinuer(onPressed: (){
+                    child: ButtonContinuer(onPressed: () async {
+                      player2.stop();
+                      int result = await advancedPlayer.pause();
                       Navigator.push(
                           context,
                           MaterialPageRoute(builder: (context) => M_2_3()));
@@ -400,8 +411,11 @@ class _M_2_2_2nd_OneState extends State<M_2_2_2nd_One> {
                 child: Visibility(
                     visible: (twoClicked && Visible),
                     child: IconButton(
-                        onPressed: (){
+                        onPressed: () async {
                           if (twoClicked){
+                            player2.stop();
+                            int result = await advancedPlayer.pause();
+                            player2 =  await player.play('audio/mathsBravo.wav');
                             setState(() {
                               Visible = false;
                             });
@@ -421,8 +435,10 @@ class _M_2_2_2nd_OneState extends State<M_2_2_2nd_One> {
                 child: Visibility(
                     visible: (fourClicked&&Visible),
                     child: IconButton(
-                        onPressed: (){
+                        onPressed: () async {
                           if (fourClicked)  {
+                            player2.stop();
+                            int result = await advancedPlayer.pause();
                             Navigator.push(
                                 context,
                                 MaterialPageRoute(builder: (context) => I_M_2_2_()));
@@ -441,8 +457,10 @@ class _M_2_2_2nd_OneState extends State<M_2_2_2nd_One> {
                 child: Visibility(
                     visible: (threeClicked&&Visible),
                     child: IconButton(
-                        onPressed: (){
+                        onPressed: () async {
                           if (threeClicked)  {
+                            player2.stop();
+                            int result = await advancedPlayer.pause();
                             Navigator.push(
                                 context,
                                 MaterialPageRoute(builder: (context) =>  I_M_2_2_()));

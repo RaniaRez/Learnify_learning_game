@@ -10,9 +10,7 @@ import 'package:somthn/Buttons/buttonContinuer.dart';
 import 'package:somthn/Buttons/buttonGoTo.dart';
 import 'package:somthn/Buttons/buttonReset.dart';
 import 'package:somthn/Buttons/settingsButton.dart';
-import 'package:somthn/Francais/F-1.dart';
 import 'package:somthn/Francais/Niveau2Pass%C3%A9.dart';
-import 'package:somthn/Francais/NiveauFr.dart';
 import 'package:somthn/WelcomePages/Settings.dart';
 import 'package:somthn/myicons.dart';
 import '../Services/Login.dart';
@@ -21,6 +19,14 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'F-2.dart';
 import 'package:audioplayers/audio_cache.dart';
 import 'package:audioplayers/audioplayers.dart';
+
+import '../Maths/ScoreMaths.dart';
+import'../Geographie/ScoreGeo.dart';
+import'../Maths/HighestScore.dart';
+
+ScoreMaths scorM;
+ScoreGeo scorG ;
+HighestScore highM , highG;
 
 class F_2_5_2nd extends StatefulWidget {
   const F_2_5_2nd({Key key}) : super(key: key);
@@ -102,7 +108,7 @@ class _F_2_5_2ndState extends State<F_2_5_2nd> {
 
                     Navigator.push(
                         context,
-                        MaterialPageRoute(builder: (context) => Fr1()));
+                        MaterialPageRoute(builder: (context) => Fr2()));
                   },)
               ),
               Positioned(
@@ -203,9 +209,22 @@ class _F_2_5_2ndState extends State<F_2_5_2nd> {
                       if (scoreF.niv2>high.niv2)
                       { high.niv2=scoreF.niv2 ;
                         Firestore.instance.collection('users').document(user.uid).collection('domains').document('francais').updateData({'high2':scoreF.niv2});}
-                        if (scoreF.niv3<0) { scoreF.niv3=0;
-                        Firestore.instance.collection('users').document(user.uid).collection('domains').document('francais').updateData({'niv3':scoreF.niv3});}
-                        Navigator.push(
+                      // infos maths
+                      var dm=await  Firestore.instance.collection('users').document(user.uid).collection('domains').document('maths').get();
+                      scorM =new ScoreMaths(dm.data["testFait"], dm.data["niv1"], dm.data["niv2"], dm.data["niv3"]);
+                      highM =new HighestScore(dm.data["high1"],dm.data["high2"],dm.data["high3"]);
+                      // infos geo
+                      var dg=await Firestore.instance.collection('users').document(user.uid).collection('domains').document('geographie').get();
+                      scorG =new ScoreGeo(dg.data["testFait"], dg.data["niv1"], dg.data["niv2"], dg.data["niv3"]);
+                      highG =new HighestScore(dg.data["high1"],dg.data["high2"],dg.data["high3"]);
+                      int score=scorM.somme()+scoreF.somme() +scorG.somme() ;
+                      int highest=highM.somme()+high.somme() +highG.somme() ;
+                      var doc=await Firestore.instance.collection('users').document(user.uid).get();
+                      if (doc.data['finalScore']<highest){
+                        Firestore.instance.collection('users').document(user.uid).updateData({'finalScore':highest});
+                      }
+                      Firestore.instance.collection('users').document(user.uid).updateData({'score':score});
+                      Navigator.push(
                             context,
                             MaterialPageRoute(builder: (context) => Niveau2Pass()));
                     },)
@@ -215,7 +234,7 @@ class _F_2_5_2ndState extends State<F_2_5_2nd> {
                 Visibility(
                   visible: Visible,
                   child: Positioned(
-                    top: size.height*0.5,
+                    top: size.height*0.36,
                     left: size.width*0.72,
                     height: size.width*0.3,
                     width: size.width*0.3,

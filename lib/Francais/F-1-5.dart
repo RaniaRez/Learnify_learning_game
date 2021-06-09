@@ -22,6 +22,14 @@ import 'Niveau1Passé.dart';
 import 'package:audioplayers/audio_cache.dart';
 import 'package:audioplayers/audioplayers.dart';
 
+import '../Maths/ScoreMaths.dart';
+import'../Geographie/ScoreGeo.dart';
+import'../Maths/HighestScore.dart';
+
+ScoreMaths scorM;
+ScoreGeo scorG ;
+HighestScore highM , highG;
+
 class F_1_5 extends StatefulWidget {
   const F_1_5({Key key}) : super(key: key);
 
@@ -166,7 +174,7 @@ class _F_1_5State extends State<F_1_5> {
                     left: 0.0,
                     height: size.height*0.2,
                     width: size.width*0.5,
-                    child: ButtonContinuer(onPressed: ()  {
+                    child: ButtonContinuer(onPressed: ()  async {
                       player2.stop();
 
 
@@ -176,8 +184,21 @@ class _F_1_5State extends State<F_1_5> {
                       if (scoreF.niv1>high.niv1)
                         { high.niv1=scoreF.niv1 ;
                           Firestore.instance.collection('users').document(user.uid).collection('domains').document('francais').updateData({'high1':scoreF.niv1});}
-                            if (scoreF.niv2<0) { scoreF.niv2=0;
-                            Firestore.instance.collection('users').document(user.uid).collection('domains').document('francais').updateData({'niv2':scoreF.niv2});}
+                      // infos maths
+                      var dm=await  Firestore.instance.collection('users').document(user.uid).collection('domains').document('maths').get();
+                      scorM =new ScoreMaths(dm.data["testFait"], dm.data["niv1"], dm.data["niv2"], dm.data["niv3"]);
+                      highM =new HighestScore(dm.data["high1"],dm.data["high2"],dm.data["high3"]);
+                      // infos geo
+                      var dg=await Firestore.instance.collection('users').document(user.uid).collection('domains').document('geographie').get();
+                      scorG =new ScoreGeo(dg.data["testFait"], dg.data["niv1"], dg.data["niv2"], dg.data["niv3"]);
+                      highG =new HighestScore(dg.data["high1"],dg.data["high2"],dg.data["high3"]);
+                      int score=scorM.somme()+scoreF.somme() +scorG.somme() ;
+                      int highest=highM.somme()+high.somme() +highG.somme() ;
+                      var doc=await Firestore.instance.collection('users').document(user.uid).get();
+                      if (doc.data['finalScore']<highest){
+                        Firestore.instance.collection('users').document(user.uid).updateData({'finalScore':highest});
+                      }
+                      Firestore.instance.collection('users').document(user.uid).updateData({'score':score});
                             Navigator.push(
                             context,
                             MaterialPageRoute(builder: (context) => Niveau1Pass()));

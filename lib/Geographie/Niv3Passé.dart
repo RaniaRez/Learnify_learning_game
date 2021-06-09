@@ -4,7 +4,7 @@ import 'package:somthn/Buttons/HomeButton.dart';
 import 'package:somthn/Buttons/buttonGoTo.dart';
 import 'package:somthn/Buttons/buttonReset.dart';
 import 'package:somthn/Francais/F-3.dart';
-import 'package:somthn/Geographie/N3Q1.dart';
+import 'package:somthn/Geographie/N3.dart';
 import 'package:somthn/Maths/BienvenueMath.dart';
 import 'package:somthn/WelcomePages/Settings.dart';
 import 'package:somthn/myicons.dart';
@@ -256,7 +256,7 @@ class _Niveau3PassState extends State<Niveau3Pass> {
             Positioned(
 
               top: size.height*0.7,
-              left: size.width*0.08,
+              left: size.width*0.037,
               child: Row(
                 children: <Widget>[
                   Container(
@@ -277,7 +277,7 @@ class _Niveau3PassState extends State<Niveau3Pass> {
             Positioned(
 
               top: size.height*0.7,
-              left: size.width*0.08,
+              left: size.width*0.037,
               child: Row(
                 children: <Widget>[
                   Visibility(
@@ -329,7 +329,7 @@ class _Niveau3PassState extends State<Niveau3Pass> {
                       print('reset');
                       Navigator.push(
                           context,
-                          MaterialPageRoute(builder: (context) => N3Q1()));
+                          MaterialPageRoute(builder: (context) => Geo3()));
                     }
 
                 ),

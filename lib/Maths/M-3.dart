@@ -23,6 +23,8 @@ class Math3 extends StatefulWidget {
 }
 
 class _Math3State extends State<Math3> {
+  var player = AudioCache();
+  var player2 = AudioPlayer ();
 
   AudioPlayer advancedPlayer;
 
@@ -66,7 +68,9 @@ class _Math3State extends State<Math3> {
                   top: size.height*0.05,
                   right:size.width*0.75,
 
-                  child: BacksButton(onPressed: (){
+                  child: BacksButton(onPressed: () async {
+                    player2.stop();
+                    int result = await advancedPlayer.pause();
                     print("u clicked me");
                     Navigator.push(
                         context,
@@ -77,7 +81,9 @@ class _Math3State extends State<Math3> {
               Positioned(
                   top:size.height*0.05,
                   left:size.width*0.75,
-                  child: SettingsButton(onPressed: (){
+                  child: SettingsButton(onPressed: () async {
+                    player2.stop();
+                    int result = await advancedPlayer.pause();
                     Navigator.push(
                         context,
                         MaterialPageRoute(builder: (context) => Settings()));
@@ -148,7 +154,9 @@ class _Math3State extends State<Math3> {
               Positioned(
                 top: size.height*0.8,
                 left:size.width*0.75,
-                child: GoToButton(onPressed: (){
+                child: GoToButton(onPressed: () async {
+                  player2.stop();
+                  int result = await advancedPlayer.pause();
                   print("HELL YEAH");
                   scoreM.niv3=0;
                   Navigator.push(

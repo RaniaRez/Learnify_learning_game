@@ -17,6 +17,8 @@ import 'BienvenueFr.dart';
 import 'package:audioplayers/audio_cache.dart';
 import 'package:audioplayers/audioplayers.dart';
 
+import 'F-2.dart';
+
 class F_2_1_2nd extends StatefulWidget {
   const F_2_1_2nd({Key key}) : super(key: key);
 
@@ -88,7 +90,9 @@ class _F_2_1_2ndState extends State<F_2_1_2nd> {
                     player2.stop();
                     int result = await advancedPlayer.pause();
 
-                    Navigator.pop(context);
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => Fr2()));
                   },)
               ),
               Positioned(

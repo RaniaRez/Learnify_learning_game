@@ -6,7 +6,6 @@ import 'package:somthn/Geographie/N2Q1T2_C_3.dart';
 import 'package:somthn/Geographie/N2Q2.dart';
 import 'package:somthn/WelcomePages/Settings.dart';
 import 'package:somthn/Buttons/buttonContinuer.dart';
-import 'package:somthn/Buttons/buttonQ.dart';
 import 'package:somthn/myicons.dart';
 import '../Buttons/settingsButton.dart';
 import '../Buttons/BacksButton.dart';
@@ -18,9 +17,8 @@ import '../Services/Login.dart';
 import 'package:audioplayers/audio_cache.dart';
 import 'package:audioplayers/audioplayers.dart';
 import 'package:vibration/vibration.dart';
-
 import 'BienvenueGeo.dart';
-import 'NiveauGeo.dart';
+import 'N2.dart';
 
 
 
@@ -30,11 +28,13 @@ import 'NiveauGeo.dart';
 class N2Q1 extends StatefulWidget {
   const N2Q1({Key key}) : super(key: key);
 
+
   @override
   _N2Q1State createState() => _N2Q1State();
 }
 class _N2Q1State extends State<N2Q1> {
-
+  var player = AudioCache();
+  var player2 = AudioPlayer ();
   AudioPlayer advancedPlayer;
 
 
@@ -42,6 +42,7 @@ class _N2Q1State extends State<N2Q1> {
   initState() {
     super.initState();
     loadMusic();
+    scoreG.niv2=0;
   }
 
   Future loadMusic() async {
@@ -63,7 +64,6 @@ class _N2Q1State extends State<N2Q1> {
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
-    scoreG.niv2=0;
     return Container(
         height: size.height,
         width: size.width,
@@ -82,18 +82,22 @@ class _N2Q1State extends State<N2Q1> {
                   top: size.height*0.05,
                   right:size.width*0.75,
 
-                  child: BacksButton(onPressed: (){
+                  child: BacksButton(onPressed: () async {
+                    player2.stop();
+                    int result = await advancedPlayer.pause();
                     print("u clicked me");
                     Navigator.push(
                         context,
-                        MaterialPageRoute(builder: (context) => NiveauGeo()));
+                        MaterialPageRoute(builder: (context) => Geo2()));
                   },)
               ),
 
               Positioned(
                   top:size.height*0.05,
                   left:size.width*0.75,
-                  child: SettingsButton(onPressed: (){
+                  child: SettingsButton(onPressed: () async {
+                    player2.stop();
+                    int result = await advancedPlayer.pause();
                     Navigator.push(
                         context,
                         MaterialPageRoute(builder: (context) => Settings()));
@@ -104,12 +108,12 @@ class _N2Q1State extends State<N2Q1> {
                   bottom: size.height*0.88,
                   left: size.width*0.275,
                   right: size.width*0.275,
-                  child: SvgPicture.asset(FourBars)),
+                  child: SvgPicture.asset(EmptyBar)),
               Positioned(
                 bottom: size.height*0.55,
                 left: size.width*0.05,
                 height: size.height*0.3,
-                width: size.width*0.8,
+                width: size.width*0.7,
                 child:SvgPicture.asset('assets/icons/BulleN2Q1.svg'),
               ),
               Visibility(
@@ -118,7 +122,7 @@ class _N2Q1State extends State<N2Q1> {
                   bottom: size.height*0.88,
                   left: size.width*0.275,
                   right: size.width*0.275,
-                  child: SvgPicture.asset(FourBars),
+                  child: SvgPicture.asset(barreProgress),
                 ),
               ),
               if (user.avatar=="Pink")
@@ -170,9 +174,9 @@ class _N2Q1State extends State<N2Q1> {
               Visibility(
                 visible: Visible,
                 child: Positioned(
-                  top: size.height*0.5,
+                  top: size.height*0.6,
                   left: size.width*0.5,
-                  height: size.height*0.3,
+                  height: size.height*0.1,
                   width: size.width*0.5,
                   child: IconButton(
                     icon: SvgPicture.asset('assets/icons/MerRouge.svg'),
@@ -190,9 +194,9 @@ class _N2Q1State extends State<N2Q1> {
               Visibility(
                 visible: Visible,
                 child: Positioned(
-                  top: size.height*0.7,
+                  top: size.height*0.8,
                   left: size.width*0.5,
-                  height: size.height*0.3,
+                  height: size.height*0.1,
                   width: size.width*0.5,
                   child: IconButton(
                     icon: SvgPicture.asset('assets/icons/Mediterannee.svg'),
@@ -210,9 +214,9 @@ class _N2Q1State extends State<N2Q1> {
               Visibility(
                 visible: Visible,
                 child: Positioned(
-                  top: size.height*0.6,
+                  top: size.height*0.7,
                   left: size.width*0,
-                  height: size.height*0.3,
+                  height: size.height*0.1,
                   width: size.width*0.5,
                   child: IconButton(
                     icon: SvgPicture.asset('assets/icons/MerNoire.svg'),
@@ -231,9 +235,9 @@ class _N2Q1State extends State<N2Q1> {
               Visibility(
                 visible: Visible,
                 child: Positioned(
-                  top: size.height*0.4,
+                  top: size.height*0.5,
                   left: size.width*0.0,
-                  height: size.height*0.3,
+                  height: size.height*0.1,
                   width: size.width*0.5,
                   child: IconButton(
                     icon: SvgPicture.asset('assets/icons/MerMorte.svg'),
@@ -256,7 +260,9 @@ class _N2Q1State extends State<N2Q1> {
                     left: 0.0,
                     height: size.height*0.2,
                     width: size.width*0.5,
-                    child: ButtonContinuer(onPressed: (){
+                    child: ButtonContinuer(onPressed: () async {
+                      player2.stop();
+                      int result = await advancedPlayer.pause();
                       Navigator.push(
                           context,
                           MaterialPageRoute(builder: (context) => N2Q2()));
@@ -319,16 +325,18 @@ class _N2Q1State extends State<N2Q1> {
               ),
 
               Positioned(
-                  top: size.height*0.6,
+                  top: size.height*0.7,
                   left: size.width*0,
-                  height: size.height*0.3,
+                  height: size.height*0.1,
                   width: size.width*0.5,
                   child: Visibility(
                       visible: (threeClicked && Visible),
                       child: IconButton(
-                        onPressed: (){
+                        onPressed: () async {
+                          player2.stop();
+                          int result = await advancedPlayer.pause();
                           if (threeClicked){
-                            //Vibration.vibrate();
+                            Vibration.vibrate();
                             setState(() {
                               Navigator.push(
                                   context,
@@ -343,37 +351,44 @@ class _N2Q1State extends State<N2Q1> {
                         icon: SvgPicture.asset('assets/icons/MerNoire.svg'),))
               ),
               Positioned(
-                top: size.height*0.7,
+                top: size.height*0.8,
                 left: size.width*0.5,
-                height: size.height*0.3,
+                height: size.height*0.1,
                 width: size.width*0.5,
                 child: Visibility(
                     visible: (fourClicked&&Visible),
                     child: IconButton(
-                        onPressed: (){
+                        onPressed: () async {
+                          player2.stop();
+                          int result = await advancedPlayer.pause();
                           if (fourClicked){
+                            player2 =  await player.play('audio/mathsBravo.wav');
+
                             setState(() {
                               Visible = false;
                               scoreG.niv2+=2;
                             });
 
                             print('Correct');
+                            print(scoreG.niv2);
+                            print("lkhra lmhboul");
                           }
-                          print('2');
                         },
                         icon: SvgPicture.asset('assets/icons/Mediterannee.svg'))
                 ),
               ),
               Positioned(
-                top: size.height*0.5,
+                top: size.height*0.6,
                 left: size.width*0.5,
-                height: size.height*0.3,
+                height: size.height*0.1,
                 width: size.width*0.5,
 
                 child: Visibility(
                     visible: (twoClicked&&Visible),
                     child: IconButton(
-                        onPressed: (){
+                        onPressed: () async {
+                          player2.stop();
+                          int result = await advancedPlayer.pause();
                           if (twoClicked){
                             Vibration.vibrate();
                             setState(() {
@@ -391,9 +406,9 @@ class _N2Q1State extends State<N2Q1> {
                 ),
               ),
               Positioned(
-                top: size.height*0.4,
+                top: size.height*0.5,
                 left: size.width*0.0,
-                height: size.height*0.3,
+                height: size.height*0.1,
                 width: size.width*0.5,
                 child: Visibility(
                     visible: (oneClicked&&Visible),

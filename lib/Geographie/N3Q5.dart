@@ -4,7 +4,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:somthn/Geographie/N3Q5T2_C_2.dart';
 import 'package:somthn/Geographie/N3Q5T2_C_1.dart';
 import 'package:somthn/Geographie/N3Q5T2_C_4.dart';
-import 'package:somthn/Geographie/NiveauGeo.dart';
+import 'package:somthn/Geographie/N3.dart';
 import 'package:somthn/WelcomePages/Settings.dart';
 import 'package:somthn/Buttons/buttonContinuer.dart';
 import 'package:somthn/myicons.dart';
@@ -22,6 +22,15 @@ import 'package:audioplayers/audioplayers.dart';
 import 'BienvenueGeo.dart';
 import 'Niv3Passé.dart';
 
+import '../Maths/ScoreMaths.dart';
+import'../Francais/ScoreFr.dart';
+import'../Maths/HighestScore.dart';
+
+ScoreMaths scorM;
+ScoreFr scorF ;
+HighestScore highM , highF;
+
+
 
 class N3Q5 extends StatefulWidget {
   const N3Q5({Key key}) : super(key: key);
@@ -30,6 +39,8 @@ class N3Q5 extends StatefulWidget {
   _N3Q5State createState() => _N3Q5State();
 }
 class _N3Q5State extends State<N3Q5> {
+  var player = AudioCache();
+  var player2 = AudioPlayer ();
   AudioPlayer advancedPlayer;
 
 
@@ -50,7 +61,6 @@ class _N3Q5State extends State<N3Q5> {
     super.dispose();
   }
 
-  final player = AudioCache();
   bool oneClicked = false;
   bool twoClicked = false;
   bool threeClicked = false;
@@ -80,7 +90,7 @@ class _N3Q5State extends State<N3Q5> {
                   child: BacksButton(onPressed: (){
                     Navigator.push(
                         context,
-                        MaterialPageRoute(builder: (context) => NiveauGeo()));
+                        MaterialPageRoute(builder: (context) => Geo3()));
                     print("back");
                     //Navigator.pop(context);
                   },)
@@ -187,11 +197,12 @@ class _N3Q5State extends State<N3Q5> {
                   child: IconButton(
                     iconSize: 64,
                     icon: SvgPicture.asset('assets/icons/AudioIcon.svg'),
-                    onPressed: (){
+                    onPressed: () async {
+                      player2.stop();
+                      int result = await advancedPlayer.pause();
                       print('playAudio2');
-                      //player.play('audio/algeria.mp3').timeout(Duration(days: 0, minutes: 0, seconds: 5,milliseconds: 0, microseconds: 0),   onTimeout:() => player.clear('audio/algeria.mp3') );
-                      player.play('audio/algeriaoff.wav');
-                      //timeCounter();
+                      player2 =  await player.play('audio/algeriaoff.wav');
+
 
                       },
                   ),
@@ -206,9 +217,11 @@ class _N3Q5State extends State<N3Q5> {
                   child: IconButton(
                     iconSize: 64,
                     icon: SvgPicture.asset('assets/icons/AudioIcon.svg'),
-                    onPressed: (){
+                    onPressed: () async {
+                      player2.stop();
+                      int result = await advancedPlayer.pause();
                       print('playAudio4');
-                      player.play('audio/braziloff.wav');
+                      player2 =  await player.play('audio/braziloff.wav');
                       },
                   ),
                 ),
@@ -222,9 +235,11 @@ class _N3Q5State extends State<N3Q5> {
                   child: IconButton(
                     iconSize: 64,
                     icon: SvgPicture.asset('assets/icons/AudioIcon.svg'),
-                    onPressed: (){
+                    onPressed: () async {
+                      player2.stop();
+                      int result = await advancedPlayer.pause();
                       print('playAudio1');
-                      player.play('audio/italyoff.wav');
+                      player2 =  await player.play('audio/italyoff.wav');
                       },
                   ),
                 ),
@@ -238,9 +253,11 @@ class _N3Q5State extends State<N3Q5> {
                   child: IconButton(
                     iconSize: 64,
                     icon: SvgPicture.asset('assets/icons/AudioIcon.svg'),
-                    onPressed: (){
+                    onPressed: () async {
+                      player2.stop();
+                      int result = await advancedPlayer.pause();
                       print('playAudio3');
-                      player.play('audio/singapouroff.wav');
+                      player2 =  await player.play('audio/singapouroff.wav');
                       },
                   ),
                 ),
@@ -331,13 +348,30 @@ class _N3Q5State extends State<N3Q5> {
                     left: 0.0,
                     height: size.height*0.2,
                     width: size.width*0.5,
-                    child: ButtonContinuer(onPressed: (){
+                    child: ButtonContinuer(onPressed: () async {
+                      player2.stop();
+                      int result = await advancedPlayer.pause();
                       print("score final");
                       print(scoreG.niv3);
                       Firestore.instance.collection('users').document(user.uid).collection('domains').document('geographie').updateData({'niv3':scoreG.niv3});
                       if (scoreG.niv3>highG.niv3)
                       { highG.niv3=scoreG.niv3 ;
                       Firestore.instance.collection('users').document(user.uid).collection('domains').document('geographie').updateData({'high3':scoreG.niv3});}
+                      // infos maths
+                      var dm=await  Firestore.instance.collection('users').document(user.uid).collection('domains').document('maths').get();
+                      scorM =new ScoreMaths(dm.data["testFait"], dm.data["niv1"], dm.data["niv2"], dm.data["niv3"]);
+                      highM =new HighestScore(dm.data["high1"],dm.data["high2"],dm.data["high3"]);
+                      //infos fr
+                      var df=await Firestore.instance.collection('users').document(user.uid).collection('domains').document('francais').get();
+                      scorF =new ScoreFr(df.data["testFait"], df.data["niv1"], df.data["niv2"], df.data["niv3"]);
+                      highF =new HighestScore(df.data["high1"],df.data["high2"],df.data["high3"]);
+                      int score=scorM.somme()+scorF.somme() +scoreG.somme() ;
+                      int high=highM.somme()+highF.somme() +highG.somme() ;
+                      var doc=await Firestore.instance.collection('users').document(user.uid).get();
+                      if (doc.data['finalScore']<high){
+                        Firestore.instance.collection('users').document(user.uid).updateData({'finalScore':high});
+                      }
+                      Firestore.instance.collection('users').document(user.uid).updateData({'score':score});
                       Navigator.push(
                           context,
                           MaterialPageRoute(builder: (context) => Niveau3Pass()));
@@ -406,7 +440,9 @@ class _N3Q5State extends State<N3Q5> {
                       visible: (threeClicked && Visible),
                       child: IconButton(
                         iconSize: 80,
-                        onPressed: (){
+                        onPressed: () async {
+                          player2.stop();
+                          int result = await advancedPlayer.pause();
                           if (threeClicked){
                             Vibration.vibrate();
                             Navigator.push(
@@ -427,7 +463,9 @@ class _N3Q5State extends State<N3Q5> {
                       visible: (fourClicked && Visible),
                       child: IconButton(
                         iconSize: 80,
-                        onPressed: (){
+                        onPressed: () async {
+                          player2.stop();
+                          int result = await advancedPlayer.pause();
                           if (fourClicked){
                             Vibration.vibrate();
                             Navigator.push(
@@ -449,8 +487,12 @@ class _N3Q5State extends State<N3Q5> {
                     visible: (twoClicked&&Visible),
                     child: IconButton(
                         iconSize: 80,
-                        onPressed: (){
+                        onPressed: () async {
+                          player2.stop();
+                          int result = await advancedPlayer.pause();
                           if (twoClicked){
+                            player2 =  await player.play('audio/mathsBravo.wav');
+
                             setState(() {
                               Visible = false;
                             });
@@ -471,7 +513,9 @@ class _N3Q5State extends State<N3Q5> {
                     visible: (oneClicked&&Visible),
                     child: IconButton(
                         iconSize: 80,
-                        onPressed: (){
+                        onPressed: () async {
+                          player2.stop();
+                          int result = await advancedPlayer.pause();
                           if (oneClicked)  {
                             Vibration.vibrate();
                             Navigator.push(

@@ -20,6 +20,8 @@ import 'BienvenueFr.dart';
 import 'package:audioplayers/audio_cache.dart';
 import 'package:audioplayers/audioplayers.dart';
 
+import 'F-3.dart';
+
 class F_3_4 extends StatefulWidget {
   const F_3_4({Key key}) : super(key: key);
 
@@ -83,7 +85,7 @@ class _F_3_4State extends State<F_3_4> {
 
                     Navigator.push(
                         context,
-                        MaterialPageRoute(builder: (context) => Fr1()));
+                        MaterialPageRoute(builder: (context) => Fr3()));
                   },)
               ),
               Positioned(

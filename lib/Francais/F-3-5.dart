@@ -10,11 +10,10 @@ import 'package:somthn/Buttons/buttonContinuer.dart';
 import 'package:somthn/Buttons/buttonGoTo.dart';
 import 'package:somthn/Buttons/buttonReset.dart';
 import 'package:somthn/Buttons/settingsButton.dart';
-import 'package:somthn/Francais/F-1.dart';
 import 'package:somthn/Francais/F-3-5-2nd.dart';
 import 'package:somthn/Francais/F-3.dart';
 import 'package:somthn/Francais/Niveau3Pass%C3%A9.dart';
-import 'package:somthn/Francais/NiveauFr.dart';
+
 import 'package:somthn/WelcomePages/Settings.dart';
 import 'package:somthn/myicons.dart';
 import '../Services/Login.dart';
@@ -22,6 +21,14 @@ import 'BienvenueFr.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:audioplayers/audio_cache.dart';
 import 'package:audioplayers/audioplayers.dart';
+
+import '../Maths/ScoreMaths.dart';
+import'../Geographie/ScoreGeo.dart';
+import'../Maths/HighestScore.dart';
+
+ScoreMaths scorM;
+ScoreGeo scorG ;
+HighestScore highM , highG;
 
 
 class F_3_5 extends StatefulWidget {
@@ -85,7 +92,7 @@ class _F_3_5State extends State<F_3_5> {
 
                     Navigator.push(
                         context,
-                        MaterialPageRoute(builder: (context) => Fr1()));
+                        MaterialPageRoute(builder: (context) => Fr3()));
                   },)
               ),
               Positioned(
@@ -177,7 +184,7 @@ class _F_3_5State extends State<F_3_5> {
                     left: 0.0,
                     height: size.height*0.2,
                     width: size.width*0.5,
-                    child: ButtonContinuer(onPressed: (){
+                    child: ButtonContinuer(onPressed: ()async {
                       player2.stop();
 
                       print("score final");
@@ -186,7 +193,22 @@ class _F_3_5State extends State<F_3_5> {
                       if (scoreF.niv3>high.niv3)
                       { high.niv3=scoreF.niv3 ;
                       Firestore.instance.collection('users').document(user.uid).collection('domains').document('francais').updateData({'high3':scoreF.niv3});}
-                        Navigator.push(
+                      // infos maths
+                      var dm=await  Firestore.instance.collection('users').document(user.uid).collection('domains').document('maths').get();
+                      scorM =new ScoreMaths(dm.data["testFait"], dm.data["niv1"], dm.data["niv2"], dm.data["niv3"]);
+                      highM =new HighestScore(dm.data["high1"],dm.data["high2"],dm.data["high3"]);
+                      // infos geo
+                      var dg=await Firestore.instance.collection('users').document(user.uid).collection('domains').document('geographie').get();
+                      scorG =new ScoreGeo(dg.data["testFait"], dg.data["niv1"], dg.data["niv2"], dg.data["niv3"]);
+                      highG =new HighestScore(dg.data["high1"],dg.data["high2"],dg.data["high3"]);
+                      int score=scorM.somme()+scoreF.somme() +scorG.somme() ;
+                      int highest=highM.somme()+high.somme() +highG.somme() ;
+                      var doc=await Firestore.instance.collection('users').document(user.uid).get();
+                      if (doc.data['finalScore']<highest){
+                        Firestore.instance.collection('users').document(user.uid).updateData({'finalScore':highest});
+                      }
+                      Firestore.instance.collection('users').document(user.uid).updateData({'score':score});
+                      Navigator.push(
                             context,
                             MaterialPageRoute(builder: (context) => Niveau3Pass()));
                      },)

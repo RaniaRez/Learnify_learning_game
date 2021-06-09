@@ -4,6 +4,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:somthn/Maths/I-M-2-5.dart';
 import 'package:somthn/Maths/M-2.dart';
 import 'package:somthn/Maths/Niveau2Pass%C3%A9.dart';
+import 'package:somthn/Maths/boxDialogMath2.dart';
 import 'package:somthn/WelcomePages/Settings.dart';
 import 'package:somthn/Buttons/buttonContinuer.dart';
 import 'package:somthn/Buttons/buttonQ.dart';
@@ -16,6 +17,14 @@ import 'NiveauMath.dart';
 import 'package:audioplayers/audio_cache.dart';
 import 'package:audioplayers/audioplayers.dart';
 
+import 'package:somthn/Francais/ScoreFr.dart';
+import 'package:somthn/Geographie/ScoreGeo.dart';
+import 'HighestScore.dart';
+
+ScoreGeo scorG;
+ScoreFr scorF ;
+HighestScore highG , highF;
+
 
 class M_2_5_2nd_Four extends StatefulWidget {
   const M_2_5_2nd_Four({Key key}) : super(key: key);
@@ -24,7 +33,8 @@ class M_2_5_2nd_Four extends StatefulWidget {
   _M_2_5_2nd_FourState createState() => _M_2_5_2nd_FourState();
 }
 class _M_2_5_2nd_FourState extends State<M_2_5_2nd_Four> {
-
+  var player = AudioCache();
+  var player2 = AudioPlayer ();
   AudioPlayer advancedPlayer;
 
 
@@ -72,18 +82,24 @@ class _M_2_5_2nd_FourState extends State<M_2_5_2nd_Four> {
                   top: size.height*0.05,
                   right:size.width*0.75,
 
-                  child: BacksButton(onPressed: (){
+                  child: BacksButton(onPressed: () async {
+                    player2.stop();
+                    int result = await advancedPlayer.pause();
                     print("u clicked me");
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(builder: (context) => Math2()));
+                    showDialog(context: context,
+                        builder: (BuildContext context){
+                          return customDialogMath2();
+                        }
+                    );
                   },)
               ),
 
               Positioned(
                   top:size.height*0.05,
                   left:size.width*0.75,
-                  child: SettingsButton(onPressed: (){
+                  child: SettingsButton(onPressed: () async {
+                    player2.stop();
+                    int result = await advancedPlayer.pause();
                     Navigator.push(
                         context,
                         MaterialPageRoute(builder: (context) => Settings()));
@@ -328,17 +344,31 @@ class _M_2_5_2nd_FourState extends State<M_2_5_2nd_Four> {
                     left: 0.0,
                     height: size.height*0.2,
                     width: size.width*0.5,
-                    child: ButtonContinuer(onPressed: (){
+                    child: ButtonContinuer(onPressed: () async {
+                      player2.stop();
+                      int result = await advancedPlayer.pause();
                       print("score final");
                       print(scoreM.niv2);
                       Firestore.instance.collection('users').document(user.uid).collection('domains').document('maths').updateData({'niv2':scoreM.niv2});
                       if (scoreM.niv2>hs.niv2)
                       {hs.niv2=scoreM.niv2 ;
                       Firestore.instance.collection('users').document(user.uid).collection('domains').document('maths').updateData({'high2':scoreM.niv2});}
-                        if (score.niv3<0)
-                        { score.niv3=0;
-                        Firestore.instance.collection('users').document(user.uid).collection('domains').document('maths').updateData({'niv3':0});}
-                        Navigator.push(
+                      // infos geo
+                      var dm=await  Firestore.instance.collection('users').document(user.uid).collection('domains').document('geographie').get();
+                      scorG =new ScoreGeo(dm.data["testFait"], dm.data["niv1"], dm.data["niv2"], dm.data["niv3"]);
+                      highG =new HighestScore(dm.data["high1"],dm.data["high2"],dm.data["high3"]);
+                      //infos fr
+                      var df=await Firestore.instance.collection('users').document(user.uid).collection('domains').document('francais').get();
+                      scorF =new ScoreFr(df.data["testFait"], df.data["niv1"], df.data["niv2"], df.data["niv3"]);
+                      highF =new HighestScore(df.data["high1"],df.data["high2"],df.data["high3"]);
+                      int score=scoreM.somme()+scorF.somme() +scorG.somme() ;
+                      int high=hs.somme()+highF.somme() +highG.somme() ;
+                      var doc=await Firestore.instance.collection('users').document(user.uid).get();
+                      if (doc.data['finalScore']<high){
+                        Firestore.instance.collection('users').document(user.uid).updateData({'finalScore':high});
+                      }
+                      Firestore.instance.collection('users').document(user.uid).updateData({'score':score});
+                      Navigator.push(
                             context,
                             MaterialPageRoute(builder: (context) => Niveau2Pass()));
                       print('Continuer');},)
@@ -406,8 +436,10 @@ class _M_2_5_2nd_FourState extends State<M_2_5_2nd_Four> {
                 child: Visibility(
                     visible: (twoClicked && Visible),
                     child: IconButton(
-                        onPressed: (){
+                        onPressed: () async {
                           if (twoClicked)  {
+                            player2.stop();
+                            int result = await advancedPlayer.pause();
                             Navigator.push(
                                 context,
                                 MaterialPageRoute(builder: (context) => I_M_2_5_()));
@@ -426,8 +458,10 @@ class _M_2_5_2nd_FourState extends State<M_2_5_2nd_Four> {
                 child: Visibility(
                     visible: (fourClicked&&Visible),
                     child: IconButton(
-                        onPressed: (){
+                        onPressed: () async {
                           if (fourClicked)  {
+                            player2.stop();
+                            int result = await advancedPlayer.pause();
                             Navigator.push(
                                 context,
                                 MaterialPageRoute(builder: (context) => I_M_2_5_()));
@@ -446,8 +480,10 @@ class _M_2_5_2nd_FourState extends State<M_2_5_2nd_Four> {
                 child: Visibility(
                     visible: (threeClicked&&Visible),
                     child: IconButton(
-                        onPressed: (){
+                        onPressed: () async {
                           if (threeClicked)  {
+                            player2.stop();
+                            int result = await advancedPlayer.pause();
                             Navigator.push(
                                 context,
                                 MaterialPageRoute(builder: (context) =>  I_M_2_5_()));
@@ -466,8 +502,11 @@ class _M_2_5_2nd_FourState extends State<M_2_5_2nd_Four> {
                 child: Visibility(
                     visible: (oneClicked && Visible),
                     child: IconButton(
-                        onPressed: (){
+                        onPressed: () async {
                           if (oneClicked){
+                            player2.stop();
+                            int result = await advancedPlayer.pause();
+                            player2 =  await player.play('audio/mathsBravo.wav');
                             setState(() {
                               Visible = false;
                             });

@@ -16,7 +16,7 @@ import 'package:audioplayers/audio_cache.dart';
 import 'package:audioplayers/audioplayers.dart';
 
 import 'BienvenueGeo.dart';
-import 'NiveauGeo.dart';
+import 'N1.dart';
 
 class N1Q3T2_C_4 extends StatefulWidget {
   const N1Q3T2_C_4({Key key}) : super(key: key);
@@ -26,7 +26,8 @@ class N1Q3T2_C_4 extends StatefulWidget {
 }
 
 class _N1Q3T2_C_4State extends State<N1Q3T2_C_4> {
-
+  var player = AudioCache();
+  var player2 = AudioPlayer ();
   AudioPlayer advancedPlayer;
 
 
@@ -74,18 +75,22 @@ class _N1Q3T2_C_4State extends State<N1Q3T2_C_4> {
                   top: size.height*0.05,
                   right:size.width*0.75,
 
-                  child: BacksButton(onPressed: (){
+                  child: BacksButton(onPressed: () async {
+                    player2.stop();
+                    int result = await advancedPlayer.pause();
                     print("u clicked me");
                     Navigator.push(
                         context,
-                        MaterialPageRoute(builder: (context) => NiveauGeo()));
+                        MaterialPageRoute(builder: (context) => Geo1()));
                   },)
               ),
 
               Positioned(
                   top:size.height*0.05,
                   left:size.width*0.75,
-                  child: SettingsButton(onPressed: (){
+                  child: SettingsButton(onPressed: () async {
+                    player2.stop();
+                    int result = await advancedPlayer.pause();
                     Navigator.push(
                         context,
                         MaterialPageRoute(builder: (context) => Settings()));
@@ -249,7 +254,9 @@ class _N1Q3T2_C_4State extends State<N1Q3T2_C_4> {
                     left: 0.0,
                     height: size.height*0.2,
                     width: size.width*0.5,
-                    child: ButtonContinuer(onPressed: (){
+                    child: ButtonContinuer(onPressed: () async {
+                      player2.stop();
+                      int result = await advancedPlayer.pause();
                       Navigator.push(
                           context,
                           MaterialPageRoute(builder: (context) => N1Q4()));
@@ -265,7 +272,9 @@ class _N1Q3T2_C_4State extends State<N1Q3T2_C_4> {
                   child: Visibility(
                       visible: (threeClicked && Visible),
                       child: IconButton(
-                        onPressed: (){
+                        onPressed: () async {
+                          player2.stop();
+                          int result = await advancedPlayer.pause();
                           if (threeClicked){
                             Vibration.vibrate();
 
@@ -289,7 +298,9 @@ class _N1Q3T2_C_4State extends State<N1Q3T2_C_4> {
                 child: Visibility(
                     visible: (false),
                     child: IconButton(
-                        onPressed: (){
+                        onPressed: () async {
+                          player2.stop();
+                          int result = await advancedPlayer.pause();
                           if (fourClicked) {
                             setState(() {
                               correct = false;
@@ -314,8 +325,12 @@ class _N1Q3T2_C_4State extends State<N1Q3T2_C_4> {
                 child: Visibility(
                     visible: (twoClicked&&Visible),
                     child: IconButton(
-                        onPressed: (){
+                        onPressed: () async {
+                          player2.stop();
+                          int result = await advancedPlayer.pause();
                           if (twoClicked) {
+                            player2 =  await player.play('audio/mathsBravo.wav');
+
                             Vibration.vibrate();
 
                             setState(() {
@@ -339,7 +354,9 @@ class _N1Q3T2_C_4State extends State<N1Q3T2_C_4> {
                 child: Visibility(
                     visible: (oneClicked&&Visible),
                     child: IconButton(
-                        onPressed: (){
+                        onPressed: () async {
+                          player2.stop();
+                          int result = await advancedPlayer.pause();
                           if (oneClicked) {
                             Vibration.vibrate();
 

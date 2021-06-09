@@ -13,6 +13,7 @@ import 'package:somthn/Buttons/settingsButton.dart';
 import 'package:somthn/Francais/F-1-4-2ndAttempt.dart';
 import 'package:somthn/Francais/F-1-5.dart';
 import 'package:somthn/Francais/F-1.dart';
+import 'package:somthn/Francais/boxDialog1.dart';
 import 'package:somthn/WelcomePages/Settings.dart';
 import 'package:somthn/myicons.dart';
 import '../Services/Login.dart';
@@ -98,9 +99,11 @@ class _F_1_4State extends State<F_1_4> {
                     child: BacksButton(onPressed: (){
                       player2.stop();
 
-                      Navigator.push(
-                          context,
-                          MaterialPageRoute(builder: (context) => Fr1()));
+                      showDialog(context: context,
+                          builder: (BuildContext context){
+                            return customDialog1();
+                          }
+                      );
                     },)
                 ),
                 Positioned(
@@ -264,7 +267,7 @@ class _F_1_4State extends State<F_1_4> {
                         /////////////////////
                         /// Draggable
                         Draggable<String>(
-                          onDragStarted: (){
+                          onDragCompleted: (){
                             print('gfds');
                               letterA = 'assets/icons/a.svg';
                           },
@@ -306,7 +309,7 @@ class _F_1_4State extends State<F_1_4> {
                           ),
                         SizedBox( width: size.width*0.1,),
                         Draggable<String>(
-                          onDragStarted: (){
+                          onDragCompleted: (){
                             print('gfds');
                             letterM = 'assets/icons/m.svg';
                           },
@@ -346,7 +349,7 @@ class _F_1_4State extends State<F_1_4> {
                         ),
                         SizedBox( width: size.width*0.1,),
                         Draggable<String>(
-                          onDragStarted: (){
+                          onDragCompleted: (){
                             print('gfds');
                             letterI = 'assets/icons/i.svg';
                           },
@@ -407,7 +410,7 @@ class _F_1_4State extends State<F_1_4> {
                         /////////////////////
                         /// Draggable
                         Draggable<String>(
-                          onDragStarted: (){
+                          onDragCompleted: (){
                             print('gfds');
                             letterO = 'assets/icons/o.svg';
                           },
@@ -449,7 +452,7 @@ class _F_1_4State extends State<F_1_4> {
                         ),
                         SizedBox( width: size.width*0.1,),
                         Draggable<String>(
-                          onDragStarted: (){
+                          onDragCompleted: (){
                             print('gfds');
                             letterN = 'assets/icons/n.svg';
                           },
@@ -489,7 +492,7 @@ class _F_1_4State extends State<F_1_4> {
                         ),
                         SizedBox( width: size.width*0.1,),
                         Draggable<String>(
-                          onDragStarted: (){
+                          onDragCompleted: (){
                             print('gfds');
                             letterU = 'assets/icons/u.svg';
                           },
@@ -529,7 +532,7 @@ class _F_1_4State extends State<F_1_4> {
                         ),
                         SizedBox( width: size.width*0.1,),
                         Draggable<String>(
-                          onDragStarted: (){
+                          onDragCompleted: (){
                             print('gfds');
                             letterL = 'assets/icons/l.svg';
                           },

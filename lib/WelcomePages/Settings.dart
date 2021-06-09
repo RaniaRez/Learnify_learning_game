@@ -12,7 +12,7 @@ import 'Home.dart';
 import '../Services/auth.dart';
 import 'package:audioplayers/audio_cache.dart';
 import 'package:audioplayers/audioplayers.dart';
-import 'Home.dart';
+
 
 class Settings extends StatefulWidget {
   AudioPlayer value = new AudioPlayer();
@@ -53,7 +53,8 @@ class _SettingsState extends State<Settings> {
               Positioned(
                   top: size.height*0.4,
                   right:size.width*0.6,
-                  child:SoundButton(onPressed:null,)
+                  child:SoundButton(onPressed:(){
+                  },)
               ),
               Positioned(
                   top: size.height*0.7,

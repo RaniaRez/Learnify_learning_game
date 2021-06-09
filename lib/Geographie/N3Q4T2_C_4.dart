@@ -16,7 +16,7 @@ import 'package:somthn/Geographie/BienvenueGeo.dart';
 import 'package:audioplayers/audio_cache.dart';
 import 'package:audioplayers/audioplayers.dart';
 import 'BienvenueGeo.dart';
-import 'NiveauGeo.dart';
+import 'N3.dart';
 
 class N3Q4T2_C_4 extends StatefulWidget {
   const N3Q4T2_C_4({Key key}) : super(key: key);
@@ -26,7 +26,8 @@ class N3Q4T2_C_4 extends StatefulWidget {
 }
 
 class _N3Q4T2_C_4State extends State<N3Q4T2_C_4> {
-
+  var player = AudioCache();
+  var player2 = AudioPlayer ();
   AudioPlayer advancedPlayer;
 
 
@@ -47,7 +48,6 @@ class _N3Q4T2_C_4State extends State<N3Q4T2_C_4> {
     super.dispose();
   }
 
-  final player = AudioCache();
   bool Visible = true;
   bool correct = false;
   bool oneClicked = false;
@@ -78,7 +78,7 @@ class _N3Q4T2_C_4State extends State<N3Q4T2_C_4> {
                   child: BacksButton(onPressed: (){
                     Navigator.push(
                         context,
-                        MaterialPageRoute(builder: (context) => NiveauGeo()));
+                        MaterialPageRoute(builder: (context) => Geo3()));
                     print("back");
                     //Navigator.pop(context);
                   },)
@@ -124,9 +124,11 @@ class _N3Q4T2_C_4State extends State<N3Q4T2_C_4> {
                   child: IconButton(
                     iconSize: 64,
                     icon: SvgPicture.asset('assets/icons/QuestionMark.svg'),
-                    onPressed: (){
+                    onPressed: () async {
+                      player2.stop();
+                      int result = await advancedPlayer.pause();
                       print('QuestionMark');
-                      player.play('audio/geoAnimal.wav');
+                      player2 =  await player.play('audio/geoAnimal.wav');
                     },
                   ),
                 ),
@@ -247,7 +249,9 @@ class _N3Q4T2_C_4State extends State<N3Q4T2_C_4> {
                     left: 0.0,
                     height: size.height*0.2,
                     width: size.width*0.5,
-                    child: ButtonContinuer(onPressed: (){
+                    child: ButtonContinuer(onPressed: () async {
+                      player2.stop();
+                      int result = await advancedPlayer.pause();
                       print(scoreG.niv3);
                       Navigator.push(
                           context,
@@ -264,10 +268,11 @@ class _N3Q4T2_C_4State extends State<N3Q4T2_C_4> {
                   child: Visibility(
                       visible: (threeClicked && Visible),
                       child: IconButton(
-                        onPressed: (){
+                        onPressed: () async {
                           Vibration.vibrate();
 
                           if (threeClicked){
+                            player2 =  await player.play('audio/mathsBravo.wav');
                             setState(() {
                               correct = true;
                               Visible = false;
@@ -289,7 +294,9 @@ class _N3Q4T2_C_4State extends State<N3Q4T2_C_4> {
                 child: Visibility(
                     visible: (fourClicked&&Visible),
                     child: IconButton(
-                        onPressed: (){
+                        onPressed: () async {
+                          player2.stop();
+                          int result = await advancedPlayer.pause();
                           if (fourClicked) {
                             Vibration.vibrate();
 
@@ -316,8 +323,9 @@ class _N3Q4T2_C_4State extends State<N3Q4T2_C_4> {
                 child: Visibility(
                     visible: (twoClicked&&Visible),
                     child: IconButton(
-                        onPressed: (){
-
+                        onPressed: () async {
+                          player2.stop();
+                          int result = await advancedPlayer.pause();
                           if (twoClicked) {
                             Vibration.vibrate();
 
