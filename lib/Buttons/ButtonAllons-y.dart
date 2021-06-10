@@ -1,4 +1,4 @@
-import 'package:animate_do/animate_do.dart';
+
 import 'package:bouncing_widget/bouncing_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';

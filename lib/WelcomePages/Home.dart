@@ -1,6 +1,5 @@
 
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:somthn/WelcomePages/Vite.dart';
 import 'package:somthn/WelcomePages/Voila.dart';
 import '../Buttons/settingsButton.dart';
@@ -11,8 +10,7 @@ import '../Services/Login.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:audioplayers/audio_cache.dart';
 import 'package:audioplayers/audioplayers.dart';
-/*import 'package:assets_audio_player/assets_audio_player.dart';
-import 'package:somthn/music.dart';*/
+
 
 
 
