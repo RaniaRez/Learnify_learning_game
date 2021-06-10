@@ -19,6 +19,8 @@ import 'TestGeo2.dart';
 import '../BienvenueGeo.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'SetNiveaux.dart';
+import 'package:audioplayers/audio_cache.dart';
+import 'package:audioplayers/audioplayers.dart';
 
 
 TestGeo testG =new  TestGeo();
@@ -32,6 +34,8 @@ class TestGeo1 extends StatefulWidget {
 }
 
 class _TestGeo1State extends State<TestGeo1> {
+  var player = AudioCache();
+  var player2 = AudioPlayer ();
   bool Visible = true;
   bool correct = false;
   @override
@@ -131,10 +135,11 @@ class _TestGeo1State extends State<TestGeo1> {
                   height: size.height*0.15,
                   width: size.width*0.4,
                   child: IconButton(
-                      onPressed: (){
+                      onPressed: ()async {
                         setState(() {
                           Visible=false;
                         });
+                        player2 =  await player.play('audio/losing.wav');
                         print('exc');
                       },
                       icon: SvgPicture.asset('assets/icons/Maroc.svg')),
@@ -148,10 +153,11 @@ class _TestGeo1State extends State<TestGeo1> {
                   height: size.height*0.15,
                   width: size.width*0.4,
                   child: IconButton(
-                    onPressed: () {
+                    onPressed: () async{
                       setState(() {
                         Visible = false;
                       });
+                      player2 =  await player.play('audio/losing.wav');
                     },
                     icon: SvgPicture.asset('assets/icons/Nigeria.svg'),
                   ),
@@ -165,10 +171,11 @@ class _TestGeo1State extends State<TestGeo1> {
                   height: size.height*0.15,
                   width: size.width*0.4,
                   child: IconButton(
-                    onPressed: () {
+                    onPressed: () async{
                       setState(() {
                         Visible = false;
                       });
+                      player2 =  await player.play('audio/losing.wav');
                     },
                     icon: SvgPicture.asset('assets/icons/Libye.svg'),
                   ),
@@ -182,12 +189,13 @@ class _TestGeo1State extends State<TestGeo1> {
                   height: size.height*0.15,
                   width: size.width*0.4,
                   child: IconButton(
-                      onPressed: (){
+                      onPressed: ()async {
                         setState(() {
                           Visible=false;
                           correct=true;
                           testG.q1=true ;
                         });
+                        player2 =  await player.play('audio/winning.mp3');
                         print('int');
                       },
                       icon: SvgPicture.asset('assets/icons/AlgerieTest.svg')),
