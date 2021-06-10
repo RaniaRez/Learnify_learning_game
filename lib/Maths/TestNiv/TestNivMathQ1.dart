@@ -132,7 +132,7 @@ class _TestNivM1State extends State<TestNivM1> {
                         print('Wrong');
                       }
                     });
-                    if (correct) {player2 =  await player.play('audio/winning.wav');}
+                    if (correct) {player2 =  await player.play('audio/winning.mp3');}
                     else { player2 =  await player.play('audio/losing.wav');}
                     print("HELL YEAH");
 
