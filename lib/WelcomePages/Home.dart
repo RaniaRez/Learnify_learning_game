@@ -102,7 +102,7 @@ class _HomeState extends State<Home> {
                   width: size.width*0.6,
                   child: ButtonAllonsy(onPressed: () async {
                     int result = await advancedPlayer.pause();
-                    timeCounter();
+                    timeCounter(context);
 
                     await googleLogin();
                     print(user.uid);
