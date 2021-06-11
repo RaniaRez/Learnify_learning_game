@@ -357,9 +357,10 @@ class _N2Q3State extends State<N2Q3> {
                     visible: (fourClicked&&Visible),
                     child: IconButton(
                         onPressed: () async {
-                          player2.stop();
-                          int result = await advancedPlayer.pause();
+
                           if (fourClicked){
+                            player2.stop();
+                            int result = await advancedPlayer.pause();
                             player2 =  await player.play('audio/mathsBravo.wav');
                             setState(() {
                               Visible = false;

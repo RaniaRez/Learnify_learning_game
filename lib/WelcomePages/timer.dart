@@ -1,3 +1,5 @@
+
+
 import 'package:flutter/material.dart';
 import 'dart:async';
 
@@ -14,7 +16,7 @@ void timeCounter() {
     //afficher un avertissement : lapplication va se terminer , terminer le niveau courant pour sauvegarder tes donnees
     // boite de dialogue : oui ->terminer maintenant     non ->terminer dans 10min le temps de completer le niveau courant
 
-   /* showDialog(context: context,
+    /*showDialog(context: context,
         builder: (BuildContext context){
           return customDialogLock();
         }
