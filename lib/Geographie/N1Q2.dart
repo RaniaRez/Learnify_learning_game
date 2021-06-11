@@ -109,7 +109,7 @@ class _N1Q2State extends State<N1Q2> {
                   bottom: size.height*0.88,
                   left: size.width*0.275,
                   right: size.width*0.275,
-                  child: SvgPicture.asset(EmptyBar)),
+                  child: SvgPicture.asset(barreProgress)),
 
               Visibility(
                 visible: !Visible,
@@ -117,7 +117,7 @@ class _N1Q2State extends State<N1Q2> {
                   bottom: size.height*0.88,
                   left: size.width*0.275,
                   right: size.width*0.275,
-                  child: SvgPicture.asset(barreProgress),
+                  child: SvgPicture.asset(TwoBars),
                 ),
               ),
 
@@ -156,7 +156,7 @@ class _N1Q2State extends State<N1Q2> {
               ),
               Positioned(
                 top: size.height*0.11,
-                left: size.width*0.15,
+                left: size.width*0.1,
                 height: size.width*0.7,
                 width: size.width*0.7,
                 child:SvgPicture.asset('assets/icons/BulleN1Q2.svg'),

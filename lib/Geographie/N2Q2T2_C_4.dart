@@ -277,7 +277,7 @@ class _N2Q2T2_C_4State extends State<N2Q2T2_C_4> {
                           int result = await advancedPlayer.pause();
                           if (threeClicked){
                             Vibration.vibrate();
-
+                            player2 =  await player.play('audio/losing.wav');
                             setState(() {
                               correct = false;
                               Visible = false;
@@ -298,8 +298,11 @@ class _N2Q2T2_C_4State extends State<N2Q2T2_C_4> {
                 child: Visibility(
                     visible: (false),
                     child: IconButton(
-                        onPressed: (){
+                        onPressed: ()async{
+                          player2.stop();
+                          int result = await advancedPlayer.pause();
                           if (fourClicked) {
+                            player2 =  await player.play('audio/losing.wav');
                             setState(() {
                               correct = false;
                               Visible = false;
@@ -358,7 +361,7 @@ class _N2Q2T2_C_4State extends State<N2Q2T2_C_4> {
                           int result = await advancedPlayer.pause();
                           if (oneClicked) {
                             Vibration.vibrate();
-
+                            player2 =  await player.play('audio/losing.wav');
                             setState(() {
                               correct = false;
                               Visible = false;

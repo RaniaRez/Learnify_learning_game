@@ -101,12 +101,12 @@ class _N1Q3T2_C_3State extends State<N1Q3T2_C_3> {
                   bottom: size.height*0.88,
                   left: size.width*0.275,
                   right: size.width*0.275,
-                  child: SvgPicture.asset(FourBars)),
+                  child: SvgPicture.asset(TwoBars)),
               Positioned(
                 bottom: size.height*0.55,
                 left: size.width*0.05,
                 height: size.height*0.3,
-                width: size.width*0.7,
+                width: size.width*0.65,
                 child:SvgPicture.asset('assets/icons/BulleN1Q3T2.svg'),
               ),
               Visibility(
@@ -115,7 +115,7 @@ class _N1Q3T2_C_3State extends State<N1Q3T2_C_3> {
                   bottom: size.height*0.88,
                   left: size.width*0.275,
                   right: size.width*0.275,
-                  child: SvgPicture.asset(FourBars),
+                  child: SvgPicture.asset(ThreeBars),
                 ),
               ),
 
@@ -168,10 +168,10 @@ class _N1Q3T2_C_3State extends State<N1Q3T2_C_3> {
               Visibility(
                 visible: Visible,
                 child: Positioned(
-                  top: size.height*0.5,
-                  left: size.width*0.5,
-                  height: size.height*0.3,
-                  width: size.width*0.5,
+                  top: size.height*0.6,
+                  left: size.width*0.55,
+                  height: size.height*0.15,
+                  width: size.width*0.3,
                   child: IconButton(
                     icon: SvgPicture.asset('assets/icons/Algeria.svg'),
                     onPressed: (){
@@ -187,10 +187,10 @@ class _N1Q3T2_C_3State extends State<N1Q3T2_C_3> {
               Visibility(
                 visible: Visible,
                 child: Positioned(
-                  top: size.height*0.7,
-                  left: size.width*0.5,
-                  height: size.height*0.3,
-                  width: size.width*0.5,
+                  top: size.height*0.8,
+                  left: size.width*0.55,
+                  height: size.height*0.15,
+                  width: size.width*0.3,
                   child: IconButton(
                     icon: SvgPicture.asset('assets/icons/Tunisie.svg'),
                     onPressed: (){
@@ -207,10 +207,10 @@ class _N1Q3T2_C_3State extends State<N1Q3T2_C_3> {
               Visibility(
                 visible: false,
                 child: Positioned(
-                  top: size.height*0.6,
-                  left: size.width*0,
-                  height: size.height*0.3,
-                  width: size.width*0.5,
+                  top: size.height*0.7,
+                  left: size.width*0.13,
+                  height: size.height*0.15,
+                  width: size.width*0.3,
                   child: IconButton(
                     icon: SvgPicture.asset('assets/icons/Libie.svg'),
                     onPressed: (){
@@ -228,10 +228,10 @@ class _N1Q3T2_C_3State extends State<N1Q3T2_C_3> {
               Visibility(
                 visible: Visible,
                 child: Positioned(
-                  top: size.height*0.4,
-                  left: size.width*0.0,
-                  height: size.height*0.3,
-                  width: size.width*0.5,
+                  top: size.height*0.5,
+                  left: size.width*0.13,
+                  height: size.height*0.15,
+                  width: size.width*0.3,
                   child: IconButton(
                     icon: SvgPicture.asset('assets/icons/France.svg'),
                     onPressed: (){
@@ -264,10 +264,10 @@ class _N1Q3T2_C_3State extends State<N1Q3T2_C_3> {
               ),
               //Second click
               Positioned(
-                  top: size.height*0.6,
-                  left: size.width*0,
-                  height: size.height*0.3,
-                  width: size.width*0.5,
+                  top: size.height*0.7,
+                  left: size.width*0.13,
+                  height: size.height*0.15,
+                  width: size.width*0.3,
                   child: Visibility(
                       visible: false,
                       child: IconButton(
@@ -276,6 +276,7 @@ class _N1Q3T2_C_3State extends State<N1Q3T2_C_3> {
                           int result = await advancedPlayer.pause();
                           if (threeClicked){
                             Vibration.vibrate();
+                            player2 =  await player.play('audio/losing.wav');
 
                             setState(() {
                               correct = false;
@@ -290,10 +291,10 @@ class _N1Q3T2_C_3State extends State<N1Q3T2_C_3> {
                         icon: SvgPicture.asset('assets/icons/Libie.svg'),))
               ),
               Positioned(
-                top: size.height*0.7,
-                left: size.width*0.5,
-                height: size.height*0.3,
-                width: size.width*0.5,
+                top: size.height*0.8,
+                left: size.width*0.55,
+                height: size.height*0.15,
+                width: size.width*0.3,
                 child: Visibility(
                     visible: (fourClicked&&Visible),
                     child: IconButton(
@@ -301,6 +302,7 @@ class _N1Q3T2_C_3State extends State<N1Q3T2_C_3> {
                           player2.stop();
                           int result = await advancedPlayer.pause();
                           if (fourClicked) {
+                            player2 =  await player.play('audio/losing.wav');
                             setState(() {
                               correct = false;
                               Visible = false;
@@ -316,10 +318,10 @@ class _N1Q3T2_C_3State extends State<N1Q3T2_C_3> {
                 ),
               ),
               Positioned(
-                top: size.height*0.5,
-                left: size.width*0.5,
-                height: size.height*0.3,
-                width: size.width*0.5,
+                top: size.height*0.6,
+                left: size.width*0.55,
+                height: size.height*0.15,
+                width: size.width*0.3,
 
                 child: Visibility(
                     visible: (twoClicked&&Visible),
@@ -330,7 +332,7 @@ class _N1Q3T2_C_3State extends State<N1Q3T2_C_3> {
                           if (twoClicked) {
                             player2 =  await player.play('audio/mathsBravo.wav');
 
-                            Vibration.vibrate();
+                            //Vibration.vibrate();
 
                             setState(() {
                               scoreG.niv1++;
@@ -346,10 +348,10 @@ class _N1Q3T2_C_3State extends State<N1Q3T2_C_3> {
                 ),
               ),
               Positioned(
-                top: size.height*0.4,
-                left: size.width*0.0,
-                height: size.height*0.3,
-                width: size.width*0.5,
+                top: size.height*0.5,
+                left: size.width*0.13,
+                height: size.height*0.15,
+                width: size.width*0.3,
                 child: Visibility(
                     visible: (oneClicked&&Visible),
                     child: IconButton(
@@ -358,6 +360,7 @@ class _N1Q3T2_C_3State extends State<N1Q3T2_C_3> {
                           int result = await advancedPlayer.pause();
                           if (oneClicked) {
                             Vibration.vibrate();
+                            player2 =  await player.play('audio/losing.wav');
 
                             setState(() {
                               correct = false;

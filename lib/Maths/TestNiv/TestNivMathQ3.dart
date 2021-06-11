@@ -32,9 +32,7 @@ import 'package:somthn/Avatars/OrangeAvatarIcon.dart';
 import 'package:somthn/Avatars/PinkAvatarIcon.dart';
 import 'package:somthn/Avatars/PurpleAvatarIcon.dart';
 import 'package:somthn/Avatars/BlueAvatarIcon.dart';
-import '../../WelcomePages/ChooseAvatar.dart';
 import '../../Services/Login.dart';
-import '../../Services/SignUp.dart';
 import '../BienvenueMath.dart';
 import 'TestMaths.dart';
 import 'TestNivMathQ1.dart';
@@ -135,7 +133,7 @@ class _TestNivM3State extends State<TestNivM3> {
                         print('Wrong');
                       }
                     });
-                    if (correct) {player2 =  await player.play('audio/winning.wav');}
+                    if (correct) {player2 =  await player.play('audio/winning.mp3');}
                     else { player2 =  await player.play('audio/losing.wav');}
                     print("HELL YEAH");
 
