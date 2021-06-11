@@ -71,8 +71,8 @@ class _ChoixDomaineState extends State<ChoixDomaine> {
                 Visibility(
 
                   child: Positioned(
-                    top: size.height*0.3,
-                    right: size.width*0.58 ,
+                    top: size.height*0.31,
+                    right: size.width*0.67,
                     height: size.height*0.3,
                     width: size.width*0.3,
                     child:PinkAvatarIcon(onPressed: null,),

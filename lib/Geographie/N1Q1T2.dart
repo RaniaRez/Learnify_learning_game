@@ -114,7 +114,7 @@ class _N1Q1T2State extends State<N1Q1T2> {
                   bottom: size.height*0.88,
                   left: size.width*0.275,
                   right: size.width*0.275,
-                  child: SvgPicture.asset(barreProgress)),
+                  child: SvgPicture.asset(EmptyBar)),
 
               Visibility(
                 visible: !Visible,
@@ -122,7 +122,7 @@ class _N1Q1T2State extends State<N1Q1T2> {
                   bottom: size.height*0.88,
                   left: size.width*0.275,
                   right: size.width*0.275,
-                  child: SvgPicture.asset(TwoBars),
+                  child: SvgPicture.asset(barreProgress),
                 ),
               ),
 

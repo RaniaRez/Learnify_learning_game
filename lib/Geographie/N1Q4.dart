@@ -107,10 +107,10 @@ class _N1Q4State extends State<N1Q4> {
                   bottom: size.height*0.88,
                   left: size.width*0.275,
                   right: size.width*0.275,
-                  child: SvgPicture.asset(FourBars)),
+                  child: SvgPicture.asset(ThreeBars)),
               Positioned(
-                bottom: size.height*0.55,
-                left: size.width*0.05,
+                bottom: size.height*0.57,
+                left: size.width*0.02,
                 height: size.height*0.3,
                 width: size.width*0.8,
                 child:BulleN1Q4(),
@@ -173,9 +173,9 @@ class _N1Q4State extends State<N1Q4> {
               Visibility(
                 visible: Visible,
                 child: Positioned(
-                  top: size.height*0.5,
+                  top: size.height*0.6,
                   left: size.width*0.5,
-                  height: size.height*0.3,
+                  height: size.height*0.1,
                   width: size.width*0.5,
                   child: IconButton(
                     icon: SvgPicture.asset('assets/icons/Oran.svg'),
@@ -193,9 +193,9 @@ class _N1Q4State extends State<N1Q4> {
               Visibility(
                 visible: Visible,
                 child: Positioned(
-                  top: size.height*0.7,
+                  top: size.height*0.8,
                   left: size.width*0.5,
-                  height: size.height*0.3,
+                  height: size.height*0.1,
                   width: size.width*0.5,
                     child: IconButton(
                       icon: SvgPicture.asset('assets/icons/Adrar.svg'),
@@ -213,9 +213,9 @@ class _N1Q4State extends State<N1Q4> {
               Visibility(
                 visible: Visible,
                 child: Positioned(
-                  top: size.height*0.6,
+                  top: size.height*0.7,
                   left: size.width*0,
-                  height: size.height*0.3,
+                  height: size.height*0.1,
                   width: size.width*0.5,
                   child: IconButton(
                     icon: SvgPicture.asset('assets/icons/Alger.svg'),
@@ -234,9 +234,9 @@ class _N1Q4State extends State<N1Q4> {
               Visibility(
                 visible: Visible,
                 child: Positioned(
-                  top: size.height*0.4,
+                  top: size.height*0.5,
                   left: size.width*0.0,
-                  height: size.height*0.3,
+                  height: size.height*0.1,
                   width: size.width*0.5,
                   child: IconButton(
                     icon: SvgPicture.asset('assets/icons/Annaba.svg'),
@@ -324,9 +324,9 @@ class _N1Q4State extends State<N1Q4> {
               ),
 
               Positioned(
-                  top: size.height*0.6,
+                  top: size.height*0.7,
                   left: size.width*0,
-                  height: size.height*0.3,
+                  height: size.height*0.1,
                   width: size.width*0.5,
                 child: Visibility(
                     visible: (threeClicked && Visible),
@@ -349,9 +349,9 @@ class _N1Q4State extends State<N1Q4> {
                         icon: SvgPicture.asset('assets/icons/Alger.svg'),))
                 ),
               Positioned(
-                top: size.height*0.7,
+                top: size.height*0.8,
                 left: size.width*0.5,
-                height: size.height*0.3,
+                height: size.height*0.1,
                 width: size.width*0.5,
                 child: Visibility(
                     visible: (fourClicked&&Visible),
@@ -372,9 +372,9 @@ class _N1Q4State extends State<N1Q4> {
                 ),
               ),
               Positioned(
-                top: size.height*0.5,
+                top: size.height*0.6,
                 left: size.width*0.5,
-                height: size.height*0.3,
+                height: size.height*0.1,
                 width: size.width*0.5,
 
                 child: Visibility(
@@ -396,9 +396,9 @@ class _N1Q4State extends State<N1Q4> {
                 ),
               ),
               Positioned(
-                top: size.height*0.4,
+                top: size.height*0.5,
                 left: size.width*0.0,
-                height: size.height*0.3,
+                height: size.height*0.1,
                 width: size.width*0.5,
                 child: Visibility(
                     visible: (oneClicked&&Visible),
