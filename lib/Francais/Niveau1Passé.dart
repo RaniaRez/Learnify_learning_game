@@ -30,11 +30,14 @@ class Niveau1Pass extends StatefulWidget {
 class _Niveau1PassState extends State<Niveau1Pass> {
 
   AudioPlayer advancedPlayer;
+  bool complet = (scoreF.niv1 >=7.5);
 
   @override
   initState() {
     super.initState();
-    loadMusic();
+    if (complet){
+      loadMusic();}
+    else {}
   }
 
   Future loadMusic() async {
@@ -52,7 +55,7 @@ class _Niveau1PassState extends State<Niveau1Pass> {
 
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
-    bool complet = (scoreF.niv1 >=7.5);
+
     bool star1 = (high.niv1>=7.5);
     bool star2 = (high.niv2>=7.5);
     bool star3 = (high.niv3>=7.5);

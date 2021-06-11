@@ -149,7 +149,7 @@ class _F_1_5_2ndState extends State<F_1_5_2nd> {
                       });}else if ((drag1==null)&&(drag2==null)&&(drag3==null)){                   int result = await advancedPlayer.pause();
                     }else{
                       int result = await advancedPlayer.pause();
-
+                      player2 =  await player.play('audio/losing.wav');
                       setState(() {
                         Visible=false;
 

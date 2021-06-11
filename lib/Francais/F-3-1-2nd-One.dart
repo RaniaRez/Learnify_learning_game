@@ -88,7 +88,7 @@ class _F_3_1_2nd_OneState extends State<F_3_1_2nd_One> {
                   child: BacksButton(onPressed: () async {
                     player2.stop();
                     int result = await advancedPlayer.pause();
-
+                    player2 =  await player.play('audio/losing.wav');
                     showDialog(context: context,
                         builder: (BuildContext context){
                           return customDialog3();
@@ -129,7 +129,7 @@ class _F_3_1_2nd_OneState extends State<F_3_1_2nd_One> {
                   child: IconButton(
                       onPressed: () async {
                         int result = await advancedPlayer.pause();
-
+                        player2 =  await player.play('audio/losing.wav');
                         setState(() {
                           Visible=false;
                         });
@@ -170,7 +170,7 @@ class _F_3_1_2nd_OneState extends State<F_3_1_2nd_One> {
                   child: IconButton(
                       onPressed: () async {
                         int result = await advancedPlayer.pause();
-
+                        player2 =  await player.play('audio/losing.wav');
                         setState(() {
                           Visible=false;
                         });

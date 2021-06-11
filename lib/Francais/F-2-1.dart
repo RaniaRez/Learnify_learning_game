@@ -25,6 +25,8 @@ import 'BienvenueFr.dart';
 import 'package:audioplayers/audio_cache.dart';
 import 'package:audioplayers/audioplayers.dart';
 
+import 'F-2-2.dart';
+
 class F_2_1 extends StatefulWidget {
   const F_2_1({Key key}) : super(key: key);
 
@@ -295,7 +297,7 @@ class _F_2_1State extends State<F_2_1> {
                       print(scoreF.niv2);
                       Navigator.push(
                           context,
-                          new MaterialPageRoute(builder: (context) => new F_2_3()));
+                          new MaterialPageRoute(builder: (context) => new F_2_2()));
                       print('Continuer');
                     },)
                 ),

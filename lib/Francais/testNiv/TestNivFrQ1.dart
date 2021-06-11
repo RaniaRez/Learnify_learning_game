@@ -56,7 +56,7 @@ class _TestNivFr1State extends State<TestNivFr1> {
                   left:size.width*0.75,
                   child:
                   SettingsButton(onPressed: ()async{
-                    player2.stop();
+                    if (player2!=null ) {player2.stop();}
                     Navigator.push(
                         context,
                         MaterialPageRoute(builder: (context) => Settings()));
@@ -67,7 +67,7 @@ class _TestNivFr1State extends State<TestNivFr1> {
                   top: size.height*0.05,
                   right:size.width*0.75,
                   child: BacksButton(onPressed: ()async{
-                    player2.stop();
+                    if (player2!=null ) {player2.stop();}
                     showDialog(context: context,
                         builder: (BuildContext context){
                           return customDialogTest();

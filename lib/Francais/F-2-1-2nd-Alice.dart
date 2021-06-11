@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:somthn/Buttons/BarreProgres.dart';
+import 'package:somthn/Francais/F-2-2.dart';
 import 'package:somthn/Francais/F-2-3.dart';
 import 'package:somthn/Francais/boxDialog2.dart';
 import 'package:somthn/WelcomePages/Settings.dart';
@@ -207,7 +208,7 @@ class _F_2_1_2nd_aliceState extends State<F_2_1_2nd_alice> {
                     child: IconButton(
                       onPressed: () async {
                         int result = await advancedPlayer.pause();
-
+                        player2 =  await player.play('audio/losing.wav');
                         setState(() {
                           Visible=false;
                         });
@@ -226,7 +227,7 @@ class _F_2_1_2nd_aliceState extends State<F_2_1_2nd_alice> {
                     child: IconButton(
                       onPressed: () async {
                         int result = await advancedPlayer.pause();
-
+                        player2 =  await player.play('audio/losing.wav');
                         setState(() {
                           Visible=false;
                         });
@@ -245,7 +246,7 @@ class _F_2_1_2nd_aliceState extends State<F_2_1_2nd_alice> {
                     child: IconButton(
                       onPressed: () async {
                         int result = await advancedPlayer.pause();
-
+                        player2 =  await player.play('audio/losing.wav');
                         setState(() {
                           Visible=false;
                         });
@@ -264,7 +265,7 @@ class _F_2_1_2nd_aliceState extends State<F_2_1_2nd_alice> {
                     child: IconButton(
                       onPressed: () async {
                         int result = await advancedPlayer.pause();
-
+                        player2 =  await player.play('audio/losing.wav');
                         setState(() {
                           Visible=false;
                         });
@@ -302,7 +303,7 @@ class _F_2_1_2nd_aliceState extends State<F_2_1_2nd_alice> {
                       print(scoreF.niv2);
                       Navigator.push(
                           context,
-                          new MaterialPageRoute(builder: (context) => new F_2_3()));
+                          new MaterialPageRoute(builder: (context) => new F_2_2()));
                       print('Continuer');
                     },)
                 ),

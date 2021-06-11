@@ -136,7 +136,7 @@ class _F_1_3_2nd_threeCState extends State<F_1_3_2nd_threeC> {
                   child: IconButton(
                       onPressed: () async {
                         int result = await advancedPlayer.pause();
-
+                        player2 =  await player.play('audio/losing.wav');
                         setState(() {
                           Visible=false;
                         });
@@ -154,7 +154,7 @@ class _F_1_3_2nd_threeCState extends State<F_1_3_2nd_threeC> {
                   child: IconButton(
                       onPressed: () async {
                         int result = await advancedPlayer.pause();
-
+                        player2 =  await player.play('audio/losing.wav');
                         setState(() {
                           Visible=false;
 

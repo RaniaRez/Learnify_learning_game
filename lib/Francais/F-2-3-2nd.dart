@@ -125,6 +125,7 @@ class _F_1_2State extends State<F_1_2> {
                   width: size.width*0.4,
                   child: IconButton(
                       onPressed: (){
+
                         setState(() {
                           Visible=false;
                         });

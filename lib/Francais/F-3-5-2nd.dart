@@ -153,6 +153,7 @@ bool correct=false;
 
                       });}else if ((drag1==null)&&(drag2==null)&&(drag3==null)&&(drag4==null)&&(drag5==null)&&(drag6==null)){}
                     else{
+                      player2 =  await player.play('audio/losing.wav');
                       setState(() {
                         Visible=false;
                       });

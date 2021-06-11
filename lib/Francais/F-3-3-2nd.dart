@@ -148,6 +148,7 @@ class _F_3_3_2ndState extends State<F_3_3_2nd> {
 
                       });}else if ((drag1==null)&&(drag2==null)&&(drag3==null)&&(drag4==null)&&(drag5==null)&&(drag6==null)&&(drag7==null)&&(drag8==null)&&(drag9==null)){}
                     else{
+                      player2 =  await player.play('audio/losing.wav');
                       setState(() {
                         Visible=false;
                       });

@@ -143,7 +143,7 @@ class _F_1_4_2ndState extends State<F_1_4_2nd> {
                       });}else if ((drag1==null)&&(drag2==null)&&(drag3==null)&&(drag4==null)&&(drag5==null)&&(drag6==null)){}
                    else{
                       int result = await advancedPlayer.pause();
-
+                      player2 =  await player.play('audio/losing.wav');
                       setState(() {
                        Visible=false;
                      });
