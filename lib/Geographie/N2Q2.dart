@@ -330,7 +330,7 @@ class _N2Q2State extends State<N2Q2> {
                           player2.stop();
                           int result = await advancedPlayer.pause();
                           if (threeClicked){
-                            Vibration.vibrate();
+                            //Vibration.vibrate();
                             setState(() {
                               Navigator.push(
                                   context,
@@ -356,7 +356,7 @@ class _N2Q2State extends State<N2Q2> {
                           player2.stop();
                           int result = await advancedPlayer.pause();
                           if (fourClicked){
-                            Vibration.vibrate();
+                            //Vibration.vibrate();
                             setState(() {
                               Navigator.push(
                                   context,
@@ -409,7 +409,7 @@ class _N2Q2State extends State<N2Q2> {
                     child: IconButton(
                         onPressed: (){
                           if (oneClicked)  {
-                            Vibration.vibrate();
+                            //Vibration.vibrate();
                             Navigator.push(
                                 context,
                                 MaterialPageRoute(builder: (context) => N2Q2T2_C_1()));

@@ -330,7 +330,7 @@ class _N2Q4State extends State<N2Q4> {
                           player2.stop();
                           int result = await advancedPlayer.pause();
                           if (threeClicked){
-                            Vibration.vibrate();
+                            //Vibration.vibrate();
                             setState(() {
                               Navigator.push(
                                   context,
@@ -356,7 +356,7 @@ class _N2Q4State extends State<N2Q4> {
                           player2.stop();
                           int result = await advancedPlayer.pause();
                           if (fourClicked){
-                            Vibration.vibrate();
+                            //Vibration.vibrate();
                             setState(() {
                               Navigator.push(
                                   context,
@@ -381,9 +381,10 @@ class _N2Q4State extends State<N2Q4> {
                     visible: (twoClicked&&Visible),
                     child: IconButton(
                         onPressed: () async {
-                          player2.stop();
-                          int result = await advancedPlayer.pause();
+
                           if (twoClicked){
+                            player2.stop();
+                            int result = await advancedPlayer.pause();
                             player2 =  await player.play('audio/mathsBravo.wav');
                             setState(() {
                               Visible = false;
@@ -408,7 +409,7 @@ class _N2Q4State extends State<N2Q4> {
                     child: IconButton(
                         onPressed: (){
                           if (oneClicked)  {
-                            Vibration.vibrate();
+                            //Vibration.vibrate();
                             Navigator.push(
                                 context,
                                 MaterialPageRoute(builder: (context) => N2Q4T2_C_1()));

@@ -360,7 +360,7 @@ class _N1Q4State extends State<N1Q4> {
                           player2.stop();
                           int result = await advancedPlayer.pause();
                           if (fourClicked)  {
-                            Vibration.vibrate();
+                            //Vibration.vibrate();
                             Navigator.push(
                                 context,
                                 MaterialPageRoute(builder: (context) => N1Q4T2_C4()));
@@ -384,7 +384,7 @@ class _N1Q4State extends State<N1Q4> {
                           player2.stop();
                           int result = await advancedPlayer.pause();
                           if (twoClicked)  {
-                            Vibration.vibrate();
+                            //Vibration.vibrate();
                             Navigator.push(
                                 context,
                                 MaterialPageRoute(builder: (context) => N1Q4T2_C2()));
@@ -407,7 +407,7 @@ class _N1Q4State extends State<N1Q4> {
                           player2.stop();
                           int result = await advancedPlayer.pause();
                           if (oneClicked)  {
-                            Vibration.vibrate();
+                            //Vibration.vibrate();
                             Navigator.push(
                                 context,
                                 MaterialPageRoute(builder: (context) => N1Q4T2_C1()));

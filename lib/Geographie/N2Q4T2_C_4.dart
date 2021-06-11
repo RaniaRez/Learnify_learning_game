@@ -272,7 +272,7 @@ class _N2Q4T2_C_4State extends State<N2Q4T2_C_4> {
                         onPressed: () async {
                           player2.stop();
                           int result = await advancedPlayer.pause();
-                          Vibration.vibrate();
+                          //Vibration.vibrate();
                           player2 =  await player.play('audio/losing.wav');
                           if (threeClicked){
                             setState(() {
@@ -299,7 +299,7 @@ class _N2Q4T2_C_4State extends State<N2Q4T2_C_4> {
                           player2.stop();
                           int result = await advancedPlayer.pause();
                           if (fourClicked) {
-                            Vibration.vibrate();
+                            //Vibration.vibrate();
                             player2 =  await player.play('audio/losing.wav');
                             setState(() {
                               correct = false;
