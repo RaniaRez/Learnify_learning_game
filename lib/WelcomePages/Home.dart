@@ -15,8 +15,6 @@ import 'package:audioplayers/audioplayers.dart';
 
 
 
-
-
 class Home extends StatefulWidget {
 
   @override
@@ -25,9 +23,7 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
-
-  AudioPlayer advancedPlayer;
-
+ AudioPlayer advancedPlayer;
 
   /*AssetsAudioPlayer _assetsAudioPlayer;
 
@@ -57,7 +53,6 @@ class _HomeState extends State<Home> {
   }
 
   Future loadMusic() async {
-
     advancedPlayer = await AudioCache().loop("audio/music.mp3");
   }
 
@@ -101,7 +96,7 @@ class _HomeState extends State<Home> {
                   height: size.height*0.6,
                   width: size.width*0.6,
                   child: ButtonAllonsy(onPressed: () async {
-                    int result = await advancedPlayer.pause();
+                     int result = await advancedPlayer.pause();
                     timeCounter(context);
 
                     await googleLogin();

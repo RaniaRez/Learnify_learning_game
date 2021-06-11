@@ -15,6 +15,8 @@ import 'package:somthn/Avatars/PurpleAvatarIcon.dart';
 import 'package:somthn/Avatars/BlueAvatarIcon.dart';
 import '../../Services/Login.dart';
 import 'TestNivFrQ1.dart';
+import 'package:audioplayers/audio_cache.dart';
+import 'package:audioplayers/audioplayers.dart';
 
 class TestNivFr2 extends StatefulWidget {
   const TestNivFr2({Key key}) : super(key: key);
@@ -24,6 +26,8 @@ class TestNivFr2 extends StatefulWidget {
 }
 
 class _TestNivFr2State extends State<TestNivFr2> {
+  var player = AudioCache();
+  var player2 = AudioPlayer ();
   bool Visible = true;
   bool correct = false;
   @override
@@ -125,11 +129,12 @@ class _TestNivFr2State extends State<TestNivFr2> {
                   height: size.height*0.15,
                   width: size.width*0.4,
                   child: IconButton(
-                      onPressed: (){
+                      onPressed: ()async {
                         setState(() {
                           Visible=false;
 
                         });
+                        player2 =  await player.play('audio/losing.wav');
                         print('exc');
                       },
                       icon: SvgPicture.asset('assets/icons/ecoleb.svg')),
@@ -143,11 +148,12 @@ class _TestNivFr2State extends State<TestNivFr2> {
                   height: size.height*0.15,
                   width: size.width*0.4,
                   child: IconButton(
-                      onPressed: (){
+                      onPressed: ()async{
                         setState(() {
                           Visible=false;
 
                         });
+                        player2 =  await player.play('audio/losing.wav');
                       },
                       icon: SvgPicture.asset('assets/icons/eleveb.svg')),
                 ),
@@ -160,7 +166,7 @@ class _TestNivFr2State extends State<TestNivFr2> {
                   height: size.height*0.15,
                   width: size.width*0.4,
                   child: IconButton(
-                      onPressed: (){
+                      onPressed: ()async{
                         setState(() {
                           Visible=false;
                           correct=true;
@@ -168,6 +174,7 @@ class _TestNivFr2State extends State<TestNivFr2> {
                           test.q2=true ;
 
                         });
+                        player2 =  await player.play('audio/winning.mp3');
                         print('int');
                       },
                       icon: SvgPicture.asset('assets/icons/bateau.svg')),

@@ -18,6 +18,8 @@ import 'TestNivFrQ1.dart';
 import '../NiveauFr.dart';
 import '../BienvenueFr.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:audioplayers/audio_cache.dart';
+import 'package:audioplayers/audioplayers.dart';
 
 class TestNivFr3 extends StatefulWidget {
   const TestNivFr3({Key key}) : super(key: key);
@@ -27,6 +29,8 @@ class TestNivFr3 extends StatefulWidget {
 }
 
 class _TestNivFr3State extends State<TestNivFr3> {
+  var player = AudioCache();
+  var player2 = AudioPlayer ();
   bool Visible = true;
   bool correct = false;
   @override
@@ -141,11 +145,12 @@ class _TestNivFr3State extends State<TestNivFr3> {
                   height: size.height*0.15,
                   width: size.width*0.4,
                   child: IconButton(
-                      onPressed: (){
+                      onPressed: ()async {
                         setState(() {
                           Visible=false;
 
                         });
+                        player2 =  await player.play('audio/losing.wav');
                         print('exc');
                       },
                       icon: SvgPicture.asset('assets/icons/cazier.svg')),
@@ -159,11 +164,12 @@ class _TestNivFr3State extends State<TestNivFr3> {
                   height: size.height*0.15,
                   width: size.width*0.4,
                   child: IconButton(
-                      onPressed: (){
+                      onPressed: ()async{
                         setState(() {
                           Visible=false;
 
                         });
+                        player2 =  await player.play('audio/losing.wav');
                       },
                       icon: SvgPicture.asset('assets/icons/cassier.svg')),
                 ),
@@ -176,7 +182,7 @@ class _TestNivFr3State extends State<TestNivFr3> {
                   height: size.height*0.15,
                   width: size.width*0.4,
                   child: IconButton(
-                      onPressed: (){
+                      onPressed: ()async {
                         setState(() {
                           Visible=false;
                           correct=true;
@@ -184,6 +190,7 @@ class _TestNivFr3State extends State<TestNivFr3> {
                           test.q3=true ;
                         });
                         print('int');
+                        player2 =  await player.play('audio/winning.mp3');
                       },
                       icon: SvgPicture.asset('assets/icons/casier.svg')),
                 ),

@@ -1,7 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:somthn/Francais/testNiv/BienvenueTest.dart';
 import 'package:somthn/Francais/testNiv/boxDialogTestFr.dart';
 import 'package:somthn/WelcomePages/Settings.dart';
 import 'package:somthn/Buttons/buttonContinuer.dart';
@@ -15,6 +14,8 @@ import 'package:somthn/Avatars/BlueAvatarIcon.dart';
 import '../../Services/Login.dart';
 import 'package:somthn/Francais/testNiv/TestNivFrQ2.dart';
 import 'TestFr.dart';
+import 'package:audioplayers/audio_cache.dart';
+import 'package:audioplayers/audioplayers.dart';
 
 
 TestFr test =new  TestFr();
@@ -28,6 +29,9 @@ class TestNivFr1 extends StatefulWidget {
 }
 
 class _TestNivFr1State extends State<TestNivFr1> {
+
+  var player = AudioCache();
+  var player2 = AudioPlayer ();
   bool Visible = true;
   bool correct = false;
   @override
@@ -51,7 +55,8 @@ class _TestNivFr1State extends State<TestNivFr1> {
                   top: size.height*0.05,
                   left:size.width*0.75,
                   child:
-                  SettingsButton(onPressed: (){
+                  SettingsButton(onPressed: ()async{
+                    player2.stop();
                     Navigator.push(
                         context,
                         MaterialPageRoute(builder: (context) => Settings()));
@@ -61,7 +66,8 @@ class _TestNivFr1State extends State<TestNivFr1> {
               Positioned(
                   top: size.height*0.05,
                   right:size.width*0.75,
-                  child: BacksButton(onPressed: (){
+                  child: BacksButton(onPressed: ()async{
+                    player2.stop();
                     showDialog(context: context,
                         builder: (BuildContext context){
                           return customDialogTest();
@@ -129,10 +135,11 @@ class _TestNivFr1State extends State<TestNivFr1> {
                   height: size.height*0.15,
                   width: size.width*0.4,
                   child: IconButton(
-                      onPressed: (){
+                      onPressed: ()async{
                         setState(() {
                           Visible=false;
                         });
+                        player2 =  await player.play('audio/losing.wav');
                         print('exc');
                       },
                       icon: SvgPicture.asset('assets/icons/nagir.svg')),
@@ -146,10 +153,11 @@ class _TestNivFr1State extends State<TestNivFr1> {
                   height: size.height*0.15,
                   width: size.width*0.4,
                   child: IconButton(
-                      onPressed: () {
+                      onPressed: ()async {
                         setState(() {
                           Visible = false;
                         });
+                        player2 =  await player.play('audio/losing.wav');
                       },
                       icon: SvgPicture.asset('assets/icons/nagé.svg'),
                 ),
@@ -163,12 +171,13 @@ class _TestNivFr1State extends State<TestNivFr1> {
                   height: size.height*0.15,
                   width: size.width*0.4,
                   child: IconButton(
-                      onPressed: (){
+                      onPressed: ()async{
                         setState(() {
                           Visible=false;
                           correct=true;
                           test.q1=true ;
                         });
+                        player2 =  await player.play('audio/winning.mp3');
                         print('int');
                       },
                       icon: SvgPicture.asset('assets/icons/nager.svg')),

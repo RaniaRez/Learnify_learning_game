@@ -37,7 +37,6 @@ class _VoilaState extends State<Voila> {
   }
 
   Future loadMusic() async {
-
     advancedPlayer = await AudioCache().play("audio/pret.wav");
   }
 
