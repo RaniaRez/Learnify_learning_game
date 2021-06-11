@@ -10,17 +10,17 @@ import 'DialogBoxLocker.dart';
 
 
 
-void timeCounter() {
+void timeCounter(context ) {
 
-  Timer(Duration(hours  : 0, seconds: 30), (){
+  Timer(Duration(hours  : 1 ), (){
     //afficher un avertissement : lapplication va se terminer , terminer le niveau courant pour sauvegarder tes donnees
     // boite de dialogue : oui ->terminer maintenant     non ->terminer dans 10min le temps de completer le niveau courant
 
-    /*showDialog(context: context,
+    showDialog(context: context,
         builder: (BuildContext context){
           return customDialogLock();
         }
-    );*/
+    );
 
     //SystemNavigator.pop();
     print("application terminee  ");

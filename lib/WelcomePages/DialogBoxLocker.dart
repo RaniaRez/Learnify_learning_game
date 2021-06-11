@@ -33,9 +33,9 @@ class customDialogLock extends StatelessWidget {
                     child: FittedBox(
                       fit: BoxFit.fitWidth,
                       child: Text(
-                        'Tu as atteint 1heure de  \n jeu sans arret , l''application va \n se terminer , veux tu quitter maintenant ? \n sinon l''aplication s''arretera automatiquement dans 5 minutes ! \n pense a terminer un niveau pendant c' ,
+                        'Tu as atteint 1heure de jeu sans arret   \n  veux tu quitter maintenant ? \n sinon l''application s''arretera automatiquement dans 5 minutes ! \n pense a terminer le niveau courant !' ,
                         style: TextStyle(
-                          fontSize: 26,
+                          fontSize: 30 ,
                           fontFamily: 'Skranji-Bold',
                           fontWeight: FontWeight.bold,
                           color: Color(0xff693821),
@@ -55,6 +55,7 @@ class customDialogLock extends StatelessWidget {
                 child: IconButton(
                   icon: SvgPicture.asset('assets/icons/oui.svg'),
                   onPressed: () {
+                    print ("app terminee ");
                     SystemNavigator.pop();
                   },),
               ),
@@ -67,9 +68,10 @@ class customDialogLock extends StatelessWidget {
                 width: size.width * 0.3,
                 child: IconButton(
                     onPressed: () {
-                    Timer(Duration(minutes : 5), (){
+                    Timer(Duration(minutes : 5 ), (){
+                      print("application terminee");
                       SystemNavigator.pop();
-                    });//timer
+                    });
                       Navigator.pop(context);
                     },
                     icon: SvgPicture.asset('assets/icons/non.svg')),
