@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:somthn/WelcomePages/splash_screen.dart';
+import 'package:somthn/Statistics/ScoreFr.dart';
+import 'package:somthn/WelcomePages/Home.dart';
+
 void main() {
-  runApp(MaterialApp(home: Splash()));
+  runApp(MaterialApp(home:Home()));
 }
