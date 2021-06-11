@@ -25,29 +25,10 @@ class Home extends StatefulWidget {
 
 class _HomeState extends State<Home> {
 
-  AudioPlayer advancedPlayer;
+  /*AudioPlayer advancedPlayer;
 
 
-  /*AssetsAudioPlayer _assetsAudioPlayer;
 
-  @override
-  void initState() {
-    super.initState();
-    _assetsAudioPlayer = AssetsAudioPlayer();
-    _assetsAudioPlayer.open(
-      AssetsAudio(
-        asset: "music.mp3",
-        folder: "assets/audio/",
-      ),
-    );
-    _assetsAudioPlayer.playOrPause();
-  }
-
-  @override
-  void dispose() {
-    _assetsAudioPlayer = null;
-    super.dispose();
-  }*/
 
   @override
   initState() {
@@ -64,7 +45,7 @@ class _HomeState extends State<Home> {
   void dispose() {
     advancedPlayer = null;
     super.dispose();
-  }
+  }*/
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
@@ -91,7 +72,7 @@ class _HomeState extends State<Home> {
 
                     Navigator.push(
                         context,
-                        MaterialPageRoute(builder: (context) => Settings(value: advancedPlayer )));
+                        MaterialPageRoute(builder: (context) => Settings( )));
                   },)
               ),
               Positioned(
@@ -100,7 +81,7 @@ class _HomeState extends State<Home> {
                   height: size.height*0.6,
                   width: size.width*0.6,
                   child: ButtonAllonsy(onPressed: () async {
-                    int result = await advancedPlayer.pause();
+                   // int result = await advancedPlayer.pause();
 
                     await googleLogin();
                     print(user.uid);
