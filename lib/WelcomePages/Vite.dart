@@ -108,12 +108,7 @@ class _ViteState extends State<Vite> {
                 ),
 
 
-            Positioned(
-              top: size.height*0.8,
-              right:size.width*0.75,
-                child: StatistiqueButton(onPressed: null,),
 
-              ),
             Positioned(
                 top: size.height*0.8,
                 left:size.width*0.75,

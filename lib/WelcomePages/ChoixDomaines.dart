@@ -15,6 +15,7 @@ import '../Buttons/GaucheButton.dart';
 import '../Buttons/DroiteButton.dart';
 import '../Buttons/CentreButton.dart';
 import '../Services/Login.dart';
+import 'Voila.dart';
 
 
 
@@ -56,9 +57,9 @@ class _ChoixDomaineState extends State<ChoixDomaine> {
                   top: size.height*0.05,
                   right:size.width*0.75,
                   child: BacksButton(onPressed: (){
-                    Navigator.pop(
-                      context,
-                    );
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => Voila()));
                   },)
               ),
               Positioned(

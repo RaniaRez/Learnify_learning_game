@@ -294,6 +294,7 @@ class _N3Q3T2_C_3State extends State<N3Q3T2_C_3> {
                           Vibration.vibrate();
 
                           if (threeClicked){
+                            player2 =  await player.play('audio/losing.wav');
                             setState(() {
                               correct = false;
                               Visible = false;
@@ -319,7 +320,7 @@ class _N3Q3T2_C_3State extends State<N3Q3T2_C_3> {
                           int result = await advancedPlayer.pause();
                           if (fourClicked) {
                             Vibration.vibrate();
-
+                            player2 =  await player.play('audio/losing.wav');
                             setState(() {
                               correct = false;
                               Visible = false;
@@ -349,7 +350,6 @@ class _N3Q3T2_C_3State extends State<N3Q3T2_C_3> {
                           if (twoClicked) {
                             player2 =  await player.play('audio/mathsBravo.wav');
                             Vibration.vibrate();
-
                             setState(() {
                               correct = true;
                               Visible = false;

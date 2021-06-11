@@ -22,7 +22,7 @@ import 'package:audioplayers/audioplayers.dart';
 
 import 'N2.dart';
 import 'NiveauGeo.dart';
-
+bool complet = (scoreG.niv2>=7.5);
 
 class Niveau2Pass extends StatefulWidget {
   @override
@@ -36,7 +36,7 @@ class _Niveau2PassState extends State<Niveau2Pass> {
   @override
   initState() {
     super.initState();
-    loadMusic();
+    if (complet){loadMusic();}
   }
 
   Future loadMusic() async {
@@ -54,7 +54,7 @@ class _Niveau2PassState extends State<Niveau2Pass> {
 
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
-    bool complet = (scoreG.niv2>=7.5);
+
     bool star1 = (highG.niv1>=7.5);
     bool star2 = (highG.niv2>=7.5);
     bool star3 = (highG.niv3>=7.5);

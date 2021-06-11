@@ -300,6 +300,9 @@ class _TestGeo3State extends State<TestGeo3> {
                       print(scoreG.niv2);
                       print(scoreG.niv3);
                       setNiv(testG,scoreG);
+                      print(scoreG.niv1);
+                      print(scoreG.niv2);
+                      print(scoreG.niv3);
                       Firestore.instance.collection('users').document(user.uid).collection('domains').document('geographie').updateData(
                           {
                             'testFait': scoreG.testFait ,
