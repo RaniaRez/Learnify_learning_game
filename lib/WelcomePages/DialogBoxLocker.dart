@@ -33,7 +33,7 @@ class customDialogLock extends StatelessWidget {
                     child: FittedBox(
                       fit: BoxFit.fitWidth,
                       child: Text(
-                        'Tu as atteint 1heure de jeu sans arret   \n  veux tu quitter maintenant ? \n sinon l''application s''arretera automatiquement dans 5 minutes ! \n pense a terminer le niveau courant !' ,
+                        'Tu as atteint 1heure de jeu sans arret  \n  veux tu quitter maintenant ? \n sinon l''application s''arretera automatiquement dans 5 minutes ! \n pense a terminer le niveau courant !' ,
                         style: TextStyle(
                           fontSize: 30 ,
                           fontFamily: 'Skranji-Bold',
