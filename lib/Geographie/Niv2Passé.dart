@@ -22,7 +22,7 @@ import 'package:audioplayers/audioplayers.dart';
 
 import 'N2.dart';
 import 'NiveauGeo.dart';
-bool complet = (scoreG.niv2>=7.5);
+
 
 class Niveau2Pass extends StatefulWidget {
   @override
@@ -32,6 +32,7 @@ class Niveau2Pass extends StatefulWidget {
 class _Niveau2PassState extends State<Niveau2Pass> {
 
   AudioPlayer advancedPlayer;
+  bool complet = (scoreG.niv2>=7.5);
 
   @override
   initState() {

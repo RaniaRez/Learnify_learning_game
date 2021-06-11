@@ -304,7 +304,7 @@ class _N1Q5T2_C_2State extends State<N1Q5T2_C_2> {
                       child: IconButton(
                         onPressed: () async {
                           if (threeClicked){
-                           // Vibration.vibrate();
+                           // //Vibration.vibrate();
                             player2.stop();
                             int result = await advancedPlayer.pause();
                             player2 =  await player.play('audio/losing.wav');
@@ -361,7 +361,7 @@ class _N1Q5T2_C_2State extends State<N1Q5T2_C_2> {
                           player2.stop();
                           int result = await advancedPlayer.pause();
                           if (twoClicked) {
-                            Vibration.vibrate();
+                            //Vibration.vibrate();
                             player2 =  await player.play('audio/losing.wav');
                             setState(() {
                               correct = false;
@@ -387,7 +387,7 @@ class _N1Q5T2_C_2State extends State<N1Q5T2_C_2> {
                           player2.stop();
                           int result = await advancedPlayer.pause();
                           if (oneClicked) {
-                            Vibration.vibrate();
+                            //Vibration.vibrate();
                             player2 =  await player.play('audio/losing.wav');
                             setState(() {
                               correct = false;

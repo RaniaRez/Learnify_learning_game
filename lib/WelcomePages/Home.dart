@@ -2,6 +2,7 @@
 import 'package:flutter/material.dart';
 import 'package:somthn/WelcomePages/Vite.dart';
 import 'package:somthn/WelcomePages/Voila.dart';
+import 'package:somthn/WelcomePages/timer.dart';
 import '../Buttons/settingsButton.dart';
 import '../Buttons/ButtonAllons-y.dart';
 import '../Bulles/BulleIcon.dart';
@@ -101,6 +102,7 @@ class _HomeState extends State<Home> {
                   width: size.width*0.6,
                   child: ButtonAllonsy(onPressed: () async {
                     int result = await advancedPlayer.pause();
+                    timeCounter();
 
                     await googleLogin();
                     print(user.uid);
