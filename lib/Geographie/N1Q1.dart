@@ -12,6 +12,8 @@ import 'package:somthn/Buttons/buttonReset.dart';
 import 'package:somthn/Buttons/settingsButton.dart';
 import 'package:somthn/Geographie/NiveauGeo.dart';
 import 'package:somthn/Geographie/N1Q1T2.dart';
+import 'package:somthn/Geographie/boxDialogGeo1.dart';
+
 import 'package:somthn/Geographie/N1Q2.dart';
 import 'package:somthn/WelcomePages/Settings.dart';
 import 'package:somthn/myicons.dart';
@@ -102,12 +104,14 @@ class _N1Q1State extends State<N1Q1> {
               Positioned(
                   top: size.height*0.05,
                   right:size.width*0.75,
-                  child: BacksButton(onPressed: () async {
+                  child: BacksButton(onPressed: (){
+                    showDialog(context: context,
+                        builder: (BuildContext context){
+                          return customDialogGeo1();
+                        }
+                    );
                     player2.stop();
-                    int result = await advancedPlayer.pause();
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(builder: (context) => Geo1()));
+
                   },)
               ),
               Positioned(

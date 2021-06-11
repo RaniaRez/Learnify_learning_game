@@ -4,6 +4,8 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:somthn/Geographie/N1Q5T2_C_1.dart';
 import 'package:somthn/Geographie/N1Q5T2_C_2.dart';
 import 'package:somthn/Geographie/N1Q5T2_C_3.dart';
+import 'package:somthn/Geographie/boxDialogGeo1.dart';
+
 import 'package:somthn/Geographie/N2Q2.dart';
 import 'package:somthn/Geographie/Niv1Pass%C3%A9.dart';
 import 'package:somthn/Geographie/N1.dart';
@@ -91,14 +93,14 @@ class _N1Q5State extends State<N1Q5> {
               Positioned(
                   top: size.height*0.05,
                   right:size.width*0.75,
-
-                  child: BacksButton(onPressed: () async {
+                  child: BacksButton(onPressed: (){
+                    showDialog(context: context,
+                        builder: (BuildContext context){
+                          return customDialogGeo1();
+                        }
+                    );
                     player2.stop();
-                    int result = await advancedPlayer.pause();
-                    print("u clicked me");
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(builder: (context) => Geo1()));
+
                   },)
               ),
 

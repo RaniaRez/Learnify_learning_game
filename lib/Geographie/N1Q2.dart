@@ -5,6 +5,8 @@ import 'package:somthn/Avatars/BlueAvatarIcon.dart';
 import 'package:somthn/Avatars/OrangeAvatarIcon.dart';
 import 'package:somthn/Avatars/PinkAvatarIcon.dart';
 import 'package:somthn/Avatars/PurpleAvatarIcon.dart';
+import 'package:somthn/Geographie/boxDialogGeo1.dart';
+
 import 'package:somthn/Buttons/BacksButton.dart';
 import 'package:somthn/Buttons/buttonContinuer.dart';
 import 'package:somthn/Buttons/buttonGoTo.dart';
@@ -97,12 +99,14 @@ class _N1Q2State extends State<N1Q2> {
               Positioned(
                   top: size.height*0.05,
                   right:size.width*0.75,
-                  child: BacksButton(onPressed: () async {
+                  child: BacksButton(onPressed: (){
+                    showDialog(context: context,
+                        builder: (BuildContext context){
+                          return customDialogGeo1();
+                        }
+                    );
                     player2.stop();
-                    int result = await advancedPlayer.pause();
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(builder: (context) => Geo1()));
+
                   },)
               ),
               Positioned(
