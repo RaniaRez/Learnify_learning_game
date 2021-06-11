@@ -8,6 +8,7 @@ import 'package:somthn/Francais/F-2-1-2nd-Entrain.dart';
 import 'package:somthn/Francais/F-2-1-2nd-Francaise.dart';
 import 'package:somthn/Francais/F-2-1-2nd-dapprendre.dart';
 import 'package:somthn/Francais/F-2-1-2nd-lalangue.dart';
+import 'package:somthn/Francais/F-2-2.dart';
 import 'package:somthn/Francais/F-2-3.dart';
 import 'package:somthn/Francais/F-2.dart';
 import 'package:somthn/Francais/boxDialog2.dart';

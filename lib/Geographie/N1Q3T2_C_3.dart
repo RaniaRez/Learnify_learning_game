@@ -4,6 +4,8 @@ import 'package:somthn/Geographie/N1Q4.dart';
 import 'package:somthn/WelcomePages/Settings.dart';
 import 'package:vibration/vibration.dart';
 import 'package:somthn/Buttons/buttonContinuer.dart';
+import 'package:somthn/Geographie/boxDialogGeo1.dart';
+
 import 'package:somthn/myicons.dart';
 import '../Buttons/settingsButton.dart';
 import '../Buttons/BacksButton.dart';
@@ -74,14 +76,14 @@ class _N1Q3T2_C_3State extends State<N1Q3T2_C_3> {
               Positioned(
                   top: size.height*0.05,
                   right:size.width*0.75,
-
-                  child: BacksButton(onPressed: () async {
+                  child: BacksButton(onPressed: (){
+                    showDialog(context: context,
+                        builder: (BuildContext context){
+                          return customDialogGeo1();
+                        }
+                    );
                     player2.stop();
-                    int result = await advancedPlayer.pause();
-                    print("u clicked me");
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(builder: (context) => Geo1()));
+
                   },)
               ),
 
