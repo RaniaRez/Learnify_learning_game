@@ -8,6 +8,7 @@ import 'package:somthn/Francais/F-2-1-2nd-Entrain.dart';
 import 'package:somthn/Francais/F-2-1-2nd-Francaise.dart';
 import 'package:somthn/Francais/F-2-1-2nd-dapprendre.dart';
 import 'package:somthn/Francais/F-2-1-2nd-lalangue.dart';
+import 'package:somthn/Francais/F-2-2.dart';
 import 'package:somthn/Francais/F-2-3.dart';
 import 'package:somthn/Francais/F-2.dart';
 import 'package:somthn/Francais/boxDialog2.dart';
@@ -295,7 +296,7 @@ class _F_2_1State extends State<F_2_1> {
                       print(scoreF.niv2);
                       Navigator.push(
                           context,
-                          new MaterialPageRoute(builder: (context) => new F_2_3()));
+                          new MaterialPageRoute(builder: (context) => new F_2_2()));
                       print('Continuer');
                     },)
                 ),
