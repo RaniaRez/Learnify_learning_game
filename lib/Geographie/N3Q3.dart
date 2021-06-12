@@ -20,6 +20,7 @@ import 'package:audioplayers/audio_cache.dart';
 import 'package:audioplayers/audioplayers.dart';
 import 'BienvenueGeo.dart';
 import 'N3.dart';
+import 'package:somthn/Geographie/boxDialogGeo3.dart';
 
 class N3Q3 extends StatefulWidget {
   const N3Q3({Key key}) : super(key: key);
@@ -75,15 +76,14 @@ class _N3Q3State extends State<N3Q3> {
               Positioned(
                   top: size.height*0.05,
                   right:size.width*0.75,
-
-                  child: BacksButton(onPressed: () async {
+                  child: BacksButton(onPressed: (){
+                    showDialog(context: context,
+                        builder: (BuildContext context){
+                          return customDialogGeo3();
+                        }
+                    );
                     player2.stop();
-                    int result = await advancedPlayer.pause();
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(builder: (context) => Geo3()));
-                    print("back");
-                    //Navigator.pop(context);
+
                   },)
               ),
 

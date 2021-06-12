@@ -16,6 +16,7 @@ import 'package:audioplayers/audio_cache.dart';
 import 'package:audioplayers/audioplayers.dart';
 import 'BienvenueGeo.dart';
 import 'N2.dart';
+import 'package:somthn/Geographie/boxDialogGeo2.dart';
 
 class N2Q4T2_C_4 extends StatefulWidget {
   const N2Q4T2_C_4({Key key}) : super(key: key);
@@ -73,14 +74,14 @@ class _N2Q4T2_C_4State extends State<N2Q4T2_C_4> {
               Positioned(
                   top: size.height*0.05,
                   right:size.width*0.75,
-
-                  child: BacksButton(onPressed: () async {
+                  child: BacksButton(onPressed: (){
+                    showDialog(context: context,
+                        builder: (BuildContext context){
+                          return customDialogGeo2();
+                        }
+                    );
                     player2.stop();
-                    int result = await advancedPlayer.pause();
-                    print("u clicked me");
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(builder: (context) => Geo2()));
+
                   },)
               ),
 

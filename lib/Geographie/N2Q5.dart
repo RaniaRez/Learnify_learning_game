@@ -18,6 +18,7 @@ import '../Services/Login.dart';
 import 'package:audioplayers/audio_cache.dart';
 import 'package:audioplayers/audioplayers.dart';
 import 'package:vibration/vibration.dart';
+import 'package:somthn/Geographie/boxDialogGeo2.dart';
 
 import 'BienvenueGeo.dart';
 import 'Niv2Passé.dart';
@@ -88,14 +89,14 @@ class _N2Q5State extends State<N2Q5> {
               Positioned(
                   top: size.height*0.05,
                   right:size.width*0.75,
-
-                  child: BacksButton(onPressed: () async {
+                  child: BacksButton(onPressed: (){
+                    showDialog(context: context,
+                        builder: (BuildContext context){
+                          return customDialogGeo2();
+                        }
+                    );
                     player2.stop();
-                    int result = await advancedPlayer.pause();
-                    print("u clicked me");
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(builder: (context) => Geo2()));
+
                   },)
               ),
 
