@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:somthn/Buttons/BarreProgres.dart';
+import 'package:somthn/Francais/F-1-1-2nd.dart';
 import 'package:somthn/Francais/F-1-2.dart';
 import 'package:somthn/Francais/I-F-1-1.dart';
 import 'package:somthn/Francais/boxDialog1.dart';
@@ -112,7 +113,7 @@ class _F_1_1State extends State<F_1_1> {
 
                     Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => I_F_1_1()));
+                    MaterialPageRoute(builder: (context) => F_1_1_2nd()));
                     },
                       icon: Image.asset('images/Sheep.jpg')),
                 ),
@@ -140,7 +141,7 @@ class _F_1_1State extends State<F_1_1> {
 
                         Navigator.push(
                             context,
-                            MaterialPageRoute(builder: (context) => I_F_1_1()));
+                            MaterialPageRoute(builder: (context) => F_1_1_2nd()));
                       },
                       icon: Image.asset('images/Cat.jpg')),
                 ),
@@ -168,7 +169,7 @@ class _F_1_1State extends State<F_1_1> {
 
                         Navigator.push(
                             context,
-                            MaterialPageRoute(builder: (context) => I_F_1_1()));
+                            MaterialPageRoute(builder: (context) => F_1_1_2nd()));
                       },
                       icon: Image.asset('images/Cow.jpg')),
                 ),
@@ -198,7 +199,7 @@ class _F_1_1State extends State<F_1_1> {
                         print(scoreF.niv1);
                         Navigator.push(
                             context,
-                            MaterialPageRoute(builder: (context) => I_F_1_1()));
+                            MaterialPageRoute(builder: (context) => F_1_1_2nd()));
                       },
                       icon: Image.asset('images/Lion.jpg')),
                 ),

@@ -5,6 +5,7 @@ import 'package:somthn/Buttons/buttonInfo.dart';
 import 'package:somthn/Buttons/buttonMusic.dart';
 import 'package:somthn/Buttons/buttonSound.dart';
 import 'package:somthn/Buttons/buttonUserSettings.dart';
+import 'package:somthn/WelcomePages/Voila.dart';
 import 'package:somthn/modification/Userinfo.dart';
 import '../Buttons/BacksButton.dart';
 import '../Buttons/butttonExit.dart';
@@ -86,7 +87,7 @@ class _SettingsState extends State<Settings> {
                   child:HomeButton(onPressed:() {
                     Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => Home()),);
+                      MaterialPageRoute(builder: (context) => Voila()),);
                   })
               ),
 

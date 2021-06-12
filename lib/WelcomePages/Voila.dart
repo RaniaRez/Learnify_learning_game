@@ -8,6 +8,7 @@ import 'package:somthn/Branches/BranchIconSimple.dart';
 import 'package:somthn/Statistics/Statistiques.dart';
 import 'package:somthn/WelcomePages/ChoixDomaines.dart';
 import 'package:somthn/Buttons/ClassementButton.dart';
+import 'package:somthn/WelcomePages/Home.dart';
 import 'package:somthn/classement/Classement.dart';
 import 'package:somthn/WelcomePages/Settings.dart';
 import '../Buttons/settingsButton.dart';
@@ -88,7 +89,9 @@ class _VoilaState extends State<Voila> {
                 child: BacksButton(onPressed: () async {
                   int result = await advancedPlayer.pause();
 
-                  Navigator.pop(context);
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => Home()));
                 },)
             ),
             Positioned(

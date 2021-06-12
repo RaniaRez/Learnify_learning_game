@@ -323,7 +323,7 @@ class _Niveau1PassState extends State<Niveau1Pass> {
               child: Visibility(
                 visible: ((complet) || (scoreF.niv2 >=0 )) ,
                 child: GoToButton(onPressed: () async {
-                  int result = await advancedPlayer.pause();
+                 // int result = await advancedPlayer.pause();
 
                   print(scoreM.niv1);
                   print('khra');
