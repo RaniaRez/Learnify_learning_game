@@ -26,7 +26,7 @@ await Firestore.instance.collection("users").document(user.uid).delete();
 final FirebaseAuth _auth = FirebaseAuth.instance;
 final GoogleSignIn googleSignIn = GoogleSignIn();
 
-Future<void> delete() async  {
+
 /*  final GoogleSignInAccount googleSignInAccount = await googleSignIn.signIn();
   final GoogleSignInAuthentication googleSignInAuthentication = await googleSignInAccount
       .authentication;
@@ -45,6 +45,7 @@ Future<void> delete() async  {
   await DatabaseService(uid: user.uid);  //called from database class
   await user.delete();*/
 
+Future<void> delete() async  {
   try {
     final GoogleSignInAccount googleSignInAccount = await googleSignIn.signIn();
     final GoogleSignInAuthentication googleSignInAuthentication = await googleSignInAccount
