@@ -35,10 +35,10 @@ class _Niveau2PassState extends State<Niveau2Pass> {
 
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
-    bool complet = (scoreM.niv2>7.5);
-    bool star1 = (hs.niv1>7.5);
-    bool star2 = (hs.niv2>7.5);
-    bool star3 = (hs.niv3>7.5);
+    bool complet = (scoreM.niv2>=7.5);
+    bool star1 = (scoreM.niv2>=3);
+    bool star2 = (scoreM.niv2>=6);
+    bool star3 = (scoreM.niv2>=9);
     if ((score.niv3<0)&&(complet))
     { score.niv3=0;
     Firestore.instance.collection('users').document(user.uid).collection('domains').document('maths').updateData({'niv3':0});

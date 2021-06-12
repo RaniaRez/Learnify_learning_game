@@ -30,16 +30,17 @@ class Niveau1Pass extends StatefulWidget {
 class _Niveau1PassState extends State<Niveau1Pass> {
   var player = AudioCache();
   var player2 = AudioPlayer ();
+  bool complet = (scoreM.niv1 >=7.5);
 
 
   @override
 
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
-    bool complet = (scoreM.niv1 >7.5);
-    bool star1 = (hs.niv1>7.5) ;
-    bool star2 = (hs.niv2>7.5) ;
-    bool star3 = (hs.niv3>7.5) ;
+
+    bool star1 = (scoreM.niv1>=3) ;
+    bool star2 = (scoreM.niv1>=6) ;
+    bool star3 = (scoreM.niv1>=9) ;
     if ((score.niv2<0)&&(complet))
     { score.niv2=0;
     Firestore.instance.collection('users').document(user.uid).collection('domains').document('maths').updateData({'niv2':0});}

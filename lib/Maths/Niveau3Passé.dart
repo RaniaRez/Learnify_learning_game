@@ -34,10 +34,10 @@ class _Niveau3PassState extends State<Niveau3Pass> {
 
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
-    bool complet = (scoreM.niv3>7.5);
-    bool star1 = (hs.niv1>7.5);
-    bool star2 = (hs.niv2>7.5);
-    bool star3 = (hs.niv3>7.5);
+    bool complet = (scoreM.niv3>=7.5);
+    bool star1 = (scoreM.niv3>=3);
+    bool star2 = (scoreM.niv3>=6);
+    bool star3 = (scoreM.niv3>=9);
     /*print("khra2");
     print(scoreM.niv1);
     print("khra2");

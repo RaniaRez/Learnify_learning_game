@@ -56,9 +56,9 @@ class _Niveau1PassState extends State<Niveau1Pass> {
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
 
-    bool star1 = (high.niv1>=7.5);
-    bool star2 = (high.niv2>=7.5);
-    bool star3 = (high.niv3>=7.5);
+    bool star1 = (scoreF.niv1>=3);
+    bool star2 = (scoreF.niv1>=6);
+    bool star3 = (scoreF.niv1>=9);
     if ((scoreF.niv2<0)&&(complet)) { scoreF.niv2=0;
     Firestore.instance.collection('users').document(user.uid).collection('domains').document('francais').updateData({'niv2':scoreF.niv2});}
     /*print("khra2");

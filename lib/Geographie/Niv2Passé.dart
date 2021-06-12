@@ -56,9 +56,9 @@ class _Niveau2PassState extends State<Niveau2Pass> {
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
 
-    bool star1 = (highG.niv1>=7.5);
-    bool star2 = (highG.niv2>=7.5);
-    bool star3 = (highG.niv3>=7.5);
+    bool star1 = (scoreG.niv2>=3);
+    bool star2 = (scoreG.niv2>=6);
+    bool star3 = (scoreG.niv2>=9);
     if (complet ) {
       if (scoreG.niv3<0)
       {scoreG.niv3=0;

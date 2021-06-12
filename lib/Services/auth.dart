@@ -26,26 +26,11 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 
     final FirebaseUser currentUser = await _auth.currentUser();
     assert(currentUser.uid == user.uid);
-    print("avant");
-    /*var d=await Firestore.instance.collection('users').document(currentUser.uid).get();
-      if (d.exists ){
-        print("user exists");
-      }
-      else { print("does not exist ");}*/
-
-    //await DatabaseService(uid: user.uid).updateUserData( true ,'username','avatar', 10);
-    /*print("apres");
-    await Firestore.instance.collection('users').document(currentUser.uid).get().then((doc)=> {
-      if (doc.exists ){
-        print("user exists")
-      }
-      else { print("does not exist ")}
-    }
-    );*/
     return userFromFirebaseUser(user);
 
-    //userFromFirebaseUser(user);
   }
+
+
   void signOutGoogle() async {
     await googleSignIn.signOut();
   }
