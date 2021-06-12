@@ -8,6 +8,7 @@ import 'package:somthn/Maths/BienvenueMath.dart';
 import 'package:somthn/Maths/M-2.dart';
 import 'package:somthn/Maths/NiveauMath.dart';
 import 'package:somthn/WelcomePages/Settings.dart';
+import 'package:somthn/WelcomePages/Voila.dart';
 import 'package:somthn/myicons.dart';
 import '../Buttons/settingsButton.dart';
 import '../Buttons/BacksButton.dart';
@@ -90,7 +91,7 @@ class _Niveau1PassState extends State<Niveau1Pass> {
                   print("HELL YEAH8");
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => Home()),);
+                    MaterialPageRoute(builder: (context) => Voila()),);
 
                 },
               ),

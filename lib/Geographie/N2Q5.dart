@@ -271,7 +271,6 @@ class _N2Q5State extends State<N2Q5> {
                     child: ButtonContinuer(onPressed: () async {
                       player2.stop();
                       int result = await advancedPlayer.pause();
-                      print("score final");
                       print(scoreG.niv2);
                       Firestore.instance.collection('users').document(user.uid).collection('domains').document('geographie').updateData({'niv2':scoreG.niv2});
                       if (scoreG.niv2>highG.niv2)
