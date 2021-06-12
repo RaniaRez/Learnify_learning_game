@@ -28,8 +28,27 @@ class Niveau3Pass extends StatefulWidget {
 
 class _Niveau3PassState extends State<Niveau3Pass> {
 
-  var player = AudioCache();
-  var player2 = AudioPlayer ();
+
+  AudioPlayer advancedPlayer;
+  bool complet = (scoreM.niv2>=7.5);
+  @override
+  initState() {
+    super.initState();
+    if (complet){
+      loadMusic();}
+    else {}
+  }
+
+  Future loadMusic() async {
+
+    advancedPlayer = await AudioCache().play("audio/niveauPasse.wav");
+  }
+
+  @override
+  void dispose() {
+    advancedPlayer = null;
+    super.dispose();
+  }
 
   @override
 
@@ -298,7 +317,8 @@ class _Niveau3PassState extends State<Niveau3Pass> {
 
                 child: GoToButton(onPressed: () async {
                   //player2.stop();
-                 // int result = await advancedPlayer.pause();
+                  if (advancedPlayer!=null)
+                 {int result = await advancedPlayer.pause();}
 
                   print(scoreM.niv3);
                   print('khra');
