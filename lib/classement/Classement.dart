@@ -220,7 +220,7 @@ class _ClassementState extends State<Classement> {
                   left: size.width*0.13 ,
                   child: InkWell(
                     onTap:(){
-                      print("Salamalekoum, nes lbahjaaaaaaaaa salamalekoum");
+                      //print("Salamalekoum, nes lbahjaaaaaaaaa salamalekoum");
                     },
 
                     child: FittedBox(
@@ -243,7 +243,7 @@ class _ClassementState extends State<Classement> {
                   right: size.width*0.13 ,
                   child: InkWell(
                     onTap:(){
-                      print("Salamalekoum, nes lbahjaaaaaaaaa salamalekoum");
+                     // print("Salamalekoum, nes lbahjaaaaaaaaa salamalekoum");
                     },
 
                     child: FittedBox(
@@ -266,7 +266,7 @@ class _ClassementState extends State<Classement> {
                   right: size.width*0.44 ,
                   child: InkWell(
                     onTap:(){
-                      print("Salamalekoum, nes lbahjaaaaaaaaa salamalekoum");
+                    //  print("Salamalekoum, nes lbahjaaaaaaaaa salamalekoum");
                     },
 
                     child: FittedBox(
