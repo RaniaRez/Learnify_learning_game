@@ -224,7 +224,7 @@ class _EntrernomState extends State<Entrernom> {
                 margin:EdgeInsets.symmetric(horizontal:20 ),
                 child:TextField(
                   controller: Username,
-                  maxLength: 5,
+                  maxLength: 6,
                   onEditingComplete: (){
                     if(Username.text.isEmpty){
                       setState(() {

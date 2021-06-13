@@ -75,8 +75,9 @@ class _F_2_1_2nd_aliceState extends State<F_2_1_2nd_alice> {
                   child:
                   SettingsButton(onPressed: () async {
                     player2.stop();
-                    int result = await advancedPlayer.pause();
-
+                    if(advancedPlayer !=null){
+                      int result = await advancedPlayer.pause();
+                    }
                     Navigator.push(
                         context,
                         MaterialPageRoute(builder: (context) => Settings()));
@@ -184,8 +185,9 @@ class _F_2_1_2nd_aliceState extends State<F_2_1_2nd_alice> {
                     visible: Visible,
                     child: IconButton(
                       onPressed: () async {
-                        int result = await advancedPlayer.pause();
-
+                        if(advancedPlayer !=null){
+                          int result = await advancedPlayer.pause();
+                        }
                         player2 =  await player.play('audio/mathsBravo.wav');
 
                         setState(() {
@@ -207,8 +209,9 @@ class _F_2_1_2nd_aliceState extends State<F_2_1_2nd_alice> {
                     visible: Visible,
                     child: IconButton(
                       onPressed: () async {
-                        int result = await advancedPlayer.pause();
-                        player2 =  await player.play('audio/losing.wav');
+                        if(advancedPlayer !=null){
+                          int result = await advancedPlayer.pause();
+                        }                        player2 =  await player.play('audio/losing.wav');
                         setState(() {
                           Visible=false;
                         });
@@ -226,8 +229,9 @@ class _F_2_1_2nd_aliceState extends State<F_2_1_2nd_alice> {
                     visible: Visible,
                     child: IconButton(
                       onPressed: () async {
-                        int result = await advancedPlayer.pause();
-                        player2 =  await player.play('audio/losing.wav');
+                        if(advancedPlayer !=null){
+                          int result = await advancedPlayer.pause();
+                        }                        player2 =  await player.play('audio/losing.wav');
                         setState(() {
                           Visible=false;
                         });
@@ -245,8 +249,9 @@ class _F_2_1_2nd_aliceState extends State<F_2_1_2nd_alice> {
                     visible: Visible,
                     child: IconButton(
                       onPressed: () async {
-                        int result = await advancedPlayer.pause();
-                        player2 =  await player.play('audio/losing.wav');
+                        if(advancedPlayer !=null){
+                          int result = await advancedPlayer.pause();
+                        }                        player2 =  await player.play('audio/losing.wav');
                         setState(() {
                           Visible=false;
                         });
@@ -264,8 +269,9 @@ class _F_2_1_2nd_aliceState extends State<F_2_1_2nd_alice> {
                     visible: Visible,
                     child: IconButton(
                       onPressed: () async {
-                        int result = await advancedPlayer.pause();
-                        player2 =  await player.play('audio/losing.wav');
+                        if(advancedPlayer !=null){
+                          int result = await advancedPlayer.pause();
+                        }                        player2 =  await player.play('audio/losing.wav');
                         setState(() {
                           Visible=false;
                         });
@@ -297,8 +303,9 @@ class _F_2_1_2nd_aliceState extends State<F_2_1_2nd_alice> {
                     width: size.width*0.5,
                     child: ButtonContinuer(onPressed: () async {
                       player2.stop();
-                      int result = await advancedPlayer.pause();
-
+                      if(advancedPlayer !=null){
+                        int result = await advancedPlayer.pause();
+                      }
                       print('HADA SCORE');
                       print(scoreF.niv2);
                       Navigator.push(

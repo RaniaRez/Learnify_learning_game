@@ -128,7 +128,9 @@ class _F_1_4State extends State<F_1_4> {
                     top: size.height*0.47,
                     left: size.width*0.75,
                     child: GoToButton(onPressed: () async {
-                      int result = await advancedPlayer.pause();
+                      if(advancedPlayer !=null){
+                        int result = await advancedPlayer.pause();
+                      }
 
                       if((drag1=="assets/icons/m.svg")&&(drag2=="assets/icons/o.svg")&&(drag3=="assets/icons/u.svg")&&(drag4=="assets/icons/l.svg")&&(drag5=="assets/icons/i.svg")&&(drag6=="assets/icons/n.svg")){
                         print('correct');

@@ -93,8 +93,9 @@ class _F_2_5_2ndState extends State<F_2_5_2nd> {
                   child:
                   SettingsButton(onPressed: () async {
                     player2.stop();
-                    int result = await advancedPlayer.pause();
-
+                    if(advancedPlayer !=null){
+                      int result = await advancedPlayer.pause();
+                    }
                     Navigator.push(
                         context,
                         MaterialPageRoute(builder: (context) => Settings()));
@@ -105,8 +106,9 @@ class _F_2_5_2ndState extends State<F_2_5_2nd> {
                   right:size.width*0.75,
                   child: BacksButton(onPressed: () async {
                     player2.stop();
-                    int result = await advancedPlayer.pause();
-
+                    if(advancedPlayer !=null){
+                      int result = await advancedPlayer.pause();
+                    }
                     showDialog(context: context,
                         builder: (BuildContext context){
                           return customDialog2();
@@ -136,8 +138,9 @@ class _F_2_5_2ndState extends State<F_2_5_2nd> {
                   top: size.height*0.47,
                   left: size.width*0.75,
                   child: GoToButton(onPressed: () async {
-                    int result = await advancedPlayer.pause();
-
+                    if(advancedPlayer !=null){
+                      int result = await advancedPlayer.pause();
+                    }
                     if((drag1=="assets/icons/v.svg")&&(drag2=="assets/icons/o.svg")&&(drag3=="assets/icons/i.svg")&&(drag4=="assets/icons/l.svg")&&(drag5=="assets/icons/e.svg")){
                       player2 =  await player.play('audio/mathsBravo.wav');
                       setState(() {
@@ -249,7 +252,7 @@ class _F_2_5_2ndState extends State<F_2_5_2nd> {
                 Visibility(
                   visible: Visible,
                   child: Positioned(
-                    top: size.height*0.49,
+                    top: size.height*0.35,
                     left: size.width*0.69,
                     height: size.width*0.35,
                     width: size.width*0.35,
@@ -260,7 +263,7 @@ class _F_2_5_2ndState extends State<F_2_5_2nd> {
                 Visibility(
                   visible: Visible,
                   child: Positioned(
-                    top: size.height*0.5,
+                    top: size.height*0.36,
                     left: size.width*0.72,
                     height: size.width*0.3,
                     width: size.width*0.3,
@@ -271,7 +274,7 @@ class _F_2_5_2ndState extends State<F_2_5_2nd> {
                 Visibility(
                   visible: Visible,
                   child: Positioned(
-                    top: size.height*0.5,
+                    top: size.height*0.36,
                     left: size.width*0.72,
                     height: size.width*0.3,
                     width: size.width*0.3,
