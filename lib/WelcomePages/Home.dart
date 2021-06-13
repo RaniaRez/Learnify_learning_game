@@ -79,6 +79,8 @@ class _HomeState extends State<Home> {
                   child: ButtonAllonsy(onPressed: () async {
                      //int result = await advancedPlayer.pause();
                     int pause = await advancedPlayer.setVolume(0.03);
+                  // advancedPlayer.dispose();
+                   // AudioPlayer.logEnabled=false;
                     timeCounter(context);
 
                     await googleLogin();
