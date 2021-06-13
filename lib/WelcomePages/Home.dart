@@ -77,7 +77,7 @@ class _HomeState extends State<Home> {
                   width: size.width*0.6,
                   child: ButtonAllonsy(onPressed: () async {
                      //int result = await advancedPlayer.pause();
-                    int pause = await advancedPlayer.setVolume(0.1);
+                    int pause = await advancedPlayer.setVolume(0.04);
                     timeCounter(context);
 
                     await googleLogin();
