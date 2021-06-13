@@ -8,6 +8,7 @@ import 'package:somthn/Maths/BienvenueMath.dart';
 import 'package:somthn/Maths/M-2.dart';
 import 'package:somthn/Maths/NiveauMath.dart';
 import 'package:somthn/WelcomePages/Settings.dart';
+import 'package:somthn/WelcomePages/Voila.dart';
 import 'package:somthn/myicons.dart';
 import '../Buttons/settingsButton.dart';
 import '../Buttons/BacksButton.dart';
@@ -28,18 +29,35 @@ class Niveau1Pass extends StatefulWidget {
 }
 
 class _Niveau1PassState extends State<Niveau1Pass> {
-  var player = AudioCache();
-  var player2 = AudioPlayer ();
+  AudioPlayer advancedPlayer;
+  bool complet = (scoreM.niv1 >=7.5);
+  @override
+  initState() {
+    super.initState();
+    if (complet){
+      loadMusic();}
+    else {}
+  }
 
+  Future loadMusic() async {
+
+    advancedPlayer = await AudioCache().play("audio/niveauPasse.wav");
+  }
+
+  @override
+  void dispose() {
+    advancedPlayer = null;
+    super.dispose();
+  }
 
   @override
 
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
-    bool complet = (scoreM.niv1 >7.5);
-    bool star1 = (hs.niv1>7.5) ;
-    bool star2 = (hs.niv2>7.5) ;
-    bool star3 = (hs.niv3>7.5) ;
+
+    bool star1 = (scoreM.niv1>=3) ;
+    bool star2 = (scoreM.niv1>=6) ;
+    bool star3 = (scoreM.niv1>=9) ;
     if ((score.niv2<0)&&(complet))
     { score.niv2=0;
     Firestore.instance.collection('users').document(user.uid).collection('domains').document('maths').updateData({'niv2':0});}
@@ -89,7 +107,7 @@ class _Niveau1PassState extends State<Niveau1Pass> {
                   print("HELL YEAH8");
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => Home()),);
+                    MaterialPageRoute(builder: (context) => Voila()),);
 
                 },
               ),
@@ -298,9 +316,8 @@ class _Niveau1PassState extends State<Niveau1Pass> {
               child: Visibility(
                 visible: ((complet) || (score.niv2>=0)),
                 child: GoToButton(onPressed: () async {
-                  player2.stop();
-                 // int result = await advancedPlayer.pause();
-                  player2 =  await player.play('audio/niveauPasse.wav');
+                  if (advancedPlayer!=null )
+                 {int result = await advancedPlayer.pause();}
                   print(scoreM.niv1);
                   //Firestore.instance.collection('users').document(user.uid).collection('domains').document('maths').updateData({'niv1':scoreM.niv1});
                   Navigator.push(

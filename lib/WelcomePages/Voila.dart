@@ -39,6 +39,7 @@ class _VoilaState extends State<Voila> {
 
   Future loadMusic() async {
     advancedPlayer = await AudioCache().play("audio/pret.wav");
+    print("mdrr");
   }
 
   @override
@@ -75,7 +76,7 @@ class _VoilaState extends State<Voila> {
                 top: size.height*0.05,
                 left:size.width*0.75,
                 child: SettingsButton(onPressed: () async {
-                  int result = await advancedPlayer.pause();
+                  await advancedPlayer.pause();
 
                   Navigator.push(
                       context,
@@ -87,7 +88,7 @@ class _VoilaState extends State<Voila> {
                 top: size.height*0.05,
                 right:size.width*0.75,
                 child: BacksButton(onPressed: () async {
-                  int result = await advancedPlayer.pause();
+                  await advancedPlayer.pause();
 
                   Navigator.push(
                       context,

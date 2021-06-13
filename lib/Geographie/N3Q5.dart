@@ -21,6 +21,7 @@ import 'package:audioplayers/audio_cache.dart';
 import 'package:audioplayers/audioplayers.dart';
 import 'BienvenueGeo.dart';
 import 'Niv3Passé.dart';
+import 'package:somthn/Geographie/boxDialogGeo3.dart';
 
 import '../Maths/ScoreMaths.dart';
 import'../Francais/ScoreFr.dart';
@@ -86,13 +87,14 @@ class _N3Q5State extends State<N3Q5> {
               Positioned(
                   top: size.height*0.05,
                   right:size.width*0.75,
-
                   child: BacksButton(onPressed: (){
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(builder: (context) => Geo3()));
-                    print("back");
-                    //Navigator.pop(context);
+                    showDialog(context: context,
+                        builder: (BuildContext context){
+                          return customDialogGeo3();
+                        }
+                    );
+                    player2.stop();
+
                   },)
               ),
 

@@ -8,6 +8,7 @@ import 'package:somthn/Francais/F-1.dart';
 import 'package:somthn/Francais/F-2.dart';
 import 'package:somthn/Maths/BienvenueMath.dart';
 import 'package:somthn/WelcomePages/Settings.dart';
+import 'package:somthn/WelcomePages/Voila.dart';
 import 'package:somthn/myicons.dart';
 import '../Buttons/settingsButton.dart';
 import '../Buttons/BacksButton.dart';
@@ -56,9 +57,9 @@ class _Niveau1PassState extends State<Niveau1Pass> {
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
 
-    bool star1 = (high.niv1>=7.5);
-    bool star2 = (high.niv2>=7.5);
-    bool star3 = (high.niv3>=7.5);
+    bool star1 = (scoreF.niv1>=3);
+    bool star2 = (scoreF.niv1>=6);
+    bool star3 = (scoreF.niv1>=9);
     if ((scoreF.niv2<0)&&(complet)) { scoreF.niv2=0;
     Firestore.instance.collection('users').document(user.uid).collection('domains').document('francais').updateData({'niv2':scoreF.niv2});}
     /*print("khra2");
@@ -114,7 +115,7 @@ class _Niveau1PassState extends State<Niveau1Pass> {
                   print("HELL YEAH8");
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => Home()),);
+                    MaterialPageRoute(builder: (context) => Voila()),);
 
                 },
               ),

@@ -7,6 +7,7 @@ import 'package:somthn/Francais/F-3.dart';
 import 'package:somthn/Geographie/N3.dart';
 import 'package:somthn/Maths/BienvenueMath.dart';
 import 'package:somthn/WelcomePages/Settings.dart';
+import 'package:somthn/WelcomePages/Voila.dart';
 import 'package:somthn/myicons.dart';
 import '../Buttons/settingsButton.dart';
 import '../Buttons/BacksButton.dart';
@@ -54,9 +55,9 @@ class _Niveau3PassState extends State<Niveau3Pass> {
 
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
-    bool star1 = (highG.niv1>=7.5);
-    bool star2 = (highG.niv2>=7.5);
-    bool star3 = (highG.niv3>=7.5);
+    bool star1 = (scoreG.niv3>=3);
+    bool star2 = (scoreG.niv3>=6);
+    bool star3 = (scoreG.niv3>=9);
 
     return Scaffold(
       body:
@@ -102,7 +103,7 @@ class _Niveau3PassState extends State<Niveau3Pass> {
                   print("HELL YEAH8");
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => Home()),);
+                    MaterialPageRoute(builder: (context) => Voila()),);
 
                 },
               ),

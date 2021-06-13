@@ -9,6 +9,7 @@ import 'package:somthn/Geographie/N2.dart';
 import 'package:somthn/Geographie/N1.dart';
 import 'package:somthn/Maths/BienvenueMath.dart';
 import 'package:somthn/WelcomePages/Settings.dart';
+import 'package:somthn/WelcomePages/Voila.dart';
 import 'package:somthn/myicons.dart';
 import '../Buttons/settingsButton.dart';
 import '../Buttons/BacksButton.dart';
@@ -58,9 +59,9 @@ class _Niveau1PassState extends State<Niveau1Pass> {
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
 
-    bool star1 = (highG.niv1>=7.5);
-    bool star2 = (highG.niv2>=7.5);
-    bool star3 = (highG.niv3>=7.5);
+    bool star1 = (scoreG.niv1>=3);
+    bool star2 = (scoreG.niv1>=6);
+    bool star3 = (scoreG.niv1>=9);
     if (complet ) {
       if (scoreG.niv2<0)
       {scoreG.niv2=0;
@@ -110,7 +111,7 @@ class _Niveau1PassState extends State<Niveau1Pass> {
                   print("HELL YEAH8");
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => Home()),);
+                    MaterialPageRoute(builder: (context) => Voila()),);
 
                 },
               ),

@@ -6,6 +6,7 @@ import 'package:somthn/Buttons/buttonReset.dart';
 import 'package:somthn/Maths/BienvenueMath.dart';
 import 'package:somthn/Maths/M-3.dart';
 import 'package:somthn/WelcomePages/Settings.dart';
+import 'package:somthn/WelcomePages/Voila.dart';
 import 'package:somthn/myicons.dart';
 import '../Buttons/settingsButton.dart';
 import '../Buttons/BacksButton.dart';
@@ -27,17 +28,36 @@ class Niveau3Pass extends StatefulWidget {
 
 class _Niveau3PassState extends State<Niveau3Pass> {
 
-  var player = AudioCache();
-  var player2 = AudioPlayer ();
+
+  AudioPlayer advancedPlayer;
+  bool complet = (scoreM.niv2>=7.5);
+  @override
+  initState() {
+    super.initState();
+    if (complet){
+      loadMusic();}
+    else {}
+  }
+
+  Future loadMusic() async {
+
+    advancedPlayer = await AudioCache().play("audio/niveauPasse.wav");
+  }
+
+  @override
+  void dispose() {
+    advancedPlayer = null;
+    super.dispose();
+  }
 
   @override
 
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
-    bool complet = (scoreM.niv3>7.5);
-    bool star1 = (hs.niv1>7.5);
-    bool star2 = (hs.niv2>7.5);
-    bool star3 = (hs.niv3>7.5);
+    bool complet = (scoreM.niv3>=7.5);
+    bool star1 = (scoreM.niv3>=3);
+    bool star2 = (scoreM.niv3>=6);
+    bool star3 = (scoreM.niv3>=9);
     /*print("khra2");
     print(scoreM.niv1);
     print("khra2");
@@ -86,7 +106,7 @@ class _Niveau3PassState extends State<Niveau3Pass> {
                   print("HELL YEAH8");
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => Home()),);
+                    MaterialPageRoute(builder: (context) => Voila()),);
 
                 },
               ),
@@ -297,7 +317,8 @@ class _Niveau3PassState extends State<Niveau3Pass> {
 
                 child: GoToButton(onPressed: () async {
                   //player2.stop();
-                 // int result = await advancedPlayer.pause();
+                  if (advancedPlayer!=null)
+                 {int result = await advancedPlayer.pause();}
 
                   print(scoreM.niv3);
                   print('khra');

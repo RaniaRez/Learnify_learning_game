@@ -7,6 +7,7 @@ import 'package:somthn/Francais/F-3.dart';
 import 'package:somthn/Francais/NiveauFr.dart';
 import 'package:somthn/Maths/BienvenueMath.dart';
 import 'package:somthn/WelcomePages/Settings.dart';
+import 'package:somthn/WelcomePages/Voila.dart';
 import 'package:somthn/myicons.dart';
 import '../Buttons/settingsButton.dart';
 import '../Buttons/BacksButton.dart';
@@ -56,9 +57,9 @@ class _Niveau3PassState extends State<Niveau3Pass> {
     Size size = MediaQuery.of(context).size;
     int score = 50;
 
-    bool star1 = (high.niv1>=7.5);
-    bool star2 = (high.niv2>=7.5);
-    bool star3 = (high.niv3>=7.5);
+    bool star1 = (scoreF.niv3>=3);
+    bool star2 = (scoreF.niv3>=6);
+    bool star3 = (scoreF.niv3>=9);
 
     return Scaffold(
       body:
@@ -109,7 +110,7 @@ class _Niveau3PassState extends State<Niveau3Pass> {
                   print("HELL YEAH8");
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => Home()),);
+                    MaterialPageRoute(builder: (context) => Voila()),);
 
                 },
               ),

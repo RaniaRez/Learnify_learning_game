@@ -39,16 +39,19 @@ class _ClassementState extends State<Classement> {
     value.sort((a, b) => b.score.compareTo(a.score));
     String _avatar1 = value[0].avatar;
     String _name1 = value[0].username;
+    int _score1 =value[0].score;
     print(_name1);
     print(value[0].score);
     // Second user
     String _avatar2 = value[1].avatar;
     String _name2 = value[1].username;
+    int _score2 =value[1].score;
     print(_name2);
     print(value[1].score);
     // Third user
     String _avatar3 = value[2].avatar;
     String _name3 = value[2].username;
+    int _score3 =value[2].score;
     print(_name3);
     print(value[2].score);
     return Scaffold(
@@ -226,7 +229,7 @@ class _ClassementState extends State<Classement> {
                     child: FittedBox(
                       fit: BoxFit.fitWidth,
                       child: Text(
-                        _name2,
+                        _name2+':'+_score2.toString(),
                         style:TextStyle(
                           fontSize: 20,
                           fontFamily: 'Skranji-Bold',
@@ -249,7 +252,7 @@ class _ClassementState extends State<Classement> {
                     child: FittedBox(
                       fit: BoxFit.fitWidth,
                       child: Text(
-                        _name3,
+                        _name3+':'+_score3.toString(),
                         style:TextStyle(
                           fontSize: 20,
                           fontFamily: 'Skranji-Bold',
@@ -272,7 +275,7 @@ class _ClassementState extends State<Classement> {
                     child: FittedBox(
                       fit: BoxFit.fitWidth,
                       child: Text(
-                        _name1,
+                        _name1+':'+_score1.toString(),
                         style:TextStyle(
                           fontSize: 20,
                           fontFamily: 'Skranji-Bold',
