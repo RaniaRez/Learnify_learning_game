@@ -75,8 +75,9 @@ class _F_2_3_2ndTwoState extends State<F_2_3_2ndTwo> {
                   child:
                   SettingsButton(onPressed: () async {
                     player2.stop();
-                    int result = await advancedPlayer.pause();
-
+                    if(advancedPlayer !=null){
+                      int result = await advancedPlayer.pause();
+                    }
                     Navigator.push(
                         context,
                         MaterialPageRoute(builder: (context) => Settings()));
@@ -87,8 +88,9 @@ class _F_2_3_2ndTwoState extends State<F_2_3_2ndTwo> {
                   right:size.width*0.75,
                   child: BacksButton(onPressed: () async {
                     player2.stop();
-                    int result = await advancedPlayer.pause();
-
+                    if(advancedPlayer !=null){
+                      int result = await advancedPlayer.pause();
+                    }
                     showDialog(context: context,
                         builder: (BuildContext context){
                           return customDialog2();
@@ -127,8 +129,9 @@ class _F_2_3_2ndTwoState extends State<F_2_3_2ndTwo> {
                   width: size.width*0.4,
                   child: IconButton(
                       onPressed: () async {
-                        int result = await advancedPlayer.pause();
-                        player2 =  await player.play('audio/losing.wav');
+                        if(advancedPlayer !=null){
+                          int result = await advancedPlayer.pause();
+                        }                        player2 =  await player.play('audio/losing.wav');
                         setState(() {
                           Visible=false;
                         });
@@ -146,8 +149,9 @@ class _F_2_3_2ndTwoState extends State<F_2_3_2ndTwo> {
                   width: size.width*0.4,
                   child: IconButton(
                       onPressed: () async {
-                        int result = await advancedPlayer.pause();
-
+                        if(advancedPlayer !=null){
+                          int result = await advancedPlayer.pause();
+                        }
                         player2 =  await player.play('audio/mathsBravo.wav');
 
                         setState(() {
@@ -168,8 +172,9 @@ class _F_2_3_2ndTwoState extends State<F_2_3_2ndTwo> {
                   width: size.width*0.4,
                   child: IconButton(
                       onPressed: () async {
-                        int result = await advancedPlayer.pause();
-                        player2 =  await player.play('audio/losing.wav');
+                        if(advancedPlayer !=null){
+                          int result = await advancedPlayer.pause();
+                        }                        player2 =  await player.play('audio/losing.wav');
                         setState(() {
                           Visible=false;
                         });

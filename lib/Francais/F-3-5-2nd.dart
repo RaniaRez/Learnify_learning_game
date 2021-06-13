@@ -97,8 +97,9 @@ bool correct=false;
                   child:
                   SettingsButton(onPressed: () async {
                     player2.stop();
-                    int result = await advancedPlayer.pause();
-
+                    if(advancedPlayer !=null){
+                      int result = await advancedPlayer.pause();
+                    }
                     Navigator.push(
                         context,
                         MaterialPageRoute(builder: (context) => Settings()));
@@ -109,8 +110,9 @@ bool correct=false;
                   right:size.width*0.75,
                   child: BacksButton(onPressed: () async {
                     player2.stop();
-                    int result = await advancedPlayer.pause();
-
+                    if(advancedPlayer !=null){
+                      int result = await advancedPlayer.pause();
+                    }
                     showDialog(context: context,
                         builder: (BuildContext context){
                           return customDialog3();
