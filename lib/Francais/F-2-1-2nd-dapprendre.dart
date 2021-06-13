@@ -77,8 +77,9 @@ class _F_2_1_2nd_appState extends State<F_2_1_2nd_app> {
                   child:
                   SettingsButton(onPressed: () async {
                     player2.stop();
-                    int result = await advancedPlayer.pause();
-
+                    if(advancedPlayer !=null){
+                      int result = await advancedPlayer.pause();
+                    }
                     Navigator.push(
                         context,
                         MaterialPageRoute(builder: (context) => Settings()));
@@ -90,8 +91,9 @@ class _F_2_1_2nd_appState extends State<F_2_1_2nd_app> {
                   right:size.width*0.75,
                   child: BacksButton(onPressed: () async {
                     player2.stop();
-                    int result = await advancedPlayer.pause();
-
+                    if(advancedPlayer !=null){
+                      int result = await advancedPlayer.pause();
+                    }
                     showDialog(context: context,
                         builder: (BuildContext context){
                           return customDialog2();
@@ -187,8 +189,9 @@ class _F_2_1_2nd_appState extends State<F_2_1_2nd_app> {
                     visible: Visible,
                     child: IconButton(
                       onPressed: () async {
-                        int result = await advancedPlayer.pause();
-                        player2 =  await player.play('audio/losing.wav');
+                        if(advancedPlayer !=null){
+                          int result = await advancedPlayer.pause();
+                        }                        player2 =  await player.play('audio/losing.wav');
                         setState(() {
                           Visible=false;
                         });
@@ -206,8 +209,9 @@ class _F_2_1_2nd_appState extends State<F_2_1_2nd_app> {
                     visible: Visible,
                     child: IconButton(
                       onPressed: () async {
-                        int result = await advancedPlayer.pause();
-
+                        if(advancedPlayer !=null){
+                          int result = await advancedPlayer.pause();
+                        }
                         player2 =  await player.play('audio/mathsBravo.wav');
 
                         setState(() {
@@ -229,8 +233,9 @@ class _F_2_1_2nd_appState extends State<F_2_1_2nd_app> {
                     visible: Visible,
                     child: IconButton(
                       onPressed: () async {
-                        int result = await advancedPlayer.pause();
-                        player2 =  await player.play('audio/losing.wav');
+                        if(advancedPlayer !=null){
+                          int result = await advancedPlayer.pause();
+                        }                        player2 =  await player.play('audio/losing.wav');
                         setState(() {
                           Visible=false;
                         });
@@ -249,8 +254,9 @@ class _F_2_1_2nd_appState extends State<F_2_1_2nd_app> {
                     visible: Visible,
                     child: IconButton(
                       onPressed: () async {
-                        int result = await advancedPlayer.pause();
-                        player2 =  await player.play('audio/losing.wav');
+                        if(advancedPlayer !=null){
+                          int result = await advancedPlayer.pause();
+                        }                        player2 =  await player.play('audio/losing.wav');
                         setState(() {
                           Visible=false;
                         });
@@ -268,7 +274,9 @@ class _F_2_1_2nd_appState extends State<F_2_1_2nd_app> {
                     visible: Visible,
                     child: IconButton(
                       onPressed: () async {
-                        int result = await advancedPlayer.pause();
+                        if(advancedPlayer !=null){
+                          int result = await advancedPlayer.pause();
+                        }
                         player2 =  await player.play('audio/losing.wav');
                         setState(() {
                           Visible=false;
@@ -301,7 +309,9 @@ class _F_2_1_2nd_appState extends State<F_2_1_2nd_app> {
                     width: size.width*0.5,
                     child: ButtonContinuer(onPressed: () async {
                       player2.stop();
-                      int result = await advancedPlayer.pause();
+                      if(advancedPlayer !=null){
+                        int result = await advancedPlayer.pause();
+                      }
 
                       print('HADA SCORE');
                       print(scoreF.niv2);

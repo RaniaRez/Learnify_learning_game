@@ -2,6 +2,7 @@
 import 'package:flutter/material.dart';
 import 'package:somthn/WelcomePages/Vite.dart';
 import 'package:somthn/WelcomePages/Voila.dart';
+import 'package:somthn/WelcomePages/settingsH.dart';
 import 'package:somthn/WelcomePages/timer.dart';
 import '../Buttons/settingsButton.dart';
 import '../Buttons/ButtonAllons-y.dart';
@@ -67,7 +68,7 @@ class _HomeState extends State<Home> {
 
                     Navigator.push(
                         context,
-                        MaterialPageRoute(builder: (context) => Settings(value: advancedPlayer )));
+                        MaterialPageRoute(builder: (context) => SettingsH(value: advancedPlayer )));
                   },)
               ),
               Positioned(
@@ -77,7 +78,7 @@ class _HomeState extends State<Home> {
                   width: size.width*0.6,
                   child: ButtonAllonsy(onPressed: () async {
                      //int result = await advancedPlayer.pause();
-                    int pause = await advancedPlayer.setVolume(0.1);
+                    int pause = await advancedPlayer.setVolume(0.03);
                     timeCounter(context);
 
                     await googleLogin();

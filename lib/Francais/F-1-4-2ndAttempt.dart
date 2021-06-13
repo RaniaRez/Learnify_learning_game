@@ -99,7 +99,9 @@ class _F_1_4_2ndState extends State<F_1_4_2nd> {
                   right:size.width*0.75,
                   child: BacksButton(onPressed: () async {
                     player2.stop();
-                    int result = await advancedPlayer.pause();
+                    if(advancedPlayer !=null){
+                      int result = await advancedPlayer.pause();
+                    }
 
                     showDialog(context: context,
                         builder: (BuildContext context){
@@ -132,7 +134,9 @@ class _F_1_4_2ndState extends State<F_1_4_2nd> {
                   child: GoToButton(onPressed: () async{
                     if((drag1=="assets/icons/m.svg")&&(drag2=="assets/icons/o.svg")&&(drag3=="assets/icons/u.svg")&&(drag4=="assets/icons/l.svg")&&(drag5=="assets/icons/i.svg")&&(drag6=="assets/icons/n.svg")){
                       print('correct');
-                      int result = await advancedPlayer.pause();
+                      if(advancedPlayer !=null){
+                        int result = await advancedPlayer.pause();
+                      }
 
                       player2 =  await player.play('audio/mathsBravo.wav');
 
@@ -142,7 +146,9 @@ class _F_1_4_2ndState extends State<F_1_4_2nd> {
                         correct=true;
                       });}else if ((drag1==null)&&(drag2==null)&&(drag3==null)&&(drag4==null)&&(drag5==null)&&(drag6==null)){}
                    else{
-                      int result = await advancedPlayer.pause();
+                      if(advancedPlayer !=null){
+                        int result = await advancedPlayer.pause();
+                      }
                       player2 =  await player.play('audio/losing.wav');
                       setState(() {
                        Visible=false;
@@ -208,7 +214,9 @@ class _F_1_4_2ndState extends State<F_1_4_2nd> {
                     width: size.width*0.5,
                     child: ButtonContinuer(onPressed: () async {
                       player2.stop();
-                      int result = await advancedPlayer.pause();
+                      if(advancedPlayer !=null){
+                        int result = await advancedPlayer.pause();
+                      }
 
                       print('HADA SCORE');
                       print(scoreF.niv1);

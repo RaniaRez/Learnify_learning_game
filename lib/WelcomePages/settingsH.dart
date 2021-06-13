@@ -16,21 +16,21 @@ import 'package:audioplayers/audio_cache.dart';
 import 'package:audioplayers/audioplayers.dart';
 
 
-class Settings extends StatefulWidget {
+class SettingsH extends StatefulWidget {
   AudioPlayer value = new AudioPlayer();
-  Settings ({this.value});
+  SettingsH ({this.value});
   @override
-  _SettingsState createState() => _SettingsState();
+  _SettingsHState createState() => _SettingsHState();
 }
 
-class _SettingsState extends State<Settings> {
+class _SettingsHState extends State<SettingsH> {
   AudioPlayer value = new AudioPlayer();
-  _SettingsState({this.value});
-  bool noSound=false;
-  bool noMusic=false;
+  _SettingsHState({this.value});
 
   @override
   Widget build(BuildContext context) {
+    bool noSound=false;
+    bool noMusic=false;
     Size size = MediaQuery.of(context).size;
     return Scaffold(
       body:
@@ -46,17 +46,17 @@ class _SettingsState extends State<Settings> {
                         image: AssetImage("images/forestbackground.jpg"),
                         fit: BoxFit.cover)),
               ),
-        Positioned(
-            top: size.height*0.4,
-            left:size.width*0.6,
-            child:MusicButton(onPressed: () async {
-              AudioPlayer advancedPlayer;
-              int result = await advancedPlayer.pause();
-            })
-            ),
+              Positioned(
+                  top: size.height*0.5,
+                  left:size.width*0.6,
+                  child:MusicButton(onPressed: () async {
+                    AudioPlayer advancedPlayer;
+                    int result = await advancedPlayer.pause();
+                  })
+              ),
               if(noMusic)
                 Positioned(
-                    top: size.height*0.4,
+                    top: size.height*0.5,
                     left:size.width*0.6,
                     child:IconButton(
                       icon: SvgPicture.asset('assets/icons/noMusic.svg'),
@@ -65,46 +65,21 @@ class _SettingsState extends State<Settings> {
                       },)
                 ),
               Positioned(
-                  top: size.height*0.4,
+                  top: size.height*0.5,
                   right:size.width*0.6,
                   child:SoundButton(onPressed:(){
                   },)
               ),
-
               if(noSound)
-                  Positioned(
-                  top: size.height*0.4,
-                  right:size.width*0.6,
-                  child:IconButton(
-                    icon: SvgPicture.asset('assets/icons/noSound.svg'),
-                    iconSize: 90,
-                    onPressed:(){
-                  },)
-              ),
-              Positioned(
-                  top: size.height*0.7,
-                  left:size.width*0.61,
-                  child:UserSettingsButton(onPressed:(){
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(builder: (context) => Userinfo()),);
-                  }
-                  )
-              ),
-              Positioned(
-                  top: size.height*0.715,
-                  right:size.width*0.65,
-                  child: ButtonExit(onPressed:() {
-                    try {
-                      signOutGoogle();
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(builder: (context) => Home()),);
-                    }
-                    catch(e) { print ("error ");}
-                  }
-                  ),
-              ),
+                Positioned(
+                    top: size.height*0.5,
+                    right:size.width*0.6,
+                    child:IconButton(
+                      icon: SvgPicture.asset('assets/icons/noSound.svg'),
+                      iconSize: 90,
+                      onPressed:(){
+                      },)
+                ),
               Positioned(
                   top: size.height*0.047,
                   left: size.width*0.39,
@@ -119,8 +94,8 @@ class _SettingsState extends State<Settings> {
                   top: size.height*0.05,
                   right:size.width*0.75,
                   child:BacksButton(onPressed:() {
-    Navigator.pop(context);
-    },
+                    Navigator.pop(context);
+                  },
                   )
 
               ),
