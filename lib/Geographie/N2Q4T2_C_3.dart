@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:somthn/Geographie/N2Q5.dart';
 import 'package:somthn/WelcomePages/Settings.dart';
-import 'package:vibration/vibration.dart';
 import 'package:somthn/Buttons/buttonContinuer.dart';
 import 'package:somthn/myicons.dart';
 import '../Buttons/settingsButton.dart';
@@ -15,8 +14,6 @@ import '../Services/Login.dart';
 import 'package:audioplayers/audio_cache.dart';
 import 'package:audioplayers/audioplayers.dart';
 import 'BienvenueGeo.dart';
-import 'N2.dart';
-
 import 'package:somthn/Geographie/boxDialogGeo2.dart';
 
 class N2Q4T2_C_3 extends StatefulWidget {
@@ -91,7 +88,8 @@ class _N2Q4T2_C_3State extends State<N2Q4T2_C_3> {
                   left:size.width*0.75,
                   child: SettingsButton(onPressed: () async {
                     player2.stop();
-                    int result = await advancedPlayer.pause();
+                    if (advancedPlayer!=null){
+                  int result = await advancedPlayer.pause();}
                     Navigator.push(
                         context,
                         MaterialPageRoute(builder: (context) => Settings()));
@@ -255,7 +253,8 @@ class _N2Q4T2_C_3State extends State<N2Q4T2_C_3> {
                     width: size.width*0.5,
                     child: ButtonContinuer(onPressed: () async {
                       player2.stop();
-                      int result = await advancedPlayer.pause();
+                      if (advancedPlayer!=null){
+                  int result = await advancedPlayer.pause();}
                       Navigator.push(
                           context,
                           MaterialPageRoute(builder: (context) => N2Q5()));
@@ -273,7 +272,8 @@ class _N2Q4T2_C_3State extends State<N2Q4T2_C_3> {
                       child: IconButton(
                         onPressed: () async {
                           player2.stop();
-                          int result = await advancedPlayer.pause();
+                          if (advancedPlayer!=null){
+                  int result = await advancedPlayer.pause();}
                           //Vibration.vibrate();
 
                           if (threeClicked){
@@ -300,7 +300,8 @@ class _N2Q4T2_C_3State extends State<N2Q4T2_C_3> {
                     child: IconButton(
                         onPressed: () async {
                           player2.stop();
-                          int result = await advancedPlayer.pause();
+                          if (advancedPlayer!=null){
+                  int result = await advancedPlayer.pause();}
                           if (fourClicked) {
                             //Vibration.vibrate();
                             player2 =  await player.play('audio/losing.wav');
@@ -329,7 +330,8 @@ class _N2Q4T2_C_3State extends State<N2Q4T2_C_3> {
                     child: IconButton(
                         onPressed: () async {
                           player2.stop();
-                          int result = await advancedPlayer.pause();
+                          if (advancedPlayer!=null){
+                  int result = await advancedPlayer.pause();}
                           if (twoClicked) {
                             player2 =  await player.play('audio/mathsBravo.wav');
                             setState(() {
@@ -356,7 +358,8 @@ class _N2Q4T2_C_3State extends State<N2Q4T2_C_3> {
                     child: IconButton(
                         onPressed: ()async{
                           player2.stop();
-                          int result = await advancedPlayer.pause();
+                          if (advancedPlayer!=null){
+                  int result = await advancedPlayer.pause();}
                           if (oneClicked) {
                             player2 =  await player.play('audio/losing.wav');
                             setState(() {

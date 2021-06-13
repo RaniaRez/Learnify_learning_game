@@ -90,7 +90,8 @@ class _N1Q2State extends State<N1Q2> {
                   child:
                   SettingsButton(onPressed: () async {
                     player2.stop();
-                    int result = await advancedPlayer.pause();
+                    if (advancedPlayer!=null){
+                  int result = await advancedPlayer.pause();}
                     Navigator.push(
                         context,
                         MaterialPageRoute(builder: (context) => Settings()));
@@ -132,7 +133,8 @@ class _N1Q2State extends State<N1Q2> {
                   left: size.width*0.75,
                   child: GoToButton(onPressed: () async {
                     player2.stop();
-                    int result = await advancedPlayer.pause();
+                    if (advancedPlayer!=null){
+                  int result = await advancedPlayer.pause();}
                     if((drag1=="assets/icons/a.svg")&&(drag2=="assets/icons/l.svg")&&(drag3=="assets/icons/gb.svg")&&(drag4=="assets/icons/e.svg")&&(drag5=="assets/icons/r.svg")&&(drag6=="assets/icons/i.svg")&&(drag7=="assets/icons/e.svg")){
                       player2 =  await player.play('audio/mathsBravo.wav');
                       setState(() {
@@ -202,7 +204,8 @@ class _N1Q2State extends State<N1Q2> {
                     width: size.width*0.5,
                     child: ButtonContinuer(onPressed: () async {
                       player2.stop();
-                      int result = await advancedPlayer.pause();
+                      if (advancedPlayer!=null){
+                  int result = await advancedPlayer.pause();}
                       Navigator.push(
                           context,
                           MaterialPageRoute(builder: (context) => N1Q3()));},)

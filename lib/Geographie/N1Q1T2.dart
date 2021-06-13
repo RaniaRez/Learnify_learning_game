@@ -10,18 +10,13 @@ import 'package:somthn/Buttons/buttonContinuer.dart';
 import 'package:somthn/Buttons/buttonGoTo.dart';
 import 'package:somthn/Buttons/buttonReset.dart';
 import 'package:somthn/Buttons/settingsButton.dart';
-import 'package:somthn/Francais/F-1-5.dart';
-import 'package:somthn/Francais/F-1.dart';
-import 'package:somthn/Geographie/N1.dart';
 import 'package:somthn/Geographie/N1Q2.dart';
 import 'package:somthn/Geographie/boxDialogGeo1.dart';
-
 import 'package:somthn/WelcomePages/Settings.dart';
 import 'package:somthn/myicons.dart';
 import '../Services/Login.dart';
 import 'package:audioplayers/audio_cache.dart';
 import 'package:audioplayers/audioplayers.dart';
-
 import 'BienvenueGeo.dart';
 
 class N1Q1T2 extends StatefulWidget {
@@ -94,7 +89,8 @@ class _N1Q1T2State extends State<N1Q1T2> {
                   child:
                   SettingsButton(onPressed: () async {
                     player2.stop();
-                    int result = await advancedPlayer.pause();
+                    if (advancedPlayer!=null){
+                  int result = await advancedPlayer.pause();}
                     Navigator.push(
                         context,
                         MaterialPageRoute(builder: (context) => Settings()));
@@ -136,10 +132,12 @@ class _N1Q1T2State extends State<N1Q1T2> {
                   left: size.width*0.75,
                   child: GoToButton(onPressed: () async {
                     player2.stop();
-                    int result = await advancedPlayer.pause();
+                    if (advancedPlayer!=null){
+                  int result = await advancedPlayer.pause();}
                     if((drag1=="assets/icons/posA.svg")&&(drag2=="assets/icons/posB.svg" ||drag2=="assets/icons/posH.svg" )&&(drag3=="assets/icons/posC.svg")&&(drag4=="assets/icons/posD.svg")&&(drag5=="assets/icons/posE.svg")&&(drag6=="assets/icons/posF.svg")&&(drag7=="assets/icons/posG.svg")&&(drag8=="assets/icons/posH.svg" ||drag8=="assets/icons/posB.svg" )){
                       player2.stop();
-                      int result = await advancedPlayer.pause();
+                      if (advancedPlayer!=null){
+                  int result = await advancedPlayer.pause();}
                       player2 =  await player.play('audio/mathsBravo.wav');
 
                       setState(() {
@@ -207,7 +205,8 @@ class _N1Q1T2State extends State<N1Q1T2> {
                     width: size.width*0.5,
                     child: ButtonContinuer(onPressed: () async {
                       player2.stop();
-                      int result = await advancedPlayer.pause();
+                      if (advancedPlayer!=null){
+                  int result = await advancedPlayer.pause();}
                       Navigator.push(
                           context,
                           MaterialPageRoute(builder: (context) => N1Q2()));},)

@@ -98,7 +98,8 @@ class _N1Q4State extends State<N1Q4> {
                   left:size.width*0.75,
                   child: SettingsButton(onPressed: ()async {
                     player2.stop();
-                    int result = await advancedPlayer.pause();
+                    if (advancedPlayer!=null){
+                  int result = await advancedPlayer.pause();}
                     Navigator.push(
                         context,
                         MaterialPageRoute(builder: (context) => Settings()));
@@ -263,7 +264,8 @@ class _N1Q4State extends State<N1Q4> {
                     width: size.width*0.5,
                     child: ButtonContinuer(onPressed: () async {
                       player2.stop();
-                      int result = await advancedPlayer.pause();
+                      if (advancedPlayer!=null){
+                  int result = await advancedPlayer.pause();}
                       Navigator.push(
                           context,
                           MaterialPageRoute(builder: (context) => N1Q5()));
@@ -335,7 +337,8 @@ class _N1Q4State extends State<N1Q4> {
                     child: IconButton(
                         onPressed: () async {
                           player2.stop();
-                          int result = await advancedPlayer.pause();
+                          if (advancedPlayer!=null){
+                  int result = await advancedPlayer.pause();}
                           if (threeClicked){
                             player2 =  await player.play('audio/mathsBravo.wav');
 
@@ -360,7 +363,8 @@ class _N1Q4State extends State<N1Q4> {
                     child: IconButton(
                         onPressed: () async {
                           player2.stop();
-                          int result = await advancedPlayer.pause();
+                          if (advancedPlayer!=null){
+                  int result = await advancedPlayer.pause();}
                           if (fourClicked)  {
                             //Vibration.vibrate();
                             Navigator.push(
@@ -384,7 +388,8 @@ class _N1Q4State extends State<N1Q4> {
                     child: IconButton(
                         onPressed: () async {
                           player2.stop();
-                          int result = await advancedPlayer.pause();
+                          if (advancedPlayer!=null){
+                  int result = await advancedPlayer.pause();}
                           if (twoClicked)  {
                             //Vibration.vibrate();
                             Navigator.push(
@@ -407,7 +412,8 @@ class _N1Q4State extends State<N1Q4> {
                     child: IconButton(
                         onPressed: () async {
                           player2.stop();
-                          int result = await advancedPlayer.pause();
+                          if (advancedPlayer!=null){
+                  int result = await advancedPlayer.pause();}
                           if (oneClicked)  {
                             //Vibration.vibrate();
                             Navigator.push(

@@ -92,7 +92,8 @@ class _N2Q3T2_C_1State extends State<N2Q3T2_C_1> {
                   left:size.width*0.75,
                   child: SettingsButton(onPressed: () async {
                     player2.stop();
-                    int result = await advancedPlayer.pause();
+                    if (advancedPlayer!=null){
+                  int result = await advancedPlayer.pause();}
                     Navigator.push(
                         context,
                         MaterialPageRoute(builder: (context) => Settings()));
@@ -258,7 +259,8 @@ class _N2Q3T2_C_1State extends State<N2Q3T2_C_1> {
                     width: size.width*0.5,
                     child: ButtonContinuer(onPressed: () async {
                       player2.stop();
-                      int result = await advancedPlayer.pause();
+                      if (advancedPlayer!=null){
+                  int result = await advancedPlayer.pause();}
                       Navigator.push(
                           context,
                           MaterialPageRoute(builder: (context) => N2Q4()));
@@ -276,7 +278,8 @@ class _N2Q3T2_C_1State extends State<N2Q3T2_C_1> {
                       child: IconButton(
                         onPressed: () async {
                           player2.stop();
-                          int result = await advancedPlayer.pause();
+                          if (advancedPlayer!=null){
+                  int result = await advancedPlayer.pause();}
                           //Vibration.vibrate();
                           player2 =  await player.play('audio/losing.wav');
                           if (threeClicked){
@@ -302,7 +305,8 @@ class _N2Q3T2_C_1State extends State<N2Q3T2_C_1> {
                     child: IconButton(
                         onPressed: () async {
                           player2.stop();
-                          int result = await advancedPlayer.pause();
+                          if (advancedPlayer!=null){
+                  int result = await advancedPlayer.pause();}
                           if (fourClicked) {
                             player2 =  await player.play('audio/mathsBravo.wav');
                             ////Vibration.vibrate();
@@ -334,7 +338,8 @@ class _N2Q3T2_C_1State extends State<N2Q3T2_C_1> {
                     child: IconButton(
                         onPressed: () async {
                           player2.stop();
-                          int result = await advancedPlayer.pause();
+                          if (advancedPlayer!=null){
+                  int result = await advancedPlayer.pause();}
                           if (twoClicked) {
                             //Vibration.vibrate();
                             player2 =  await player.play('audio/losing.wav');
@@ -361,7 +366,8 @@ class _N2Q3T2_C_1State extends State<N2Q3T2_C_1> {
                         onPressed: ()async{
                           if (oneClicked) {
                             player2.stop();
-                            int result = await advancedPlayer.pause();
+                            if (advancedPlayer!=null){
+                  int result = await advancedPlayer.pause();}
                             player2 =  await player.play('audio/losing.wav');
                             setState(() {
                               correct = false;

@@ -66,7 +66,8 @@ class _Geo3State extends State<Geo3> {
                   right:size.width*0.75,
 
                   child: BacksButton(onPressed: ()async{
-                    int result = await advancedPlayer.pause();
+                    if (advancedPlayer!=null){
+                  int result = await advancedPlayer.pause();}
                     print("u clicked me");
                     Navigator.push(
                         context,
@@ -78,7 +79,8 @@ class _Geo3State extends State<Geo3> {
                   top:size.height*0.05,
                   left:size.width*0.75,
                   child: SettingsButton(onPressed: ()async{
-                    int result = await advancedPlayer.pause();
+                    if (advancedPlayer!=null){
+                  int result = await advancedPlayer.pause();}
                     Navigator.push(
                         context,
                         MaterialPageRoute(builder: (context) => Settings()));
@@ -151,7 +153,8 @@ class _Geo3State extends State<Geo3> {
                 top: size.height*0.8,
                 left:size.width*0.75,
                 child: GoToButton(onPressed: ()async{
-                  int result = await advancedPlayer.pause();
+                  if (advancedPlayer!=null){
+                  int result = await advancedPlayer.pause();}
                   print("HELL YEAH");
                   //scoreG.niv1=0;
 

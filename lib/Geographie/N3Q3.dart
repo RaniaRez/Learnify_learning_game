@@ -92,7 +92,8 @@ class _N3Q3State extends State<N3Q3> {
                   left:size.width*0.75,
                   child: SettingsButton(onPressed: () async {
                     player2.stop();
-                    int result = await advancedPlayer.pause();
+                    if (advancedPlayer!=null){
+                  int result = await advancedPlayer.pause();}
                     Navigator.push(
                         context,
                         MaterialPageRoute(builder: (context) => Settings()));
@@ -131,7 +132,8 @@ class _N3Q3State extends State<N3Q3> {
                     icon: SvgPicture.asset('assets/icons/QuestionMark.svg'),
                     onPressed: () async {
                       player2.stop();
-                      int result = await advancedPlayer.pause();
+                      if (advancedPlayer!=null){
+                  int result = await advancedPlayer.pause();}
                       print('QuestionMark');
                       player2 =  await player.play('audio/geoVille.wav');
                     },
@@ -277,7 +279,8 @@ class _N3Q3State extends State<N3Q3> {
                     width: size.width*0.5,
                     child: ButtonContinuer(onPressed: () async {
                       player2.stop();
-                      int result = await advancedPlayer.pause();
+                      if (advancedPlayer!=null){
+                  int result = await advancedPlayer.pause();}
                       print(scoreG.niv3);
                       Navigator.push(
                           context,
@@ -350,7 +353,8 @@ class _N3Q3State extends State<N3Q3> {
                       child: IconButton(
                         onPressed: () async {
                           player2.stop();
-                          int result = await advancedPlayer.pause();
+                          if (advancedPlayer!=null){
+                  int result = await advancedPlayer.pause();}
                           if (threeClicked){
                             //Vibration.vibrate();
                               Navigator.push(
@@ -374,7 +378,8 @@ class _N3Q3State extends State<N3Q3> {
                       child: IconButton(
                         onPressed: () async {
                           player2.stop();
-                          int result = await advancedPlayer.pause();
+                          if (advancedPlayer!=null){
+                  int result = await advancedPlayer.pause();}
                           if (fourClicked){
                             //Vibration.vibrate();
                               Navigator.push(
@@ -399,7 +404,8 @@ class _N3Q3State extends State<N3Q3> {
                     child: IconButton(
                         onPressed: () async {
                           player2.stop();
-                          int result = await advancedPlayer.pause();
+                          if (advancedPlayer!=null){
+                  int result = await advancedPlayer.pause();}
                           if (twoClicked){
                             player2 =  await player.play('audio/mathsBravo.wav');
                             setState(() {
@@ -425,7 +431,8 @@ class _N3Q3State extends State<N3Q3> {
                     child: IconButton(
                         onPressed: () async {
                           player2.stop();
-                          int result = await advancedPlayer.pause();
+                          if (advancedPlayer!=null){
+                  int result = await advancedPlayer.pause();}
                           if (oneClicked)  {
                             //Vibration.vibrate();
                             Navigator.push(
