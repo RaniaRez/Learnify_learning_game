@@ -97,7 +97,8 @@ class _BienvenueMathState extends State<BienvenueMath> {
                 width: size.width*0.55,
                 child: ButtonCommencerD(onPressed: () async  {
                   player2.stop();
-                  int result = await advancedPlayer.pause();
+                  if (advancedPlayer!=null){
+                  int result = await advancedPlayer.pause();}
                   print('commencer');
                   var d=await Firestore.instance.collection('users').document(user.uid).collection('domains').document('maths').get();
                   /*scoreM.testFait=d.data["testFait"];

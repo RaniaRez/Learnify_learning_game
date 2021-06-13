@@ -84,7 +84,8 @@ class _M_2_5_2nd_FourState extends State<M_2_5_2nd_Four> {
 
                   child: BacksButton(onPressed: () async {
                     player2.stop();
-                    int result = await advancedPlayer.pause();
+                    if (advancedPlayer!=null){
+                  int result = await advancedPlayer.pause();}
                     print("u clicked me");
                     showDialog(context: context,
                         builder: (BuildContext context){
@@ -99,7 +100,8 @@ class _M_2_5_2nd_FourState extends State<M_2_5_2nd_Four> {
                   left:size.width*0.75,
                   child: SettingsButton(onPressed: () async {
                     player2.stop();
-                    int result = await advancedPlayer.pause();
+                    if (advancedPlayer!=null){
+                  int result = await advancedPlayer.pause();}
                     Navigator.push(
                         context,
                         MaterialPageRoute(builder: (context) => Settings()));
@@ -346,7 +348,7 @@ class _M_2_5_2nd_FourState extends State<M_2_5_2nd_Four> {
                     width: size.width*0.5,
                     child: ButtonContinuer(onPressed: () async {
                       player2.stop();
-                      int result = await advancedPlayer.pause();
+                     // int result = await advancedPlayer.pause();
                       print("score final");
                       print(scoreM.niv2);
                       Firestore.instance.collection('users').document(user.uid).collection('domains').document('maths').updateData({'niv2':scoreM.niv2});
@@ -439,7 +441,8 @@ class _M_2_5_2nd_FourState extends State<M_2_5_2nd_Four> {
                         onPressed: () async {
                           if (twoClicked)  {
                             player2.stop();
-                            int result = await advancedPlayer.pause();
+                            if (advancedPlayer!=null){
+                  int result = await advancedPlayer.pause();}
                             Navigator.push(
                                 context,
                                 MaterialPageRoute(builder: (context) => I_M_2_5_()));
@@ -461,7 +464,8 @@ class _M_2_5_2nd_FourState extends State<M_2_5_2nd_Four> {
                         onPressed: () async {
                           if (fourClicked)  {
                             player2.stop();
-                            int result = await advancedPlayer.pause();
+                            if (advancedPlayer!=null){
+                  int result = await advancedPlayer.pause();}
                             Navigator.push(
                                 context,
                                 MaterialPageRoute(builder: (context) => I_M_2_5_()));
@@ -483,7 +487,8 @@ class _M_2_5_2nd_FourState extends State<M_2_5_2nd_Four> {
                         onPressed: () async {
                           if (threeClicked)  {
                             player2.stop();
-                            int result = await advancedPlayer.pause();
+                            if (advancedPlayer!=null){
+                  int result = await advancedPlayer.pause();}
                             Navigator.push(
                                 context,
                                 MaterialPageRoute(builder: (context) =>  I_M_2_5_()));
@@ -505,7 +510,8 @@ class _M_2_5_2nd_FourState extends State<M_2_5_2nd_Four> {
                         onPressed: () async {
                           if (oneClicked){
                             player2.stop();
-                            int result = await advancedPlayer.pause();
+                            if (advancedPlayer!=null){
+                  int result = await advancedPlayer.pause();}
                             player2 =  await player.play('audio/mathsBravo.wav');
                             setState(() {
                               Visible = false;

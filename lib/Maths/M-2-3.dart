@@ -463,11 +463,11 @@ if ( player2 != null) {
                     visible: (oneClicked && Visible),
                     child: IconButton(
                         onPressed: () async {
-                          if (oneClicked){
-       /* if ( player2 != null) {
-                    player2.stop();}
+                            if (oneClicked){
+                           if ( player2 != null) {
+                              player2.stop();}
                             if (advancedPlayer!= null) {
-                    int result = await advancedPlayer.pause();}*/
+                            int result = await advancedPlayer.pause();}
                             player2 =  await player.play('audio/mathsBravo.wav');
                             setState(() {
                               Visible = false;
