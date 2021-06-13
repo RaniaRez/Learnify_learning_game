@@ -70,7 +70,8 @@ class _Math3State extends State<Math3> {
 
                   child: BacksButton(onPressed: () async {
                     player2.stop();
-                    int result = await advancedPlayer.pause();
+                    if (advancedPlayer!=null){
+                  int result = await advancedPlayer.pause();}
                     print("u clicked me");
                     Navigator.push(
                         context,
@@ -83,7 +84,8 @@ class _Math3State extends State<Math3> {
                   left:size.width*0.75,
                   child: SettingsButton(onPressed: () async {
                     player2.stop();
-                    int result = await advancedPlayer.pause();
+                    if (advancedPlayer!=null){
+                  int result = await advancedPlayer.pause();}
                     Navigator.push(
                         context,
                         MaterialPageRoute(builder: (context) => Settings()));
@@ -156,7 +158,8 @@ class _Math3State extends State<Math3> {
                 left:size.width*0.75,
                 child: GoToButton(onPressed: () async {
                   player2.stop();
-                  int result = await advancedPlayer.pause();
+                  if (advancedPlayer!=null){
+                  int result = await advancedPlayer.pause();}
                   print("HELL YEAH");
                   scoreM.niv3=0;
                   Navigator.push(

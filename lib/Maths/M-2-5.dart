@@ -94,7 +94,8 @@ class _M_2_5State extends State<M_2_5> {
 
                   child: BacksButton(onPressed: () async {
                     player2.stop();
-                    int result = await advancedPlayer.pause();
+                    if (advancedPlayer!=null){
+                  int result = await advancedPlayer.pause();}
                     print("u clicked me");
                     showDialog(context: context,
                         builder: (BuildContext context){
@@ -109,7 +110,8 @@ class _M_2_5State extends State<M_2_5> {
                   left:size.width*0.75,
                   child: SettingsButton(onPressed: () async {
                     player2.stop();
-                    int result = await advancedPlayer.pause();
+                    if (advancedPlayer!=null){
+                  int result = await advancedPlayer.pause();}
                     Navigator.push(
                         context,
                         MaterialPageRoute(builder: (context) => Settings()));

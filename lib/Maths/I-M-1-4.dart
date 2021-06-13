@@ -148,7 +148,8 @@ class _I_M_1_4_State extends State<I_M_1_4_> {
                 child: AppliquerButton(onPressed : () async {
 
                   player2.stop();
-                  int result = await advancedPlayer.pause();
+                  if (advancedPlayer!=null){
+                  int result = await advancedPlayer.pause();}
 
                     Navigator.push(
                         context,

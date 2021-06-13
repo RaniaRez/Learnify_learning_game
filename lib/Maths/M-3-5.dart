@@ -86,7 +86,8 @@ class _M_3_5State extends State<M_3_5> {
 
                   child: BacksButton(onPressed: () async {
                     player2.stop();
-                    int result = await advancedPlayer.pause();
+                    if (advancedPlayer!=null){
+                  int result = await advancedPlayer.pause();}
                     print("u clicked me");
                     showDialog(context: context,
                         builder: (BuildContext context){
@@ -101,7 +102,8 @@ class _M_3_5State extends State<M_3_5> {
                   left:size.width*0.75,
                   child: SettingsButton(onPressed: () async {
                     player2.stop();
-                    int result = await advancedPlayer.pause();
+                    if (advancedPlayer!=null){
+                  int result = await advancedPlayer.pause();}
                     Navigator.push(
                         context,
                         MaterialPageRoute(builder: (context) => Settings()));
@@ -395,7 +397,8 @@ class _M_3_5State extends State<M_3_5> {
                         onPressed: () async {
                           if (oneClicked){
                             player2.stop();
-                            //int result = await advancedPlayer.pause();
+                            if (advancedPlayer!=null){
+                  int result = await advancedPlayer.pause();}
                             setState(() {
                               Visible = false;
                             });
@@ -417,7 +420,8 @@ class _M_3_5State extends State<M_3_5> {
                         onPressed: () async {
                           if (fourClicked)  {
                             player2.stop();
-                            //int result = await advancedPlayer.pause();
+                            if (advancedPlayer!=null){
+                  int result = await advancedPlayer.pause();}
                             print('Wrong');
                           }
                           print('4');
@@ -437,7 +441,8 @@ class _M_3_5State extends State<M_3_5> {
                         onPressed: () async {
                           if (twoClicked)  {
                             player2.stop();
-                            //int result = await advancedPlayer.pause();
+                            if (advancedPlayer!=null){
+                  int result = await advancedPlayer.pause();}
                             print('Wrong');
                           }
                           print('1');
@@ -456,7 +461,8 @@ class _M_3_5State extends State<M_3_5> {
                         onPressed: () async {
                           if (threeClicked)  {
                             player2.stop();
-                            //int result = await advancedPlayer.pause();
+                            if (advancedPlayer!=null){
+                  int result = await advancedPlayer.pause();}
                             print('Wrong');
                           }
                           print('3');
@@ -601,7 +607,8 @@ class _M_3_5State extends State<M_3_5> {
                         onPressed: () async {
                           if (twoClicked)  {
                             player2.stop();
-                            int result = await advancedPlayer.pause();
+                            if (advancedPlayer!=null){
+                  int result = await advancedPlayer.pause();}
                             setState(() {
                               Visible = false;
                               correct=false;
@@ -625,7 +632,8 @@ class _M_3_5State extends State<M_3_5> {
                         onPressed: () async {
                           if (fourClicked)  {
                             player2.stop();
-                            int result = await advancedPlayer.pause();
+                            if (advancedPlayer!=null){
+                  int result = await advancedPlayer.pause();}
                             setState(() {
                               Visible = false;
                               correct=false;
@@ -649,7 +657,8 @@ class _M_3_5State extends State<M_3_5> {
                           if (oneClicked){
                             player2.stop();
                             player2 =  await player.play('audio/mathsBravo.wav');
-                            int result = await advancedPlayer.pause();
+                            if (advancedPlayer!=null){
+                  int result = await advancedPlayer.pause();}
                             setState(() {
                               Visible = false;
                               correct = true;
@@ -674,7 +683,8 @@ class _M_3_5State extends State<M_3_5> {
                         onPressed: () async {
                           if (threeClicked)  {
                             player2.stop();
-                            int result = await advancedPlayer.pause();
+                            if (advancedPlayer!=null){
+                  int result = await advancedPlayer.pause();}
                             //int result = await advancedPlayer.pause();
                             setState(() {
                               Visible = false;
@@ -697,7 +707,7 @@ class _M_3_5State extends State<M_3_5> {
                     width: size.width*0.5,
                     child: ButtonContinuer(onPressed: () async {
                       player2.stop();
-                      int result = await advancedPlayer.pause();
+                     // int result = await advancedPlayer.pause();
 
                       Firestore.instance.collection('users').document(user.uid).collection('domains').document('maths').updateData({'niv3':scoreM.niv3});
                       if (scoreM.niv3>hs.niv3)

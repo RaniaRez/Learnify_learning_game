@@ -75,7 +75,8 @@ class _M_2_1_2nd_ThreeState extends State<M_2_1_2nd_Three> {
 
                   child: BacksButton(onPressed: () async {
                     player2.stop();
-                    int result = await advancedPlayer.pause();
+                    if (advancedPlayer!=null){
+                  int result = await advancedPlayer.pause();}
                     print("u clicked me");
                     showDialog(context: context,
                         builder: (BuildContext context){
@@ -90,7 +91,8 @@ class _M_2_1_2nd_ThreeState extends State<M_2_1_2nd_Three> {
                   left:size.width*0.75,
                   child: SettingsButton(onPressed: () async {
                     player2.stop();
-                    int result = await advancedPlayer.pause();
+                    if (advancedPlayer!=null){
+                  int result = await advancedPlayer.pause();}
                     Navigator.push(
                         context,
                         MaterialPageRoute(builder: (context) => Settings()));
@@ -339,7 +341,7 @@ class _M_2_1_2nd_ThreeState extends State<M_2_1_2nd_Three> {
                     width: size.width*0.5,
                     child: ButtonContinuer(onPressed: () async {
                       player2.stop();
-                      int result = await advancedPlayer.pause();
+                      //int result = await advancedPlayer.pause();
                       Navigator.push(
                           context,
                           MaterialPageRoute(builder: (context) =>M_2_2()));
@@ -411,7 +413,8 @@ class _M_2_1_2nd_ThreeState extends State<M_2_1_2nd_Three> {
                         onPressed: () async {
                           if (twoClicked){
                             player2.stop();
-                            int result = await advancedPlayer.pause();
+                            if (advancedPlayer!=null){
+                  int result = await advancedPlayer.pause();}
                             player2 =  await player.play('audio/mathsBravo.wav');
                             setState(() {
                               Visible = false;
@@ -435,7 +438,8 @@ class _M_2_1_2nd_ThreeState extends State<M_2_1_2nd_Three> {
                         onPressed: () async {
                           if (fourClicked)  {
                             player2.stop();
-                            int result = await advancedPlayer.pause();
+                            if (advancedPlayer!=null){
+                  int result = await advancedPlayer.pause();}
                             Navigator.push(
                                 context,
                                 MaterialPageRoute(builder: (context) => I_M_2_1_()));
@@ -457,7 +461,8 @@ class _M_2_1_2nd_ThreeState extends State<M_2_1_2nd_Three> {
                         onPressed: () async {
                           if (oneClicked)  {
                             player2.stop();
-                            int result = await advancedPlayer.pause();
+                            if (advancedPlayer!=null){
+                  int result = await advancedPlayer.pause();}
                             Navigator.push(
                                 context,
                                 MaterialPageRoute(builder: (context) => I_M_2_1_()));

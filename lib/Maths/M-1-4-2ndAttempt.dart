@@ -104,7 +104,8 @@ class _M_1_4_2ndState extends State<M_1_4_2nd> {
                   child:
                   SettingsButton(onPressed: () async {
                     player2.stop();
-                    int result = await advancedPlayer.pause();
+                    if (advancedPlayer!=null){
+                  int result = await advancedPlayer.pause();}
                     Navigator.push(
                         context,
                         MaterialPageRoute(builder: (context) => Settings()));
@@ -116,7 +117,8 @@ class _M_1_4_2ndState extends State<M_1_4_2nd> {
                   right:size.width*0.75,
                   child: BacksButton(onPressed: () async {
                     player2.stop();
-                    int result = await advancedPlayer.pause();
+                    if (advancedPlayer!=null){
+                  int result = await advancedPlayer.pause();}
                     showDialog(context: context,
                         builder: (BuildContext context){
                           return customDialogMath1();
@@ -147,7 +149,8 @@ class _M_1_4_2ndState extends State<M_1_4_2nd> {
                   left: size.width*0.75,
                   child: GoToButton(onPressed: () async {
                     player2.stop();
-                  int result = await advancedPlayer.pause();
+                  if (advancedPlayer!=null){
+                  int result = await advancedPlayer.pause();}
                     player2 =  await player.play('audio/mathsBravo.wav');
 
                     setState(()   {
@@ -619,7 +622,8 @@ class _M_1_4_2ndState extends State<M_1_4_2nd> {
                     width: size.width*0.5,
                     child: ButtonContinuer(onPressed: () async {
                       player2.stop();
-                      int result = await advancedPlayer.pause();
+                      if (advancedPlayer!=null){
+                  int result = await advancedPlayer.pause();}
                       Navigator.push(
                           context,
                           MaterialPageRoute(builder: (context) => M_1_5()));
