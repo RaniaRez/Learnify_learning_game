@@ -14,7 +14,7 @@ class ButtonExit extends StatelessWidget {
       duration: Duration(milliseconds: 100),
       child: IconButton(
           icon : SvgPicture.asset(buttonExit),
-          iconSize: 70.0,
+          iconSize: 80.0,
       ),
     );
   }

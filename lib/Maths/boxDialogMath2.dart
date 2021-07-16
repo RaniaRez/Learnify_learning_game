@@ -31,7 +31,7 @@ class customDialogMath2 extends StatelessWidget {
                     child: FittedBox(
                       fit: BoxFit.fitWidth,
                       child: Text(
-                        'DUMP SHIT LOSING \nALL YOUR PROGRESS',
+                        'Tu vas perdre ton progrès \nEs-tu sur de vouloir continuer?',
                         style: TextStyle(
                           fontSize: 26,
                           fontFamily: 'Skranji-Bold',

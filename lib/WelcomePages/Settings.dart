@@ -12,7 +12,6 @@ import '../Buttons/BacksButton.dart';
 import '../Buttons/butttonExit.dart';
 import 'Home.dart';
 import '../Services/auth.dart';
-import 'package:audioplayers/audio_cache.dart';
 import 'package:audioplayers/audioplayers.dart';
 
 
@@ -92,8 +91,9 @@ class _SettingsState extends State<Settings> {
                   )
               ),
               Positioned(
-                  top: size.height*0.715,
-                  right:size.width*0.65,
+
+                top: size.height*0.7,
+                  right:size.width*0.6,
                   child: ButtonExit(onPressed:() {
                     try {
                       signOutGoogle();

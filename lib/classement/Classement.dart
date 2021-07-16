@@ -219,8 +219,8 @@ class _ClassementState extends State<Classement> {
                   ),
                 //User names:
                 Positioned(
-                  top: size.height*0.697,
-                  left: size.width*0.13 ,
+                  top: size.height*0.685,
+                  left: size.width*0.1 ,
                   child: InkWell(
                     onTap:(){
                       //print("Salamalekoum, nes lbahjaaaaaaaaa salamalekoum");
@@ -242,8 +242,8 @@ class _ClassementState extends State<Classement> {
                   ),
                 ),
                 Positioned(
-                  top: size.height*0.697,
-                  right: size.width*0.13 ,
+                  top: size.height*0.685,
+                  right: size.width*0.1 ,
                   child: InkWell(
                     onTap:(){
                      // print("Salamalekoum, nes lbahjaaaaaaaaa salamalekoum");
@@ -265,7 +265,7 @@ class _ClassementState extends State<Classement> {
                   ),
                 ),
                 Positioned(
-                  top: size.height*0.47,
+                  top: size.height*0.46,
                   right: size.width*0.44 ,
                   child: InkWell(
                     onTap:(){

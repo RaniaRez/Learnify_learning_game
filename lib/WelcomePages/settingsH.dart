@@ -47,8 +47,8 @@ class _SettingsHState extends State<SettingsH> {
                         fit: BoxFit.cover)),
               ),
               Positioned(
-                  top: size.height*0.5,
-                  left:size.width*0.6,
+                  top: size.height*0.35,
+                  left:size.width*0.38,
                   child:MusicButton(onPressed: () async {
                     AudioPlayer advancedPlayer;
                     int result = await advancedPlayer.pause();
@@ -56,8 +56,8 @@ class _SettingsHState extends State<SettingsH> {
               ),
               if(noMusic)
                 Positioned(
-                    top: size.height*0.5,
-                    left:size.width*0.6,
+                    top: size.height*0.35,
+                    left:size.width*0.38,
                     child:IconButton(
                       icon: SvgPicture.asset('assets/icons/noMusic.svg'),
                       iconSize: 90,
@@ -65,18 +65,18 @@ class _SettingsHState extends State<SettingsH> {
                       },)
                 ),
               Positioned(
-                  top: size.height*0.5,
-                  right:size.width*0.6,
+                  top: size.height*0.65,
+                  left:size.width*0.38,
                   child:SoundButton(onPressed:(){
                   },)
               ),
               if(noSound)
                 Positioned(
-                    top: size.height*0.5,
-                    right:size.width*0.6,
+                    top: size.height*0.65,
+                    left:size.width*0.38,
                     child:IconButton(
                       icon: SvgPicture.asset('assets/icons/noSound.svg'),
-                      iconSize: 90,
+                      iconSize: 80,
                       onPressed:(){
                       },)
                 ),

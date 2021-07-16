@@ -1,5 +1,6 @@
 
 import 'package:flutter/material.dart';
+import 'package:somthn/Mutual/loading.dart';
 import 'package:somthn/WelcomePages/Vite.dart';
 import 'package:somthn/WelcomePages/Voila.dart';
 import 'package:somthn/WelcomePages/settingsH.dart';
@@ -7,7 +8,6 @@ import 'package:somthn/WelcomePages/timer.dart';
 import '../Buttons/settingsButton.dart';
 import '../Buttons/ButtonAllons-y.dart';
 import '../Bulles/BulleIcon.dart';
-import 'Settings.dart';
 import '../Services/Login.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:audioplayers/audio_cache.dart';
@@ -86,21 +86,9 @@ class _HomeState extends State<Home> {
                     await googleLogin();
                     print(user.uid);
                     String documentID= user.uid;
-                    var d= await Firestore.instance.collection('users').document(documentID).get();
-                    if (d.exists ){
-                      user.username=d.data["name"];
-                      user.avatar=d.data["avatar"];
-                      user.score=d.data["score"];
-                      Navigator.push(
-                          context,
-                          MaterialPageRoute(builder: (context) => Voila()));
-                    }
-
-                    else {
-                      Navigator.push(
-                          context,
-                          MaterialPageRoute(builder: (context) => Vite()));
-                    }
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => Loading()));
                   } )),
 
 
