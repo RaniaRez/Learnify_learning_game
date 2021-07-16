@@ -77,15 +77,8 @@ class _HomeState extends State<Home> {
                   height: size.height*0.6,
                   width: size.width*0.6,
                   child: ButtonAllonsy(onPressed: () async {
-                     //int result = await advancedPlayer.pause();
-                    int pause = await advancedPlayer.setVolume(0.03);
-                  // advancedPlayer.dispose();
-                   // AudioPlayer.logEnabled=false;
+                    int pause = await advancedPlayer?.setVolume(0.03);
                     timeCounter(context);
-
-                    await googleLogin();
-                    print(user.uid);
-                    String documentID= user.uid;
                     Navigator.push(
                         context,
                         MaterialPageRoute(builder: (context) => Loading()));
