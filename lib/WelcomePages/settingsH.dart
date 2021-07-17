@@ -87,7 +87,7 @@ class _SettingsHState extends State<SettingsH> {
                   child:HomeButton(onPressed:() {
                     Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => Home()),);
+                      MaterialPageRoute(builder: (context) => Voila()),);
                   })
               ),
 

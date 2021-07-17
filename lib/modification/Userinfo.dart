@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:somthn/Avatars/BlueAvatarIcon.dart';
 import 'package:somthn/Branches/BranchIconSimple.dart';
+import 'package:somthn/WelcomePages/Voila.dart';
 import 'package:somthn/modification/avatar.dart';
 import 'package:somthn/modification/name.dart';
 import 'package:somthn/Buttons/HomeButton.dart';
@@ -78,7 +79,7 @@ class _UserinfoState extends State<Userinfo> {
                   print("HELL YEAH");
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => Home()),);
+                    MaterialPageRoute(builder: (context) =>Voila()),);
 
                 },
               ),

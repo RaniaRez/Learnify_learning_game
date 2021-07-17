@@ -8,6 +8,7 @@ import 'package:somthn/Avatars/PinkAvatarIcon.dart';
 import 'package:somthn/Avatars/PurpleAvatarIcon.dart';
 import 'package:somthn/Buttons/buttonNom.dart';
 import 'package:somthn/WelcomePages/AllSet.dart';
+import 'package:somthn/WelcomePages/Voila.dart';
 import 'package:somthn/modification/Userinfo.dart';
 import '../Buttons/settingsButton.dart';
 import '../Buttons/BacksButton.dart';
@@ -72,7 +73,7 @@ class _Name extends State<Name> {
                     print("HELL YEAH");
                     Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => Home()),);
+                      MaterialPageRoute(builder: (context) => Voila()),);
 
                   },
                 ),

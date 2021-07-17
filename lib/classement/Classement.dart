@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:somthn/WelcomePages/Voila.dart';
 import '../Buttons/settingsButton.dart';
 import '../Buttons/BacksButton.dart';
 import 'package:somthn/Buttons/HomeButton.dart';
@@ -92,7 +93,7 @@ class _ClassementState extends State<Classement> {
                     child: HomeButton(onPressed: (){
                       Navigator.push(
                           context,
-                          MaterialPageRoute(builder: (context) => Home()));
+                          MaterialPageRoute(builder: (context) => Voila()));
                     },)
                 ),
 

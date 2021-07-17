@@ -5,6 +5,7 @@ import 'package:somthn/Buttons/Cercle2Icon.dart';
 import 'package:somthn/Buttons/CercleIcon.dart';
 import 'package:somthn/Buttons/HomeButton.dart';
 import 'package:somthn/WelcomePages/Settings.dart';
+import 'package:somthn/WelcomePages/Voila.dart';
 import '../Buttons/settingsButton.dart';
 import '../Buttons/BacksButton.dart';
 import '../Owls/PurpleOwlIcon.dart';
@@ -129,7 +130,7 @@ class _ChooseAvatarState extends State<ChooseAvatar> {
                 onPressed: (){
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => Home()),);
+                    MaterialPageRoute(builder: (context) => Voila()),);
 
                 },
               ),

@@ -7,6 +7,7 @@ import 'package:somthn/Buttons/HomeButton.dart';
 import 'package:somthn/Avatars/OrangeAvatarIcon.dart';
 import 'package:somthn/Avatars/PinkAvatarIcon.dart';
 import 'package:somthn/Avatars/PurpleAvatarIcon.dart';
+import 'package:somthn/WelcomePages/Voila.dart';
 import '../Buttons/settingsButton.dart';
 import '../Buttons/BacksButton.dart';
 import 'Home.dart';
@@ -83,7 +84,7 @@ class _AllSetState extends State<AllSet> {
 
                     Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => Home()),);
+                      MaterialPageRoute(builder: (context) => Voila()),);
 
                   },
                 ),
