@@ -6,6 +6,7 @@ import 'package:somthn/Buttons/buttonInfo.dart';
 import 'package:somthn/Buttons/buttonMusic.dart';
 import 'package:somthn/Buttons/buttonSound.dart';
 import 'package:somthn/Buttons/buttonUserSettings.dart';
+import 'package:somthn/WelcomePages/Ipage.dart';
 import 'package:somthn/WelcomePages/Voila.dart';
 import 'package:somthn/modification/Userinfo.dart';
 import '../Buttons/BacksButton.dart';
@@ -128,6 +129,9 @@ class _SettingsState extends State<Settings> {
                   top: size.height*0.04,
                   left:size.width*0.75,
                   child:InfoButton(onPressed:() {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => Ipage()),);
                   })
               ),
 
