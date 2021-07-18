@@ -1,4 +1,5 @@
 
+import 'package:audioplayers/audio_cache.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:somthn/Buttons/HomeButton.dart';
@@ -14,6 +15,7 @@ import '../Buttons/butttonExit.dart';
 import 'Home.dart';
 import '../Services/auth.dart';
 import 'package:audioplayers/audioplayers.dart';
+import 'musicVar.dart';
 
 
 class Settings extends StatefulWidget {
@@ -27,7 +29,7 @@ class _SettingsState extends State<Settings> {
   AudioPlayer value = new AudioPlayer();
   _SettingsState({this.value});
   bool noSound=false;
-  bool noMusic=false;
+  bool noMusic= (advancedPlayer!=null);
 
   @override
   Widget build(BuildContext context) {
@@ -50,8 +52,11 @@ class _SettingsState extends State<Settings> {
             top: size.height*0.4,
             left:size.width*0.6,
             child:MusicButton(onPressed: () async {
-              AudioPlayer advancedPlayer;
+
               int result = await advancedPlayer.pause();
+              setState(() {
+                noMusic=true;
+              });
             })
             ),
               if(noMusic)
@@ -61,7 +66,12 @@ class _SettingsState extends State<Settings> {
                     child:IconButton(
                       icon: SvgPicture.asset('assets/icons/noMusic.svg'),
                       iconSize: 90,
-                      onPressed:(){
+                      onPressed:() async{
+                        advancedPlayer = await AudioCache().loop("audio/music.mp3");
+                        await advancedPlayer?.setVolume(0.03);
+                        setState(() {
+                          noMusic=false;
+                        });
                       },)
                 ),
               Positioned(

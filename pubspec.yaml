@@ -45,7 +45,6 @@ dependencies:
   audioplayers: ^0.18.3
   camera: ^0.5.8+17
 
-
 dev_dependencies:
   flutter_test:
     sdk: flutter

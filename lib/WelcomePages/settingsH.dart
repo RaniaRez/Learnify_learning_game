@@ -15,6 +15,8 @@ import 'Home.dart';
 import '../Services/auth.dart';
 import 'package:audioplayers/audio_cache.dart';
 import 'package:audioplayers/audioplayers.dart';
+import 'musicVar.dart';
+
 
 
 class SettingsH extends StatefulWidget {
@@ -25,13 +27,14 @@ class SettingsH extends StatefulWidget {
 }
 
 class _SettingsHState extends State<SettingsH> {
+  bool noMusic=(advancedPlayer!=null);
   AudioPlayer value = new AudioPlayer();
   _SettingsHState({this.value});
 
   @override
   Widget build(BuildContext context) {
     bool noSound=false;
-    bool noMusic=false;
+
     Size size = MediaQuery.of(context).size;
     return Scaffold(
       body:
@@ -51,8 +54,11 @@ class _SettingsHState extends State<SettingsH> {
                   top: size.height*0.35,
                   left:size.width*0.38,
                   child:MusicButton(onPressed: () async {
-                    AudioPlayer advancedPlayer;
+                    setState(() {
+                      noMusic=true;
+                    });
                     int result = await advancedPlayer.pause();
+
                   })
               ),
               if(noMusic)
@@ -62,7 +68,12 @@ class _SettingsHState extends State<SettingsH> {
                     child:IconButton(
                       icon: SvgPicture.asset('assets/icons/noMusic.svg'),
                       iconSize: 90,
-                      onPressed:(){
+                      onPressed:() async{
+                        advancedPlayer = await AudioCache().loop("audio/music.mp3");
+                        await advancedPlayer?.setVolume(0.03);
+                        setState(() {
+                          noMusic=false;
+                        });
                       },)
                 ),
               Positioned(
