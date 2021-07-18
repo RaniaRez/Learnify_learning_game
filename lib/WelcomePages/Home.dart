@@ -1,17 +1,13 @@
 
 import 'package:flutter/material.dart';
 import 'package:somthn/Mutual/loading.dart';
-import 'package:somthn/WelcomePages/Vite.dart';
-import 'package:somthn/WelcomePages/Voila.dart';
 import 'package:somthn/WelcomePages/settingsH.dart';
 import 'package:somthn/WelcomePages/timer.dart';
 import '../Buttons/settingsButton.dart';
 import '../Buttons/ButtonAllons-y.dart';
 import '../Bulles/BulleIcon.dart';
-import '../Services/Login.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:audioplayers/audio_cache.dart';
-import 'package:audioplayers/audioplayers.dart';
+import 'musicVar.dart';
 
 
 
@@ -24,7 +20,7 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
- AudioPlayer advancedPlayer;
+
 
  
   @override

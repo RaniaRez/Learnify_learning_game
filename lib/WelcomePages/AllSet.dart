@@ -80,7 +80,7 @@ class _AllSetState extends State<AllSet> {
 
                 child: HomeButton(
                   onPressed: () async {
-                    int result = await advancedPlayer.pause();
+                    int result = await advancedPlayer?.pause();
 
                     Navigator.push(
                       context,
