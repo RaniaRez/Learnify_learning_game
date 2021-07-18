@@ -25,9 +25,16 @@ class ChoixDomaine extends StatefulWidget {
 }
 
 class _ChoixDomaineState extends State<ChoixDomaine> {
+
+
+
+
+
+
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
+
     return Scaffold(
       body:
       Container(
@@ -75,7 +82,7 @@ class _ChoixDomaineState extends State<ChoixDomaine> {
                     right: size.width*0.67,
                     height: size.height*0.3,
                     width: size.width*0.3,
-                    child:PinkAvatarIcon(onPressed: null,),
+                    child:PinkAvatarIcon(onPressed:null,),
                   ),
                 ),
               if (user.avatar=="Purple")
@@ -86,7 +93,7 @@ class _ChoixDomaineState extends State<ChoixDomaine> {
                     right: size.width*0.58 ,
                     height: size.height*0.35,
                     width: size.width*0.35,
-                    child:PurpleAvatarIcon(onPressed: null,),
+                    child:PurpleAvatarIcon(onPressed:null,),
                   ),
                 ),
               if (user.avatar=="Orange")
