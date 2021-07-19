@@ -93,7 +93,7 @@ class _M_1_2_3rd_1State extends State<M_1_2_3rd_1> {
                   left:size.width*0.75,
                   child:
                   SettingsButton(onPressed: () async {
-                    player2.stop();
+                    player2?.stop();
                     //int result = await advancedPlayer.pause();
                     Navigator.push(
                         context,
@@ -105,7 +105,7 @@ class _M_1_2_3rd_1State extends State<M_1_2_3rd_1> {
                   top: size.height*0.05,
                   right:size.width*0.75,
                   child: BacksButton(onPressed: () async {
-                    player2.stop();
+                    player2?.stop();
                     //int result = await advancedPlayer.pause();
                     showDialog(context: context,
                         builder: (BuildContext context){
@@ -136,7 +136,7 @@ class _M_1_2_3rd_1State extends State<M_1_2_3rd_1> {
                   top: size.height*0.6,
                   left: size.width*0.75,
                   child: GoToButton(onPressed: () async {
-                    player2.stop();
+                    player2?.stop();
                     player2 =  await player.play('audio/mathsBravo.wav');
                     //int result = await advancedPlayer.pause();
                     setState(()   {
@@ -147,7 +147,7 @@ class _M_1_2_3rd_1State extends State<M_1_2_3rd_1> {
                         correct=true;
                         print('Correct');
                       }else{
-                        player2.stop();
+                        player2?.stop();
 
                         Visible= false;
                         print('Wrong');
@@ -607,7 +607,7 @@ class _M_1_2_3rd_1State extends State<M_1_2_3rd_1> {
                     height: size.height*0.2,
                     width: size.width*0.5,
                     child: ButtonContinuer(onPressed: () async {
-                      player2.stop();
+                      player2?.stop();
                       //int result = await advancedPlayer.pause();
                       Navigator.push(
                           context,

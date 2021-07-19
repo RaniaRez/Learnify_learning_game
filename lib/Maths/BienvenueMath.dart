@@ -74,7 +74,8 @@ class _BienvenueMathState extends State<BienvenueMath> {
                   top: size.height*0.05,
                   left:size.width*0.75,
                   child:
-                  SettingsButton(onPressed: (){
+                  SettingsButton(onPressed: ()async{
+                    int result = await advancedPlayer?.pause();
                     Navigator.push(
                         context,
                         MaterialPageRoute(builder: (context) => Settings()));
@@ -84,7 +85,8 @@ class _BienvenueMathState extends State<BienvenueMath> {
               Positioned(
                   top: size.height*0.05,
                   right:size.width*0.75,
-                  child: BacksButton(onPressed: (){
+                  child: BacksButton(onPressed: ()async{
+                    int result = await advancedPlayer?.pause();
                     Navigator.push(
                         context,
                         MaterialPageRoute(builder: (context) => ChoixDomaine()));
@@ -98,7 +100,7 @@ class _BienvenueMathState extends State<BienvenueMath> {
                 child: ButtonCommencerD(onPressed: () async  {
                   player2.stop();
                   if (advancedPlayer!=null){
-                  int result = await advancedPlayer.pause();}
+                  int result = await advancedPlayer?.pause();}
                   print('commencer');
                   var d=await Firestore.instance.collection('users').document(user.uid).collection('domains').document('maths').get();
                   /*scoreM.testFait=d.data["testFait"];

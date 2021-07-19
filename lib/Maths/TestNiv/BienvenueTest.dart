@@ -77,7 +77,7 @@ class _TestNiveauState extends State<TestNiveau> {
                   width: size.width*0.55,
                   child: ButtonCommencer(onPressed: ()async {
                     if (advancedPlayer!=null){
-                    int result = await advancedPlayer.pause();}
+                    int result = await advancedPlayer?.pause();}
                     Navigator.push(
                         context,
                         MaterialPageRoute(builder: (context) => TestNivM1()));

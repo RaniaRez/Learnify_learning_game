@@ -89,7 +89,7 @@ class _M_1_3_3rdState extends State<M_1_3_3rd> {
                   left:size.width*0.75,
                   child:
                   SettingsButton(onPressed: () async {
-                    player2.stop();
+                    player2?.stop();
                     //int result = await advancedPlayer.pause();
                     Navigator.push(
                         context,
@@ -101,7 +101,7 @@ class _M_1_3_3rdState extends State<M_1_3_3rd> {
                   top: size.height*0.05,
                   right:size.width*0.75,
                   child: BacksButton(onPressed: () async {
-                    player2.stop();
+                    player2?.stop();
                     //int result = await advancedPlayer.pause();
                     showDialog(context: context,
                         builder: (BuildContext context){
@@ -132,7 +132,7 @@ class _M_1_3_3rdState extends State<M_1_3_3rd> {
                   top: size.height*0.6,
                   left: size.width*0.75,
                   child: GoToButton(onPressed: () async {
-                    player2.stop();
+                    player2?.stop();
                     player2 =  await player.play('audio/mathsBravo.wav');
 
                     // int result = await advancedPlayer.pause();
@@ -145,7 +145,7 @@ class _M_1_3_3rdState extends State<M_1_3_3rd> {
                         correct=true;
                         print('Correct');
                       }else{
-                        player2.stop();
+                        player2?.stop();
 
                         Visible=false;
                         print('Wrong');
@@ -605,7 +605,7 @@ class _M_1_3_3rdState extends State<M_1_3_3rd> {
                     height: size.height*0.2,
                     width: size.width*0.5,
                     child: ButtonContinuer(onPressed: () async {
-                      player2.stop();
+                      player2?.stop();
                       //int result = await advancedPlayer.pause();
                       Navigator.push(
                           context,

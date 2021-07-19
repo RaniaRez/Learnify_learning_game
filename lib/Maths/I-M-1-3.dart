@@ -147,9 +147,9 @@ class _I_M_1_3_State extends State<I_M_1_3_> {
                 bottom: size.height*0.05,
                 right: size.width*0.5 ,
                 child: AppliquerButton(onPressed : () async {
-                  player2.stop();
+                  player2?.stop();
                   if (advancedPlayer!=null){
-                  int result = await advancedPlayer.pause();}
+                  int result = await advancedPlayer?.pause();}
                   final _random = new Random();
                   int rnd = 0 + _random.nextInt(1);
                   if(rnd==0){

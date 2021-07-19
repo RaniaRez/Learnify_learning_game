@@ -78,9 +78,9 @@ class _M_2_4State extends State<M_2_4> {
                   child: BacksButton(onPressed: () async {
 
 if ( player2 != null) {
-                    player2.stop();}
+                    player2?.stop();}
  if (advancedPlayer!= null) {
-                    int result = await advancedPlayer.pause();}
+                    int result = await advancedPlayer?.pause();}
                     print("u clicked me");
                     showDialog(context: context,
                         builder: (BuildContext context){
@@ -96,9 +96,9 @@ if ( player2 != null) {
                   child: SettingsButton(onPressed: () async {
 
 if ( player2 != null) {
-                    player2.stop();}
+                    player2?.stop();}
  if (advancedPlayer!= null) {
-                    int result = await advancedPlayer.pause();}
+                    int result = await advancedPlayer?.pause();}
                     Navigator.push(
                         context,
                         MaterialPageRoute(builder: (context) => Settings()));
@@ -392,9 +392,9 @@ if ( player2 != null) {
                     child: ButtonContinuer(onPressed: () async {
  
 if ( player2 != null) {
-                    player2.stop();}
+                    player2?.stop();}
    if (advancedPlayer!= null) {
-                    int result = await advancedPlayer.pause();}
+                    int result = await advancedPlayer?.pause();}
                       Navigator.push(
                           context,
                           MaterialPageRoute(builder: (context) => M_2_5()));
@@ -468,9 +468,9 @@ if ( player2 != null) {
                           if (oneClicked){
        
 if ( player2 != null) {
-                    player2.stop();}
+                    player2?.stop();}
          if (advancedPlayer!= null) {
-                    int result = await advancedPlayer.pause();}
+                    int result = await advancedPlayer?.pause();}
                             player2 =  await player.play('audio/mathsBravo.wav');
                             setState(() {
                               Visible = false;
@@ -496,9 +496,9 @@ if ( player2 != null) {
                           if (fourClicked)  {
        
 if ( player2 != null) {
-                    player2.stop();}
+                    player2?.stop();}
          if (advancedPlayer!= null) {
-                    int result = await advancedPlayer.pause();}
+                    int result = await advancedPlayer?.pause();}
                             Navigator.push(
                                 context,
                                 MaterialPageRoute(builder: (context) => M_2_4_2nd_Four()));
@@ -522,9 +522,9 @@ if ( player2 != null) {
                           if (twoClicked)  {
 
 if ( player2 != null) {
-                    player2.stop();}
+                    player2?.stop();}
  if (advancedPlayer!= null) {
-                    int result = await advancedPlayer.pause();}
+                    int result = await advancedPlayer?.pause();}
                             Navigator.push(
                                 context,
                                 MaterialPageRoute(builder: (context) => M_2_4_2nd_Two()));
@@ -547,9 +547,9 @@ if ( player2 != null) {
                           if (threeClicked)  {
       
 if ( player2 != null) {
-                    player2.stop();}
+                    player2?.stop();}
          if (advancedPlayer!= null) {
-                    int result = await advancedPlayer.pause();}
+                    int result = await advancedPlayer?.pause();}
                             Navigator.push(
                                 context,
                                 MaterialPageRoute(builder: (context) => M_2_4_2nd_Three()));

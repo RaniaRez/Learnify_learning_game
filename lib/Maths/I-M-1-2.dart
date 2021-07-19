@@ -144,9 +144,9 @@ class _I_M_1_2_State extends State<I_M_1_2_> {
                 bottom: size.height*0.05,
                 right: size.width*0.5 ,
                 child: AppliquerButton(onPressed : () async {
-                  player2.stop();
+                  player2?.stop();
                   if (advancedPlayer!=null){
-                  int result = await advancedPlayer.pause();}
+                  int result = await advancedPlayer?.pause();}
                     Navigator.push(
                         context,
                         MaterialPageRoute(builder: (context) => M_1_2_3rd_1()));

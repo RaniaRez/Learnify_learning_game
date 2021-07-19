@@ -103,9 +103,9 @@ class _M_1_4_2ndState extends State<M_1_4_2nd> {
                   left:size.width*0.75,
                   child:
                   SettingsButton(onPressed: () async {
-                    player2.stop();
+                    player2?.stop();
                     if (advancedPlayer!=null){
-                  int result = await advancedPlayer.pause();}
+                  int result = await advancedPlayer?.pause();}
                     Navigator.push(
                         context,
                         MaterialPageRoute(builder: (context) => Settings()));
@@ -116,9 +116,9 @@ class _M_1_4_2ndState extends State<M_1_4_2nd> {
                   top: size.height*0.05,
                   right:size.width*0.75,
                   child: BacksButton(onPressed: () async {
-                    player2.stop();
+                    player2?.stop();
                     if (advancedPlayer!=null){
-                  int result = await advancedPlayer.pause();}
+                  int result = await advancedPlayer?.pause();}
                     showDialog(context: context,
                         builder: (BuildContext context){
                           return customDialogMath1();
@@ -148,10 +148,10 @@ class _M_1_4_2ndState extends State<M_1_4_2nd> {
                   top: size.height*0.6,
                   left: size.width*0.75,
                   child: GoToButton(onPressed: () async {
-                    player2.stop();
+                    player2?.stop();
                   if (advancedPlayer!=null){
-                  int result = await advancedPlayer.pause();}
-                    player2 =  await player.play('audio/mathsBravo.wav');
+                  int result = await advancedPlayer?.pause();}
+                    if (!Visible)  {player2 =  await player.play('audio/mathsBravo.wav');}
 
                     setState(()   {
 
@@ -162,7 +162,7 @@ class _M_1_4_2ndState extends State<M_1_4_2nd> {
                         print('Correct');
                         scoreM.niv1=scoreM.niv1+1;
                       }else{
-                        player2.stop();
+                        player2?.stop();
                         Navigator.push(
                             context,
                             MaterialPageRoute(builder: (context) => I_M_1_4_()));
@@ -621,9 +621,9 @@ class _M_1_4_2ndState extends State<M_1_4_2nd> {
                     height: size.height*0.2,
                     width: size.width*0.5,
                     child: ButtonContinuer(onPressed: () async {
-                      player2.stop();
+                      player2?.stop();
                       if (advancedPlayer!=null){
-                  int result = await advancedPlayer.pause();}
+                  int result = await advancedPlayer?.pause();}
                       Navigator.push(
                           context,
                           MaterialPageRoute(builder: (context) => M_1_5()));

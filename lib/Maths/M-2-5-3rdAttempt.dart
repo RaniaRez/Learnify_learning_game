@@ -64,7 +64,7 @@ class _M_2_5_3rd_State extends State<M_2_5_3rd_> {
                   right:size.width*0.75,
 
                   child: BacksButton(onPressed: () async {
-                    player2.stop();
+                    player2?.stop();
                  //   int result = await advancedPlayer.pause();
                     print("u clicked me");
                     showDialog(context: context,
@@ -79,7 +79,7 @@ class _M_2_5_3rd_State extends State<M_2_5_3rd_> {
                   top:size.height*0.05,
                   left:size.width*0.75,
                   child: SettingsButton(onPressed: () async {
-                    player2.stop();
+                    player2?.stop();
                     //int result = await advancedPlayer.pause();
                     Navigator.push(
                         context,
@@ -498,7 +498,7 @@ class _M_2_5_3rd_State extends State<M_2_5_3rd_> {
                     child: IconButton(
                         onPressed: () async {
                           if (twoClicked)  {
-                            player2.stop();
+                            player2?.stop();
                             //int result = await advancedPlayer.pause();
                             player2 =  await player.play('audio/losing.wav');
                             setState(() {
@@ -523,7 +523,7 @@ class _M_2_5_3rd_State extends State<M_2_5_3rd_> {
                     child: IconButton(
                         onPressed: () async {
                           if (fourClicked)  {
-                            player2.stop();
+                            player2?.stop();
                             //int result = await advancedPlayer.pause();
                             player2 =  await player.play('audio/losing.wav');
                             setState(() {
@@ -547,7 +547,7 @@ class _M_2_5_3rd_State extends State<M_2_5_3rd_> {
                     child: IconButton(
                         onPressed: () async {
                           if (oneClicked){
-                            player2.stop();
+                            player2?.stop();
                             player2 =  await player.play('audio/mathsBravo.wav');
                             //int result = await advancedPlayer.pause();
                             setState(() {
@@ -572,7 +572,7 @@ class _M_2_5_3rd_State extends State<M_2_5_3rd_> {
                     child: IconButton(
                         onPressed: () async {
                           if (threeClicked)  {
-                            player2.stop();
+                            player2?.stop();
                             //int result = await advancedPlayer.pause();
                             player2 =  await player.play('audio/losing.wav');
                             setState(() {
@@ -595,7 +595,7 @@ class _M_2_5_3rd_State extends State<M_2_5_3rd_> {
                     height: size.height*0.2,
                     width: size.width*0.5,
                     child: ButtonContinuer(onPressed: () async {
-                      player2.stop();
+                      player2?.stop();
                      // int result = await advancedPlayer.pause();
                       print("score final");
                       print(scoreM.niv2);

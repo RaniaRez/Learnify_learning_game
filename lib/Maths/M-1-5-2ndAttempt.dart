@@ -113,7 +113,7 @@ class _M_1_5_2ndState extends State<M_1_5_2nd> {
                   left:size.width*0.75,
                   child:
                   SettingsButton(onPressed: () async {
-                    player2.stop();
+                    player2?.stop();
                     if (advancedPlayer!=null){
                   int result = await advancedPlayer.pause();}
                     Navigator.push(
@@ -126,7 +126,7 @@ class _M_1_5_2ndState extends State<M_1_5_2nd> {
                   top: size.height*0.05,
                   right:size.width*0.75,
                   child: BacksButton(onPressed: () async {
-                    player2.stop();
+                    player2?.stop();
                     if (advancedPlayer!=null){
                   int result = await advancedPlayer.pause();}
                     showDialog(context: context,
@@ -158,10 +158,10 @@ class _M_1_5_2ndState extends State<M_1_5_2nd> {
                   top: size.height*0.6,
                   left: size.width*0.75,
                   child: GoToButton(onPressed: () async {
-                    player2.stop();
+                    player2?.stop();
                     if (advancedPlayer!=null){
                   int result = await advancedPlayer.pause();}
-                    player2 =  await player.play('audio/mathsBravo.wav');
+                    if (!Visible)  {player2 =  await player.play('audio/mathsBravo.wav');}
                     setState(()  {
 
                       if(!all){
@@ -172,7 +172,7 @@ class _M_1_5_2ndState extends State<M_1_5_2nd> {
                         scoreM.niv1=scoreM.niv1+1;
                         print(scoreM.niv1);
                       }else{
-                        player2.stop();
+                        player2?.stop();
                         Navigator.push(
                             context,
                             MaterialPageRoute(builder: (context) => I_M_1_5_()));
@@ -632,7 +632,7 @@ class _M_1_5_2ndState extends State<M_1_5_2nd> {
                     height: size.height*0.2,
                     width: size.width*0.5,
                     child: ButtonContinuer(onPressed: () async {
-                      player2.stop();
+                      player2?.stop();
                       if (advancedPlayer!=null){
                   int result = await advancedPlayer.pause();}
                       Firestore.instance.collection('users').document(user.uid).collection('domains').document('maths').updateData({'niv1':scoreM.niv1});

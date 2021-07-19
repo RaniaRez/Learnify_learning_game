@@ -81,9 +81,9 @@ class _M_2_1State extends State<M_2_1> {
 
                   child: BacksButton(onPressed: () async {
                      if ( player2 != null) {
-                    player2.stop();}
+                    player2?.stop();}
                      if (advancedPlayer!=null){
-                  int result = await advancedPlayer.pause();}
+                  int result = await advancedPlayer?.pause();}
                     print("u clicked me");
                     showDialog(context: context,
                         builder: (BuildContext context){
@@ -98,9 +98,9 @@ class _M_2_1State extends State<M_2_1> {
                   left:size.width*0.75,
                   child: SettingsButton(onPressed: () async {
                      if ( player2 != null) {
-                    player2.stop();}
+                    player2?.stop();}
                     if (advancedPlayer!=null){
-                  int result = await advancedPlayer.pause();}
+                  int result = await advancedPlayer?.pause();}
                     Navigator.push(
                         context,
                         MaterialPageRoute(builder: (context) => Settings()));
@@ -394,8 +394,8 @@ class _M_2_1State extends State<M_2_1> {
                     width: size.width*0.5,
                     child: ButtonContinuer(onPressed: () async {
                        if ( player2 != null) {
-                    player2.stop();}
-                      // int result = await advancedPlayer.pause();
+                    player2?.stop();}
+                      // int result = await advancedPlayer?.pause();
                       Navigator.push(
                           context,
                           MaterialPageRoute(builder: (context) => M_2_2()));
@@ -466,9 +466,9 @@ class _M_2_1State extends State<M_2_1> {
                     child: IconButton(
                       onPressed: () async {
                          if ( player2 != null) {
-                    player2.stop();}
+                    player2?.stop();}
                         if (advancedPlayer!=null){
-                  int result = await advancedPlayer.pause();}
+                  int result = await advancedPlayer?.pause();}
                         player2 =  await player.play('audio/mathsBravo.wav');
                         if (twoClicked){
                           setState(() {
@@ -494,9 +494,9 @@ class _M_2_1State extends State<M_2_1> {
                         onPressed: () async {
                           if (fourClicked)  {
                              if ( player2 != null) {
-                    player2.stop();}
+                    player2?.stop();}
                     if (advancedPlayer!= null) {
-                    int result = await advancedPlayer.pause();}
+                    int result = await advancedPlayer?.pause();}
                             Navigator.push(
                                 context,
                                 MaterialPageRoute(builder: (context) => M_2_1_2nd_Four()));
@@ -518,9 +518,9 @@ class _M_2_1State extends State<M_2_1> {
                         onPressed: () async {
                           if (oneClicked)  {
                              if ( player2 != null) {
-                    player2.stop();}
+                    player2?.stop();}
 if (advancedPlayer!= null) {
-                    int result = await advancedPlayer.pause();}
+                    int result = await advancedPlayer?.pause();}
                             Navigator.push(
                                 context,
                                 MaterialPageRoute(builder: (context) => M_2_1_2nd_One()));
@@ -542,9 +542,9 @@ if (advancedPlayer!= null) {
                         onPressed: () async {
                           if (threeClicked)  {
                              if ( player2 != null) {
-                    player2.stop();}
+                    player2?.stop();}
 if (advancedPlayer!= null) {
-                    int result = await advancedPlayer.pause();}
+                    int result = await advancedPlayer?.pause();}
                             Navigator.push(
                                 context,
                                 MaterialPageRoute(builder: (context) => M_2_1_2nd_Three()));

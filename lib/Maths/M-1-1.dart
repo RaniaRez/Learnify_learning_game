@@ -93,7 +93,7 @@ class _M_1_1State extends State<M_1_1> {
                   left:size.width*0.75,
                   child:
                   SettingsButton(onPressed: () async {
-                    player2.stop();
+                    player2?.stop();
                    // int result = await advancedPlayer.pause();
                     Navigator.push(
                         context,
@@ -107,7 +107,8 @@ class _M_1_1State extends State<M_1_1> {
                   right:size.width*0.75,
                   child:
                   BacksButton(onPressed: () async {
-                    player2.stop();
+                    player2?.stop();
+                    
                     showDialog(context: context,
                         builder: (BuildContext context){
                           return customDialogMath1();
@@ -136,7 +137,7 @@ class _M_1_1State extends State<M_1_1> {
           top: size.height*0.6,
           left: size.width*0.75,
         child: GoToButton(onPressed: () async {
-          player2.stop();
+          player2?.stop();
 
           //int result = await advancedPlayer.pause();
           player2 =  await player.play('audio/mathsBravo.wav');
@@ -154,7 +155,7 @@ class _M_1_1State extends State<M_1_1> {
               print(scoreM.niv1);
 
             }else{
-              player2.stop();
+              player2?.stop();
 
               Navigator.push(
                   context,
@@ -616,7 +617,7 @@ class _M_1_1State extends State<M_1_1> {
                     height: size.height*0.2,
                     width: size.width*0.5,
                     child: ButtonContinuer(onPressed: () async {
-                      player2.stop();
+                      player2?.stop();
                       //int result = await advancedPlayer.pause();
                       Navigator.push(
                           context,
