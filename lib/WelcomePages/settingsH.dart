@@ -27,7 +27,7 @@ class SettingsH extends StatefulWidget {
 }
 
 class _SettingsHState extends State<SettingsH> {
-  bool noMusic=(advancedPlayer!=null);
+  bool noMusic=(advancedPlayer==null);
   AudioPlayer value = new AudioPlayer();
   _SettingsHState({this.value});
 
@@ -57,7 +57,7 @@ class _SettingsHState extends State<SettingsH> {
                     setState(() {
                       noMusic=true;
                     });
-                    int result = await advancedPlayer.pause();
+                    int result = await advancedPlayer?.stop();
 
                   })
               ),

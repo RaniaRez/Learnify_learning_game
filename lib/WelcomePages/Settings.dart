@@ -29,7 +29,7 @@ class _SettingsState extends State<Settings> {
   AudioPlayer value = new AudioPlayer();
   _SettingsState({this.value});
   bool noSound=false;
-  bool noMusic= (advancedPlayer!=null);
+  bool noMusic= (advancedPlayer==null);
 
   @override
   Widget build(BuildContext context) {
@@ -53,7 +53,7 @@ class _SettingsState extends State<Settings> {
             left:size.width*0.39,
             child:MusicButton(onPressed: () async {
 
-              int result = await advancedPlayer.pause();
+              int result = await advancedPlayer?.stop();
               setState(() {
                 noMusic=true;
               });
@@ -68,6 +68,7 @@ class _SettingsState extends State<Settings> {
                       iconSize: 90,
                       onPressed:() async{
                         advancedPlayer = await AudioCache().loop("audio/music.mp3");
+                        print('ok');
                         await advancedPlayer?.setVolume(0.03);
                         setState(() {
                           noMusic=false;

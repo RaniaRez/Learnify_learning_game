@@ -102,27 +102,9 @@ class _F_2_2State extends State<F_2_2> {
                child: Row(
                  children: <Widget>[
 
-                      Bounce(
-                        infinite:true,
-                        child: IconButton(
-                           iconSize: 64,
-                           icon: SvgPicture.asset('assets/icons/QuestionMark.svg'),
-                           onPressed: () {
-                             player2?.stop();
-                             setState(() {
-                               drag1=null;
-                               drag2=null;
-                               drag3=null;
-                               poli="";
-                               gentil="";
-                               optimiste="";
-                               correct=false;
-                               Visible= true;
-
-                             });
-                             print('QuestionMark');
-                           }
-                     ),
+                      Container(
+                       height: 80,
+                       width: 80,
                       ),
 
                    SizedBox(width: size.width*0.5,),
