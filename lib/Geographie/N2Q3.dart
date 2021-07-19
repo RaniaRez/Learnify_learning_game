@@ -79,13 +79,14 @@ class _N2Q3State extends State<N2Q3> {
               Positioned(
                   top: size.height*0.05,
                   right:size.width*0.75,
-                  child: BacksButton(onPressed: (){
+                  child: BacksButton(onPressed: ()async{
+                    int result = await advancedPlayer?.pause();
                     showDialog(context: context,
                         builder: (BuildContext context){
                           return customDialogGeo2();
                         }
                     );
-                    player2.stop();
+                    player2?.stop();
 
                   },)
               ),
@@ -94,9 +95,9 @@ class _N2Q3State extends State<N2Q3> {
                   top:size.height*0.05,
                   left:size.width*0.75,
                   child: SettingsButton(onPressed: () async {
-                    player2.stop();
+                    player2?.stop();
                     if (advancedPlayer!=null){
-                  int result = await advancedPlayer.pause();}
+                  int result = await advancedPlayer?.pause();}
                     Navigator.push(
                         context,
                         MaterialPageRoute(builder: (context) => Settings()));
@@ -261,9 +262,9 @@ class _N2Q3State extends State<N2Q3> {
                     height: size.height*0.2,
                     width: size.width*0.5,
                     child: ButtonContinuer(onPressed: () async {
-                      player2.stop();
+                      player2?.stop();
                       if (advancedPlayer!=null){
-                  int result = await advancedPlayer.pause();}
+                  int result = await advancedPlayer?.pause();}
                       Navigator.push(
                           context,
                           MaterialPageRoute(builder: (context) => N2Q4()));
@@ -334,9 +335,9 @@ class _N2Q3State extends State<N2Q3> {
                       visible: (threeClicked && Visible),
                       child: IconButton(
                         onPressed: () async {
-                          player2.stop();
+                          player2?.stop();
                           if (advancedPlayer!=null){
-                  int result = await advancedPlayer.pause();}
+                  int result = await advancedPlayer?.pause();}
                           if (threeClicked){
                             //Vibration.vibrate();
                             setState(() {
@@ -363,9 +364,9 @@ class _N2Q3State extends State<N2Q3> {
                         onPressed: () async {
 
                           if (fourClicked){
-                            player2.stop();
+                            player2?.stop();
                             if (advancedPlayer!=null){
-                  int result = await advancedPlayer.pause();}
+                  int result = await advancedPlayer?.pause();}
                             player2 =  await player.play('audio/mathsBravo.wav');
                             setState(() {
                               Visible = false;
@@ -390,9 +391,9 @@ class _N2Q3State extends State<N2Q3> {
                     visible: (twoClicked&&Visible),
                     child: IconButton(
                         onPressed: () async {
-                          player2.stop();
+                          player2?.stop();
                           if (advancedPlayer!=null){
-                  int result = await advancedPlayer.pause();}
+                  int result = await advancedPlayer?.pause();}
                           if (twoClicked){
                             //Vibration.vibrate();
                             setState(() {

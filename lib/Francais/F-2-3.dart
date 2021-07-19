@@ -55,7 +55,7 @@ class _F_2_3State extends State<F_2_3> {
               left: size.width * 0.75,
               child: SettingsButton(
                 onPressed: () {
-                  player2.stop();
+                  player2?.stop();
 
                   Navigator.push(context,
                       MaterialPageRoute(builder: (context) => Settings()));
@@ -66,7 +66,7 @@ class _F_2_3State extends State<F_2_3> {
               right: size.width * 0.75,
               child: BacksButton(
                 onPressed: () {
-                  player2.stop();
+                  player2?.stop();
 
                   showDialog(
                       context: context,
@@ -107,7 +107,7 @@ class _F_2_3State extends State<F_2_3> {
               child: IconButton(
                   onPressed: () async {
                     if(advancedPlayer !=null){
-                      int result = await advancedPlayer.pause();
+                      int result = await advancedPlayer?.pause();
                     }
 
                     Navigator.push(
@@ -128,7 +128,7 @@ class _F_2_3State extends State<F_2_3> {
               child: IconButton(
                   onPressed: () async {
                     if(advancedPlayer !=null){
-                      int result = await advancedPlayer.pause();
+                      int result = await advancedPlayer?.pause();
                     }
 
                     Navigator.push(
@@ -149,7 +149,7 @@ class _F_2_3State extends State<F_2_3> {
               child: IconButton(
                   onPressed: () async {
                     if(advancedPlayer !=null){
-                      int result = await advancedPlayer.pause();
+                      int result = await advancedPlayer?.pause();
                     }
 
                     player2 = await player.play('audio/mathsBravo.wav');
@@ -172,7 +172,7 @@ class _F_2_3State extends State<F_2_3> {
               child: IconButton(
                   onPressed: () async {
                     if(advancedPlayer !=null){
-                      int result = await advancedPlayer.pause();
+                      int result = await advancedPlayer?.pause();
                     }
 
                     Navigator.push(
@@ -267,8 +267,8 @@ class _F_2_3State extends State<F_2_3> {
                 width: size.width * 0.5,
                 child: ButtonContinuer(
                   onPressed: () async {
-                    player2.stop();
-                    int result = await advancedPlayer.pause();
+                    player2?.stop();
+                    int result = await advancedPlayer?.pause();
 
                     print('HADA SCORE');
                     print(scoreF.niv2);

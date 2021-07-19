@@ -79,7 +79,7 @@ class _Niveau3PassState extends State<Niveau3Pass> {
                 top: size.height*0.05,
                 left:size.width*0.75,
                 child: SettingsButton(onPressed: () async {
-                  int result = await advancedPlayer.pause();
+                  int result = await advancedPlayer?.pause();
 
                   Navigator.push(
                       context,
@@ -92,7 +92,7 @@ class _Niveau3PassState extends State<Niveau3Pass> {
                 top: size.height*0.05,
                 right:size.width*0.75,
                 child: BacksButton(onPressed: () async {
-                  int result = await advancedPlayer.pause();
+                  int result = await advancedPlayer?.pause();
 
                   print("HELL YEAH");
                   Navigator.push(
@@ -105,7 +105,7 @@ class _Niveau3PassState extends State<Niveau3Pass> {
               left: size.width*0.39,
               child: HomeButton(
                 onPressed: () async {
-                  int result = await advancedPlayer.pause();
+                  int result = await advancedPlayer?.pause();
 
                   print("HELL YEAH8");
                   Navigator.push(
@@ -319,7 +319,7 @@ class _Niveau3PassState extends State<Niveau3Pass> {
               child: Visibility(
                 visible: complet,
                 child: GoToButton(onPressed: () async {
-                  int result = await advancedPlayer.pause();
+                  int result = await advancedPlayer?.pause();
 
                   print(scoreM.niv1);
                   //Firestore.instance.collection('users').document(user.uid).collection('domains').document('maths').updateData({'niv1':scoreM.niv1});

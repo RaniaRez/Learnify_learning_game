@@ -93,9 +93,9 @@ class _F_2_4_2ndState extends State<F_2_4_2nd> {
                   left:size.width*0.75,
                   child:
                   SettingsButton(onPressed: () async {
-                    player2.stop();
+                    player2?.stop();
                     if(advancedPlayer !=null){
-                      int result = await advancedPlayer.pause();
+                      int result = await advancedPlayer?.pause();
                     }
                     Navigator.push(
                         context,
@@ -106,9 +106,9 @@ class _F_2_4_2ndState extends State<F_2_4_2nd> {
                   top: size.height*0.05,
                   right:size.width*0.75,
                   child: BacksButton(onPressed: () async {
-                    player2.stop();
+                    player2?.stop();
                     if(advancedPlayer !=null){
-                      int result = await advancedPlayer.pause();
+                      int result = await advancedPlayer?.pause();
                     }
                     showDialog(context: context,
                         builder: (BuildContext context){
@@ -139,7 +139,7 @@ class _F_2_4_2ndState extends State<F_2_4_2nd> {
                   top: size.height*0.47,
                   left: size.width*0.75,
                   child: GoToButton(onPressed: () async {
-                    int result = await advancedPlayer.pause();
+                    int result = await advancedPlayer?.pause();
 
                     if((drag1=="assets/icons/p.svg")&&(drag2=="assets/icons/r.svg")&&(drag3=="assets/icons/i.svg")&&(drag4=="assets/icons/n.svg")&&(drag5=="assets/icons/c.svg")&&(drag6=="assets/icons/e.svg")&&(drag7=="assets/icons/s.svg")&&(drag8=="assets/icons/s.svg")&&(drag9=="assets/icons/e.svg")){
                       player2 =  await player.play('audio/mathsBravo.wav');
@@ -215,8 +215,8 @@ class _F_2_4_2ndState extends State<F_2_4_2nd> {
                     height: size.height*0.2,
                     width: size.width*0.5,
                     child: ButtonContinuer(onPressed: () async {
-                      player2.stop();
-                      int result = await advancedPlayer.pause();
+                      player2?.stop();
+                      int result = await advancedPlayer?.pause();
 
                       print('HADA SCORE');
                       print(scoreF.niv2);

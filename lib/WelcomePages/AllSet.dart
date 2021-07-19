@@ -69,7 +69,8 @@ class _AllSetState extends State<AllSet> {
                   top: size.height*0.05,
                   right:size.width*0.75,
 
-                  child: BacksButton(onPressed: (){
+                  child: BacksButton(onPressed: ()async {
+                    int result = await advancedPlayer?.pause();
                     print("u clicked me");
                     Navigator.pop(context);
                   },)
@@ -93,7 +94,7 @@ class _AllSetState extends State<AllSet> {
                   top:size.height*0.05,
                   left:size.width*0.75,
                   child: SettingsButton(onPressed: () async {
-                    int result = await advancedPlayer.pause();
+                    int result = await advancedPlayer?.pause();
 
                     Navigator.push(
                         context,
@@ -166,7 +167,7 @@ class _AllSetState extends State<AllSet> {
                 top: size.height*0.83,
                 left: size.width*0.7 ,
                 child: GoToButton(onPressed: () async {
-                  int result = await advancedPlayer.pause();
+                  int result = await advancedPlayer?.pause();
                   Navigator.push(
                   context,
                   MaterialPageRoute(

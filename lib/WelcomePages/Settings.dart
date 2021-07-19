@@ -50,7 +50,7 @@ class _SettingsState extends State<Settings> {
               ),
         Positioned(
             top: size.height*0.4,
-            left:size.width*0.6,
+            left:size.width*0.39,
             child:MusicButton(onPressed: () async {
 
               int result = await advancedPlayer.pause();
@@ -62,7 +62,7 @@ class _SettingsState extends State<Settings> {
               if(noMusic)
                 Positioned(
                     top: size.height*0.4,
-                    left:size.width*0.6,
+                    left:size.width*0.39,
                     child:IconButton(
                       icon: SvgPicture.asset('assets/icons/noMusic.svg'),
                       iconSize: 90,
@@ -74,23 +74,9 @@ class _SettingsState extends State<Settings> {
                         });
                       },)
                 ),
-              Positioned(
-                  top: size.height*0.4,
-                  right:size.width*0.6,
-                  child:SoundButton(onPressed:(){
-                  },)
-              ),
 
-              if(noSound)
-                  Positioned(
-                  top: size.height*0.4,
-                  right:size.width*0.6,
-                  child:IconButton(
-                    icon: SvgPicture.asset('assets/icons/noSound.svg'),
-                    iconSize: 90,
-                    onPressed:(){
-                  },)
-              ),
+
+
               Positioned(
                   top: size.height*0.7,
                   left:size.width*0.61,

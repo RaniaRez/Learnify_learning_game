@@ -90,9 +90,9 @@ class _F_1_5_2ndState extends State<F_1_5_2nd> {
                   left:size.width*0.75,
                   child:
                   SettingsButton(onPressed: ()async {
-                    player2.stop();
+                    player2?.stop();
                     if(advancedPlayer !=null){
-                      int result = await advancedPlayer.pause();
+                      int result = await advancedPlayer?.pause();
                     }
 
                     Navigator.push(
@@ -105,9 +105,9 @@ class _F_1_5_2ndState extends State<F_1_5_2nd> {
                   top: size.height*0.05,
                   right:size.width*0.75,
                   child: BacksButton(onPressed: () async {
-                    player2.stop();
+                    player2?.stop();
                     if(advancedPlayer !=null){
-                      int result = await advancedPlayer.pause();
+                      int result = await advancedPlayer?.pause();
                     }
                     showDialog(context: context,
                         builder: (BuildContext context){
@@ -139,7 +139,7 @@ class _F_1_5_2ndState extends State<F_1_5_2nd> {
                   child: GoToButton(onPressed: () async {
                     if((drag1=="assets/icons/s.svg")&&(drag2=="assets/icons/o.svg")&&(drag3=="assets/icons/l.svg")){
                       print('correct');
-                      int result = await advancedPlayer.pause();
+                      int result = await advancedPlayer?.pause();
 
                       player2 =  await player.play('audio/mathsBravo.wav');
 
@@ -149,9 +149,9 @@ class _F_1_5_2ndState extends State<F_1_5_2nd> {
                       setState(() {
                         Visible=false;
                         correct=true;
-                      });}else if ((drag1==null)&&(drag2==null)&&(drag3==null)){                   int result = await advancedPlayer.pause();
+                      });}else if ((drag1==null)&&(drag2==null)&&(drag3==null)){                   int result = await advancedPlayer?.pause();
                     }else{
-                      int result = await advancedPlayer.pause();
+                      int result = await advancedPlayer?.pause();
                       player2 =  await player.play('audio/losing.wav');
                       setState(() {
                         Visible=false;
@@ -211,8 +211,8 @@ class _F_1_5_2ndState extends State<F_1_5_2nd> {
                     width: size.width*0.5,
                     child: ButtonContinuer(onPressed: () async {
 
-                      player2.stop();
-                      int result = await advancedPlayer.pause();
+                      player2?.stop();
+                      int result = await advancedPlayer?.pause();
 
 
                       print("score final");

@@ -76,7 +76,8 @@ class _Niveau3PassState extends State<Niveau3Pass> {
             Positioned(
                 top: size.height*0.05,
                 left:size.width*0.75,
-                child: SettingsButton(onPressed: (){
+                child: SettingsButton(onPressed: ()async{
+                  int result = await advancedPlayer?.pause();
                   Navigator.push(
                       context,
                       MaterialPageRoute(builder: (context) => Settings()));
@@ -87,7 +88,8 @@ class _Niveau3PassState extends State<Niveau3Pass> {
             Positioned(
                 top: size.height*0.05,
                 right:size.width*0.75,
-                child: BacksButton(onPressed: (){
+                child: BacksButton(onPressed: ()async{
+                  int result = await advancedPlayer?.pause();
                   print("HELL YEAH");
                   Navigator.push(
                       context,
@@ -98,7 +100,8 @@ class _Niveau3PassState extends State<Niveau3Pass> {
               top: size.height*0.047,
               left: size.width*0.39,
               child: HomeButton(
-                onPressed: (){
+                onPressed: ()async{
+                  int result = await advancedPlayer?.pause();
                   //print("zbel2");
                   print("HELL YEAH8");
                   Navigator.push(
@@ -311,7 +314,8 @@ class _Niveau3PassState extends State<Niveau3Pass> {
               left: size.width*0.7 ,
               child: Visibility(
                 visible: complet,
-                child: GoToButton(onPressed: (){
+                child: GoToButton(onPressed: ()async{
+                  int result = await advancedPlayer?.pause();
                   print(scoreM.niv1);
                   print('khra');
                   //Firestore.instance.collection('users').document(user.uid).collection('domains').document('maths').updateData({'niv1':scoreM.niv1});
@@ -326,7 +330,8 @@ class _Niveau3PassState extends State<Niveau3Pass> {
               child: Align(
                 alignment: Alignment.bottomCenter,
                 child: ButtonReset(
-                    onPressed: () {
+                    onPressed: ()async{
+    int result = await advancedPlayer?.pause();
                       print('reset');
                       Navigator.push(
                           context,

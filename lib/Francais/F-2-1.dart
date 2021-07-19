@@ -64,7 +64,7 @@ class _F_2_1State extends State<F_2_1> {
                   left:size.width*0.75,
                   child:
                   SettingsButton(onPressed: (){
-                    player2.stop();
+                    player2?.stop();
 
                     Navigator.push(
                         context,
@@ -76,7 +76,7 @@ class _F_2_1State extends State<F_2_1> {
                   top: size.height*0.05,
                   right:size.width*0.75,
                   child: BacksButton(onPressed: (){
-                    player2.stop();
+                    player2?.stop();
 
                     showDialog(context: context,
                         builder: (BuildContext context){
@@ -292,7 +292,7 @@ class _F_2_1State extends State<F_2_1> {
                     height: size.height*0.2,
                     width: size.width*0.5,
                     child: ButtonContinuer(onPressed: (){
-                      player2.stop();
+                      player2?.stop();
 
                       print('HADA SCORE');
                       print(scoreF.niv2);

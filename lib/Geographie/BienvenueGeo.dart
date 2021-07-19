@@ -77,7 +77,8 @@ class _BienvenueGeoState extends State<BienvenueGeo> {
                   top: size.height*0.05,
                   left:size.width*0.75,
                   child:
-                  SettingsButton(onPressed: (){
+                  SettingsButton(onPressed: ()async {
+                    int result = await advancedPlayer?.pause();
                     Navigator.push(
                         context,
                         MaterialPageRoute(builder: (context) => Settings()));
@@ -87,7 +88,8 @@ class _BienvenueGeoState extends State<BienvenueGeo> {
               Positioned(
                   top: size.height*0.05,
                   right:size.width*0.75,
-                  child: BacksButton(onPressed: (){
+                  child: BacksButton(onPressed: ()async{
+                    int result = await advancedPlayer?.pause();
                     Navigator.push(
                         context,
                         MaterialPageRoute(builder: (context) => ChoixDomaine()));
@@ -99,6 +101,7 @@ class _BienvenueGeoState extends State<BienvenueGeo> {
                 height: size.height*0.55,
                 width: size.width*0.55,
                 child: ButtonCommencerD(onPressed: () async  {
+                  int result = await advancedPlayer?.pause();
                   print('commencer');
                   var d=await Firestore.instance.collection('users').document(user.uid).collection('domains').document('geographie').get();
 

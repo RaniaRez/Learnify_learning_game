@@ -94,10 +94,10 @@ class _N1Q1State extends State<N1Q1> {
                   left:size.width*0.75,
                   child:
                   SettingsButton(onPressed: () async {
-                    player2.stop();
+                    player2?.stop();
                     if (advancedPlayer!=null){
                   if (advancedPlayer!=null){
-                  int result = await advancedPlayer.pause();}}
+                  int result = await advancedPlayer?.pause();}}
                     Navigator.push(
                         context,
                         MaterialPageRoute(builder: (context) => Settings()));
@@ -106,13 +106,14 @@ class _N1Q1State extends State<N1Q1> {
               Positioned(
                   top: size.height*0.05,
                   right:size.width*0.75,
-                  child: BacksButton(onPressed: (){
+                  child: BacksButton(onPressed: ()async {
+                    int result = await advancedPlayer?.pause();
                     showDialog(context: context,
                         builder: (BuildContext context){
                           return customDialogGeo1();
                         }
                     );
-                    player2.stop();
+                    player2?.stop();
 
                   },)
               ),
@@ -145,10 +146,10 @@ class _N1Q1State extends State<N1Q1> {
                   top: size.height*0.47,
                   left: size.width*0.75,
                   child: GoToButton(onPressed: () async {
-                    player2.stop();
+                    player2?.stop();
                     if (advancedPlayer!=null){
                   if (advancedPlayer!=null){
-                  int result = await advancedPlayer.pause();}}
+                  int result = await advancedPlayer?.pause();}}
                     if((drag1=="assets/icons/posA.svg")&&(drag2=="assets/icons/posB.svg" ||drag2=="assets/icons/posH.svg" )&&(drag3=="assets/icons/posC.svg")&&(drag4=="assets/icons/posD.svg")&&(drag5=="assets/icons/posE.svg")&&(drag6=="assets/icons/posF.svg")&&(drag7=="assets/icons/posG.svg")&&(drag8=="assets/icons/posH.svg" ||drag8=="assets/icons/posB.svg" )){
                       player2 =  await player.play('audio/mathsBravo.wav');
 
@@ -214,10 +215,8 @@ class _N1Q1State extends State<N1Q1> {
                     height: size.height*0.2,
                     width: size.width*0.5,
                     child: ButtonContinuer(onPressed: () async {
-                      player2.stop();
-                      if (advancedPlayer!=null){
-                  if (advancedPlayer!=null){
-                  int result = await advancedPlayer.pause();}}
+                      player2?.stop();
+                  int result = await advancedPlayer?.pause();
                       Navigator.push(
                           context,
                           MaterialPageRoute(builder: (context) => N1Q2()));},)

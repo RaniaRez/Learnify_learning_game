@@ -96,9 +96,9 @@ bool correct=false;
                   left:size.width*0.75,
                   child:
                   SettingsButton(onPressed: () async {
-                    player2.stop();
+                    player2?.stop();
                     if(advancedPlayer !=null){
-                      int result = await advancedPlayer.pause();
+                      int result = await advancedPlayer?.pause();
                     }
                     Navigator.push(
                         context,
@@ -109,9 +109,9 @@ bool correct=false;
                   top: size.height*0.05,
                   right:size.width*0.75,
                   child: BacksButton(onPressed: () async {
-                    player2.stop();
+                    player2?.stop();
                     if(advancedPlayer !=null){
-                      int result = await advancedPlayer.pause();
+                      int result = await advancedPlayer?.pause();
                     }
                     showDialog(context: context,
                         builder: (BuildContext context){
@@ -142,7 +142,7 @@ bool correct=false;
                   top: size.height*0.47,
                   left: size.width*0.75,
                   child: GoToButton(onPressed: () async {
-                    int result = await advancedPlayer.pause();
+                    int result = await advancedPlayer?.pause();
 
                     if((drag1=="assets/icons/gb.svg")&&(drag2=="assets/icons/i.svg")&&(drag3=="assets/icons/r.svg")&&(drag4=="assets/icons/a.svg")&&(drag5=="assets/icons/f.svg")&&(drag6=="assets/icons/e.svg")){
                       player2 =  await player.play('audio/mathsBravo.wav');
@@ -215,7 +215,7 @@ bool correct=false;
                     height: size.height*0.2,
                     width: size.width*0.5,
                     child: ButtonContinuer(onPressed: ()async {
-                      player2.stop();
+                      player2?.stop();
 
                       print("score final");
                       print(scoreF.niv3);

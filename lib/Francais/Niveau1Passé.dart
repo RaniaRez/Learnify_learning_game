@@ -84,7 +84,7 @@ class _Niveau1PassState extends State<Niveau1Pass> {
                 top: size.height*0.05,
                 left:size.width*0.75,
                 child: SettingsButton(onPressed: () async {
-                  int result = await advancedPlayer.pause();
+                  int result = await advancedPlayer?.pause();
 
                   Navigator.push(
                       context,
@@ -97,7 +97,7 @@ class _Niveau1PassState extends State<Niveau1Pass> {
                 top: size.height*0.05,
                 right:size.width*0.75,
                 child: BacksButton(onPressed: () async {
-                  int result = await advancedPlayer.pause();
+                  int result = await advancedPlayer?.pause();
 
                   print("HELL YEAH");
                   Navigator.push(
@@ -110,7 +110,7 @@ class _Niveau1PassState extends State<Niveau1Pass> {
               left: size.width*0.39,
               child: HomeButton(
                 onPressed: () async {
-                  int result = await advancedPlayer.pause();
+                  int result = await advancedPlayer?.pause();
 
                   print("HELL YEAH8");
                   Navigator.push(
@@ -324,7 +324,7 @@ class _Niveau1PassState extends State<Niveau1Pass> {
               child: Visibility(
                 visible: ((complet) || (scoreF.niv2 >=0 )) ,
                 child: GoToButton(onPressed: () async {
-                 // int result = await advancedPlayer.pause();
+                 // int result = await advancedPlayer?.pause();
 
                   print(scoreM.niv1);
                   print('khra');

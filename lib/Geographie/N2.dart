@@ -67,7 +67,7 @@ class _Geo2State extends State<Geo2> {
 
                   child: BacksButton(onPressed: ()async{
                     if (advancedPlayer!=null){
-                  int result = await advancedPlayer.pause();}
+                  int result = await advancedPlayer?.pause();}
                     print("u clicked me");
                     Navigator.push(
                         context,
@@ -80,7 +80,7 @@ class _Geo2State extends State<Geo2> {
                   left:size.width*0.75,
                   child: SettingsButton(onPressed: ()async {
                     if (advancedPlayer!=null){
-                  int result = await advancedPlayer.pause();}
+                  int result = await advancedPlayer?.pause();}
                     Navigator.push(
                         context,
                         MaterialPageRoute(builder: (context) => Settings()));
@@ -156,7 +156,7 @@ class _Geo2State extends State<Geo2> {
                   print("HELL YEAH");
                   //scoreG.niv2=0;
                   if (advancedPlayer!=null){
-                  int result = await advancedPlayer.pause();}
+                  int result = await advancedPlayer?.pause();}
                   Navigator.push(
                     context,
                     MaterialPageRoute(builder: (context) => N2Q1()),);

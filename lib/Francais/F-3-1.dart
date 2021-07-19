@@ -56,9 +56,9 @@ class _F_3_1State extends State<F_3_1> {
               left: size.width * 0.75,
               child: SettingsButton(
                 onPressed: () async {
-                  player2.stop();
+                  player2?.stop();
                   if(advancedPlayer !=null){
-                    int result = await advancedPlayer.pause();
+                    int result = await advancedPlayer?.pause();
                   }
                   Navigator.push(context,
                       MaterialPageRoute(builder: (context) => Settings()));
@@ -69,9 +69,9 @@ class _F_3_1State extends State<F_3_1> {
               right: size.width * 0.75,
               child: BacksButton(
                 onPressed: () async {
-                  player2.stop();
+                  player2?.stop();
                   if(advancedPlayer !=null){
-                    int result = await advancedPlayer.pause();
+                    int result = await advancedPlayer?.pause();
                   }
                   showDialog(
                       context: context,
@@ -112,7 +112,7 @@ class _F_3_1State extends State<F_3_1> {
               child: IconButton(
                   onPressed: () async {
                     if(advancedPlayer !=null){
-                      int result = await advancedPlayer.pause();
+                      int result = await advancedPlayer?.pause();
                     }
                     Navigator.push(
                         context,
@@ -132,7 +132,7 @@ class _F_3_1State extends State<F_3_1> {
               child: IconButton(
                   onPressed: () async {
                     if(advancedPlayer !=null){
-                      int result = await advancedPlayer.pause();
+                      int result = await advancedPlayer?.pause();
                     }
                     Navigator.push(
                         context,
@@ -152,7 +152,7 @@ class _F_3_1State extends State<F_3_1> {
               child: IconButton(
                   onPressed: () async {
                     if(advancedPlayer !=null){
-                      int result = await advancedPlayer.pause();
+                      int result = await advancedPlayer?.pause();
                     }
                     player2 = await player.play('audio/mathsBravo.wav');
                     scoreF.niv3 += 2;
@@ -174,7 +174,7 @@ class _F_3_1State extends State<F_3_1> {
               child: IconButton(
                   onPressed: () async {
                     if(advancedPlayer !=null){
-                      int result = await advancedPlayer.pause();
+                      int result = await advancedPlayer?.pause();
                     }
                     Navigator.push(
                         context,
@@ -268,9 +268,9 @@ class _F_3_1State extends State<F_3_1> {
                 width: size.width * 0.5,
                 child: ButtonContinuer(
                   onPressed: () async {
-                    player2.stop();
+                    player2?.stop();
                     if(advancedPlayer !=null){
-                      int result = await advancedPlayer.pause();
+                      int result = await advancedPlayer?.pause();
                     }
                     print('HADA SCORE');
                     print(scoreF.niv3);

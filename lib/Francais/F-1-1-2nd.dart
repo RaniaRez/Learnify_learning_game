@@ -74,8 +74,8 @@ class _F_1_1_2ndState extends State<F_1_1_2nd> {
                   left:size.width*0.75,
                   child:
                   SettingsButton(onPressed: () async {
-                    player2.stop();
-                    int result = await advancedPlayer.pause();
+                    player2?.stop();
+                    int result = await advancedPlayer?.pause();
 
                     Navigator.push(
                         context,
@@ -86,8 +86,8 @@ class _F_1_1_2ndState extends State<F_1_1_2nd> {
                   top: size.height*0.05,
                   right:size.width*0.75,
                   child: BacksButton(onPressed: () async {
-                    player2.stop();
-                    int result = await advancedPlayer.pause();
+                    player2?.stop();
+                    int result = await advancedPlayer?.pause();
 
                     showDialog(context: context,
                         builder: (BuildContext context){
@@ -131,7 +131,7 @@ class _F_1_1_2ndState extends State<F_1_1_2nd> {
                   width: size.width*0.4,
                   child: IconButton(
                       onPressed: () async {
-                        int result = await advancedPlayer.pause();
+                        int result = await advancedPlayer?.pause();
                         player2 =  await player.play('audio/losing.wav');
                         setState(() {
                           Visible=false;
@@ -159,7 +159,7 @@ class _F_1_1_2ndState extends State<F_1_1_2nd> {
                   width: size.width*0.4,
                   child: IconButton(
                       onPressed: () async {
-                        int result = await advancedPlayer.pause();
+                        int result = await advancedPlayer?.pause();
                         player2 =  await player.play('audio/losing.wav');
                         setState(() {
                           Visible=false;
@@ -177,7 +177,7 @@ class _F_1_1_2ndState extends State<F_1_1_2nd> {
                     height: size.width*0.3,
                     width: size.width*0.3,
                     child:PinkAvatarIcon(onPressed: () async {
-                      int result = await advancedPlayer.pause();
+                      int result = await advancedPlayer?.pause();
 
                       player2 =  await player.play('audio/mathsBravo.wav');
 
@@ -199,7 +199,7 @@ class _F_1_1_2ndState extends State<F_1_1_2nd> {
                     width: size.width*0.35,
                     child:PurpleAvatarIcon(
                       onPressed: () async {
-                        int result = await advancedPlayer.pause();
+                        int result = await advancedPlayer?.pause();
 
                         player2 =  await player.play('audio/mathsBravo.wav');
 
@@ -222,7 +222,7 @@ class _F_1_1_2ndState extends State<F_1_1_2nd> {
                     width: size.width*0.3,
                     child: OrangeAvatarIcon(
                       onPressed: () async {
-                        int result = await advancedPlayer.pause();
+                        int result = await advancedPlayer?.pause();
 
                         player2 =  await player.play('audio/mathsBravo.wav');
 
@@ -245,7 +245,7 @@ class _F_1_1_2ndState extends State<F_1_1_2nd> {
                     width: size.width*0.3,
                     child:BlueAvatarIcon(
                       onPressed: () async {
-                        int result = await advancedPlayer.pause();
+                        int result = await advancedPlayer?.pause();
 
                         player2 =  await player.play('audio/mathsBravo.wav');
 
@@ -275,8 +275,8 @@ class _F_1_1_2ndState extends State<F_1_1_2nd> {
                     height: size.height*0.2,
                     width: size.width*0.5,
                     child: ButtonContinuer(onPressed: () async {
-                      player2.stop();
-                      int result = await advancedPlayer.pause();
+                      player2?.stop();
+                      int result = await advancedPlayer?.pause();
 
                       print('HADA SCORE');
                       print(scoreF.niv1);

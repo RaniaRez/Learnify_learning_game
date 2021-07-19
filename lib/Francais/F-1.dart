@@ -66,7 +66,7 @@ class _Fr1State extends State<Fr1> {
                   left:size.width*0.75,
                   child:
                   SettingsButton(onPressed: () async {
-                    int result = await advancedPlayer.pause();
+                    int result = await advancedPlayer?.pause();
 
                     Navigator.push(
                         context,
@@ -78,7 +78,7 @@ class _Fr1State extends State<Fr1> {
                   top: size.height*0.05,
                   right:size.width*0.75,
                   child: BacksButton(onPressed: () async {
-                    int result = await advancedPlayer.pause();
+                    int result = await advancedPlayer?.pause();
 
                     Navigator.push(
                         context,
@@ -155,7 +155,7 @@ class _Fr1State extends State<Fr1> {
                 top: size.height*0.8,
                 left:size.width*0.75,
                 child: GoToButton(onPressed: () async {
-                  int result = await advancedPlayer.pause();
+                  int result = await advancedPlayer?.pause();
 
                   print("HELL YEAH");
                   scoreF.niv1=0;

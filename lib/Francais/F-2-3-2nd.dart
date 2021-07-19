@@ -73,9 +73,9 @@ class _F_1_2State extends State<F_1_2> {
                   top: size.height*0.05,
                   left:size.width*0.75,
                   child:
-                  SettingsButton(onPressed: (){
-                    player2.stop();
-
+                  SettingsButton(onPressed: ()async {
+                    player2?.stop();
+                    await advancedPlayer?.pause();
                     Navigator.push(
                         context,
                         MaterialPageRoute(builder: (context) => Settings()));
@@ -84,9 +84,9 @@ class _F_1_2State extends State<F_1_2> {
               Positioned(
                   top: size.height*0.05,
                   right:size.width*0.75,
-                  child: BacksButton(onPressed: (){
-                    player2.stop();
-
+                  child: BacksButton(onPressed: ()async {
+                    player2?.stop();
+                    await advancedPlayer?.pause();
                     showDialog(context: context,
                         builder: (BuildContext context){
                           return customDialog2();
@@ -158,7 +158,7 @@ class _F_1_2State extends State<F_1_2> {
                   width: size.width*0.4,
                   child: IconButton(
                       onPressed: () async {
-
+                        await advancedPlayer?.pause();
                         player2 =  await player.play('audio/mathsBravo.wav');
 
                         setState(() {
@@ -249,9 +249,9 @@ class _F_1_2State extends State<F_1_2> {
                     left: 0.0,
                     height: size.height*0.2,
                     width: size.width*0.5,
-                    child: ButtonContinuer(onPressed: (){
-                      player2.stop();
-
+                    child: ButtonContinuer(onPressed: ()async {
+                      player2?.stop();
+                      await advancedPlayer?.pause();
                       print('HADA SCORE');
                       print(scoreF.niv2);
                       Navigator.push(

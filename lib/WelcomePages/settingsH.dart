@@ -52,7 +52,7 @@ class _SettingsHState extends State<SettingsH> {
               ),
               Positioned(
                   top: size.height*0.35,
-                  left:size.width*0.38,
+                  left:size.width*0.39,
                   child:MusicButton(onPressed: () async {
                     setState(() {
                       noMusic=true;
@@ -64,7 +64,7 @@ class _SettingsHState extends State<SettingsH> {
               if(noMusic)
                 Positioned(
                     top: size.height*0.35,
-                    left:size.width*0.38,
+                    left:size.width*0.39,
                     child:IconButton(
                       icon: SvgPicture.asset('assets/icons/noMusic.svg'),
                       iconSize: 90,
@@ -76,22 +76,7 @@ class _SettingsHState extends State<SettingsH> {
                         });
                       },)
                 ),
-              Positioned(
-                  top: size.height*0.65,
-                  left:size.width*0.38,
-                  child:SoundButton(onPressed:(){
-                  },)
-              ),
-              if(noSound)
-                Positioned(
-                    top: size.height*0.65,
-                    left:size.width*0.38,
-                    child:IconButton(
-                      icon: SvgPicture.asset('assets/icons/noSound.svg'),
-                      iconSize: 80,
-                      onPressed:(){
-                      },)
-                ),
+
               Positioned(
                   top: size.height*0.047,
                   left: size.width*0.39,

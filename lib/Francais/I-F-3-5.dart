@@ -67,7 +67,8 @@ class _I_F_3_5State extends State<I_F_3_5> {
                   top: size.height*0.05,
                   left:size.width*0.75,
                   child:
-                  SettingsButton(onPressed: (){
+                  SettingsButton(onPressed: ()async{
+                    await advancedPlayer?.pause();
                     Navigator.push(
                         context,
                         MaterialPageRoute(builder: (context) => Settings()));
@@ -77,7 +78,8 @@ class _I_F_3_5State extends State<I_F_3_5> {
               Positioned(
                   top: size.height*0.05,
                   right:size.width*0.75,
-                  child: BacksButton(onPressed: (){
+                  child: BacksButton(onPressed: ()async{
+                    await advancedPlayer?.pause();
                     showDialog(context: context,
                         builder: (BuildContext context){
                           return customDialog3();
@@ -153,8 +155,8 @@ class _I_F_3_5State extends State<I_F_3_5> {
                 bottom: size.height*0.05,
                 right: size.width*0.5 ,
                 child: ButtonReessayer(onPressed : () async {
-                  player2.stop();
-                  int result = await advancedPlayer.pause();
+                  player2?.stop();
+                  int result = await advancedPlayer?.pause();
                   final _random = new Random();
 
                   Navigator.push(

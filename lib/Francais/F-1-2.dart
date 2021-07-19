@@ -55,7 +55,7 @@ class _F_1_2State extends State<F_1_2> {
               left: size.width * 0.75,
               child: SettingsButton(
                 onPressed: () {
-                  player2.stop();
+                  player2?.stop();
 
                   Navigator.push(context,
                       MaterialPageRoute(builder: (context) => Settings()));
@@ -67,7 +67,7 @@ class _F_1_2State extends State<F_1_2> {
               right: size.width * 0.75,
               child: BacksButton(
                 onPressed: () {
-                  player2.stop();
+                  player2?.stop();
 
                   showDialog(
                       context: context,
@@ -108,7 +108,7 @@ class _F_1_2State extends State<F_1_2> {
               child: IconButton(
                   onPressed: () async {
                     if(advancedPlayer !=null){
-                      int result = await advancedPlayer.pause();
+                      int result = await advancedPlayer?.pause();
                     }
 
                     Navigator.push(
@@ -130,7 +130,7 @@ class _F_1_2State extends State<F_1_2> {
               child: IconButton(
                   onPressed: () async {
                     if(advancedPlayer !=null){
-                      int result = await advancedPlayer.pause();
+                      int result = await advancedPlayer?.pause();
                     }
 
                     Navigator.push(
@@ -152,7 +152,7 @@ class _F_1_2State extends State<F_1_2> {
               child: IconButton(
                   onPressed: () async {
                     if(advancedPlayer !=null){
-                      int result = await advancedPlayer.pause();
+                      int result = await advancedPlayer?.pause();
                     }
 
                     player2 = await player.play('audio/mathsBravo.wav');
@@ -176,7 +176,7 @@ class _F_1_2State extends State<F_1_2> {
               child: IconButton(
                   onPressed: () async {
                     if(advancedPlayer !=null){
-                      int result = await advancedPlayer.pause();
+                      int result = await advancedPlayer?.pause();
                     }
 
                     Navigator.push(

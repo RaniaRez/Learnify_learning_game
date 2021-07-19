@@ -89,13 +89,14 @@ class _N2Q5State extends State<N2Q5> {
               Positioned(
                   top: size.height*0.05,
                   right:size.width*0.75,
-                  child: BacksButton(onPressed: (){
+                  child: BacksButton(onPressed: ()async{
+                    int result = await advancedPlayer?.pause();
                     showDialog(context: context,
                         builder: (BuildContext context){
                           return customDialogGeo2();
                         }
                     );
-                    player2.stop();
+                    player2?.stop();
 
                   },)
               ),
@@ -104,9 +105,9 @@ class _N2Q5State extends State<N2Q5> {
                   top:size.height*0.05,
                   left:size.width*0.75,
                   child: SettingsButton(onPressed: () async {
-                    player2.stop();
+                    player2?.stop();
                     if (advancedPlayer!=null){
-                  int result = await advancedPlayer.pause();}
+                  int result = await advancedPlayer?.pause();}
                     Navigator.push(
                         context,
                         MaterialPageRoute(builder: (context) => Settings()));
@@ -271,9 +272,9 @@ class _N2Q5State extends State<N2Q5> {
                     height: size.height*0.2,
                     width: size.width*0.5,
                     child: ButtonContinuer(onPressed: () async {
-                      player2.stop();
+                      player2?.stop();
                       if (advancedPlayer!=null){
-                  int result = await advancedPlayer.pause();}
+                  int result = await advancedPlayer?.pause();}
                       print(scoreG.niv2);
                       Firestore.instance.collection('users').document(user.uid).collection('domains').document('geographie').updateData({'niv2':scoreG.niv2});
                       if (scoreG.niv2>highG.niv2)
@@ -366,9 +367,9 @@ class _N2Q5State extends State<N2Q5> {
                       visible: (threeClicked && Visible),
                       child: IconButton(
                         onPressed: () async {
-                          player2.stop();
+                          player2?.stop();
                           if (advancedPlayer!=null){
-                  int result = await advancedPlayer.pause();}
+                  int result = await advancedPlayer?.pause();}
                           if (threeClicked){
                             //Vibration.vibrate();
                             setState(() {
@@ -393,9 +394,9 @@ class _N2Q5State extends State<N2Q5> {
                     visible: (fourClicked&&Visible),
                     child: IconButton(
                         onPressed: () async {
-                          player2.stop();
+                          player2?.stop();
                           if (advancedPlayer!=null){
-                  int result = await advancedPlayer.pause();}
+                  int result = await advancedPlayer?.pause();}
                           if (fourClicked){
                             player2 =  await player.play('audio/mathsBravo.wav');
                             setState(() {
@@ -421,9 +422,9 @@ class _N2Q5State extends State<N2Q5> {
                     visible: (twoClicked&&Visible),
                     child: IconButton(
                         onPressed: () async {
-                          player2.stop();
+                          player2?.stop();
                           if (advancedPlayer!=null){
-                  int result = await advancedPlayer.pause();}
+                  int result = await advancedPlayer?.pause();}
                           if (twoClicked){
                             //Vibration.vibrate();
                             setState(() {

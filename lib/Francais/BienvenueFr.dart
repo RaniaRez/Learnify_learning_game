@@ -74,7 +74,7 @@ class _BienvenueFrState extends State<BienvenueFr> {
                   left:size.width*0.75,
                   child:
                   SettingsButton(onPressed: () async {
-                    int result = await advancedPlayer.pause();
+                    int result = await advancedPlayer?.pause();
 
                     Navigator.push(
                         context,
@@ -86,7 +86,7 @@ class _BienvenueFrState extends State<BienvenueFr> {
                   top: size.height*0.05,
                   right:size.width*0.75,
                   child: BacksButton(onPressed: () async {
-                    int result = await advancedPlayer.pause();
+                    int result = await advancedPlayer?.pause();
 
                     Navigator.push(
                         context,
@@ -100,7 +100,7 @@ class _BienvenueFrState extends State<BienvenueFr> {
                 width: size.width*0.55,
                 child: ButtonCommencerD(onPressed: () async {
 
-                  int result = await advancedPlayer.pause();
+                  int result = await advancedPlayer?.pause();
 
                   print('commencer');
                   var d=await Firestore.instance.collection('users').document(user.uid).collection('domains').document('francais').get();

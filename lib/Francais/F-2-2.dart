@@ -62,7 +62,7 @@ class _F_2_2State extends State<F_2_2> {
                   left:size.width*0.75,
                   child:
                   SettingsButton(onPressed: (){
-                    player2.stop();
+                    player2?.stop();
                     Navigator.push(
                         context,
                         MaterialPageRoute(builder: (context) => Settings()));
@@ -73,7 +73,7 @@ class _F_2_2State extends State<F_2_2> {
                   top: size.height*0.05,
                   right:size.width*0.75,
                   child: BacksButton(onPressed: (){
-                    player2.stop();
+                    player2?.stop();
                     showDialog(context: context,
                         builder: (BuildContext context){
                           return customDialog2();
@@ -108,7 +108,7 @@ class _F_2_2State extends State<F_2_2> {
                            iconSize: 64,
                            icon: SvgPicture.asset('assets/icons/QuestionMark.svg'),
                            onPressed: () {
-                             player2.stop();
+                             player2?.stop();
                              setState(() {
                                drag1=null;
                                drag2=null;
@@ -127,7 +127,7 @@ class _F_2_2State extends State<F_2_2> {
 
                    SizedBox(width: size.width*0.5,),
                    GoToButton(onPressed: ()async {
-                     player2.stop();
+                     player2?.stop();
                      if(
                      (drag1=='assets/icons/optimiste.svg')&&(drag2=='assets/icons/poli.svg')&&(drag3=='assets/icons/gentil.svg')
                      ){
@@ -451,7 +451,7 @@ class _F_2_2State extends State<F_2_2> {
                     height: size.height*0.2,
                     width: size.width*0.5,
                     child: ButtonContinuer(onPressed: (){
-                      player2.stop();
+                      player2?.stop();
                       print('HADA SCORE');
                       Navigator.push(
                           context,

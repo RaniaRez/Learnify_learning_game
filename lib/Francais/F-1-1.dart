@@ -51,7 +51,7 @@ class _F_1_1State extends State<F_1_1> {
               left: size.width * 0.75,
               child: SettingsButton(
                 onPressed: () {
-                  player2.stop();
+                  player2?.stop();
                   Navigator.push(context,
                       MaterialPageRoute(builder: (context) => Settings()));
                 },
@@ -61,12 +61,13 @@ class _F_1_1State extends State<F_1_1> {
               right: size.width * 0.75,
               child: BacksButton(
                 onPressed: () {
+                  player2?.stop();
                   showDialog(
                       context: context,
                       builder: (BuildContext context) {
                         return customDialog1();
                       });
-                  player2.stop();
+
                 },
               )),
           Positioned(
@@ -103,7 +104,7 @@ class _F_1_1State extends State<F_1_1> {
               width: size.width * 0.4,
               child: IconButton(
                   onPressed: () {
-                    player2.stop();
+                    player2?.stop();
 
                     Navigator.push(context,
                         MaterialPageRoute(builder: (context) => F_1_1_2nd()));
@@ -130,7 +131,7 @@ class _F_1_1State extends State<F_1_1> {
               width: size.width * 0.4,
               child: IconButton(
                   onPressed: () {
-                    player2.stop();
+                    player2?.stop();
 
                     Navigator.push(context,
                         MaterialPageRoute(builder: (context) => F_1_1_2nd()));
@@ -157,7 +158,7 @@ class _F_1_1State extends State<F_1_1> {
               width: size.width * 0.4,
               child: IconButton(
                   onPressed: () {
-                    player2.stop();
+                    player2?.stop();
 
                     Navigator.push(context,
                         MaterialPageRoute(builder: (context) => F_1_1_2nd()));
@@ -184,7 +185,7 @@ class _F_1_1State extends State<F_1_1> {
               width: size.width * 0.4,
               child: IconButton(
                   onPressed: () {
-                    player2.stop();
+                    player2?.stop();
 
                     print('HADA SCORE');
                     print(scoreF.niv1);

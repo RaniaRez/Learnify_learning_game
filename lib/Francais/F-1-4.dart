@@ -84,9 +84,9 @@ class _F_1_4State extends State<F_1_4> {
                     top: size.height*0.05,
                     left:size.width*0.75,
                     child:
-                    SettingsButton(onPressed: (){
-                      player2.stop();
-
+                    SettingsButton(onPressed: () async {
+                      player2?.stop();
+                        await advancedPlayer?.pause();
                       Navigator.push(
                           context,
                           MaterialPageRoute(builder: (context) => Settings()));
@@ -96,9 +96,9 @@ class _F_1_4State extends State<F_1_4> {
                 Positioned(
                     top: size.height*0.05,
                     right:size.width*0.75,
-                    child: BacksButton(onPressed: (){
-                      player2.stop();
-
+                    child: BacksButton(onPressed: ()async {
+                      player2?.stop();
+                      await advancedPlayer?.pause();
                       showDialog(context: context,
                           builder: (BuildContext context){
                             return customDialog1();
@@ -129,7 +129,7 @@ class _F_1_4State extends State<F_1_4> {
                     left: size.width*0.75,
                     child: GoToButton(onPressed: () async {
                       if(advancedPlayer !=null){
-                        int result = await advancedPlayer.pause();
+                        int result = await advancedPlayer?.pause();
                       }
 
                       if((drag1=="assets/icons/m.svg")&&(drag2=="assets/icons/o.svg")&&(drag3=="assets/icons/u.svg")&&(drag4=="assets/icons/l.svg")&&(drag5=="assets/icons/i.svg")&&(drag6=="assets/icons/n.svg")){
@@ -203,8 +203,8 @@ class _F_1_4State extends State<F_1_4> {
                       height: size.height*0.2,
                       width: size.width*0.5,
                       child: ButtonContinuer(onPressed: () async{
-                        player2.stop();
-                        int result = await advancedPlayer.pause();
+                        player2?.stop();
+                        int result = await advancedPlayer?.pause();
 
                         print('HADA SCORE');
                         print(scoreF.niv1);

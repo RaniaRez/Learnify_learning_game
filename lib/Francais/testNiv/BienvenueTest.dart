@@ -63,7 +63,7 @@ class _TestNiveauState extends State<TestNiveau> {
                   top: size.height*0.05,
                   right:size.width*0.75,
                   child: BacksButton(onPressed: () async{
-                    int result = await advancedPlayer.pause();
+                    int result = await advancedPlayer?.pause();
 
                     print("HELL YEAH");
                     Navigator.pop(context);
@@ -75,7 +75,7 @@ class _TestNiveauState extends State<TestNiveau> {
                   height: size.height*0.55,
                   width: size.width*0.55,
                   child: ButtonCommencer(onPressed: () async {
-                    int result = await advancedPlayer.pause();
+                    int result = await advancedPlayer?.pause();
 
                     Navigator.push(
                         context,
@@ -87,7 +87,7 @@ class _TestNiveauState extends State<TestNiveau> {
                   left:size.width*0.75,
                   child:
                   SettingsButton(onPressed: () async{
-                    int result = await advancedPlayer.pause();
+                    int result = await advancedPlayer?.pause();
 
                     Navigator.push(
                         context,
